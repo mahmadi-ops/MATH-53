@@ -403,6 +403,25 @@
             matrix <m>A</m>.
           </caption>
           <image xml:id="img-basis-diagram-S" width="92%">
+            <shortdescription>A commutative square in which S carries the ordered basis of P2 to four matrices, while the matrix A carries the standard basis columns of R3 to those of R4.</shortdescription>
+            <description>
+              <p>
+                A square diagram. Across the top, <m>S</m> sends the ordered basis
+                <m>\{1, x, x^2\}</m> of <m>\mathbb{P}_2</m> to the four matrices
+                <m>\{M_0, M_1, M_2, M_3\}</m> spanning <m>\mathbb{M}_{22}</m>.
+              </p>
+              <p>
+                Down each side a double-headed arrow marks a coordinate isomorphism: on
+                the left it identifies <m>\{1, x, x^2\}</m> with the three standard basis
+                columns of <m>\R^3</m>, and on the right it identifies
+                <m>\{M_0, M_1, M_2, M_3\}</m> with the four standard basis columns of
+                <m>\R^4</m>.
+              </p>
+              <p>
+                Across the bottom, the matrix <m>A</m> carries the standard basis columns
+                of <m>\R^3</m> to those of <m>\R^4</m>.
+              </p>
+            </description>
             <prefigure xmlns="https://prefigure.org" label="basis-diagram-S">
               <diagram dimensions="(700,360)" margins="6">
                 <coordinates bbox="[0,0,12.6,7.6]">
@@ -422,15 +441,6 @@
                     <label at="label-A" anchor="(5.75,1.85)" alignment="north" scale="1.4"><m>A</m></label>
                   </group>
                 </coordinates>
-                <annotations>
-                  <annotation ref="basis-square"
-                              text="A commutative square showing the action of S on the ordered basis and the corresponding matrix A">
-                    <annotation ref="arrow-S" text="Across the top, S sends the ordered basis 1, x, x squared to the four matrices M 0, M 1, M 2, M 3"/>
-                    <annotation ref="arrow-left" text="On the left, the coordinate isomorphism identifies the basis 1, x, x squared of P 2 with the standard basis columns of R 3, in both directions"/>
-                    <annotation ref="arrow-right" text="On the right, the coordinate isomorphism identifies the four matrices M 0, M 1, M 2, M 3 with the standard basis columns of R 4, in both directions"/>
-                    <annotation ref="arrow-A" text="Across the bottom, the matrix A maps the standard basis columns of R 3 to those of R 4"/>
-                  </annotation>
-                </annotations>
               </diagram>
             </prefigure>
           </image>
