@@ -13,7 +13,7 @@
     <latex-image-preamble>
       \usepackage{tikz}
       \usepackage{amsmath}
-      \usetikzlibrary{decorations.pathmorphing, arrows.meta}
+      \usetikzlibrary{decorations.pathmorphing, arrows.meta, positioning}
       \usepackage{pgfplots}
       \pgfplotsset{compat=1.17}
     </latex-image-preamble>
@@ -22,6 +22,7 @@
   <book xml:id="math53-linear-algebra">
     <title>Linear Algebra Notes for MATH 53</title>
     <xi:include href="frontmatter.ptx" />
+    <xi:include href="vector-spaces.ptx" />
     <xi:include href="chapter-placeholder.ptx" />
   </book>
 

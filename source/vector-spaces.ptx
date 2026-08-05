@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Spaces</title>
+
+  <section xml:id="sec-matrix-of-a-transformation">
+    <title>The Matrix of a Transformation</title>
+
+    <example xml:id="ex-matrix-of-S-P2-to-M22">
+      <title>The matrix of a transformation <m>S : \mathbb{P}_2 \to \mathbb{M}_{22}</m></title>
+      <statement>
+        <p>
+          Consider the ordered basis <m>\mathcal{B} = \{1, x, x^2\}</m> for <m>\mathbb{P}_2</m>
+          and an ordered basis <m>\mathcal{B}_1</m> for <m>\mathbb{M}_{22}</m>,
+          and find the matrix of the transformation <m>S</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The strategy is captured by the following diagram.
+          The coordinate maps identify <m>\mathbb{P}_2</m> with <m>\R^3</m>
+          and <m>\mathbb{M}_{22}</m> with <m>\R^4</m>,
+          so the transformation <m>S</m> corresponds to a matrix transformation
+          <m>\R^3 \to \R^4</m>.
+        </p>
+
+        <figure xml:id="fig-commutative-diagram-S">
+          <caption>
+            The transformation <m>S : \mathbb{P}_2 \to \mathbb{M}_{22}</m>
+            and the matrix transformation <m>\R^3 \to \R^4</m> induced by the
+            coordinate isomorphisms.
+          </caption>
+          <image xml:id="img-commutative-diagram-S" width="55%">
+            <latex-image>
+              \begin{tikzpicture}[&gt;={Stealth[length=2.5mm]}, node distance=3cm, thick]
+                \node (P2)  {\(\mathbb{P}_2\)};
+                \node (M22) [right=of P2] {\(\mathbb{M}_{22}\)};
+                \node (R3)  [below=2.2cm of P2] {\(\R^3\)};
+                \node (R4)  [below=2.2cm of M22] {\(\R^4\)};
+
+                \draw[-&gt;] (P2) -- node[above] {\(S\)} (M22);
+                \draw[-&gt;] ([xshift=-2pt]P2.south) -- ([xshift=-2pt]R3.north);
+                \draw[-&gt;] ([xshift=2pt]R3.north) -- ([xshift=2pt]P2.south);
+                \draw[-&gt;] ([xshift=-2pt]M22.south) -- ([xshift=-2pt]R4.north);
+                \draw[-&gt;] ([xshift=2pt]R4.north) -- ([xshift=2pt]M22.south);
+                \draw[-&gt;] (R3) -- node[below, align=center] {matrix\\transformation} (R4);
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>
+          At the level of the ordered bases, <m>S</m> sends the basis
+          <m>\{1, x, x^2\}</m> of <m>\mathbb{P}_2</m> to the four matrices
+          <m>\{M_0, M_1, M_2, M_3\}</m> spanning <m>\mathbb{M}_{22}</m>,
+          and the induced matrix transformation is given by a matrix <m>A</m>:
+        </p>
+
+        <figure xml:id="fig-basis-diagram-S">
+          <caption>
+            The action of <m>S</m> on the ordered basis and the corresponding
+            matrix <m>A</m>.
+          </caption>
+          <image xml:id="img-basis-diagram-S" width="55%">
+            <latex-image>
+              \begin{tikzpicture}[&gt;={Stealth[length=2.5mm]}, node distance=3cm, thick]
+                \node (B)  {\(\{1, x, x^2\}\)};
+                \node (B1) [right=of B] {\(\{M_0, M_1, M_2, M_3\}\)};
+                \node (R3) [below=2.2cm of B] {\(\R^3\)};
+                \node (R4) [below=2.2cm of B1] {\(\R^4\)};
+
+                \draw[-&gt;] (B) -- node[above] {\(S\)} (B1);
+                \draw[-&gt;] (B) -- (R3);
+                \draw[-&gt;] (B1) -- (R4);
+                \draw[-&gt;] (R3) -- node[above] {\(A\)} (R4);
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>
+          After finding the output of the matrix transformation,
+          we can use the isomorphism between <m>\mathbb{M}_{22}</m> and <m>\R^4</m>
+          and write the output as a <m>2 \times 2</m> matrix.
+        </p>
+      </solution>
+    </example>
+
+  </section>
+
+</chapter>
