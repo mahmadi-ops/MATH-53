@@ -13,7 +13,7 @@
     <latex-image-preamble>
       \usepackage{tikz}
       \usepackage{amsmath}
-      \usetikzlibrary{decorations.pathmorphing, arrows.meta, positioning}
+      \usetikzlibrary{decorations.pathmorphing, arrows.meta}
       \usepackage{pgfplots}
       \pgfplotsset{compat=1.17}
     </latex-image-preamble>
