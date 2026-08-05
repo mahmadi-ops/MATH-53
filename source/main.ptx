@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <docinfo>
+
+    <document-id edition="1">math53</document-id>
+    <blurb shelf="Mathematics">Linear algebra notes for Santa Clara University's MATH 53.</blurb>
+    <macros>
+      \newcommand{\real}{\Bbb R}
+      \newcommand{\R}{\mathbb{R}}
+    </macros>
+
+    <latex-image-preamble>
+      \usepackage{tikz}
+      \usepackage{amsmath}
+      \usetikzlibrary{decorations.pathmorphing, arrows.meta}
+      \usepackage{pgfplots}
+      \pgfplotsset{compat=1.17}
+    </latex-image-preamble>
+  </docinfo>
+
+  <book xml:id="math53-linear-algebra">
+    <title>Linear Algebra Notes for MATH 53</title>
+    <xi:include href="frontmatter.ptx" />
+    <xi:include href="chapter-placeholder.ptx" />
+  </book>
+
+</pretext>
