@@ -30,7 +30,7 @@
             coordinate isomorphisms.
           </caption>
           <image xml:id="img-commutative-diagram-S" width="55%">
-            <prefigure xmlns="https://prefigure.org">
+            <prefigure xmlns="https://prefigure.org" label="commutative-diagram-S">
               <diagram dimensions="(400,240)" margins="5">
                 <coordinates bbox="[0,0,10,6]">
                   <group at="commutative-square">
@@ -76,7 +76,7 @@
             matrix <m>A</m>.
           </caption>
           <image xml:id="img-basis-diagram-S" width="55%">
-            <prefigure xmlns="https://prefigure.org">
+            <prefigure xmlns="https://prefigure.org" label="basis-diagram-S">
               <diagram dimensions="(400,240)" margins="5">
                 <coordinates bbox="[0,0,10,6]">
                   <group at="basis-square">
