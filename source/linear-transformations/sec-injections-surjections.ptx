@@ -9,6 +9,14 @@
       transformations both questions reduce to facts about the matrix that we already know
       how to check.
     </p>
+    <p>
+      Several figures in this section are interactive: you can click and drag the heads
+      of the vectors to explore the transformation. They are powered by the demo
+      framework from
+      <pubtitle>Interactive Linear Algebra</pubtitle> by Margalit and Rabinoff
+      (<url href="https://github.com/QBobWatson/ila" visual="github.com/QBobWatson/ila"/>),
+      used under the GPL.
+    </p>
   </introduction>
 
   <subsection xml:id="subsec-injections">
@@ -202,6 +210,102 @@
         </p>
       </solution>
     </example>
+
+    <example xml:id="eg-injective-geometric">
+      <title>A One-to-One Transformation, Seen Geometrically</title>
+      <statement>
+        <p>
+          Let <m>T : \R^2 \to \R^3</m> be the matrix transformation
+          <m>T(\vec{x}) = A\vec{x}</m>, where
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m>.
+          Is <m>T</m> one-to-one?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reducing <m>A</m> gives
+          <md>
+            \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}
+            \xrightarrow{r_2 - r_1}
+            \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 1 \end{bmatrix}
+            \xrightarrow{r_3 - r_2}
+            \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+          </md>
+          so there is a pivot in every column. Hence <m>A\vec{x} = \vec{0}</m> has only
+          the trivial solution, and <m>T</m> is one-to-one by
+          <xref ref="thm-injective-iff-trivial" text="type-global"/>.
+        </p>
+        <figure xml:id="fig-injective-geometric">
+          <caption>
+            The transformation <m>T(\vec{x}) = A\vec{x}</m> for
+            <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{smallmatrix}\right]</m>.
+            Drag the input vector <m>\vec{x}</m> on the left: different inputs always
+            produce different outputs <m>\vec{b} = T(\vec{x})</m> on the right, so
+            <m>T</m> is one-to-one. The violet dot on the left is the solution set of
+            <m>T(\vec{x}) = \vec{b}</m>: it is a single point.
+          </caption>
+          <interactive xml:id="int-injective-geometric" iframe="demos/Axequalsb.html?mat=1,0:1,1:0,1&amp;range2=5&amp;closed=true&amp;show=true" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <example xml:id="eg-not-injective-geometric">
+      <title>A Transformation That Is Not One-to-One, Seen Geometrically</title>
+      <statement>
+        <p>
+          Let <m>T : \R^3 \to \R^2</m> be the matrix transformation
+          <m>T(\vec{x}) = A\vec{x}</m>, where
+          <m>A = \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{bmatrix}</m>.
+          Is <m>T</m> one-to-one?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The matrix <m>A</m> is already in reduced row echelon form, and the third
+          column has no pivot. Solving <m>A\vec{x} = \vec{0}</m> with free variable
+          <m>z</m> gives <m>x = -z</m> and <m>y = -z</m>, so the solution set is
+          <md>
+            \vec{x} = z \begin{bmatrix} -1 \\ -1 \\ 1 \end{bmatrix},
+            \qquad z \text{ arbitrary}.
+          </md>
+          Taking <m>z = 1</m> produces the nontrivial solution
+          <md>
+            T \begin{bmatrix} -1 \\ -1 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} -1 \\ -1 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+            = T \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix},
+          </md>
+          so two different inputs share the output <m>\vec{0}</m>, and <m>T</m> is not
+          one-to-one.
+        </p>
+        <figure xml:id="fig-not-injective-geometric">
+          <caption>
+            The transformation <m>T(\vec{x}) = A\vec{x}</m> for
+            <m>A = \left[\begin{smallmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{smallmatrix}\right]</m>.
+            The violet line on the left is the solution set of <m>T(\vec{x}) = \vec{0}</m>,
+            namely all multiples of <m>(-1,-1,1)</m>. Drag <m>\vec{x}</m> along this
+            line: the output <m>T(\vec{x})</m> stays at <m>\vec{0}</m>, so <m>T</m>
+            sends infinitely many inputs to the same output.
+          </caption>
+          <interactive xml:id="int-not-injective-geometric" iframe="demos/Axequalsb.html?mat=1,0,1:0,1,1&amp;range2=5&amp;closed=true&amp;show=true&amp;lock=true&amp;x=0,0,0" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-wide-never-injective">
+      <title>Wide Matrices Are Never One-to-One</title>
+      <p>
+        If <m>A</m> is an <m>m \times n</m> matrix with more columns than rows
+        (<m>n \gt m</m>), then <m>A</m> cannot have a pivot in every column: there is
+        at most one pivot per row, and there are fewer rows than columns. Hence
+        <m>A\vec{x} = \vec{0}</m> has a free variable, and the transformation
+        <m>T(\vec{x}) = A\vec{x}</m> is <em>never</em> one-to-one. This is why the
+        transformation <m>T : \R^3 \to \R^2</m> in the previous example had no chance:
+        a transformation from a bigger space to a smaller space must collapse
+        different inputs together.
+      </p>
+    </remark>
   </subsection>
 
   <subsection xml:id="subsec-surjections">
@@ -324,5 +428,226 @@
         </p>
       </solution>
     </example>
+
+    <example xml:id="eg-surjective-geometric">
+      <title>An Onto Transformation, Seen Geometrically</title>
+      <statement>
+        <p>
+          Let <m>T : \R^3 \to \R^2</m> be the matrix transformation
+          <m>T(\vec{x}) = A\vec{x}</m>, where
+          <m>A = \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{bmatrix}</m>.
+          Is <m>T</m> onto?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The matrix <m>A</m> is already in reduced row echelon form and has a pivot in
+          every row. Therefore the augmented matrix of <m>A\vec{x} = \vec{b}</m> can
+          never have a pivot in its last column, and the system is consistent for every
+          <m>\vec{b} \in \R^2</m>. Concretely, for any
+          <m>\vec{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}</m>, the input
+          <m>\vec{x} = \begin{bmatrix} b_1 \\ b_2 \\ 0 \end{bmatrix}</m> satisfies
+          <m>T(\vec{x}) = \vec{b}</m>. Hence <m>T</m> is onto.
+        </p>
+        <figure xml:id="fig-surjective-geometric">
+          <caption>
+            The transformation <m>T(\vec{x}) = A\vec{x}</m> for
+            <m>A = \left[\begin{smallmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{smallmatrix}\right]</m>.
+            Drag the output vector <m>\vec{b}</m> anywhere on the right: the demo
+            always finds an input <m>\vec{x}</m> with <m>T(\vec{x}) = \vec{b}</m>,
+            because every vector in <m>\R^2</m> is an output of <m>T</m>.
+          </caption>
+          <interactive xml:id="int-surjective-geometric" iframe="demos/Axequalsb.html?mat=1,0,1:0,1,1&amp;range2=5&amp;closed=true&amp;show=false&amp;x=1,1,.5" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <example xml:id="eg-not-surjective-geometric">
+      <title>A Transformation That Is Not Onto, Seen Geometrically</title>
+      <statement>
+        <p>
+          Let <m>T : \R^2 \to \R^3</m> be the matrix transformation
+          <m>T(\vec{x}) = A\vec{x}</m>, where
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m>.
+          Is <m>T</m> onto?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Every output of <m>T</m> is a linear combination of the two columns of
+          <m>A</m>:
+          <md>
+            T \begin{bmatrix} x \\ y \end{bmatrix}
+            = x \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
+            + y \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} x \\ x + y \\ y \end{bmatrix}.
+          </md>
+          The middle entry of every output is the sum of the other two, so the range of
+          <m>T</m> is the plane <m>b_2 = b_1 + b_3</m> in <m>\R^3</m> <mdash/> a
+          two-dimensional slice of the three-dimensional codomain. For instance,
+          <m>\vec{b} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</m> has
+          <m>1 \neq 1 + 1</m>, so it is not an output of <m>T</m>, and <m>T</m> is
+          not onto. Alternatively: <m>A</m> has only two pivots, so it cannot have a
+          pivot in every one of its three rows.
+        </p>
+        <figure xml:id="fig-not-surjective-geometric">
+          <caption>
+            The transformation <m>T(\vec{x}) = A\vec{x}</m> for
+            <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{smallmatrix}\right]</m>.
+            The range of <m>T</m> is the violet plane on the right, which is smaller
+            than the codomain <m>\R^3</m>. Drag <m>\vec{b}</m> off the violet plane:
+            the equation <m>T(\vec{x}) = \vec{b}</m> becomes inconsistent, so such a
+            <m>\vec{b}</m> is not an output of <m>T</m>.
+          </caption>
+          <interactive xml:id="int-not-surjective-geometric" iframe="demos/Axequalsb.html?mat=1,0:1,1:0,1&amp;range2=5&amp;closed=true&amp;show=false" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-tall-never-surjective">
+      <title>Tall Matrices Are Never Onto</title>
+      <p>
+        If <m>A</m> is an <m>m \times n</m> matrix with more rows than columns
+        (<m>m \gt n</m>), then <m>A</m> cannot have a pivot in every row: there is at
+        most one pivot per column, and there are fewer columns than rows. Hence the
+        transformation <m>T(\vec{x}) = A\vec{x}</m> is <em>never</em> onto. This is
+        the mirror image of <xref ref="rem-wide-never-injective" text="type-global"/>:
+        a transformation from a smaller space into a bigger space cannot fill up its
+        codomain.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-injective-surjective-together">
+    <title>One-to-One and Onto Together</title>
+
+    <p>
+      Both properties are read off from the pivots of <m>A</m>:
+    </p>
+    <p>
+      <ul>
+        <li>
+          <p>
+            <m>T</m> is <em>one-to-one</em> if and only if <m>A</m> has a pivot in
+            every <em>column</em>, that is, if and only if the columns of <m>A</m> are
+            linearly independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T</m> is <em>onto</em> if and only if <m>A</m> has a pivot in every
+            <em>row</em>, that is, if and only if the columns of <m>A</m> span
+            <m>\R^m</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      A transformation can have either property without the other, both, or neither.
+      The two examples below complete the picture.
+    </p>
+
+    <example xml:id="eg-neither-injective-nor-surjective">
+      <title>A Transformation That Is Neither One-to-One Nor Onto</title>
+      <statement>
+        <p>
+          Let <m>T : \R^3 \to \R^2</m> be the matrix transformation
+          <m>T(\vec{x}) = A\vec{x}</m>, where
+          <m>A = \begin{bmatrix} 1 \amp 2 \amp -1 \\ 2 \amp 4 \amp -2 \end{bmatrix}</m>.
+          Show that <m>T</m> is neither one-to-one nor onto.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reducing,
+          <md>
+            \begin{bmatrix} 1 \amp 2 \amp -1 \\ 2 \amp 4 \amp -2 \end{bmatrix}
+            \xrightarrow{r_2 - 2r_1}
+            \begin{bmatrix} 1 \amp 2 \amp -1 \\ 0 \amp 0 \amp 0 \end{bmatrix},
+          </md>
+          so <m>A</m> has a single pivot. There is no pivot in the second or third
+          column, so <m>A\vec{x} = \vec{0}</m> has two free variables and <m>T</m> is
+          not one-to-one: the solution set of <m>T(\vec{x}) = \vec{0}</m> is the entire
+          plane <m>x + 2y - z = 0</m>. There is also no pivot in the second row, so
+          <m>T</m> is not onto: the range is
+          <m>\Span\left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right\}</m>, a line in
+          <m>\R^2</m>, since every column of <m>A</m> is a multiple of
+          <m>\begin{bmatrix} 1 \\ 2 \end{bmatrix}</m>. For example,
+          <m>\vec{b} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is not on this line, so
+          <m>T(\vec{x}) = \vec{b}</m> has no solution.
+        </p>
+        <figure xml:id="fig-neither-geometric">
+          <caption>
+            The transformation <m>T(\vec{x}) = A\vec{x}</m> for
+            <m>A = \left[\begin{smallmatrix} 1 \amp 2 \amp -1 \\ 2 \amp 4 \amp -2 \end{smallmatrix}\right]</m>.
+            The violet plane on the left is the solution set of
+            <m>T(\vec{x}) = \vec{b}</m> for the current <m>\vec{b}</m>; since it
+            contains more than one point, <m>T</m> is not one-to-one. The violet line
+            on the right is the range of <m>T</m>; since it is smaller than
+            <m>\R^2</m>, <m>T</m> is not onto. Drag <m>\vec{b}</m> off the line to
+            make the equation inconsistent.
+          </caption>
+          <interactive xml:id="int-neither-geometric" iframe="demos/Axequalsb.html?mat=1,2,-1:2,4,-2&amp;range2=5&amp;closed=true&amp;show=true&amp;x=1,1,1" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <example xml:id="eg-both-injective-and-surjective">
+      <title>A Transformation That Is Both One-to-One and Onto</title>
+      <statement>
+        <p>
+          Let <m>T : \R^2 \to \R^2</m> be the matrix transformation
+          <m>T(\vec{x}) = A\vec{x}</m>, where
+          <m>A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m>.
+          Show that <m>T</m> is both one-to-one and onto.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reducing,
+          <md>
+            \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}
+            \xrightarrow{r_1 \leftrightarrow r_2}
+            \begin{bmatrix} 1 \amp 1 \\ 2 \amp 1 \end{bmatrix}
+            \xrightarrow{r_2 - 2r_1}
+            \begin{bmatrix} 1 \amp 1 \\ 0 \amp -1 \end{bmatrix}
+            \xrightarrow[r_1 + r_2]{-r_2}
+            \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix},
+          </md>
+          so <m>A</m> has a pivot in every column (<m>T</m> is one-to-one) and in every
+          row (<m>T</m> is onto). In fact, for every <m>\vec{b} \in \R^2</m> the
+          equation <m>T(\vec{x}) = \vec{b}</m> has <em>exactly one</em> solution,
+          <md>
+            \vec{x} = \begin{bmatrix} 1 \amp -1 \\ -1 \amp 2 \end{bmatrix} \vec{b},
+          </md>
+          as can be checked by multiplying the two matrices. (We will study such
+          <em>invertible</em> matrices in detail later.)
+        </p>
+        <figure xml:id="fig-both-geometric">
+          <caption>
+            The transformation <m>T(\vec{x}) = A\vec{x}</m> for
+            <m>A = \left[\begin{smallmatrix} 2 \amp 1 \\ 1 \amp 1 \end{smallmatrix}\right]</m>.
+            Drag either vector: every output <m>\vec{b}</m> comes from exactly one
+            input <m>\vec{x}</m>, so <m>T</m> is one-to-one and onto. The violet
+            region on the right is the range of <m>T</m>, which is all of <m>\R^2</m>.
+          </caption>
+          <interactive xml:id="int-both-geometric" iframe="demos/Axequalsb.html?mat=2,1:1,1&amp;range2=5&amp;closed=true&amp;show=true&amp;x=1,1" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-square-injective-iff-surjective">
+      <title>Square Matrices: One-to-One Equals Onto</title>
+      <p>
+        For an <m>n \times n</m> matrix <m>A</m>, having a pivot in every column is the
+        same as having <m>n</m> pivots, which is the same as having a pivot in every
+        row. So for a square matrix, the transformation <m>T(\vec{x}) = A\vec{x}</m> is
+        one-to-one if and only if it is onto. For non-square matrices the two
+        properties are independent <mdash/> except that, by
+        <xref ref="rem-wide-never-injective" text="type-global"/> and
+        <xref ref="rem-tall-never-surjective" text="type-global"/>, a wide matrix is
+        never one-to-one and a tall matrix is never onto.
+      </p>
+    </remark>
   </subsection>
 </section>
