@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-linear-independence" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Independence</title>
+
+  <subsection xml:id="subsec-independence-definition">
+    <title>Definition and First Examples</title>
+
+    <definition xml:id="def-linear-independence">
+      <title>Linearly Independent Set of Vectors</title>
+      <statement>
+        <p>
+          Let <m>\{ \vec{u}_1, \vec{u}_2, \ldots, \vec{u}_k \}</m> be a set of vectors in
+          <m>\R^n</m>. This set is <term>linearly independent</term> if no vector in the
+          set is in the span of the other vectors of that set.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-independence-by-definition">
+      <title>Testing Independence from the Definition</title>
+      <statement>
+        <p>
+          Consider the vectors
+          <md>
+            \vec{u} = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}, \qquad
+            \vec{v} = \begin{bmatrix} 0 \\ 2 \\ 3 \end{bmatrix}, \qquad
+            \vec{w} = \begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}.
+          </md>
+          Is the set <m>\{ \vec{u}, \vec{v}, \vec{w} \}</m> linearly independent?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(I)</term> We can easily see that <m>\vec{w}</m> is not in
+          <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>, since that span is the
+          <m>yz</m>-plane by <xref ref="eg-span-plane" text="type-global" />, while the
+          first entry of <m>\vec{w}</m> is <m>1 \neq 0</m>.
+        </p>
+        <p>
+          <term>(II)</term> Solving <m>x_1 \vec{v} + x_2 \vec{w} = \vec{u}</m> leads to
+          <md>
+            \left[ \begin{array}{cc|c}
+              0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 1 \\ 3 \amp 2 \amp 2
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp \frac{1}{2} \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp -\frac{1}{4}
+            \end{array} \right],
+          </md>
+          which has no solution. Hence <m>\vec{u}</m> is not in
+          <m>\operatorname{Span}\{ \vec{v}, \vec{w} \}</m>.
+        </p>
+        <p>
+          <term>(III)</term> Similarly, one can show that
+          <m>x_1 \vec{u} + x_2 \vec{w} = \vec{v}</m> has no solution, which means
+          <m>\vec{v}</m> is not in <m>\operatorname{Span}\{ \vec{u}, \vec{w} \}</m>.
+        </p>
+        <p>
+          From (I), (II), and (III), we can conclude that
+          <m>\{ \vec{u}, \vec{v}, \vec{w} \}</m> is a linearly independent set.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-independence-as-combination">
+    <title>Linear Independence as a Linear Combination</title>
+
+    <p>
+      Checking every vector against the span of all the others, as we just did, is
+      laborious. The following theorem provides a familiar way to check if a set of
+      vectors is linearly independent.
+    </p>
+
+    <theorem xml:id="thm-independence-trivial-solution">
+      <title>Independence and the Trivial Solution</title>
+      <statement>
+        <p>
+          The collection of vectors <m>\{ \vec{u}_1, \ldots, \vec{u}_k \}</m> in
+          <m>\R^n</m> is linearly independent if and only if whenever
+          <md>
+            \sum_{i=1}^{k} a_i \vec{u}_i = \vec{0}
+          </md>
+          it follows that each <m>a_i = 0</m>.
+        </p>
+        <p>
+          Thus <m>\{ \vec{u}_1, \ldots, \vec{u}_k \}</m> in <m>\R^n</m> is linearly
+          independent exactly when the system of linear equations <m>AX = 0</m> has only
+          the trivial solution, where <m>A</m> is the <m>n \times k</m> matrix having
+          these vectors as columns.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If some <m>a_i \neq 0</m>, we may solve for <m>\vec{u}_i</m> in terms of the
+          other vectors, exhibiting <m>\vec{u}_i</m> as a member of the span of the
+          others. Conversely, if some <m>\vec{u}_i</m> lies in the span of the others,
+          say <m>\vec{u}_i = \sum_{j \neq i} c_j \vec{u}_j</m>, then
+          <m>\sum_{j \neq i} c_j \vec{u}_j - \vec{u}_i = \vec{0}</m> is a nontrivial
+          relation, since the coefficient of <m>\vec{u}_i</m> is <m>-1 \neq 0</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-express-as-combination">
+      <title>Expressing a Vector as a Linear Combination</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix}
+              1 \amp 0 \amp 2 \amp -1 \\
+              2 \amp -1 \amp 0 \amp 1 \\
+              3 \amp 1 \amp 3 \amp 1
+            \end{bmatrix}
+            \qquad \text{and} \qquad
+            B = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}.
+          </md>
+          Express <m>B</m> as a linear combination of the columns
+          <m>A_1, A_2, A_3, A_4</m> of <m>A</m>, or show that this is impossible.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Consider <m>C = \begin{bmatrix} A \amp \vec{B} \end{bmatrix}</m>. As stated in
+          <xref ref="thm-independence-trivial-solution" text="type-global" />, if
+          <m>C\vec{X} = \vec{0}</m> has only the trivial solution, then
+          <m>\{ \vec{A}_1, \vec{A}_2, \vec{A}_3, \vec{A}_4, \vec{B} \}</m> is a linearly
+          independent set. If this is the case, we will not be able to write <m>\vec{B}</m>
+          as a linear combination of the columns of <m>A</m>.
+        </p>
+        <p>
+          Also, if <m>C\vec{X} = \vec{0}</m> has a nontrivial solution, then we have
+          <md>
+            a_1 \vec{A}_1 + a_2 \vec{A}_2 + a_3 \vec{A}_3 + a_4 \vec{A}_4 + a_5 \vec{B} = \vec{0},
+          </md>
+          and if <m>a_5 \neq 0</m>, then
+          <md>
+            \vec{B} = -\frac{1}{a_5}
+            \left( a_1 \vec{A}_1 + a_2 \vec{A}_2 + a_3 \vec{A}_3 + a_4 \vec{A}_4 \right).
+          </md>
+        </p>
+        <p>
+          Row reducing,
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccccc|c}
+                1 \amp 0 \amp 2 \amp -1 \amp 1 \amp 0 \\
+                2 \amp -1 \amp 0 \amp 1 \amp 1 \amp 0 \\
+                3 \amp 1 \amp 3 \amp 1 \amp 1 \amp 0
+              \end{array} \right]
+              \amp \xrightarrow[-3r_1 + r_3]{-2r_1 + r_2}
+              \left[ \begin{array}{ccccc|c}
+                1 \amp 0 \amp 2 \amp -1 \amp 1 \amp 0 \\
+                0 \amp -1 \amp -4 \amp 3 \amp -1 \amp 0 \\
+                0 \amp 1 \amp -3 \amp 4 \amp -2 \amp 0
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{r_2 + r_3}
+              \left[ \begin{array}{ccccc|c}
+                1 \amp 0 \amp 2 \amp -1 \amp 1 \amp 0 \\
+                0 \amp -1 \amp -4 \amp 3 \amp -1 \amp 0 \\
+                0 \amp 0 \amp -7 \amp 7 \amp -3 \amp 0
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[-\frac{1}{7} r_3]{-r_2}
+              \left[ \begin{array}{ccccc|c}
+                1 \amp 0 \amp 2 \amp -1 \amp 1 \amp 0 \\
+                0 \amp 1 \amp 4 \amp -3 \amp 1 \amp 0 \\
+                0 \amp 0 \amp 1 \amp -1 \amp \frac{3}{7} \amp 0
+              \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          With <m>x_4 = s</m> and <m>x_5 = t</m> free, back-substitution gives
+          <md>
+            <mrow>
+              x_1 \amp = -s - \tfrac{1}{7}t
+            </mrow>
+            <mrow>
+              x_2 \amp = -s + \tfrac{5}{7}t
+            </mrow>
+            <mrow>
+              x_3 \amp = s - \tfrac{3}{7}t
+            </mrow>
+            <mrow>
+              x_4 \amp = s
+            </mrow>
+            <mrow>
+              x_5 \amp = t, \qquad \text{where } s, t \in \R.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          For <m>s = 1</m> and <m>t = -1</m> we get
+          <m>x_1 = -\frac{6}{7}</m>, <m>x_2 = -\frac{12}{7}</m>,
+          <m>x_3 = \frac{10}{7}</m>, <m>x_4 = 1</m>, <m>x_5 = -1</m>, so
+          <md>
+            -\tfrac{6}{7}\vec{A}_1 - \tfrac{12}{7}\vec{A}_2 + \tfrac{10}{7}\vec{A}_3
+            + \vec{A}_4 - \vec{B} = \vec{0}.
+          </md>
+          Since <m>a_5 = -1 \neq 0</m>, we may solve for <m>\vec{B}</m>. As an example,
+          <m>\vec{B}</m> can be written as the following linear combination of the columns
+          of <m>A</m>:
+          <md>
+            \vec{B} = -\tfrac{6}{7}\vec{A}_1 - \tfrac{12}{7}\vec{A}_2
+            + \tfrac{10}{7}\vec{A}_3 + \vec{A}_4.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-too-many-vectors">
+      <title>Too Many Vectors</title>
+      <statement>
+        <p>
+          Any set <m>\{ \vec{A}_1, \vec{A}_2, \ldots, \vec{A}_k \}</m> in <m>\R^n</m> is
+          linearly dependent if <m>k \gt n</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <remark xml:id="rem-too-many-vectors">
+      <p>
+        In <xref ref="eg-express-as-combination" text="type-global" /> above, the set
+        <m>\{ \vec{A}_1, \vec{A}_2, \vec{A}_3, \vec{A}_4, \vec{B} \}</m> in <m>\R^3</m>
+        was shown to be a linearly dependent set. Note that the number of vectors in the
+        set is more than the number of entries in each vector.
+      </p>
+      <p>
+        The reason is that the associated homogeneous system has <m>n</m> equations in
+        <m>k</m> unknowns; with <m>k \gt n</m> there are at most <m>n</m> pivots and hence
+        at least one free variable, so a nontrivial solution exists.
+      </p>
+    </remark>
+  </subsection>
+</section>

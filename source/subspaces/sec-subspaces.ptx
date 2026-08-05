@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-subspaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Subspaces</title>
+
+  <introduction>
+    <p>
+      Some subsets of <m>\R^n</m> are closed under the two operations we care about:
+      adding two of their vectors, or scaling one, never takes you outside the subset.
+      These are the subspaces, and they turn out to be exactly the spans.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-subspace-definition">
+    <title>Definition and Examples</title>
+
+    <definition xml:id="def-subspace">
+      <title>Subspace</title>
+      <statement>
+        <p>
+          Let <m>H</m> be a <em>nonempty</em> collection of vectors in <m>\R^n</m>. Then
+          <m>H</m> is a <term>subspace</term> if whenever <m>a</m> and <m>b</m> are
+          scalars and <m>\vec{u}</m> and <m>\vec{v}</m> are vectors in <m>H</m>,
+          <m>a\vec{u} + b\vec{v}</m> is also in <m>H</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-subspace-or-not">
+      <title>Which of These Is a Subspace?</title>
+      <statement>
+        <p>
+          Among the collection of vectors described below, which one is a subspace of
+          <m>\R^n</m>?
+        </p>
+        <p>
+          <ol>
+            <li><p>A plane through the origin in <m>\R^3</m>.</p></li>
+            <li><p>A line not containing the origin in <m>\R^2</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(A) Yes, this is a subspace.</term>
+          <ol>
+            <li><p>This subset of <m>\R^3</m> contains the zero vector.</p></li>
+            <li>
+              <p>
+                If two vectors are on this plane, so is any linear combination of them.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <term>(B) No, this is not a subspace.</term>
+          Note that, for example, <m>\vec{u}</m> is in the subset of vectors drawn along
+          the line, however <m>-\vec{u}</m> is not. Hence this subset of vectors in
+          <m>\R^2</m> is NOT a subspace of <m>\R^2</m>.
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-plane-subspace">
+      <caption>
+        A plane through the origin in <m>\R^3</m> is closed under linear combinations: if
+        <m>\vec{u}</m> and <m>\vec{v}</m> lie in <m>H</m>, so does
+        <m>a\vec{u} + b\vec{v}</m>.
+      </caption>
+      <image width="58%">
+        <latex-image>
+          \begin{tikzpicture}[scale=1, every node/.style={font=\small}]
+            \fill[blue!8] (-1.6,-0.9) -- (3.4,-0.9) -- (4.6,1.3) -- (-0.4,1.3) -- cycle;
+            \draw[blue!45] (-1.6,-0.9) -- (3.4,-0.9) -- (4.6,1.3) -- (-0.4,1.3) -- cycle;
+            \coordinate (O) at (0.9,0.05);
+            \draw[green!55!black, very thick, -{Stealth[length=2.2mm]}] (O) -- ++(0.55,0.85)
+              node[above left, black] {$\vec{v}$};
+            \draw[red, very thick, -{Stealth[length=2.2mm]}] (O) -- ++(1.9,-0.15)
+              node[below right, black] {$\vec{u}$};
+            \draw[violet, very thick, -{Stealth[length=2.2mm]}] (O) -- ++(2.45,0.7)
+              node[above right, black] {$a\vec{u}+b\vec{v}$};
+            \node at (0.1,-0.62) {$H$};
+            \node at (2.0,1.05) {$ax+by+cz=0$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <figure xml:id="fig-line-not-subspace">
+      <caption>
+        A line in <m>\R^2</m> that misses the origin is not a subspace: <m>\vec{u}</m>
+        lies on the line but <m>-\vec{u}</m> does not.
+      </caption>
+      <image width="50%">
+        <prefigure label="pf-line-not-subspace" xmlns="https://prefigure.org">
+          <diagram dimensions="(300,280)" margins="10">
+            <coordinates bbox="(-2.6,-2.4,2.8,2.4)">
+              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+              <line endpoints="((-2.6,0.2),(2.6,2.0))" stroke="red" thickness="2"/>
+              <line endpoints="((0,0),(1.4,1.58))" stroke="green" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(-1.4,-1.58))" stroke="magenta" thickness="2" arrows="1"/>
+              <label p="(1.4,1.58)" alignment="e" offset="(6,2)" color="green"><m>\vec{u}</m></label>
+              <label p="(-1.4,-1.58)" alignment="w" offset="(-6,-2)" color="magenta"><m>-\vec{u}</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <example xml:id="eg-subspace-contains-zero">
+      <title>True or False?</title>
+      <statement>
+        <p>Any subspace <m>H</m> of <m>\R^n</m> contains the zero vector.</p>
+      </statement>
+      <solution>
+        <p>
+          This is true. Note that since a subspace is nonempty, it has at least one
+          element <m>\vec{u}</m>. But then <m>0\vec{u} = \vec{0}</m> is in <m>H</m> since
+          <m>H</m> is closed under scalar multiplication.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-not-subspace-affine">
+      <title>A Set That Misses the Origin</title>
+      <statement>
+        <p>
+          Is the set
+          <m>T = \left\{ \begin{bmatrix} x - 1 \\ x + 1 \end{bmatrix}, \; x \in \R \right\}</m>
+          a subspace of <m>\R^2</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No. Clearly <m>\vec{0} \notin T</m>, since
+          <m>\begin{bmatrix} x-1 \\ x+1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</m>
+          is an inconsistent system: it would need <m>x = 1</m> and <m>x = -1</m> at once.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-subspace-line">
+      <title>A Line through the Origin Is a Subspace</title>
+      <statement>
+        <p>
+          Is the set
+          <m>T = \left\{ \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} t \; : \; t \in \R \right\}</m>
+          a subspace of <m>\R^3</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Yes.
+        </p>
+        <p>
+          <term>(I)</term> Choose <m>t = 0</m> to see that <m>\vec{0} \in T</m>.
+        </p>
+        <p>
+          <term>(II)</term> For any <m>\vec{u}</m> and <m>\vec{v}</m> in <m>T</m>,
+          <m>a\vec{u} + b\vec{v}</m> is also in <m>T</m>. If
+          <m>\vec{u} = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} t_1</m> and
+          <m>\vec{v} = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} t_2</m>, then
+          <md>
+            <mrow>
+              a\vec{u} + b\vec{v}
+              \amp = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} a t_1
+                   + \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} b t_2
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} \left( a t_1 + b t_2 \right)
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} t_3,
+                \qquad \text{where } t_3 \in \R.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-subspaces-of-r3">
+      <title>Examples of Subspaces of <m>\R^3</m></title>
+      <p>
+        <term>(I)</term>
+        <m>H_1 = \left\{ \begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \R^3 : x = y = z \right\}</m>.
+        Note that this is a line that passes through the origin and can be thought of as
+        <m>H_1 = \operatorname{Span}\left\{ \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \right\}</m>.
+      </p>
+      <p>
+        <term>(II)</term>
+        <m>H_2 = \left\{ \begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \R^3 : x - y = 0 \right\}</m>.
+        Note that this is a plane that passes through the origin and can be thought of as
+        <m>H_2 = \operatorname{Span}\left\{ \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}</m>.
+      </p>
+      <p>
+        <term>(III)</term>
+        <md>
+          H_3 = \R^3
+          = \operatorname{Span}\left\{
+            \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+            \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
+            \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}
+          = \operatorname{Span}\left\{
+            \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix},
+            \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix},
+            \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix} \right\},
+        </md>
+        since
+        <md>
+          \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+          = \left( \frac{x+y}{2} \right) \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
+          + \left( \frac{x-y}{2} \right) \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}
+          + z \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-subspaces-are-spans">
+    <title>Subspaces Are Spans</title>
+
+    <theorem xml:id="thm-subspaces-are-spans">
+      <title>Subspaces Are Spans and Spans Are Subspaces</title>
+      <statement>
+        <p>
+          Let <m>H</m> be a nonempty collection of vectors in <m>\R^n</m>. Then <m>H</m>
+          is a subspace of <m>\R^n</m> if and only if there exist vectors
+          <m>\{ \vec{u}_1, \ldots, \vec{u}_k \}</m> in <m>H</m> such that
+          <md>
+            H = \operatorname{Span}\{ \vec{u}_1, \ldots, \vec{u}_k \}.
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We only show that if <m>H</m> is a subspace, then
+          <m>H = \operatorname{Span}\{ \vec{u}_1, \ldots, \vec{u}_k \}</m>.
+        </p>
+        <p>
+          Pick a vector <m>\vec{u}_1 \in H</m>. If
+          <m>H = \operatorname{Span}\{ \vec{u}_1 \}</m>, then we are done. If
+          <m>H \neq \operatorname{Span}\{ \vec{u}_1 \}</m>, then there exists another
+          vector <m>\vec{u}_2 \in H</m> which is not in
+          <m>\operatorname{Span}\{ \vec{u}_1 \}</m>. Now consider
+          <m>\operatorname{Span}\{ \vec{u}_1, \vec{u}_2 \}</m>. If
+          <m>H = \operatorname{Span}\{ \vec{u}_1, \vec{u}_2 \}</m>, then we are done.
+          Otherwise, pick
+          <m>\vec{u}_3 \notin \operatorname{Span}\{ \vec{u}_1, \vec{u}_2 \}</m>.
+        </p>
+        <p>
+          If we continue this way, the process must stop with <m>\vec{u}_k</m>, where
+          <m>k \leq n</m>, and thus
+          <m>H = \operatorname{Span}\{ \vec{u}_1, \ldots, \vec{u}_k \}</m>. The process
+          must terminate because, as we discussed in
+          <xref ref="thm-too-many-vectors" text="type-global" />, in <m>\R^n</m>, if
+          <m>k \gt n</m> then the set <m>\{ \vec{u}_1, \vec{u}_2, \ldots, \vec{u}_k \}</m>
+          is linearly dependent.
+        </p>
+      </proof>
+    </theorem>
+
+    <corollary xml:id="cor-subspaces-independent-spans">
+      <title>Subspaces Are Spans of Linearly Independent Vectors</title>
+      <statement>
+        <p>
+          If <m>H</m> is a subspace of <m>\R^n</m>, then there exist linearly independent
+          vectors <m>\{ \vec{u}_1, \ldots, \vec{u}_k \}</m> of <m>H</m> such that
+          <md>
+            H = \operatorname{Span}\{ \vec{u}_1, \ldots, \vec{u}_k \}.
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Since the vectors <m>\vec{u}_i</m> we picked in the proof above are not in the
+          span of the previous vectors, they must be linearly independent.
+        </p>
+      </proof>
+    </corollary>
+
+    <example xml:id="eg-subspace-of-r3-parametrized">
+      <title>Recognizing a Subspace from a Parametrization</title>
+      <statement>
+        <p>
+          Is the set
+          <m>V = \left\{ \begin{bmatrix} a - 3b \\ 2a + b \\ a \end{bmatrix}, \; a, b \in \R \right\}</m>
+          a subspace of <m>\R^3</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Yes, since
+          <md>
+            \begin{bmatrix} a - 3b \\ 2a + b \\ a \end{bmatrix}
+            = a \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+            + b \begin{bmatrix} -3 \\ 1 \\ 0 \end{bmatrix},
+          </md>
+          which means
+          <m>V = \operatorname{Span}\left\{ \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} -3 \\ 1 \\ 0 \end{bmatrix} \right\}</m>.
+        </p>
+        <p>
+          Hence, from <xref ref="thm-subspaces-are-spans" text="type-global" />, we can
+          conclude that <m>V</m> is a subspace of <m>\R^3</m>. The set
+          <m>\left\{ \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \begin{bmatrix} -3 \\ 1 \\ 0 \end{bmatrix} \right\}</m>
+          is a linearly independent spanning set for <m>V</m>.
+        </p>
+        <p>
+          Note that <m>V</m> can also be written as
+          <md>
+            V = \operatorname{Span}\left\{
+              \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix},
+              \begin{bmatrix} -3 \\ 1 \\ 0 \end{bmatrix},
+              \begin{bmatrix} -2 \\ 3 \\ 1 \end{bmatrix} \right\},
+          </md>
+          where this spanning set is <em>not</em> linearly independent, since
+          <m>\begin{bmatrix} -2 \\ 3 \\ 1 \end{bmatrix}
+          = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} + \begin{bmatrix} -3 \\ 1 \\ 0 \end{bmatrix}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

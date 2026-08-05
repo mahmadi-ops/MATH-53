@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-more-markov" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Long-Run Behaviour: Two More Examples</title>
+
+  <introduction>
+    <p>
+      When a matrix is diagonalizable, writing the initial state in a basis of
+      eigenvectors makes the long-run behaviour transparent: the term belonging to the
+      largest eigenvalue dominates, and everything else decays.
+    </p>
+  </introduction>
+
+  <example xml:id="eg-truck-rental">
+    <title>Truck Rentals</title>
+    <statement>
+      <p>
+        A truck rental company has <m>3</m> locations, where you can rent moving trucks.
+        You can return them to any other location. For simplicity, suppose that every
+        customer returns their truck the next day. Let <m>V_k</m> be the vector whose
+        entries are the number of trucks in locations <m>1</m>, <m>2</m>, and <m>3</m>,
+        respectively. Let <m>A</m> be the matrix whose <m>(i,j)</m>-entry is the
+        probability that a customer renting a truck from location <m>j</m> returns it to
+        location <m>i</m>. Consider
+        <md>
+          A = \begin{bmatrix}
+            0.3 \amp 0.4 \amp 0.5 \\
+            0.3 \amp 0.4 \amp 0.3 \\
+            0.4 \amp 0.2 \amp 0.2
+          \end{bmatrix}.
+        </md>
+        Assume that initially the trucks are distributed in the <m>3</m> locations as
+        <m>\vec{V}_0 = \begin{bmatrix} 7 \\ 3 \\ 8 \end{bmatrix}</m>, and find out the
+        percentages of trucks that will be distributed in each location in the long run.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Expanding <m>\det(A - \lambda I) = 0</m> and factoring gives
+        <md>
+          -(\lambda + 0.2)(1 - \lambda)(0.1 - \lambda) = 0,
+          \qquad \text{so} \qquad
+          \lambda_1 = 1, \quad \lambda_2 = -0.2, \quad \lambda_3 = 0.1.
+        </md>
+        Here <m>\lambda_1 = 1</m> is the <term>dominant eigenvalue</term>.
+      </p>
+      <p>
+        <term>For <m>\lambda_1 = 1</m>:</term> row reducing
+        <m>(A - I)\vec{x} = \vec{0}</m> gives
+        <md>
+          \vec{x} = \begin{bmatrix} \frac{7}{5}t \\ \frac{6}{5}t \\ t \end{bmatrix}
+          = \frac{t}{5} \begin{bmatrix} 7 \\ 6 \\ 5 \end{bmatrix},
+          \qquad \text{so} \qquad
+          \vec{x}_1 = \begin{bmatrix} 7 \\ 6 \\ 5 \end{bmatrix}.
+        </md>
+      </p>
+      <p>
+        Similarly, for the other eigenvalues we find
+        <md>
+          \vec{x}_2 = \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} \text{ for } \lambda_2 = -0.2,
+          \qquad
+          \vec{x}_3 = \begin{bmatrix} 1 \\ -3 \\ 2 \end{bmatrix} \text{ for } \lambda_3 = 0.1.
+        </md>
+        The set <m>\{ \vec{x}_1, \vec{x}_2, \vec{x}_3 \}</m> is linearly independent since
+        the <m>\vec{x}_i</m> are eigenvectors of <m>A</m> for distinct eigenvalues. Hence
+        we can write <m>\vec{V}_0 = a_1\vec{x}_1 + a_2\vec{x}_2 + a_3\vec{x}_3</m> and
+        <md>
+          <mrow>
+            A^k \vec{V}_0
+            \amp = A^k \left( a_1\vec{x}_1 + a_2\vec{x}_2 + a_3\vec{x}_3 \right)
+          </mrow>
+          <mrow>
+            \amp = a_1 \left( A^k \vec{x}_1 \right) + a_2 \left( A^k \vec{x}_2 \right)
+                 + a_3 \left( A^k \vec{x}_3 \right)
+          </mrow>
+          <mrow>
+            \amp = a_1 \lambda_1^k \vec{x}_1 + a_2 \lambda_2^k \vec{x}_2
+                 + a_3 \lambda_3^k \vec{x}_3.
+          </mrow>
+        </md>
+      </p>
+      <p>
+        <term>(I)</term> When <m>k \to \infty</m>, the dominant term is
+        <m>a_1 \lambda_1^k \vec{x}_1</m>, since <m>|\lambda_2|, |\lambda_3| \lt 1</m> and
+        so those terms decay to zero.
+      </p>
+      <p>
+        <term>(II)</term> In this problem
+        <m>\vec{V}_0 = \vec{x}_1 + \vec{x}_2 + \vec{x}_3</m>, which means
+        <m>a_1 = 1</m>. Therefore
+        <md>
+          A^k \vec{V}_0 \; \longrightarrow \; (1)(1)^k \begin{bmatrix} 7 \\ 6 \\ 5 \end{bmatrix}
+          = \begin{bmatrix} 7 \\ 6 \\ 5 \end{bmatrix}
+          \qquad \text{as } k \to \infty.
+        </md>
+        In the long run the <m>18</m> trucks distribute themselves as <m>7</m>, <m>6</m>,
+        and <m>5</m> among the three locations.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="eg-owls">
+    <title>An Owl Population</title>
+    <statement>
+      <p>
+        Consider an owl population of <m>100</m> adult females and <m>40</m> juvenile
+        females. As biologists, we wish to study the growth of the population having
+        determined the following.
+        <ol>
+          <li>
+            <p>
+              The number of juvenile females hatched in any year is twice the number of
+              adult females in the previous year.
+            </p>
+          </li>
+          <li><p>Half the adult females in any year survive to the next year.</p></li>
+          <li>
+            <p>
+              One quarter of the juvenile females in any year survive to adulthood.
+            </p>
+          </li>
+        </ol>
+        Will the owls survive?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>a_n</m> be the number of adult females after <m>n</m> years and let
+        <m>j_n</m> be the number of juvenile females after <m>n</m> years. The three
+        conditions say
+        <md>
+          j_{n+1} = 2a_n,
+          \qquad
+          a_{n+1} = \frac{a_n}{2} + \frac{j_n}{4}.
+        </md>
+      </p>
+      <p>
+        Writing the state vector after <m>n</m> years as
+        <m>V_n = \begin{bmatrix} a_n \\ j_n \end{bmatrix}</m> with
+        <m>V_0 = \begin{bmatrix} 100 \\ 40 \end{bmatrix}</m>, we get
+        <md>
+          V_{n+1} = \begin{bmatrix} \frac{a_n}{2} + \frac{j_n}{4} \\ 2a_n \end{bmatrix}
+          = \begin{bmatrix} \frac{1}{2} \amp \frac{1}{4} \\ 2 \amp 0 \end{bmatrix}
+            \begin{bmatrix} a_n \\ j_n \end{bmatrix}
+          = A V_n.
+        </md>
+      </p>
+      <p>
+        The matrix <m>A = \begin{bmatrix} \frac{1}{2} \amp \frac{1}{4} \\ 2 \amp 0 \end{bmatrix}</m>
+        has two eigenvalues <m>\lambda_1 = 1</m> and <m>\lambda_2 = -\frac{1}{2}</m>, with
+        eigenvectors
+        <m>\vec{x}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m> and
+        <m>\vec{x}_2 = \begin{bmatrix} -1 \\ 4 \end{bmatrix}</m>. Hence
+        <md>
+          D = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -\frac{1}{2} \end{bmatrix},
+          \qquad
+          P = \begin{bmatrix} 1 \amp -1 \\ 2 \amp 4 \end{bmatrix},
+          \qquad
+          P^{-1} = \frac{1}{6} \begin{bmatrix} 4 \amp 1 \\ -2 \amp 1 \end{bmatrix}.
+        </md>
+      </p>
+      <p>
+        Therefore
+        <md>
+          V_n = A^n V_0 = P D^n P^{-1} V_0
+          = \frac{1}{6} \begin{bmatrix}
+              440 + 160 \left( -\frac{1}{2} \right)^n \\
+              880 - 640 \left( -\frac{1}{2} \right)^n
+            \end{bmatrix}.
+        </md>
+      </p>
+      <p>
+        We can also approximate <m>V_n</m> directly from the dominant eigenvalue. Writing
+        <m>\begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = P^{-1}V_0</m>,
+        <md>
+          b_1 = \frac{1}{6} \begin{bmatrix} 4 \amp 1 \end{bmatrix}
+                \begin{bmatrix} 100 \\ 40 \end{bmatrix} = \frac{220}{3},
+        </md>
+        so
+        <md>
+          V_n \approx b_1 \lambda_1^n \vec{x}_1
+          = \left( \frac{220}{3} \right) (1)^n \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          = \begin{bmatrix} \frac{220}{3} \\ \frac{440}{3} \end{bmatrix},
+        </md>
+        which agrees with our previous result as <m>n \to \infty</m>.
+      </p>
+      <p>
+        So the owls survive: since <m>\lambda_1 = 1</m>, the population neither grows
+        without bound nor dies out, but settles at roughly <m>73</m> adult and <m>147</m>
+        juvenile females.
+      </p>
+    </solution>
+  </example>
+</section>

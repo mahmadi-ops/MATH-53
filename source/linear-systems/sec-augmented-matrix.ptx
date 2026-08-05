@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-augmented-matrix" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Augmented Matrix and Echelon Forms</title>
+
+  <introduction>
+    <p>
+      When we apply elementary operations, the variable names never change <mdash /> only
+      the coefficients and constants do. So we may as well drop the variables and record
+      just the numbers. This bookkeeping device is the augmented matrix.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-augmented-matrix">
+    <title>The Augmented Matrix</title>
+
+    <example xml:id="eg-augmented-matrix">
+      <title>Forming the Augmented Matrix</title>
+      <p>
+        The system of linear equations
+        <md>
+          <mrow>
+            x_1 - 2x_2 - 7x_3 \amp = -1
+          </mrow>
+          <mrow>
+            -x_1 + 3x_2 + 6x_3 \amp = 0
+          </mrow>
+        </md>
+        is represented by the <term>augmented matrix</term>
+        <md>
+          \left[ \begin{array}{ccc|c}
+            1 \amp -2 \amp -7 \amp -1 \\
+            -1 \amp 3 \amp 6 \amp 0
+          \end{array} \right].
+        </md>
+      </p>
+      <p>
+        Two other matrices associated with a system of linear equations are the
+        <term>coefficient matrix</term> and the <term>constant matrix</term>:
+        <md>
+          \begin{bmatrix} 1 \amp -2 \amp -7 \\ -1 \amp 3 \amp 6 \end{bmatrix},
+          \qquad
+          \begin{bmatrix} -1 \\ 0 \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+
+    <p>
+      The three elementary operations of
+      <xref ref="def-elementary-operations" text="type-global" /> become
+      <term>elementary row operations</term> on the augmented matrix. We use the
+      following notation, where <m>r_i</m> denotes row <m>i</m>:
+      <md>
+        <mrow>
+          r_i \leftrightarrow r_j \amp \qquad \text{interchange rows } i \text{ and } j,
+        </mrow>
+        <mrow>
+          k \, r_i \amp \qquad \text{multiply row } i \text{ by } k \neq 0,
+        </mrow>
+        <mrow>
+          k \, r_j + r_i \amp \qquad \text{add } k \text{ times row } j \text{ to row } i.
+        </mrow>
+      </md>
+    </p>
+
+    <example xml:id="eg-row-operations">
+      <title>Row Operations on an Augmented Matrix</title>
+      <statement>
+        <p>
+          Consider the system of linear equations
+          <md>
+            <mrow>
+              3x_1 - 2x_2 - 7x_3 \amp = -1
+            </mrow>
+            <mrow>
+              -x_1 + 3x_2 + 6x_3 \amp = 1
+            </mrow>
+            <mrow>
+              2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
+            </mrow>
+          </md>
+          with augmented matrix
+          <m>\left[ \begin{array}{ccc|c}
+            3 \amp -2 \amp -7 \amp -1 \\
+            -1 \amp 3 \amp 6 \amp 1 \\
+            2 \amp 0 \amp -1 \amp 3
+          \end{array} \right]</m>.
+          Carry out the operations of
+          <xref ref="eg-elementary-operations" text="type-global" /> in matrix form.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>Interchange the first two equations (two rows),</term> <m>r_1 \leftrightarrow r_2</m>:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              -1 \amp 3 \amp 6 \amp 1 \\
+              3 \amp -2 \amp -7 \amp -1 \\
+              2 \amp 0 \amp -1 \amp 3
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          <term>Add <m>3</m> times the second equation to the first equation,</term>
+          <m>3r_2 + r_1</m>:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              0 \amp 7 \amp 11 \amp 2 \\
+              -1 \amp 3 \amp 6 \amp 1 \\
+              2 \amp 0 \amp -1 \amp 3
+            \end{array} \right].
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-echelon-forms">
+    <title>Row-Echelon and Reduced Row-Echelon Matrices</title>
+
+    <definition xml:id="def-row-echelon">
+      <title>Row-Echelon Matrix</title>
+      <statement>
+        <p>
+          A matrix is a <term>row-echelon matrix</term> (REM) if
+          <ol>
+            <li><p>All rows consisting entirely of zeros are at the bottom.</p></li>
+            <li>
+              <p>
+                The first nonzero entry in each nonzero row is called a
+                <term>leading entry</term>.
+              </p>
+            </li>
+            <li>
+              <p>Each leading entry is to the right of all leading entries in rows above it.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-row-echelon-shape">
+      <title>The Shape of a Row-Echelon Matrix</title>
+      <p>
+        <md>
+          \begin{bmatrix}
+            0 \amp \square \amp * \amp * \amp * \amp * \amp * \amp * \\
+            0 \amp 0 \amp 0 \amp \square \amp * \amp * \amp * \amp * \\
+            0 \amp 0 \amp 0 \amp 0 \amp \square \amp * \amp * \amp * \\
+            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \square \amp * \\
+            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix}
+        </md>
+        Here <m>\square</m> can be any nonzero real number, and <m>*</m> can be any real
+        number.
+      </p>
+    </example>
+
+    <definition xml:id="def-reduced-row-echelon">
+      <title>Reduced Row-Echelon Matrix</title>
+      <statement>
+        <p>
+          A matrix is a <term>reduced row-echelon matrix</term> (RREM) if
+          <ol>
+            <li><p>It is a row-echelon matrix.</p></li>
+            <li><p>The leading entry in each nonzero row is <m>1</m>.</p></li>
+            <li><p>Each leading <m>1</m> is the only nonzero entry in its column.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-reduced-row-echelon-shape">
+      <title>The Shape of a Reduced Row-Echelon Matrix</title>
+      <p>
+        <md>
+          \begin{bmatrix}
+            0 \amp 1 \amp * \amp 0 \amp 0 \amp * \amp 0 \amp * \\
+            0 \amp 0 \amp 0 \amp 1 \amp 0 \amp * \amp 0 \amp * \\
+            0 \amp 0 \amp 0 \amp 0 \amp 1 \amp * \amp 0 \amp * \\
+            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1 \amp * \\
+            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix}
+        </md>
+        Here <m>*</m> can be any real number.
+      </p>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-pivots">
+    <title>Pivots, Basic Variables, and Free Variables</title>
+
+    <definition xml:id="def-pivot">
+      <title>Pivots and Variables</title>
+      <statement>
+        <p>
+          <ul>
+            <li>
+              <p>
+                A <term>pivot position</term> is a location corresponding to a leading
+                <m>1</m>, and a <term>pivot column</term> is the column containing the
+                pivot position.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <term>basic variables</term> are the variables that correspond to
+                columns containing leading ones.
+              </p>
+            </li>
+            <li>
+              <p>The remaining variables are called <term>free variables</term>.</p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-identifying-pivots">
+      <title>Identifying Pivots and Free Variables</title>
+      <statement>
+        <p>
+          Suppose that the following matrix is the augmented matrix of a system of linear
+          equations:
+          <md>
+            \left[ \begin{array}{ccccccc|c}
+              1 \amp -3 \amp 4 \amp -2 \amp 5 \amp -7 \amp 0 \amp 4 \\
+              0 \amp 0 \amp 1 \amp 8 \amp 0 \amp 3 \amp -7 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 1 \amp 1 \amp -1 \amp 0 \amp -1 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 2
+            \end{array} \right].
+          </md>
+          Identify the pivot columns, the basic variables, and the free variables.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Note that the matrix is a row-echelon matrix. The leading ones sit in positions
+          <m>(1,1)</m>, <m>(2,3)</m>, <m>(3,4)</m>, and <m>(4,7)</m>, so the pivot columns
+          are columns <m>1</m>, <m>3</m>, <m>4</m>, and <m>7</m>.
+        </p>
+        <p>
+          Accordingly, <m>x_1</m>, <m>x_3</m>, <m>x_4</m>, and <m>x_7</m> are the basic
+          variables, and the remaining variables (columns <m>2</m>, <m>5</m>, and
+          <m>6</m>) <mdash /> that is, <m>x_2</m>, <m>x_5</m>, and <m>x_6</m> <mdash />
+          are the free variables.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      We will use elementary row operations to transform a matrix to row-echelon or
+      reduced row-echelon form. The next section gives the algorithm that does it.
+    </p>
+  </subsection>
+</section>

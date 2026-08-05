@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-matrix-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Algebra</title>
+
+  <introduction>
+    <p>
+      A matrix is more than a bookkeeping device for a system of linear equations:
+      matrices can be added, scaled, multiplied, and <mdash /> sometimes <mdash />
+      inverted. In this chapter we develop that arithmetic, paying close attention to
+      which familiar rules of algebra survive the move from numbers to matrices and
+      which do not.
+    </p>
+  </introduction>
+
+  <xi:include href="matrix-algebra/sec-matrix-operations.ptx" />
+  <xi:include href="matrix-algebra/sec-matrix-multiplication.ptx" />
+  <xi:include href="matrix-algebra/sec-transpose.ptx" />
+  <xi:include href="matrix-algebra/sec-inverse.ptx" />
+  <xi:include href="matrix-algebra/sec-elementary-matrices.ptx" />
+  <xi:include href="matrix-algebra/sec-invertible-matrix-theorem.ptx" />
+
+</chapter>

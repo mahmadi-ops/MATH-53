@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-systems-of-linear-equations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Systems of Linear Equations</title>
+
+  <introduction>
+    <p>
+      Linear algebra begins with a very concrete question: given several linear equations
+      in several unknowns, which assignments of values to the unknowns satisfy all of them
+      at once? This section fixes the vocabulary and looks at what the answer can look
+      like.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-systems-vocabulary">
+    <title>Systems, Solutions, and Consistency</title>
+
+    <example xml:id="eg-system-vocabulary">
+      <title>The Parts of a System</title>
+      <p>
+        The following is a <term>system</term> of <term>linear equations</term>:
+        <md>
+          <mrow>
+            x_1 - 2x_2 - 7x_3 \amp = -1
+          </mrow>
+          <mrow>
+            -x_1 + 3x_2 + 6x_3 \amp = 0
+          </mrow>
+        </md>
+      </p>
+      <p>
+        <ul>
+          <li>
+            <p>The <term>variables</term> are <m>x_1</m>, <m>x_2</m>, <m>x_3</m>.</p>
+          </li>
+          <li>
+            <p>
+              The <term>coefficients</term> are the numbers multiplying the variables:
+              <m>1, -2, -7</m> in the first equation and <m>-1, 3, 6</m> in the second.
+            </p>
+          </li>
+          <li>
+            <p>
+              The <term>constant terms</term> are the numbers on the right-hand sides:
+              <m>-1</m> and <m>0</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </example>
+
+    <definition xml:id="def-solution">
+      <title>Solution of a System</title>
+      <statement>
+        <p>
+          A <term>solution to a system</term> of linear equations is an assignment of
+          values to the variables that is a solution to <em>every</em> equation in the
+          system.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-checking-solutions">
+      <title>Checking Candidate Solutions</title>
+      <statement>
+        <p>
+          For the system of <xref ref="eg-system-vocabulary" text="type-global" />, decide
+          which of the following are solutions:
+          <md>
+            <mrow>
+              \text{(a) } \amp x_1 = -3, \; x_2 = -1, \; x_3 = 0,
+            </mrow>
+            <mrow>
+              \text{(b) } \amp x_1 = 6, \; x_2 = 0, \; x_3 = 1,
+            </mrow>
+            <mrow>
+              \text{(c) } \amp x_1 = 0, \; x_2 = 0, \; x_3 = 0.
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a) is a solution.</term> Substituting,
+          <md>
+            <mrow>
+              (-3) - 2(-1) - 7(0) \amp = -3 + 2 = -1, \checkmark
+            </mrow>
+            <mrow>
+              -(-3) + 3(-1) + 6(0) \amp = 3 - 3 = 0. \checkmark
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>(b) is also a solution.</term> Substituting,
+          <md>
+            <mrow>
+              6 - 2(0) - 7(1) \amp = 6 - 7 = -1, \checkmark
+            </mrow>
+            <mrow>
+              -6 + 3(0) + 6(1) \amp = -6 + 6 = 0. \checkmark
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>(c) is not a solution.</term> The first equation gives
+          <m>0 - 0 - 0 = 0 \neq -1</m>. It fails the first equation, and a solution must
+          satisfy every equation in the system.
+        </p>
+      </solution>
+    </example>
+
+    <definition xml:id="def-consistent">
+      <title>Consistent and Inconsistent Systems</title>
+      <statement>
+        <p>
+          A system of linear equations is <term>consistent</term> if it has at least one
+          solution, and <term>inconsistent</term> if it has no solutions.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-inconsistent">
+      <title>An Inconsistent System</title>
+      <statement>
+        <p>
+          The system of <xref ref="eg-system-vocabulary" text="type-global" /> is
+          consistent, since we exhibited two solutions above. By contrast, consider
+          <md>
+            <mrow>
+              x_1 + x_2 + x_3 \amp = 0
+            </mrow>
+            <mrow>
+              x_1 + x_2 + x_3 \amp = -8
+            </mrow>
+          </md>
+          Why is the above system inconsistent?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The two equations have <em>identical</em> left-hand sides. Any assignment of
+          values to <m>x_1, x_2, x_3</m> produces one and the same number
+          <m>x_1 + x_2 + x_3</m>, and that single number cannot equal both <m>0</m> and
+          <m>-8</m>. Hence no assignment satisfies both equations, and the system has no
+          solutions.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-graphical-solutions">
+    <title>Graphical Solutions</title>
+
+    <example xml:id="eg-two-lines">
+      <title>Two Equations in Two Variables</title>
+      <statement>
+        <p>
+          Consider the system of linear equations in two variables
+          <md>
+            <mrow>
+              x + y \amp = 1
+            </mrow>
+            <mrow>
+              y - x \amp = 1
+            </mrow>
+          </md>
+        </p>
+        <p>
+          A solution to this system is a pair of real numbers <m>(x,y)</m> satisfying
+          these two equations. Graphically, a solution to this system is the point of
+          intersection of these two lines.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Add the equations:
+          <md>
+            2y = 2, \qquad \text{so} \qquad y = 1.
+          </md>
+          Substitute <m>y = 1</m> into one of the equations:
+          <md>
+            x + 1 = 1, \qquad \text{so} \qquad x = 0.
+          </md>
+          The unique solution is <m>(x,y) = (0,1)</m>, which is exactly the point where
+          the two lines cross.
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-two-lines-intersect">
+      <caption>
+        The lines <m>x + y = 1</m> and <m>y - x = 1</m> meet at the single point
+        <m>(0,1)</m>, the unique solution of the system.
+      </caption>
+      <image width="58%">
+        <prefigure label="pf-two-lines-intersect" xmlns="https://prefigure.org">
+          <diagram dimensions="(340,340)" margins="10">
+            <coordinates bbox="(-3.6,-3.6,3.6,3.6)">
+              <axes xlabel="x" ylabel="y" arrows="2" hticks="(-3,1,3)" vticks="(-3,1,3)"/>
+              <line endpoints="((-3.6,4.6),(3.6,-2.6))" stroke="blue" thickness="2"/>
+              <line endpoints="((-3.6,-2.6),(3.6,4.6))" stroke="black" thickness="2"/>
+              <point p="(0,1)" fill="green" size="5"/>
+              <label p="(0,1)" alignment="e" offset="(10,8)"><m>(0,1)</m></label>
+              <label p="(-2.2,3.2)" alignment="e" offset="(6,0)" color="blue"><m>x+y=1</m></label>
+              <label p="(-2.0,-1.0)" alignment="se" offset="(2,-6)"><m>y-x=1</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <p>
+      Given a system of two equations in two variables, graphed on the
+      <m>xy</m>-coordinate plane, there are three possibilities.
+    </p>
+
+    <figure xml:id="fig-three-possibilities">
+      <caption>
+        The three possibilities for a system of two linear equations in two variables.
+      </caption>
+      <sidebyside widths="30% 30% 30%" margins="auto">
+        <figure xml:id="fig-no-solution">
+          <caption>No solution: the lines are parallel and never meet.</caption>
+          <image>
+            <prefigure label="pf-no-solution" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-2.6,-1.6),(2.6,3.6))" stroke="black" thickness="2"/>
+                  <line endpoints="((-2.6,-3.6),(2.6,1.6))" stroke="blue" thickness="2"/>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        <figure xml:id="fig-unique-solution">
+          <caption>A unique solution: the lines cross at exactly one point.</caption>
+          <image>
+            <prefigure label="pf-unique-solution" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="black" thickness="2"/>
+                  <line endpoints="((-2.6,3.6),(2.6,-1.6))" stroke="blue" thickness="2"/>
+                  <point p="(0.5,0.5)" fill="green" size="4"/>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        <figure xml:id="fig-infinitely-many">
+          <caption>Infinitely many solutions: the two equations describe the same line.</caption>
+          <image>
+            <prefigure label="pf-infinitely-many" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="blue" thickness="7"/>
+                  <line endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="black" thickness="2"/>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <example xml:id="eg-coincident-lines">
+      <title>A System with Infinitely Many Solutions</title>
+      <p>
+        The system
+        <md>
+          <mrow>
+            x - y \amp = 0
+          </mrow>
+          <mrow>
+            2x - 2y \amp = 0
+          </mrow>
+        </md>
+        illustrates the third case. The second equation is just twice the first, so both
+        equations describe the same line <m>y = x</m>. Every point on that line is a
+        solution, and there are infinitely many of them.
+      </p>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-parametric-form">
+    <title>Parametric Form of a Solution Set</title>
+
+    <example xml:id="eg-parametric-solution">
+      <title>Describing Infinitely Many Solutions</title>
+      <statement>
+        <p>
+          The system of linear equations in three variables that we saw earlier,
+          <md>
+            <mrow>
+              x_1 - 2x_2 - 7x_3 \amp = -1
+            </mrow>
+            <mrow>
+              -x_1 + 3x_2 + 6x_3 \amp = 0,
+            </mrow>
+          </md>
+          has solutions <m>x_1 = -3 + 9s</m>, <m>x_2 = -1 + s</m>, <m>x_3 = s</m>, where
+          <m>s</m> is any real number (<m>s \in \R</m>).
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The number <m>s</m> is called a <term>parameter</term>, and
+          <md>
+            x_1 = -3 + 9s, \quad x_2 = -1 + s, \quad x_3 = s, \quad \text{where } s \in \R
+          </md>
+          is called the <term>solution set</term> in <term>parametric form</term>.
+        </p>
+        <p>
+          Notice that the two solutions we found in
+          <xref ref="eg-checking-solutions" text="type-global" /> are recovered by taking
+          <m>s = 0</m> and <m>s = 1</m>:
+          <md>
+            <mrow>
+              s = 0 \amp \;\longrightarrow\; (x_1, x_2, x_3) = (-3, -1, 0),
+            </mrow>
+            <mrow>
+              s = 1 \amp \;\longrightarrow\; (x_1, x_2, x_3) = (6, 0, 1).
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-geometric-interpretation">
+      <title>Question: What is the graphical interpretation of the solution set in this example?</title>
+      <p>
+        Each of the two equations describes a plane in <m>\R^3</m>. The intersection of
+        two planes is a line, whose parametric equations are the solution set for the
+        above system of linear equations.
+      </p>
+    </remark>
+
+    <p>
+      This raises the central computational problem of the chapter.
+    </p>
+
+    <remark xml:id="rem-central-problem">
+      <title>Problem</title>
+      <p>
+        Find all solutions to a system of <m>m</m> linear equations in <m>n</m> variables,
+        i.e., <em>solve a system of linear equations</em>.
+      </p>
+    </remark>
+  </subsection>
+</section>

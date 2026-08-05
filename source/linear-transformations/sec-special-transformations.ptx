@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-special-transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Special Transformations of <m>\R^2</m></title>
+
+  <introduction>
+    <p>
+      Rotations, reflections, projections, and shears are the geometric transformations of
+      the plane one meets most often. Each is linear, and so each is given by a
+      <m>2 \times 2</m> matrix. Because a linear transformation preserves linear
+      combinations, that matrix is completely determined by what the transformation does
+      to the two standard basis vectors <m>\vec{e}_1</m> and <m>\vec{e}_2</m>.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-rotations">
+    <title>Rotations in <m>\R^2</m></title>
+
+    <definition xml:id="def-rotation">
+      <title>Rotation</title>
+      <statement>
+        <p>
+          The transformation <m>R_\theta : \R^2 \to \R^2</m> denotes counterclockwise
+          rotation about the origin through an angle of <m>\theta</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-rotation-is-linear">
+      <title>Question: Is <m>R_\theta : \R^2 \to \R^2</m> a linear transformation?</title>
+      <p>
+        Yes. Rotating the whole plane rigidly about the origin carries the parallelogram
+        determined by <m>\vec{u}</m> and <m>\vec{v}</m> to the parallelogram determined by
+        <m>R_\theta(\vec{u})</m> and <m>R_\theta(\vec{v})</m>, so
+        <m>R_\theta(\vec{u} + \vec{v}) = R_\theta(\vec{u}) + R_\theta(\vec{v})</m>;
+        <m>R_\theta</m> preserves vector addition. Likewise, rotating a vector and then
+        scaling it by <m>c</m> gives the same result as scaling first and then rotating,
+        so <m>R_\theta(c\vec{u}) = c R_\theta(\vec{u})</m>; <m>R_\theta</m> preserves
+        scalar multiplication.
+      </p>
+    </remark>
+
+    <p>
+      To find the matrix, we only need the images of <m>\vec{e}_1</m> and
+      <m>\vec{e}_2</m>. Rotating <m>\vec{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>
+      counterclockwise through <m>\theta</m> lands on the point at angle <m>\theta</m> on
+      the unit circle, and rotating <m>\vec{e}_2</m> lands a further quarter turn along:
+      <md>
+        R_\theta(\vec{e}_1) = \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix},
+        \qquad
+        R_\theta(\vec{e}_2) = \begin{bmatrix} -\sin\theta \\ \cos\theta \end{bmatrix}.
+      </md>
+    </p>
+
+    <figure xml:id="fig-rotation-basis">
+      <caption>
+        The images of the standard basis vectors under <m>R_\theta</m>. These two columns
+        are exactly the columns of the rotation matrix.
+      </caption>
+      <image width="52%">
+        <prefigure label="pf-rotation-basis" xmlns="https://prefigure.org">
+          <diagram dimensions="(320,300)" margins="10">
+            <coordinates bbox="(-1.5,-0.6,1.6,1.6)">
+              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+              <arc center="(0,0)" radius="1" range="(0,180)" stroke="gray" thickness="1"/>
+              <line endpoints="((0,0),(1,0))" stroke="blue" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(0,1))" stroke="blue" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(0.643,0.766))" stroke="red" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(-0.766,0.643))" stroke="green" thickness="2" arrows="1"/>
+              <label p="(1,0)" alignment="se" offset="(0,-10)" color="blue"><m>\vec{e}_1</m></label>
+              <label p="(0,1)" alignment="w" offset="(-12,0)" color="blue"><m>\vec{e}_2</m></label>
+              <label p="(0.643,0.766)" alignment="e" offset="(8,4)" color="red"><m>R_\theta(\vec{e}_1)</m></label>
+              <label p="(-0.766,0.643)" alignment="w" offset="(-8,6)" color="green"><m>R_\theta(\vec{e}_2)</m></label>
+              <label p="(0.42,0.16)" alignment="e"><m>\theta</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <p>
+      Therefore the matrix of <m>R_\theta</m> is
+      <md>
+        A_{R_\theta} = \begin{bmatrix}
+          \cos\theta \amp -\sin\theta \\
+          \sin\theta \amp \cos\theta
+        \end{bmatrix}.
+      </md>
+    </p>
+
+    <example xml:id="eg-rotation-quarter-turn">
+      <title>A Quarter Turn</title>
+      <statement>
+        <p>
+          The transformation <m>R_{\pi/2} : \R^2 \to \R^2</m> denotes a counterclockwise
+          rotation about the origin through an angle of <m>\frac{\pi}{2}</m> radians. Find
+          the matrix of <m>R_{\pi/2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            A_{R_{\pi/2}} = \begin{bmatrix}
+              \cos\frac{\pi}{2} \amp -\sin\frac{\pi}{2} \\
+              \sin\frac{\pi}{2} \amp \cos\frac{\pi}{2}
+            \end{bmatrix}
+            = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix},
+          </md>
+          so that
+          <md>
+            A_{R_{\pi/2}} \vec{x}
+            = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}
+              \begin{bmatrix} x \\ y \end{bmatrix}
+            = \begin{bmatrix} -y \\ x \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          For instance, with <m>\vec{x} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}</m> we get
+          <m>R_{\pi/2}(\vec{x}) = \begin{bmatrix} -1 \\ 2 \end{bmatrix}</m>. As expected
+          for a quarter turn, the dot product is zero:
+          <md>
+            \vec{x} \cdot R_{\pi/2}(\vec{x}) = (2)(-1) + (1)(2) = 0.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-rotation-example">
+      <caption>
+        A quarter turn sends <m>\begin{bmatrix} 2 \\ 1 \end{bmatrix}</m> to
+        <m>\begin{bmatrix} -1 \\ 2 \end{bmatrix}</m>; the two vectors are perpendicular.
+      </caption>
+      <image width="52%">
+        <prefigure label="pf-rotation-example" xmlns="https://prefigure.org">
+          <diagram dimensions="(320,300)" margins="10">
+            <coordinates bbox="(-2.4,-1.0,2.8,2.8)">
+              <axes xlabel="x" ylabel="y" arrows="2" hticks="(-2,1,2)" vticks="(-1,1,2)"/>
+              <line endpoints="((0,0),(2,1))" stroke="blue" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(-1,2))" stroke="red" thickness="2" arrows="1"/>
+              <label p="(2,1)" alignment="e" offset="(6,4)" color="blue"><m>\vec{x}</m></label>
+              <label p="(-1,2)" alignment="nw" offset="(-6,6)" color="red"><m>R_{\pi/2}(\vec{x})</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+  </subsection>
+
+  <subsection xml:id="subsec-reflections">
+    <title>Reflections in <m>\R^2</m></title>
+
+    <example xml:id="eg-reflection-x-axis">
+      <title>Reflection in the <m>x</m>-Axis</title>
+      <p>
+        In <m>\R^2</m>, reflection in the <m>x</m>-axis, which transforms
+        <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> to
+        <m>\begin{bmatrix} a \\ -b \end{bmatrix}</m>, is a matrix transformation. Since
+        <m>T(\vec{e}_1) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and
+        <m>T(\vec{e}_2) = \begin{bmatrix} 0 \\ -1 \end{bmatrix}</m>,
+        <md>
+          T \begin{bmatrix} a \\ b \end{bmatrix}
+          = a \begin{bmatrix} 1 \\ 0 \end{bmatrix} + b \begin{bmatrix} 0 \\ -1 \end{bmatrix}
+          = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
+            \begin{bmatrix} a \\ b \end{bmatrix}
+          = \begin{bmatrix} a \\ -b \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+
+    <example xml:id="eg-reflection-y-equals-x">
+      <title>Reflection in the Line <m>y = x</m></title>
+      <p>
+        Reflection in the line <m>y = x</m> transforms
+        <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> to
+        <m>\begin{bmatrix} b \\ a \end{bmatrix}</m>. This is a matrix transformation:
+        here <m>T(\vec{e}_1) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> and
+        <m>T(\vec{e}_2) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>, so
+        <md>
+          T \begin{bmatrix} a \\ b \end{bmatrix}
+          = a \begin{bmatrix} 0 \\ 1 \end{bmatrix} + b \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+            \begin{bmatrix} a \\ b \end{bmatrix}
+          = \begin{bmatrix} b \\ a \end{bmatrix},
+        </md>
+        i.e., <m>T_A(\vec{x}) = A\vec{x}</m> where <m>\vec{x} \in \R^2</m> and
+        <m>A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>.
+      </p>
+    </example>
+
+    <example xml:id="eg-reflection-y-mx">
+      <title>Reflection in the Line <m>y = mx</m></title>
+      <statement>
+        <p>
+          The reflection in the line <m>y = mx</m> is a linear transformation. Find the
+          matrix corresponding to this transformation.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let us denote the reflection in the line <m>y = mx</m> by
+          <m>Q_m : \R^2 \to \R^2</m>. We need to compute <m>Q_m(\vec{e}_1)</m> and
+          <m>Q_m(\vec{e}_2)</m>.
+        </p>
+        <p>
+          Let <m>\theta</m> be the angle the line <m>y = mx</m> makes with the positive
+          <m>x</m>-axis. The point <m>(1, m)</m> lies on the line and is at distance
+          <m>\sqrt{m^2+1}</m> from the origin, so
+          <md>
+            \cos\theta = \frac{1}{\sqrt{m^2+1}}, \qquad
+            \sin\theta = \frac{m}{\sqrt{m^2+1}}.
+          </md>
+        </p>
+        <p>
+          Reflecting <m>\vec{e}_1</m> in that line rotates it through <m>2\theta</m>, so
+          <md>
+            Q_m(\vec{e}_1)
+            = \begin{bmatrix} \cos(2\theta) \\ \sin(2\theta) \end{bmatrix}
+            = \begin{bmatrix} \cos^2\theta - \sin^2\theta \\ 2\sin\theta\cos\theta \end{bmatrix}
+            = \frac{1}{m^2+1} \begin{bmatrix} 1 - m^2 \\ 2m \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>Exercise.</term> Show that
+          <m>Q_m(\vec{e}_2) = \dfrac{1}{m^2+1} \begin{bmatrix} 2m \\ m^2-1 \end{bmatrix}</m>,
+          and hence that the matrix corresponding to <m>Q_m</m> is
+          <md>
+            \frac{1}{m^2+1} \begin{bmatrix}
+              1 - m^2 \amp 2m \\
+              2m \amp m^2 - 1
+            \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-reflection-y-mx">
+      <caption>
+        Reflection in the line <m>y = mx</m>. The line makes an angle <m>\theta</m> with
+        the <m>x</m>-axis, so <m>\vec{e}_1</m> is carried to the vector at angle
+        <m>2\theta</m>.
+      </caption>
+      <image width="55%">
+        <prefigure label="pf-reflection-y-mx" xmlns="https://prefigure.org">
+          <diagram dimensions="(330,300)" margins="10">
+            <coordinates bbox="(-1.7,-1.0,1.9,2.0)">
+              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+              <line endpoints="((-1.1,-1.65),(1.2,1.8))" stroke="magenta" thickness="2"/>
+              <line endpoints="((0,0),(1,0))" stroke="blue" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(-0.28,0.96))" stroke="red" thickness="2" arrows="1"/>
+              <arc center="(0,0)" radius="0.42" range="(0,56)" stroke="black" thickness="1"/>
+              <arc center="(0,0)" radius="0.62" range="(0,112)" stroke="gray" thickness="1"/>
+              <label p="(1,0)" alignment="se" offset="(0,-10)" color="blue"><m>\vec{e}_1</m></label>
+              <label p="(-0.28,0.96)" alignment="nw" offset="(-6,6)" color="red"><m>Q_m(\vec{e}_1)</m></label>
+              <label p="(1.15,1.75)" alignment="e" offset="(4,4)" color="magenta"><m>y=mx</m></label>
+              <label p="(0.44,0.14)" alignment="e" offset="(2,0)"><m>\theta</m></label>
+              <label p="(0.30,0.60)" alignment="n" offset="(0,6)"><m>2\theta</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+  </subsection>
+
+  <subsection xml:id="subsec-shear-projection">
+    <title>Reflection through the Origin, Projections, and Shears</title>
+
+    <example xml:id="eg-reflection-origin">
+      <title>Reflection through the Origin</title>
+      <p>
+        Reflection through the origin sends
+        <m>\vec{x} = \begin{bmatrix} x \\ y \end{bmatrix}</m> to
+        <m>T(\vec{x}) = \begin{bmatrix} -x \\ -y \end{bmatrix}</m>, so
+        <md>
+          A = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix}.
+        </md>
+        This can also be thought of as <m>R_\pi</m>, since
+        <md>
+          R_\pi = \begin{bmatrix} \cos\pi \amp -\sin\pi \\ \sin\pi \amp \cos\pi \end{bmatrix}
+                = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+
+    <example xml:id="eg-projection-x-axis">
+      <title>Projection into the <m>x</m>-Axis</title>
+      <p>
+        Projection into the <m>x</m>-axis sends
+        <m>\vec{x} = \begin{bmatrix} x \\ y \end{bmatrix}</m> to
+        <m>T(\vec{x}) = \begin{bmatrix} x \\ 0 \end{bmatrix}</m>, flattening the whole
+        plane onto the <m>x</m>-axis. Since
+        <m>T(\vec{e}_1) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and
+        <m>T(\vec{e}_2) = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</m>,
+        <md>
+          A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}.
+        </md>
+      </p>
+      <p>
+        Note the contrast with <xref ref="eg-reflection-x-axis" text="type-global" />: a
+        reflection is one-to-one, while this projection is not, since every vector
+        <m>\begin{bmatrix} x \\ y \end{bmatrix}</m> has the same image regardless of
+        <m>y</m>.
+      </p>
+    </example>
+
+    <example xml:id="eg-vertical-shear">
+      <title>Vertical Shear</title>
+      <p>
+        A vertical shear <m>T : \R^2 \to \R^2</m> fixes <m>\vec{e}_2</m> and tilts
+        <m>\vec{e}_1</m>:
+        <md>
+          T(\vec{e}_2) = \vec{e}_2, \qquad
+          T(\vec{e}_1) = \begin{bmatrix} 1 \\ k \end{bmatrix},
+        </md>
+        so that
+        <md>
+          A = \begin{bmatrix} 1 \amp 0 \\ k \amp 1 \end{bmatrix}.
+        </md>
+        A shear leaves the vertical direction alone and slides each point vertically by an
+        amount proportional to its <m>x</m>-coordinate, carrying a square to a
+        parallelogram of the same area.
+      </p>
+    </example>
+
+    <figure xml:id="fig-vertical-shear">
+      <caption>
+        A vertical shear with <m>k \lt 0</m> carries the unit square to a parallelogram.
+      </caption>
+      <image width="72%">
+        <prefigure label="pf-vertical-shear" xmlns="https://prefigure.org">
+          <diagram dimensions="(440,200)" margins="10">
+            <coordinates bbox="(-1.2,-1.6,7.4,1.9)">
+              <polygon points="((0,0),(1,0),(1,1),(0,1))" fill="red" stroke="red" thickness="1"/>
+              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+              <polygon points="((5,0),(6,-0.8),(6,0.2),(5,1))" fill="red" stroke="red" thickness="1"/>
+              <line endpoints="((5,0),(6,-0.8))" stroke="blue" thickness="2" arrows="1"/>
+              <label p="(5.9,-0.9)" alignment="se" offset="(4,-4)" color="blue"><m>T(\vec{e}_1)</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+  </subsection>
+</section>

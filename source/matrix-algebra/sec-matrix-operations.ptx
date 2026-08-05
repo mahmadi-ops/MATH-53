@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-matrix-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Operations</title>
+
+  <introduction>
+    <p>
+      We begin by fixing notation for matrices and defining the two most basic
+      operations on them: addition and multiplication by a scalar.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-matrix-terminology">
+    <title>Matrices and Terminology</title>
+
+    <definition xml:id="def-matrix">
+      <title>Matrix</title>
+      <statement>
+        <p>
+          Let <m>m</m> and <m>n</m> be positive integers.
+        </p>
+        <p>
+          An <term><m>m \times n</m> matrix</term> is a rectangular array of numbers
+          having <m>m</m> rows and <m>n</m> columns. Such a matrix is said to have
+          <term>size</term> <m>m \times n</m>.
+        </p>
+        <p>
+          The number <m>a_{ij}</m> is the <term><m>(i,j)</m>-entry</term> of a matrix,
+          which is the entry in row <m>i</m> and column <m>j</m>:
+          <md>
+            A =
+            \begin{bmatrix}
+              a_{11} \amp a_{12} \amp a_{13} \amp \cdots \amp a_{1n} \\
+              a_{21} \amp a_{22} \amp a_{23} \amp \cdots \amp a_{2n} \\
+              a_{31} \amp a_{32} \amp a_{33} \amp \cdots \amp a_{3n} \\
+              \vdots \amp \vdots \amp \vdots \amp \amp \vdots \\
+              a_{m1} \amp a_{m2} \amp a_{m3} \amp \cdots \amp a_{mn}
+            \end{bmatrix}
+            = \begin{bmatrix} a_{ij} \end{bmatrix}
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-matrix-vocabulary">
+      <title>Diagonal, Identity, and Zero Matrices</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m> be an <m>m \times n</m> matrix.
+        </p>
+        <p>
+          <ul>
+            <li>
+              The entries <m>a_{11}, a_{22}, a_{33}, \ldots</m> are the
+              <term>diagonal entries</term> of <m>A</m>, and together they form the
+              <term>main diagonal</term> of <m>A</m>.
+            </li>
+            <li>
+              A matrix is <term>square</term> if <m>m = n</m>.
+            </li>
+            <li>
+              The <term>identity matrix</term> <m>I_n = I_{n \times n}</m> is the square
+              <m>n \times n</m> matrix whose diagonal entries are all <m>1</m> and whose
+              other entries are all <m>0</m>.
+            </li>
+            <li>
+              The <term>zero matrix</term> <m>0_{m \times n}</m> is the <m>m \times n</m>
+              matrix all of whose entries are <m>0</m>.
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-matrix-entries">
+      <title>Reading Entries off a Matrix</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix}
+              1 \amp 2 \amp 0 \\
+              0 \amp 1 \amp -1 \\
+              1 \amp 0 \amp 1
+            \end{bmatrix}
+            = \begin{bmatrix} a_{ij} \end{bmatrix}.
+          </md>
+          Identify the size of <m>A</m>, the entry <m>a_{23}</m>, and the main diagonal of <m>A</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>A</m> is a <m>3 \times 3</m> matrix. The entry <m>a_{23}</m> sits in row <m>2</m>
+          and column <m>3</m>, so <m>a_{23} = -1</m>.
+        </p>
+        <p>
+          The main diagonal consists of the entries
+          <m>a_{11} = 1</m>, <m>a_{22} = 1</m>, and <m>a_{33} = 1</m>, running from the
+          upper-left corner to the lower-right corner of <m>A</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-zero-identity">
+      <title>Zero and Identity Matrices</title>
+      <p>
+        The <m>2 \times 2</m> zero matrix and the <m>4 \times 4</m> identity matrix are
+        <md>
+          <mrow>
+            0_{2 \times 2} \amp = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+          </mrow>
+          <mrow>
+            I_4 = I_{4 \times 4} \amp = \begin{bmatrix}
+              1 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 1
+            \end{bmatrix}.
+          </mrow>
+        </md>
+      </p>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-matrix-addition">
+    <title>Matrix Addition</title>
+
+    <definition xml:id="def-matrix-addition">
+      <title>Matrix Addition</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m> and
+          <m>B = \begin{bmatrix} b_{ij} \end{bmatrix}</m> be two <m>m \times n</m> matrices.
+          Then <m>A + B = C</m>, where <m>C</m> is the <m>m \times n</m> matrix
+          <m>C = \begin{bmatrix} c_{ij} \end{bmatrix}</m> defined by
+          <md>
+            c_{ij} = a_{ij} + b_{ij}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Notice that matrix addition is only defined when the two matrices have the
+      <em>same size</em>, and that addition is performed entry by entry.
+    </p>
+
+    <example xml:id="eg-matrix-addition">
+      <title>Adding Two Matrices</title>
+      <statement>
+        <p>
+          Let
+          <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m> and
+          <m>B = \begin{bmatrix} -1 \amp 2 \\ 4 \amp 3 \end{bmatrix}</m>.
+          Compute <m>C = A + B</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            C = A + B
+            = \begin{bmatrix} 1 + (-1) \amp 2 + 2 \\ 3 + 4 \amp 4 + 3 \end{bmatrix}
+            = \begin{bmatrix} 0 \amp 4 \\ 7 \amp 7 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          For instance, the <m>(1,2)</m>-entry is
+          <m>c_{12} = a_{12} + b_{12} = 2 + 2 = 4</m>.
+        </p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-matrix-addition-properties">
+      <title>Properties of Matrix Addition</title>
+      <statement>
+        <p>
+          Let <m>A</m>, <m>B</m>, and <m>C</m> be <m>m \times n</m> matrices.
+          Then the following properties hold.
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p><m>A + B = B + A</m> (matrix addition is commutative).</p>
+            </li>
+            <li>
+              <p><m>(A + B) + C = A + (B + C)</m> (matrix addition is associative).</p>
+            </li>
+            <li>
+              <p>
+                There exists an <m>m \times n</m> zero matrix, <m>0</m>, such that
+                <m>A + 0 = A</m> (existence of an additive identity).
+              </p>
+            </li>
+            <li>
+              <p>
+                There exists an <m>m \times n</m> matrix <m>-A</m> such that
+                <m>A + (-A) = 0</m> (existence of an additive inverse).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <title>Proof of (2)</title>
+        <p>
+          The <m>(i,j)</m>-entry of <m>(A + B) + C</m> is
+          <md>
+            \left( a_{ij} + b_{ij} \right) + c_{ij},
+          </md>
+          which is equal to the <m>(i,j)</m>-entry of <m>A + (B + C)</m>, i.e.,
+          <md>
+            a_{ij} + \left( b_{ij} + c_{ij} \right).
+          </md>
+          The two matrices therefore agree entry by entry, so they are equal.
+        </p>
+      </proof>
+    </theorem>
+
+    <remark xml:id="rem-addition-inherits">
+      <p>
+        Each of these properties is inherited from the corresponding property of
+        addition of real numbers, applied one entry at a time. The proof of (2)
+        above is the model for the proofs of (1), (3), and (4).
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-scalar-multiplication">
+    <title>Scalar Multiplication</title>
+
+    <definition xml:id="def-scalar-multiplication">
+      <title>Scalar Multiplication</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m> be an <m>m \times n</m> matrix
+          and let <m>k</m> be a scalar. Then
+          <md>
+            kA = \begin{bmatrix} k a_{ij} \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-scalar-multiplication">
+      <title>Multiplying by a Scalar</title>
+      <p>
+        If <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m>, then
+        <md>
+          2A = \begin{bmatrix} 2 \amp 4 \\ 6 \amp 8 \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+
+    <theorem xml:id="thm-scalar-multiplication-properties">
+      <title>Properties of Scalar Multiplication</title>
+      <statement>
+        <p>
+          Let <m>A</m>, <m>B</m> be <m>m \times n</m> matrices and let
+          <m>k, p \in \R</m> (scalars). Then the following properties hold.
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>k(A + B) = kA + kB</m>
+                (scalar multiplication distributes over matrix addition).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(k + p)A = kA + pA</m>
+                (addition distributes over scalar multiplication).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>k(pA) = (kp)A</m> (scalar multiplication is associative).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="eg-combining-scalars">
+      <title>Combining Scalar Multiples</title>
+      <statement>
+        <p>
+          Simplify
+          <md>
+            3 \begin{bmatrix} 1 \amp 0 \\ -1 \amp 1 \end{bmatrix}
+            - \begin{bmatrix} 1 \amp 0 \\ -1 \amp 1 \end{bmatrix}
+            - \begin{bmatrix} -3 \amp 0 \\ 3 \amp -3 \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Every matrix appearing here is a scalar multiple of
+          <m>M = \begin{bmatrix} 1 \amp 0 \\ -1 \amp 1 \end{bmatrix}</m>; indeed,
+          <m>\begin{bmatrix} -3 \amp 0 \\ 3 \amp -3 \end{bmatrix} = -3M</m>.
+          So by <xref ref="thm-scalar-multiplication-properties" text="type-global" /> (2),
+          <md>
+            <mrow>
+              3M - M - (-3M) \amp = (3 - 1 + 3)M
+            </mrow>
+            <mrow>
+              \amp = 5 \begin{bmatrix} 1 \amp 0 \\ -1 \amp 1 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} 5 \amp 0 \\ -5 \amp 5 \end{bmatrix}.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

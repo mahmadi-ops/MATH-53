@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-row-reduction" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Row Reduction Algorithm</title>
+
+  <introduction>
+    <p>
+      We now have all the pieces: elementary row operations preserve the solution set, and
+      echelon forms make the solution set easy to read off. The row reduction algorithm
+      ties them together into a procedure that solves <em>any</em> system of linear
+      equations.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-the-algorithm">
+    <title>The Algorithm</title>
+
+    <algorithm xml:id="alg-row-reduction">
+      <title>The Row Reduction Algorithm</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p>Identify the pivot column.</p></li>
+            <li>
+              <p>
+                Choose a nonzero entry in the pivot column and (if necessary) move it to
+                the pivot position.
+              </p>
+            </li>
+            <li><p>Create zeros below the pivot using elementary row operations.</p></li>
+            <li>
+              <p>
+                Repeat steps 1<ndash />3 for the sub-matrices obtained by ignoring the
+                column corresponding to the previous pivot position and all the rows above
+                it (if any).
+              </p>
+            </li>
+            <li>
+              <p>
+                Beginning with the rightmost pivot, create zeros above the pivots and make
+                the pivot <m>1</m> (if necessary).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </algorithm>
+
+    <remark xml:id="rem-forward-backward">
+      <p>
+        Note that steps 1<ndash />4 will produce a row-echelon matrix, and step 5 will
+        convert it to a reduced row-echelon matrix:
+        <ul>
+          <li>
+            <p>
+              <term>Steps 1<ndash />4:</term> the <term>forward phase</term>, to obtain
+              the REM.
+            </p>
+          </li>
+          <li>
+            <p>
+              <term>Step 5:</term> the <term>backward phase</term>, to obtain the RREM.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-three-outcomes">
+    <title>The Three Possible Outcomes</title>
+
+    <p>
+      The three graphical possibilities of
+      <xref ref="fig-three-possibilities" text="type-global" /> correspond to three
+      outcomes of the algorithm. The next three examples illustrate each in turn.
+    </p>
+
+    <example xml:id="eg-unique-solution">
+      <title>A System with a Unique Solution</title>
+      <statement>
+        <p>
+          Solve the system
+          <md>
+            <mrow>
+              x + y + 2z \amp = -1
+            </mrow>
+            <mrow>
+              y + 2x + 3z \amp = 0
+            </mrow>
+            <mrow>
+              z - 2y \amp = 2
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First rewrite each equation with the variables in the order <m>x, y, z</m> and
+          form the augmented matrix. The forward phase gives
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 2 \amp -1 \\
+                2 \amp 1 \amp 3 \amp 0 \\
+                0 \amp -2 \amp 1 \amp 2
+              \end{array} \right]
+              \amp \xrightarrow{-2r_1 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 2 \amp -1 \\
+                0 \amp -1 \amp -1 \amp 2 \\
+                0 \amp -2 \amp 1 \amp 2
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-2r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 2 \amp -1 \\
+                0 \amp -1 \amp -1 \amp 2 \\
+                0 \amp 0 \amp 3 \amp -2
+              \end{array} \right],
+            </mrow>
+          </md>
+          which is a row-echelon matrix.
+        </p>
+        <p>
+          Now the backward phase:
+          <md>
+            <mrow>
+              \amp \xrightarrow{\frac{1}{3} r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 2 \amp -1 \\
+                0 \amp -1 \amp -1 \amp 2 \\
+                0 \amp 0 \amp 1 \amp -\frac{2}{3}
+              \end{array} \right]
+              \xrightarrow[-2r_3 + r_1]{r_3 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 0 \amp \frac{1}{3} \\
+                0 \amp -1 \amp 0 \amp \frac{4}{3} \\
+                0 \amp 0 \amp 1 \amp -\frac{2}{3}
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 0 \amp \frac{1}{3} \\
+                0 \amp 1 \amp 0 \amp -\frac{4}{3} \\
+                0 \amp 0 \amp 1 \amp -\frac{2}{3}
+              \end{array} \right]
+              \xrightarrow{-r_2 + r_1}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp 0 \amp \frac{5}{3} \\
+                0 \amp 1 \amp 0 \amp -\frac{4}{3} \\
+                0 \amp 0 \amp 1 \amp -\frac{2}{3}
+              \end{array} \right],
+            </mrow>
+          </md>
+          a reduced row-echelon matrix.
+        </p>
+        <p>
+          Reading off the rows,
+          <md>
+            x = \frac{5}{3}, \qquad y = -\frac{4}{3}, \qquad z = -\frac{2}{3},
+          </md>
+          a unique solution. Every column of the coefficient matrix is a pivot column, so
+          there are no free variables.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-no-solution-rr">
+      <title>An Inconsistent System</title>
+      <statement>
+        <p>
+          Solve the system
+          <md>
+            <mrow>
+              -3x_1 - 9x_2 + x_3 \amp = -9
+            </mrow>
+            <mrow>
+              2x_1 + 6x_2 - x_3 \amp = 6
+            </mrow>
+            <mrow>
+              x_1 + 3x_2 - x_3 \amp = 2
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                -3 \amp -9 \amp 1 \amp -9 \\
+                2 \amp 6 \amp -1 \amp 6 \\
+                1 \amp 3 \amp -1 \amp 2
+              \end{array} \right]
+              \amp \xrightarrow{r_3 \leftrightarrow r_1}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -1 \amp 2 \\
+                2 \amp 6 \amp -1 \amp 6 \\
+                -3 \amp -9 \amp 1 \amp -9
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[3r_1 + r_3]{-2r_1 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -1 \amp 2 \\
+                0 \amp 0 \amp 1 \amp 2 \\
+                0 \amp 0 \amp -2 \amp -3
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{2r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -1 \amp 2 \\
+                0 \amp 0 \amp 1 \amp 2 \\
+                0 \amp 0 \amp 0 \amp 1
+              \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The last row says
+          <md>
+            0x_1 + 0x_2 + 0x_3 = 1, \qquad \text{or} \qquad 0 = 1,
+          </md>
+          which is impossible, and hence the system is inconsistent (no solution).
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-inconsistency-test">
+      <p>
+        In general, a system is inconsistent exactly when the row-echelon form of its
+        augmented matrix has a row of the form
+        <m>\left[ \begin{array}{cccc|c} 0 \amp 0 \amp \cdots \amp 0 \amp d \end{array} \right]</m>
+        with <m>d \neq 0</m>.
+      </p>
+    </remark>
+
+    <example xml:id="eg-infinitely-many-rr">
+      <title>A System with Infinitely Many Solutions</title>
+      <statement>
+        <p>
+          Solve the system
+          <md>
+            <mrow>
+              2x + y + 3z \amp = 1
+            </mrow>
+            <mrow>
+              2y - z + x \amp = 0
+            </mrow>
+            <mrow>
+              10z - 6y \amp = 2
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                2 \amp 1 \amp 3 \amp 1 \\
+                1 \amp 2 \amp -1 \amp 0 \\
+                0 \amp -6 \amp 10 \amp 2
+              \end{array} \right]
+              \amp \xrightarrow{r_1 \leftrightarrow r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp -1 \amp 0 \\
+                2 \amp 1 \amp 3 \amp 1 \\
+                0 \amp -6 \amp 10 \amp 2
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-2r_1 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp -1 \amp 0 \\
+                0 \amp -3 \amp 5 \amp 1 \\
+                0 \amp -6 \amp 10 \amp 2
+              \end{array} \right]
+              \xrightarrow{-2r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp -1 \amp 0 \\
+                0 \amp -3 \amp 5 \amp 1 \\
+                0 \amp 0 \amp 0 \amp 0
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-\frac{1}{3} r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp -1 \amp 0 \\
+                0 \amp 1 \amp -\frac{5}{3} \amp -\frac{1}{3} \\
+                0 \amp 0 \amp 0 \amp 0
+              \end{array} \right]
+              \xrightarrow{-2r_2 + r_1}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp \frac{7}{3} \amp \frac{2}{3} \\
+                0 \amp 1 \amp -\frac{5}{3} \amp -\frac{1}{3} \\
+                0 \amp 0 \amp 0 \amp 0
+              \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Columns <m>1</m> and <m>2</m> are pivot columns, so <m>x</m> and <m>y</m> are
+          basic variables, whereas <m>z</m> is a free variable. Setting <m>z = s</m>, the
+          two nonzero rows read
+          <md>
+            <mrow>
+              x + \tfrac{7}{3}s \amp = \tfrac{2}{3}
+            </mrow>
+            <mrow>
+              y - \tfrac{5}{3}s \amp = -\tfrac{1}{3}
+            </mrow>
+          </md>
+          and therefore the solution set in parametric form is
+          <md>
+            <mrow>
+              x \amp = \tfrac{2}{3} - \tfrac{7}{3}s
+            </mrow>
+            <mrow>
+              y \amp = -\tfrac{1}{3} + \tfrac{5}{3}s
+            </mrow>
+            <mrow>
+              z \amp = s, \qquad \text{where } s \in \R.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-free-variables-count">
+      <p>
+        The pattern is now clear. If a system is consistent, then it has a unique solution
+        when there are no free variables, and infinitely many solutions when there is at
+        least one free variable <mdash /> one parameter for each free variable.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-systems-with-parameters">
+    <title>Systems Depending on Parameters</title>
+
+    <example xml:id="eg-parameters-abc">
+      <title>Conditions on the Coefficients</title>
+      <statement>
+        <p>
+          Find all values of <m>a</m>, <m>b</m> and <m>c</m> (or conditions on <m>a</m>,
+          <m>b</m> and <m>c</m>) so that the system
+          <md>
+            <mrow>
+              2x + 3y + az \amp = b
+            </mrow>
+            <mrow>
+              \phantom{2x + {}} -y + 2z \amp = c
+            </mrow>
+            <mrow>
+              x + 3y - 2z \amp = 1
+            </mrow>
+          </md>
+          has (i) a unique solution, (ii) no solutions, and (iii) infinitely many
+          solutions. In (i) and (iii), find the solution(s).
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reduce the augmented matrix, treating <m>a</m>, <m>b</m>, <m>c</m> as
+          constants:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                2 \amp 3 \amp a \amp b \\
+                0 \amp -1 \amp 2 \amp c \\
+                1 \amp 3 \amp -2 \amp 1
+              \end{array} \right]
+              \amp \xrightarrow{r_1 \leftrightarrow r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -2 \amp 1 \\
+                0 \amp -1 \amp 2 \amp c \\
+                2 \amp 3 \amp a \amp b
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-2r_1 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -2 \amp 1 \\
+                0 \amp -1 \amp 2 \amp c \\
+                0 \amp -3 \amp a+4 \amp b-2
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-3r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -2 \amp 1 \\
+                0 \amp -1 \amp 2 \amp c \\
+                0 \amp 0 \amp a-2 \amp b-2-3c
+              \end{array} \right].
+            </mrow>
+          </md>
+          Everything now hinges on the entry <m>a - 2</m>.
+        </p>
+        <p>
+          <term>Case (I): <m>a - 2 \neq 0</m>, i.e., <m>a \neq 2</m>.</term>
+          We may divide the third row by <m>a-2</m> and continue. Writing
+          <m>K = \dfrac{b-2-3c}{a-2}</m> for brevity,
+          <md>
+            <mrow>
+              \amp \xrightarrow{\left( \frac{1}{a-2} \right) r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -2 \amp 1 \\
+                0 \amp -1 \amp 2 \amp c \\
+                0 \amp 0 \amp 1 \amp K
+              \end{array} \right]
+              \xrightarrow[r_2 + 2r_3]{-r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -2 \amp 1 \\
+                0 \amp 1 \amp 0 \amp -c + 2K \\
+                0 \amp 0 \amp 1 \amp K
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{r_1 + 2r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp 0 \amp 1 + 2K \\
+                0 \amp 1 \amp 0 \amp -c + 2K \\
+                0 \amp 0 \amp 1 \amp K
+              \end{array} \right]
+              \xrightarrow{-3r_2 + r_1}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp 0 \amp 1 + 3c - 4K \\
+                0 \amp 1 \amp 0 \amp -c + 2K \\
+                0 \amp 0 \amp 1 \amp K
+              \end{array} \right].
+            </mrow>
+          </md>
+          Hence when <m>a \neq 2</m>, there is a unique solution:
+          <md>
+            x = 1 + 3c - 4\left( \frac{b-2-3c}{a-2} \right), \quad
+            y = -c + 2 \left( \frac{b-2-3c}{a-2} \right), \quad
+            z = \frac{b-2-3c}{a-2}.
+          </md>
+        </p>
+        <p>
+          <term>Case (II): <m>a - 2 = 0</m> and <m>b - 2 - 3c \neq 0</m>.</term>
+          The row-echelon matrix is
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 3 \amp -2 \amp 1 \\
+              0 \amp -1 \amp 2 \amp c \\
+              0 \amp 0 \amp 0 \amp b-2-3c
+            \end{array} \right],
+          </md>
+          whose last row asserts <m>0 = b-2-3c \neq 0</m>. Then the system has no solution.
+        </p>
+        <p>
+          <term>Case (III): <m>a - 2 = 0</m> and <m>b - 3c = 2</m>.</term>
+          Now the last row is entirely zero, and <m>z</m> is a free variable, so the
+          system has infinitely many solutions. Setting <m>z = s</m>, the second row gives
+          <m>-y + 2s = c</m>, so <m>y = -c + 2s</m>, and the first row gives
+          <md>
+            x = 1 - 3y + 2z = 1 - 3(-c + 2s) + 2s = 1 + 3c - 4s.
+          </md>
+          The solution set in parametric form is
+          <md>
+            <mrow>
+              x \amp = 1 + 3c - 4s
+            </mrow>
+            <mrow>
+              y \amp = -c + 2s
+            </mrow>
+            <mrow>
+              z \amp = s, \qquad \text{where } s \in \R.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-inverse" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Inverse of a Matrix</title>
+
+  <introduction>
+    <p>
+      For a nonzero real number <m>a</m> there is a reciprocal <m>a^{-1}</m> with
+      <m>a a^{-1} = 1</m>. We now ask the analogous question for matrices: given a square
+      matrix <m>A</m>, is there a matrix that undoes it? Unlike the situation for real
+      numbers, the answer can be no even when <m>A</m> is not the zero matrix.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-inverse-definition">
+    <title>Definition and Uniqueness</title>
+
+    <definition xml:id="def-inverse">
+      <title>Inverse of a Matrix</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix. Then <m>B</m> is
+          <term>an inverse</term> of <m>A</m> if and only if
+          <m>AB = I_n</m> and <m>BA = I_n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-inverse-size">
+      <title>Question: What does this imply about the size of <m>B</m>?</title>
+      <p>
+        Let us assume <m>B</m> is a <m>p \times k</m> matrix. Then for <m>AB</m> to be
+        defined we have <m>p = n</m>. Also, for <m>BA</m> to be defined we have
+        <m>k = n</m>, which means <m>B</m> is an <m>n \times n</m> matrix.
+      </p>
+      <p>
+        So only square matrices can have inverses, and an inverse of an <m>n \times n</m>
+        matrix is again <m>n \times n</m>.
+      </p>
+    </remark>
+
+    <theorem xml:id="thm-inverse-unique">
+      <title>Uniqueness of an Inverse</title>
+      <statement>
+        <p>
+          If <m>A</m> is a square matrix and <m>B</m> and <m>C</m> are inverses of
+          <m>A</m>, then <m>B = C</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Since <m>B</m> and <m>C</m> are both inverses of <m>A</m>, we have
+          <md>
+            BA = AB = I \qquad \text{and} \qquad CA = AC = I.
+          </md>
+          Therefore
+          <md>
+            B = BI = B(AC) = (BA)C = IC = C,
+          </md>
+          where the middle equality uses the associativity of matrix multiplication.
+        </p>
+      </proof>
+    </theorem>
+
+    <definition xml:id="def-invertible">
+      <title>Invertible Matrix</title>
+      <statement>
+        <p>
+          Let <m>A</m> be a square matrix.
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <em>The</em> inverse of <m>A</m>, if it exists, is denoted by
+                <m>A^{-1}</m>, and
+                <md>
+                  A A^{-1} = I = A^{-1} A.
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>A</m> has an inverse, then we say that <m>A</m> is
+                <term>invertible</term>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-the-inverse">
+      <p>
+        <xref ref="thm-inverse-unique" text="type-global" /> is what entitles us to say
+        <em>the</em> inverse rather than <em>an</em> inverse, and to give it the name
+        <m>A^{-1}</m>.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-two-by-two-inverse">
+    <title>The Inverse of a <m>2 \times 2</m> Matrix</title>
+
+    <theorem xml:id="thm-two-by-two-inverse">
+      <title>The Inverse of a <m>2 \times 2</m> Matrix</title>
+      <statement>
+        <p>
+          Suppose <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> and
+          <m>ad - bc \neq 0</m>. Then
+          <md>
+            A^{-1} = \frac{1}{ad - bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <title>Sketch</title>
+        <p>
+          Finding <m>A^{-1}</m> amounts to solving the two systems
+          <m>A \vec{x} = \vec{e}_1</m> and <m>A \vec{x} = \vec{e}_2</m> at once, so we
+          row reduce the augmented matrix
+          <md>
+            \left[ \begin{array}{cc|cc}
+              a \amp b \amp 1 \amp 0 \\
+              c \amp d \amp 0 \amp 1
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          Replacing the first row by <m>d R_1 - b R_2</m> and the second by
+          <m>a R_2 - c R_1</m> gives
+          <md>
+            \left[ \begin{array}{cc|cc}
+              ad - bc \amp 0 \amp d \amp -b \\
+              0 \amp ad - bc \amp -c \amp a
+            \end{array} \right].
+          </md>
+          If <m>ad - bc \neq 0</m>, we may divide each row by <m>ad - bc</m> to obtain
+          <m>\left[ I_2 \mid A^{-1} \right]</m> with <m>A^{-1}</m> as claimed. If instead
+          <m>ad - bc = 0</m>, the reduction produces a row of zeros on the left, the
+          systems are inconsistent, and no inverse exists.
+        </p>
+      </proof>
+    </theorem>
+
+    <remark xml:id="rem-hw5">
+      <p>
+        In HW5, students will prove that the inverse of a <m>2 \times 2</m> matrix is in
+        the form above.
+      </p>
+    </remark>
+
+    <example xml:id="eg-no-inverse">
+      <title>A Matrix with No Inverse</title>
+      <statement>
+        <p>
+          Show that <m>A = \begin{bmatrix} 0 \amp k \\ 0 \amp k \end{bmatrix}</m>, where
+          <m>k \in \R</m>, does not have an inverse.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If <m>A^{-1}</m> exists, write
+          <m>A^{-1} = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m>. Then
+          <md>
+            A A^{-1}
+            = \begin{bmatrix} 0 \amp k \\ 0 \amp k \end{bmatrix}
+              \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}
+            = \begin{bmatrix} kc \amp kd \\ kc \amp kd \end{bmatrix}
+            = k \begin{bmatrix} c \amp d \\ c \amp d \end{bmatrix},
+          </md>
+          which cannot be <m>I_2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>,
+          since the two rows of the product are identical while the rows of <m>I_2</m>
+          are not.
+        </p>
+        <p>
+          This is consistent with <xref ref="thm-two-by-two-inverse" text="type-global" />:
+          here <m>ad - bc = (0)(k) - (k)(0) = 0</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-inversion-algorithm">
+    <title>The Matrix Inversion Algorithm</title>
+
+    <remark xml:id="rem-inverse-questions">
+      <title>Questions</title>
+      <p>
+        Suppose that <m>A</m> is any <m>n \times n</m> matrix.
+        <ul>
+          <li><p>How do we know whether or not <m>A^{-1}</m> exists?</p></li>
+          <li><p>If <m>A^{-1}</m> exists, how do we find it?</p></li>
+        </ul>
+      </p>
+      <p>
+        For both questions, we use the matrix inversion algorithm.
+      </p>
+    </remark>
+
+    <algorithm xml:id="alg-matrix-inversion">
+      <title>The Matrix Inversion Algorithm</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix. To find <m>A^{-1}</m>, if it exists:
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                Take the <m>n \times 2n</m> matrix
+                <md>
+                  \left[ \, A \mid I_n \, \right]
+                </md>
+                obtained by augmenting <m>A</m> with the <m>n \times n</m> identity
+                matrix, <m>I_n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Perform elementary row operations to transform
+                <m>\left[ \, A \mid I_n \, \right]</m> into a reduced row-echelon matrix.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          If the result has the form <m>\left[ \, I_n \mid B \, \right]</m>, then
+          <m>A</m> is invertible and <m>A^{-1} = B</m>. If the left half cannot be
+          reduced to <m>I_n</m>, then <m>A</m> is not invertible.
+        </p>
+      </statement>
+    </algorithm>
+
+    <example xml:id="eg-inversion-algorithm-2x2">
+      <title>The Algorithm on a <m>2 \times 2</m> Matrix</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 2 \amp -7 \\ 5 \amp -18 \end{bmatrix}</m>.
+          Find <m>A^{-1}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Augment <m>A</m> with <m>I_2</m> and row reduce:
+          <md>
+            <mrow>
+              \left[ \, A \mid I_2 \, \right]
+              \amp = \left[ \begin{array}{cc|cc}
+                2 \amp -7 \amp 1 \amp 0 \\
+                5 \amp -18 \amp 0 \amp 1
+              \end{array} \right]
+              \xrightarrow{R_2 - 2R_1}
+              \left[ \begin{array}{cc|cc}
+                2 \amp -7 \amp 1 \amp 0 \\
+                1 \amp -4 \amp -2 \amp 1
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{R_1 \leftrightarrow R_2}
+              \left[ \begin{array}{cc|cc}
+                1 \amp -4 \amp -2 \amp 1 \\
+                2 \amp -7 \amp 1 \amp 0
+              \end{array} \right]
+              \xrightarrow{R_2 - 2R_1}
+              \left[ \begin{array}{cc|cc}
+                1 \amp -4 \amp -2 \amp 1 \\
+                0 \amp 1 \amp 5 \amp -2
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{R_1 + 4R_2}
+              \left[ \begin{array}{cc|cc}
+                1 \amp 0 \amp 18 \amp -7 \\
+                0 \amp 1 \amp 5 \amp -2
+              \end{array} \right]
+              = \left[ \, I_2 \mid A^{-1} \, \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Therefore
+          <md>
+            A^{-1} = \begin{bmatrix} 18 \amp -7 \\ 5 \amp -2 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Note that for a <m>2 \times 2</m> matrix we can instead use
+          <xref ref="thm-two-by-two-inverse" text="type-global" />. Here
+          <m>ad - bc = (2)(-18) - (-7)(5) = -36 + 35 = -1</m>, so
+          <md>
+            A^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}
+                   = \frac{1}{-1} \begin{bmatrix} -18 \amp 7 \\ -5 \amp 2 \end{bmatrix}
+                   = \begin{bmatrix} 18 \amp -7 \\ 5 \amp -2 \end{bmatrix},
+          </md>
+          in agreement with the algorithm.
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-which-method">
+      <p>
+        Although the above formula for <m>A^{-1}</m> is much quicker for
+        <m>2 \times 2</m> matrices, as we will see later, the general formula for
+        <m>n \times n</m> matrices (<m>n \geq 3</m>) is less efficient and more
+        complicated to use when compared to the matrix inversion algorithm.
+      </p>
+    </remark>
+
+    <theorem xml:id="thm-matrix-inverses-equivalences">
+      <title>Matrix Inverses</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix. Then the following conditions are
+          equivalent.
+        </p>
+        <p>
+          <ol>
+            <li><p><m>A</m> is invertible.</p></li>
+            <li><p>The reduced row-echelon form of <m>A</m> is <m>I</m>.</p></li>
+            <li>
+              <p>
+                <m>\left[ \, A \mid I_n \, \right]</m> can be transformed into
+                <m>\left[ \, I_n \mid A^{-1} \, \right]</m> using the Matrix Inversion
+                Algorithm.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Assume that <m>\left[ \, A \mid I_n \, \right]</m> can be transformed into
+          <m>\left[ \, I_n \mid B \, \right]</m> using elementary row operations. This
+          means the reduced row-echelon matrix of <m>A</m> is <m>I</m>.
+        </p>
+        <p>
+          Writing the columns of <m>I_n</m> as <m>\vec{e}_1, \ldots, \vec{e}_n</m> and the
+          columns of <m>B</m> as <m>\vec{B}_1, \ldots, \vec{B}_n</m>, the reduction is
+          <md>
+            \left[ \, A \mid \vec{e}_1 \; \vec{e}_2 \; \cdots \; \vec{e}_n \, \right]
+            \longrightarrow
+            \left[ \, I_n \mid \vec{B}_1 \; \vec{B}_2 \; \cdots \; \vec{B}_n \, \right].
+          </md>
+        </p>
+        <p>
+          Then, for each <m>i</m>, the reduction
+          <m>\left[ \, A \mid \vec{e}_i \, \right] \longrightarrow
+          \left[ \, I_n \mid \vec{B}_i \, \right]</m> is possible, which means
+          <m>A \vec{x}_i = \vec{e}_i</m> has the solution
+          <m>\vec{x}_i = \vec{B}_i</m>, or <m>A \vec{B}_i = \vec{e}_i</m>. Hence
+          <md>
+            AB = \left[ A\vec{B}_1 \; A\vec{B}_2 \; \cdots \; A\vec{B}_n \right]
+               = \left[ \vec{e}_1 \; \vec{e}_2 \; \cdots \; \vec{e}_n \right]
+               = I.
+          </md>
+        </p>
+        <p>
+          Later we will show that if <m>AB = I</m>, then <m>BA = I</m> and hence
+          <m>B = A^{-1}</m>. This will be shown when we study
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" />.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-ab-equals-i">
+      <title>Seeing <m>AB = I</m> Column by Column</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 0 \amp -1 \end{bmatrix}</m>. Run the
+          Matrix Inversion Algorithm and verify directly that
+          <m>A \vec{B}_i = \vec{e}_i</m> for each column.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            \left[ \, A \mid I_2 \, \right]
+            = \left[ \begin{array}{cc|cc}
+                1 \amp 2 \amp 1 \amp 0 \\
+                0 \amp -1 \amp 0 \amp 1
+              \end{array} \right]
+            \xrightarrow{R_1 + 2R_2}
+            \left[ \begin{array}{cc|cc}
+                1 \amp 0 \amp 1 \amp 2 \\
+                0 \amp -1 \amp 0 \amp 1
+              \end{array} \right]
+            \xrightarrow{R_2 \to -R_2}
+            \left[ \begin{array}{cc|cc}
+                1 \amp 0 \amp 1 \amp 2 \\
+                0 \amp 1 \amp 0 \amp -1
+              \end{array} \right].
+          </md>
+        </p>
+        <p>
+          So <m>B = \begin{bmatrix} 1 \amp 2 \\ 0 \amp -1 \end{bmatrix}</m>, with columns
+          <m>\vec{B}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and
+          <m>\vec{B}_2 = \begin{bmatrix} 2 \\ -1 \end{bmatrix}</m>. Checking directly,
+          <md>
+            A\vec{B}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \vec{e}_1,
+            \qquad
+            A\vec{B}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \vec{e}_2,
+          </md>
+          and therefore
+          <md>
+            AB = \left[ A\vec{B}_1 \; A\vec{B}_2 \right]
+               = \left[ \vec{e}_1 \; \vec{e}_2 \right] = I.
+          </md>
+          In this example <m>A</m> happens to be its own inverse.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-inversion-algorithm-3x3">
+      <title>The Algorithm on a <m>3 \times 3</m> Matrix</title>
+      <statement>
+        <p>
+          Let
+          <m>A = \begin{bmatrix} 3 \amp 1 \amp 2 \\ 1 \amp -1 \amp 3 \\ 1 \amp 2 \amp 4 \end{bmatrix}</m>.
+          Find the inverse of <m>A</m>, if it exists.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Augment with <m>I_3</m> and row reduce:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|ccc}
+                3 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \\
+                1 \amp -1 \amp 3 \amp 0 \amp 1 \amp 0 \\
+                1 \amp 2 \amp 4 \amp 0 \amp 0 \amp 1
+              \end{array} \right]
+              \amp \xrightarrow{R_1 \leftrightarrow R_2}
+              \left[ \begin{array}{ccc|ccc}
+                1 \amp -1 \amp 3 \amp 0 \amp 1 \amp 0 \\
+                3 \amp 1 \amp 2 \amp 1 \amp 0 \amp 0 \\
+                1 \amp 2 \amp 4 \amp 0 \amp 0 \amp 1
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[R_3 - R_1]{R_2 - 3R_1}
+              \left[ \begin{array}{ccc|ccc}
+                1 \amp -1 \amp 3 \amp 0 \amp 1 \amp 0 \\
+                0 \amp 4 \amp -7 \amp 1 \amp -3 \amp 0 \\
+                0 \amp 3 \amp 1 \amp 0 \amp -1 \amp 1
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{R_2 - R_3}
+              \left[ \begin{array}{ccc|ccc}
+                1 \amp -1 \amp 3 \amp 0 \amp 1 \amp 0 \\
+                0 \amp 1 \amp -8 \amp 1 \amp -2 \amp -1 \\
+                0 \amp 3 \amp 1 \amp 0 \amp -1 \amp 1
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{R_3 - 3R_2}
+              \left[ \begin{array}{ccc|ccc}
+                1 \amp -1 \amp 3 \amp 0 \amp 1 \amp 0 \\
+                0 \amp 1 \amp -8 \amp 1 \amp -2 \amp -1 \\
+                0 \amp 0 \amp 25 \amp -3 \amp 5 \amp 4
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{R_1 + R_2}
+              \left[ \begin{array}{ccc|ccc}
+                1 \amp 0 \amp -5 \amp 1 \amp -1 \amp -1 \\
+                0 \amp 1 \amp -8 \amp 1 \amp -2 \amp -1 \\
+                0 \amp 0 \amp 25 \amp -3 \amp 5 \amp 4
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{\frac{1}{25} R_3}
+              \left[ \begin{array}{ccc|ccc}
+                1 \amp 0 \amp -5 \amp 1 \amp -1 \amp -1 \\
+                0 \amp 1 \amp -8 \amp 1 \amp -2 \amp -1 \\
+                0 \amp 0 \amp 1 \amp \frac{-3}{25} \amp \frac{5}{25} \amp \frac{4}{25}
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[R_1 + 5R_3]{R_2 + 8R_3}
+              \left[ \begin{array}{ccc|ccc}
+                1 \amp 0 \amp 0 \amp \frac{10}{25} \amp 0 \amp \frac{-5}{25} \\
+                0 \amp 1 \amp 0 \amp \frac{1}{25} \amp \frac{-10}{25} \amp \frac{7}{25} \\
+                0 \amp 0 \amp 1 \amp \frac{-3}{25} \amp \frac{5}{25} \amp \frac{4}{25}
+              \end{array} \right]
+              = \left[ \, I_3 \mid A^{-1} \, \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Therefore
+          <md>
+            A^{-1} = \begin{bmatrix}
+              \frac{10}{25} \amp 0 \amp \frac{-5}{25} \\[2pt]
+              \frac{1}{25} \amp \frac{-10}{25} \amp \frac{7}{25} \\[2pt]
+              \frac{-3}{25} \amp \frac{5}{25} \amp \frac{4}{25}
+            \end{bmatrix}
+            = \frac{1}{25} \begin{bmatrix}
+              10 \amp 0 \amp -5 \\
+              1 \amp -10 \amp 7 \\
+              -3 \amp 5 \amp 4
+            \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-inverse-and-ax-b">
+    <title>The Inverse and the Matrix Equation <m>A\vec{x} = \vec{b}</m></title>
+
+    <p>
+      If <m>A</m> is invertible, the matrix equation <m>A\vec{x} = \vec{b}</m> can be
+      solved in one stroke by multiplying both sides on the left by <m>A^{-1}</m>:
+      <md>
+        <mrow>
+          A^{-1} \left( A \vec{x} \right) \amp = A^{-1} \vec{b}
+        </mrow>
+        <mrow>
+          \left( A^{-1} A \right) \vec{x} \amp = A^{-1} \vec{b}
+        </mrow>
+        <mrow>
+          I \vec{x} \amp = A^{-1} \vec{b}
+        </mrow>
+        <mrow>
+          \vec{x} \amp = A^{-1} \vec{b}.
+        </mrow>
+      </md>
+    </p>
+
+    <example xml:id="eg-solve-with-inverse">
+      <title>Solving a System Using the Inverse</title>
+      <statement>
+        <p>
+          Consider the system of linear equations
+          <md>
+            <mrow>
+              2x - 7y \amp = 3
+            </mrow>
+            <mrow>
+              5x - 18y \amp = 8
+            </mrow>
+          </md>
+          and use the concept of the inverse of a matrix to solve the system.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We can write the matrix equation <m>A\vec{x} = \vec{b}</m> as follows:
+          <md>
+            A \vec{x}
+            = \begin{bmatrix} 2 \amp -7 \\ 5 \amp -18 \end{bmatrix}
+              \begin{bmatrix} x \\ y \end{bmatrix}
+            = \underbrace{\begin{bmatrix} 3 \\ 8 \end{bmatrix}}_{\vec{b}}.
+          </md>
+        </p>
+        <p>
+          We computed <m>A^{-1}</m> in
+          <xref ref="eg-inversion-algorithm-2x2" text="type-global" />, so
+          <md>
+            \vec{x} = A^{-1} \vec{b}
+            = \begin{bmatrix} 18 \amp -7 \\ 5 \amp -2 \end{bmatrix}
+              \begin{bmatrix} 3 \\ 8 \end{bmatrix}
+            = \begin{bmatrix} -2 \\ -1 \end{bmatrix}.
+          </md>
+          That is, <m>x = -2</m> and <m>y = -1</m> is a unique solution for this system.
+        </p>
+        <p>
+          <term>How do we know <m>\vec{x}</m> is a unique solution?</term>
+          Let us assume that there exists more than one solution. For example, if
+          <m>\vec{w}</m> is another solution, then we can repeat the above process to show
+          that <m>\vec{w} = A^{-1}\vec{b}</m>. Also, since
+          <m>\vec{x} = A^{-1}\vec{b}</m>, we get <m>\vec{x} = \vec{w}</m>, which means
+          <m>\vec{x}</m> and <m>\vec{w}</m> are the same.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-inverses-transposes-products">
+    <title>Inverses of Transposes and Products</title>
+
+    <theorem xml:id="thm-inverses-transposes-products">
+      <title>Inverses of Transposes and Products</title>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                If <m>A</m> is an invertible matrix, then
+                <m>\left( A^T \right)^{-1} = \left( A^{-1} \right)^T</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>A</m> and <m>B</m> are invertible matrices, then <m>AB</m> is
+                invertible and <m>(AB)^{-1} = B^{-1}A^{-1}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>A_1, A_2, \ldots, A_k</m> are invertible, then
+                <m>A_1 A_2 \cdots A_k</m> is invertible and
+                <md>
+                  \left( A_1 A_2 \cdots A_k \right)^{-1}
+                  = A_k^{-1} A_{k-1}^{-1} \cdots A_2^{-1} A_1^{-1}.
+                </md>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <title>Proof of (1)</title>
+        <p>
+          If <m>A</m> is an invertible matrix, then <m>A A^{-1} = I</m>, which means
+          <md>
+            \left( A A^{-1} \right)^T = I^T
+            \qquad \Longrightarrow \qquad
+            \left( A^{-1} \right)^T A^T = I.
+          </md>
+          Also, since <m>A^{-1} A = I</m>,
+          <md>
+            \left( A^{-1} A \right)^T = I^T
+            \qquad \Longrightarrow \qquad
+            A^T \left( A^{-1} \right)^T = I.
+          </md>
+        </p>
+        <p>
+          Both equations together say that <m>\left( A^{-1} \right)^T</m> is an inverse
+          of <m>A^T</m>, and so
+          <md>
+            \left( A^{-1} \right)^T = \left( A^T \right)^{-1}.
+          </md>
+        </p>
+      </proof>
+    </theorem>
+
+    <remark xml:id="rem-prove-2-and-3">
+      <p>
+        The proofs of (2) and (3) are left to the reader. For (2), it suffices to verify
+        that <m>\left( B^{-1}A^{-1} \right)(AB) = I</m> and
+        <m>(AB)\left( B^{-1}A^{-1} \right) = I</m>; part (3) then follows by induction on
+        <m>k</m>. Note that, as with the transpose of a product, taking inverses
+        <em>reverses the order</em> of the factors.
+      </p>
+    </remark>
+  </subsection>
+</section>

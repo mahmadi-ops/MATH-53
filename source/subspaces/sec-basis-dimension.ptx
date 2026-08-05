@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-basis-dimension" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basis and Dimension</title>
+
+  <subsection xml:id="subsec-basis">
+    <title>Basis of a Subspace</title>
+
+    <definition xml:id="def-basis">
+      <title>Basis</title>
+      <statement>
+        <p>
+          Let <m>H</m> be a subspace of <m>\R^n</m>. Then
+          <m>\{ \vec{u}_1, \ldots, \vec{u}_k \}</m> is called a <term>basis</term> for
+          <m>H</m> if the following conditions hold:
+        </p>
+        <p>
+          <ol>
+            <li><p><m>\operatorname{Span}\{ \vec{u}_1, \ldots, \vec{u}_k \} = H</m>;</p></li>
+            <li><p><m>\{ \vec{u}_1, \ldots, \vec{u}_k \}</m> is linearly independent.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-two-bases">
+      <title>Two Different Bases for the Same Subspace</title>
+      <statement>
+        <p>
+          Consider the <m>xy</m>-plane, i.e.,
+          <m>H = \left\{ \begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \R^3 \; \middle| \; z = 0 \right\}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The most obvious basis is
+          <m>\mathcal{B}_1 = \{ \vec{e}_1, \vec{e}_2 \}</m>, since
+          <m>H = \operatorname{Span}\{ \vec{e}_1, \vec{e}_2 \}</m> and
+          <md>
+            \vec{x} = x\vec{e}_1 + y\vec{e}_2.
+          </md>
+        </p>
+        <p>
+          But it is not the only one. Take
+          <m>\mathcal{B}_2 = \{ \vec{e}_1, \vec{e}_1 + \vec{e}_2 \}</m>. Then
+          <m>H = \operatorname{Span}\{ \vec{e}_1, \vec{e}_1 + \vec{e}_2 \}</m> and
+          <md>
+            \vec{x} = (x - y)\vec{e}_1 + y \left( \vec{e}_1 + \vec{e}_2 \right).
+          </md>
+        </p>
+        <p>
+          A subspace has many bases <mdash /> but, as we are about to see, they all have
+          the same size.
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-two-bases">
+      <caption>
+        Two different bases for the <m>xy</m>-plane in <m>\R^3</m>:
+        <m>\mathcal{B}_1 = \{ \vec{e}_1, \vec{e}_2 \}</m> on the left and
+        <m>\mathcal{B}_2 = \{ \vec{e}_1, \vec{e}_1 + \vec{e}_2 \}</m> on the right.
+      </caption>
+      <image width="88%">
+        <latex-image>
+          \begin{tikzpicture}[scale=0.95, every node/.style={font=\small}]
+            \foreach \sh in {0, 7.2} {
+              \begin{scope}[xshift=\sh cm]
+                \fill[black!10] (-1.7,-0.8) -- (3.3,-0.8) -- (4.4,1.2) -- (-0.6,1.2) -- cycle;
+                \draw[black!35] (-1.7,-0.8) -- (3.3,-0.8) -- (4.4,1.2) -- (-0.6,1.2) -- cycle;
+                \coordinate (O) at (1.35,0.2);
+                \draw[-{Stealth[length=2mm]}] (O) -- ++(0,1.6) node[above] {$z$};
+                \draw[-{Stealth[length=2mm]}] (O) -- ++(1.5,0) node[right] {$y$};
+                \draw[-{Stealth[length=2mm]}] (O) -- ++(-0.85,-0.75) node[left] {$x$};
+                \node at (3.7,-0.55) {$H$};
+              \end{scope}
+            }
+            \begin{scope}
+              \coordinate (O) at (1.35,0.2);
+              \draw[magenta, very thick, -{Stealth[length=2mm]}] (O) -- ++(-0.55,-0.48)
+                node[below left, black] {$\vec{e}_1$};
+              \draw[magenta, very thick, -{Stealth[length=2mm]}] (O) -- ++(0.95,0)
+                node[above, black] {$\vec{e}_2$};
+            \end{scope}
+            \begin{scope}[xshift=7.2cm]
+              \coordinate (O) at (1.35,0.2);
+              \draw[blue, very thick, -{Stealth[length=2mm]}] (O) -- ++(-0.55,-0.48)
+                node[below left, black] {$\vec{e}_1$};
+              \draw[blue, very thick, -{Stealth[length=2mm]}] (O) -- ++(0.40,-0.48)
+                node[below right, black] {$\vec{e}_1+\vec{e}_2$};
+            \end{scope}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </subsection>
+
+  <subsection xml:id="subsec-all-bases-same-size">
+    <title>All Bases Have the Same Size</title>
+
+    <theorem xml:id="thm-spanning-vs-independent">
+      <title>Spanning Sets Are at Least as Large as Independent Sets</title>
+      <statement>
+        <p>
+          Suppose <m>\{ \vec{u}_1, \ldots, \vec{u}_r \}</m> is a linearly independent set
+          of vectors in <m>\R^n</m>, and each <m>\vec{u}_k</m> is contained in
+          <m>\operatorname{Span}\{ \vec{v}_1, \ldots, \vec{v}_s \}</m>. Then
+          <m>s \geq r</m>.
+        </p>
+        <p>
+          In words, spanning sets have at least as many vectors as linearly independent
+          sets.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Since each <m>\vec{u}_j</m> is in
+          <m>\operatorname{Span}\{ \vec{v}_1, \ldots, \vec{v}_s \}</m>, there exist
+          scalars <m>a_{ij}</m> such that
+          <md>
+            \vec{u}_j = \sum_{i=1}^{s} a_{ij} \vec{v}_i.
+          </md>
+        </p>
+        <p>
+          Suppose for a contradiction that <m>s \lt r</m>. Then the matrix
+          <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m> has fewer rows, <m>s</m>, than
+          columns, <m>r</m>. Then the system <m>AX = 0</m> has a nontrivial solution
+          <m>\vec{d}</m>; that is, there is a <m>\vec{d} \neq \vec{0}</m> such that
+          <m>A\vec{d} = \vec{0}</m>. In other words,
+          <md>
+            \sum_{j=1}^{r} a_{ij} d_j = 0, \qquad i = 1, 2, \ldots, s.
+          </md>
+        </p>
+        <p>
+          Therefore
+          <md>
+            <mrow>
+              \sum_{j=1}^{r} d_j \vec{u}_j
+              \amp = \sum_{j=1}^{r} d_j \sum_{i=1}^{s} a_{ij} \vec{v}_i
+            </mrow>
+            <mrow>
+              \amp = \sum_{i=1}^{s} \left( \sum_{j=1}^{r} a_{ij} d_j \right) \vec{v}_i
+              = \sum_{i=1}^{s} 0 \vec{v}_i = \vec{0},
+            </mrow>
+          </md>
+          which contradicts the assumption that
+          <m>\{ \vec{u}_1, \ldots, \vec{u}_r \}</m> is linearly independent, because not
+          all the <m>d_j</m> are zero. Thus this contradiction indicates that
+          <m>s \geq r</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <theorem xml:id="thm-bases-same-size">
+      <title>Any Two Bases Have the Same Size</title>
+      <statement>
+        <p>
+          Let <m>H</m> be a subspace of <m>\R^n</m> and suppose
+          <m>\{ \vec{u}_1, \ldots, \vec{u}_r \}</m> and
+          <m>\{ \vec{v}_1, \ldots, \vec{v}_s \}</m> are two bases for <m>H</m>. Then
+          <m>r = s</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Note that any spanning set has at least as many vectors as a basis, by
+          <xref ref="thm-spanning-vs-independent" text="type-global" />. Also, any basis
+          is itself a spanning set. Hence:
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>\{ \vec{u}_1, \ldots, \vec{u}_r \}</m> is a basis and
+                <m>\{ \vec{v}_1, \ldots, \vec{v}_s \}</m> is a spanning set, therefore
+                <m>r \leq s</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\{ \vec{v}_1, \ldots, \vec{v}_s \}</m> is a basis and
+                <m>\{ \vec{u}_1, \ldots, \vec{u}_r \}</m> is a spanning set, therefore
+                <m>s \leq r</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          Together these give <m>r = s</m>.
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+
+  <subsection xml:id="subsec-dimension">
+    <title>Dimension</title>
+
+    <definition xml:id="def-dimension">
+      <title>Dimension</title>
+      <statement>
+        <p>
+          Let <m>H</m> be a subspace of <m>\R^n</m>. Then the <term>dimension</term> of
+          <m>H</m> is the number of vectors in a basis of <m>H</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-dimension-well-defined">
+      <p>
+        This definition makes sense only because of
+        <xref ref="thm-bases-same-size" text="type-global" />: different bases could
+        otherwise give different answers.
+      </p>
+    </remark>
+
+    <example xml:id="eg-dimension">
+      <title>Computing Dimensions</title>
+      <statement>
+        <p>
+          What is the dimension of the following subspaces of <m>\R^3</m>?
+        </p>
+        <p>
+          <md>
+            H_1 = \left\{ \begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \R^3 \; \middle| \; x = y = z \right\},
+            \qquad
+            H_2 = \left\{ \vec{u} \in \R^3 \; \middle| \; \vec{u} \cdot \vec{v} = 0, \;
+              \vec{v} = \begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix} \right\}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>H_1</m> is a line through the origin with the direction vector
+          <m>\vec{v} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</m> and
+          <m>H_1 = \operatorname{Span}\{ \vec{v} \}</m>, hence
+          <md>
+            \dim H_1 = 1.
+          </md>
+        </p>
+        <p>
+          For <m>H_2</m>, write <m>\vec{u} = \begin{bmatrix} x \\ y \\ z \end{bmatrix}</m>.
+          Then <m>\vec{u} \cdot \vec{v} = 2x - y + z = 0</m>, which is a plane through the
+          origin, and
+          <md>
+            H_2 = \operatorname{Span}\left\{
+              \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix},
+              \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \right\}.
+          </md>
+          Note that any two vectors on the plane that are linearly independent can be used
+          here. Hence
+          <md>
+            \dim H_2 = 2.
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

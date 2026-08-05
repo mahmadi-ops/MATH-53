@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-isomorphisms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Transformations and Isomorphisms</title>
+
+  <subsection xml:id="subsec-general-linear-transformations">
+    <title>Linear Transformations between Vector Spaces</title>
+
+    <definition xml:id="def-general-linear-transformation">
+      <title>Linear Transformation of Vector Spaces</title>
+      <statement>
+        <p>
+          A <term>linear transformation</term> from a vector space <m>V</m> to another
+          vector space <m>W</m> is a rule that assigns to each <m>\vec{x} \in V</m> a
+          unique vector <m>T(\vec{x}) \in W</m> and it preserves vector addition and
+          scalar multiplication.
+        </p>
+        <p>
+          Equivalently, for every <m>\vec{x}_1</m> and <m>\vec{x}_2 \in V</m> and
+          <m>a_1, a_2 \in \R</m>, we have
+          <md>
+            T \left( a_1 \vec{x}_1 + a_2 \vec{x}_2 \right)
+            = a_1 T(\vec{x}_1) + a_2 T(\vec{x}_2);
+          </md>
+          that is, <m>T</m> preserves linear combinations.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-nul-col-are-subspaces">
+      <p>
+        The null space and the column space of an <m>m \times n</m> matrix are subspaces
+        of <m>\R^n</m> and <m>\R^m</m> respectively.
+      </p>
+      <p>
+        Here we show that the null space of an <m>m \times n</m> matrix is a subspace of
+        <m>\R^n</m> and we leave the column space as an exercise. Recall
+        <md>
+          \operatorname{Nul} A = \operatorname{Ker} A
+          = \left\{ \vec{x} \in \R^n \; \middle| \; A_{m \times n} \vec{x}_{n \times 1}
+            = \vec{0}_{m \times 1} \right\}.
+        </md>
+        Assume <m>a, b \in \R</m> and <m>\vec{x}_1, \vec{x}_2 \in \operatorname{Nul} A</m>.
+        Then
+        <md>
+          A \left( a\vec{x}_1 + b\vec{x}_2 \right)
+          = a A(\vec{x}_1) + b A(\vec{x}_2)
+          = \vec{0} + \vec{0} = \vec{0}
+          \iff a\vec{x}_1 + b\vec{x}_2 \in \operatorname{Nul} A.
+        </md>
+        Hence <m>\operatorname{Nul} A</m> is a subspace of <m>\R^n</m>.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-isomorphisms">
+    <title>Isomorphisms</title>
+
+    <definition xml:id="def-isomorphism">
+      <title>Isomorphism</title>
+      <statement>
+        <p>
+          A linear map <m>T</m> is called an <term>isomorphism</term> if the following two
+          conditions are satisfied.
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>T</m> is one to one. That is, if <m>T(\vec{x}) = T(\vec{y})</m>, then
+                <m>\vec{x} = \vec{y}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>T</m> is onto. That is, if <m>\vec{w} \in W</m>, there exists
+                <m>\vec{v} \in V</m> such that <m>T(\vec{v}) = \vec{w}</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Two such spaces which have an isomorphism as described above are said to be
+          <term>isomorphic</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-isomorphic-same">
+      <p>
+        We consider isomorphic spaces to be the same, because there is a one-to-one
+        correspondence between their elements and the structure of the vector space
+        operations is preserved through linearity.
+      </p>
+    </remark>
+
+    <example xml:id="eg-rn-isomorphic-pn">
+      <title><m>\R^n</m> and <m>\mathbb{P}_{n-1}</m> Are Isomorphic</title>
+      <statement>
+        <p>Show that <m>\R^n</m> and <m>\mathbb{P}_{n-1}</m> are isomorphic.</p>
+      </statement>
+      <solution>
+        <p>
+          We can find an isomorphism between these two spaces. Consider
+          <m>T : \R^n \to \mathbb{P}_{n-1}</m> defined by
+          <md>
+            T \left( \begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{n-1} \end{bmatrix} \right)
+            = a_0 + a_1 x + \cdots + a_{n-1} x^{n-1}.
+          </md>
+          Note that <m>T</m> is linear, one-to-one, and onto.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-p2-to-r2">
+      <title>A Transformation from <m>\mathbb{P}_2</m> to <m>\R^2</m></title>
+      <statement>
+        <p>
+          Consider the transformation
+          <m>\mathbb{P}_2 \xrightarrow{\;T\;} \R^2</m> defined as
+          <md>
+            T(P(x)) = \begin{bmatrix} P(0) \\ P'(1) \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Using the standard basis for <m>\mathbb{P}_2</m> and <m>\R^2</m>, find the
+                matrix of <m>T</m>.
+              </p>
+            </li>
+            <li><p>Is <m>T</m> one-to-one?</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(A)</term> Write <m>P(x) = ax^2 + bx + c</m>, so that
+          <m>P'(x) = 2ax + b</m>. Then
+          <md>
+            T(P(x)) = \begin{bmatrix} P(0) \\ P'(1) \end{bmatrix}
+            = \begin{bmatrix} c \\ 2a + b \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Using the isomorphism between <m>\mathbb{P}_2</m> and <m>\R^3</m> that sends
+          <m>ax^2 + bx + c</m> to <m>\begin{bmatrix} c \\ b \\ a \end{bmatrix}</m>, the
+          matrix of <m>T</m> is
+          <md>
+            A = \begin{bmatrix} T(\vec{e}_1) \amp T(\vec{e}_2) \amp T(\vec{e}_3) \end{bmatrix}
+              = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 2 \end{bmatrix},
+          </md>
+          and indeed
+          <md>
+            \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 2 \end{bmatrix}
+            \begin{bmatrix} c \\ b \\ a \end{bmatrix}
+            = \begin{bmatrix} c \\ 2a + b \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(B)</term> No, since <m>A\vec{x} = \vec{0}</m> has non-trivial solutions:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 1 \amp 2 \amp 0
+            \end{array} \right]
+            \longrightarrow
+            \vec{x} = \begin{bmatrix} c \\ b \\ a \end{bmatrix}
+            = \begin{bmatrix} 0 \\ -2t \\ t \end{bmatrix}
+            = t \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          For instance,
+          <md>
+            T \left( x^2 - 2x \right) = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+            \qquad \text{and} \qquad
+            T \left( -x^2 + 2x \right) = \begin{bmatrix} 0 \\ 0 \end{bmatrix},
+          </md>
+          so <m>T</m> is NOT one-to-one.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

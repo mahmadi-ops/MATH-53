@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-vector-form" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector and Matrix Forms of a Linear System</title>
+
+  <introduction>
+    <p>
+      A system of linear equations can be written in three equivalent ways: as a list of
+      equations, as a single vector equation, and as a single matrix equation. Each form
+      makes a different feature obvious, and we will move freely between them.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-vector-form">
+    <title>Vector Form</title>
+
+    <definition xml:id="def-vector-form">
+      <title>Vector Form of a System</title>
+      <statement>
+        <p>
+          Consider the system of linear equations
+          <md>
+            <mrow>
+              a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n \amp = b_1
+            </mrow>
+            <mrow>
+              a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \amp = b_2
+            </mrow>
+            <mrow>
+              \vdots \amp
+            </mrow>
+            <mrow>
+              a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n \amp = b_m
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Such a system can be expressed in <term>vector form</term>, or as a
+          <term>vector equation</term>, by using <term>linear combinations</term> of
+          column vectors:
+          <md>
+            x_1 \begin{bmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{m1} \end{bmatrix}
+            + x_2 \begin{bmatrix} a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{bmatrix}
+            + \cdots
+            + x_n \begin{bmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn} \end{bmatrix}
+            = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-vector-form">
+      <title>Writing a System in Vector Form</title>
+      <statement>
+        <p>
+          Express the following system of linear equations in vector form:
+          <md>
+            <mrow>
+              2x_1 + 4x_2 - 3x_3 \amp = -6
+            </mrow>
+            <mrow>
+              \phantom{2x_1 + {}} -x_2 + 5x_3 \amp = 0
+            </mrow>
+            <mrow>
+              x_1 + x_2 + 4x_3 \amp = 1
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            x_1 \begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix}
+            + x_2 \begin{bmatrix} 4 \\ -1 \\ 1 \end{bmatrix}
+            + x_3 \begin{bmatrix} -3 \\ 5 \\ 4 \end{bmatrix}
+            = \begin{bmatrix} -6 \\ 0 \\ 1 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-matrix-form">
+    <title>Matrix Form</title>
+
+    <definition xml:id="def-matrix-vector-product">
+      <title>The Product of a Matrix and a Vector</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m> be an <m>m \times n</m>
+          matrix with columns <m>A_1, A_2, \ldots, A_n</m>, written
+          <m>A = \begin{bmatrix} A_1 \amp A_2 \amp \cdots \amp A_n \end{bmatrix}</m>, and
+          let <m>X</m> be an <m>n \times 1</m> column vector,
+          <m>X = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}</m>.
+        </p>
+        <p>
+          Then the product of matrix <m>A</m> and (column) vector <m>X</m> is the
+          <m>m \times 1</m> column vector given by
+          <md>
+            \begin{bmatrix} A_1 \amp A_2 \amp \cdots \amp A_n \end{bmatrix}
+            \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}
+            = x_1 A_1 + x_2 A_2 + \cdots + x_n A_n
+            = \sum_{j=1}^{n} x_j A_j;
+          </md>
+          that is, <m>AX</m> is a <term>linear combination</term> of the columns of
+          <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-matrix-form">
+      <title>Writing a System in Matrix Form</title>
+      <statement>
+        <p>
+          Express the system of <xref ref="eg-vector-form" text="type-global" /> in matrix
+          form.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            \begin{bmatrix} 2 \amp 4 \amp -3 \\ 0 \amp -1 \amp 5 \\ 1 \amp 1 \amp 4 \end{bmatrix}
+            \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
+            = x_1 \begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix}
+            + x_2 \begin{bmatrix} 4 \\ -1 \\ 1 \end{bmatrix}
+            + x_3 \begin{bmatrix} -3 \\ 5 \\ 4 \end{bmatrix}
+            = \begin{bmatrix} -6 \\ 0 \\ 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Writing
+          <m>A = \begin{bmatrix} \vec{A}_1 \amp \vec{A}_2 \amp \vec{A}_3 \end{bmatrix}</m>,
+          <m>\vec{X} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</m>, and
+          <m>\vec{b} = \begin{bmatrix} -6 \\ 0 \\ 1 \end{bmatrix}</m>, this is
+          <md>
+            A\vec{X} = x_1 \vec{A}_1 + x_2 \vec{A}_2 + x_3 \vec{A}_3 = \vec{b}.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-three-forms">
+      <p>
+        The three forms say the same thing. In particular, <m>A\vec{X} = \vec{b}</m> is
+        consistent precisely when <m>\vec{b}</m> can be written as a linear combination of
+        the columns of <m>A</m>. This observation is the bridge between solving systems
+        and the geometric language of the next two sections.
+      </p>
+    </remark>
+  </subsection>
+</section>

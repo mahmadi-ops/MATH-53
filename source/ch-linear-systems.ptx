@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-linear-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Systems of Linear Equations</title>
+
+  <introduction>
+    <p>
+      A system of linear equations may have exactly one solution, no solutions at all, or
+      infinitely many. Which of these occurs, and how to describe the solutions when there
+      are infinitely many, is the subject of this chapter. The tool that settles every
+      case is a single mechanical procedure <mdash /> the row reduction algorithm <mdash />
+      applied to a rectangular array of numbers called the augmented matrix.
+    </p>
+  </introduction>
+
+  <xi:include href="linear-systems/sec-systems-of-linear-equations.ptx" />
+  <xi:include href="linear-systems/sec-elementary-operations.ptx" />
+  <xi:include href="linear-systems/sec-augmented-matrix.ptx" />
+  <xi:include href="linear-systems/sec-row-reduction.ptx" />
+
+</chapter>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-linear-transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Transformations</title>
+
+  <introduction>
+    <p>
+      A matrix does not merely record a system of equations; multiplying by it moves
+      vectors around. Viewing <m>\vec{x} \mapsto A\vec{x}</m> as a function reveals that
+      matrices and linear transformations are two descriptions of the same thing, and it
+      recasts questions about solving <m>A\vec{x} = \vec{b}</m> as questions about whether
+      that function is one-to-one or onto.
+    </p>
+  </introduction>
+
+  <xi:include href="linear-transformations/sec-transformations.ptx" />
+  <xi:include href="linear-transformations/sec-injections-surjections.ptx" />
+  <xi:include href="linear-transformations/sec-special-transformations.ptx" />
+
+</chapter>

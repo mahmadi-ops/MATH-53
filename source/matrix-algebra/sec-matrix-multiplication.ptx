@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-matrix-multiplication" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Multiplication</title>
+
+  <introduction>
+    <p>
+      Unlike addition, the product of two matrices is <em>not</em> computed entry by entry.
+      We define it one column at a time, and then extract a formula for a single entry
+      of the product.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-product-definition">
+    <title>The Product of Two Matrices</title>
+
+    <definition xml:id="def-matrix-product">
+      <title>Product of Two Matrices</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m \times n</m> matrix and let <m>B</m> be an
+          <m>n \times p</m> matrix, whose columns are <m>B_1, B_2, \ldots, B_p</m>.
+          The <term>product of <m>A</m> and <m>B</m></term> is
+          <md>
+            AB = A \begin{bmatrix} B_1 \amp B_2 \amp \cdots \amp B_p \end{bmatrix}
+               = \begin{bmatrix} AB_1 \amp AB_2 \amp \cdots \amp AB_p \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-product-size">
+      <title>Question: What is the size of <m>AB</m>?</title>
+      <p>
+        Each column <m>B_j</m> of <m>B</m> is an <m>n \times 1</m> vector, so each product
+        <m>AB_j</m> is an <m>m \times 1</m> vector. There are <m>p</m> such columns, so
+        <m>AB</m> is an <m>m \times p</m> matrix.
+      </p>
+      <p>
+        In particular, the product <m>AB</m> is defined only when the number of
+        <em>columns</em> of <m>A</m> equals the number of <em>rows</em> of <m>B</m>:
+        <md>
+          \underset{m \times n}{A} \; \underset{n \times p}{B} = \underset{m \times p}{AB}.
+        </md>
+        The two inner dimensions must match, and the outer dimensions give the size of the product.
+      </p>
+    </remark>
+
+    <example xml:id="eg-product-by-columns">
+      <title>Computing a Product Column by Column</title>
+      <statement>
+        <p>
+          Find the product <m>AB</m> of the matrices
+          <md>
+            A = \begin{bmatrix} -1 \amp 0 \amp 3 \\ 2 \amp -1 \amp 1 \end{bmatrix}_{2 \times 3}
+            \qquad \text{and} \qquad
+            B = \begin{bmatrix} -1 \amp 1 \amp 2 \\ 0 \amp -2 \amp 4 \\ 1 \amp 0 \amp 0 \end{bmatrix}_{3 \times 3}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>A</m> is <m>2 \times 3</m> and <m>B</m> is <m>3 \times 3</m>, the product
+          <m>AB</m> is defined and has size <m>2 \times 3</m>. We compute <m>AB_j</m> for
+          each of the three columns of <m>B</m>:
+          <md>
+            <mrow>
+              AB_1 \amp = \begin{bmatrix} -1 \amp 0 \amp 3 \\ 2 \amp -1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}
+              = \begin{bmatrix} 4 \\ -1 \end{bmatrix},
+            </mrow>
+            <mrow>
+              AB_2 \amp = \begin{bmatrix} -1 \amp 0 \amp 3 \\ 2 \amp -1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \\ -2 \\ 0 \end{bmatrix}
+              = \begin{bmatrix} -1 \\ 4 \end{bmatrix},
+            </mrow>
+            <mrow>
+              AB_3 \amp = \begin{bmatrix} -1 \amp 0 \amp 3 \\ 2 \amp -1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 2 \\ 4 \\ 0 \end{bmatrix}
+              = \begin{bmatrix} -2 \\ 0 \end{bmatrix}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Assembling these as the columns of the product gives
+          <md>
+            AB = \begin{bmatrix} 4 \amp -1 \amp -2 \\ -1 \amp 4 \amp 0 \end{bmatrix}_{2 \times 3}.
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-entry-of-product">
+    <title>Computing the <m>(i,j)</m>-Entry of a Product</title>
+
+    <theorem xml:id="thm-ij-entry-of-product">
+      <title>The <m>(i,j)</m>-Entry of a Product</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m> be an <m>m \times n</m> matrix
+          and <m>B = \begin{bmatrix} b_{ij} \end{bmatrix}</m> be an <m>n \times p</m> matrix.
+          Then the <m>(i,j)</m>-entry of <m>AB</m> is given by
+          <md>
+            a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}
+            = \sum_{k=1}^{n} a_{ik} b_{kj}.
+          </md>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      In words: the <m>(i,j)</m>-entry of <m>AB</m> is obtained by pairing off
+      <em>row <m>i</m> of <m>A</m></em> against <em>column <m>j</m> of <m>B</m></em>,
+      multiplying corresponding terms, and adding the results.
+    </p>
+
+    <example xml:id="eg-single-entry">
+      <title>Computing a Single Entry</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix} -1 \amp 0 \amp 3 \\ 2 \amp -1 \amp 1 \end{bmatrix},
+            \qquad
+            B = \begin{bmatrix} -1 \amp 1 \amp 2 \\ 0 \amp -2 \amp 4 \\ 1 \amp 0 \amp 0 \end{bmatrix},
+            \qquad C = AB.
+          </md>
+          Compute the entry <m>c_{23}</m> without computing all of <m>C</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We pair row <m>2</m> of <m>A</m> against column <m>3</m> of <m>B</m>:
+          <md>
+            <mrow>
+              c_{23} \amp = a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33}
+            </mrow>
+            <mrow>
+              \amp = (2)(2) + (-1)(4) + (1)(0)
+            </mrow>
+            <mrow>
+              \amp = 4 - 4 + 0 = 0.
+            </mrow>
+          </md>
+          This agrees with the <m>(2,3)</m>-entry of the product computed in
+          <xref ref="eg-product-by-columns" text="type-global" />.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-when-products-exist">
+    <title>When Does a Product Exist?</title>
+
+    <example xml:id="eg-ab-exists-ba-does-not">
+      <title>A Product That Exists in Only One Order</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix} 1 \amp 2 \\ -3 \amp 0 \\ 1 \amp -4 \end{bmatrix}_{3 \times 2}
+            \qquad \text{and} \qquad
+            B = \begin{bmatrix} 1 \amp -1 \amp 2 \amp 0 \\ 3 \amp -2 \amp 1 \amp -3 \end{bmatrix}_{2 \times 4}.
+          </md>
+          <ul>
+            <li><p>Does <m>AB</m> exist? If so, compute it.</p></li>
+            <li><p>Does <m>BA</m> exist? If so, compute it.</p></li>
+          </ul>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>The product <m>AB</m>.</term>
+          The number of columns of <m>A</m> is <m>2</m>, which matches the number of rows
+          of <m>B</m>. So <m>AB</m> is defined and its size will be <m>3 \times 4</m>:
+          <md>
+            AB = \begin{bmatrix} 1 \amp 2 \\ -3 \amp 0 \\ 1 \amp -4 \end{bmatrix}
+                 \begin{bmatrix} 1 \amp -1 \amp 2 \amp 0 \\ 3 \amp -2 \amp 1 \amp -3 \end{bmatrix}
+               = \begin{bmatrix}
+                   7 \amp -5 \amp 4 \amp -6 \\
+                   -3 \amp 3 \amp -6 \amp 0 \\
+                   -11 \amp 7 \amp -2 \amp 12
+                 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>The product <m>BA</m>.</term>
+          <m>BA</m> is <em>not</em> defined, since the number of columns in <m>B</m>
+          (namely <m>4</m>) is not the same as the number of rows in <m>A</m> (namely <m>3</m>).
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-ab-not-ba">
+      <title>Matrix Multiplication Is Not Commutative</title>
+      <statement>
+        <p>
+          Let
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 2 \amp -1 \end{bmatrix}</m> and
+          <m>B = \begin{bmatrix} -1 \amp 1 \\ 0 \amp 3 \end{bmatrix}</m>.
+          <ul>
+            <li><p>Does <m>AB</m> exist? If so, compute it.</p></li>
+            <li><p>Does <m>BA</m> exist? If so, compute it.</p></li>
+          </ul>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both matrices are <m>2 \times 2</m>, so both products are defined and both are
+          <m>2 \times 2</m>:
+          <md>
+            AB = \begin{bmatrix} -1 \amp 1 \\ -2 \amp -1 \end{bmatrix},
+            \qquad \text{whereas} \qquad
+            BA = \begin{bmatrix} 1 \amp -1 \\ 6 \amp -3 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Note that <m>AB</m> and <m>BA</m> are both defined; however,
+          <m>AB \neq BA</m>. Matrix multiplication is <em>not</em> commutative.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-product-properties">
+    <title>Properties of Matrix Multiplication</title>
+
+    <theorem xml:id="thm-matrix-product-properties">
+      <title>Properties of Matrix Multiplication</title>
+      <statement>
+        <p>
+          Let <m>A</m>, <m>B</m>, and <m>C</m> be matrices of the appropriate sizes,
+          and let <m>r \in \R</m> be a scalar. Then the following properties hold.
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>A(B + C) = AB + AC</m>
+                (matrix multiplication distributes over matrix addition).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(B + C)A = BA + CA</m>
+                (matrix multiplication distributes over matrix addition).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A(BC) = (AB)C</m> (matrix multiplication is associative).
+              </p>
+            </li>
+            <li>
+              <p><m>r(AB) = (rA)B = A(rB)</m>.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <definition xml:id="def-commute">
+      <title>Commuting Matrices</title>
+      <statement>
+        <p>
+          Two matrices <m>A</m> and <m>B</m> are said to <term>commute</term> if
+          <m>AB = BA</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-sum-commutes">
+      <title>A Sum of Commuting Matrices</title>
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> be <m>m \times n</m> matrices, and let <m>C</m> be an
+          <m>n \times p</m> matrix. Prove that if <m>A</m> and <m>B</m> commute with
+          <m>C</m>, then <m>A + B</m> commutes with <m>C</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Suppose <m>AC = CA</m> and <m>CB = BC</m>. Then
+          <md>
+            <mrow>
+              C(A + B) \amp = CA + CB \amp \amp \text{(property 1)}
+            </mrow>
+            <mrow>
+              \amp = AC + BC \amp \amp (A, B \text{ commute with } C)
+            </mrow>
+            <mrow>
+              \amp = (A + B)C \amp \amp \text{(property 2)}
+            </mrow>
+          </md>
+          where properties (1) and (2) are those of
+          <xref ref="thm-matrix-product-properties" text="type-global" />.
+          Hence <m>C</m> and <m>A + B</m> commute.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

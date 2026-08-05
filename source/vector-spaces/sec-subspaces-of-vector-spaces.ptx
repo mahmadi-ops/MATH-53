@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-subspaces-of-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Subspaces and Bases in a Vector Space</title>
+
+  <definition xml:id="def-general-subspace">
+    <title>Subspace of a Vector Space</title>
+    <statement>
+      <p>
+        A <term>subspace</term> of a vector space <m>V</m> is a subset that is itself a
+        vector space under the operations defined on <m>V</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="eg-ml-subspace">
+    <title>A Subspace of <m>\mathbb{M}_{22}</m></title>
+    <statement>
+      <p>
+        Let <m>\mathbb{M}_{22}</m> be the set of all <m>2 \times 2</m> matrices.
+        Previously, we showed that <m>\mathbb{M}_{22}</m> is a vector space. Is the
+        following subset of <m>\mathbb{M}_{22}</m> a subspace?
+        <md>
+          \mathbb{M}_L = \left\{ \begin{bmatrix} x \amp 0 \\ y \amp z \end{bmatrix}
+          \; \middle| \; x + y + z = 0 \right\}.
+        </md>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let
+        <m>A = \begin{bmatrix} a_1 \amp 0 \\ a_2 \amp a_3 \end{bmatrix}</m>,
+        <m>B = \begin{bmatrix} b_1 \amp 0 \\ b_2 \amp b_3 \end{bmatrix}</m>, and
+        <m>C = \begin{bmatrix} c_1 \amp 0 \\ c_2 \amp c_3 \end{bmatrix}</m> be in
+        <m>\mathbb{M}_L</m>. Then:
+      </p>
+      <p>
+        <term>(I)</term>
+        <md>
+          A + B = \begin{bmatrix} a_1 + b_1 \amp 0 \\ a_2 + b_2 \amp a_3 + b_3 \end{bmatrix}
+        </md>
+        is also in <m>\mathbb{M}_L</m>, since
+        <m>(a_1 + b_1) + (a_2 + b_2) + (a_3 + b_3) = 0 + 0 = 0</m>.
+      </p>
+      <p>
+        <term>(II)</term> <m>A + B = B + A</m>.
+      </p>
+      <p>
+        <term>(III)</term>
+        <m>0_{2 \times 2} = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} \in \mathbb{M}_L</m>
+        and <m>A + 0 = A</m>.
+      </p>
+      <p>
+        <term>(IV)</term> <m>(A + B) + C = A + (B + C)</m> follows from the properties of
+        matrix addition.
+      </p>
+      <p>
+        <term>(V)</term>
+        <m>-A = \begin{bmatrix} -a_1 \amp 0 \\ -a_2 \amp -a_3 \end{bmatrix} \in \mathbb{M}_L</m>
+        and <m>A + (-A) = 0_{2 \times 2}</m>.
+      </p>
+      <p>
+        <term>(VI)</term>
+        <m>A = \begin{bmatrix} a_1 \amp 0 \\ a_2 \amp a_3 \end{bmatrix} \in \mathbb{M}_L</m>,
+        hence <m>a_1 + a_2 + a_3 = 0</m>. Then
+        <m>aA = \begin{bmatrix} a a_1 \amp 0 \\ a a_2 \amp a a_3 \end{bmatrix} \in \mathbb{M}_L</m>,
+        since <m>a a_1 + a a_2 + a a_3 = a(a_1 + a_2 + a_3) = 0</m>.
+      </p>
+      <p>
+        Similarly, you can check that (VII), (VIII), (IX), and (X) also hold.
+      </p>
+    </solution>
+  </example>
+
+  <remark xml:id="rem-modify-ml">
+    <title>Question</title>
+    <p>
+      Can you modify <m>\mathbb{M}_L</m> such that the new subset of
+      <m>\mathbb{M}_{22}</m> is no longer a subspace?
+    </p>
+  </remark>
+
+  <theorem xml:id="thm-span-is-subspace">
+    <title>Spans Are Subspaces</title>
+    <statement>
+      <p>In a vector space, the span of any subset is a subspace.</p>
+    </statement>
+  </theorem>
+
+  <example xml:id="eg-basis-p2">
+    <title>The Standard Basis for <m>\mathbb{P}_2</m></title>
+    <statement>
+      <p>
+        Consider the vector space of quadratic polynomials <m>\mathbb{P}_2</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Show that <m>\{ 1, x, x^2 \}</m> is a basis for <m>\mathbb{P}_2</m>.
+              (<m>\{ 1, x, x^2 \}</m> is known as the <term>standard basis</term> for
+              <m>\mathbb{P}_2</m>.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Is the span of the set <m>\{ x - x^2, 3x \}</m> a subspace of
+              <m>\mathbb{P}_2</m>? If so, is <m>\{ x - x^2, 3x \}</m> a basis for this
+              subspace?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <term>(1)</term> Note that any quadratic polynomial is a linear combination of
+        <m>1</m>, <m>x</m>, and <m>x^2</m>:
+        <md>
+          P(x) = a_2 x^2 + a_1 x + a_0 (1).
+        </md>
+        Also, clearly none of the elements of the set <m>\{ 1, x, x^2 \}</m> can be
+        written as a linear combination of the rest of the elements. Hence the set
+        <m>\{ 1, x, x^2 \}</m> is linearly independent, which means it is a basis for
+        <m>\mathbb{P}_2</m>.
+      </p>
+      <p>
+        <term>(2)</term> Yes, the set <m>\{ x - x^2, 3x \}</m> is a subset of
+        <m>\mathbb{P}_2</m> and hence its span is a subspace of <m>\mathbb{P}_2</m> by
+        <xref ref="thm-span-is-subspace" text="type-global" />.
+      </p>
+      <p>
+        Also, the set <m>\{ x - x^2, 3x \}</m> is a linearly independent set <mdash />
+        neither is a scalar multiple of the other, since only one of them involves
+        <m>x^2</m> <mdash /> and hence it is a basis for this subspace.
+      </p>
+    </solution>
+  </example>
+
+  <remark xml:id="rem-subspace-reminders">
+    <title>Reminders</title>
+    <p>
+      The definitions of subspace and basis for <m>\R^n</m>, which we met in
+      <xref ref="def-subspace" text="type-global" />,
+      <xref ref="thm-subspaces-are-spans" text="type-global" />, and
+      <xref ref="def-basis" text="type-global" />, carry over verbatim to a general vector
+      space: replace <q>collection of vectors in <m>\R^n</m></q> by <q>subset of
+      <m>V</m></q> throughout.
+    </p>
+  </remark>
+</section>

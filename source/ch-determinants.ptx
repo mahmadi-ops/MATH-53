@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-determinants" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Determinants</title>
+  <introduction>
+    <p>
+      The determinant condenses a square matrix into a single number that decides
+      invertibility. We define it by cofactor expansion, learn how row operations change
+      it <mdash /> which makes it computable by row reduction <mdash /> and then establish
+      how it interacts with inverses, products, and transposes.
+    </p>
+  </introduction>
+  <xi:include href="determinants/sec-cofactor-expansion.ptx" />
+  <xi:include href="determinants/sec-determinants-row-operations.ptx" />
+  <xi:include href="determinants/sec-determinants-inverses-products.ptx" />
+</chapter>

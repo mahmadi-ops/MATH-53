@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-pagerank" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The PageRank Algorithm: The 25 Billion Dollar Eigenvector</title>
+
+  <introduction>
+    <p>
+      The PageRank algorithm is one of many algorithms that Google uses to determine the
+      relative importance of a webpage. In 1998, Brin and Page posed the original
+      formulation and subsequent solution of the PageRank problem in the Markov chain
+      realm. Google owes its success partly to its PageRank algorithm, which enables
+      ranking the pages and thereby presenting to the user the most relevant and helpful
+      pages first. Here, we will study a simplified version of this algorithm.
+    </p>
+    <p>
+      The PageRank algorithm models the internet with a directed graph. Each webpage is a
+      node, and there is an edge from node <m>i</m> to node <m>j</m> if page <m>i</m>
+      links to page <m>j</m>. Let <m>\operatorname{In}(i)</m> be the websites linking to
+      page <m>i</m> and let <m>\operatorname{Out}(i)</m> be the websites that page
+      <m>i</m> links to.
+    </p>
+    <p>
+      The PageRank algorithm ranks pages by how many other pages link to them. A link from
+      a more important page counts more than one from a less important page. For example,
+      in <xref ref="fig-pagerank-graph" text="type-global" /> we would expect node
+      <m>0</m> to have a very high rank because every other node links to it.
+      Consequently, we would expect node <m>7</m> to have a fairly high rank because node
+      <m>0</m> links to it, even though node <m>0</m> is the only node to do so.
+    </p>
+  </introduction>
+
+  <figure xml:id="fig-pagerank-graph">
+    <caption>
+      This directed graph describes the links between <m>8</m> webpages.
+    </caption>
+    <image width="78%">
+      <prefigure label="pf-pagerank-graph" xmlns="https://prefigure.org">
+        <diagram dimensions="(520,260)" margins="14">
+          <coordinates bbox="(-0.6,-1.4,8.4,4.6)">
+            <line endpoints="((1.75,3),(3.75,3))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((2.2,1.25),(3.8,2.75))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((4,1.3),(4,2.7))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((5.4,1.3),(4.25,2.75))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((6.85,1.3),(4.3,2.85))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((4.15,3.2),(5.3,3.85))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((5.3,3.65),(4.25,3.05))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((1.8,1),(0.8,1))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((4.25,1),(5.25,1))" stroke="black" thickness="1" arrows="1"/>
+            <line endpoints="((5.75,1),(6.75,1))" stroke="black" thickness="1" arrows="1"/>
+            <spline points="((2,0.75),(4.5,-0.9),(7,0.75))" stroke="black" thickness="1" arrows="1"/>
+            <spline points="((4,0.75),(5.5,-0.3),(7,0.8))" stroke="black" thickness="1" arrows="1"/>
+            <point p="(4,3)" fill="white" size="12"/>
+            <point p="(1.5,3)" fill="white" size="12"/>
+            <point p="(5.5,4)" fill="white" size="12"/>
+            <point p="(0.5,1)" fill="white" size="12"/>
+            <point p="(2,1)" fill="white" size="12"/>
+            <point p="(4,1)" fill="white" size="12"/>
+            <point p="(5.5,1)" fill="white" size="12"/>
+            <point p="(7,1)" fill="white" size="12"/>
+            <label p="(4,3)" alignment="center"><m>0</m></label>
+            <label p="(1.5,3)" alignment="center"><m>1</m></label>
+            <label p="(5.5,4)" alignment="center"><m>7</m></label>
+            <label p="(0.5,1)" alignment="center"><m>2</m></label>
+            <label p="(2,1)" alignment="center"><m>3</m></label>
+            <label p="(4,1)" alignment="center"><m>4</m></label>
+            <label p="(5.5,1)" alignment="center"><m>5</m></label>
+            <label p="(7,1)" alignment="center"><m>6</m></label>
+          </coordinates>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <remark xml:id="rem-in-out-notation">
+    <p>
+      For example, in <xref ref="fig-pagerank-graph" text="type-global" />,
+      <md>
+        \operatorname{Out}(2) = \{ \, \}, \quad
+        \operatorname{Out}(4) = \{ 0, 5, 6 \}, \quad
+        \operatorname{In}(2) = \{ 3 \}, \quad
+        \operatorname{In}(4) = \{ \, \}.
+      </md>
+      Also, we will use the notation <m>|\operatorname{Out}(i)|</m> to represent the
+      number of webpages that page <m>i</m> links to. For example,
+      <m>|\operatorname{Out}(4)| = 3</m>.
+    </p>
+  </remark>
+
+  <subsection xml:id="subsec-pagerank-probabilities">
+    <title>The Random Surfer</title>
+
+    <p>
+      The PageRank algorithm assumes that a surfer chooses a starting webpage randomly.
+      Then, if the surfer is at page <m>i</m>, they randomly select a page from
+      <m>\operatorname{Out}(i)</m> to visit next. This means that the surfer's chance of
+      being on page <m>i</m> at time <m>t</m> is determined by where they were at time
+      <m>t - 1</m>.
+    </p>
+
+    <example xml:id="eg-pagerank-q1">
+      <title>Question 1</title>
+      <statement>
+        <p>
+          A surfer starts by choosing a webpage randomly. Suppose the internet has
+          <m>N</m> webpages, and let <m>p_i(t)</m> be the likelihood that the surfer is on
+          page <m>i</m> at time <m>t</m>. What are the probabilities <m>p_i(0)</m> and
+          <m>p_i(t+1)</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            p_i(0) = \frac{1}{N},
+            \qquad
+            p_i(t+1) = \sum_{j \in \operatorname{In}(i)} \frac{p_j(t)}{|\operatorname{Out}(j)|}.
+          </md>
+          The sum runs over the in-linking pages, and the denominator is the number of
+          out-links of the linking page <m>j</m>.
+        </p>
+        <p>
+          <term>Key ideas.</term>
+          <ol marker="I">
+            <li>
+              <p>
+                A page is highly ranked if it is cited often by other pages. The
+                importance of page <m>i</m> increases if it is linked to from page
+                <m>j</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Also, the increment in the importance of page <m>i</m> should depend on
+                the importance of the linking page <m>p_j</m>; the increment in the
+                importance of page <m>i</m> should be inversely proportional to the number
+                of out-links from page <m>j</m>, which is denoted by
+                <m>|\operatorname{Out}(j)|</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-pagerank-q2">
+      <title>Question 2</title>
+      <statement>
+        <p>Find <m>p_6(t+1)</m>.</p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>|\operatorname{Out}(3)| = 3</m>,
+          <m>|\operatorname{Out}(4)| = 3</m>, and
+          <m>|\operatorname{Out}(5)| = 2</m>, and pages <m>3</m>, <m>4</m>, <m>5</m> are
+          the ones linking to page <m>6</m>,
+          <md>
+            p_6(t+1) = \frac{p_3(t)}{3} + \frac{p_4(t)}{3} + \frac{p_5(t)}{2}.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-pagerank-q3">
+      <title>Question 3</title>
+      <statement>
+        <p>
+          For the graph in <xref ref="fig-pagerank-graph" text="type-global" />, find a
+          matrix which will represent the evolution of probabilities from time <m>t</m> to
+          time <m>t+1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Reading each column <m>j</m> as the out-links of page <m>j</m>,
+          <md>
+            H_0 = \begin{bmatrix}
+              0 \amp 1 \amp 0 \amp \frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{2} \amp 1 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0 \amp \frac{1}{3} \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0 \amp \frac{1}{3} \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0 \amp \frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{2} \amp 0 \amp 0 \\
+              1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{bmatrix},
+            \qquad
+            H_0 \vec{p}(t) = \vec{p}(t+1).
+          </md>
+          For example, row <m>6</m> reproduces
+          <m>p_6(t+1) = \frac{p_3(t)}{3} + \frac{p_4(t)}{3} + \frac{p_5(t)}{2}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-dangling-links">
+    <title>Pages with No Outbound Links</title>
+
+    <p>
+      On the Internet many pages are <term>dangling</term> or <term>sink links</term>,
+      without any outbound links. What happens to the random surfer who visits such a
+      page? The simplest thing is to imagine that the surfer chooses the next page
+      entirely at random.
+    </p>
+
+    <example xml:id="eg-pagerank-q4">
+      <title>Question 4</title>
+      <statement>
+        <p>
+          Modify the directed graph of <xref ref="fig-pagerank-graph" text="type-global" />
+          and the probabilities <m>p_i(t+1)</m> assuming that surfers visiting a page with
+          no outbound link will choose another page at random.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Page <m>2</m> is the dangling node, so we replace its column of zeros by a
+          column of <m>\frac{1}{8}</m>s:
+          <md>
+            H = \begin{bmatrix}
+              0 \amp 1 \amp \frac{1}{8} \amp \frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{2} \amp 1 \amp 1 \\
+              0 \amp 0 \amp \frac{1}{8} \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp \frac{1}{8} \amp \frac{1}{3} \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp \frac{1}{8} \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp \frac{1}{8} \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp \frac{1}{8} \amp 0 \amp \frac{1}{3} \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp \frac{1}{8} \amp \frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{2} \amp 0 \amp 0 \\
+              1 \amp 0 \amp \frac{1}{8} \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{bmatrix}.
+          </md>
+          The probability for page <m>6</m> gains an additional term:
+          <md>
+            p_6(t+1) = \frac{p_3(t)}{3} + \frac{p_4(t)}{3} + \frac{p_5(t)}{2}
+            + \underbrace{\frac{p_2(t)}{8}}_{\text{additional term}}.
+          </md>
+          Now <m>H</m> is column stochastic and will preserve probabilities.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-damping">
+    <title>Making the Model More Realistic (Adding Boredom)</title>
+
+    <p>
+      Previously we assumed that the current page must link to the next page. However, the
+      model is more realistic if we assume that the surfer sometimes gets bored and
+      randomly picks a new starting page.
+    </p>
+
+    <example xml:id="eg-pagerank-q5">
+      <title>Question 5</title>
+      <statement>
+        <p>
+          Denote the probability that a surfer stays interested at time step <m>t</m> by a
+          constant <m>\alpha</m>, called the <term>damping factor</term>. How would the
+          probabilities <m>p_i(t+1)</m> be modified?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            p_i(t+1)
+            = \alpha \left( \sum_{j \in \operatorname{In}(i)} \frac{p_j(t)}{|\operatorname{Out}(j)|} \right)
+            + (1 - \alpha)\frac{1}{N},
+          </md>
+          since with probability <m>(1 - \alpha)</m> the surfer loses interest and will
+          choose another page at random.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-pagerank-q6">
+      <title>Question 6</title>
+      <statement>
+        <p>
+          Express the result of the previous question as a matrix equation and show that
+          it represents a Markov chain whose transition matrix is regular and stochastic.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>
+              \vec{p}(t+1)
+              \amp = \alpha H \vec{p}(t)
+                   + (1-\alpha) \begin{bmatrix} \frac{1}{N} \\ \vdots \\ \frac{1}{N} \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \alpha H \vec{p}(t)
+                   + \frac{(1-\alpha)}{N} \begin{bmatrix}
+                       1 \amp 1 \amp \cdots \amp 1 \\
+                       \vdots \amp \vdots \amp \amp \vdots \\
+                       1 \amp 1 \amp \cdots \amp 1
+                     \end{bmatrix}_{N \times N} \vec{p}(t)
+            </mrow>
+            <mrow>
+              \amp = \left( \alpha H + \frac{(1-\alpha)}{N}
+                     \begin{bmatrix}
+                       1 \amp \cdots \amp 1 \\ \vdots \amp \amp \vdots \\ 1 \amp \cdots \amp 1
+                     \end{bmatrix}_{N \times N} \right) \vec{p}(t),
+            </mrow>
+          </md>
+          where the second step uses that the entries of <m>\vec{p}(t)</m> sum to one.
+        </p>
+        <p>
+          Note that <m>H</m> is a stochastic matrix and
+          <m>B = \frac{1}{N} \begin{bmatrix} 1 \amp \cdots \amp 1 \\ \vdots \amp \amp \vdots \\ 1 \amp \cdots \amp 1 \end{bmatrix}_{N \times N}</m>
+          is also a stochastic matrix. Therefore <m>\alpha H + (1-\alpha)B</m> is also a
+          stochastic matrix:
+          <md>
+            \sum_{i=1}^{N} \left( \alpha H_{ij} + (1-\alpha)B_{ij} \right)
+            = \alpha \sum_{i=1}^{N} H_{ij} + (1-\alpha) \sum_{i=1}^{N} B_{ij}
+            = \alpha(1) + (1-\alpha)(1) = 1.
+          </md>
+          Also, it is obvious that <m>\alpha H + (1-\alpha)B</m> is a regular matrix,
+          since every entry is strictly positive.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-pagerank-q7">
+      <title>Question 7</title>
+      <statement>
+        <p>
+          Choose <m>\alpha = 0.85</m> and find the steady state of the Markov chain derived
+          in the previous question for the example shown in
+          <xref ref="fig-pagerank-graph" text="type-global" />.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          With
+          <md>
+            T = \alpha H + \frac{(1-\alpha)}{N}
+              \begin{bmatrix} 1 \amp \cdots \amp 1 \\ \vdots \amp \amp \vdots \\ 1 \amp \cdots \amp 1 \end{bmatrix}_{N \times N},
+          </md>
+          we calculate the eigenvector corresponding to eigenvalue one, normalized to be a
+          probability vector:
+          <md>
+            \vec{p}_* = \begin{bmatrix}
+              0.4387 \\ 0.0217 \\ 0.0279 \\ 0.0217 \\ 0.0217 \\ 0.0279 \\ 0.0459 \\ 0.3946
+            \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          As expected, page <m>0</m> has the highest rank. Page <m>7</m> has a higher rank
+          than page <m>6</m>, because it has been linked to by the highest ranked page
+          (page <m>0</m>). The above probability vector provides a comparison between the
+          importance of the webpages.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

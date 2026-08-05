@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-markov-chains" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Markov Chains and Steady States</title>
+
+  <subsection xml:id="subsec-markov-motivation">
+    <title>A First Example</title>
+
+    <example xml:id="eg-alice-lunch">
+      <title>Alice's Lunch</title>
+      <statement>
+        <p>
+          Alice always eats lunch either at restaurant <m>A</m> or restaurant <m>B</m>.
+          Suppose that
+          <ul>
+            <li><p>Initially she is equally likely to eat at each restaurant.</p></li>
+            <li><p>She never eats at <m>A</m> two days in a row.</p></li>
+            <li>
+              <p>
+                If she eats at restaurant <m>B</m> one day, then the next day she is three
+                times as likely to eat at <m>B</m> as at <m>A</m>.
+              </p>
+            </li>
+          </ul>
+          Calculate the probabilities of her eating at <m>A</m> and <m>B</m> for the first
+          week. What do you notice?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The initial state vector is
+          <m>\vec{S}_0 = \begin{bmatrix} \frac{1}{2} \\ \frac{1}{2} \end{bmatrix}</m>, and
+          the <term>transition matrix</term> is
+          <md>
+            T = \begin{bmatrix} 0 \amp \frac{1}{4} \\ 1 \amp \frac{3}{4} \end{bmatrix},
+          </md>
+          where the columns are indexed by today's restaurant (<m>A</m>, then <m>B</m>)
+          and the rows by the next day's.
+        </p>
+        <p>
+          Iterating <m>\vec{S}_{k+1} = T\vec{S}_k</m>,
+          <md>
+            <mrow>
+              \vec{S}_1 \amp = T\vec{S}_0 = \begin{bmatrix} 0.125 \\ 0.875 \end{bmatrix},
+            </mrow>
+            <mrow>
+              \vec{S}_2 \amp = T\vec{S}_1 = \begin{bmatrix} 0.2188 \\ 0.7812 \end{bmatrix},
+            </mrow>
+            <mrow>
+              \amp \;\; \vdots
+            </mrow>
+            <mrow>
+              \vec{S}_6 \amp = T\vec{S}_5 = \begin{bmatrix} 0.2001 \\ 0.7999 \end{bmatrix},
+            </mrow>
+            <mrow>
+              \vec{S}_7 \amp = T\vec{S}_6 = \begin{bmatrix} 0.2001 \\ 0.7999 \end{bmatrix}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The state vectors seem to be converging to
+          <m>\begin{bmatrix} 0.2 \\ 0.8 \end{bmatrix}</m>. Also, we tried changing the
+          initial state vector and it seemed that the transition matrix above causes the
+          state vectors to converge to <m>\begin{bmatrix} 0.2 \\ 0.8 \end{bmatrix}</m>
+          independent of the choice of <m>\vec{S}_0</m>.
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-steady-state-questions">
+      <title>Steady State</title>
+      <p>
+        Sometimes, as in the example of the customer who ate lunch in restaurant <m>A</m>
+        or <m>B</m>, the state vectors converge to a particular vector, called the
+        <term>steady state</term> vector.
+      </p>
+      <p>
+        <ol>
+          <li><p>How do we know if a Markov chain has a steady state vector?</p></li>
+          <li><p>If a Markov chain has a steady state vector, how do we find it?</p></li>
+        </ol>
+        First we need to learn about regular and stochastic matrices.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-regular-stochastic">
+    <title>Regular and Stochastic Matrices</title>
+
+    <definition xml:id="def-regular-matrix">
+      <title>Regular Matrix</title>
+      <statement>
+        <p>
+          The matrix <m>P</m> is a <term>regular matrix</term> if, for some integer
+          <m>k \gt 0</m>, all entries of <m>P^k</m> are strictly positive.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-regular">
+      <title>A Regular Matrix</title>
+      <p>
+        <m>T = \begin{bmatrix} 0 \amp \frac{1}{4} \\ 1 \amp \frac{3}{4} \end{bmatrix}</m>
+        is a regular matrix, since
+        <md>
+          T^2 = \begin{bmatrix} \frac{1}{4} \amp \frac{3}{16} \\ \frac{3}{4} \amp \frac{13}{16} \end{bmatrix}
+        </md>
+        and all the entries of <m>T^2</m> are positive.
+      </p>
+    </example>
+
+    <example xml:id="eg-not-regular">
+      <title>A Matrix That Is Not Regular</title>
+      <p>
+        <m>P = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> is not regular,
+        since <m>P^2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>,
+        <m>P^3 = P</m>, <m>P^4 = I</m>, and so on. In other words,
+        <md>
+          P^n = \begin{cases} P \amp n \text{ odd} \\ I \amp n \text{ even,} \end{cases}
+        </md>
+        hence <m>P^n</m> always has zeros as its entries.
+      </p>
+    </example>
+
+    <definition xml:id="def-stochastic-matrix">
+      <title>Stochastic Matrix</title>
+      <statement>
+        <p>
+          A square matrix <m>P</m> is a <term>stochastic matrix</term> if its columns are
+          probability vectors, i.e., each column has nonnegative entries summing to
+          <m>1</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-general-2x2-stochastic">
+      <p>
+        As an example, consider a <m>2 \times 2</m> stochastic matrix whose entries are
+        all nonzero:
+        <md>
+          T = \begin{bmatrix} 1 - p \amp q \\ p \amp 1 - q \end{bmatrix},
+          \qquad \text{where } 0 \lt p, q \lt 1.
+        </md>
+      </p>
+    </remark>
+
+    <example xml:id="eg-stochastic-preserves-sum">
+      <title>Stochastic Matrices Preserve Sums</title>
+      <statement>
+        <p>
+          Show that stochastic matrices (as defined above) preserve the sum of entries
+          when acting on vectors in <m>\R^n</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Assume <m>T</m> is a stochastic matrix and
+          <m>\vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \in \R^n</m>.
+          Then the <m>i</m>th entry of <m>T\vec{x}</m> is
+          <md>
+            \left( T\vec{x} \right)_i = \sum_{j=1}^{n} T_{ij} x_j,
+          </md>
+          and so
+          <md>
+            \text{sum of entries of } T\vec{x}
+            = \sum_{i=1}^{n} \sum_{j=1}^{n} T_{ij} x_j
+            = \sum_{j=1}^{n} \underbrace{\left( \sum_{i=1}^{n} T_{ij} \right)}_{= \, 1} x_j
+            = \sum_{j=1}^{n} x_j,
+          </md>
+          the sum of entries of <m>\vec{x}</m>. The inner sum equals one since <m>T</m> is
+          stochastic.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-stochastic-eigenvalue-one">
+      <title>Every Stochastic Matrix Has Eigenvalue One</title>
+      <statement>
+        <p>Show that every stochastic matrix has eigenvalue one.</p>
+      </statement>
+      <solution>
+        <p>
+          <term>(I)</term> Note that
+          <m>\vec{x} = \begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix}</m> is an
+          eigenvector of <m>A^T</m> with eigenvalue one. For example, with
+          <m>A = \begin{bmatrix} 0 \amp \frac{1}{4} \\ 1 \amp \frac{3}{4} \end{bmatrix}</m>,
+          <md>
+            A^T \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} 0 \amp 1 \\ \frac{1}{4} \amp \frac{3}{4} \end{bmatrix}
+              \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            = (1) \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+          </md>
+          Note that each entry of
+          <m>A^T \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}</m> is equal to the sum of
+          entries in a column of <m>A</m>, and since the columns of <m>A</m> are
+          probability vectors, they add up to one.
+        </p>
+        <p>
+          <term>(II)</term> Also,
+          <m>\det(A - \lambda I) = \det \left( (A - \lambda I)^T \right) = \det(A^T - \lambda I)</m>,
+          which means <m>A</m> and <m>A^T</m> have the same eigenvalues.
+        </p>
+        <p>
+          From (I) and (II): <m>A</m> has eigenvalue one.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-stochastic-eigenvalue-bound">
+      <title>Eigenvalues of a Stochastic Matrix Satisfy <m>|\lambda| \leq 1</m></title>
+      <statement>
+        <p>
+          Show that eigenvalues of a stochastic matrix <m>A</m> satisfy
+          <m>|\lambda| \leq 1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Assume <m>\vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}</m>
+          is an eigenvector of <m>A^T</m> with eigenvalue <m>\lambda</m>, and assume that
+          <m>x_i</m> is the entry of <m>\vec{x}</m> with largest absolute value, so
+          <m>|x_j| \leq |x_i|</m> for all <m>j</m>.
+        </p>
+        <p>
+          Writing <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m> so that
+          <m>A^T = \begin{bmatrix} a_{ji} \end{bmatrix}</m>, and focusing on the <m>i</m>th
+          entry of <m>\lambda \vec{x} = A^T\vec{x}</m>,
+          <md>
+            \left| \lambda x_i \right| = \left| \sum_j a_{ji} x_j \right|
+            \leq \sum_j \left| a_{ji} x_j \right|
+            = \sum_j a_{ji} |x_j|
+            \leq \underbrace{\sum_j a_{ji}}_{= \, 1} |x_i| = |x_i|,
+          </md>
+          where the first inequality holds because the absolute value of a sum is at most
+          the sum of absolute values, and the last step uses that <m>A</m> is stochastic.
+        </p>
+        <p>
+          Therefore <m>|\lambda x_i| \leq |x_i|</m> and hence <m>|\lambda| \leq 1</m>.
+          Finally, since <m>A</m> and <m>A^T</m> have the same eigenvalues, we have
+          completed the proof.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-steady-state">
+    <title>Existence of a Unique Steady State</title>
+
+    <theorem xml:id="thm-unique-steady-state">
+      <title>Existence of a Unique Steady State</title>
+      <statement>
+        <p>
+          If the transition matrix <m>T</m> of a Markov chain is a regular stochastic
+          matrix, then it has a unique steady state.
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-finding-steady-state">
+      <title>Finding the Steady State</title>
+      <statement>
+        <p>
+          If an <m>n \times n</m> regular matrix <m>T</m> is the transition matrix of a
+          Markov chain, then the steady state vector can be found by solving
+          <m>S = TS</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="eg-steady-state-alice">
+      <title>The Steady State for Alice's Lunch</title>
+      <statement>
+        <p>
+          Does the matrix
+          <m>T = \begin{bmatrix} 0 \amp \frac{1}{4} \\ 1 \amp \frac{3}{4} \end{bmatrix}</m>
+          have a unique steady state vector? If so, find the steady state vector.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(I)</term> <m>T</m> is a stochastic matrix, since the sum of entries in
+          each column is equal to one.
+        </p>
+        <p>
+          <term>(II)</term> <m>T</m> is a regular matrix, since
+          <m>T^2 = \begin{bmatrix} \frac{1}{4} \amp \frac{3}{16} \\ \frac{3}{4} \amp \frac{13}{16} \end{bmatrix}</m>
+          and all the entries of <m>T^2</m> are positive.
+        </p>
+        <p>
+          From (I) and (II), <m>T</m> has a unique steady state vector.
+        </p>
+        <p>
+          To find it, solve <m>T\vec{S} = \vec{S}</m>, or <m>(T - I)\vec{S} = \vec{0}</m>,
+          for <m>\vec{S} = \begin{bmatrix} a \\ b \end{bmatrix}</m>:
+          <md>
+            \left[ \begin{array}{cc|c}
+              -1 \amp \frac{1}{4} \amp 0 \\ 1 \amp -\frac{1}{4} \amp 0
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{cc|c}
+              1 \amp -\frac{1}{4} \amp 0 \\ 0 \amp 0 \amp 0
+            \end{array} \right]
+            \; \Longrightarrow \;
+            \vec{S} = \begin{bmatrix} \frac{t}{4} \\ t \end{bmatrix}, \quad t \in \R.
+          </md>
+        </p>
+        <p>
+          Now, remember that entries of the state <m>\vec{S}</m> represent Alice's
+          probabilities of eating at restaurants <m>A</m> and <m>B</m>, hence they must
+          add up to one:
+          <md>
+            \frac{t}{4} + t = 1
+            \; \longrightarrow \;
+            \frac{5t}{4} = 1
+            \; \longrightarrow \;
+            t = \frac{4}{5},
+          </md>
+          so the steady state is
+          <md>
+            \vec{S} = \begin{bmatrix} \frac{1}{5} \\ \frac{4}{5} \end{bmatrix}
+            = \begin{bmatrix} 0.2 \\ 0.8 \end{bmatrix}.
+          </md>
+          Note that this is the same result that we got numerically earlier in
+          <xref ref="eg-alice-lunch" text="type-global" />.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-two-by-two-steady-state-proof">
+      <title>Why the Steady State Is Reached</title>
+      <statement>
+        <p>
+          Prove the following statement: if <m>T</m> is a <m>2 \times 2</m> regular
+          transition matrix then <m>T</m> has a steady state vector <m>\vec{x}_*</m> and
+          furthermore for any initial vector <m>\vec{x}_0</m> we have
+          <m>\lim_{n \to \infty} T^n \vec{x}_0 = \vec{x}_*</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A <m>2 \times 2</m> stochastic matrix is of the form
+          <md>
+            T = \begin{bmatrix} a \amp 1 - b \\ 1 - a \amp b \end{bmatrix},
+            \qquad \text{where } 0 \leq a \leq 1 \text{ and } 0 \leq b \leq 1.
+          </md>
+          Note that if <m>a = b = 0</m>, then
+          <m>T = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> and
+          <m>T^n</m> alternates between <m>T</m> and <m>I</m>, hence <m>T</m> is not
+          regular. Also, if <m>a = b = 1</m>, then
+          <m>T = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>, which is clearly
+          not regular. Therefore, we can ignore these two cases.
+        </p>
+        <p>
+          To compute <m>T^n</m>, we first diagonalize <m>T</m>. Computing the eigenvalues
+          and the eigenvectors gives
+          <md>
+            \lambda_1 = 1, \quad \lambda_2 = a + b - 1,
+            \qquad
+            \vec{x}_1 = \begin{bmatrix} b - 1 \\ a - 1 \end{bmatrix},
+            \quad \vec{x}_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}.
+          </md>
+          Then
+          <md>
+            T^n = PD^nP^{-1}
+            = \begin{bmatrix} b-1 \amp -1 \\ a-1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \amp 0 \\ 0 \amp (a+b-1)^n \end{bmatrix}
+              \frac{1}{a+b-2} \begin{bmatrix} 1 \amp 1 \\ 1-a \amp b-1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Now <m>\lim_{n \to \infty} (a+b-1)^n = 0</m>, since <m>0 \lt a + b \lt 2</m> and
+          therefore <m>-1 \lt a + b - 1 \lt 1</m>. Therefore
+          <md>
+            \lim_{n \to \infty} T^n
+            = \frac{1}{a+b-2} \begin{bmatrix} b-1 \amp b-1 \\ a-1 \amp a-1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Now, if the initial probability vector is
+          <m>\vec{x}_0 = \begin{bmatrix} p \\ 1-p \end{bmatrix}</m>, then
+          <md>
+            \lim_{n \to \infty} T^n \vec{x}_0
+            = \frac{1}{a+b-2} \begin{bmatrix} b-1 \amp b-1 \\ a-1 \amp a-1 \end{bmatrix}
+              \begin{bmatrix} p \\ 1-p \end{bmatrix}
+            = \frac{1}{a+b-2} \begin{bmatrix} b-1 \\ a-1 \end{bmatrix},
+          </md>
+          which is the probability vector corresponding to eigenvector <m>\vec{x}_1</m>
+          with eigenvalue one, and is independent of <m>p</m>.
+        </p>
+        <p>
+          <term>Summary.</term>
+          <ol marker="I">
+            <li><p><m>T_{2 \times 2}</m> is a regular stochastic matrix.</p></li>
+            <li><p><m>\vec{x}_0</m> is an initial probability vector.</p></li>
+            <li>
+              <p>
+                <m>\vec{x}_*</m> is a probability eigenvector of <m>T</m> corresponding to
+                eigenvalue one.
+              </p>
+            </li>
+            <li>
+              <p>
+                The steady state vector is <m>\vec{x}_*</m>:
+                <m>\lim_{n \to \infty} T^n \vec{x}_0 = \vec{x}_*</m>. This means that to
+                find the steady state vector of <m>T_{2 \times 2}</m>, we can find the
+                eigenvector corresponding to eigenvalue one and normalize it.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

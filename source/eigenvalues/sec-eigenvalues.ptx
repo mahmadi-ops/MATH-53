@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-eigenvalues" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Eigenvalues and Eigenvectors</title>
+
+  <subsection xml:id="subsec-eigenvalue-motivation">
+    <title>Motivation: Powers of a Matrix</title>
+
+    <example xml:id="eg-power-motivation">
+      <title>Can We Compute <m>A^{1000}</m> Efficiently?</title>
+      <statement>
+        <p>
+          Can we efficiently calculate <m>A^{1000}</m> if
+          <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp -4 \end{bmatrix}</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Consider the matrix
+          <m>P = \begin{bmatrix} 2 \amp -1 \\ 1 \amp 3 \end{bmatrix}</m> and note that
+          <m>P^{-1} = \frac{1}{7} \begin{bmatrix} 3 \amp 1 \\ -1 \amp 2 \end{bmatrix}</m>.
+          Let us compute <m>P^{-1}AP</m>:
+          <md>
+            P^{-1}AP
+            = \frac{1}{7} \begin{bmatrix} 3 \amp 1 \\ -1 \amp 2 \end{bmatrix}
+              \begin{bmatrix} 1 \amp 2 \\ 3 \amp -4 \end{bmatrix}
+              \begin{bmatrix} 2 \amp -1 \\ 1 \amp 3 \end{bmatrix}
+            = \frac{1}{7} \begin{bmatrix} 3 \amp 1 \\ -1 \amp 2 \end{bmatrix}
+              \begin{bmatrix} 4 \amp 5 \\ 2 \amp -15 \end{bmatrix}
+            = \begin{bmatrix} 2 \amp 0 \\ 0 \amp -5 \end{bmatrix} = D,
+          </md>
+          a diagonal matrix.
+        </p>
+        <p>
+          How can the above calculation help us solve the original question? Rearranging,
+          <md>
+            <mrow>
+              P^{-1}AP \amp = D
+            </mrow>
+            <mrow>
+              P \left( P^{-1}AP \right) P^{-1} \amp = PDP^{-1}
+            </mrow>
+            <mrow>
+              \left( PP^{-1} \right) A \left( PP^{-1} \right) \amp = PDP^{-1}
+            </mrow>
+            <mrow>
+              A \amp = PDP^{-1}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          And therefore the inner factors telescope:
+          <md>
+            <mrow>
+              A^{1000}
+              \amp = \left( PDP^{-1} \right)\left( PDP^{-1} \right) \cdots \left( PDP^{-1} \right)
+            </mrow>
+            <mrow>
+              \amp = PD \left( P^{-1}P \right) D \left( P^{-1}P \right) \cdots \left( P^{-1}P \right) DP^{-1}
+            </mrow>
+            <mrow>
+              \amp = P D^{1000} P^{-1}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Powers of a diagonal matrix are trivial:
+          <md>
+            D^{1000} = \begin{bmatrix} 2 \amp 0 \\ 0 \amp -5 \end{bmatrix}^{1000}
+            = \begin{bmatrix} 2^{1000} \amp 0 \\ 0 \amp (-5)^{1000} \end{bmatrix},
+          </md>
+          so
+          <md>
+            <mrow>
+              A^{1000}
+              \amp = \begin{bmatrix} 2 \amp -1 \\ 1 \amp 3 \end{bmatrix}
+                \begin{bmatrix} 2^{1000} \amp 0 \\ 0 \amp (-5)^{1000} \end{bmatrix}
+                \frac{1}{7} \begin{bmatrix} 3 \amp 1 \\ -1 \amp 2 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{7} \begin{bmatrix}
+                3(2)^{1001} + 5^{1000} \amp 2^{1001} - 2(5)^{1000} \\
+                3(2)^{1000} - 3(5)^{1000} \amp 2^{1000} + 6(5)^{1000}
+              \end{bmatrix}.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-powers-of-diagonalizable">
+      <title>Powers of a Diagonalizable Matrix</title>
+      <statement>
+        <p>
+          If <m>A</m> is an <m>n \times n</m> matrix and <m>P</m> is an invertible
+          <m>n \times n</m> matrix such that <m>A = PDP^{-1}</m>, then
+          <m>A^k = PD^kP^{-1}</m> for each <m>k \in \mathbb{N}</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <definition xml:id="def-diagonalizable">
+      <title>Diagonalizing a Matrix</title>
+      <statement>
+        <p>
+          The process of finding an <em>invertible</em> matrix <m>P</m> and a
+          <em>diagonal</em> matrix <m>D</m> such that <m>A = PDP^{-1}</m> is known as
+          <term>diagonalizing</term> the matrix <m>A</m>, and <m>P</m> is referred to as
+          the <term>diagonalizing</term> matrix.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-diagonalization-questions">
+      <title>Questions</title>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Are all matrices diagonalizable? If not, when is a matrix diagonalizable?
+            </p>
+          </li>
+          <li>
+            <p>
+              How can we diagonalize a matrix <m>A</m>? (How can we find <m>P</m> and
+              <m>D</m>?)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-eigenvalue-definition">
+    <title>Eigenvalues and Eigenvectors</title>
+
+    <definition xml:id="def-eigenvalue">
+      <title>Eigenvalue and Eigenvector</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix, <m>\lambda</m> a real number, and
+          <m>\vec{x} \neq \vec{0} \in \R^n</m>. If <m>A\vec{x} = \lambda\vec{x}</m>, then
+          <m>\lambda</m> is an <term>eigenvalue</term> of <m>A</m>, and <m>\vec{x}</m> is
+          an <term>eigenvector</term> of <m>A</m> corresponding to <m>\lambda</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-eigenvector-check">
+      <title>Verifying an Eigenvector</title>
+      <p>
+        Let <m>A = \begin{bmatrix} 2 \amp 3 \\ 2 \amp 3 \end{bmatrix}</m> and
+        <m>\vec{x} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>. Then
+        <md>
+          A\vec{x} = \begin{bmatrix} 2 \amp 3 \\ 2 \amp 3 \end{bmatrix}
+            \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+          = \begin{bmatrix} 5 \\ 5 \end{bmatrix}
+          = 5 \begin{bmatrix} 1 \\ 1 \end{bmatrix} = 5\vec{x}.
+        </md>
+        This means <m>5</m> is an eigenvalue of <m>A</m> and
+        <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is an eigenvector of <m>A</m>
+        corresponding to eigenvalue <m>5</m>.
+      </p>
+    </example>
+
+    <example xml:id="eg-eigenvector-reflection">
+      <title>A Geometric Eigenvector</title>
+      <p>
+        Consider reflection with respect to the <m>x</m>-axis in <m>\R^2</m>, with matrix
+        <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m>, and take
+        <m>\vec{x} = \vec{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>. Then
+        <md>
+          \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
+          \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          = (1) \begin{bmatrix} 1 \\ 0 \end{bmatrix},
+        </md>
+        so <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> is an eigenvector of <m>A</m> with
+        eigenvalue <m>\lambda = 1</m>. Geometrically this is obvious: points on the
+        <m>x</m>-axis do not move under this reflection.
+      </p>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-characteristic-polynomial">
+    <title>The Characteristic Polynomial</title>
+
+    <p>
+      <term>Question: How can we calculate the eigenvalues of a matrix?</term>
+      Rearranging the defining equation,
+      <md>
+        <mrow>
+          A\vec{x} \amp = \lambda\vec{x}
+        </mrow>
+        <mrow>
+          \lambda\vec{x} - A\vec{x} \amp = \vec{0}
+        </mrow>
+        <mrow>
+          \lambda I \vec{x} - A\vec{x} \amp = \vec{0}
+        </mrow>
+        <mrow>
+          \left( \lambda I - A \right) \vec{x} \amp = \vec{0}.
+        </mrow>
+      </md>
+      This is a system of linear equations with coefficient matrix
+      <m>\lambda I - A</m>, and if there exists a nontrivial solution <m>\vec{x}</m>, then
+      <m>(\lambda I - A)</m> is not invertible and therefore
+      <md>
+        \det(\lambda I - A) = 0.
+      </md>
+    </p>
+
+    <definition xml:id="def-characteristic-polynomial">
+      <title>Characteristic Polynomial</title>
+      <statement>
+        <p>
+          The <term>characteristic polynomial</term> of an <m>n \times n</m> matrix
+          <m>A</m> is defined to be <m>c_A(\lambda) = \det(\lambda I - A)</m>, where
+          <m>I</m> is the identity matrix.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-characteristic-polynomial">
+      <title>Finding Eigenvalues</title>
+      <statement>
+        <p>
+          Find the eigenvalues of
+          <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp -4 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            \lambda I - A
+            = \begin{bmatrix} \lambda \amp 0 \\ 0 \amp \lambda \end{bmatrix}
+              - \begin{bmatrix} 1 \amp 2 \\ 3 \amp -4 \end{bmatrix}
+            = \begin{bmatrix} \lambda - 1 \amp -2 \\ -3 \amp \lambda + 4 \end{bmatrix},
+          </md>
+          so
+          <md>
+            \det(\lambda I - A) = (\lambda - 1)(\lambda + 4) - 6 = 0
+            \; \longrightarrow \;
+            \lambda^2 + 3\lambda - 10 = 0
+            \; \longrightarrow \;
+            (\lambda + 5)(\lambda - 2) = 0,
+          </md>
+          giving <m>\lambda_1 = -5</m> and <m>\lambda_2 = 2</m>. These are exactly the
+          diagonal entries of the matrix <m>D</m> in
+          <xref ref="eg-power-motivation" text="type-global" />.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-finding-eigenvectors">
+      <title>Finding the Eigenvectors</title>
+      <statement>
+        <p>
+          <term>Question: How can we calculate the eigenvectors of a matrix?</term>
+          Continue the previous example and find the eigenvectors.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For each eigenvalue we solve
+          <m>(\lambda I - A)\vec{x} = \vec{0}</m>.
+        </p>
+        <p>
+          <term>For <m>\lambda_2 = 2</m>:</term>
+          <md>
+            \left[ \begin{array}{cc|c} 1 \amp -2 \amp 0 \\ -3 \amp 6 \amp 0 \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{cc|c} 1 \amp -2 \amp 0 \\ 0 \amp 0 \amp 0 \end{array} \right]
+            \; \Longrightarrow \;
+            \vec{x}_2 = \begin{bmatrix} 2t \\ t \end{bmatrix} = t \begin{bmatrix} 2 \\ 1 \end{bmatrix},
+            \quad t \in \R \text{ and } t \neq 0.
+          </md>
+        </p>
+        <p>
+          <term>For <m>\lambda_1 = -5</m>:</term>
+          <md>
+            \left[ \begin{array}{cc|c} -6 \amp -2 \amp 0 \\ -3 \amp -1 \amp 0 \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{cc|c} 3 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \end{array} \right]
+            \; \Longrightarrow \;
+            \vec{x}_1 = \begin{bmatrix} -t \\ 3t \end{bmatrix} = t \begin{bmatrix} -1 \\ 3 \end{bmatrix},
+            \quad t \in \R \text{ and } t \neq 0.
+          </md>
+        </p>
+        <p>
+          So <m>\begin{bmatrix} 2 \\ 1 \end{bmatrix}</m> and
+          <m>\begin{bmatrix} -1 \\ 3 \end{bmatrix}</m> are basic eigenvectors of <m>A</m>
+          corresponding to eigenvalues <m>2</m> and <m>-5</m> respectively. Note that
+          these are precisely the columns of the matrix <m>P</m> in
+          <xref ref="eg-power-motivation" text="type-global" /> <mdash /> which answers
+          the question of how <m>P</m> was found.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

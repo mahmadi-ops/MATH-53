@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-elementary-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Elementary Operations</title>
+
+  <introduction>
+    <p>
+      The strategy for solving a system is to replace it, step by step, with a simpler
+      system that has exactly the same solutions. This section identifies the three
+      operations that are guaranteed to preserve the solution set.
+    </p>
+  </introduction>
+
+  <definition xml:id="def-equivalent-systems">
+    <title>Equivalent Systems</title>
+    <statement>
+      <p>
+        Two systems of linear equations are <term>equivalent</term> if they have
+        <em>exactly the same</em> solutions.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="eg-equivalent-systems">
+    <title>Two Equivalent Systems</title>
+    <p>
+      The following systems of linear equations have the same solutions and hence they
+      are equivalent:
+      <md>
+        <mrow>
+          \begin{array}{rcl} 2x - y \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
+          \qquad \text{and} \qquad
+          \begin{array}{rcl} x + y \amp = \amp 2 \\ y \amp = \amp 1 \end{array}
+        </mrow>
+      </md>
+    </p>
+    <p>
+      Indeed, each has the single solution <m>x = y = 1</m>. The second system is
+      visibly easier to read the solution off of, and that is the whole idea: we solve a
+      system of linear equations by using <em>elementary operations</em> to transform the
+      system into an equivalent but simpler system from which the solution can be easily
+      obtained.
+    </p>
+  </example>
+
+  <definition xml:id="def-elementary-operations">
+    <title>Elementary Operations</title>
+    <statement>
+      <p>
+        <ol>
+          <li><p>Interchange two equations.</p></li>
+          <li><p>Multiply an equation by a nonzero number.</p></li>
+          <li><p>Add a multiple of one equation to a different equation.</p></li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <remark xml:id="rem-operations-reversible">
+    <p>
+      Each elementary operation can be undone by another elementary operation of the same
+      type: interchanging the same two equations again, multiplying by the reciprocal, or
+      subtracting the same multiple. This is why applying an elementary operation always
+      produces an <em>equivalent</em> system <mdash /> nothing is lost and nothing is
+      gained.
+    </p>
+  </remark>
+
+  <example xml:id="eg-elementary-operations">
+    <title>The Three Operations in Action</title>
+    <statement>
+      <p>
+        Consider the system of linear equations
+        <md>
+          <mrow>
+            3x_1 - 2x_2 - 7x_3 \amp = -1
+          </mrow>
+          <mrow>
+            -x_1 + 3x_2 + 6x_3 \amp = 1
+          </mrow>
+          <mrow>
+            2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
+          </mrow>
+        </md>
+        Apply each of the three elementary operations to it.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <term>Interchange the first two equations.</term>
+        <md>
+          <mrow>
+            -x_1 + 3x_2 + 6x_3 \amp = 1
+          </mrow>
+          <mrow>
+            3x_1 - 2x_2 - 7x_3 \amp = -1
+          </mrow>
+          <mrow>
+            2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
+          </mrow>
+        </md>
+      </p>
+      <p>
+        <term>Multiply the first equation by <m>-2</m>.</term>
+        <md>
+          <mrow>
+            -6x_1 + 4x_2 + 14x_3 \amp = 2
+          </mrow>
+          <mrow>
+            -x_1 + 3x_2 + 6x_3 \amp = 1
+          </mrow>
+          <mrow>
+            2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
+          </mrow>
+        </md>
+      </p>
+      <p>
+        <term>Add <m>3</m> times the second equation to the first equation.</term>
+        <md>
+          <mrow>
+            \phantom{-6x_1 +{}} 7x_2 + 11x_3 \amp = 2
+          </mrow>
+          <mrow>
+            -x_1 + 3x_2 + 6x_3 \amp = 1
+          </mrow>
+          <mrow>
+            2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
+          </mrow>
+        </md>
+        Here the first equation became
+        <m>(3x_1 - 2x_2 - 7x_3) + 3(-x_1 + 3x_2 + 6x_3) = -1 + 3(1)</m>, i.e.,
+        <m>0x_1 + 7x_2 + 11x_3 = 2</m>. Notice that <m>x_1</m> has been eliminated from
+        that equation <mdash /> this is exactly the effect we will exploit systematically.
+      </p>
+      <p>
+        Each of the three displays above is obtained from the <em>original</em> system by
+        a single operation; they are not applied one after another.
+      </p>
+    </solution>
+  </example>
+</section>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vectors in <m>\R^n</m></title>
+
+  <introduction>
+    <p>
+      The columns of an augmented matrix are more than bookkeeping. Treating them as
+      vectors turns a system of equations into a question about linear combinations:
+      can a given vector be built out of a given collection of others? The vocabulary of
+      span and linear independence, developed here, is what the rest of the book is
+      written in.
+    </p>
+  </introduction>
+
+  <xi:include href="vectors/sec-vectors-in-rn.ptx" />
+  <xi:include href="vectors/sec-vector-form.ptx" />
+  <xi:include href="vectors/sec-homogeneous-systems.ptx" />
+  <xi:include href="vectors/sec-span.ptx" />
+  <xi:include href="vectors/sec-linear-independence.ptx" />
+
+</chapter>

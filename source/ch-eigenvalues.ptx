@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-eigenvalues" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Eigenvalues and Eigenvectors (Spectral Theory)</title>
+  <introduction>
+    <p>
+      Most vectors change direction when a matrix acts on them. The exceptions <mdash />
+      the eigenvectors <mdash /> are merely stretched, and if there are enough of them
+      they form a basis in which the matrix becomes diagonal. That change of viewpoint
+      turns hard questions, such as computing a large power of a matrix or the long-run
+      behaviour of a process, into easy ones.
+    </p>
+  </introduction>
+  <xi:include href="eigenvalues/sec-eigenvalues.ptx" />
+  <xi:include href="eigenvalues/sec-diagonalization.ptx" />
+</chapter>

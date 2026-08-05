@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-diagonalization" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Multiplicity, Eigenspaces, and Diagonalization</title>
+
+  <subsection xml:id="subsec-multiplicity">
+    <title>Multiplicity and Basic Eigenvectors</title>
+
+    <definition xml:id="def-basic-eigenvector">
+      <title>Basic Eigenvector</title>
+      <statement>
+        <p>
+          A <term>basic eigenvector</term> of an <m>n \times n</m> matrix <m>A</m> is any
+          nonzero multiple of a basic solution to <m>(\lambda I - A)\vec{x} = 0</m>, where
+          <m>\lambda</m> is an eigenvalue of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-repeated-eigenvalue">
+      <title>An Eigenvalue of Multiplicity Two</title>
+      <statement>
+        <p>
+          Find the eigenvalues and eigenvectors of
+          <m>A = \begin{bmatrix} 4 \amp 1 \amp 2 \\ 0 \amp 3 \amp -2 \\ 0 \amp -1 \amp 2 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>
+              \det(\lambda I - A)
+              \amp = \det \begin{bmatrix}
+                \lambda - 4 \amp -1 \amp -2 \\
+                0 \amp \lambda - 3 \amp 2 \\
+                0 \amp 1 \amp \lambda - 2
+              \end{bmatrix}
+              = (\lambda - 4) \begin{vmatrix} \lambda - 3 \amp 2 \\ 1 \amp \lambda - 2 \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = (\lambda - 4) \left[ (\lambda - 3)(\lambda - 2) - 2 \right]
+              = (\lambda - 4)\left( \lambda^2 - 5\lambda + 4 \right)
+            </mrow>
+            <mrow>
+              \amp = (\lambda - 4)^2 (\lambda - 1).
+            </mrow>
+          </md>
+          We say that <m>\lambda = 4</m> has <term>multiplicity</term> <m>2</m>.
+        </p>
+        <p>
+          <term>For <m>\lambda_1 = 4</m>,</term> solving <m>(4I - A)\vec{x} = \vec{0}</m>:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              0 \amp -1 \amp -2 \amp 0 \\ 0 \amp 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 2 \amp 0
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              0 \amp 1 \amp 2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
+            \end{array} \right]
+            \; \Longrightarrow \;
+            \vec{x} = \begin{bmatrix} s \\ -2t \\ t \end{bmatrix}
+            = s \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+            + t \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}.
+          </md>
+          Hence the eigenvalue <m>\lambda_1 = 4</m> has two corresponding basic
+          eigenvectors,
+          <m>\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}</m> and
+          <m>\begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}</m>. Note that the basic
+          eigenvectors are NOT scalar multiples of each other.
+        </p>
+        <p>
+          <term>For <m>\lambda_2 = 1</m>:</term>
+          <md>
+            \left[ \begin{array}{ccc|c}
+              -3 \amp -1 \amp -2 \amp 0 \\ 0 \amp -2 \amp 2 \amp 0 \\ 0 \amp 1 \amp -1 \amp 0
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              -3 \amp -1 \amp -2 \amp 0 \\ 0 \amp 1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
+            \end{array} \right]
+            \; \Longrightarrow \;
+            \vec{x} = \begin{bmatrix} -t \\ t \\ t \end{bmatrix}
+            = t \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          In summary, <m>A</m> has two eigenvalues <m>\lambda_1 = 4</m> and
+          <m>\lambda_2 = 1</m> with multiplicities <m>2</m> and <m>1</m> respectively.
+          There are two basic eigenvectors corresponding to <m>\lambda_1 = 4</m> and one
+          basic eigenvector corresponding to <m>\lambda_2 = 1</m>.
+        </p>
+        <p>
+          Note that any linear combination of basic eigenvectors corresponding to the same
+          eigenvalue is also an eigenvector of <m>A</m>. For instance, since
+          <md>
+            A \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} = 4 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+            \qquad \text{and} \qquad
+            A \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} = 4 \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix},
+          </md>
+          it follows that
+          <md>
+            A \left( 2 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + 3 \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} \right)
+            = 4 \left( 2 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + 3 \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} \right).
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-three-distinct-eigenvalues">
+      <title>Three Distinct Eigenvalues</title>
+      <statement>
+        <p>
+          Find the eigenvalues and eigenvectors of
+          <m>B = \begin{bmatrix} 3 \amp -4 \amp 2 \\ 1 \amp -2 \amp 2 \\ 1 \amp -5 \amp 5 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Expanding <m>\det(\lambda I - B)</m> and factoring gives
+          <md>
+            \det(\lambda I - B) = (\lambda - 3)(\lambda^2 - 3\lambda + 2)
+            = (\lambda - 3)(\lambda - 1)(\lambda - 2),
+          </md>
+          so <m>\lambda_1 = 1</m>, <m>\lambda_2 = 2</m>, <m>\lambda_3 = 3</m>. They all
+          have multiplicity one.
+        </p>
+        <p>
+          <term>Finding the eigenvectors.</term>
+          <md>
+            <mrow>
+              \lambda_1 = 1: \amp \quad (I - B)\vec{x} = \vec{0}
+              \; \longrightarrow \;
+              \vec{x} = t \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix},
+            </mrow>
+            <mrow>
+              \lambda_2 = 2: \amp \quad (2I - B)\vec{x} = \vec{0}
+              \; \longrightarrow \;
+              \vec{x} = t \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix},
+            </mrow>
+            <mrow>
+              \lambda_3 = 3: \amp \quad (3I - B)\vec{x} = \vec{0}
+              \; \longrightarrow \;
+              \vec{x} = \tfrac{t}{2} \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}.
+            </mrow>
+          </md>
+          So
+          <m>\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</m>,
+          <m>\begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}</m>, and
+          <m>\begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}</m> are basic eigenvectors
+          corresponding to <m>\lambda_1 = 1</m>, <m>\lambda_2 = 2</m>, and
+          <m>\lambda_3 = 3</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-eigenspace">
+    <title>Eigenspaces</title>
+
+    <p>
+      Note that if an <m>n \times n</m> matrix <m>A</m> has <m>m</m> distinct basic
+      eigenvectors <m>\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_m</m>, then, as we have seen
+      in the previous examples, the set
+      <m>\{ \vec{x}_1, \vec{x}_2, \ldots, \vec{x}_m \}</m> is a linearly independent set
+      (this follows from the definition of a basic eigenvector). Hence
+      <m>\operatorname{Span}\{ \vec{x}_1, \ldots, \vec{x}_m \}</m> is a subspace.
+    </p>
+    <p>
+      In fact, since the vectors <m>\vec{x}_i</m> (<m>1 \leq i \leq m</m>) are solutions
+      of <m>(\lambda I - A)\vec{x} = \vec{0}</m>, we know that
+      <md>
+        \operatorname{Span}\{ \vec{x}_1, \vec{x}_2, \ldots, \vec{x}_m \}
+        = \operatorname{Nul}(\lambda I - A).
+      </md>
+      Since this set is a subspace of <m>\R^n</m>, it is known as the
+      <term>eigenspace</term> of <m>A</m>.
+    </p>
+
+    <theorem xml:id="thm-diagonalizable-iff">
+      <title>Diagonalizability</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix. Then <m>A</m> is diagonalizable if
+          and only if the matrix <m>A</m> has <m>n</m> linearly independent eigenvectors.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Assume that <m>A</m> has <m>n</m> linearly independent eigenvectors
+          <m>\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_n</m>. Then the matrix
+          <m>P = \begin{bmatrix} \vec{x}_1 \amp \vec{x}_2 \amp \cdots \amp \vec{x}_n \end{bmatrix}</m>
+          is invertible and we have
+          <md>
+            <mrow>
+              P^{-1}AP
+              \amp = P^{-1} \begin{bmatrix} A\vec{x}_1 \amp A\vec{x}_2 \amp \cdots \amp A\vec{x}_n \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = P^{-1} \begin{bmatrix} \lambda_1\vec{x}_1 \amp \lambda_2\vec{x}_2 \amp \cdots \amp \lambda_n\vec{x}_n \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = P^{-1} \begin{bmatrix} \vec{x}_1 \amp \vec{x}_2 \amp \cdots \amp \vec{x}_n \end{bmatrix}
+                \begin{bmatrix}
+                  \lambda_1 \amp \amp \amp \\
+                  \amp \lambda_2 \amp \amp \\
+                  \amp \amp \ddots \amp \\
+                  \amp \amp \amp \lambda_n
+                \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = P^{-1}PD = D,
+            </mrow>
+          </md>
+          and hence <m>A</m> is diagonalizable.
+        </p>
+        <p>
+          Conversely, if <m>A</m> is diagonalizable, then there exists an invertible
+          matrix <m>P</m> such that <m>D = P^{-1}AP</m> is diagonal, hence
+          <m>AP = PD</m>. Now assume
+          <m>\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_n</m> are columns of <m>P</m>. Then
+          comparing columns of <m>AP = PD</m> gives, for <m>i = 1, 2, \ldots, n</m>,
+          <md>
+            A\vec{x}_i = \lambda_i \vec{x}_i,
+          </md>
+          which means the diagonal entries of <m>D</m> are the eigenvalues of <m>A</m> and
+          the <m>\vec{x}_i</m> are their corresponding basic eigenvectors, which are
+          linearly independent since we know <m>P</m> is invertible.
+        </p>
+      </proof>
+    </theorem>
+
+    <remark xml:id="rem-revisit-examples">
+      <p>
+        Revisiting the previous examples: note that <m>A</m> in
+        <xref ref="eg-repeated-eigenvalue" text="type-global" /> is <m>3 \times 3</m> and
+        has <m>3</m> distinct basic eigenvectors. As a result, <m>A</m> is
+        diagonalizable. Also, notice that <m>B</m> in
+        <xref ref="eg-three-distinct-eigenvalues" text="type-global" /> has <m>3</m>
+        distinct eigenvalues and each eigenvalue has a basic eigenvector corresponding to
+        it, hence <m>B</m> is diagonalizable as well.
+      </p>
+    </remark>
+
+    <theorem xml:id="thm-characterizing-diagonalizable">
+      <title>Characterizing Diagonalizable Matrices</title>
+      <statement>
+        <p>
+          A square matrix <m>A</m> is diagonalizable if and only if every eigenvalue
+          <m>\lambda</m> of multiplicity <m>m</m> yields exactly <m>m</m> basic
+          eigenvectors, i.e., the solution to <m>(\lambda I - A)X = 0</m> has <m>m</m>
+          parameters.
+        </p>
+      </statement>
+    </theorem>
+
+    <remark xml:id="rem-distinct-eigenvalues-diagonalizable">
+      <p>
+        A special case of this result is when every eigenvalue of a matrix has
+        multiplicity one. An <m>n \times n</m> matrix with <m>n</m> distinct eigenvalues
+        is diagonalizable.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-similar-matrices">
+    <title>Similar Matrices</title>
+
+    <definition xml:id="def-similar">
+      <title>Similar Matrices</title>
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> be <m>n \times n</m> matrices and suppose there exists
+          an invertible matrix <m>P</m> such that <m>A = P^{-1}BP</m>. Then <m>A</m> and
+          <m>B</m> are called <term>similar matrices</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-similar-matrices">
+      <title>Two Similar Matrices</title>
+      <p>
+        Let
+        <m>A = \begin{bmatrix} 2 \amp 1 \\ 4 \amp 3 \end{bmatrix}</m>,
+        <m>B = \begin{bmatrix} 3 \amp 4 \\ 1 \amp 2 \end{bmatrix}</m>,
+        <m>P = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>, so that
+        <m>P^{-1} = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>. Then
+        <md>
+          P^{-1}BP
+          = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+            \begin{bmatrix} 3 \amp 4 \\ 1 \amp 2 \end{bmatrix}
+            \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+          = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+            \begin{bmatrix} 4 \amp 3 \\ 2 \amp 1 \end{bmatrix}
+          = \begin{bmatrix} 2 \amp 1 \\ 4 \amp 3 \end{bmatrix} = A,
+        </md>
+        so <m>A</m> and <m>B</m> are similar matrices.
+      </p>
+      <p>
+        <term>Observation.</term> Here <m>P</m> is obtained from <m>I</m> by switching the
+        columns, and right-multiplying <m>B</m> by <m>P</m> switches the columns of
+        <m>B</m>.
+      </p>
+    </example>
+
+    <theorem xml:id="thm-similar-same-eigenvalues">
+      <title>Similar Matrices Have the Same Eigenvalues</title>
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> be similar matrices such that <m>A = P^{-1}BP</m>,
+          where <m>A</m>, <m>B</m> are <m>n \times n</m> matrices and <m>P</m> is
+          invertible. Then <m>A</m> and <m>B</m> have the same eigenvalues.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          <md>
+            <mrow>
+              \det(\lambda I - A)
+              \amp = \det \left( \lambda I - P^{-1}BP \right)
+              = \det \left( P^{-1}\lambda I P - P^{-1}BP \right)
+            </mrow>
+            <mrow>
+              \amp = \det \left( P^{-1}(\lambda I - B)P \right)
+              = \det(P^{-1}) \det(\lambda I - B) \det(P)
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\det(P)} \det(\lambda I - B) \det(P)
+              = \det(\lambda I - B),
+            </mrow>
+          </md>
+          using <m>P^{-1}P = I</m> in the first line. Hence <m>A</m> and <m>B</m> have the
+          same characteristic polynomial and therefore the same eigenvalues.
+        </p>
+        <p>
+          In particular, if <m>A</m> is diagonalizable, then <m>A</m> is similar to a
+          diagonal matrix <m>D</m>, and hence the eigenvalues of <m>A</m> and <m>D</m> are
+          the same, which means the diagonal entries of <m>D</m> are the eigenvalues of
+          <m>A</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-similar-shortcut">
+      <title>Using Similarity to Find Eigenvalues</title>
+      <statement>
+        <p>
+          Use the previous theorem to find the eigenvalues of the following matrix:
+          <md>
+            A = \begin{bmatrix}
+              33 \amp 105 \amp 105 \\
+              10 \amp 28 \amp 30 \\
+              -20 \amp -60 \amp -62
+            \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Note that a row operation followed by a column operation produces a much simpler
+          matrix. Applying <m>2R_2 + R_3</m> (left-multiplying by <m>E</m>) and then
+          <m>-2C_3 + C_2</m> (right-multiplying by <m>E^{-1}</m>):
+          <md>
+            \begin{bmatrix}
+              33 \amp 105 \amp 105 \\ 10 \amp 28 \amp 30 \\ -20 \amp -60 \amp -62
+            \end{bmatrix}
+            \xrightarrow{2R_2 + R_3}
+            \begin{bmatrix}
+              33 \amp 105 \amp 105 \\ 10 \amp 28 \amp 30 \\ 0 \amp -4 \amp -2
+            \end{bmatrix}
+            \xrightarrow{-2C_3 + C_2}
+            B = \begin{bmatrix}
+              33 \amp -105 \amp 105 \\ 10 \amp -32 \amp 30 \\ 0 \amp 0 \amp -2
+            \end{bmatrix},
+          </md>
+          where
+          <md>
+            E = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 2 \amp 1 \end{bmatrix},
+            \qquad
+            E^{-1} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp -2 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Thus <m>B = EAE^{-1}</m>, or <m>A = E^{-1}BE</m>, so <m>A</m> and <m>B</m> are
+          similar matrices and have the same eigenvalues. Since <m>B</m> has a row of
+          zeros in its lower-left corner, its characteristic polynomial factors
+          immediately:
+          <md>
+            \det(\lambda I - A) = \det(\lambda I - B)
+            = -(-2 - \lambda) \begin{vmatrix} 33 - \lambda \amp -105 \\ 10 \amp -32 - \lambda \end{vmatrix}.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <theorem xml:id="thm-imt-eigenvalue">
+      <title>Another Addition to the Invertible Matrix Theorem</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix. Then <m>A</m> is invertible if and
+          only if <m>0</m> is not one of its eigenvalues.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We know that <m>A</m> is invertible if and only if <m>\det A \neq 0</m>. To
+          prove the above theorem, we need to show that <m>\det A \neq 0</m> if and only
+          if <m>0</m> is not one of its eigenvalues.
+        </p>
+        <p>
+          We first show that <m>\det A = \lambda_1 \lambda_2 \cdots \lambda_n</m>, where
+          the <m>\lambda_i</m> are the eigenvalues of <m>A</m>. Remember that the
+          <m>\lambda_i</m> are roots of the characteristic polynomial, hence
+          <md>
+            \det(\lambda I - A) = (\lambda - \lambda_1)(\lambda - \lambda_2) \cdots (\lambda - \lambda_n).
+          </md>
+          Now choose <m>\lambda = 0</m>. Then
+          <md>
+            \det(-A) = (-1)^n \lambda_1 \lambda_2 \cdots \lambda_n.
+          </md>
+          Also, we know <m>\det(-A) = (-1)^n \det A</m>. Therefore
+          <md>
+            \det A = \lambda_1 \lambda_2 \cdots \lambda_n.
+          </md>
+        </p>
+        <p>
+          Finally, it is clear that if one of the eigenvalues is zero, then
+          <m>\det A = 0</m>, and if <m>\det A = 0</m> then at least one of the eigenvalues
+          must be zero.
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+</section>

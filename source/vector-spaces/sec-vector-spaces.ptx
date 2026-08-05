@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Spaces</title>
+
+  <introduction>
+    <p>
+      Everything we proved about <m>\R^n</m> used only a short list of properties of
+      addition and scalar multiplication. Taking that list as the definition frees us from
+      columns of numbers: polynomials and matrices satisfy the same axioms, and so
+      everything we know applies to them too.
+    </p>
+  </introduction>
+
+  <definition xml:id="def-vector-space">
+    <title>Vector Space</title>
+    <statement>
+      <p>
+        A <term>vector space</term> <m>V</m> is a set of vectors with two operations
+        defined, addition and scalar multiplication, which satisfy the following axioms
+        for all <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w} \in V</m> and for all
+        <m>a, b \in \R</m>.
+      </p>
+      <p>
+        <ol marker="I">
+          <li><p><m>\vec{u} + \vec{v} \in V</m>.</p></li>
+          <li><p><m>\vec{u} + \vec{v} = \vec{v} + \vec{u}</m>.</p></li>
+          <li>
+            <p>
+              There exists <m>\vec{0} \in V</m> such that
+              <m>\vec{0} + \vec{u} = \vec{u}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              There exists <m>-\vec{u} \in V</m> such that
+              <m>\vec{u} + (-\vec{u}) = \vec{0}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})</m>.
+            </p>
+          </li>
+          <li><p><m>a\vec{u} \in V</m>.</p></li>
+          <li><p><m>a(\vec{u} + \vec{v}) = a\vec{u} + a\vec{v}</m>.</p></li>
+          <li><p><m>(a + b)\vec{u} = a\vec{u} + b\vec{u}</m>.</p></li>
+          <li><p><m>a(b\vec{u}) = (ab)\vec{u}</m>.</p></li>
+          <li><p><m>1\vec{u} = \vec{u}</m>.</p></li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="eg-p2-vector-space">
+    <title>The Vector Space of Polynomials <m>\mathbb{P}_2</m></title>
+    <statement>
+      <p>
+        Let <m>\mathbb{P}_2</m> be the set of all polynomials of at most degree <m>2</m>
+        as well as the zero polynomial. Define addition to be the standard addition of
+        polynomials, and scalar multiplication the usual multiplication of a polynomial by
+        a number. Show that <m>\mathbb{P}_2</m> is a vector space.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We can write <m>\mathbb{P}_2</m> explicitly as
+        <md>
+          \mathbb{P}_2 = \left\{ a_2 x^2 + a_1 x + a_0 \; \middle| \; a_i \in \R \text{ for all } i \right\}.
+        </md>
+        Let <m>f(x) = a_2 x^2 + a_1 x + a_0</m> and
+        <m>g(x) = b_2 x^2 + b_1 x + b_0</m> be two polynomials of at most degree <m>2</m>,
+        and let <m>c, d \in \R</m>.
+      </p>
+      <p>
+        <term>(I) Closure under addition.</term>
+        <md>
+          (f + g)(x) = f(x) + g(x)
+          = (a_2 + b_2)x^2 + (a_1 + b_1)x + (a_0 + b_0) \in \mathbb{P}_2,
+        </md>
+        since the sum is again a polynomial of degree at most <m>2</m>.
+      </p>
+      <p>
+        <term>(II) Commutativity.</term>
+        <m>f(x) + g(x) = g(x) + f(x)</m>, since addition of the coefficients is
+        commutative.
+      </p>
+      <p>
+        <term>(III) Additive identity.</term>
+        The zero polynomial <m>P_0(x) = 0</m> for all <m>x \in \R</m> is in
+        <m>\mathbb{P}_2</m>, and
+        <md>
+          (f + P_0)(x) = f(x) + P_0(x) = f(x) + 0 = f(x).
+        </md>
+      </p>
+      <p>
+        <term>(IV) Additive inverse.</term>
+        Let <m>-f(x) = -a_2 x^2 - a_1 x - a_0</m>. Then
+        <md>
+          f(x) + (-f(x)) = (a_2 - a_2)x^2 + (a_1 - a_1)x + (a_0 - a_0) = P_0(x).
+        </md>
+      </p>
+      <p>
+        <term>(V) Associativity</term> follows in the same way, one coefficient at a time.
+      </p>
+      <p>
+        <term>(VI) Closure under scalar multiplication.</term>
+        <md>
+          c \, f(x) = c \left( a_2 x^2 + a_1 x + a_0 \right)
+          = c a_2 x^2 + c a_1 x + c a_0 \in \mathbb{P}_2.
+        </md>
+      </p>
+      <p>
+        <term>(VII)<ndash />(X)</term> are verified the same way. For instance,
+        <md>
+          c \left( d \, f(x) \right)
+          = c \left( d a_2 x^2 + d a_1 x + d a_0 \right)
+          = (cd) a_2 x^2 + (cd) a_1 x + (cd) a_0 = (cd) f(x),
+        </md>
+        and <m>1 f(x) = f(x)</m>.
+      </p>
+      <p>
+        Since the above axioms hold, we know that <m>\mathbb{P}_2</m> as described above
+        is a vector space.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="eg-m22-vector-space">
+    <title>The Vector Space of <m>2 \times 2</m> Matrices</title>
+    <statement>
+      <p>
+        Let <m>\mathbb{M}_{22}</m> be the set of all <m>2 \times 2</m> matrices. Is
+        <m>\mathbb{M}_{22}</m> a vector space?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Yes. Let <m>A, B, C \in \mathbb{M}_{22}</m>, and let <m>a</m> and
+        <m>b \in \R</m>.
+      </p>
+      <p>
+        <ul>
+          <li>
+            <p>
+              <term>(I)</term> <m>A + B \in \mathbb{M}_{22}</m>, since the sum of two
+              <m>2 \times 2</m> matrices is again <m>2 \times 2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <term>(II), (III), (IV), and (V)</term> follow from
+              <xref ref="thm-matrix-addition-properties" text="type-global" />, the
+              properties of matrix addition.
+            </p>
+          </li>
+          <li>
+            <p>
+              <term>(VI)</term> <m>aA \in \mathbb{M}_{22}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <term>(VII), (VIII), (IX), and (X)</term> follow from
+              <xref ref="thm-scalar-multiplication-properties" text="type-global" />, the
+              properties of scalar multiplication for matrices.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </solution>
+  </example>
+
+  <remark xml:id="rem-why-abstract">
+    <p>
+      Notice how little work the second example took. Once the axioms are isolated, a
+      familiar theorem about matrices <em>is</em> the verification. This is the payoff of
+      abstraction: results proved from the axioms alone hold in every vector space at
+      once.
+    </p>
+  </remark>
+</section>

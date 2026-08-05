@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-transpose" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Transposition</title>
+
+  <introduction>
+    <p>
+      Transposing a matrix interchanges its rows and columns. This simple operation
+      interacts with addition, scalar multiplication, and multiplication in ways that
+      we will use repeatedly.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-transpose-definition">
+    <title>The Transpose</title>
+
+    <definition xml:id="def-transpose">
+      <title>Transpose</title>
+      <statement>
+        <p>
+          If <m>A</m> is an <m>m \times n</m> matrix, then its <term>transpose</term>,
+          denoted <m>A^T</m>, is the <m>n \times m</m> matrix whose <m>i</m>th row is the
+          <m>i</m>th column of <m>A</m>. That is, if
+          <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m>, then
+          <md>
+            A^T = \begin{bmatrix} a_{ij} \end{bmatrix}^T = \begin{bmatrix} a_{ji} \end{bmatrix},
+          </md>
+          i.e., the <m>(i,j)</m>-entry of <m>A^T</m> is the <m>(j,i)</m>-entry of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-transpose">
+      <title>Transposing a Matrix</title>
+      <p>
+        If
+        <m>A = \begin{bmatrix} 1 \amp -1 \\ 0 \amp 2 \\ 1 \amp 0 \end{bmatrix}_{3 \times 2}</m>,
+        then
+        <md>
+          A^T = \begin{bmatrix} 1 \amp 0 \amp 1 \\ -1 \amp 2 \amp 0 \end{bmatrix}_{2 \times 3}.
+        </md>
+      </p>
+    </example>
+
+    <theorem xml:id="thm-transpose-properties">
+      <title>Properties of the Transpose of a Matrix</title>
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> be <m>m \times n</m> matrices, <m>C</m> be an
+          <m>n \times p</m> matrix, and <m>r \in \R</m> a scalar. Then
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p><m>\left( A^T \right)^T = A</m>.</p>
+            </li>
+            <li>
+              <p><m>(rA)^T = rA^T</m>.</p>
+            </li>
+            <li>
+              <p><m>(A + B)^T = A^T + B^T</m>.</p>
+            </li>
+            <li>
+              <p><m>(AC)^T = C^T A^T</m>.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <remark xml:id="rem-transpose-reverses-order">
+      <p>
+        Property (4) deserves attention: transposing a product <em>reverses the order</em>
+        of the factors. Note also that the sizes work out — <m>C^T</m> is
+        <m>p \times n</m> and <m>A^T</m> is <m>n \times m</m>, so <m>C^T A^T</m> is
+        <m>p \times m</m>, which is exactly the size of <m>(AC)^T</m>.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-symmetric-matrices">
+    <title>Symmetric Matrices</title>
+
+    <definition xml:id="def-symmetric">
+      <title>Symmetric Matrix</title>
+      <statement>
+        <p>
+          A matrix <m>A</m> is called <term>symmetric</term> if and only if
+          <m>A^T = A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-symmetric-combination">
+      <title>A Symmetric Combination</title>
+      <statement>
+        <p>
+          Show that if <m>A</m> and <m>B</m> are symmetric, then <m>A^T + 2B</m> is symmetric.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If <m>A</m> and <m>B</m> are symmetric, then <m>A = A^T</m> and <m>B = B^T</m>.
+          Using <xref ref="thm-transpose-properties" text="type-global" />,
+          <md>
+            <mrow>
+              \left( A^T + 2B \right)^T
+              \amp = \left( A^T \right)^T + (2B)^T \amp \amp \text{(property 3)}
+            </mrow>
+            <mrow>
+              \amp = A + 2B^T \amp \amp \text{(properties 1 and 2)}
+            </mrow>
+            <mrow>
+              \amp = A^T + 2B \amp \amp (A, B \text{ are symmetric)}
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Since <m>\left( A^T + 2B \right)^T = A^T + 2B</m>, we know that <m>A^T + 2B</m>
+          is symmetric by definition.
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-is-ab-symmetric">
+      <title>Question</title>
+      <p>
+        Let <m>A</m> and <m>B</m> be symmetric matrices. Is <m>AB</m> symmetric?
+      </p>
+      <p>
+        Property (4) of <xref ref="thm-transpose-properties" text="type-global" /> gives
+        <md>
+          (AB)^T = B^T A^T = BA,
+        </md>
+        so <m>AB</m> is symmetric exactly when <m>BA = AB</m> <mdash /> that is, exactly
+        when <m>A</m> and <m>B</m> commute. Since matrix multiplication is not commutative
+        in general, the product of two symmetric matrices need not be symmetric.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-transpose-equations">
+    <title>Solving Equations Involving the Transpose</title>
+
+    <example xml:id="eg-solve-for-a">
+      <title>Solving for an Unknown Matrix</title>
+      <statement>
+        <p>
+          Find the matrix <m>A</m> if
+          <md>
+            \left( A + 3 \begin{bmatrix} 1 \amp -1 \amp 0 \\ 1 \amp 2 \amp 4 \end{bmatrix} \right)^T
+            = \begin{bmatrix} 2 \amp 1 \\ 0 \amp 5 \\ 3 \amp 8 \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Transpose both sides of the equation. By property (1) of
+          <xref ref="thm-transpose-properties" text="type-global" />, the left-hand side
+          becomes the matrix itself:
+          <md>
+            \left( \left( A + 3 \begin{bmatrix} 1 \amp -1 \amp 0 \\ 1 \amp 2 \amp 4 \end{bmatrix} \right)^T \right)^T
+            = \begin{bmatrix} 2 \amp 1 \\ 0 \amp 5 \\ 3 \amp 8 \end{bmatrix}^T,
+          </md>
+          that is,
+          <md>
+            A + 3 \begin{bmatrix} 1 \amp -1 \amp 0 \\ 1 \amp 2 \amp 4 \end{bmatrix}
+            = \begin{bmatrix} 2 \amp 0 \amp 3 \\ 1 \amp 5 \amp 8 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Now solve for <m>A</m>:
+          <md>
+            <mrow>
+              A \amp = \begin{bmatrix} 2 \amp 0 \amp 3 \\ 1 \amp 5 \amp 8 \end{bmatrix}
+                  - \begin{bmatrix} 3 \amp -3 \amp 0 \\ 3 \amp 6 \amp 12 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} -1 \amp 3 \amp 3 \\ -2 \amp -1 \amp -4 \end{bmatrix}.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

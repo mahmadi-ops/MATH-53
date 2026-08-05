@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-determinants-row-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Determinants and Row Operations</title>
+
+  <introduction>
+    <p>
+      Cofactor expansion is expensive for large matrices. Row reduction is cheap, and
+      <xref ref="thm-triangular-determinant" text="type-global" /> makes triangular
+      determinants trivial. To combine the two, we need to know exactly what each
+      elementary row operation does to a determinant.
+    </p>
+  </introduction>
+
+  <example xml:id="eg-row-ops-on-determinant">
+    <title>How Do Elementary Row Operations Affect Determinants?</title>
+    <statement>
+      <p>
+        Let
+        <m>A = \begin{bmatrix} 2 \amp 0 \amp -3 \\ 0 \amp 4 \amp 0 \\ 1 \amp 0 \amp -2 \end{bmatrix}</m>.
+        Computing <m>\det A</m> by cofactor expansion along row (or column) <m>2</m>
+        yields
+        <md>
+          \det A = (4)(-1)^{2+2} \begin{vmatrix} 2 \amp -3 \\ 1 \amp -2 \end{vmatrix} = -4.
+        </md>
+      </p>
+      <p>
+        Suppose <m>B_1</m>, <m>B_2</m>, and <m>B_3</m> are obtained from <m>A</m> by
+        interchanging rows <m>2</m> and <m>3</m>, multiplying row <m>3</m> by <m>-3</m>,
+        and adding twice row <m>1</m> to row <m>3</m>, respectively, i.e.,
+        <md>
+          B_1 = \begin{bmatrix} 2 \amp 0 \amp -3 \\ 1 \amp 0 \amp -2 \\ 0 \amp 4 \amp 0 \end{bmatrix},
+          \quad
+          B_2 = \begin{bmatrix} 2 \amp 0 \amp -3 \\ 0 \amp 4 \amp 0 \\ -3 \amp 0 \amp 6 \end{bmatrix},
+          \quad
+          B_3 = \begin{bmatrix} 2 \amp 0 \amp -3 \\ 0 \amp 4 \amp 0 \\ 5 \amp 0 \amp -8 \end{bmatrix}.
+        </md>
+        How do elementary operations affect the determinant?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <md>
+          <mrow>
+            \det B_1 \amp = (4)(-1)^{3+2} \begin{vmatrix} 2 \amp -3 \\ 1 \amp -2 \end{vmatrix}
+            = -\det A,
+          </mrow>
+          <mrow>
+            \det B_2 \amp = (4)(-1)^{2+2} \begin{vmatrix} 2 \amp -3 \\ -3 \amp 6 \end{vmatrix}
+            = -3 \det A,
+          </mrow>
+          <mrow>
+            \det B_3 \amp = (4)(-1)^{2+2} \begin{vmatrix} 2 \amp -3 \\ 5 \amp -8 \end{vmatrix}
+            = (4)(-16 + 15) = \det A.
+          </mrow>
+        </md>
+      </p>
+      <p>
+        So interchanging rows flipped the sign, scaling a row scaled the determinant, and
+        adding a multiple of one row to another left it alone.
+      </p>
+    </solution>
+  </example>
+
+  <theorem xml:id="thm-row-ops-determinant">
+    <title>Row Operations and Determinants</title>
+    <statement>
+      <p>Let <m>A</m> be an <m>n \times n</m> matrix.</p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              If <m>B</m> is obtained from <m>A</m> by exchanging two different rows of
+              <m>A</m>, then <m>\det B = -\det A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>B</m> is obtained from <m>A</m> by multiplying a row of <m>A</m> by a
+              scalar <m>k \in \R</m>, then <m>\det B = k \det A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>B</m> is obtained from <m>A</m> by adding <m>k</m> times one row of
+              <m>A</m> to a different row of <m>A</m>, then <m>\det B = \det A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If two different rows (or columns) of <m>A</m> are identical, then
+              <m>\det A = 0</m>. This follows from (3).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <remark xml:id="rem-column-operations">
+    <p>
+      An analogous theorem holds for elementary <em>column</em> operations. If <m>A</m>
+      is a matrix, then an elementary column operation on <m>A</m> is simply the
+      corresponding elementary row operation performed on the transpose of <m>A</m>,
+      <m>A^T</m>.
+    </p>
+    <p>
+      For instance, with <m>A</m> as in
+      <xref ref="eg-row-ops-on-determinant" text="type-global" />, exchanging rows
+      <m>2</m> and <m>3</m> of <m>A</m> gives <m>B</m> with
+      <m>\det A = -\det B</m>; correspondingly, exchanging columns <m>2</m> and <m>3</m>
+      of <m>A^T</m> gives <m>B^T</m> with <m>\det A^T = -\det B^T</m>.
+    </p>
+  </remark>
+
+  <example xml:id="eg-det-by-row-reduction">
+    <title>Computing a Determinant by Row Reduction</title>
+    <statement>
+      <p>
+        Let
+        <m>A = \begin{bmatrix} 5 \amp 1 \amp 2 \\ 1 \amp 3 \amp 2 \\ 2 \amp 6 \amp 0 \end{bmatrix}</m>.
+        Without using the cofactor expansion, find <m>\det(A)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Reduce to triangular form, tracking the effect of each operation:
+        <md>
+          A = \begin{bmatrix} 5 \amp 1 \amp 2 \\ 1 \amp 3 \amp 2 \\ 2 \amp 6 \amp 0 \end{bmatrix}
+          \xrightarrow{r_1 \leftrightarrow r_2}
+          B_1 = \begin{bmatrix} 1 \amp 3 \amp 2 \\ 5 \amp 1 \amp 2 \\ 2 \amp 6 \amp 0 \end{bmatrix}
+          \xrightarrow[-2r_1 + r_3]{-5r_1 + r_2}
+          B_2 = \begin{bmatrix} 1 \amp 3 \amp 2 \\ 0 \amp -14 \amp -8 \\ 0 \amp 0 \amp -4 \end{bmatrix}.
+        </md>
+      </p>
+      <p>
+        The first step was an interchange, so it flipped the sign; the remaining steps
+        added multiples of one row to another, which changes nothing. Hence
+        <md>
+          \det A = -\det B_1 = -\det B_2 = -(1)(-14)(-4) = -56.
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <theorem xml:id="thm-det-scalar-multiple">
+    <title>Determinant of a Scalar Multiple</title>
+    <statement>
+      <p>
+        If <m>A</m> is an <m>n \times n</m> matrix and <m>k</m> is any scalar, then
+        <md>
+          \det(kA) = k^n \det A.
+        </md>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Multiplying <m>A</m> by <m>k</m> multiplies <em>every one</em> of the <m>n</m>
+        rows by <m>k</m>. Applying part (2) of
+        <xref ref="thm-row-ops-determinant" text="type-global" /> once per row produces a
+        factor of <m>k</m> each time.
+      </p>
+    </proof>
+  </theorem>
+
+  <example xml:id="eg-det-scalar-multiple">
+    <title>Scaling a <m>3 \times 3</m> Matrix</title>
+    <statement>
+      <p>
+        Suppose <m>A</m> is a <m>3 \times 3</m> matrix with <m>\det A = 2</m>. What is
+        <m>\det(-3A)</m>?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Every entry of <m>A</m> gets multiplied by <m>-3</m>:
+        <md>
+          A = \begin{bmatrix}
+            a_{11} \amp a_{12} \amp a_{13} \\
+            a_{21} \amp a_{22} \amp a_{23} \\
+            a_{31} \amp a_{32} \amp a_{33}
+          \end{bmatrix},
+          \qquad
+          -3A = \begin{bmatrix}
+            -3a_{11} \amp -3a_{12} \amp -3a_{13} \\
+            -3a_{21} \amp -3a_{22} \amp -3a_{23} \\
+            -3a_{31} \amp -3a_{32} \amp -3a_{33}
+          \end{bmatrix},
+        </md>
+        so
+        <md>
+          \det(-3A) = (-3)^3 \det A = (-27)(2) = -54.
+        </md>
+      </p>
+    </solution>
+  </example>
+</section>

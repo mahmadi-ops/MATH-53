@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-subspaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Subspaces, Basis, and Dimension</title>
+
+  <introduction>
+    <p>
+      Lines and planes through the origin, spans, and the sets of vectors a matrix sends
+      to zero all share a common structure: they are closed under linear combinations.
+      This chapter isolates that structure, shows that every such set is a span of
+      linearly independent vectors, and attaches a single number <mdash /> the
+      dimension <mdash /> to each one.
+    </p>
+  </introduction>
+
+  <xi:include href="subspaces/sec-subspaces.ptx" />
+  <xi:include href="subspaces/sec-basis-dimension.ptx" />
+  <xi:include href="subspaces/sec-column-null-space.ptx" />
+
+</chapter>

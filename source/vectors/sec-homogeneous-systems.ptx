@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-homogeneous-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Homogeneous Systems</title>
+
+  <introduction>
+    <p>
+      A system whose constant terms are all zero is never inconsistent <mdash /> setting
+      every variable to zero always works. The interesting question is whether anything
+      <em>else</em> works, and the answer turns out to control the behaviour of every
+      related system.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-homogeneous-definition">
+    <title>Homogeneous Systems and the Trivial Solution</title>
+
+    <definition xml:id="def-homogeneous">
+      <title>Homogeneous System</title>
+      <statement>
+        <p>
+          A <term>homogeneous system</term> has the form
+          <md>
+            <mrow>
+              a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n \amp = 0
+            </mrow>
+            <mrow>
+              a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \amp = 0
+            </mrow>
+            <mrow>
+              \vdots \amp
+            </mrow>
+            <mrow>
+              a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n \amp = 0
+            </mrow>
+          </md>
+          where <m>a_{ij}</m> are scalars and <m>x_i</m> are variables,
+          <m>1 \leq i \leq m</m>, <m>1 \leq j \leq n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-trivial-solution">
+      <p>
+        Notice that <m>x_1 = 0, x_2 = 0, \ldots, x_n = 0</m> is always a solution to a
+        homogeneous system of equations. We call this the <term>trivial solution</term>.
+        We are interested in finding, if possible, <term>nontrivial solutions</term>.
+      </p>
+    </remark>
+
+    <example xml:id="eg-homogeneous-basic">
+      <title>Solving a Homogeneous System</title>
+      <statement>
+        <p>
+          Solve the system
+          <md>
+            <mrow>
+              x_1 + x_2 - x_3 + 3x_4 \amp = 0
+            </mrow>
+            <mrow>
+              -x_1 + 4x_2 + 5x_3 - 2x_4 \amp = 0
+            </mrow>
+            <mrow>
+              x_1 + 6x_2 + 3x_3 + 4x_4 \amp = 0
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>
+              \left[ \begin{array}{cccc|c}
+                1 \amp 1 \amp -1 \amp 3 \amp 0 \\
+                -1 \amp 4 \amp 5 \amp -2 \amp 0 \\
+                1 \amp 6 \amp 3 \amp 4 \amp 0
+              \end{array} \right]
+              \amp \xrightarrow[-r_1 + r_3]{r_1 + r_2}
+              \left[ \begin{array}{cccc|c}
+                1 \amp 1 \amp -1 \amp 3 \amp 0 \\
+                0 \amp 5 \amp 4 \amp 1 \amp 0 \\
+                0 \amp 5 \amp 4 \amp 1 \amp 0
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2 + r_3}
+              \left[ \begin{array}{cccc|c}
+                1 \amp 1 \amp -1 \amp 3 \amp 0 \\
+                0 \amp 5 \amp 4 \amp 1 \amp 0 \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0
+              \end{array} \right]
+              \xrightarrow{\frac{1}{5} r_2}
+              \left[ \begin{array}{cccc|c}
+                1 \amp 1 \amp -1 \amp 3 \amp 0 \\
+                0 \amp 1 \amp \frac{4}{5} \amp \frac{1}{5} \amp 0 \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2 + r_1}
+              \left[ \begin{array}{cccc|c}
+                1 \amp 0 \amp -\frac{9}{5} \amp \frac{14}{5} \amp 0 \\
+                0 \amp 1 \amp \frac{4}{5} \amp \frac{1}{5} \amp 0 \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0
+              \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Here <m>x_3</m> and <m>x_4</m> are free variables. The two nonzero rows read
+          <md>
+            <mrow>
+              x_1 - \tfrac{9}{5}x_3 + \tfrac{14}{5}x_4 \amp = 0
+            </mrow>
+            <mrow>
+              x_2 + \tfrac{4}{5}x_3 + \tfrac{1}{5}x_4 \amp = 0
+            </mrow>
+          </md>
+          so setting <m>x_3 = s</m> and <m>x_4 = t</m>,
+          <md>
+            <mrow>
+              x_1 \amp = \tfrac{9}{5}s - \tfrac{14}{5}t
+            </mrow>
+            <mrow>
+              x_2 \amp = -\tfrac{4}{5}s - \tfrac{1}{5}t
+            </mrow>
+            <mrow>
+              x_3 \amp = s
+            </mrow>
+            <mrow>
+              x_4 \amp = t, \qquad \text{where } s, t \in \R.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-basic-solutions">
+    <title>Linear Combinations and Basic Solutions</title>
+
+    <definition xml:id="def-linear-combination">
+      <title>Linear Combination</title>
+      <statement>
+        <p>
+          If <m>X_1, X_2, \ldots, X_p \in \R^n</m> are columns with <m>n</m> entries, and
+          if <m>a_1, a_2, \ldots, a_p \in \R</m> are scalars, then
+          <md>
+            a_1 X_1 + a_2 X_2 + \cdots + a_p X_p
+          </md>
+          is a <term>linear combination</term> of columns
+          <m>X_1, X_2, \ldots, X_p</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-basic-solutions">
+      <title>Basic Solutions of a Homogeneous System</title>
+      <statement>
+        <p>
+          Continuing <xref ref="eg-homogeneous-basic" text="type-global" />, write the
+          general solution as a linear combination.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Renaming the parameters <m>a_1</m> and <m>a_2</m>, the general solution is
+          <md>
+            \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}
+            = a_1 \begin{bmatrix} \frac{9}{5} \\ -\frac{4}{5} \\ 1 \\ 0 \end{bmatrix}
+            + a_2 \begin{bmatrix} -\frac{14}{5} \\ -\frac{1}{5} \\ 0 \\ 1 \end{bmatrix}
+            = a_1 \vec{V}_1 + a_2 \vec{V}_2.
+          </md>
+        </p>
+        <p>
+          The vectors
+          <md>
+            \vec{V}_1 = \begin{bmatrix} \frac{9}{5} \\ -\frac{4}{5} \\ 1 \\ 0 \end{bmatrix}
+            \qquad \text{and} \qquad
+            \vec{V}_2 = \begin{bmatrix} -\frac{14}{5} \\ -\frac{1}{5} \\ 0 \\ 1 \end{bmatrix}
+          </md>
+          are the <term>basic solutions</term>, and the general solution
+          <m>\vec{V}_h = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}</m> is a
+          linear combination of the basic ones.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-homogeneous-parameter">
+      <title>A Homogeneous System with a Parameter</title>
+      <statement>
+        <p>
+          Find all values of <m>a</m> for which the system
+          <md>
+            <mrow>
+              x + y \phantom{{}+ az} \amp = 0
+            </mrow>
+            <mrow>
+              \phantom{x + {}} ay + z \amp = 0
+            </mrow>
+            <mrow>
+              x + y + az \amp = 0
+            </mrow>
+          </md>
+          has nontrivial solutions, and determine the solutions.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp a \amp 1 \amp 0 \\
+              1 \amp 1 \amp a \amp 0
+            \end{array} \right]
+            \xrightarrow{-r_1 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp a \amp 1 \amp 0 \\
+              0 \amp 0 \amp a \amp 0
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          <term>Case (I): <m>a \neq 0</m>.</term>
+          The third row gives <m>az = 0</m>, so <m>z = 0</m>; the second row then gives
+          <m>ay = 0</m>, so <m>y = 0</m>; and the first row gives <m>x = 0</m>. This is
+          the trivial solution, and hence when <m>a \neq 0</m> there is no nontrivial
+          solution.
+        </p>
+        <p>
+          <term>Case (II): <m>a = 0</m>.</term>
+          The matrix becomes
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0
+            \end{array} \right],
+          </md>
+          so <m>z = 0</m> and <m>x + y = 0</m>, with <m>y</m> free. Writing
+          <m>y = a_1</m>,
+          <md>
+            x = -a_1, \quad y = a_1, \quad z = 0,
+            \qquad \text{i.e.} \qquad
+            \vec{X} = a_1 \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix},
+            \quad \text{where } a_1 \in \R.
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-structure-of-solutions">
+    <title>The Structure of the Solution Set</title>
+
+    <theorem xml:id="thm-particular-plus-homogeneous">
+      <title>Particular Plus Homogeneous</title>
+      <statement>
+        <p>
+          Suppose the matrix equation <m>A\vec{x} = \vec{b}</m> is consistent and let
+          <m>\vec{p} \neq \vec{0}</m> be a solution. Assume that <m>\vec{v}_h</m> is a
+          solution of <m>A\vec{x} = \vec{0}</m>. Then the solution set of
+          <m>A\vec{x} = \vec{b}</m> is the set of all the vectors of the form
+          <m>\vec{w} = \vec{p} + \vec{v}_h</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="eg-structure-comparison">
+      <title>Comparing a Homogeneous System with Its Non-Homogeneous Partner</title>
+      <statement>
+        <p>
+          Solve the following systems and explain the relation between their solution sets.
+        </p>
+        <p>
+          <md>
+            <mrow>
+              x + y + z \amp = 0
+            </mrow>
+            <mrow>
+              x + y - z \amp = 0
+            </mrow>
+            <mrow>
+              x + y \phantom{{}- z} \amp = 0
+            </mrow>
+          </md>
+          <md>
+            <mrow>
+              x + y + z \amp = -1
+            </mrow>
+            <mrow>
+              x + y - z \amp = 1
+            </mrow>
+            <mrow>
+              x + y \phantom{{}- z} \amp = 0
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>The homogeneous system.</term>
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 0 \\
+              1 \amp 1 \amp -1 \amp 0 \\
+              1 \amp 1 \amp 0 \amp 0
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 0 \\
+              0 \amp 0 \amp -2 \amp 0 \\
+              0 \amp 0 \amp -1 \amp 0
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+          So <m>z = 0</m> and <m>x = -y</m>. With <m>y = s</m>,
+          <md>
+            x = -s, \quad y = s, \quad z = 0,
+            \qquad \text{i.e.} \qquad
+            \vec{v}_h = s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix},
+            \quad s \in \R.
+          </md>
+        </p>
+        <p>
+          <term>The non-homogeneous system.</term>
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp -1 \\
+              1 \amp 1 \amp -1 \amp 1 \\
+              1 \amp 1 \amp 0 \amp 0
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp -1 \\
+              0 \amp 0 \amp -2 \amp 2 \\
+              0 \amp 0 \amp -1 \amp 1
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 1 \amp -1 \\
+              0 \amp 0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+          So <m>z = -1</m> and <m>x = -y</m>. With <m>y = s</m>,
+          <md>
+            \vec{w} = s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+            + \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Note that <m>\vec{p} = \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}</m> is a
+          solution of the non-homogeneous system, whereas
+          <m>s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix} = \vec{v}_h</m> is the solution
+          of the homogeneous system.
+        </p>
+        <p>
+          Geometrically, <m>\vec{p}</m> is a vector in <m>\R^3</m>, whereas
+          <m>s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m> corresponds to a line in
+          <m>\R^3</m>. The solution set of the non-homogeneous system is that line
+          translated by <m>\vec{p}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

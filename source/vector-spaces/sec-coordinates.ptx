@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-coordinates" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Coordinates and Change of Basis</title>
+
+  <subsection xml:id="subsec-coordinates">
+    <title>Coordinates Relative to a Basis</title>
+
+    <theorem xml:id="thm-coordinates-unique">
+      <title>Coordinates Are Unique</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{B} = \{ \vec{b}_i \}_{i=1}^{n}</m> be a basis for a vector space
+          <m>V</m>. Then for each <m>\vec{x} \in V</m>, there exists a unique set of
+          scalars <m>\{ c_i \}_{i=1}^{n}</m> such that
+          <md>
+            \vec{x} = \sum_{i=1}^{n} c_i \vec{b}_i.
+          </md>
+        </p>
+      </statement>
+    </theorem>
+
+    <definition xml:id="def-coordinate-vector">
+      <title>Coordinate Vector and Coordinate Mapping</title>
+      <statement>
+        <p>
+          The <term>coordinates of <m>\vec{x}</m> relative to the basis
+          <m>\mathcal{B}</m></term> are denoted by
+          <md>
+            [\vec{x}]_{\mathcal{B}} = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{bmatrix},
+          </md>
+          and the mapping <m>\vec{x} \mapsto [\vec{x}]_{\mathcal{B}}</m> is known as the
+          <term>coordinate mapping</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-coordinates-two-bases">
+      <title>The Same Vector in Two Coordinate Systems</title>
+      <p>
+        Let <m>\mathcal{B}_1 = \{ \vec{e}_1, \vec{e}_2 \}</m> be the standard basis of
+        <m>\R^2</m> and let <m>\mathcal{B}_2 = \{ \vec{b}_1, \vec{b}_2 \}</m> be a second
+        basis, related to the first by
+        <md>
+          \vec{e}_1 = \tfrac{1}{2}\vec{b}_1,
+          \qquad
+          \vec{e}_2 = \tfrac{1}{2}\vec{b}_1 + \vec{b}_2.
+        </md>
+      </p>
+      <p>
+        A vector <m>\vec{x}</m> with
+        <m>[\vec{x}]_{\mathcal{B}_1} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m>, i.e.,
+        <m>\vec{x} = \vec{e}_1 + 2\vec{e}_2</m>, has
+        <md>
+          [\vec{x}]_{\mathcal{B}_2} = \begin{bmatrix} \frac{3}{2} \\ 2 \end{bmatrix},
+          \qquad \text{i.e.} \qquad
+          \vec{x} = \tfrac{3}{2}\vec{b}_1 + 2\vec{b}_2.
+        </md>
+        The vector <m>\vec{x}</m> has not moved; only the grid we measure it against has
+        changed.
+      </p>
+      <p>
+        Solving the two relations above for <m>\vec{b}_1</m> and <m>\vec{b}_2</m> gives
+        <md>
+          \vec{b}_1 = 2\vec{e}_1 = \begin{bmatrix} 2 \\ 0 \end{bmatrix},
+          \qquad
+          \vec{b}_2 = \vec{e}_2 - \vec{e}_1 = \begin{bmatrix} -1 \\ 1 \end{bmatrix},
+        </md>
+        so <m>\mathcal{B}_2</m> rules the plane with a grid of parallelograms rather than
+        squares.
+      </p>
+
+      <figure xml:id="fig-two-coordinate-grids">
+        <caption>
+          The same vector <m>\vec{x}</m> measured against two different bases. Its
+          coordinates change because the grid changes, not because the vector moves. In each
+          panel the two scaled basis vectors are laid tip to tail, and <m>\vec{x}</m> is
+          the diagonal of the parallelogram they span.
+        </caption>
+        <sidebyside widths="44% 44%" margins="auto">
+          <figure xml:id="fig-standard-grid">
+            <caption>
+              In <m>\mathcal{B}_1</m>: <m>\vec{x} = \vec{e}_1 + 2\vec{e}_2</m>, so
+              <m>[\vec{x}]_{\mathcal{B}_1} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m>.
+            </caption>
+            <image xml:id="img-standard-grid">
+              <prefigure xmlns="https://prefigure.org" label="pf-standard-grid">
+                <diagram dimensions="(350,300)" margins="8">
+                  <coordinates bbox="(-2.6,-1.7,3.6,3.6)">
+                    <group at="standard-grid">
+                      <grid-axes xlabel="x" ylabel="y"/>
+                      <group at="parallelogram">
+                        <line endpoints="((0,0),(0,2))" stroke="#777" thickness="1"/>
+                        <line endpoints="((0,2),(1,2))" stroke="#777" thickness="1"/>
+                      </group>
+                      <line at="arrow-e1" endpoints="((0,0),(1,0))" stroke="orange" thickness="3" arrows="1"/>
+                      <line at="arrow-e2" endpoints="((0,0),(0,1))" stroke="orange" thickness="3" arrows="1"/>
+                      <line at="arrow-2e2" endpoints="((1,0),(1,2))" stroke="blue" thickness="3" arrows="1"/>
+                      <line at="vector-x" endpoints="((0,0),(1,2))" stroke="red" thickness="3" arrows="1"/>
+                      <label anchor="(0.5,0)" alignment="s" offset="(0,-10)" scale="1.2" color="orange"><m>\vec{e}_1</m></label>
+                      <label anchor="(0,0.5)" alignment="w" offset="(-10,0)" scale="1.2" color="orange"><m>\vec{e}_2</m></label>
+                      <label anchor="(1,1)" alignment="e" offset="(10,0)" scale="1.2" color="blue"><m>2\vec{e}_2</m></label>
+                      <label anchor="(1,2)" alignment="nw" offset="(-6,10)" scale="1.2" color="red"><m>\vec{x}</m></label>
+                    </group>
+                  </coordinates>
+                  <annotations>
+                    <annotation ref="standard-grid" text="The vector x as the diagonal of a parallelogram built from the standard basis">
+                      <annotation ref="arrow-e1" text="The standard basis vector e 1 points one unit along the x axis, and is the first component of x"/>
+                      <annotation ref="arrow-e2" text="The standard basis vector e 2 points one unit along the y axis"/>
+                      <annotation ref="arrow-2e2" text="Twice e 2 is laid tip to tail from the end of e 1, rising two units to reach the point 1 comma 2"/>
+                      <annotation ref="parallelogram" text="Faint lines complete the parallelogram whose sides are e 1 and twice e 2"/>
+                      <annotation ref="vector-x" text="The vector x is the diagonal of that parallelogram, so x equals e 1 plus 2 e 2 and its coordinates in this basis are 1 and 2"/>
+                    </annotation>
+                  </annotations>
+                </diagram>
+              </prefigure>
+            </image>
+          </figure>
+          <figure xml:id="fig-skew-grid">
+            <caption>
+              In <m>\mathcal{B}_2</m>: <m>\vec{x} = \tfrac{3}{2}\vec{b}_1 + 2\vec{b}_2</m>,
+              so <m>[\vec{x}]_{\mathcal{B}_2} = \begin{bmatrix} \frac{3}{2} \\ 2 \end{bmatrix}</m>.
+            </caption>
+            <image xml:id="img-skew-grid">
+              <prefigure xmlns="https://prefigure.org" label="pf-skew-grid">
+                <diagram dimensions="(350,300)" margins="8">
+                  <coordinates bbox="(-2.6,-1.7,3.6,3.6)">
+                    <group at="skew-grid">
+                      <group at="lattice">
+                        <line endpoints="((-3,-1),(4,-1))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((-3,1),(4,1))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((-3,2),(4,2))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((-3,3),(4,3))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((-2,-2),(-8,4))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((0,-2),(-6,4))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((2,-2),(-4,4))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((4,-2),(-2,4))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((6,-2),(0,4))" stroke="#8cc" thickness="1"/>
+                      </group>
+                      <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                      <group at="parallelogram">
+                        <line endpoints="((0,0),(-2,2))" stroke="#777" thickness="1"/>
+                        <line endpoints="((-2,2),(1,2))" stroke="#777" thickness="1"/>
+                      </group>
+                      <line at="arrow-32b1" endpoints="((0,0),(3,0))" stroke="blue" thickness="3" arrows="1"/>
+                      <line at="arrow-b1" endpoints="((0,0),(2,0))" stroke="green" thickness="3" arrows="1"/>
+                      <line at="arrow-b2" endpoints="((0,0),(-1,1))" stroke="green" thickness="3" arrows="1"/>
+                      <line at="arrow-2b2" endpoints="((3,0),(1,2))" stroke="blue" thickness="3" arrows="1"/>
+                      <line at="vector-x" endpoints="((0,0),(1,2))" stroke="red" thickness="3" arrows="1"/>
+                      <label anchor="(1,0)" alignment="s" offset="(0,-10)" scale="1.2" color="green"><m>\vec{b}_1</m></label>
+                      <label anchor="(-0.7,0.7)" alignment="sw" offset="(-6,-8)" scale="1.2" color="green"><m>\vec{b}_2</m></label>
+                      <label anchor="(2.7,0)" alignment="s" offset="(0,-10)" scale="1.2" color="blue"><m>\tfrac{3}{2}\vec{b}_1</m></label>
+                      <label anchor="(2,1)" alignment="e" offset="(10,0)" scale="1.2" color="blue"><m>2\vec{b}_2</m></label>
+                      <label anchor="(1,2)" alignment="nw" offset="(-6,10)" scale="1.2" color="red"><m>\vec{x}</m></label>
+                    </group>
+                  </coordinates>
+                  <annotations>
+                    <annotation ref="skew-grid" text="The same vector x as the diagonal of a parallelogram built from the basis B 2">
+                      <annotation ref="lattice" text="A grid of parallelograms spanned by b 1 and b 2, replacing the square grid"/>
+                      <annotation ref="arrow-b1" text="The basis vector b 1 equals 2 e 1 and points two units along the x axis"/>
+                      <annotation ref="arrow-b2" text="The basis vector b 2 equals e 2 minus e 1 and points up and to the left"/>
+                      <annotation ref="arrow-32b1" text="Three halves of b 1 reaches the point 3 comma 0, and is the first component of x"/>
+                      <annotation ref="arrow-2b2" text="Twice b 2 is laid tip to tail from the end of three halves b 1, running up and to the left to reach the point 1 comma 2"/>
+                      <annotation ref="parallelogram" text="Faint lines complete the parallelogram whose sides are three halves b 1 and twice b 2"/>
+                      <annotation ref="vector-x" text="The vector x is the diagonal of that parallelogram, so x equals three halves b 1 plus 2 b 2 and its coordinates in this basis are three halves and 2"/>
+                    </annotation>
+                  </annotations>
+                </diagram>
+              </prefigure>
+            </image>
+          </figure>
+        </sidebyside>
+      </figure>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-change-of-basis">
+    <title>The Change of Basis Matrix</title>
+
+    <definition xml:id="def-change-of-basis">
+      <title>Change of Basis Matrix</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{B}_1 = \{ \vec{u}_1, \vec{u}_2, \ldots, \vec{u}_n \}</m> and
+          <m>\mathcal{B}_2 = \{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \}</m> be two
+          bases of a vector space. Then to change the basis with respect to which the
+          vector <m>\vec{x}</m> is written from <m>\mathcal{B}_1</m> to
+          <m>\mathcal{B}_2</m>, we can use the <term>change of basis matrix</term>
+          <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m> as
+          <md>
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} \, [\vec{x}]_{\mathcal{B}_1}
+            = [\vec{x}]_{\mathcal{B}_2},
+          </md>
+          where
+          <md>
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}
+            = \begin{bmatrix}
+                [\vec{u}_1]_{\mathcal{B}_2} \amp [\vec{u}_2]_{\mathcal{B}_2} \amp \cdots
+                \amp [\vec{u}_n]_{\mathcal{B}_2}
+              \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-change-of-basis">
+      <title>Computing a Change of Basis Matrix</title>
+      <statement>
+        <p>
+          Continuing <xref ref="eg-coordinates-two-bases" text="type-global" />, find
+          <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m> and verify it on
+          <m>\vec{x}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In the above example, we have <m>\vec{e}_1 = \frac{1}{2}\vec{b}_1</m> and
+          <m>\vec{e}_2 = \frac{1}{2}\vec{b}_1 + \vec{b}_2</m>, which means
+          <md>
+            [\vec{e}_1]_{\mathcal{B}_2} = \begin{bmatrix} \frac{1}{2} \\ 0 \end{bmatrix},
+            \qquad
+            [\vec{e}_2]_{\mathcal{B}_2} = \begin{bmatrix} \frac{1}{2} \\ 1 \end{bmatrix},
+            \qquad \text{and} \qquad
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}
+            = \begin{bmatrix} \frac{1}{2} \amp \frac{1}{2} \\ 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          For instance, with
+          <m>[\vec{x}]_{\mathcal{B}_1} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m>,
+          <md>
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} [\vec{x}]_{\mathcal{B}_1}
+            = \begin{bmatrix} \frac{1}{2} \amp \frac{1}{2} \\ 0 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} \frac{3}{2} \\ 2 \end{bmatrix}
+            = [\vec{x}]_{\mathcal{B}_2}. \checkmark
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

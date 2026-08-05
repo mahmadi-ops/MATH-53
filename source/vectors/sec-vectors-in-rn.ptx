@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-vectors-in-rn" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vectors in <m>\R^n</m></title>
+
+  <introduction>
+    <p>
+      The columns of a matrix are objects worth studying in their own right. This section
+      introduces them as vectors, together with the geometric picture that makes them
+      intuitive in two and three dimensions.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-vector-notation">
+    <title>Notation and Terminology</title>
+
+    <definition xml:id="def-rn">
+      <title>Column Vectors and <m>\R^n</m></title>
+      <statement>
+        <p>
+          <ul>
+            <li><p>A <term>column vector</term> is a matrix with only one column.</p></li>
+            <li><p><m>\R</m> denotes the set of <term>real numbers</term>.</p></li>
+            <li>
+              <p>
+                <m>\R^2</m> denotes the set of all column vectors with <em>two</em> entries.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\R^3</m> denotes the set of all column vectors with <em>three</em> entries.
+              </p>
+            </li>
+            <li>
+              <p>
+                In general, <m>\R^n</m> denotes the set of all column vectors with
+                <m>n</m> entries.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Vectors in <m>\R^2</m> and <m>\R^3</m> have convenient geometric representations as
+      <term>position vectors</term> of points in the 2-dimensional plane and in
+      3-dimensional space, respectively.
+    </p>
+
+    <figure xml:id="fig-position-vector-r2">
+      <caption>
+        The vector <m>\vec{v} = \begin{bmatrix} a \\ b \end{bmatrix} \in \R^2</m> drawn as
+        the position vector of the point <m>(a,b)</m>.
+      </caption>
+      <image width="52%">
+        <prefigure label="pf-position-vector-r2" xmlns="https://prefigure.org">
+          <diagram dimensions="(300,280)" margins="10">
+            <coordinates bbox="(-0.8,-0.8,3.4,3.2)">
+              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+              <line endpoints="((0,0),(2.4,2.2))" stroke="blue" thickness="2" arrows="1"/>
+              <line endpoints="((2.4,0),(2.4,2.2))" stroke="blue" thickness="1"/>
+              <line endpoints="((0,2.2),(2.4,2.2))" stroke="blue" thickness="1"/>
+              <point p="(2.4,2.2)" fill="black" size="4"/>
+              <label p="(2.4,2.2)" alignment="ne" offset="(6,4)"><m>(a,b)</m></label>
+              <label p="(1.1,1.3)" alignment="nw" offset="(-6,2)" color="blue"><m>\vec{v}</m></label>
+              <label p="(2.4,0)" alignment="s" offset="(0,-8)"><m>a</m></label>
+              <label p="(0,2.2)" alignment="w" offset="(-8,0)"><m>b</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="fig-position-vector-r3">
+      <caption>
+        The vector <m>\vec{u} = \begin{bmatrix} a \\ b \\ c \end{bmatrix} \in \R^3</m>
+        drawn as the position vector of the point <m>(a,b,c)</m>.
+      </caption>
+      <image width="55%">
+        <latex-image>
+          \begin{tikzpicture}[scale=1.1,
+              x={(-0.52cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+              every node/.style={font=\small}]
+            \draw[-{Stealth[length=2mm]}] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+            \draw[-{Stealth[length=2mm]}] (0,0,0) -- (0,3.6,0) node[right] {$y$};
+            \draw[-{Stealth[length=2mm]}] (0,0,0) -- (0,0,3.2) node[above] {$z$};
+            \coordinate (P) at (2.2,2.6,2.2);
+            \draw[blue, dashed] (0,0,0) -- (2.2,0,0);
+            \draw[blue, dashed] (2.2,0,0) -- (2.2,2.6,0);
+            \draw[blue, dashed] (0,2.6,0) -- (2.2,2.6,0);
+            \draw[blue, dashed] (2.2,2.6,0) -- (P);
+            \draw[blue, very thick, -{Stealth[length=2.4mm]}] (0,0,0) -- (P);
+            \fill (P) circle (1.6pt);
+            \node[above right] at (P) {$(a,b,c)$};
+            \node[blue] at (0.75,1.15,1.35) {$\vec{u}$};
+            \node[below] at (1.1,0,0) {$a$};
+            \node[right] at (2.2,1.3,0) {$b$};
+            \node[right] at (2.2,2.6,1.1) {$c$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </subsection>
+
+  <subsection xml:id="subsec-algebra-in-rn">
+    <title>Algebra in <m>\R^n</m></title>
+
+    <definition xml:id="def-vector-addition">
+      <title>Addition in <m>\R^n</m></title>
+      <statement>
+        <p>
+          <ul>
+            <li>
+              <p>
+                If <m>\vec{u}</m> and <m>\vec{v}</m> are in <m>\R^n</m>, then
+                <m>\vec{u} + \vec{v}</m> is obtained by adding together corresponding
+                entries of the vectors.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <term>zero vector</term> in <m>\R^n</m> is the <m>n \times 1</m> zero
+                matrix, and is denoted <m>\vec{0}</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-vector-addition">
+      <title>Adding Two Vectors</title>
+      <p>
+        Let <m>\vec{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</m> and
+        <m>\vec{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}</m>. Then
+        <md>
+          \vec{u} + \vec{v}
+          = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+            + \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
+          = \begin{bmatrix} 5 \\ 7 \\ 9 \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+
+    <theorem xml:id="thm-vector-addition-properties">
+      <title>Properties of Vector Addition</title>
+      <statement>
+        <p>
+          Let <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> be vectors in
+          <m>\R^n</m>. Then the following properties hold.
+        </p>
+        <p>
+          <ol>
+            <li><p><m>\vec{u} + \vec{v} = \vec{v} + \vec{u}</m> (vector addition is commutative).</p></li>
+            <li><p><m>(\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})</m> (vector addition is associative).</p></li>
+            <li><p><m>\vec{u} + \vec{0} = \vec{u}</m> (existence of an additive identity).</p></li>
+            <li><p><m>\vec{u} + (-\vec{u}) = \vec{0}</m> (existence of an additive inverse).</p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <definition xml:id="def-vector-scalar-multiplication">
+      <title>Scalar Multiplication in <m>\R^n</m></title>
+      <statement>
+        <p>
+          If <m>\vec{u}</m> is a vector in <m>\R^n</m> and <m>k \in \R</m> is a scalar,
+          then <m>k\vec{u}</m> is obtained by multiplying every entry of <m>\vec{u}</m>
+          by <m>k</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-vector-scalar-properties">
+      <title>Properties of Scalar Multiplication</title>
+      <statement>
+        <p>
+          Let <m>\vec{u}, \vec{v} \in \R^n</m> be vectors and <m>k, p \in \R</m> be
+          scalars. Then the following properties hold.
+        </p>
+        <p>
+          <ol>
+            <li><p><m>k(\vec{u} + \vec{v}) = k\vec{u} + k\vec{v}</m> (scalar multiplication distributes over vector addition).</p></li>
+            <li><p><m>(k + p)\vec{u} = k\vec{u} + p\vec{u}</m> (addition distributes over scalar multiplication).</p></li>
+            <li><p><m>k(p\vec{u}) = (kp)\vec{u}</m> (scalar multiplication is associative).</p></li>
+            <li><p><m>1\vec{u} = \vec{u}</m> (existence of a multiplicative identity).</p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="eg-vector-scalar">
+      <title>Scaling a Vector</title>
+      <p>
+        Let <m>\vec{u} = \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}</m> and
+        <m>k = -2</m>. Then
+        <md>
+          k\vec{u} = -2 \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}
+          = \begin{bmatrix} 2 \\ -4 \\ -10 \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-geometry-of-addition">
+    <title>The Geometry of Vector Addition</title>
+
+    <p>
+      Let <m>\vec{u}</m>, <m>\vec{v}</m> be vectors. Then <m>\vec{u} + \vec{v}</m> is the
+      diagonal of the <term>parallelogram defined by <m>\vec{u}</m> and <m>\vec{v}</m></term>,
+      and having the same tail as <m>\vec{u}</m> and <m>\vec{v}</m>.
+    </p>
+
+    <figure xml:id="fig-parallelogram-law">
+      <caption>
+        The parallelogram law. The sum <m>\vec{u} + \vec{v}</m> is one diagonal of the
+        parallelogram; the difference <m>\vec{u} - \vec{v}</m> is obtained by adding
+        <m>-\vec{v}</m> to <m>\vec{u}</m>, and runs from the tip of <m>\vec{v}</m> to the
+        tip of <m>\vec{u}</m>.
+      </caption>
+      <image width="62%">
+        <prefigure label="pf-parallelogram-law" xmlns="https://prefigure.org">
+          <diagram dimensions="(400,300)" margins="12">
+            <coordinates bbox="(-2.6,-0.6,3.4,3.4)">
+              <line endpoints="((0,0),(1.0,2.4))" stroke="black" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(2.6,0.8))" stroke="red" thickness="2" arrows="1"/>
+              <line endpoints="((1.0,2.4),(3.6,3.2))" stroke="gray" thickness="1"/>
+              <line endpoints="((2.6,0.8),(3.6,3.2))" stroke="gray" thickness="1"/>
+              <line endpoints="((0,0),(3.6,3.2))" stroke="blue" thickness="2" arrows="1"/>
+              <line endpoints="((2.6,0.8),(1.0,2.4))" stroke="green" thickness="2" arrows="1"/>
+              <label p="(0.5,1.2)" alignment="w" offset="(-8,0)"><m>\vec{u}</m></label>
+              <label p="(1.3,0.4)" alignment="se" offset="(0,-8)" color="red"><m>\vec{v}</m></label>
+              <label p="(2.0,1.9)" alignment="nw" offset="(-4,6)" color="blue"><m>\vec{u}+\vec{v}</m></label>
+              <label p="(1.8,1.6)" alignment="se" offset="(8,-2)" color="green"><m>\vec{u}-\vec{v}</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+  </subsection>
+</section>

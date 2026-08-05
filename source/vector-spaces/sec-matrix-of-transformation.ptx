@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-matrix-of-transformation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Matrix of a Linear Transformation</title>
+
+  <introduction>
+    <p>
+      A linear transformation has no single matrix: it has one matrix per choice of basis
+      for the domain and codomain. Changing those choices conjugates the matrix by a
+      change of basis matrix, and a well-chosen basis can make the matrix strikingly
+      simple.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-matrix-wrt-bases">
+    <title>Four Matrices for One Transformation</title>
+
+    <example xml:id="eg-four-matrices">
+      <title>The Same Transformation in Different Bases</title>
+      <statement>
+        <p>
+          Let <m>T : \R^2 \to \R^2</m> be the linear transformation given by
+          <md>
+            T \begin{bmatrix} x \\ y \end{bmatrix}
+            = \begin{bmatrix} -5x + 6y \\ -3x + 4y \end{bmatrix},
+          </md>
+          and let
+          <m>\mathcal{B} = \{ \vec{e}_1, \vec{e}_2 \}
+          = \left\{ \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right\}</m>
+          and
+          <m>\mathcal{B}' = \{ \vec{b}_1, \vec{b}_2 \}
+          = \left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix} \right\}</m>
+          be the bases.
+        </p>
+        <p>
+          <ol marker="I">
+            <li><p>Compute the matrix <m>A_1</m> of <m>T</m> with respect to <m>\mathcal{B}</m>.</p></li>
+            <li><p>Compute the matrix <m>A_2</m> of <m>T</m> with respect to <m>\mathcal{B}'</m>.</p></li>
+            <li>
+              <p>
+                Find the matrix <m>A_3</m> of <m>T</m> if the bases <m>\mathcal{B}</m> and
+                <m>\mathcal{B}'</m> are used for domain and codomain respectively.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the matrix <m>A_4</m> of <m>T</m> if the bases <m>\mathcal{B}'</m> and
+                <m>\mathcal{B}</m> are used for domain and codomain respectively.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First note the relations between the two bases, which we will need throughout:
+          <md>
+            \vec{e}_1 = -\vec{b}_1 + \vec{b}_2,
+            \qquad
+            \vec{e}_2 = 2\vec{b}_1 - \vec{b}_2,
+          </md>
+          so that
+          <md>
+            P_{\mathcal{B}' \leftarrow \mathcal{B}} = \begin{bmatrix} -1 \amp 2 \\ 1 \amp -1 \end{bmatrix},
+            \qquad
+            P_{\mathcal{B} \leftarrow \mathcal{B}'} = \begin{bmatrix} 1 \amp 2 \\ 1 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(I)</term> Since
+          <m>T \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} -5 \\ -3 \end{bmatrix}</m>
+          and
+          <m>T \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 6 \\ 4 \end{bmatrix}</m>,
+          <md>
+            A_1 = \begin{bmatrix} -5 \amp 6 \\ -3 \amp 4 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(II)</term> We compute the images of the new basis vectors and express
+          them in the new basis:
+          <md>
+            T \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            \quad \text{and} \quad
+            \left[ \begin{matrix} 1 \\ 1 \end{matrix} \right]_{\mathcal{B}'}
+            = \begin{bmatrix} 1 \\ 0 \end{bmatrix},
+          </md>
+          <md>
+            T \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} -4 \\ -2 \end{bmatrix}
+            \quad \text{and} \quad
+            \left[ \begin{matrix} -4 \\ -2 \end{matrix} \right]_{\mathcal{B}'}
+            = \begin{bmatrix} 0 \\ -2 \end{bmatrix},
+          </md>
+          which gives
+          <md>
+            A_2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Alternatively, starting from
+          <m>A_1 [\vec{u}]_{\mathcal{B}} = [\vec{v}]_{\mathcal{B}}</m> and inserting
+          <m>P^{-1}P = I</m>,
+          <md>
+            P_{\mathcal{B}' \leftarrow \mathcal{B}} \, A_1 \,
+            \underbrace{P_{\mathcal{B}' \leftarrow \mathcal{B}}^{-1}
+            P_{\mathcal{B}' \leftarrow \mathcal{B}}}_{I} [\vec{u}]_{\mathcal{B}}
+            = P_{\mathcal{B}' \leftarrow \mathcal{B}} [\vec{v}]_{\mathcal{B}},
+          </md>
+          i.e., <m>A_2 [\vec{u}]_{\mathcal{B}'} = [\vec{v}]_{\mathcal{B}'}</m> where
+          <md>
+            A_2 = P_{\mathcal{B}' \leftarrow \mathcal{B}} \, A_1 \,
+                  P_{\mathcal{B}' \leftarrow \mathcal{B}}^{-1}
+                = \begin{bmatrix} -1 \amp 2 \\ 1 \amp -1 \end{bmatrix}
+                  \begin{bmatrix} -5 \amp 6 \\ -3 \amp 4 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 2 \\ 1 \amp 1 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}. \checkmark
+          </md>
+          Note how much simpler <m>A_2</m> is than <m>A_1</m>: in the basis
+          <m>\mathcal{B}'</m> the transformation just scales <m>\vec{b}_1</m> by <m>1</m>
+          and <m>\vec{b}_2</m> by <m>-2</m>. Indeed
+          <md>
+            T \left( x\vec{b}_1 + y\vec{b}_2 \right)
+            = x \, T(\vec{b}_1) + y \, T(\vec{b}_2)
+            = x\vec{b}_1 - 2y\vec{b}_2.
+          </md>
+          This is exactly the phenomenon that
+          <xref ref="ch-eigenvalues" text="type-global" /> is about.
+        </p>
+        <p>
+          <term>(III) First method.</term> Express the images of the <m>\mathcal{B}</m>
+          basis vectors in the <m>\mathcal{B}'</m> basis:
+          <md>
+            \left[ T(\vec{e}_1) \right]_{\mathcal{B}'}
+            = \left[ \begin{matrix} -5 \\ -3 \end{matrix} \right]_{\mathcal{B}'}
+            = -1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} - 2 \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+            \; \longrightarrow \; \begin{bmatrix} -1 \\ -2 \end{bmatrix},
+          </md>
+          <md>
+            \left[ T(\vec{e}_2) \right]_{\mathcal{B}'}
+            = \left[ \begin{matrix} 6 \\ 4 \end{matrix} \right]_{\mathcal{B}'}
+            = 2 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + 2 \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+            \; \longrightarrow \; \begin{bmatrix} 2 \\ 2 \end{bmatrix},
+          </md>
+          so
+          <m>A_3 = \begin{bmatrix} -1 \amp 2 \\ -2 \amp 2 \end{bmatrix}</m>.
+        </p>
+        <p>
+          <term>(III) Second method.</term> From
+          <m>A_1 [\vec{u}]_{\mathcal{B}} = [\vec{v}]_{\mathcal{B}}</m>, multiply both
+          sides by <m>P_{\mathcal{B}' \leftarrow \mathcal{B}}</m>:
+          <md>
+            A_3 = P_{\mathcal{B}' \leftarrow \mathcal{B}} \, A_1
+                = \begin{bmatrix} -1 \amp 2 \\ 1 \amp -1 \end{bmatrix}
+                  \begin{bmatrix} -5 \amp 6 \\ -3 \amp 4 \end{bmatrix}
+                = \begin{bmatrix} -1 \amp 2 \\ -2 \amp 2 \end{bmatrix}. \checkmark
+          </md>
+        </p>
+        <p>
+          <term>(III) Third method.</term> Work directly with the basis relations:
+          <md>
+            <mrow>
+              T \left( x\vec{e}_1 + y\vec{e}_2 \right)
+              \amp = x \, T(\vec{e}_1) + y \, T(\vec{e}_2)
+            </mrow>
+            <mrow>
+              \amp = x \left( -5\vec{e}_1 - 3\vec{e}_2 \right)
+                   + y \left( 6\vec{e}_1 + 4\vec{e}_2 \right)
+            </mrow>
+            <mrow>
+              \amp = x \left( -\vec{b}_1 - 2\vec{b}_2 \right)
+                   + y \left( 2\vec{b}_1 + 2\vec{b}_2 \right)
+            </mrow>
+            <mrow>
+              \amp = (-x + 2y)\vec{b}_1 + (-2x + 2y)\vec{b}_2.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>(IV) First method.</term>
+          <md>
+            \left[ T(\vec{b}_1) \right]_{\mathcal{B}} = \begin{bmatrix} 1 \\ 1 \end{bmatrix},
+            \qquad
+            \left[ T(\vec{b}_2) \right]_{\mathcal{B}} = \begin{bmatrix} -4 \\ -2 \end{bmatrix}
+            \qquad \Longrightarrow \qquad
+            A_4 = \begin{bmatrix} 1 \amp -4 \\ 1 \amp -2 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(IV) Second method.</term>
+          <md>
+            A_4 = A_1 \, P_{\mathcal{B} \leftarrow \mathcal{B}'}
+                = \begin{bmatrix} -5 \amp 6 \\ -3 \amp 4 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 2 \\ 1 \amp 1 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp -4 \\ 1 \amp -2 \end{bmatrix},
+          </md>
+          or equally
+          <md>
+            A_4 = P_{\mathcal{B} \leftarrow \mathcal{B}'} \, A_2
+                = \begin{bmatrix} 1 \amp 2 \\ 1 \amp 1 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp -4 \\ 1 \amp -2 \end{bmatrix}. \checkmark
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-transformation-between-spaces">
+    <title>A Transformation between Different Vector Spaces</title>
+
+    <example xml:id="eg-p2-to-m22">
+      <title>From <m>\mathbb{P}_2</m> to <m>\mathbb{M}_{22}</m></title>
+      <statement>
+        <p>
+          Let <m>\mathbb{M}_{22}</m> be the space of all <m>2 \times 2</m> matrices and
+          let <m>\mathbb{P}_2</m> be the space of all polynomials of at most degree
+          <m>2</m>. Define <m>S : \mathbb{P}_2 \to \mathbb{M}_{22}</m> as the
+          transformation given by
+          <md>
+            S \left( a_2 x^2 + a_1 x + a_0 \right)
+            = \begin{bmatrix} a_1 + a_2 \amp a_2 + a_0 \\ a_1 - a_0 \amp a_1 + a_0 \end{bmatrix},
+          </md>
+          for all <m>a_2 x^2 + a_1 x + a_0 \in \mathbb{P}_2</m>.
+        </p>
+        <p>
+          <ol>
+            <li><p>Describe the null space of <m>S</m>. Is <m>S</m> one-to-one?</p></li>
+            <li>
+              <p>
+                Express the range of <m>S</m> as a span of a linearly independent set of
+                <m>2 \times 2</m> matrices. Is <m>S</m> onto?
+              </p>
+            </li>
+            <li><p>Is <m>S</m> an isomorphism?</p></li>
+            <li>
+              <p>
+                Extend the basis of the range of <m>S</m> such that the extended basis,
+                <m>\mathcal{B}_1</m>, spans <m>\mathbb{M}_{22}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Consider the ordered basis <m>\mathcal{B} = \{ 1, x, x^2 \}</m> and the
+                ordered basis <m>\mathcal{B}_1</m> for <m>\mathbb{M}_{22}</m> and find the
+                matrix of the transformation <m>S</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Consider the ordered basis <m>\mathcal{B} = \{ 1, x, x^2 \}</m> and the
+                ordered basis
+                <md>
+                  \mathcal{B}_2 = \left\{
+                    \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+                    \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix},
+                    \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix},
+                    \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} \right\}
+                </md>
+                for <m>\mathbb{M}_{22}</m> and find the matrix of the transformation
+                <m>S</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(1)</term>
+          <md>
+            \operatorname{Nul} S = \left\{ P(x) = a_2 x^2 + a_1 x + a_0
+            \; : \; S(P(x)) = 0_{2 \times 2} \right\}.
+          </md>
+          Setting
+          <m>S(P(x)) = \begin{bmatrix} a_1 + a_2 \amp a_2 + a_0 \\ a_1 - a_0 \amp a_1 + a_0 \end{bmatrix}
+          = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m> gives
+          <md>
+            a_1 + a_2 = 0, \quad a_2 + a_0 = 0, \quad a_1 - a_0 = 0, \quad a_1 + a_0 = 0,
+          </md>
+          and the last two force <m>a_1 = a_0 = 0</m>, whence <m>a_2 = 0</m>. This is the
+          trivial solution.
+        </p>
+        <p>
+          Hence the null space only contains the zero vector of <m>\mathbb{P}_2</m>, which
+          is known as the zero polynomial
+          <m>P_0(x) = (0)x^2 + 0(x) + 0(1) = 0</m>, and <m>S</m> is one-to-one:
+          <md>
+            \operatorname{Nul} S = \{ P_0(x) \}.
+          </md>
+        </p>
+        <p>
+          <term>(2)</term> The output of <m>S</m> is
+          <md>
+            \begin{bmatrix} a_1 + a_2 \amp a_2 + a_0 \\ a_1 - a_0 \amp a_1 + a_0 \end{bmatrix}
+            = a_0 \underbrace{\begin{bmatrix} 0 \amp 1 \\ -1 \amp 1 \end{bmatrix}}_{M_0}
+            + a_1 \underbrace{\begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix}}_{M_1}
+            + a_2 \underbrace{\begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}}_{M_2}.
+          </md>
+          We can check that <m>\{ M_0, M_1, M_2 \}</m> is a linearly independent set and
+          hence this set is a basis for the range of <m>S</m>, since the range of <m>S</m>
+          is <m>\operatorname{Span}\{ M_0, M_1, M_2 \}</m>. This means
+          <m>\dim (\text{range of } S) = 3</m>, whereas
+          <m>\dim (\mathbb{M}_{22}) = 4</m>. Therefore <m>S</m> is NOT onto.
+        </p>
+        <p>
+          <term>(3)</term> No. <m>S</m> is not onto.
+        </p>
+        <p>
+          <term>(4)</term> We want to add a fourth matrix, <m>M_3</m>, such that
+          <m>M_3</m> cannot be written as
+          <m>M_3 = a_0 M_0 + a_1 M_1 + a_2 M_2</m>. In other words, writing
+          <m>M_3 = \begin{bmatrix} b_1 \amp b_2 \\ b_3 \amp b_4 \end{bmatrix}</m>, the
+          following must NOT have a solution:
+          <md>
+            \begin{bmatrix} b_1 \amp b_2 \\ b_3 \amp b_4 \end{bmatrix}
+            = \begin{bmatrix} a_1 + a_2 \amp a_2 + a_0 \\ a_1 - a_0 \amp a_1 + a_0 \end{bmatrix}.
+          </md>
+          As a system of linear equations in <m>a_2, a_1, a_0</m> we have
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp b_1 \\
+              1 \amp 0 \amp 1 \amp b_2 \\
+              0 \amp 1 \amp -1 \amp b_3 \\
+              0 \amp 1 \amp 1 \amp b_4
+            \end{array} \right]
+            \longrightarrow \cdots \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp b_1 \\
+              0 \amp 1 \amp 1 \amp b_4 \\
+              0 \amp 1 \amp -1 \amp b_3 \\
+              0 \amp 0 \amp 0 \amp b_3 + b_2 - b_1
+            \end{array} \right].
+          </md>
+          If <m>b_3 + b_2 - b_1 \neq 0</m>, then the system is inconsistent. For example,
+          choose <m>b_1 = 1</m>, <m>b_2 = b_3 = b_4 = 0</m>, which gives
+          <m>M_3 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m>.
+        </p>
+        <p>
+          Therefore, the set
+          <md>
+            \mathcal{B}_1 = \{ M_0, M_1, M_2, M_3 \} = \left\{
+              \begin{bmatrix} 0 \amp 1 \\ -1 \amp 1 \end{bmatrix},
+              \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix},
+              \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+              \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} \right\}
+          </md>
+          is a basis for <m>\mathbb{M}_{22}</m>.
+        </p>
+        <p>
+          <term>(5)</term> The strategy is captured by the following diagram. The
+          coordinate maps identify <m>\mathbb{P}_2</m> with <m>\R^3</m> and
+          <m>\mathbb{M}_{22}</m> with <m>\R^4</m>, so the transformation <m>S</m>
+          corresponds to a matrix transformation <m>\R^3 \to \R^4</m>.
+        </p>
+
+        <figure xml:id="fig-commutative-diagram-S">
+          <caption>
+            The transformation <m>S : \mathbb{P}_2 \to \mathbb{M}_{22}</m>
+            and the matrix transformation <m>\R^3 \to \R^4</m> induced by the
+            coordinate isomorphisms.
+          </caption>
+          <image xml:id="img-commutative-diagram-S" width="62%">
+            <prefigure xmlns="https://prefigure.org" label="commutative-diagram-S">
+              <diagram dimensions="(460,280)" margins="6">
+                <coordinates bbox="[0,0,10,6]">
+                  <group at="commutative-square">
+                    <label at="node-P2" anchor="(1.5,5)" alignment="center" scale="1.4"><m>\mathbb{P}_2</m></label>
+                    <label at="node-M22" anchor="(8.5,5)" alignment="center" scale="1.4"><m>\mathbb{M}_{22}</m></label>
+                    <label at="node-R3" anchor="(1.5,1)" alignment="center" scale="1.4"><m>\mathbb{R}^3</m></label>
+                    <label at="node-R4" anchor="(8.5,1)" alignment="center" scale="1.4"><m>\mathbb{R}^4</m></label>
+
+                    <line at="arrow-S" endpoints="[(2.4,5),(7.3,5)]" arrows="1"/>
+                    <label at="label-S" anchor="(4.85,5.3)" alignment="north" scale="1.4"><m>S</m></label>
+
+                    <line at="arrow-left-iso" endpoints="[(1.5,4.3),(1.5,1.7)]" arrows="2"/>
+                    <line at="arrow-right-iso" endpoints="[(8.5,4.3),(8.5,1.7)]" arrows="2"/>
+
+                    <line at="arrow-A" endpoints="[(2.2,1),(7.6,1)]" arrows="1"/>
+                    <label at="label-A" anchor="(4.9,0.35)" alignment="center" scale="1.4"><m>\text{matrix transformation}</m></label>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="commutative-square"
+                              text="A commutative square relating the transformation S to a matrix transformation">
+                    <annotation ref="arrow-S" text="Across the top, S maps the polynomial space P 2 to the space of 2 by 2 matrices M 2 2"/>
+                    <annotation ref="arrow-left-iso" text="On the left, the coordinate isomorphism identifies P 2 with R 3 in both directions"/>
+                    <annotation ref="arrow-right-iso" text="On the right, the coordinate isomorphism identifies M 2 2 with R 4 in both directions"/>
+                    <annotation ref="arrow-A" text="Across the bottom, a matrix transformation maps R 3 to R 4"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          At the level of the ordered bases, <m>S</m> sends the basis
+          <m>\{1, x, x^2\}</m> of <m>\mathbb{P}_2</m> to the four matrices
+          <m>\{M_0, M_1, M_2, M_3\}</m> spanning <m>\mathbb{M}_{22}</m>, and the induced
+          matrix transformation is given by a matrix <m>A</m>:
+        </p>
+
+        <figure xml:id="fig-basis-diagram-S">
+          <caption>
+            The action of <m>S</m> on the ordered basis and the corresponding
+            matrix <m>A</m>.
+          </caption>
+          <image xml:id="img-basis-diagram-S" width="92%">
+            <prefigure xmlns="https://prefigure.org" label="basis-diagram-S">
+              <diagram dimensions="(700,360)" margins="6">
+                <coordinates bbox="[0,0,12.6,7.6]">
+                  <group at="basis-square">
+                    <label at="node-B" anchor="(2.3,6.5)" alignment="center" scale="1.4"><m>\{1, x, x^2\}</m></label>
+                    <label at="node-B1" anchor="(9.7,6.5)" alignment="center" scale="1.4"><m>\{M_0, M_1, M_2, M_3\}</m></label>
+                    <label at="node-R3" anchor="(2.3,1.5)" alignment="center" scale="1.4"><m>\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}</m></label>
+                    <label at="node-R4" anchor="(9.7,1.5)" alignment="center" scale="1.4"><m>\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}</m></label>
+
+                    <line at="arrow-S" endpoints="[(3.6,6.5),(7.4,6.5)]" arrows="1"/>
+                    <label at="label-S" anchor="(5.5,6.85)" alignment="north" scale="1.4"><m>S</m></label>
+
+                    <line at="arrow-left" endpoints="[(2.3,5.8),(2.3,3.05)]" arrows="2"/>
+                    <line at="arrow-right" endpoints="[(9.7,5.8),(9.7,3.2)]" arrows="2"/>
+
+                    <line at="arrow-A" endpoints="[(4.5,1.5),(7.0,1.5)]" arrows="1"/>
+                    <label at="label-A" anchor="(5.75,1.85)" alignment="north" scale="1.4"><m>A</m></label>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="basis-square"
+                              text="A commutative square showing the action of S on the ordered basis and the corresponding matrix A">
+                    <annotation ref="arrow-S" text="Across the top, S sends the ordered basis 1, x, x squared to the four matrices M 0, M 1, M 2, M 3"/>
+                    <annotation ref="arrow-left" text="On the left, the coordinate isomorphism identifies the basis 1, x, x squared of P 2 with the standard basis columns of R 3, in both directions"/>
+                    <annotation ref="arrow-right" text="On the right, the coordinate isomorphism identifies the four matrices M 0, M 1, M 2, M 3 with the standard basis columns of R 4, in both directions"/>
+                    <annotation ref="arrow-A" text="Across the bottom, the matrix A maps the standard basis columns of R 3 to those of R 4"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          Here is how the elements of <m>\mathcal{B}</m> are transformed:
+          <md>
+            S(1) = M_0, \qquad S(x) = M_1, \qquad S(x^2) = M_2,
+          </md>
+          which means, reading each image in the basis <m>\mathcal{B}_1</m>,
+          <md>
+            A_1 = \begin{bmatrix}
+              1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 1 \\
+              0 \amp 0 \amp 0
+            \end{bmatrix}_{4 \times 3}.
+          </md>
+          To find <m>A_1</m> we had to express <m>S(1)</m>, <m>S(x)</m>, <m>S(x^2)</m> in
+          terms of the basis elements <m>M_0, M_1, M_2</m>, and <m>M_3</m>. In other
+          words, we needed to figure out how the basis elements of the domain transform
+          with respect to the basis <m>\mathcal{B}_1</m> of the codomain.
+        </p>
+        <p>
+          After finding the output of the matrix transformation, we can use the
+          isomorphism between <m>\mathbb{M}_{22}</m> and <m>\R^4</m> and write the output
+          as a <m>2 \times 2</m> matrix.
+        </p>
+        <p>
+          <term>(6)</term> Write
+          <m>M_{12} = \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m>,
+          <m>M_{21} = \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}</m>,
+          <m>M_{22} = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>, and
+          <m>M_{11} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m>, so that
+          <m>\mathcal{B}_2 = \{ M_{12}, M_{21}, M_{22}, M_{11} \}</m>. Then
+          <md>
+            <mrow>
+              S(1) \amp = M_0 = M_{12} - M_{21} + M_{22},
+            </mrow>
+            <mrow>
+              S(x) \amp = M_1 = M_{21} + M_{22} + M_{11},
+            </mrow>
+            <mrow>
+              S(x^2) \amp = M_2 = M_{12} + M_{11},
+            </mrow>
+          </md>
+          and therefore
+          <md>
+            A_2 = \begin{bmatrix}
+              1 \amp 0 \amp 1 \\
+              -1 \amp 1 \amp 0 \\
+              1 \amp 1 \amp 0 \\
+              0 \amp 1 \amp 1
+            \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Alternatively, we can find a matrix that changes the basis <m>\mathcal{B}_1</m>
+          to <m>\mathcal{B}_2</m>. From
+          <md>
+            M_0 = M_{12} - M_{21} + M_{22}, \quad
+            M_1 = M_{21} + M_{22} + M_{11}, \quad
+            M_2 = M_{12} + M_{11}, \quad
+            M_3 = M_{11},
+          </md>
+          we get
+          <md>
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} = \begin{bmatrix}
+              1 \amp 0 \amp 1 \amp 0 \\
+              -1 \amp 1 \amp 0 \amp 0 \\
+              1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 1 \amp 1
+            \end{bmatrix},
+            \qquad \text{and} \qquad
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} \, A_1 = A_2.
+          </md>
+        </p>
+        <p>
+          The reason is the familiar one: from
+          <m>A_1 [\vec{u}]_{\mathcal{B}} = [\vec{v}]_{\mathcal{B}_1}</m>, multiplying both
+          sides by <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m> gives
+          <m>A_2 [\vec{u}]_{\mathcal{B}} = [\vec{v}]_{\mathcal{B}_2}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

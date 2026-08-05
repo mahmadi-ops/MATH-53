@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-invertible-matrix-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Invertible Matrix Theorem</title>
+
+  <introduction>
+    <p>
+      We already discussed
+      <xref ref="thm-matrix-inverses-equivalences" text="type-global" />, and in what
+      follows we will be building on it. The result below gathers together, in a single
+      list, every characterization of invertibility we have met so far: in terms of row
+      reduction, pivots, linear independence, spanning, solvability of
+      <m>A\vec{x} = \vec{b}</m>, one-sided inverses, and the transpose.
+    </p>
+    <p>
+      Throughout this section, <m>T_A</m> denotes the linear transformation
+      <m>T_A(\vec{x}) = A\vec{x}</m> associated with the matrix <m>A</m>.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-imt-statement">
+    <title>Statement of the Theorem</title>
+
+    <theorem xml:id="thm-invertible-matrix-theorem">
+      <title>The Invertible Matrix Theorem</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix, and let <m>\vec{X}</m>,
+          <m>\vec{B}</m> be <m>n \times 1</m> vectors. The following conditions are
+          equivalent.
+        </p>
+        <p>
+          <ol>
+            <li><p><m>A</m> is invertible.</p></li>
+            <li>
+              <p>
+                <m>A\vec{X} = \vec{0}</m> has only the trivial solution,
+                <m>\vec{X} = \vec{0}</m>.
+                (Equivalently, <m>T_A(\vec{x}) = A\vec{x}</m> is one-to-one.)
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> can be transformed to <m>I_n</m> by elementary row operations.
+              </p>
+            </li>
+            <li><p><m>A</m> has <m>n</m> pivot positions.</p></li>
+            <li><p>The columns of <m>A</m> are linearly independent.</p></li>
+            <li>
+              <p>
+                The columns of <m>A</m> span <m>\R^n</m>.
+                (Equivalently, <m>T_A(\vec{x}) = A\vec{x}</m> is onto.)
+              </p>
+            </li>
+            <li>
+              <p>
+                The system <m>A\vec{X} = \vec{B}</m> has a unique solution <m>\vec{X}</m>
+                for any choice of <m>\vec{B}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                There exists an <m>n \times n</m> matrix <m>C</m> with the property that
+                <m>AC = I_n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                There exists an <m>n \times n</m> matrix <m>D</m> with the property that
+                <m>DA = I_n</m>.
+              </p>
+            </li>
+            <li><p><m>A^T</m> is invertible.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <remark xml:id="rem-imt-one-sided">
+      <p>
+        Conditions (8) and (9) are worth pausing over. They say that for
+        <em>square</em> matrices, a one-sided inverse is automatically a two-sided
+        inverse. This is what completes the argument left unfinished in the proof of
+        <xref ref="thm-matrix-inverses-equivalences" text="type-global" />.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-imt-proof">
+    <title>Proof of the Equivalences</title>
+
+    <p>
+      <term>(1) <m>\Longleftrightarrow</m> (2).</term>
+      We already discussed that if (1) holds, then the reduced row-echelon matrix of
+      <m>A</m> will be <m>I_n</m>, which means <m>A\vec{x} = \vec{0}</m> implies
+      <m>\vec{x} = \vec{0}</m>, which is (2). Conversely, if (2) holds, then the system
+      has no free variables, so after row reduction there is a leading one in every row.
+      Since the matrix <m>A</m> is <m>n \times n</m>, its reduced row-echelon matrix is
+      therefore <m>I_n</m>, and hence <m>A</m> is invertible.
+    </p>
+
+    <p>
+      <term>(1) <m>\Longleftrightarrow</m> (3).</term>
+      We already discussed this equivalence.
+    </p>
+
+    <p>
+      <term>(1) <m>\Longleftrightarrow</m> (4).</term>
+      We have also already discussed this equivalence. Note that the reduced row-echelon
+      matrix being <m>I_n</m> is the same as having <m>n</m> pivot positions.
+    </p>
+
+    <p>
+      <term>(2) <m>\Longleftrightarrow</m> (5).</term>
+      We proved a few sessions ago that the columns of <m>A</m> are linearly independent
+      if and only if <m>A\vec{x} = \vec{0}</m> implies <m>\vec{x} = \vec{0}</m>.
+    </p>
+
+    <p>
+      <term>(3) <m>\Longleftrightarrow</m> (6).</term>
+      If <m>A</m> can be transformed to <m>I_n</m>, then <m>A\vec{x} = \vec{b}</m> is a
+      consistent system of linear equations for all <m>\vec{b} \in \R^n</m>, and hence the
+      columns of <m>A</m> span <m>\R^n</m>; i.e., for all <m>\vec{b}</m> in <m>\R^n</m> we
+      can find a linear combination
+      <md>
+        x_1 \vec{A}_1 + x_2 \vec{A}_2 + \cdots + x_n \vec{A}_n = \vec{b}.
+      </md>
+      Conversely, if the columns of <m>A</m> span <m>\R^n</m>, then
+      <m>A\vec{x} = \vec{b}</m> is a consistent system for all
+      <m>\vec{b} \in \R^n</m>, and the last row of the row-echelon matrix cannot be all
+      zeros. This means there are <m>n</m> leading ones, and hence the reduced
+      row-echelon matrix is <m>I_n</m>.
+    </p>
+
+    <p>
+      <term>(3) <m>\Longleftrightarrow</m> (7).</term>
+      If <m>A</m> can be reduced to <m>I_n</m>, then we know that the solution to
+      <m>A\vec{x} = \vec{b}</m> exists uniquely for all <m>\vec{b} \in \R^n</m>.
+      Conversely, if <m>A\vec{x} = \vec{b}</m> has a unique solution for any
+      <m>\vec{b} \in \R^n</m>, then the reduced row-echelon matrix cannot have a row of
+      zeros, which means <m>I_n</m> is the reduced row-echelon matrix.
+    </p>
+
+    <p>
+      <term>(1) <m>\Longleftrightarrow</m> (8).</term>
+      If <m>A</m> is invertible, by definition we have <m>AA^{-1} = I</m>, so we may take
+      <m>C = A^{-1}</m>.
+    </p>
+    <p>
+      Now let us assume there exists an <m>n \times n</m> matrix <m>C</m> with the
+      property that <m>AC = I_n</m>. We can show that <m>A</m> is onto and hence
+      invertible: for any <m>\vec{b} \in \R^n</m>, we can write
+      <md>
+        \vec{b} = I \vec{b} = (AC)\vec{b} = A \left( C\vec{b} \right),
+      </md>
+      or <m>T_A \left( C\vec{b} \right) = \vec{b}</m>. This means that for any
+      <m>\vec{b} \in \R^n</m> there exists <m>\vec{x} = C\vec{b} \in \R^n</m> such that
+      <m>T_A(\vec{x}) = \vec{b}</m>, and hence <m>T_A</m> is onto and therefore <m>A</m>
+      is invertible, by the equivalence of (1) and (6).
+    </p>
+
+    <p>
+      <term>(1) <m>\Longleftrightarrow</m> (9).</term>
+      If <m>A</m> is invertible, by definition we have <m>A^{-1}A = I</m>, so we may take
+      <m>D = A^{-1}</m>.
+    </p>
+    <p>
+      Now assume <m>DA = I</m>. We can show that <m>T_A</m> is one-to-one and hence
+      <m>A</m> is invertible. If <m>T_A(\vec{x}_1) = T_A(\vec{x}_2)</m>, then
+      <m>A\vec{x}_1 = A\vec{x}_2</m> and so <m>DA\vec{x}_1 = DA\vec{x}_2</m>, which gives
+      <m>\vec{x}_1 = \vec{x}_2</m> since <m>DA = I</m>. Hence <m>T_A</m> is injective and
+      <m>A</m> is invertible.
+    </p>
+
+    <p>
+      <term>(1) <m>\Longleftrightarrow</m> (10).</term>
+      If <m>A</m> is invertible, then
+      <md>
+        <mrow>
+          \left( A A^{-1} \right)^T \amp = I^T
+          \amp \amp \Longrightarrow \amp
+          \left( A^{-1} \right)^T A^T \amp = I,
+        </mrow>
+        <mrow>
+          \left( A^{-1} A \right)^T \amp = I^T
+          \amp \amp \Longrightarrow \amp
+          A^T \left( A^{-1} \right)^T \amp = I,
+        </mrow>
+      </md>
+      so <m>A^T</m> is invertible and
+      <m>\left( A^T \right)^{-1} = \left( A^{-1} \right)^T</m>.
+    </p>
+    <p>
+      Conversely, if <m>A^T</m> is invertible, then transposing each of
+      <m>\left( A^T \right)^{-1} A^T = I</m> and
+      <m>A^T \left( A^T \right)^{-1} = I</m> gives
+      <md>
+        <mrow>
+          A \left( \left( A^T \right)^{-1} \right)^T \amp = I,
+        </mrow>
+        <mrow>
+          \left( \left( A^T \right)^{-1} \right)^T A \amp = I,
+        </mrow>
+      </md>
+      so <m>\left( \left( A^T \right)^{-1} \right)^T = A^{-1}</m> and <m>A</m> is
+      invertible.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-imt-applications">
+    <title>Using the Theorem</title>
+
+    <example xml:id="eg-not-invertible-by-columns">
+      <title>Detecting Non-Invertibility from the Columns</title>
+      <statement>
+        <p>
+          Is the following matrix invertible?
+          <md>
+            \begin{bmatrix}
+              1 \amp -1 \amp 1 \amp 2 \\
+              0 \amp 1 \amp 5 \amp -1 \\
+              1 \amp 0 \amp 7 \amp 1 \\
+              0 \amp 2 \amp 10 \amp -2
+            \end{bmatrix}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Label the columns <m>\vec{u}_1, \vec{u}_2, \vec{u}_3, \vec{u}_4</m>. Since
+          <md>
+            \vec{u}_1 - \vec{u}_2
+            = \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}
+              - \begin{bmatrix} -1 \\ 1 \\ 0 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} 2 \\ -1 \\ 1 \\ -2 \end{bmatrix}
+            = \vec{u}_4,
+          </md>
+          we know that the columns are not linearly independent, and hence the matrix is
+          not invertible by condition (5) of
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" />.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-true-false">
+      <title>True or False?</title>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>Invertible transformations map the zero vector to itself.</p>
+            </li>
+            <li>
+              <p>
+                Non-invertible matrices cannot be written as a product of elementary
+                matrices.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a) True.</term>
+          Condition (2) of <xref ref="thm-invertible-matrix-theorem" text="type-global" />
+          says that for invertible matrices we have <m>A\vec{x} = \vec{0}</m> implies
+          <m>\vec{x} = \vec{0}</m>. This means <m>T_A(\vec{0}) = \vec{0}</m>.
+        </p>
+        <p>
+          <term>(b) True.</term>
+          If we assume that a non-invertible matrix <m>A</m> can be written as a product
+          of elementary matrices, <m>A = E_1 E_2 \cdots E_n</m>, we can easily see that
+          the product is invertible since each elementary matrix is invertible:
+          <md>
+            \left( E_1 E_2 \cdots E_n \right)^{-1}
+            = E_n^{-1} E_{n-1}^{-1} \cdots E_2^{-1} E_1^{-1},
+          </md>
+          which means we reach a contradiction. Hence non-invertible matrices cannot be
+          written as a product of elementary matrices.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-inverse-from-polynomial">
+      <title>An Inverse from a Polynomial Identity</title>
+      <statement>
+        <p>
+          Suppose <m>P</m> is a square matrix which satisfies the following:
+          <md>
+            P^3 + 2P^2 + 2P - 3I = 0.
+          </md>
+          Find <m>P^{-1}</m>, if possible.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Divide the identity by <m>3</m> and isolate <m>I</m>:
+          <md>
+            <mrow>
+              \tfrac{1}{3}\left( P^3 + 2P^2 + 2P - 3I \right) \amp = 0
+            </mrow>
+            <mrow>
+              \tfrac{1}{3}\left( P^3 + 2P^2 + 2P \right) - I \amp = 0
+            </mrow>
+            <mrow>
+              \tfrac{1}{3}\left( P^3 + 2P^2 + 2P \right) \amp = I.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Factoring <m>P</m> out on the left gives
+          <md>
+            P \left[ \tfrac{1}{3} \left( P^2 + 2P + 2I \right) \right] = I,
+          </md>
+          so by condition (8) of
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" />, <m>P</m> is
+          invertible and
+          <md>
+            P^{-1} = \tfrac{1}{3} \left( P^2 + 2P + 2I \right).
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

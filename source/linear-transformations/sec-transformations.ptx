@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Transformations and Linear Transformations</title>
+
+  <subsection xml:id="subsec-transformations">
+    <title>Transformations</title>
+
+    <definition xml:id="def-transformation">
+      <title>Transformation</title>
+      <statement>
+        <p>
+          A <term>transformation</term> is a function <m>T : \R^n \to \R^m</m>, sometimes
+          written <m>\R^n \xrightarrow{T} \R^m</m>, and is called a
+          <term>transformation from <m>\R^n</m> to <m>\R^m</m></term>. The sets
+          <m>\R^n</m> and <m>\R^m</m> are known as the <term>domain</term> and
+          <term>codomain</term> of <m>T</m>. If <m>m = n</m>, then we say <m>T</m> is a
+          transformation of <m>\R^n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-what-is-a-function">
+      <title>What do we mean by a function?</title>
+      <p>
+        Informally, a function <m>T : \R^n \to \R^m</m> is a rule that assigns exactly one
+        vector of <m>\R^m</m> to each vector of <m>\R^n</m>. We use the notation
+        <m>T(\vec{x})</m> to mean the transformation <m>T</m> applied to the vector
+        <m>\vec{x}</m>.
+      </p>
+    </remark>
+
+    <example xml:id="eg-transformation">
+      <title>A Transformation from <m>\R^3</m> to <m>\R^4</m></title>
+      <p>
+        Consider <m>T : \R^3 \to \R^4</m> defined by
+        <md>
+          T \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+          = \begin{bmatrix} x + y \\ y \\ y - z \\ -y + z \end{bmatrix}.
+        </md>
+        This transformation transforms
+        <m>\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix} \in \R^3</m> to
+        <m>\begin{bmatrix} 1 \\ 0 \\ -2 \\ 2 \end{bmatrix} \in \R^4</m>.
+      </p>
+      <p>
+        In the language of the definition, <m>T : \R^3 \to \R^4</m> with
+        <m>T(\vec{x}) = \vec{b}</m>, where
+        <m>\vec{x} = \begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \R^3</m> and
+        <m>\vec{b} = \begin{bmatrix} x+y \\ y \\ y-z \\ -y+z \end{bmatrix} \in \R^4</m>.
+      </p>
+    </example>
+
+    <definition xml:id="def-matrix-transformation">
+      <title>Matrix Transformation</title>
+      <statement>
+        <p>
+          If <m>T</m> acts by matrix multiplication of a matrix <m>A</m>, we call
+          <m>T</m> a <term>matrix transformation</term>, and write
+          <m>T_A(\vec{x}) = A\vec{x}</m>. The vector <m>T_A(\vec{x}) = A\vec{x}</m> is
+          called the <term>image</term> of <m>\vec{x}</m>, and the set of all images is
+          called the <term>range</term> of <m>T</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-matrix-transformation">
+      <title>The Previous Transformation Is a Matrix Transformation</title>
+      <p>
+        Continuing <xref ref="eg-transformation" text="type-global" />, we can write
+        <md>
+          T_A(\vec{x})
+          = x \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+          + y \begin{bmatrix} 1 \\ 1 \\ 1 \\ -1 \end{bmatrix}
+          + z \begin{bmatrix} 0 \\ 0 \\ -1 \\ 1 \end{bmatrix}
+          = \underbrace{\begin{bmatrix}
+              1 \amp 1 \amp 0 \\
+              0 \amp 1 \amp 0 \\
+              0 \amp 1 \amp -1 \\
+              0 \amp -1 \amp 1
+            \end{bmatrix}}_{A}
+          \underbrace{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}_{\vec{x}}
+          = \begin{bmatrix} x+y \\ y \\ y-z \\ -y+z \end{bmatrix}.
+        </md>
+      </p>
+    </example>
+
+    <definition xml:id="def-equality-of-transformations">
+      <title>Equality of Transformations</title>
+      <statement>
+        <p>
+          Suppose <m>S : \R^n \to \R^m</m> and <m>T : \R^n \to \R^m</m> are
+          transformations. Then <m>S = T</m> if and only if <m>S(\vec{x}) = T(\vec{x})</m>
+          for every <m>\vec{x} \in \R^n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-transformation-by-multiplication">
+      <title>Transformation by Matrix Multiplication</title>
+      <statement>
+        <p>
+          Consider the matrix
+          <m>A = \begin{bmatrix} 1 \amp 2 \amp 0 \\ 2 \amp 1 \amp 0 \end{bmatrix}</m>.
+          By matrix multiplication, <m>A</m> transforms vectors in <m>\R^3</m> into
+          vectors in <m>\R^2</m>. Describe the effect on a general vector, and compute the
+          image of <m>\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Transforming a general vector by <m>A</m> looks like this:
+          <md>
+            \begin{bmatrix} 1 \amp 2 \amp 0 \\ 2 \amp 1 \amp 0 \end{bmatrix}_{2 \times 3}
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}_{3 \times 1}
+            = \begin{bmatrix} x + 2y \\ 2x + y \end{bmatrix}_{2 \times 1}.
+          </md>
+          For example,
+          <md>
+            \begin{bmatrix} 1 \amp 2 \amp 0 \\ 2 \amp 1 \amp 0 \end{bmatrix}
+            \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} -1 \\ 1 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-transformation-schematic">
+      <caption>
+        A transformation <m>T : \R^3 \to \R^2</m> sends a vector <m>\vec{x}</m> in
+        3-space to its image <m>A\vec{x}</m> in the plane.
+      </caption>
+      <image width="78%">
+        <latex-image>
+          \begin{tikzpicture}[every node/.style={font=\small}]
+            \begin{scope}[x={(-0.42cm,-0.30cm)}, y={(0.85cm,0cm)}, z={(0cm,0.85cm)}]
+              \draw[-{Stealth[length=2mm]}] (0,0,0) -- (2.6,0,0) node[below left] {$x$};
+              \draw[-{Stealth[length=2mm]}] (0,0,0) -- (0,2.8,0) node[right] {$y$};
+              \draw[-{Stealth[length=2mm]}] (0,0,0) -- (0,0,2.6) node[above] {$z$};
+              \draw[red, very thick, -{Stealth[length=2.2mm]}] (0,0,0) -- (1.6,1.0,1.7)
+                node[above right, black] {$\vec{x}$};
+            \end{scope}
+            \begin{scope}[xshift=6.4cm]
+              \draw[-{Stealth[length=2mm]}] (-0.4,0) -- (2.8,0) node[right] {$x$};
+              \draw[-{Stealth[length=2mm]}] (0,-0.9) -- (0,2.6) node[above] {$y$};
+              \draw[teal, very thick, -{Stealth[length=2.2mm]}] (0,0) -- (1.7,1.5)
+                node[above right, black] {$A\vec{x}$};
+            \end{scope}
+            \draw[blue, dashed, -{Stealth[length=2.4mm]}] (1.6,2.6)
+              to[out=35, in=145] node[midway, above] {$T:\R^3 \to \R^2$} (6.0,2.2);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </subsection>
+
+  <subsection xml:id="subsec-linear-transformations">
+    <title>Linear Transformations</title>
+
+    <definition xml:id="def-linear-transformation">
+      <title>Linear Transformation</title>
+      <statement>
+        <p>
+          A transformation <m>T : \R^n \to \R^m</m> is a
+          <term>linear transformation</term> if it satisfies the following two properties
+          for all <m>\vec{x}, \vec{y} \in \R^n</m> and all scalars <m>a \in \R</m>.
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>T(\vec{x} + \vec{y}) = T(\vec{x}) + T(\vec{y})</m>
+                (preservation of addition).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>T(a\vec{x}) = aT(\vec{x})</m>
+                (preservation of scalar multiplication).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-linear-transformation-properties">
+      <title>Properties of Linear Transformations</title>
+      <statement>
+        <p>
+          Let <m>T : \R^n \to \R^m</m> be a linear transformation, and let
+          <m>\vec{x} \in \R^n</m>.
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>T(0\vec{x}) = 0T(\vec{x})</m>, implying <m>T(\vec{0}) = \vec{0}</m>, so
+                <m>T</m> preserves the zero vector.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>T((-1)\vec{x}) = (-1)T(\vec{x})</m>, implying
+                <m>T(-\vec{x}) = -T(\vec{x})</m>, so <m>T</m> preserves the negative of a
+                vector.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_k</m> are vectors in
+                <m>\R^n</m> and
+                <m>\vec{y} = a_1\vec{x}_1 + a_2\vec{x}_2 + \cdots + a_k\vec{x}_k</m>
+                for some <m>a_1, a_2, \ldots, a_k \in \R</m>. Then
+                <md>
+                  <mrow>
+                    T(\vec{y}) \amp = T(a_1\vec{x}_1 + a_2\vec{x}_2 + \cdots + a_k\vec{x}_k)
+                  </mrow>
+                  <mrow>
+                    \amp = a_1 T(\vec{x}_1) + a_2 T(\vec{x}_2) + \cdots + a_k T(\vec{x}_k),
+                  </mrow>
+                </md>
+                i.e., <m>T</m> preserves linear combinations.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="eg-transformation-from-values">
+      <title>Determining a Transformation from Two Values</title>
+      <statement>
+        <p>
+          Let <m>T : \R^3 \to \R^4</m> be a linear transformation such that
+          <md>
+            T \begin{bmatrix} 1 \\ 3 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} 4 \\ 4 \\ 0 \\ -2 \end{bmatrix}
+            \qquad \text{and} \qquad
+            T \begin{bmatrix} 4 \\ 0 \\ 5 \end{bmatrix}
+            = \begin{bmatrix} 4 \\ 5 \\ -1 \\ 5 \end{bmatrix}.
+          </md>
+          Find <m>T \begin{bmatrix} -7 \\ 3 \\ -9 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, we need to see if
+          <m>\begin{bmatrix} -7 \\ 3 \\ -9 \end{bmatrix}</m> can be written as a linear
+          combination of <m>\vec{x}_1 = \begin{bmatrix} 1 \\ 3 \\ 1 \end{bmatrix}</m> and
+          <m>\vec{x}_2 = \begin{bmatrix} 4 \\ 0 \\ 5 \end{bmatrix}</m>. Solving
+          <m>a_1 \vec{x}_1 + a_2 \vec{x}_2 = \begin{bmatrix} -7 \\ 3 \\ -9 \end{bmatrix}</m>:
+          <md>
+            \left[ \begin{array}{cc|c}
+              1 \amp 4 \amp -7 \\ 3 \amp 0 \amp 3 \\ 1 \amp 5 \amp -9
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{cc|c}
+              1 \amp 4 \amp -7 \\ 0 \amp -12 \amp 24 \\ 0 \amp 1 \amp -2
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp 1 \\ 0 \amp 1 \amp -2 \\ 0 \amp 0 \amp 0
+            \end{array} \right],
+          </md>
+          so <m>a_1 = 1</m> and <m>a_2 = -2</m>; that is,
+          <md>
+            \begin{bmatrix} -7 \\ 3 \\ -9 \end{bmatrix}
+            = (1) \begin{bmatrix} 1 \\ 3 \\ 1 \end{bmatrix}
+            - 2 \begin{bmatrix} 4 \\ 0 \\ 5 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Then we use property (3) of
+          <xref ref="thm-linear-transformation-properties" text="type-global" />:
+          <md>
+            <mrow>
+              T \begin{bmatrix} -7 \\ 3 \\ -9 \end{bmatrix}
+              \amp = (1) \, T \begin{bmatrix} 1 \\ 3 \\ 1 \end{bmatrix}
+              - 2 \, T \begin{bmatrix} 4 \\ 0 \\ 5 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} 4 \\ 4 \\ 0 \\ -2 \end{bmatrix}
+              - 2 \begin{bmatrix} 4 \\ 5 \\ -1 \\ 5 \end{bmatrix}
+              = \begin{bmatrix} -4 \\ -6 \\ 2 \\ -12 \end{bmatrix}.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-matrix-transformations-are-linear">
+    <title>Matrix Transformations Are Linear</title>
+
+    <theorem xml:id="thm-matrix-transformations-linear">
+      <title>Every Matrix Transformation Is a Linear Transformation</title>
+      <statement>
+        <p>Every matrix transformation is a linear transformation.</p>
+      </statement>
+      <proof>
+        <p>
+          Consider the matrix transformation <m>T_A(\vec{x}) = A\vec{x}</m>. We will show
+          that such a transformation is in fact linear, i.e., it preserves addition and
+          scalar multiplication.
+        </p>
+        <p>
+          <term>(1) Preservation of addition.</term>
+          Let <m>A</m> be <m>m \times n</m> with columns
+          <m>\vec{A}_1, \ldots, \vec{A}_n</m>, and let
+          <m>\vec{x}, \vec{y} \in \R^n</m>. Then
+          <md>
+            <mrow>
+              T_A(\vec{x} + \vec{y}) \amp = A(\vec{x} + \vec{y})
+            </mrow>
+            <mrow>
+              \amp = (x_1 + y_1)\vec{A}_1 + (x_2 + y_2)\vec{A}_2 + \cdots + (x_n + y_n)\vec{A}_n
+            </mrow>
+            <mrow>
+              \amp = \left( x_1\vec{A}_1 + \cdots + x_n\vec{A}_n \right)
+                   + \left( y_1\vec{A}_1 + \cdots + y_n\vec{A}_n \right)
+            </mrow>
+            <mrow>
+              \amp = A\vec{x} + A\vec{y} = T_A(\vec{x}) + T_A(\vec{y}).
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>(2) Preservation of scalar multiplication.</term>
+          Let <m>c \in \R</m> and <m>\vec{x} \in \R^n</m>. Then
+          <md>
+            <mrow>
+              T_A(c\vec{x}) \amp = A(c\vec{x})
+            </mrow>
+            <mrow>
+              \amp = (cx_1)\vec{A}_1 + (cx_2)\vec{A}_2 + \cdots + (cx_n)\vec{A}_n
+            </mrow>
+            <mrow>
+              \amp = c \left( x_1\vec{A}_1 + x_2\vec{A}_2 + \cdots + x_n\vec{A}_n \right)
+            </mrow>
+            <mrow>
+              \amp = c \left( A\vec{x} \right) = c \, T_A(\vec{x}).
+            </mrow>
+          </md>
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-not-a-matrix-transformation">
+      <title>Transformations That Are Not Matrix Transformations</title>
+      <statement>
+        <p>
+          Can you come up with an example of a transformation that is NOT a matrix
+          transformation? Explain why it is not a matrix transformation.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          As an example, consider <m>T : \R^2 \to \R^2</m> defined by
+          <m>T(\vec{x}) = \vec{x} + \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>. You can
+          easily check that <m>T</m> does not preserve <m>\vec{0}</m>, since
+          <m>T(\vec{0}) = \begin{bmatrix} 0 \\ 1 \end{bmatrix} \neq \vec{0}</m>, and hence
+          it is not a linear transformation.
+        </p>
+        <p>
+          Also, we cannot find a matrix <m>A</m> such that for all
+          <m>\vec{x} \in \R^2</m> we have
+          <m>A\vec{x} = \vec{x} + \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>. Again consider
+          <m>\vec{x} = \vec{0}</m>. Then
+          <m>\vec{0} = \vec{0} + \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, which is
+          impossible.
+        </p>
+        <p>
+          As another example, consider <m>T : \R^2 \to \R^2</m> defined by
+          <m>T(\vec{x}) = \begin{bmatrix} x^2 \\ y \end{bmatrix}</m>. If such an <m>A</m>
+          existed, then
+          <md>
+            A\vec{x} = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}
+            \begin{bmatrix} x \\ y \end{bmatrix}
+            = x \begin{bmatrix} a \\ c \end{bmatrix} + y \begin{bmatrix} b \\ d \end{bmatrix}
+            = \begin{bmatrix} x^2 \\ y \end{bmatrix}
+          </md>
+          would require <m>ax + by = x^2</m> for all <m>x, y</m>, which is not possible.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

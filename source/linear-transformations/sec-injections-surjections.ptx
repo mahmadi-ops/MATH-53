@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-injections-surjections" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>One-to-One and Onto Transformations</title>
+
+  <introduction>
+    <p>
+      Two questions can be asked of any transformation: does it ever send two different
+      inputs to the same output, and does it reach every possible output? For matrix
+      transformations both questions reduce to facts about the matrix that we already know
+      how to check.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-injections">
+    <title>One-to-One Transformations</title>
+
+    <definition xml:id="def-injective">
+      <title>Injective (One-to-One) Linear Transformation</title>
+      <statement>
+        <p>
+          Let <m>T : \R^n \to \R^m</m> be a linear transformation, and let
+          <m>\vec{x}_1</m> and <m>\vec{x}_2</m> be in <m>\R^n</m>. We say that <m>T</m>
+          is an <term>injection</term> or is <term>one-to-one</term> if
+          <m>\vec{x}_1 \neq \vec{x}_2</m> implies
+          <m>T(\vec{x}_1) \neq T(\vec{x}_2)</m>. Equivalently, if
+          <m>T(\vec{x}_1) = T(\vec{x}_2)</m>, then <m>\vec{x}_1 = \vec{x}_2</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <figure xml:id="fig-injection-schematic">
+      <caption>
+        Which transformation is an injection? On the left, two different inputs share an
+        output, so the transformation is not one-to-one. On the right, distinct inputs
+        have distinct outputs.
+      </caption>
+      <image width="82%">
+        <prefigure label="pf-injection-schematic" xmlns="https://prefigure.org">
+          <diagram dimensions="(520,220)" margins="8">
+            <coordinates bbox="(0,0,10.4,4.4)">
+              <ellipse center="(1.3,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <ellipse center="(4.2,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <point p="(1.3,3.1)" fill="blue" size="4"/>
+              <point p="(1.3,2.2)" fill="blue" size="4"/>
+              <point p="(1.3,1.3)" fill="blue" size="4"/>
+              <point p="(4.2,3.0)" fill="blue" size="4"/>
+              <point p="(4.2,1.2)" fill="blue" size="4"/>
+              <line endpoints="((1.5,3.1),(4.0,3.0))" stroke="red" thickness="1" arrows="1"/>
+              <line endpoints="((1.5,2.2),(4.0,1.2))" stroke="red" thickness="1" arrows="1"/>
+              <line endpoints="((1.5,1.3),(4.0,3.0))" stroke="red" thickness="1" arrows="1"/>
+              <ellipse center="(6.6,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <ellipse center="(9.5,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <point p="(6.6,3.0)" fill="blue" size="4"/>
+              <point p="(6.6,1.3)" fill="blue" size="4"/>
+              <point p="(9.5,3.1)" fill="blue" size="4"/>
+              <point p="(9.5,2.2)" fill="blue" size="4"/>
+              <point p="(9.5,1.2)" fill="blue" size="4"/>
+              <line endpoints="((6.8,3.0),(9.3,3.1))" stroke="red" thickness="1" arrows="1"/>
+              <line endpoints="((6.8,1.3),(9.3,1.2))" stroke="red" thickness="1" arrows="1"/>
+              <label p="(2.75,0.15)" alignment="n"><m>\text{not one-to-one}</m></label>
+              <label p="(8.05,0.15)" alignment="n"><m>\text{one-to-one}</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <theorem xml:id="thm-injective-iff-trivial">
+      <title>One-to-One and the Trivial Solution</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m \times n</m> matrix and let <m>\vec{x}</m> be a vector
+          of length <m>n</m>. Then the transformation induced by <m>A</m>, <m>T_A</m>, is
+          one-to-one (1) if and only if <m>A\vec{x} = \vec{0}</m> implies
+          <m>\vec{x} = \vec{0}</m> (2).
+        </p>
+      </statement>
+      <proof>
+        <p>
+          <term>(1) <m>\Longrightarrow</m> (2).</term>
+          Let <m>\vec{u}</m> be an element of <m>\R^n</m> such that
+          <m>T_A(\vec{u}) = \vec{0}</m>. Then, since <m>T_A</m> is a one-to-one linear
+          transformation, we have <m>T_A(\vec{0}) = \vec{0}</m> and hence
+          <m>\vec{0} = \vec{u}</m>.
+        </p>
+        <p>
+          <term>(2) <m>\Longrightarrow</m> (1).</term>
+          Let <m>\vec{u}</m> and <m>\vec{v}</m> be elements in <m>\R^n</m> such that
+          <m>A\vec{u} = A\vec{v}</m>. Then <m>A(\vec{u} - \vec{v}) = \vec{0}</m>, which
+          implies <m>\vec{u} - \vec{v} = \vec{0}</m>, or <m>\vec{u} = \vec{v}</m>. Hence
+          we have shown that if <m>T_A(\vec{u}) = T_A(\vec{v})</m> then
+          <m>\vec{u} = \vec{v}</m>, which means <m>T_A</m> is one-to-one.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-injective-true-false">
+      <title>True or False?</title>
+      <statement>
+        <p>
+          Let <m>T(\vec{x}) = A\vec{x}</m>, where <m>A</m> is an <m>m \times n</m> matrix.
+          If we also assume that <m>T</m> is injective, then which statement is true and
+          which one is false?
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                For every <m>\vec{b} \in \R^m</m>, there exists one solution for the
+                equation <m>T(\vec{x}) = \vec{b}</m>.
+              </p>
+            </li>
+            <li><p><m>A\vec{x} = \vec{0}</m> has only the trivial solution.</p></li>
+            <li><p>The columns of <m>A</m> are linearly independent.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(I) False.</term> For example, let
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> and
+          <m>T : \R^2 \to \R^3</m>, which is a one-to-one transformation. Now, for
+          <m>\vec{b} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</m>, the system
+          <m>A\vec{x} = \vec{b}</m> has no solution, since the augmented matrix is
+          <md>
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 2 \\ 1 \amp 0 \amp 3
+            \end{array} \right]
+            \xrightarrow{r_3 - r_1}
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 2
+            \end{array} \right],
+          </md>
+          and therefore the system is inconsistent.
+        </p>
+        <p>
+          <term>(II) True.</term> See
+          <xref ref="thm-injective-iff-trivial" text="type-global" />.
+        </p>
+        <p>
+          <term>(III) True.</term> Note that
+          <md>
+            A\vec{x} = \vec{0}
+            \iff x_1\vec{A}_1 + x_2\vec{A}_2 + \cdots + x_n\vec{A}_n = \vec{0}.
+          </md>
+          If <m>A\vec{x} = \vec{0}</m> has only the trivial solution, it means that none
+          of the columns of <m>A</m> can be written as a linear combination of the rest of
+          them, since if for example <m>\vec{A}_1</m> could be written as a linear
+          combination
+          <md>
+            \vec{A}_1 = a_2\vec{A}_2 + a_3\vec{A}_3 + \cdots + a_n\vec{A}_n,
+          </md>
+          this gives
+          <m>\vec{A}_1 - a_2\vec{A}_2 - a_3\vec{A}_3 - \cdots - a_n\vec{A}_n = \vec{0}</m>,
+          which contradicts the fact that <m>A\vec{x} = \vec{0}</m> has only the trivial
+          solution.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-which-are-injections">
+      <title>Which Transformation Is an Injection?</title>
+      <statement>
+        <p>
+          <ol>
+            <li><p>Reflection in the <m>x</m>-axis in <m>\R^2</m>.</p></li>
+            <li><p>Projection into the <m>x</m>-axis in <m>\R^2</m>.</p></li>
+            <li>
+              <p>
+                <m>T \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+                = \begin{bmatrix} x \\ y \end{bmatrix}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(A)</term> The corresponding matrix is
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m> and the system
+          <m>A\vec{x} = \vec{0}</m> has only the trivial solution, hence this is an
+          injection.
+        </p>
+        <p>
+          <term>(B)</term> Similarly,
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m>, whereas
+          <m>A\vec{x} = \vec{0}</m> has non-trivial solutions, hence this is NOT an
+          injection.
+        </p>
+        <p>
+          <term>(C)</term> Again
+          <m>\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \end{bmatrix}
+          \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+          = \begin{bmatrix} x \\ y \end{bmatrix}</m>; however,
+          <m>A\vec{x} = \vec{0}</m> has a free parameter and therefore (C) is not an
+          injection. For example,
+          <md>
+            T \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+            = T \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} 1 \\ 0 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-surjections">
+    <title>Onto Transformations</title>
+
+    <definition xml:id="def-surjective">
+      <title>Surjection (Onto)</title>
+      <statement>
+        <p>
+          Let <m>T : \R^n \to \R^m</m> be a linear transformation. We say that <m>T</m>
+          is a <term>surjection</term> or <term>onto</term> if, for every
+          <m>\vec{b} \in \R^m</m>, there exists an <m>\vec{x} \in \R^n</m> such that
+          <m>T(\vec{x}) = \vec{b}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <figure xml:id="fig-surjection-schematic">
+      <caption>
+        Which transformation is a surjection? On the left every element of the codomain is
+        hit; on the right one element is missed, so the transformation is not onto.
+      </caption>
+      <image width="82%">
+        <prefigure label="pf-surjection-schematic" xmlns="https://prefigure.org">
+          <diagram dimensions="(520,220)" margins="8">
+            <coordinates bbox="(0,0,10.4,4.4)">
+              <ellipse center="(1.3,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <ellipse center="(4.2,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <point p="(1.3,3.1)" fill="blue" size="4"/>
+              <point p="(1.3,2.2)" fill="blue" size="4"/>
+              <point p="(1.3,1.3)" fill="blue" size="4"/>
+              <point p="(4.2,3.0)" fill="blue" size="4"/>
+              <point p="(4.2,1.2)" fill="blue" size="4"/>
+              <line endpoints="((1.5,3.1),(4.0,3.0))" stroke="red" thickness="1" arrows="1"/>
+              <line endpoints="((1.5,2.2),(4.0,1.2))" stroke="red" thickness="1" arrows="1"/>
+              <line endpoints="((1.5,1.3),(4.0,3.0))" stroke="red" thickness="1" arrows="1"/>
+              <ellipse center="(6.6,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <ellipse center="(9.5,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+              <point p="(6.6,3.0)" fill="blue" size="4"/>
+              <point p="(6.6,1.3)" fill="blue" size="4"/>
+              <point p="(9.5,3.1)" fill="blue" size="4"/>
+              <point p="(9.5,2.2)" fill="blue" size="4"/>
+              <point p="(9.5,1.2)" fill="blue" size="4"/>
+              <line endpoints="((6.8,3.0),(9.3,3.1))" stroke="red" thickness="1" arrows="1"/>
+              <line endpoints="((6.8,1.3),(9.3,1.2))" stroke="red" thickness="1" arrows="1"/>
+              <label p="(2.75,0.15)" alignment="n"><m>\text{onto}</m></label>
+              <label p="(8.05,0.15)" alignment="n"><m>\text{not onto}</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <example xml:id="eg-surjection-simple">
+      <title>A Transformation That Is Not Onto</title>
+      <statement>
+        <p>
+          Let <m>T : \R^2 \to \R^2</m> be the linear transformation defined by
+          <m>T \begin{bmatrix} a \\ b \end{bmatrix}
+          = \begin{bmatrix} a + b \\ 0 \end{bmatrix}</m> for all
+          <m>\begin{bmatrix} a \\ b \end{bmatrix} \in \R^2</m>. Determine whether <m>T</m>
+          is a surjective transformation or not.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Every image has second entry <m>0</m>, so no vector with a nonzero second entry
+          is in the range. For instance, <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> is
+          never an image. Hence <m>T</m> is not a surjection.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-which-are-surjections">
+      <title>Which Transformation Is a Surjection?</title>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>T : \R^3 \to \R^2</m> with
+                <m>T(\vec{x}) = \begin{bmatrix} x - z \\ y + z \end{bmatrix}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>T(\vec{x}) = A\vec{x}</m>, where
+                <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(I)</term> The matrix is
+          <md>
+            A = \begin{bmatrix} T(\vec{e}_1) \amp T(\vec{e}_2) \amp T(\vec{e}_3) \end{bmatrix}
+              = \begin{bmatrix} 1 \amp 0 \amp -1 \\ 0 \amp 1 \amp 1 \end{bmatrix}.
+          </md>
+          The system <m>A\vec{x} = \vec{b}</m>, or
+          <md>
+            \begin{bmatrix} 1 \amp 0 \amp -1 \\ 0 \amp 1 \amp 1 \end{bmatrix}
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix},
+          </md>
+          will always have a solution, since
+          <m>\left[ \begin{array}{ccc|c} 1 \amp 0 \amp -1 \amp b_1 \\ 0 \amp 1 \amp 1 \amp b_2 \end{array} \right]</m>
+          has two leading ones and three variables, one of which is a free variable.
+          Hence <m>T</m> is a surjection.
+        </p>
+        <p>
+          <term>(II)</term> The system <m>A\vec{x} = \vec{b}</m>, or
+          <md>
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp b_1 \\ 0 \amp 1 \amp b_2 \\ 0 \amp 0 \amp b_3
+            \end{array} \right],
+          </md>
+          has no solution for <m>b_3 \neq 0</m>, which means <m>T</m> is not a surjection.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

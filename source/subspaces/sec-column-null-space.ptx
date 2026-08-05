@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-column-null-space" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Column Space, Null Space, and Rank</title>
+
+  <introduction>
+    <p>
+      Every matrix carries two subspaces with it: the span of its columns, and the set of
+      vectors it sends to zero. Their dimensions are linked by a single identity, and
+      together they let us restate the Invertible Matrix Theorem in geometric language.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-column-space">
+    <title>Column Space and Rank</title>
+
+    <definition xml:id="def-column-space">
+      <title>Column Space and Rank</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m \times n</m> matrix.
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                The <term>column space</term> of <m>A</m> is the span of the columns of
+                <m>A</m> and is denoted by <m>\operatorname{Col} A</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <term>rank</term> of <m>A</m> is the dimension of the column space of
+                <m>A</m> and is denoted by <m>\operatorname{rank} A</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-rank-column-space">
+      <title>Finding the Rank and Column Space</title>
+      <statement>
+        <p>
+          Find the rank of the matrix <m>A</m> and describe the column space efficiently:
+          <md>
+            A = \begin{bmatrix}
+              1 \amp 2 \amp 1 \amp 3 \amp 2 \\
+              1 \amp 3 \amp 6 \amp 0 \amp 2 \\
+              3 \amp 7 \amp 8 \amp 6 \amp 6
+            \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let us find the reduced row-echelon form of <m>A</m>:
+          <md>
+            <mrow>
+              \begin{bmatrix}
+                1 \amp 2 \amp 1 \amp 3 \amp 2 \\
+                1 \amp 3 \amp 6 \amp 0 \amp 2 \\
+                3 \amp 7 \amp 8 \amp 6 \amp 6
+              \end{bmatrix}
+              \amp \xrightarrow[-3r_1 + r_3]{-r_1 + r_2}
+              \begin{bmatrix}
+                1 \amp 2 \amp 1 \amp 3 \amp 2 \\
+                0 \amp 1 \amp 5 \amp -3 \amp 0 \\
+                0 \amp 1 \amp 5 \amp -3 \amp 0
+              \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2 + r_3}
+              \begin{bmatrix}
+                1 \amp 2 \amp 1 \amp 3 \amp 2 \\
+                0 \amp 1 \amp 5 \amp -3 \amp 0 \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0
+              \end{bmatrix}
+              \xrightarrow{-2r_2 + r_1}
+              \begin{bmatrix}
+                1 \amp 0 \amp -9 \amp 9 \amp 2 \\
+                0 \amp 1 \amp 5 \amp -3 \amp 0 \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0
+              \end{bmatrix}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The pivots sit in columns <m>1</m> and <m>2</m>. Note that
+          <md>
+            \operatorname{Col} A = \operatorname{Span}\left\{
+              \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix},
+              \begin{bmatrix} 2 \\ 3 \\ 7 \end{bmatrix} \right\},
+            \qquad \text{and hence} \qquad
+            \operatorname{rank} A = 2.
+          </md>
+        </p>
+        <p>
+          Why does this work? Writing <m>\vec{R}_1, \ldots, \vec{R}_5</m> for the columns
+          of the reduced row-echelon matrix, note that <m>\{ \vec{R}_1, \vec{R}_2 \}</m>
+          is a linearly independent set and
+          <m>\operatorname{Span}\{ \vec{R}_1, \ldots, \vec{R}_5 \} = \operatorname{Span}\{ \vec{R}_1, \vec{R}_2 \}</m>.
+          Also <m>x_1\vec{R}_1 + x_2\vec{R}_2 = \vec{0}</m> only has the trivial solution.
+          Row operations do not change which linear relations hold among the columns, so
+          similar statements hold for the columns of <m>A</m>:
+          <md>
+            \operatorname{Span}\{ \vec{A}_1, \ldots, \vec{A}_5 \}
+            = \operatorname{Span}\{ \vec{A}_1, \vec{A}_2 \},
+          </md>
+          and <m>x_1\vec{A}_1 + x_2\vec{A}_2 = \vec{0}</m> only has the trivial solution.
+        </p>
+      </solution>
+    </example>
+
+    <observation xml:id="obs-rank-is-pivots">
+      <p>
+        The rank of <m>A</m> is equal to the number of pivots in <m>A</m>. A basis for
+        <m>\operatorname{Col} A</m> is given by the columns of the <em>original</em>
+        matrix <m>A</m> in the pivot positions.
+      </p>
+    </observation>
+  </subsection>
+
+  <subsection xml:id="subsec-null-space">
+    <title>Null Space</title>
+
+    <definition xml:id="def-null-space">
+      <title>Null Space</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m \times n</m> matrix. The <term>null space</term> of
+          <m>A</m>, or <term>kernel</term> of <m>A</m>, is defined as
+          <md>
+            \operatorname{Ker} A = \operatorname{Nul} A
+            = \left\{ \vec{x} \in \R^n \; : \; A\vec{x} = \vec{0} \right\}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="eg-null-space">
+      <title>Finding a Null Space</title>
+      <statement>
+        <p>
+          Find <m>\operatorname{Nul} A</m> for
+          <m>A = \begin{bmatrix} 1 \amp 2 \amp 1 \\ 0 \amp -1 \amp 1 \\ 2 \amp 3 \amp 3 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We solve <m>A\vec{x} = \vec{0}</m>:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 1 \amp 0 \\
+                0 \amp -1 \amp 1 \amp 0 \\
+                2 \amp 3 \amp 3 \amp 0
+              \end{array} \right]
+              \amp \xrightarrow{-2r_1 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 1 \amp 0 \\
+                0 \amp -1 \amp 1 \amp 0 \\
+                0 \amp -1 \amp 1 \amp 0
+              \end{array} \right]
+              \xrightarrow{-r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 1 \amp 0 \\
+                0 \amp -1 \amp 1 \amp 0 \\
+                0 \amp 0 \amp 0 \amp 0
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[-r_2]{-r_2 + r_1}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp 0 \amp 0 \\
+                0 \amp 1 \amp -1 \amp 0 \\
+                0 \amp 0 \amp 0 \amp 0
+              \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          With <m>z = t</m> free, the rows give <m>y = t</m> and <m>x = -3t</m>, so
+          <md>
+            \vec{x} = \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = t \begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix},
+            \qquad \text{i.e.} \qquad
+            \operatorname{Nul} A = \operatorname{Span}\left\{ \begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix} \right\},
+          </md>
+          which is a line through the origin.
+        </p>
+        <p>
+          Also, since the spanning set of <m>\operatorname{Nul} A</m> consists of a single
+          vector, we have <m>\dim \operatorname{Nul} A = 1</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-rank-nullity">
+    <title>The Rank<ndash />Nullity Relation</title>
+
+    <theorem xml:id="thm-rank-nullity">
+      <title>Rank and Nullity</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m \times n</m> matrix. Then
+          <md>
+            \operatorname{rank}(A) + \dim \operatorname{Nul} A = n.
+          </md>
+        </p>
+      </statement>
+    </theorem>
+
+    <example xml:id="eg-rank-nullity">
+      <title>Checking the Rank<ndash />Nullity Relation</title>
+      <statement>
+        <p>
+          Consider
+          <m>A = \begin{bmatrix} 1 \amp 2 \amp 1 \\ 0 \amp -1 \amp 1 \\ 2 \amp 3 \amp 3 \end{bmatrix}</m>
+          from <xref ref="eg-null-space" text="type-global" />.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          After row reduction, we saw that
+          <md>
+            A \; \longrightarrow \;
+            \begin{bmatrix} 1 \amp 3 \amp 0 \\ 0 \amp 1 \amp -1 \\ 0 \amp 0 \amp 0 \end{bmatrix},
+          </md>
+          which has two leading <m>1</m>s, hence <m>\operatorname{rank} A = 2</m>.
+        </p>
+        <p>
+          Also, we saw that <m>\dim \operatorname{Nul} A = 1</m>. Furthermore <m>A</m> is
+          <m>3 \times 3</m>, which means <m>n = 3</m>. Then
+          <md>
+            \underbrace{\operatorname{rank}(A)}_{2} + \underbrace{\dim \operatorname{Nul} A}_{1}
+            = \underbrace{n}_{3}. \checkmark
+          </md>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-imt-continued">
+    <title>The Invertible Matrix Theorem (Continued)</title>
+
+    <theorem xml:id="thm-imt-continued">
+      <title>The Invertible Matrix Theorem, Continued</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix. The following conditions are
+          equivalent.
+        </p>
+        <p>
+          <ul>
+            <li><p><m>A</m> is an invertible matrix.</p></li>
+            <li><p><m>\operatorname{Col} A = \R^n</m>.</p></li>
+            <li><p><m>\operatorname{rank} A = n</m>.</p></li>
+            <li><p><m>\operatorname{Nul} A = \{ \vec{0} \}</m>.</p></li>
+          </ul>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          In <xref ref="thm-invertible-matrix-theorem" text="type-global" /> we discussed
+          the following equivalences, which we can now express in terms of rank, null
+          space, and column space of <m>A</m>:
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>A</m> is an invertible matrix <m>\iff</m> the columns of <m>A</m> are
+                linearly independent <m>\iff</m> <m>\operatorname{rank} A = n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is an invertible matrix <m>\iff</m> the columns of <m>A</m> span
+                <m>\R^n</m> <m>\iff</m> <m>\operatorname{Col} A = \R^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is an invertible matrix <m>\iff</m> <m>A\vec{X} = \vec{0}</m> has
+                only the trivial solution <m>\iff</m>
+                <m>\operatorname{Nul} A = \{ \vec{0} \}</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+</section>

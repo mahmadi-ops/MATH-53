@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-applications" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Applications of Spectral Theory</title>
+  <introduction>
+    <p>
+      A process that moves probability around a finite set of states is described by a
+      matrix, and its long-run behaviour is governed by the eigenvector belonging to
+      eigenvalue one. This chapter follows that idea from a toy example about lunch
+      through population models to the algorithm that ranked the early web.
+    </p>
+  </introduction>
+  <xi:include href="applications/sec-markov-chains.ptx" />
+  <xi:include href="applications/sec-more-markov.ptx" />
+  <xi:include href="applications/sec-pagerank.ptx" />
+</chapter>

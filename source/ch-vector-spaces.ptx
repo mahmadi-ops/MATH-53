@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="ch-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Spaces</title>
+  <introduction>
+    <p>
+      Every argument we have made about <m>\R^n</m> used only a handful of properties of
+      addition and scalar multiplication. Promoting that handful to a definition lets the
+      same theory apply to polynomials, matrices, and much else. The payoff is
+      coordinates: once a basis is chosen, an abstract vector space behaves exactly like
+      <m>\R^n</m>, and an abstract linear transformation becomes a matrix.
+    </p>
+  </introduction>
+  <xi:include href="vector-spaces/sec-vector-spaces.ptx" />
+  <xi:include href="vector-spaces/sec-subspaces-of-vector-spaces.ptx" />
+  <xi:include href="vector-spaces/sec-isomorphisms.ptx" />
+  <xi:include href="vector-spaces/sec-coordinates.ptx" />
+  <xi:include href="vector-spaces/sec-matrix-of-transformation.ptx" />
+</chapter>
