@@ -239,7 +239,7 @@
           <caption>
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{smallmatrix}\right]</m>.
-            Drag the input vector <m>\vec{x}</m> on the left: different inputs always
+            Click and drag the head of the input vector <m>\vec{x}</m> on the left: different inputs always
             produce different outputs <m>\vec{b} = T(\vec{x})</m> on the right, so
             <m>T</m> is one-to-one. The violet dot on the left is the solution set of
             <m>T(\vec{x}) = \vec{b}</m>: it is a single point.
@@ -284,7 +284,7 @@
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{smallmatrix}\right]</m>.
             The violet line on the left is the solution set of <m>T(\vec{x}) = \vec{0}</m>,
-            namely all multiples of <m>(-1,-1,1)</m>. Drag <m>\vec{x}</m> along this
+            namely all multiples of <m>(-1,-1,1)</m>. Click and drag the head of <m>\vec{x}</m> along this
             line: the output <m>T(\vec{x})</m> stays at <m>\vec{0}</m>, so <m>T</m>
             sends infinitely many inputs to the same output.
           </caption>
@@ -453,7 +453,7 @@
           <caption>
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{smallmatrix}\right]</m>.
-            Drag the output vector <m>\vec{b}</m> anywhere on the right: the demo
+            Click and drag the head of the output vector <m>\vec{b}</m> anywhere on the right: the demo
             always finds an input <m>\vec{x}</m> with <m>T(\vec{x}) = \vec{b}</m>,
             because every vector in <m>\R^2</m> is an output of <m>T</m>.
           </caption>
@@ -495,7 +495,7 @@
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{smallmatrix}\right]</m>.
             The range of <m>T</m> is the violet plane on the right, which is smaller
-            than the codomain <m>\R^3</m>. Drag <m>\vec{b}</m> off the violet plane:
+            than the codomain <m>\R^3</m>. Click and drag the head of <m>\vec{b}</m> off the violet plane:
             the equation <m>T(\vec{x}) = \vec{b}</m> becomes inconsistent, so such a
             <m>\vec{b}</m> is not an output of <m>T</m>.
           </caption>
@@ -584,10 +584,84 @@
             <m>T(\vec{x}) = \vec{b}</m> for the current <m>\vec{b}</m>; since it
             contains more than one point, <m>T</m> is not one-to-one. The violet line
             on the right is the range of <m>T</m>; since it is smaller than
-            <m>\R^2</m>, <m>T</m> is not onto. Drag <m>\vec{b}</m> off the line to
+            <m>\R^2</m>, <m>T</m> is not onto. Click and drag the head of <m>\vec{b}</m> off the line to
             make the equation inconsistent.
           </caption>
           <interactive xml:id="int-neither-geometric" iframe="demos/Axequalsb.html?mat=1,2,-1:2,4,-2&amp;range2=5&amp;closed=true&amp;show=true&amp;x=1,1,1" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <example xml:id="eg-projection-xy-plane">
+      <title>Projection into the <m>xy</m>-Plane Is Neither</title>
+      <statement>
+        <p>
+          Let <m>P : \R^3 \to \R^3</m> be projection into the <m>xy</m>-plane, that is,
+          <md>
+            P \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}.
+          </md>
+          Show that <m>P</m> is neither one-to-one nor onto.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First find the matrix. Since <m>P(\vec{e}_1) = \vec{e}_1</m>,
+          <m>P(\vec{e}_2) = \vec{e}_2</m> and <m>P(\vec{e}_3) = \vec{0}</m>,
+          <md>
+            A = \begin{bmatrix}
+              1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 0
+            \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>Not one-to-one.</term> The system <m>A\vec{x} = \vec{0}</m> reads
+          <m>x = 0</m>, <m>y = 0</m>, and <m>0 = 0</m>, so <m>z</m> is a free variable and
+          the solutions are
+          <md>
+            \vec{x} = t \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}, \qquad t \in \R,
+          </md>
+          the whole <m>z</m>-axis. There are nontrivial solutions, so by
+          <xref ref="thm-injective-iff-trivial" text="type-global" /> <m>P</m> is not
+          one-to-one. Concretely,
+          <md>
+            P \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+            = P \begin{bmatrix} 0 \\ 0 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix},
+          </md>
+          two different inputs with the same image. This is exactly what projection does:
+          it forgets the height <m>z</m>.
+        </p>
+        <p>
+          <term>Not onto.</term> Every output has third entry <m>0</m>, so the range of
+          <m>P</m> is the <m>xy</m>-plane
+          <m>\operatorname{Span}\{ \vec{e}_1, \vec{e}_2 \}</m>, which is smaller than the
+          codomain <m>\R^3</m>. For instance
+          <m>\vec{b} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}</m> has no preimage: the
+          third equation of <m>A\vec{x} = \vec{b}</m> reads <m>0 = 1</m>, so the system is
+          inconsistent.
+        </p>
+        <p>
+          Both failures are visible in <m>\det A = 0</m>: by
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" />, a square matrix
+          that is not invertible is neither one-to-one nor onto, consistent with
+          <xref ref="rem-square-injective-iff-surjective" text="type-global" />.
+        </p>
+
+        <figure xml:id="fig-projection-xy-geometric">
+          <caption>
+            Projection into the <m>xy</m>-plane, <m>P(\vec{x}) = A\vec{x}</m> with
+            <m>A = \left[\begin{smallmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \end{smallmatrix}\right]</m>.
+            The violet vertical line on the left is the solution set of
+            <m>P(\vec{x}) = \vec{b}</m>: an entire line of inputs shares one image, so
+            <m>P</m> is not one-to-one. The violet horizontal plane on the right is the
+            range of <m>P</m>, which is smaller than <m>\R^3</m>. Click and drag the head
+            of <m>\vec{b}</m> off that plane and the equation becomes inconsistent, so
+            <m>P</m> is not onto either.
+          </caption>
+          <interactive xml:id="int-projection-xy-geometric" iframe="demos/Axequalsb.html?mat=1,0,0:0,1,0:0,0,0&amp;range2=5&amp;closed=true&amp;show=true&amp;x=1,1,2" width="100%" aspect="2:1"/>
         </figure>
       </solution>
     </example>
@@ -627,11 +701,72 @@
           <caption>
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 2 \amp 1 \\ 1 \amp 1 \end{smallmatrix}\right]</m>.
-            Drag either vector: every output <m>\vec{b}</m> comes from exactly one
+            Click and drag the head of either vector: every output <m>\vec{b}</m> comes from exactly one
             input <m>\vec{x}</m>, so <m>T</m> is one-to-one and onto. The violet
             region on the right is the range of <m>T</m>, which is all of <m>\R^2</m>.
           </caption>
           <interactive xml:id="int-both-geometric" iframe="demos/Axequalsb.html?mat=2,1:1,1&amp;range2=5&amp;closed=true&amp;show=true&amp;x=1,1" width="100%" aspect="2:1"/>
+        </figure>
+      </solution>
+    </example>
+
+    <example xml:id="eg-rotation-bijective">
+      <title>Rotation Is Both One-to-One and Onto</title>
+      <statement>
+        <p>
+          Let <m>R_\theta : \R^2 \to \R^2</m> denote counterclockwise rotation about the
+          origin through an angle <m>\theta</m>. Show that <m>R_\theta</m> is both
+          one-to-one and onto, for every <m>\theta</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Rotating <m>\vec{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> counterclockwise
+          through <m>\theta</m> lands on the point of the unit circle at angle
+          <m>\theta</m>, and rotating <m>\vec{e}_2</m> lands a further quarter turn along:
+          <md>
+            R_\theta(\vec{e}_1) = \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix},
+            \qquad
+            R_\theta(\vec{e}_2) = \begin{bmatrix} -\sin\theta \\ \cos\theta \end{bmatrix},
+            \qquad \text{so} \qquad
+            A = \begin{bmatrix} \cos\theta \amp -\sin\theta \\ \sin\theta \amp \cos\theta \end{bmatrix}.
+          </md>
+          (This matrix is studied further in
+          <xref ref="subsec-rotations" text="type-global" />.)
+        </p>
+        <p>
+          Now
+          <md>
+            \det A = \cos^2\theta + \sin^2\theta = 1 \neq 0,
+          </md>
+          so <m>A</m> is invertible for <em>every</em> angle <m>\theta</m>. By
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" />,
+          <m>A\vec{x} = \vec{0}</m> has only the trivial solution, so <m>R_\theta</m> is
+          one-to-one by <xref ref="thm-injective-iff-trivial" text="type-global" />; and
+          the columns of <m>A</m> span <m>\R^2</m>, so <m>R_\theta</m> is onto.
+        </p>
+        <p>
+          The geometry says the same thing more directly: rotating back through
+          <m>-\theta</m> undoes the rotation. Indeed
+          <md>
+            A^{-1} = \frac{1}{1} \begin{bmatrix} \cos\theta \amp \sin\theta \\ -\sin\theta \amp \cos\theta \end{bmatrix}
+            = \begin{bmatrix} \cos(-\theta) \amp -\sin(-\theta) \\ \sin(-\theta) \amp \cos(-\theta) \end{bmatrix},
+          </md>
+          which is the matrix of <m>R_{-\theta}</m>. So every <m>\vec{b} \in \R^2</m> has
+          exactly one preimage, namely <m>\vec{x} = R_{-\theta}(\vec{b})</m> <mdash />
+          which is precisely the statement that <m>R_\theta</m> is one-to-one and onto.
+        </p>
+
+        <figure xml:id="fig-rotation-geometric">
+          <caption>
+            The quarter turn <m>R_{\pi/2}</m>, with matrix
+            <m>\left[\begin{smallmatrix} 0 \amp -1 \\ 1 \amp 0 \end{smallmatrix}\right]</m>.
+            Click and drag the head of either vector: the violet solution set on the left
+            is always a single point, so each output comes from exactly one input, and the
+            violet region on the right fills all of <m>\R^2</m>, so every output is
+            achieved. Rotation loses nothing and misses nothing.
+          </caption>
+          <interactive xml:id="int-rotation-geometric" iframe="demos/Axequalsb.html?mat=0,-1:1,0&amp;range2=5&amp;closed=true&amp;show=true&amp;x=2,1" width="100%" aspect="2:1"/>
         </figure>
       </solution>
     </example>

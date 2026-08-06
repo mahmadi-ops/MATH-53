@@ -1,14 +1,17 @@
 # Interactive MathBox demos
 
-This directory contains a self-contained build of the `Axequalsb` interactive
-demo from *Interactive Linear Algebra* by Dan Margalit and Joseph Rabinoff,
+This directory contains a self-contained build of the `Axequalsb` and `spans`
+interactive demos from *Interactive Linear Algebra* by Dan Margalit and Joseph Rabinoff,
 used here under the GNU General Public License v3.
 
 - Source: <https://github.com/QBobWatson/ila> (demo framework under `demos/`,
   © Dan Margalit and Joseph Rabinoff, GPL-3.0)
 - The demo pages are parameterized by URL query string, e.g.
   `Axequalsb.html?mat=1,0:1,1:0,1&range2=5&closed=true&show=true`.
-  Parameters: `mat` (matrix rows separated by `:`, entries by `,`),
+  `spans.html` takes `v1`/`v2`/`v3` (the spanning vectors), `target` (the vector
+  `w` to reach), `tlabel`, `range`, `camera`, `axes`, `grid`, `lincombo`, `nomove`
+  and `closed`; its sliders form the linear combination.
+  `Axequalsb.html` parameters: `mat` (matrix rows separated by `:`, entries by `,`),
   `x` (initial input vector), `range1`/`range2` (axis ranges of the
   input/output views), `show` (show the solution set), `lock` (constrain
   dragging of `x` to the solution set), `closed` (start the controls

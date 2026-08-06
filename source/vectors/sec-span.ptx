@@ -2,6 +2,17 @@
 <section xml:id="sec-span" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Span of a Set of Vectors</title>
 
+  <introduction>
+    <p>
+      Several figures in this section and the next are interactive: the violet region is
+      the span, and moving the sliders (click <q>Open Controls</q>) forms the linear combination
+      shown in the equation. They are powered by the demo framework from
+      <pubtitle>Interactive Linear Algebra</pubtitle> by Margalit and Rabinoff
+      (<url href="https://github.com/QBobWatson/ila" visual="github.com/QBobWatson/ila"/>),
+      used under the GPL.
+    </p>
+  </introduction>
+
   <definition xml:id="def-span">
     <title>Span</title>
     <statement>
@@ -114,4 +125,152 @@
       </p>
     </solution>
   </example>
+
+  <subsection xml:id="subsec-seeing-a-span">
+    <title>Seeing a Span</title>
+
+    <p>
+      The examples above were settled by row reduction. The same facts can be seen
+      directly: the span of two vectors in <m>\R^3</m> that are not multiples of one
+      another is a plane through the origin, and a vector lies in that span exactly when
+      it lies on that plane.
+    </p>
+
+    <figure xml:id="fig-span-plane-hit">
+      <caption>
+        The span of <m>\vec{v}_1 = (1,1,0)</m> and <m>\vec{v}_2 = (0,1,2)</m> is the
+        violet plane. Move the <m>x</m> and <m>y</m> sliders (click <q>Open Controls</q>) until
+        the red vector <m>x\vec{v}_1 + y\vec{v}_2</m> reaches the target
+        <m>\vec{w} = (2,3,2)</m>. It can be done, because <m>\vec{w}</m> lies on the
+        plane: the values <m>x = 2</m> and <m>y = 1</m> turn the <m>\neq</m> in the
+        equation into an <m>=</m>.
+      </caption>
+      <interactive xml:id="int-span-plane-hit" iframe="demos/spans.html?v1=1,1,0&amp;v2=0,1,2&amp;target=2,3,2&amp;range=4&amp;camera=2.4,.7,1.6&amp;closed=true" width="100%" aspect="16:9"/>
+    </figure>
+
+    <figure xml:id="fig-span-plane-miss">
+      <caption>
+        The same two vectors, but now the target is <m>\vec{w} = (1,1,1)</m>. Move the
+        sliders as much as you like: the <m>\neq</m> never becomes an <m>=</m>, because
+        <m>\vec{w}</m> sits off the plane. So
+        <m>\operatorname{Span}\{\vec{v}_1, \vec{v}_2\}</m> is a plane, not all of
+        <m>\R^3</m>.
+      </caption>
+      <interactive xml:id="int-span-plane-miss" iframe="demos/spans.html?v1=1,1,0&amp;v2=0,1,2&amp;target=1,1,1&amp;range=4&amp;camera=2.4,.7,1.6&amp;closed=true" width="100%" aspect="16:9"/>
+    </figure>
+
+    <remark xml:id="rem-span-normal">
+      <p>
+        The plane in these two figures has a compact description. A vector is
+        perpendicular to both <m>\vec{v}_1</m> and <m>\vec{v}_2</m> exactly when it is
+        perpendicular to the whole plane, and
+        <m>\vec{n} = (2,-2,1)</m> is such a vector. So
+        <md>
+          \operatorname{Span}\{\vec{v}_1, \vec{v}_2\}
+          = \left\{ (x,y,z) \in \R^3 \; : \; 2x - 2y + z = 0 \right\}.
+        </md>
+        Substituting confirms the two figures: <m>\vec{w} = (2,3,2)</m> gives
+        <m>4 - 6 + 2 = 0</m>, while <m>\vec{w} = (1,1,1)</m> gives
+        <m>2 - 2 + 1 = 1 \neq 0</m>.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-span-challenge">
+    <title>A Harder Example</title>
+
+    <example xml:id="eg-span-parameter">
+      <title>When Does a Third Vector Fail to Enlarge the Span?</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            \vec{v}_1 = \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}, \qquad
+            \vec{v}_2 = \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}, \qquad
+            \vec{v}_3 = \begin{bmatrix} 1 \\ h \\ -4 \end{bmatrix},
+          </md>
+          where <m>h</m> is a real number.
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                For which values of <m>h</m> is
+                <m>\operatorname{Span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\} = \R^3</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                For the exceptional value of <m>h</m>, describe the span by an equation
+                and write <m>\vec{v}_3</m> explicitly in terms of <m>\vec{v}_1</m> and
+                <m>\vec{v}_2</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(1)</term> The three vectors span <m>\R^3</m> exactly when
+          <m>A\vec{x} = \vec{b}</m> is consistent for every <m>\vec{b}</m>, where
+          <m>A = \begin{bmatrix} \vec{v}_1 \amp \vec{v}_2 \amp \vec{v}_3 \end{bmatrix}</m>.
+          By <xref ref="thm-invertible-matrix-theorem" text="type-global" />, for a square
+          matrix that happens exactly when <m>A</m> is invertible, i.e., when
+          <m>\det A \neq 0</m>. Expanding along the first row,
+          <md>
+            <mrow>
+              \det A \amp = \begin{vmatrix} 1 \amp 2 \amp 1 \\ 2 \amp 1 \amp h \\ -1 \amp 1 \amp -4 \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = 1(-4 - h) - 2(-8 + h) + 1(2 + 1)
+            </mrow>
+            <mrow>
+              \amp = -4 - h + 16 - 2h + 3 = 15 - 3h.
+            </mrow>
+          </md>
+          So <m>\det A = 0</m> precisely when <m>h = 5</m>, and therefore
+          <md>
+            \operatorname{Span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\} = \R^3
+            \qquad \text{for every } h \neq 5.
+          </md>
+        </p>
+        <p>
+          <term>(2)</term> Take <m>h = 5</m>, so
+          <m>\vec{v}_3 = (1,5,-4)</m>. Solving
+          <m>a\vec{v}_1 + b\vec{v}_2 = \vec{v}_3</m> gives
+          <m>a + 2b = 1</m> and <m>2a + b = 5</m>, hence <m>a = 3</m> and
+          <m>b = -1</m>; the third coordinate checks out, since
+          <m>-3 - 1 = -4</m>. So
+          <md>
+            \vec{v}_3 = 3\vec{v}_1 - \vec{v}_2,
+          </md>
+          which means <m>\vec{v}_3</m> adds nothing:
+          <m>\operatorname{Span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}
+          = \operatorname{Span}\{\vec{v}_1, \vec{v}_2\}</m>, a plane.
+        </p>
+        <p>
+          A vector perpendicular to both <m>\vec{v}_1</m> and <m>\vec{v}_2</m> is
+          <m>\vec{n} = (1,-1,-1)</m>, since
+          <m>\vec{n} \cdot \vec{v}_1 = 1 - 2 + 1 = 0</m> and
+          <m>\vec{n} \cdot \vec{v}_2 = 2 - 1 - 1 = 0</m>. Hence, when <m>h = 5</m>,
+          <md>
+            \operatorname{Span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}
+            = \left\{ (x,y,z) \in \R^3 \; : \; x - y - z = 0 \right\},
+          </md>
+          and indeed <m>\vec{v}_3 = (1,5,-4)</m> satisfies <m>1 - 5 + 4 = 0</m>.
+        </p>
+      </solution>
+    </example>
+
+    <figure xml:id="fig-span-three-coplanar">
+      <caption>
+        The exceptional case <m>h = 5</m> of
+        <xref ref="eg-span-parameter" text="type-global" />. All three vectors lie on the
+        plane <m>x - y - z = 0</m>, so the span is that plane rather than <m>\R^3</m>.
+        There are now three sliders, but the red vector
+        <m>x\vec{v}_1 + y\vec{v}_2 + z\vec{v}_3</m> can never leave the violet plane.
+      </caption>
+      <interactive xml:id="int-span-three-coplanar" iframe="demos/spans.html?v1=1,2,-1&amp;v2=2,1,1&amp;v3=1,5,-4&amp;target=4,3,1&amp;range=8&amp;camera=1.9,.85,1.3&amp;closed=true" width="100%" aspect="16:9"/>
+    </figure>
+  </subsection>
 </section>
