@@ -65,6 +65,7 @@
   <directories external="assets" generated="generated-assets"/>
 </source> -->
   <html>
+    <css theme="denver"/>
     <webwork divisional="dynamic"/>
   </html>
 </publication>

@@ -1,0 +1,37 @@
+/* ------------------------------------------------------------------ *
+ * Wider text column                                                   *
+ *                                                                     *
+ * The denver theme sets a 600px text column inside 120px of padding   *
+ * each side, giving an 840px content box. This widens the column to   *
+ * 680px, so the content box becomes 670 + 2*120 = 920px, and grows    *
+ * the surrounding containers by the same 80px.                        *
+ *                                                                     *
+ * Everything is confined to viewports wide enough to take it. Below   *
+ * 1200px the theme's own responsive rules are left untouched, since   *
+ * widening there just forces horizontal scrolling.                    *
+ * ------------------------------------------------------------------ */
+
+@media screen and (min-width: 1200px) {
+    :root {
+        --base-content-width: 680px;
+    }
+
+    .ptx-main > .ptx-content,
+    .ptx-content-footer,
+    .ptx-navbar .ptx-navbar-contents {
+        max-width: 920px;
+    }
+
+    /* Theme caps the whole page at 1480px; add the same 80px. */
+    .ptx-page {
+        max-width: 1560px;
+    }
+
+    /* Mirror the theme's breakpoint rule, shifted by 80px. */
+    @media screen and (width <= 1560px) {
+        .ptx-main {
+            max-width: 920px;
+            margin-right: calc(100% - 1240px);
+        }
+    }
+}
