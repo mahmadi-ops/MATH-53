@@ -193,6 +193,20 @@
           Also, since the spanning set of <m>\operatorname{Nul} A</m> consists of a single
           vector, we have <m>\dim \operatorname{Nul} A = 1</m>.
         </p>
+        <figure xml:id="fig-null-column-interactive">
+          <caption>
+            Both subspaces of this matrix at once, for <m>T(\vec{x}) = A\vec{x}</m> with
+            <m>A = \left[\begin{smallmatrix} 1 \amp 2 \amp 1 \\ 0 \amp -1 \amp 1 \\ 2 \amp 3 \amp 3 \end{smallmatrix}\right]</m>.
+            The violet line on the left is
+            <m>\operatorname{Nul} A = \operatorname{Span}\{(-3,1,1)\}</m>: drag
+            <m>\vec{x}</m> along it and the output never leaves <m>\vec{0}</m>. The teal
+            plane on the right is <m>\operatorname{Col} A</m>: drag <m>\vec{b}</m> and
+            only outputs on that plane are reachable. A line plus a plane makes
+            <m>1 + 2 = 3</m> dimensions <mdash /> the rank<ndash />nullity relation of
+            the next subsection. (Drag inside a pane to rotate it.)
+          </caption>
+          <interactive xml:id="int-null-column" iframe="demos-manim/axb.html?mat=1,2,1:0,-1,1:2,3,3&amp;x=0,0,0&amp;show=true&amp;lock=true&amp;theme=dark" width="100%" aspect="5:4"/>
+        </figure>
       </solution>
     </example>
   </subsection>

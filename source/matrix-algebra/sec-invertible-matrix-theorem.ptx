@@ -209,6 +209,18 @@
   <subsection xml:id="subsec-imt-applications">
     <title>Using the Theorem</title>
 
+    <figure xml:id="fig-imt-interactive">
+      <caption>
+        The theorem, geometrically, for the invertible matrix
+        <m>A = \left[\begin{smallmatrix} 1 \amp 2 \\ 1 \amp 3 \end{smallmatrix}\right]</m>.
+        Drag <m>\vec{b}</m> anywhere: the system <m>A\vec{x} = \vec{b}</m> always has a
+        solution (the columns span <m>\R^2</m>, teal), and the solution set (violet) is
+        always a single point (the columns are independent). Every statement of the
+        theorem is a different way of saying what you see here.
+      </caption>
+      <interactive xml:id="int-imt-interactive" iframe="demos-manim/axb.html?mat=1,2:1,3&amp;x=1,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+    </figure>
+
     <example xml:id="eg-not-invertible-by-columns">
       <title>Detecting Non-Invertibility from the Columns</title>
       <statement>

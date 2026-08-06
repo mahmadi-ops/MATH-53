@@ -8,6 +8,38 @@
       invertibility. We define it recursively, by expressing an <m>n \times n</m>
       determinant in terms of <m>(n-1) \times (n-1)</m> determinants.
     </p>
+    <p>
+      The number also has a geometric meaning: for a <m>2 \times 2</m> matrix,
+      <m>|\det A|</m> is the area of the parallelogram spanned by the columns of
+      <m>A</m>. That is the picture to keep in mind while we compute.
+    </p>
+    <figure xml:id="fig-det-area">
+      <caption>
+        For <m>A = \left[\begin{smallmatrix} 3 \amp 1 \\ 1 \amp 2 \end{smallmatrix}\right]</m>,
+        the columns <m>\vec{u} = \begin{bmatrix} 3 \\ 1 \end{bmatrix}</m> and
+        <m>\vec{v} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m> span a parallelogram of
+        area <m>|\det A| = |3 \cdot 2 - 1 \cdot 1| = 5</m>. A matrix with determinant
+        <m>0</m> flattens the parallelogram to a segment <mdash /> exactly when it fails
+        to be invertible.
+      </caption>
+      <image width="58%">
+        <prefigure label="pf-det-area" xmlns="https://prefigure.org">
+          <diagram dimensions="(400,300)" margins="10">
+            <coordinates bbox="(-0.7,-0.6,4.8,3.6)">
+              <polygon points="((0,0),(3,1),(4,3),(1,2))" fill="#f6c9c1" stroke="none"/>
+              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+              <line endpoints="((0,0),(3,1))" stroke="blue" thickness="3" arrows="1"/>
+              <line endpoints="((0,0),(1,2))" stroke="blue" thickness="3" arrows="1"/>
+              <line endpoints="((3,1),(4,3))" stroke="blue" thickness="1"/>
+              <line endpoints="((1,2),(4,3))" stroke="blue" thickness="1"/>
+              <label p="(2.6,0.85)" alignment="s" offset="(0,-8)" color="blue"><m>\vec{u}</m></label>
+              <label p="(0.75,1.75)" alignment="w" offset="(-8,0)" color="blue"><m>\vec{v}</m></label>
+              <label p="(2.0,1.5)" alignment="c"><m>|\det A| = 5</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
   </introduction>
 
   <subsection xml:id="subsec-minors-cofactors">

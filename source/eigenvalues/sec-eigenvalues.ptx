@@ -178,6 +178,38 @@
         <m>x</m>-axis do not move under this reflection.
       </p>
     </example>
+
+    <figure xml:id="fig-eigenvector-direction">
+      <caption>
+        Being an eigenvector is about direction. For
+        <m>A = \left[\begin{smallmatrix} 1 \amp 2 \\ 3 \amp -4 \end{smallmatrix}\right]</m>
+        from <xref ref="eg-power-motivation" text="type-global" />, the vector
+        <m>\vec{v} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}</m> is an eigenvector:
+        <m>A\vec{v} = \begin{bmatrix} 4 \\ 2 \end{bmatrix} = 2\vec{v}</m> stays on the
+        dashed line through <m>\vec{v}</m>. The vector
+        <m>\vec{w} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is not:
+        <m>A\vec{w} = \begin{bmatrix} 3 \\ -1 \end{bmatrix}</m> leaves the line through
+        <m>\vec{w}</m>.
+      </caption>
+      <image width="72%">
+        <prefigure label="pf-eigenvector-direction" xmlns="https://prefigure.org">
+          <diagram dimensions="(460,300)" margins="10">
+            <coordinates bbox="(-1.0,-1.7,5.0,2.9)">
+              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+              <line endpoints="((-0.9,-0.45),(4.8,2.4))" stroke="gray" thickness="1"/>
+              <line endpoints="((0,0),(4,2))" stroke="#7d5bb5" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(2,1))" stroke="blue" thickness="3" arrows="1"/>
+              <line endpoints="((0,0),(3,-1))" stroke="#d55e00" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(1,1))" stroke="red" thickness="3" arrows="1"/>
+              <label p="(1.7,1.05)" alignment="nw" offset="(-4,4)" color="blue"><m>\vec{v}</m></label>
+              <label p="(3.9,1.75)" alignment="se" offset="(4,-6)" color="#7d5bb5"><m>A\vec{v} = 2\vec{v}</m></label>
+              <label p="(0.8,1.1)" alignment="n" offset="(0,6)" color="red"><m>\vec{w}</m></label>
+              <label p="(3.0,-1.05)" alignment="s" offset="(0,-6)" color="#d55e00"><m>A\vec{w}</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
   </subsection>
 
   <subsection xml:id="subsec-characteristic-polynomial">

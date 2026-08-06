@@ -1,21 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="commutative-diagram-S-figure" viewBox="0 0 472 292">
   <defs>
-    <clipPath id="commutative-diagram-S-clipPath-0">
+    <clipPath id="commutative-diagram-S-__clipPath-0">
       <rect x="6.0" y="6.0" width="460.0" height="280.0"/>
     </clipPath>
-    <clipPath id="commutative-diagram-S-clipPath-1">
+    <clipPath id="commutative-diagram-S-__clipPath-1">
       <rect x="6.0" y="6.0" width="460.0" height="280.0"/>
     </clipPath>
-    <marker id="commutative-diagram-S-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+    <marker id="commutative-diagram-S-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
     </marker>
-    <marker id="commutative-diagram-S-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+    <marker id="commutative-diagram-S-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="commutative-diagram-S-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
+      <g transform="rotate(180, 4.5, 4.0)">
+        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="commutative-diagram-S-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
+      <g transform="rotate(180, 6.5, 6.0)">
+        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+      </g>
     </marker>
   </defs>
   <g id="commutative-diagram-S-commutative-square">
     <g id="commutative-diagram-S-node-P2" transform="translate(75.0,52.7) scale(1.4,1.4) translate(-9.5,-7.5)">
-      <g id="commutative-diagram-S-g-0">
+      <g id="commutative-diagram-S-__g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="18.960px" height="15.080px" role="img" focusable="false" viewBox="0 -683 1047.6 833" x="0.0" y="0.0">
           <defs>
             <path id="commutative-diagram-S-MJX-2-TEX-D-2119" d="M16 666Q16 675 28 683H195Q334 683 370 682T437 672Q511 657 554 611T597 495Q597 343 404 309Q402 308 401 308Q381 303 319 303H261V181Q261 157 262 120Q262 60 267 50T304 36Q310 35 313 35Q352 35 352 17Q352 10 346 3L339 -1H28Q16 5 16 16Q16 35 53 35Q68 36 75 37T87 42T95 52Q98 61 98 341T95 630Q91 640 83 643T53 648Q16 648 16 666ZM235 35Q228 46 227 84Q226 129 226 337V621L230 635L237 648H128Q128 647 133 632Q136 620 136 341Q136 64 133 50L128 35H235ZM301 341H313Q339 341 354 344T389 362T417 410T426 498Q426 586 401 616T322 647Q301 647 293 643Q271 637 264 621Q261 617 261 479V341H301ZM429 350Q431 350 443 353T476 367T515 391T548 432T562 490Q562 550 524 592Q507 607 484 619Q481 621 448 635L433 639L439 621Q462 578 462 506Q462 448 454 413T437 366T428 350H429Z"/>
@@ -39,7 +49,7 @@
       </g>
     </g>
     <g id="commutative-diagram-S-node-M22" transform="translate(397.0,52.7) scale(1.4,1.4) translate(-15.7,-7.5)">
-      <g id="commutative-diagram-S-g-1">
+      <g id="commutative-diagram-S-__g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="31.384px" height="15.080px" role="img" focusable="false" viewBox="0 -683 1734.1 833" x="0.0" y="0.0">
           <defs>
             <path id="commutative-diagram-S-MJX-3-TEX-D-1D544" d="M18 666Q18 677 27 680T73 683H146Q261 683 266 679L465 215Q469 215 566 443Q663 676 668 681Q673 683 790 683H908L915 679Q924 664 915 655Q912 648 897 648Q851 639 835 606L833 346Q833 86 835 79Q838 69 849 58T873 41Q877 40 887 38T901 35Q926 35 926 16Q926 6 915 -1H604L597 3Q588 19 597 28Q600 35 615 35Q660 42 673 68L679 79V339Q679 409 679 443T679 520T679 580T677 597Q646 521 584 375T473 117T424 3Q416 -1 410 -1T401 1Q399 3 273 301L148 599L146 343Q146 86 148 79Q152 69 163 58T186 41Q190 40 200 38T215 35Q226 35 235 28Q244 17 235 3L228 -1H28Q17 4 17 17Q17 35 39 35Q84 42 97 68L104 79V639L88 641Q72 644 53 648Q34 648 26 651T18 666ZM457 166Q451 169 449 171T435 198T404 268T344 412L244 648H157L166 637Q169 633 293 346L413 66Q424 88 435 117L457 166ZM817 646Q817 648 766 648H715V72L708 57Q701 45 697 41L695 37Q695 35 757 35H819L813 46Q802 61 800 76Q797 105 797 346L799 612L804 626Q812 638 815 641L817 646ZM124 42Q119 42 119 38Q119 35 128 35Q132 35 132 36Q125 42 124 42Z"/>
@@ -66,7 +76,7 @@
       </g>
     </g>
     <g id="commutative-diagram-S-node-R3" transform="translate(75.0,239.3) scale(1.4,1.4) translate(-10.5,-7.5)">
-      <g id="commutative-diagram-S-g-2">
+      <g id="commutative-diagram-S-__g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="20.968px" height="15.080px" role="img" focusable="false" viewBox="0 -833.2 1158.6 833.2" x="0.0" y="0.0">
           <defs>
             <path id="commutative-diagram-S-MJX-4-TEX-D-211D" d="M17 665Q17 672 28 683H221Q415 681 439 677Q461 673 481 667T516 654T544 639T566 623T584 607T597 592T607 578T614 565T618 554L621 548Q626 530 626 497Q626 447 613 419Q578 348 473 326L455 321Q462 310 473 292T517 226T578 141T637 72T686 35Q705 30 705 16Q705 7 693 -1H510Q503 6 404 159L306 310H268V183Q270 67 271 59Q274 42 291 38Q295 37 319 35Q344 35 353 28Q362 17 353 3L346 -1H28Q16 5 16 16Q16 35 55 35Q96 38 101 52Q106 60 106 341T101 632Q95 645 55 648Q17 648 17 665ZM241 35Q238 42 237 45T235 78T233 163T233 337V621L237 635L244 648H133Q136 641 137 638T139 603T141 517T141 341Q141 131 140 89T134 37Q133 36 133 35H241ZM457 496Q457 540 449 570T425 615T400 634T377 643Q374 643 339 648Q300 648 281 635Q271 628 270 610T268 481V346H284Q327 346 375 352Q421 364 439 392T457 496ZM492 537T492 496T488 427T478 389T469 371T464 361Q464 360 465 360Q469 360 497 370Q593 400 593 495Q593 592 477 630L457 637L461 626Q474 611 488 561Q492 537 492 496ZM464 243Q411 317 410 317Q404 317 401 315Q384 315 370 312H346L526 35H619L606 50Q553 109 464 243Z"/>
@@ -90,7 +100,7 @@
       </g>
     </g>
     <g id="commutative-diagram-S-node-R4" transform="translate(397.0,239.3) scale(1.4,1.4) translate(-10.5,-7.6)">
-      <g id="commutative-diagram-S-g-3">
+      <g id="commutative-diagram-S-__g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="20.968px" height="15.232px" role="img" focusable="false" viewBox="0 -841.7 1158.6 841.7" x="0.0" y="0.0">
           <defs>
             <path id="commutative-diagram-S-MJX-5-TEX-D-211D" d="M17 665Q17 672 28 683H221Q415 681 439 677Q461 673 481 667T516 654T544 639T566 623T584 607T597 592T607 578T614 565T618 554L621 548Q626 530 626 497Q626 447 613 419Q578 348 473 326L455 321Q462 310 473 292T517 226T578 141T637 72T686 35Q705 30 705 16Q705 7 693 -1H510Q503 6 404 159L306 310H268V183Q270 67 271 59Q274 42 291 38Q295 37 319 35Q344 35 353 28Q362 17 353 3L346 -1H28Q16 5 16 16Q16 35 55 35Q96 38 101 52Q106 60 106 341T101 632Q95 645 55 648Q17 648 17 665ZM241 35Q238 42 237 45T235 78T233 163T233 337V621L237 635L244 648H133Q136 641 137 638T139 603T141 517T141 341Q141 131 140 89T134 37Q133 36 133 35H241ZM457 496Q457 540 449 570T425 615T400 634T377 643Q374 643 339 648Q300 648 281 635Q271 628 270 610T268 481V346H284Q327 346 375 352Q421 364 439 392T457 496ZM492 537T492 496T488 427T478 389T469 371T464 361Q464 360 465 360Q469 360 497 370Q593 400 593 495Q593 592 477 630L457 637L461 626Q474 611 488 561Q492 537 492 496ZM464 243Q411 317 410 317Q404 317 401 315Q384 315 370 312H346L526 35H619L606 50Q553 109 464 243Z"/>
@@ -113,9 +123,9 @@
         </svg>
       </g>
     </g>
-    <line id="commutative-diagram-S-arrow-S" x1="116.4" y1="52.7" x2="341.8" y2="52.7" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
+    <line id="commutative-diagram-S-arrow-S" x1="116.4" y1="52.7" x2="339.4" y2="52.7" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
     <g id="commutative-diagram-S-label-S" transform="translate(229.1,34.7) scale(1.4,1.4) translate(-5.8,-13.2)">
-      <g id="commutative-diagram-S-g-4">
+      <g id="commutative-diagram-S-__g-4">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="11.672px" height="13.160px" role="img" focusable="false" viewBox="0 -705 645 727" x="0.0" y="0.0">
           <defs>
             <path id="commutative-diagram-S-MJX-6-TEX-I-1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"/>
@@ -130,11 +140,11 @@
         </svg>
       </g>
     </g>
-    <line id="commutative-diagram-S-arrow-left-iso" x1="75.0" y1="85.3" x2="75.0" y2="206.7" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
-    <line id="commutative-diagram-S-arrow-right-iso" x1="397.0" y1="85.3" x2="397.0" y2="206.7" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
-    <line id="commutative-diagram-S-arrow-A" x1="107.2" y1="239.3" x2="355.6" y2="239.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
+    <line id="commutative-diagram-S-arrow-left-iso" x1="75.0" y1="87.7" x2="75.0" y2="204.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#commutative-diagram-S-arrow-head-start-2_None_24_60-black)"/>
+    <line id="commutative-diagram-S-arrow-right-iso" x1="397.0" y1="87.7" x2="397.0" y2="204.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#commutative-diagram-S-arrow-head-start-2_None_24_60-black)"/>
+    <line id="commutative-diagram-S-arrow-A" x1="107.2" y1="239.3" x2="353.2" y2="239.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
     <g id="commutative-diagram-S-label-A" transform="translate(231.4,269.7) scale(1.4,1.4) translate(-87.4,-6.5)">
-      <g id="commutative-diagram-S-g-5">
+      <g id="commutative-diagram-S-__g-5">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="174.752px" height="12.960px" role="img" focusable="false" viewBox="0 -705 9655 716" x="0.0" y="0.0">
           <defs>
             <path id="commutative-diagram-S-MJX-7-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>

@@ -24,6 +24,31 @@
           Calculate the probabilities of her eating at <m>A</m> and <m>B</m> for the first
           week. What do you notice?
         </p>
+        <figure xml:id="fig-alice-state-diagram">
+          <caption>
+            The state diagram of Alice's lunches. Each arrow carries the probability of
+            moving from one restaurant to the other on the next day; the loop at
+            <m>B</m> is the probability of staying.
+          </caption>
+          <image width="62%">
+            <prefigure label="pf-alice-state-diagram" xmlns="https://prefigure.org">
+              <diagram dimensions="(420,190)" margins="10">
+                <coordinates bbox="(0,0,6.6,2.7)">
+                  <circle center="(1.3,1.35)" radius="0.55" stroke="black" thickness="2"/>
+                  <circle center="(4.5,1.35)" radius="0.55" stroke="black" thickness="2"/>
+                  <label p="(1.3,1.35)" alignment="c"><m>A</m></label>
+                  <label p="(4.5,1.35)" alignment="c"><m>B</m></label>
+                  <line endpoints="((1.85,1.1),(3.95,1.1))" stroke="blue" thickness="2" arrows="1"/>
+                  <line endpoints="((3.95,1.62),(1.85,1.62))" stroke="blue" thickness="2" arrows="1"/>
+                  <label p="(2.9,0.95)" alignment="s" offset="(0,-6)"><m>1</m></label>
+                  <label p="(2.9,1.78)" alignment="n" offset="(0,6)"><m>\tfrac{1}{4}</m></label>
+                  <arc center="(5.45,1.35)" radius="0.42" range="(150,-150)" stroke="blue" thickness="2" arrows="1"/>
+                  <label p="(6.0,1.35)" alignment="e" offset="(8,0)"><m>\tfrac{3}{4}</m></label>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
       </statement>
       <solution>
         <p>
