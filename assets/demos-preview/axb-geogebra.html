@@ -9,24 +9,66 @@
   #wrap { width: 100%; max-width: 1000px; margin: 0 auto; }
   #caption {
     background: #eee; border: 1px solid #999; margin-bottom: 4px;
-    padding: 6px 10px; font-size: 14px; line-height: 1.5;
+    padding: 6px 10px; font-size: 15px; line-height: 1.4;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 4px 16px;
   }
-  #note { color: #a00; font-size: 12.5px; }
+  #eqrow { display: flex; align-items: center; gap: 6px; }
+  .mtx {
+    display: inline-grid; justify-items: end;
+    column-gap: 10px; row-gap: 0;
+    padding: 3px 8px; position: relative;
+    border-left: 1.6px solid #222; border-right: 1.6px solid #222;
+    background:
+      linear-gradient(#222,#222) top left    / 6px 1.6px no-repeat,
+      linear-gradient(#222,#222) bottom left / 6px 1.6px no-repeat,
+      linear-gradient(#222,#222) top right   / 6px 1.6px no-repeat,
+      linear-gradient(#222,#222) bottom right/ 6px 1.6px no-repeat;
+    font-family: Georgia, serif; font-variant-numeric: tabular-nums;
+  }
+  .mA { grid-template-columns: repeat(2, auto); }
+  .vx span { color: #2ca02c; }
+  .vb span { color: #d62728; }
+  .eq { margin: 0 4px; }
+  .side { text-align: right; }
+  .hint { color: #444; font-size: 12.5px; }
+  #note { color: #a00; font-size: 12px; }
 </style>
 <script src="https://www.geogebra.org/apps/deployggb.js"></script>
 </head>
 <body>
 <div id="wrap">
   <div id="caption">
-    Drag the green point <b style="color:#2ca02c">x</b> in the left (2D) view;
-    the red vector <b style="color:#d62728">b</b> = A<b style="color:#2ca02c">x</b>
-    moves in the right (3D) view, staying on the violet range plane
-    <i>b</i><sub>1</sub> &minus; <i>b</i><sub>2</sub> + <i>b</i><sub>3</sub> = 0.
-    <div id="note">Loads the GeoGebra engine from geogebra.org &mdash; needs internet access.</div>
+    <div id="eqrow">
+      <span class="mtx mA"><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span></span>
+      <span class="mtx vx"><span id="vx1">&minus;1.00</span><span id="vx2">2.00</span></span>
+      <span class="eq">=</span>
+      <span class="mtx vb"><span id="vb1">&minus;1.00</span><span id="vb2">1.00</span><span id="vb3">2.00</span></span>
+    </div>
+    <div class="side">
+      <div class="hint">[Drag the head of <b style="color:#2ca02c">x</b> in the left view
+        &middot; drag the right view to rotate]</div>
+      <div id="note">Loads the GeoGebra engine from geogebra.org &mdash; needs internet access.</div>
+    </div>
   </div>
   <div id="ggb-element"></div>
 </div>
 <script>
+function fmtEntry(t) {
+  var s = Math.abs(t).toFixed(2);
+  return (t < -0.005 ? "−" : "") + s;
+}
+function refreshBar() {
+  if (!window.ggbAPI) return;
+  var x1 = window.ggbAPI.getXcoord("X"), x2 = window.ggbAPI.getYcoord("X");
+  document.getElementById("vx1").textContent = fmtEntry(x1);
+  document.getElementById("vx2").textContent = fmtEntry(x2);
+  document.getElementById("vb1").textContent = fmtEntry(x1);
+  document.getElementById("vb2").textContent = fmtEntry(x1 + x2);
+  document.getElementById("vb3").textContent = fmtEntry(x2);
+}
+window.onXUpdate = refreshBar;
+
 var params = {
   appName: "classic",
   width: 1000,
@@ -37,6 +79,7 @@ var params = {
   showResetIcon: true,
   enableRightClick: false,
   appletOnLoad: function (api) {
+    window.ggbAPI = api;
     var cmds = [
       // side-by-side Graphics (2D) + 3D Graphics views
       'SetPerspective("GT")',
@@ -44,28 +87,40 @@ var params = {
       'X=(-1,2)',
       'SetColor(X,"#2ca02c")', 'SetPointSize(X,6)', 'SetCaption(X,"x")',
       'SetLabelMode(X,3)',
-      'u=Vector((0,0),X)',
-      'SetColor(u,"#2ca02c")', 'SetLineThickness(u,6)', 'ShowLabel(u,false)',
-      'SetFixed(u,true)',
-      // the range of T: plane through O spanned by the columns (1,1,0),(0,1,1)
-      'p:x-y+z=0',
-      'SetColor(p,"#9467bd")', 'SetFilling(p,0.35)', 'ShowLabel(p,false)',
-      'SetFixed(p,true)',
+      'xv=Vector((0,0),X)',
+      'SetColor(xv,"#2ca02c")', 'SetLineThickness(xv,6)', 'ShowLabel(xv,false)',
+      'SetFixed(xv,true)',
+      // the range of T: bounded patch of the plane spanned by the
+      // columns (1,1,0) and (0,1,1)  --  points (s, s+t, t)
+      'rng=Surface(u,u+v,v,u,-2.5,2.5,v,-2.5,2.5)',
+      'SetColor(rng,"#9467bd")', 'SetFilling(rng,0.35)', 'ShowLabel(rng,false)',
+      'SetFixed(rng,true)',
+      'grd1=Sequence(Segment((i,i-2.5,-2.5),(i,i+2.5,2.5)),i,-2,2)',
+      'grd2=Sequence(Segment((-2.5,i-2.5,i),(2.5,i+2.5,i)),i,-2,2)',
+      'SetColor(grd1,"#c9b3de")', 'SetColor(grd2,"#c9b3de")',
+      'ShowLabel(grd1,false)', 'ShowLabel(grd2,false)',
+      'SetFixed(grd1,true)', 'SetFixed(grd2,true)',
       // b = A x  =  (x1, x1+x2, x2)
       'B=(x(X),x(X)+y(X),y(X))',
       'SetColor(B,"#d62728")', 'SetCaption(B,"b")', 'SetLabelMode(B,3)',
       'SetFixed(B,true)',
-      'v=Vector((0,0,0),B)',
-      'SetColor(v,"#d62728")', 'SetLineThickness(v,6)', 'ShowLabel(v,false)',
-      'SetFixed(v,true)',
-      // live caption of the product A x = b
-      'txt=FormulaText("\\\\begin{pmatrix}1&0\\\\\\\\1&1\\\\\\\\0&1\\\\end{pmatrix}" + ' +
-        '"\\\\begin{pmatrix}" + (x(X)) + "\\\\\\\\" + (y(X)) + "\\\\end{pmatrix}=" + ' +
-        '"\\\\begin{pmatrix}" + (x(B)) + "\\\\\\\\" + (y(B)) + "\\\\\\\\" + (z(B)) + "\\\\end{pmatrix}")',
-      'SetFixed(txt,true)'
+      'bv=Vector((0,0,0),B)',
+      'SetColor(bv,"#d62728")', 'SetLineThickness(bv,6)', 'ShowLabel(bv,false)',
+      'SetFixed(bv,true)'
     ];
     for (var i = 0; i < cmds.length; i++) api.evalCommand(cmds[i]);
     api.setCoordSystem(-5, 5, -5, 5);
+    // black axes in both views (silently skip if unsupported)
+    [1, 2, 3, -1].forEach(function (view) {
+      try { api.setGraphicsOptions(view, { axesColor: "#000000" }); } catch (e) {}
+    });
+    // clip the 3D scene at the clipping cube and show the cube
+    try {
+      api.evalXML('<euclidianView3D><clipping use="true" show="true" size="1"/></euclidianView3D>');
+    } catch (e) {}
+    try { api.setCoordSystem(-5, 5, -5, 5, -5, 5); } catch (e) {}
+    api.registerObjectUpdateListener("X", "onXUpdate");
+    refreshBar();
   }
 };
 new GGBApplet(params, true).inject("ggb-element");
