@@ -132,7 +132,9 @@
                 0 \amp -1 \amp -1 \amp 2 \\
                 0 \amp 0 \amp 1 \amp -\frac{2}{3}
               \end{array} \right]
-              \xrightarrow[-2r_3 + r_1]{r_3 + r_2}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[-2r_3 + r_1]{r_3 + r_2}
               \left[ \begin{array}{ccc|c}
                 1 \amp 1 \amp 0 \amp \frac{1}{3} \\
                 0 \amp -1 \amp 0 \amp \frac{4}{3} \\
@@ -146,7 +148,9 @@
                 0 \amp 1 \amp 0 \amp -\frac{4}{3} \\
                 0 \amp 0 \amp 1 \amp -\frac{2}{3}
               \end{array} \right]
-              \xrightarrow{-r_2 + r_1}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2 + r_1}
               \left[ \begin{array}{ccc|c}
                 1 \amp 0 \amp 0 \amp \frac{5}{3} \\
                 0 \amp 1 \amp 0 \amp -\frac{4}{3} \\
@@ -164,6 +168,18 @@
           a unique solution. Every column of the coefficient matrix is a pivot column, so
           there are no free variables.
         </p>
+
+        <figure xml:id="fig-unique-interactive">
+          <caption>
+            The same system as a matrix transformation
+            <m>T(\vec{x}) = A\vec{x}</m>. The violet solution set of
+            <m>T(\vec{x}) = \vec{b}</m> in the left pane is a single <em>point</em>:
+            exactly one input produces this output. Click and drag the head of
+            <m>\vec{b}</m> in the right pane <mdash /> the solution point moves, but it
+            stays a single point, because every column of <m>A</m> is a pivot column.
+          </caption>
+          <interactive xml:id="int-unique-solution" iframe="demos-manim/axb.html?mat=1,1,2:2,1,3:0,-2,1&amp;x=1.667,-1.333,-0.667&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+        </figure>
       </solution>
     </example>
 
@@ -226,6 +242,18 @@
           </md>
           which is impossible, and hence the system is inconsistent (no solution).
         </p>
+
+        <figure xml:id="fig-no-solution-interactive">
+          <caption>
+            Here the first two columns of <m>A</m> are multiples of one another, so the
+            range of <m>T</m> (teal, right pane) is only a <em>plane</em> inside
+            <m>\R^3</m>. Click and drag the head of <m>\vec{b}</m> off that plane: the
+            equation is marked inconsistent and the solution set vanishes, which is what
+            the row <m>\begin{bmatrix} 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}</m>
+            records above.
+          </caption>
+          <interactive xml:id="int-no-solution" iframe="demos-manim/axb.html?mat=-3,-9,1:2,6,-1:1,3,-1&amp;x=1,0,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+        </figure>
       </solution>
     </example>
 
@@ -260,11 +288,14 @@
         <p>
           <md>
             <mrow>
+              \amp
               \left[ \begin{array}{ccc|c}
                 2 \amp 1 \amp 3 \amp 1 \\
                 1 \amp 2 \amp -1 \amp 0 \\
                 0 \amp -6 \amp 10 \amp 2
               \end{array} \right]
+            </mrow>
+            <mrow>
               \amp \xrightarrow{r_1 \leftrightarrow r_2}
               \left[ \begin{array}{ccc|c}
                 1 \amp 2 \amp -1 \amp 0 \\
@@ -279,7 +310,9 @@
                 0 \amp -3 \amp 5 \amp 1 \\
                 0 \amp -6 \amp 10 \amp 2
               \end{array} \right]
-              \xrightarrow{-2r_2 + r_3}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-2r_2 + r_3}
               \left[ \begin{array}{ccc|c}
                 1 \amp 2 \amp -1 \amp 0 \\
                 0 \amp -3 \amp 5 \amp 1 \\
@@ -293,7 +326,9 @@
                 0 \amp 1 \amp -\frac{5}{3} \amp -\frac{1}{3} \\
                 0 \amp 0 \amp 0 \amp 0
               \end{array} \right]
-              \xrightarrow{-2r_2 + r_1}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-2r_2 + r_1}
               \left[ \begin{array}{ccc|c}
                 1 \amp 0 \amp \frac{7}{3} \amp \frac{2}{3} \\
                 0 \amp 1 \amp -\frac{5}{3} \amp -\frac{1}{3} \\
@@ -327,6 +362,17 @@
             </mrow>
           </md>
         </p>
+
+        <figure xml:id="fig-infinitely-many-interactive">
+          <caption>
+            With one free variable, the violet solution set in the left pane is a
+            <em>line</em> rather than a point: every input on that line has the same
+            image. Click and drag the head of <m>\vec{x}</m> along the line and watch
+            <m>\vec{b}</m> stay put; drag <m>\vec{b}</m> instead and the whole solution
+            line moves with it.
+          </caption>
+          <interactive xml:id="int-infinitely-many" iframe="demos-manim/axb.html?mat=2,1,3:1,2,-1:0,-6,10&amp;x=0.667,-0.333,0&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+        </figure>
       </solution>
     </example>
 
@@ -412,7 +458,9 @@
                 0 \amp -1 \amp 2 \amp c \\
                 0 \amp 0 \amp 1 \amp K
               \end{array} \right]
-              \xrightarrow[r_2 + 2r_3]{-r_2}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[r_2 + 2r_3]{-r_2}
               \left[ \begin{array}{ccc|c}
                 1 \amp 3 \amp -2 \amp 1 \\
                 0 \amp 1 \amp 0 \amp -c + 2K \\
@@ -426,7 +474,9 @@
                 0 \amp 1 \amp 0 \amp -c + 2K \\
                 0 \amp 0 \amp 1 \amp K
               \end{array} \right]
-              \xrightarrow{-3r_2 + r_1}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-3r_2 + r_1}
               \left[ \begin{array}{ccc|c}
                 1 \amp 0 \amp 0 \amp 1 + 3c - 4K \\
                 0 \amp 1 \amp 0 \amp -c + 2K \\
@@ -436,9 +486,15 @@
           </md>
           Hence when <m>a \neq 2</m>, there is a unique solution:
           <md>
-            x = 1 + 3c - 4\left( \frac{b-2-3c}{a-2} \right), \quad
-            y = -c + 2 \left( \frac{b-2-3c}{a-2} \right), \quad
-            z = \frac{b-2-3c}{a-2}.
+            <mrow>
+              x \amp = 1 + 3c - 4\left( \frac{b-2-3c}{a-2} \right)
+            </mrow>
+            <mrow>
+              y \amp = -c + 2 \left( \frac{b-2-3c}{a-2} \right)
+            </mrow>
+            <mrow>
+              z \amp = \frac{b-2-3c}{a-2}.
+            </mrow>
           </md>
         </p>
         <p>

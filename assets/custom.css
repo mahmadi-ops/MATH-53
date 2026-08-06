@@ -35,3 +35,26 @@
         }
     }
 }
+
+/* ------------------------------------------------------------------ *
+ * Interactive figures: scale to the column                            *
+ *                                                                     *
+ * PreTeXt bakes a pixel size onto the iframe at build time            *
+ * (style="width:600px; height:480px"), computed from the theme's      *
+ * default 600px column. That ignores the widened column above and     *
+ * never responds to the viewport, so the demos sit undersized with    *
+ * empty space beside them. Make them fluid instead, preserving the    *
+ * 5:4 aspect the source asks for. !important is needed to beat the    *
+ * inline style.                                                       *
+ * ------------------------------------------------------------------ */
+
+.interactive-iframe-container {
+    width: 100%;
+}
+
+.interactive-iframe-container > iframe {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: 5 / 4;
+}

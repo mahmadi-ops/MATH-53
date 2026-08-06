@@ -18,7 +18,7 @@
     --sol: #7d5bb5; --btnbord: #c9d1dc; --btnhov: #f0f3f7; --brk: #444c5a;
   }
   html, body { margin: 0; background: var(--bg); color: var(--ink);
-    font-family: Georgia, "Times New Roman", serif; }
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   #wrap { max-width: 1060px; margin: 0 auto; padding: 8px 8px 12px; }
 
   #titlebar { display: flex; align-items: baseline; justify-content: space-between;
@@ -229,7 +229,7 @@
     core.style.stroke = "var(" + colorVar + ")";
     var tip = el(g, "path", {}); tip.style.fill = "var(" + colorVar + ")";
     var label = el(g, "text", { "font-size": 21, "font-style": "italic",
-      "font-family": "Georgia, serif" });
+      "font-family": "Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif" });
     label.style.fill = "var(" + colorVar + ")";
     return { g: g, glow: glow, core: core, tip: tip, label: label };
   }
