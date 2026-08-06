@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-to-one transformation: GeoGebra (authored)</title>
+<style>
+  html, body { margin: 0; background: white; font-family: Georgia, serif; }
+  #wrap { width: 100%; max-width: 1000px; margin: 0 auto; }
+  #caption {
+    background: #eee; border: 1px solid #999; margin-bottom: 4px;
+    padding: 6px 10px; font-size: 14px; line-height: 1.5;
+  }
+  #note { color: #a00; font-size: 12.5px; }
+</style>
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="caption">
+    Drag the green point <b style="color:#2ca02c">x</b> in the left (2D) view;
+    the red vector <b style="color:#d62728">b</b> = A<b style="color:#2ca02c">x</b>
+    moves in the right (3D) view, staying on the violet range plane
+    <i>b</i><sub>1</sub> &minus; <i>b</i><sub>2</sub> + <i>b</i><sub>3</sub> = 0.
+    <div id="note">Loads the GeoGebra engine from geogebra.org &mdash; needs internet access.</div>
+  </div>
+  <div id="ggb-element"></div>
+</div>
+<script>
+var params = {
+  appName: "classic",
+  width: 1000,
+  height: 520,
+  showToolBar: false,
+  showAlgebraInput: false,
+  showMenuBar: false,
+  showResetIcon: true,
+  enableRightClick: false,
+  appletOnLoad: function (api) {
+    var cmds = [
+      // side-by-side Graphics (2D) + 3D Graphics views
+      'SetPerspective("GT")',
+      // the draggable input vector x in the 2D view
+      'X=(-1,2)',
+      'SetColor(X,"#2ca02c")', 'SetPointSize(X,6)', 'SetCaption(X,"x")',
+      'SetLabelMode(X,3)',
+      'u=Vector((0,0),X)',
+      'SetColor(u,"#2ca02c")', 'SetLineThickness(u,6)', 'ShowLabel(u,false)',
+      'SetFixed(u,true)',
+      // the range of T: plane through O spanned by the columns (1,1,0),(0,1,1)
+      'p:x-y+z=0',
+      'SetColor(p,"#9467bd")', 'SetFilling(p,0.35)', 'ShowLabel(p,false)',
+      'SetFixed(p,true)',
+      // b = A x  =  (x1, x1+x2, x2)
+      'B=(x(X),x(X)+y(X),y(X))',
+      'SetColor(B,"#d62728")', 'SetCaption(B,"b")', 'SetLabelMode(B,3)',
+      'SetFixed(B,true)',
+      'v=Vector((0,0,0),B)',
+      'SetColor(v,"#d62728")', 'SetLineThickness(v,6)', 'ShowLabel(v,false)',
+      'SetFixed(v,true)',
+      // live caption of the product A x = b
+      'txt=FormulaText("\\\\begin{pmatrix}1&0\\\\\\\\1&1\\\\\\\\0&1\\\\end{pmatrix}" + ' +
+        '"\\\\begin{pmatrix}" + (x(X)) + "\\\\\\\\" + (y(X)) + "\\\\end{pmatrix}=" + ' +
+        '"\\\\begin{pmatrix}" + (x(B)) + "\\\\\\\\" + (y(B)) + "\\\\\\\\" + (z(B)) + "\\\\end{pmatrix}")',
+      'SetFixed(txt,true)'
+    ];
+    for (var i = 0; i < cmds.length; i++) api.evalCommand(cmds[i]);
+    api.setCoordSystem(-5, 5, -5, 5);
+  }
+};
+new GGBApplet(params, true).inject("ggb-element");
+</script>
+</body>
+</html>
