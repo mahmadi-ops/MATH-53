@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-coupled-oscillators" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Coupled Oscillators and Normal Modes</title>
+
+  <introduction>
+    <p>
+      Our applications so far have used eigenvalues to understand what happens when a
+      matrix is applied over and over. This closing section turns to a genuinely
+      physical problem<mdash/>two carts vibrating between two walls<mdash/>where
+      diagonalization does something different: it takes two equations that are
+      hopelessly tangled together and replaces them with two independent equations we
+      already know how to solve. The eigenvectors turn out to be visible in the
+      laboratory as special patterns of motion called <term>normal modes</term>, and
+      the eigenvalues set their frequencies.
+    </p>
+    <p>
+      Before any formulas, watch the system move. The animation below tells the whole
+      story of this section without a single equation: a general motion looks chaotic,
+      two special starting shapes swing forever with a steady rhythm, and the chaotic
+      motion is secretly just the two special ones added together.
+    </p>
+    <figure xml:id="fig-coupled-oscillators-movie">
+      <caption>
+        Two identical carts coupled by three identical springs. Press play to watch
+        the full story, or jump to a scene with the buttons: the <q>messy</q> general
+        motion, the two simple patterns (<q>mode 1</q> and <q>mode 2</q>), and the
+        punchline that the messy motion is their sum.
+      </caption>
+      <interactive xml:id="int-coupled-oscillators-movie" iframe="demos-manim/springs.html" width="100%" aspect="5:4"/>
+    </figure>
+  </introduction>
+
+  <subsection xml:id="subsec-oscillators-setup">
+    <title>The Equations of Motion</title>
+
+    <p>
+      Two carts, each of mass <m>m</m>, sit on a frictionless track between two walls.
+      Three identical springs, each with stiffness <m>k</m>, connect wall to cart,
+      cart to cart, and cart to wall. Write <m>u_1(t)</m> and <m>u_2(t)</m> for the
+      displacement of each cart from its resting position, with the same direction
+      counted as positive for both. When both displacements are zero, every spring is
+      relaxed and nothing moves.
+    </p>
+    <p>
+      Now displace the carts and account for the forces. A spring pushes or pulls in
+      proportion to how much it is stretched, with proportionality constant
+      <m>k</m>. The first cart feels the outer spring on its left, stretched by
+      <m>u_1</m>, pulling it back with force <m>-ku_1</m>; it also feels the middle
+      spring, whose length has changed by <m>u_2 - u_1</m>, pulling it forward with
+      force <m>k(u_2 - u_1)</m>. Newton's law <q>mass times acceleration equals total
+      force</q> gives
+      <md>
+        <mrow> m\,u_1'' \amp = -ku_1 + k(u_2 - u_1) = k(-2u_1 + u_2), </mrow>
+      </md>
+      and the mirror-image argument for the second cart gives
+      <md>
+        <mrow> m\,u_2'' \amp = -k(u_2 - u_1) - ku_2 = k(u_1 - 2u_2). </mrow>
+      </md>
+      Here <m>u''</m> is the second derivative with respect to time, that is, the
+      acceleration. The only fact from calculus we will need is that
+      <me>
+        \left( \cos \omega t \right)'' = -\omega^2 \cos \omega t,
+        \qquad
+        \left( \sin \omega t \right)'' = -\omega^2 \sin \omega t,
+      </me>
+      so cosines and sines of frequency <m>\omega</m> reproduce themselves, scaled by
+      <m>-\omega^2</m>, after two derivatives.
+    </p>
+    <p>
+      The two equations are <em>coupled</em>: <m>u_2</m> appears in the equation for
+      <m>u_1</m> and vice versa, because the middle spring ties the carts together.
+      Neither equation can be solved on its own. But the system is begging to be
+      written with a matrix. Collecting the displacements into
+      <m>\vec{u}(t) = \begin{bmatrix} u_1(t) \\ u_2(t) \end{bmatrix}</m>
+      and differentiating entrywise,
+      <md>
+        <mrow>
+          \vec{u}\,'' = -\frac{k}{m} A \vec{u},
+          \qquad \text{where} \qquad
+          A = \begin{bmatrix} 2 \amp -1 \\ -1 \amp 2 \end{bmatrix}.
+        </mrow>
+      </md>
+      All the physics<mdash/>the masses, the springs, the geometry<mdash/>is now
+      stored in the single matrix <m>A</m>.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-oscillators-decoupling">
+    <title>Diagonalization Decouples the Equations</title>
+
+    <p>
+      If <m>A</m> were diagonal, the two equations would not talk to each other at
+      all, and each would be the familiar equation of a single mass on a single
+      spring. So we diagonalize. The characteristic polynomial of <m>A</m> is
+      <me>
+        \det(A - \lambda I) = (2-\lambda)^2 - 1 = (\lambda - 1)(\lambda - 3),
+      </me>
+      so the eigenvalues are <m>\lambda_1 = 1</m> and <m>\lambda_2 = 3</m>, with
+      corresponding eigenvectors
+      <me>
+        \vec{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix},
+        \qquad
+        \vec{x}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+      </me>
+      Following <xref ref="def-diagonalizable" text="type-global"/>, we assemble
+      <me>
+        P = \begin{bmatrix} 1 \amp 1 \\ 1 \amp -1 \end{bmatrix},
+        \qquad
+        D = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 3 \end{bmatrix},
+        \qquad
+        A = PDP^{-1}.
+      </me>
+    </p>
+    <p>
+      Now comes the decisive step: change coordinates so that the eigenvectors become
+      the axes. Define <m>\vec{w}(t) = P^{-1}\vec{u}(t)</m>, so <m>\vec{w}</m> holds
+      the coordinates of the displacement vector relative to the eigenvector basis.
+      Substituting <m>\vec{u} = P\vec{w}</m> into the equation of motion and
+      multiplying both sides by <m>P^{-1}</m>,
+      <md>
+        <mrow>
+          \vec{w}\,'' = -\frac{k}{m} P^{-1} A P \, \vec{w} = -\frac{k}{m} D \vec{w},
+        </mrow>
+      </md>
+      since <m>P^{-1}AP = D</m>. Written out, the new system is
+      <md>
+        <mrow> w_1'' \amp = -\frac{k}{m}\, w_1, </mrow>
+        <mrow> w_2'' \amp = -\frac{3k}{m}\, w_2. </mrow>
+      </md>
+      The coupling is gone. Each equation involves only its own unknown, and each says
+      that the unknown reproduces itself, negatively scaled, after two derivatives.
+      By the calculus fact above, the solutions are cosines and sines:
+      <md>
+        <mrow> w_1(t) \amp = a_1 \cos \omega_1 t + b_1 \sin \omega_1 t,
+          \qquad \omega_1 = \sqrt{\tfrac{k}{m}}, </mrow>
+        <mrow> w_2(t) \amp = a_2 \cos \omega_2 t + b_2 \sin \omega_2 t,
+          \qquad \omega_2 = \sqrt{\tfrac{3k}{m}} = \sqrt{3}\,\omega_1, </mrow>
+      </md>
+      for constants <m>a_1, b_1, a_2, b_2</m> determined by how the motion starts.
+    </p>
+    <p>
+      Translating back with <m>\vec{u} = P\vec{w} = w_1 \vec{x}_1 + w_2 \vec{x}_2</m>,
+      <em>every</em> motion of the two carts has the form
+      <md>
+        <mrow>
+          \vec{u}(t) = \left( a_1 \cos \omega_1 t + b_1 \sin \omega_1 t \right)
+          \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+          + \left( a_2 \cos \omega_2 t + b_2 \sin \omega_2 t \right)
+          \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+        </mrow>
+      </md>
+      This formula is the entire section in one line, and it is worth reading
+      slowly alongside the animation in
+      <xref ref="fig-coupled-oscillators-movie" text="type-global"/>.
+    </p>
+    <p>
+      <ul>
+        <li>
+          <p>
+            <term>The slow mode.</term> If the motion starts along the eigenvector
+            <m>\vec{x}_1 = (1,1)</m>, it stays along it forever: both carts swing in
+            unison at frequency <m>\omega_1</m>. Physically, moving both carts the
+            same way leaves the middle spring at its natural length, so the coupling
+            spring never acts<mdash/>each cart oscillates as if it felt only one outer
+            spring. That is the <q>mode 1</q> scene of the movie, where the middle
+            spring stays quiet.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>The fast mode.</term> If the motion starts along
+            <m>\vec{x}_2 = (1,-1)</m>, the carts swing in opposition at frequency
+            <m>\omega_2 = \sqrt{3}\,\omega_1</m>. Now the middle spring is compressed
+            and stretched by <em>twice</em> each cart's displacement, so every cart
+            feels a stronger restoring force and vibrates faster<mdash/>the larger
+            eigenvalue <m>3</m> is precisely this extra stiffness. That is
+            <q>mode 2,</q> where the middle spring works hardest.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Everything else.</term> A general motion is not simple<mdash/>but it
+            is a sum of the two simple ones, in exactly the way a general vector in
+            <m>\R^2</m> is a combination of the two eigenvectors.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      These special patterns of motion are called the <term>normal modes</term> of the
+      system, and their frequencies <m>\omega_1, \omega_2</m> are its <term>natural
+      frequencies</term>. The dictionary between the physics and the linear algebra is
+      exact: normal modes are eigenvectors of <m>A</m>, and each natural frequency is
+      <m>\sqrt{k\lambda/m}</m> for the corresponding eigenvalue <m>\lambda</m>.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-oscillators-example">
+    <title>Solving a Specific Motion</title>
+
+    <example xml:id="eg-coupled-oscillators-release">
+      <title>Pull One Cart and Let Go</title>
+      <statement>
+        <p>
+          At time <m>t = 0</m>, the first cart is pulled one unit aside while the
+          second is held at rest in place, and both are released from rest: in
+          symbols, <m>\vec{u}(0) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and
+          <m>\vec{u}\,'(0) = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</m>.
+          Find <m>\vec{u}(t)</m>. This is exactly the <q>messy</q> motion of
+          <xref ref="fig-coupled-oscillators-movie" text="type-global"/>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since both carts start at rest, every sine coefficient vanishes: the
+          derivative of the general solution at <m>t = 0</m> is
+          <m>b_1 \omega_1 \vec{x}_1 + b_2 \omega_2 \vec{x}_2</m>, and since
+          <m>\vec{x}_1, \vec{x}_2</m> are linearly independent this is <m>\vec{0}</m>
+          only when <m>b_1 = b_2 = 0</m>.
+        </p>
+        <p>
+          The cosine coefficients are the coordinates of the starting position in the
+          eigenvector basis. We need
+          <me>
+            \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+            = a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            + a_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix},
+          </me>
+          which gives <m>a_1 = a_2 = \frac{1}{2}</m>. Therefore
+          <md>
+            <mrow>
+              \vec{u}(t) = \frac{1}{2} \cos( \omega_1 t)
+              \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+              + \frac{1}{2} \cos( \omega_2 t )
+              \begin{bmatrix} 1 \\ -1 \end{bmatrix},
+            </mrow>
+          </md>
+          or, cart by cart,
+          <md>
+            <mrow> u_1(t) \amp = \tfrac{1}{2}\cos(\omega_1 t) + \tfrac{1}{2}\cos(\omega_2 t), </mrow>
+            <mrow> u_2(t) \amp = \tfrac{1}{2}\cos(\omega_1 t) - \tfrac{1}{2}\cos(\omega_2 t). </mrow>
+          </md>
+        </p>
+        <p>
+          The formula explains everything the movie shows. The second cart starts at
+          rest, but its two cosines drift out of step and it begins to swing while the
+          first cart calms down: the carts trade energy back and forth through the
+          middle spring. And because <m>\omega_2/\omega_1 = \sqrt{3}</m> is
+          irrational, the two cosines never return to step simultaneously<mdash/>the
+          motion never exactly repeats itself, even though it is built from two
+          perfectly periodic ingredients. The animation runs precisely this solution:
+          equal parts of the slow mode and the fast mode, with frequencies in the
+          ratio <m>\sqrt{3}</m>.
+        </p>
+      </solution>
+    </example>
+
+    <remark xml:id="rem-oscillators-bigger-picture">
+      <title>The Bigger Picture</title>
+      <p>
+        Nothing here depended on having exactly two carts. A chain of <m>n</m> carts,
+        a vibrating molecule, a bridge deck, or a drumhead all lead to the same
+        template: a coupled system <m>\vec{u}\,'' = -M\vec{u}</m> for some matrix
+        <m>M</m> built from the stiffnesses, decoupled by diagonalizing <m>M</m>. The
+        eigenvectors are the shapes in which the structure likes to vibrate, and the
+        square roots of the eigenvalues set the tones. This is why engineers computing
+        the resonant frequencies of a building and chemists reading the infrared
+        spectrum of a molecule are both, at bottom, finding eigenvalues.
+      </p>
+    </remark>
+  </subsection>
+</section>
