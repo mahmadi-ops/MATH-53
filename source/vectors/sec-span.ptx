@@ -4,12 +4,13 @@
 
   <introduction>
     <p>
-      Several figures in this section and the next are interactive: the violet region is
-      the span, and moving the sliders (click <q>Open Controls</q>) forms the linear combination
-      shown in the equation. They are powered by the demo framework from
-      <pubtitle>Interactive Linear Algebra</pubtitle> by Margalit and Rabinoff
-      (<url href="https://github.com/QBobWatson/ila" visual="github.com/QBobWatson/ila"/>),
-      used under the GPL.
+      Several figures in this section and the next are interactive. Each shows a matrix
+      transformation <m>T(\vec{x}) = A\vec{x}</m> whose columns are the vectors under
+      discussion, so the teal region in the right pane is exactly their span. Click and
+      drag the head of the input vector <m>\vec{x}</m> or the output vector
+      <m>\vec{b}</m>; drag inside a three-dimensional pane to rotate it. The violet
+      object in the left pane is the solution set of <m>T(\vec{x}) = \vec{b}</m>, which
+      is a single point exactly when the vectors are linearly independent.
     </p>
   </introduction>
 
@@ -138,25 +139,16 @@
 
     <figure xml:id="fig-span-plane-hit">
       <caption>
-        The span of <m>\vec{v}_1 = (1,1,0)</m> and <m>\vec{v}_2 = (0,1,2)</m> is the
-        violet plane. Move the <m>x</m> and <m>y</m> sliders (click <q>Open Controls</q>) until
-        the red vector <m>x\vec{v}_1 + y\vec{v}_2</m> reaches the target
-        <m>\vec{w} = (2,3,2)</m>. It can be done, because <m>\vec{w}</m> lies on the
-        plane: the values <m>x = 2</m> and <m>y = 1</m> turn the <m>\neq</m> in the
-        equation into an <m>=</m>.
+        The columns of <m>A</m> are <m>\vec{v}_1 = (1,1,0)</m> and <m>\vec{v}_2 = (0,1,2)</m>, so the teal region in the right pane <em>is</em> <m>\operatorname{Span}\{\vec{v}_1,\vec{v}_2\}</m> <mdash /> a plane through the origin. Click and drag the head of <m>\vec{x}</m> in the left pane: the output <m>x_1\vec{v}_1 + x_2\vec{v}_2</m> sweeps that plane and never leaves it. The starting values <m>x = (2,1)</m> reach <m>\vec{w} = (2,3,2)</m>.
       </caption>
-      <interactive xml:id="int-span-plane-hit" iframe="demos/spans.html?v1=1,1,0&amp;v2=0,1,2&amp;target=2,3,2&amp;range=4&amp;camera=2.4,.7,1.6&amp;closed=true" width="100%" aspect="16:9"/>
+      <interactive xml:id="int-span-plane-hit" iframe="demos-manim/axb.html?mat=1,0:1,1:0,2&amp;x=2,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
     </figure>
 
     <figure xml:id="fig-span-plane-miss">
       <caption>
-        The same two vectors, but now the target is <m>\vec{w} = (1,1,1)</m>. Move the
-        sliders as much as you like: the <m>\neq</m> never becomes an <m>=</m>, because
-        <m>\vec{w}</m> sits off the plane. So
-        <m>\operatorname{Span}\{\vec{v}_1, \vec{v}_2\}</m> is a plane, not all of
-        <m>\R^3</m>.
+        The same two vectors. Now click and drag the head of <m>\vec{b}</m> in the right pane <em>off</em> the teal plane: the equation is marked inconsistent, because such a <m>\vec{b}</m> is not a linear combination of <m>\vec{v}_1</m> and <m>\vec{v}_2</m>. So <m>\operatorname{Span}\{\vec{v}_1,\vec{v}_2\}</m> is a plane, not all of <m>\R^3</m>.
       </caption>
-      <interactive xml:id="int-span-plane-miss" iframe="demos/spans.html?v1=1,1,0&amp;v2=0,1,2&amp;target=1,1,1&amp;range=4&amp;camera=2.4,.7,1.6&amp;closed=true" width="100%" aspect="16:9"/>
+      <interactive xml:id="int-span-plane-miss" iframe="demos-manim/axb.html?mat=1,0:1,1:0,2&amp;x=1,0&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
     </figure>
 
     <remark xml:id="rem-span-normal">
@@ -264,13 +256,9 @@
 
     <figure xml:id="fig-span-three-coplanar">
       <caption>
-        The exceptional case <m>h = 5</m> of
-        <xref ref="eg-span-parameter" text="type-global" />. All three vectors lie on the
-        plane <m>x - y - z = 0</m>, so the span is that plane rather than <m>\R^3</m>.
-        There are now three sliders, but the red vector
-        <m>x\vec{v}_1 + y\vec{v}_2 + z\vec{v}_3</m> can never leave the violet plane.
+        The exceptional case <m>h = 5</m> of <xref ref="eg-span-parameter" text="type-global" />, with <m>\vec{v}_1, \vec{v}_2, \vec{v}_3</m> as the columns. Even with three vectors the teal range is only the plane <m>x - y - z = 0</m>. Click and drag the head of <m>\vec{x}</m>: the output never escapes that plane, because <m>\vec{v}_3 = 3\vec{v}_1 - \vec{v}_2</m> contributes no new direction.
       </caption>
-      <interactive xml:id="int-span-three-coplanar" iframe="demos/spans.html?v1=1,2,-1&amp;v2=2,1,1&amp;v3=1,5,-4&amp;target=4,3,1&amp;range=8&amp;camera=1.9,.85,1.3&amp;closed=true" width="100%" aspect="16:9"/>
+      <interactive xml:id="int-span-three-coplanar" iframe="demos-manim/axb.html?mat=1,2,1:2,1,5:-1,1,-4&amp;x=1,1,0&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
     </figure>
   </subsection>
 </section>
