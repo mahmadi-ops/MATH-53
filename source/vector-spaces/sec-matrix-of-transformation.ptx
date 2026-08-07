@@ -527,5 +527,161 @@
         </p>
       </solution>
     </example>
+
+    <example xml:id="eg-trace-transformation">
+      <title>The Trace as a Transformation</title>
+      <statement>
+        <p>
+          The <term>trace</term> of a square matrix is the sum of its diagonal entries.
+          On <m>\mathbb{M}_{22}</m> it defines the map
+          <m>\operatorname{tr} : \mathbb{M}_{22} \to \R</m>,
+          <md>
+            \operatorname{tr} \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}
+            = a + d,
+          </md>
+          where the codomain <m>\R</m> is itself a vector space, of dimension <m>1</m>,
+          with ordered basis <m>\{ 1 \}</m>.
+        </p>
+        <p>
+          <ol>
+            <li><p>Show that <m>\operatorname{tr}</m> is a linear transformation.</p></li>
+            <li>
+              <p>
+                Describe <m>\operatorname{Nul} (\operatorname{tr})</m> and find a basis
+                for it. Is <m>\operatorname{tr}</m> one-to-one?
+              </p>
+            </li>
+            <li><p>What is the range of <m>\operatorname{tr}</m>? Is it onto?</p></li>
+            <li><p>Is <m>\operatorname{tr}</m> an isomorphism?</p></li>
+            <li><p>Verify the rank<ndash />nullity relation for <m>\operatorname{tr}</m>.</p></li>
+            <li>
+              <p>
+                Consider the ordered basis
+                <m>\mathcal{B} = \{ M_{11}, M_{12}, M_{21}, M_{22} \}</m> of
+                <m>\mathbb{M}_{22}</m>, where <m>M_{ij}</m> has a <m>1</m> in position
+                <m>(i,j)</m> and zeros elsewhere, and the ordered basis <m>\{1\}</m> of
+                <m>\R</m>. Find the matrix of the transformation
+                <m>\operatorname{tr}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use that matrix to compute
+                <m>\operatorname{tr} \begin{bmatrix} 4 \amp -3 \\ 7 \amp -9 \end{bmatrix}</m>
+                through coordinates.
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the matrix of <m>\operatorname{tr}</m> if the basis of the
+                codomain is changed to <m>\{ 2 \}</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(1)</term> For matrices
+          <m>M = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m>,
+          <m>N = \begin{bmatrix} a' \amp b' \\ c' \amp d' \end{bmatrix}</m> and a scalar
+          <m>k</m>,
+          <md>
+            <mrow>
+              \operatorname{tr}(M + N) \amp = (a + a') + (d + d')
+              = \operatorname{tr} M + \operatorname{tr} N,
+            </mrow>
+            <mrow>
+              \operatorname{tr}(k M) \amp = ka + kd = k \operatorname{tr} M,
+            </mrow>
+          </md>
+          so <m>\operatorname{tr}</m> respects addition and scalar multiplication and is
+          a linear transformation.
+        </p>
+        <p>
+          <term>(2)</term> A matrix is in the null space exactly when its diagonal
+          entries cancel:
+          <md>
+            \operatorname{Nul} (\operatorname{tr})
+            = \left\{ \begin{bmatrix} a \amp b \\ c \amp -a \end{bmatrix}
+              \; : \; a, b, c \in \R \right\}
+            = \operatorname{Span} \left\{
+              \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix},
+              \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+              \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix} \right\}.
+          </md>
+          The three spanning matrices are linearly independent (they occupy different
+          entries), so they form a basis and
+          <m>\dim \operatorname{Nul} (\operatorname{tr}) = 3</m>. Since the null space
+          contains nonzero vectors <mdash /> for instance
+          <m>\begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix} \mapsto 0</m> <mdash />
+          the transformation is NOT one-to-one.
+        </p>
+        <p>
+          <term>(3)</term> Every real number is a trace: for any <m>r \in \R</m>,
+          <md>
+            \operatorname{tr} \begin{bmatrix} r \amp 0 \\ 0 \amp 0 \end{bmatrix} = r.
+          </md>
+          Hence the range is all of <m>\R</m> and <m>\operatorname{tr}</m> is onto.
+        </p>
+        <p>
+          <term>(4)</term> No. An isomorphism must be one-to-one and onto, and by (2)
+          the trace is not one-to-one. (No transformation
+          <m>\mathbb{M}_{22} \to \R</m> could be an isomorphism: the dimensions
+          <m>4</m> and <m>1</m> do not match.)
+        </p>
+        <p>
+          <term>(5)</term> From (2) and (3),
+          <md>
+            \underbrace{\dim (\text{range of } \operatorname{tr})}_{1}
+            + \underbrace{\dim \operatorname{Nul} (\operatorname{tr})}_{3}
+            = 4 = \dim (\mathbb{M}_{22}),
+          </md>
+          as the rank<ndash />nullity relation predicts.
+        </p>
+        <p>
+          <term>(6)</term> We transform the basis elements of the domain and read each
+          output in the basis <m>\{1\}</m> of <m>\R</m>:
+          <md>
+            \operatorname{tr}(M_{11}) = 1, \quad
+            \operatorname{tr}(M_{12}) = 0, \quad
+            \operatorname{tr}(M_{21}) = 0, \quad
+            \operatorname{tr}(M_{22}) = 1.
+          </md>
+          Each column of the matrix is the coordinate vector of one output, which here is
+          a single number, so the matrix of the transformation is the
+          <m>1 \times 4</m> row
+          <md>
+            A = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 1 \end{bmatrix}.
+          </md>
+          The corresponding matrix transformation <m>\R^4 \to \R</m> tells the same
+          story as (2) and (3) in the language of pivots: <m>A</m> has a pivot in its
+          only row, so it is onto, but it cannot have a pivot in every one of its four
+          columns, so it is not one-to-one.
+        </p>
+        <p>
+          <term>(7)</term> In the basis <m>\mathcal{B}</m>,
+          <md>
+            \left[ \begin{bmatrix} 4 \amp -3 \\ 7 \amp -9 \end{bmatrix} \right]_{\mathcal{B}}
+            = \begin{bmatrix} 4 \\ -3 \\ 7 \\ -9 \end{bmatrix},
+            \qquad
+            A \begin{bmatrix} 4 \\ -3 \\ 7 \\ -9 \end{bmatrix}
+            = 4 - 9 = -5,
+          </md>
+          which agrees with computing the trace directly: <m>4 + (-9) = -5</m>.
+        </p>
+        <p>
+          <term>(8)</term> With respect to the basis <m>\{2\}</m> of <m>\R</m>, a real
+          number <m>r</m> has coordinate <m>r/2</m>, since <m>r = \tfrac{r}{2}(2)</m>.
+          Each entry of the matrix is now the <m>\{2\}</m>-coordinate of the
+          corresponding output:
+          <md>
+            A' = \begin{bmatrix} \tfrac{1}{2} \amp 0 \amp 0 \amp \tfrac{1}{2} \end{bmatrix}.
+          </md>
+          As in the previous example, changing a basis of the codomain rescales the rows
+          of the matrix without changing the transformation itself.
+        </p>
+      </solution>
+    </example>
   </subsection>
 </section>
