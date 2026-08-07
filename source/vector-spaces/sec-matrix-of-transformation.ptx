@@ -683,5 +683,115 @@
         </p>
       </solution>
     </example>
+
+    <example xml:id="eg-p2-change-of-basis">
+      <title>A Change of Basis in <m>\mathbb{P}_2</m></title>
+      <statement>
+        <p>
+          Consider the standard ordered basis
+          <m>\mathcal{B}_1 = \{ 1, x, x^2 \}</m> of <m>\mathbb{P}_2</m> and the set
+          <md>
+            \mathcal{B}_2 = \{ 1, \; 1 + x, \; 1 + x + x^2 \}.
+          </md>
+        </p>
+        <p>
+          <ol>
+            <li><p>Show that <m>\mathcal{B}_2</m> is a basis of <m>\mathbb{P}_2</m>.</p></li>
+            <li>
+              <p>
+                Find the change-of-basis matrix
+                <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m>, which converts
+                <m>\mathcal{B}_1</m>-coordinates into <m>\mathcal{B}_2</m>-coordinates.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the coordinates of <m>q(x) = 3 + 2x + 4x^2</m> relative to the
+                basis <m>\mathcal{B}_2</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(1)</term> Since <m>\dim \mathbb{P}_2 = 3</m>, it is enough to show
+          that the three polynomials are linearly independent. Suppose
+          <md>
+            a(1) + b(1 + x) + c(1 + x + x^2) = 0,
+          </md>
+          that is,
+          <md>
+            (a + b + c) + (b + c)x + c x^2 = 0.
+          </md>
+          Comparing coefficients gives <m>c = 0</m>, then <m>b + c = 0</m> forces
+          <m>b = 0</m>, and then <m>a + b + c = 0</m> forces <m>a = 0</m>. Only the
+          trivial combination produces the zero polynomial, so <m>\mathcal{B}_2</m> is
+          linearly independent and hence a basis of <m>\mathbb{P}_2</m>.
+        </p>
+        <p>
+          <term>(2)</term> The easy direction is the other one: each element of
+          <m>\mathcal{B}_2</m> is already written in terms of <m>\{1, x, x^2\}</m>, so
+          reading off coordinates columnwise,
+          <md>
+            P_{\mathcal{B}_1 \leftarrow \mathcal{B}_2}
+            = \begin{bmatrix}
+              1 \amp 1 \amp 1 \\
+              0 \amp 1 \amp 1 \\
+              0 \amp 0 \amp 1
+            \end{bmatrix}.
+          </md>
+          The matrix we want is its inverse,
+          <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}
+          = \left( P_{\mathcal{B}_1 \leftarrow \mathcal{B}_2} \right)^{-1}</m>, which we
+          can also compute directly by expressing each element of <m>\mathcal{B}_1</m>
+          in the basis <m>\mathcal{B}_2</m>:
+          <md>
+            1 = (1), \qquad
+            x = (1 + x) - (1), \qquad
+            x^2 = (1 + x + x^2) - (1 + x),
+          </md>
+          so that
+          <md>
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}
+            = \begin{bmatrix}
+              1 \amp -1 \amp 0 \\
+              0 \amp 1 \amp -1 \\
+              0 \amp 0 \amp 1
+            \end{bmatrix}.
+          </md>
+          In the language of this section,
+          <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m> is the matrix of the
+          identity transformation
+          <m>\operatorname{id} : \mathbb{P}_2 \to \mathbb{P}_2</m> with respect to the
+          basis <m>\mathcal{B}_1</m> of the domain and the basis <m>\mathcal{B}_2</m>
+          of the codomain: the transformation does nothing, and the matrix only
+          translates between the two coordinate systems.
+        </p>
+        <p>
+          <term>(3)</term> Relative to <m>\mathcal{B}_1</m> the coordinates of
+          <m>q</m> are read off directly, and the matrix converts them:
+          <md>
+            [q(x)]_{\mathcal{B}_1} = \begin{bmatrix} 3 \\ 2 \\ 4 \end{bmatrix},
+            \qquad
+            [q(x)]_{\mathcal{B}_2}
+            = P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} [q(x)]_{\mathcal{B}_1}
+            = \begin{bmatrix}
+              1 \amp -1 \amp 0 \\
+              0 \amp 1 \amp -1 \\
+              0 \amp 0 \amp 1
+            \end{bmatrix}
+            \begin{bmatrix} 3 \\ 2 \\ 4 \end{bmatrix}
+            = \begin{bmatrix} 1 \\ -2 \\ 4 \end{bmatrix}.
+          </md>
+          As a check,
+          <md>
+            1(1) - 2(1 + x) + 4(1 + x + x^2)
+            = (1 - 2 + 4) + (-2 + 4)x + 4x^2
+            = 3 + 2x + 4x^2 = q(x).
+          </md>
+        </p>
+      </solution>
+    </example>
   </subsection>
 </section>
