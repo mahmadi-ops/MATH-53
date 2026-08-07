@@ -217,31 +217,6 @@
           does not. Polar coordinates are a genuinely nonlinear way of labeling the
           plane.
         </p>
-        <p>
-          <term>The linear part of the polar picture.</term> What polar coordinates
-          <em>do</em> contribute to linear algebra is the rotated orthonormal basis
-          pointing along and across the direction <m>\theta</m>:
-          <md>
-            \mathcal{B}_{\theta} = \{ \vec{u}_r, \vec{u}_\theta \}
-            = \left\{
-              \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix},
-              \begin{bmatrix} -\sin\theta \\ \cos\theta \end{bmatrix}
-            \right\}
-            \overset{\theta = \pi/3}{=}
-            \left\{
-              \begin{bmatrix} 1/2 \\ \sqrt{3}/2 \end{bmatrix},
-              \begin{bmatrix} -\sqrt{3}/2 \\ 1/2 \end{bmatrix}
-            \right\}.
-          </md>
-          Relative to this basis the vector is purely radial:
-          <md>
-            \vec{v} = 2\,\vec{u}_r + 0\,\vec{u}_\theta,
-            \qquad
-            [\vec{v}]_{\mathcal{B}_{\pi/3}} = \begin{bmatrix} 2 \\ 0 \end{bmatrix},
-          </md>
-          and this <em>is</em> an honest coordinate vector: its first entry is the polar
-          <m>r</m>, while the angle has been absorbed into the choice of basis.
-        </p>
       </solution>
     </example>
 
