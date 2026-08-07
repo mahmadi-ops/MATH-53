@@ -34,6 +34,18 @@ mjx-container[jax="CHTML"] {
     }
 }
 
+/* Definitions, theorems, and their proofs: wine red instead of the
+   denver theme's purple. Matches the theme's own selector specificity
+   so the dark-mode palette (which isn't purple) is left alone. */
+:root:not(.dark-mode) {
+    --definition-like-border-color: #722f37;
+    --definition-like-body-background: #f9f3f4;
+    --theorem-like-border-color: #722f37;
+    --theorem-like-body-background: #f9f3f4;
+    --proof-like-border-color: #722f37;
+    --proof-like-body-background: #f9f3f4;
+}
+
 /* Interactive figures: PreTeXt bakes a pixel size onto the iframe at
    build time from the theme's default column, so it never scales.
    Make it fluid, keeping the 5:4 aspect the source asks for. */
