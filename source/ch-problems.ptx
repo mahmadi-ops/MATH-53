@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<appendix xml:id="app-lab-problems" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Lab Problems</title>
+<chapter xml:id="ch-problems" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Problems</title>
 
   <introduction>
     <p>
@@ -10,10 +10,12 @@
     </p>
   </introduction>
 
-  <section xml:id="app-sec-linear-systems">
+  <section xml:id="sec-problems-linear-systems">
     <title>Systems of Linear Equations</title>
+    <exercises>
 
-    <example xml:id="lab-geometry-of-solutions">
+
+    <exercise xml:id="lab-geometry-of-solutions">
       <title>The Geometry of a Solution Set</title>
       <statement>
         <p>
@@ -47,9 +49,9 @@
           same line, so every point of that line is a solution.
         </p>
       </solution>
-    </example>
+    </exercise>
 
-    <example xml:id="lab-shape-consistent-unique">
+    <exercise xml:id="lab-shape-consistent-unique">
       <title>Reading Consistency off an Echelon Shape</title>
       <statement>
         <p>
@@ -115,9 +117,9 @@
           <m>0 = \blacksquare \neq 0</m>. The system is <term>inconsistent</term>.
         </p>
       </solution>
-    </example>
+    </exercise>
 
-    <example xml:id="lab-h-and-k">
+    <exercise xml:id="lab-h-and-k">
       <title>Choosing Parameters to Control the Outcome</title>
       <statement>
         <p>
@@ -153,9 +155,9 @@
           many solutions.
         </p>
       </solution>
-    </example>
+    </exercise>
 
-    <example xml:id="lab-general-solution-2x3">
+    <exercise xml:id="lab-general-solution-2x3">
       <title>A General Solution in Parametric Form</title>
       <statement>
         <p>
@@ -193,9 +195,9 @@
           </md>
         </p>
       </solution>
-    </example>
+    </exercise>
 
-    <example xml:id="lab-complete-solution-3x3">
+    <exercise xml:id="lab-complete-solution-3x3">
       <title>The Complete Solution of a System</title>
       <statement>
         <p>
@@ -246,13 +248,16 @@
           </md>
         </p>
       </solution>
-    </example>
+    </exercise>
+    </exercises>
   </section>
 
-  <section xml:id="app-sec-matrix-operations">
+  <section xml:id="sec-problems-matrix-operations">
     <title>Matrix Operations</title>
+    <exercises>
 
-    <example xml:id="lab-which-products-exist">
+
+    <exercise xml:id="lab-which-products-exist">
       <title>Which Combinations Are Defined?</title>
       <statement>
         <p>
@@ -301,9 +306,9 @@
           <m>3 = 2</m>, and for <m>EA</m> we would need <m>1 = 2</m>.
         </p>
       </solution>
-    </example>
+    </exercise>
 
-    <example xml:id="lab-products-both-orders">
+    <exercise xml:id="lab-products-both-orders">
       <title>Products in Both Orders</title>
       <statement>
         <p>
@@ -345,13 +350,16 @@
           <xref ref="eg-ab-not-ba" text="type-global" />.
         </p>
       </solution>
-    </example>
+    </exercise>
+    </exercises>
   </section>
 
-  <section xml:id="app-sec-linear-combinations">
+  <section xml:id="sec-problems-linear-combinations">
     <title>Linear Combinations</title>
+    <exercises>
 
-    <example xml:id="lab-linear-combination">
+
+    <exercise xml:id="lab-linear-combination">
       <title>Writing One Vector in Terms of Others</title>
       <statement>
         <p>
@@ -411,6 +419,7 @@
           combination is far from unique.
         </p>
       </solution>
-    </example>
+    </exercise>
+    </exercises>
   </section>
-</appendix>
+</chapter>

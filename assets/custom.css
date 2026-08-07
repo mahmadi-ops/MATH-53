@@ -16,3 +16,31 @@ mjx-container[jax="CHTML"][display="true"] {
 mjx-container[jax="CHTML"] {
   max-width: 100%;
 }
+
+/* ------------------------------------------------------------------ *
+ * Wider text column (denver's default is a 600px column inside 120px  *
+ * of padding). 680px column -> 920px content box; surrounding         *
+ * containers grow by the same 80px. Gated to viewports with room:     *
+ * below 1200px the theme's own responsive rules apply unchanged.      *
+ * ------------------------------------------------------------------ */
+@media screen and (min-width: 1200px) {
+    :root { --base-content-width: 680px; }
+    .ptx-main > .ptx-content,
+    .ptx-content-footer,
+    .ptx-navbar .ptx-navbar-contents { max-width: 920px; }
+    .ptx-page { max-width: 1560px; }
+    @media screen and (width <= 1560px) {
+        .ptx-main { max-width: 920px; margin-right: calc(100% - 1240px); }
+    }
+}
+
+/* Interactive figures: PreTeXt bakes a pixel size onto the iframe at
+   build time from the theme's default column, so it never scales.
+   Make it fluid, keeping the 5:4 aspect the source asks for. */
+.interactive-iframe-container { width: 100%; }
+.interactive-iframe-container > iframe {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: 5 / 4;
+}
