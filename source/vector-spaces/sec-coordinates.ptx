@@ -244,6 +244,70 @@
         </p>
       </solution>
     </example>
+
+    <example xml:id="eg-matrix-two-bases">
+      <title>The Same Matrix in Two Coordinate Systems</title>
+      <statement>
+        <p>
+          Coordinates work in any vector space, not just in <m>\R^n</m>. In
+          <m>\mathbb{M}_{22}</m>, consider the matrix
+          <m>M = \begin{bmatrix} 3 \amp 1 \\ -2 \amp 4 \end{bmatrix}</m>, the standard
+          ordered basis
+          <md>
+            \mathcal{B}_1 = \{ M_{11}, M_{12}, M_{21}, M_{22} \}
+            = \left\{
+              \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+              \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+              \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix},
+              \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right\},
+          </md>
+          and the ordered basis
+          <md>
+            \mathcal{B}_2 = \left\{
+              \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+              \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+              \begin{bmatrix} 0 \amp 0 \\ 1 \amp 1 \end{bmatrix},
+              \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right\}.
+          </md>
+          Find the two representations <m>[M]_{\mathcal{B}_1}</m> and
+          <m>[M]_{\mathcal{B}_2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>Relative to <m>\mathcal{B}_1</m>.</term> The entries of <m>M</m> are
+          its coordinates:
+          <md>
+            M = 3M_{11} + 1M_{12} - 2M_{21} + 4M_{22},
+            \qquad
+            [M]_{\mathcal{B}_1} = \begin{bmatrix} 3 \\ 1 \\ -2 \\ 4 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>Relative to <m>\mathcal{B}_2</m>.</term> First, <m>\mathcal{B}_2</m> is
+          indeed a basis: setting a combination of its four matrices equal to the zero
+          matrix and comparing the <m>(1,2)</m>, <m>(1,1)</m>, <m>(2,1)</m>, and
+          <m>(2,2)</m> entries in that order forces every coefficient to vanish, so the
+          set is linearly independent, and four independent vectors in the
+          four-dimensional space <m>\mathbb{M}_{22}</m> form a basis. Now write
+          <md>
+            M = a \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}
+              + b \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+              + c \begin{bmatrix} 0 \amp 0 \\ 1 \amp 1 \end{bmatrix}
+              + d \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+          </md>
+          Comparing entries: the <m>(1,2)</m> entry gives <m>b = 1</m>, then the
+          <m>(1,1)</m> entry gives <m>a + b = 3</m>, so <m>a = 2</m>; the <m>(2,1)</m>
+          entry gives <m>c = -2</m>, then the <m>(2,2)</m> entry gives
+          <m>c + d = 4</m>, so <m>d = 6</m>. Hence
+          <md>
+            [M]_{\mathcal{B}_2} = \begin{bmatrix} 2 \\ 1 \\ -2 \\ 6 \end{bmatrix}.
+          </md>
+          The same matrix, two coordinate vectors <mdash /> one for each choice of
+          basis.
+        </p>
+      </solution>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-change-of-basis">
@@ -306,6 +370,58 @@
               \begin{bmatrix} 1 \\ 2 \end{bmatrix}
             = \begin{bmatrix} \frac{3}{2} \\ 2 \end{bmatrix}
             = [\vec{x}]_{\mathcal{B}_2}. \checkmark
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-change-of-basis-m22">
+      <title>A Change of Basis Matrix in <m>\mathbb{M}_{22}</m></title>
+      <statement>
+        <p>
+          Continuing <xref ref="eg-matrix-two-bases" text="type-global" />, find the
+          change of basis matrix <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m> for
+          the two bases of <m>\mathbb{M}_{22}</m>, and verify it on <m>M</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Write <m>\mathcal{B}_2 = \{ N_1, N_2, N_3, N_4 \}</m> in the order given.
+          The columns of <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m> are the
+          <m>\mathcal{B}_2</m>-coordinates of the elements of <m>\mathcal{B}_1</m>.
+          Each is quick to find:
+          <md>
+            M_{11} = N_1, \qquad
+            M_{12} = N_2 - N_1, \qquad
+            M_{21} = N_3 - N_4, \qquad
+            M_{22} = N_4,
+          </md>
+          so, reading the coefficients columnwise,
+          <md>
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}
+            = \begin{bmatrix}
+                1 \amp -1 \amp 0 \amp 0 \\
+                0 \amp 1 \amp 0 \amp 0 \\
+                0 \amp 0 \amp 1 \amp 0 \\
+                0 \amp 0 \amp -1 \amp 1
+              \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Verifying on <m>M</m> with the coordinate vectors found in
+          <xref ref="eg-matrix-two-bases" text="type-global" />:
+          <md>
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} [M]_{\mathcal{B}_1}
+            = \begin{bmatrix}
+                1 \amp -1 \amp 0 \amp 0 \\
+                0 \amp 1 \amp 0 \amp 0 \\
+                0 \amp 0 \amp 1 \amp 0 \\
+                0 \amp 0 \amp -1 \amp 1
+              \end{bmatrix}
+              \begin{bmatrix} 3 \\ 1 \\ -2 \\ 4 \end{bmatrix}
+            = \begin{bmatrix} 3 - 1 \\ 1 \\ -2 \\ 2 + 4 \end{bmatrix}
+            = \begin{bmatrix} 2 \\ 1 \\ -2 \\ 6 \end{bmatrix}
+            = [M]_{\mathcal{B}_2}. \checkmark
           </md>
         </p>
       </solution>
