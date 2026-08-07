@@ -42,7 +42,8 @@
       relaxed and nothing moves.
     </p>
     <p>
-      Now displace the carts and account for the forces. A spring pushes or pulls in
+      Now displace the carts and account for the forces, as in
+      <xref ref="fig-spring-forces" text="type-global"/>. A spring pushes or pulls in
       proportion to how much it is stretched, with proportionality constant
       <m>k</m>. The first cart feels the outer spring on its left, stretched by
       <m>u_1</m>, pulling it back with force <m>-ku_1</m>; it also feels the middle
@@ -66,6 +67,180 @@
       so cosines and sines of frequency <m>\omega</m> reproduce themselves, scaled by
       <m>-\omega^2</m>, after two derivatives.
     </p>
+    <figure xml:id="fig-spring-forces">
+      <caption>
+        The two carts (a) at rest and (b) displaced by <m>u_1</m> and <m>u_2</m>,
+        drawn with <m>0 \lt u_1 \lt u_2</m>. Blue arrows are forces from the outer
+        springs and orange arrows are forces from the middle spring: the stretched
+        left spring pulls the first cart back with magnitude <m>ku_1</m>, while the
+        stretched middle spring pulls it forward with magnitude <m>k(u_2 - u_1)</m>
+        and pulls the second cart back equally hard; the compressed right spring
+        pushes the second cart back with magnitude <m>ku_2</m>.
+      </caption>
+      <image width="95%">
+        <prefigure label="pf-spring-forces" xmlns="https://prefigure.org">
+          <diagram dimensions="(620,330)" margins="10">
+            <coordinates bbox="(0,-0.35,10,5.3)">
+              <line endpoints="((0.6,3.2),(9.4,3.2))" stroke="black" thickness="2"/>
+              <line endpoints="((0.6,3.2),(0.6,4.4))" stroke="black" thickness="4"/>
+              <line endpoints="((0.6,3.32),(0.38,3.46))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,3.56),(0.38,3.7))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,3.8),(0.38,3.94))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,4.04),(0.38,4.18))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,4.28),(0.38,4.42))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,3.2),(9.4,4.4))" stroke="black" thickness="4"/>
+              <line endpoints="((9.4,3.32),(9.62,3.46))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,3.56),(9.62,3.7))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,3.8),(9.62,3.94))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,4.04),(9.62,4.18))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,4.28),(9.62,4.42))" stroke="black" thickness="1"/>
+              <polygon points="((2.9,3.25),(3.9,3.25),(3.9,4.0),(2.9,4.0))" fill="#ffe45c" stroke="black" thickness="2"/>
+              <polygon points="((6.1,3.25),(7.1,3.25),(7.1,4.0),(6.1,4.0))" fill="#fc6255" stroke="black" thickness="2"/>
+              <label p="(3.4,3.62)" alignment="c"><m>1</m></label>
+              <label p="(6.6,3.62)" alignment="c"><m>2</m></label>
+              <line endpoints="((0.6,3.62),(0.78,3.62))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((0.78,3.62),(0.909,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((0.909,3.76),(1.039,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.039,3.48),(1.168,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.168,3.76),(1.297,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.297,3.48),(1.427,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.427,3.76),(1.556,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.556,3.48),(1.685,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.685,3.76),(1.815,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.815,3.48),(1.944,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.944,3.76),(2.073,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.073,3.48),(2.203,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.203,3.76),(2.332,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.332,3.48),(2.461,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.461,3.76),(2.591,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.591,3.48),(2.72,3.62))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.72,3.62),(2.9,3.62))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((3.9,3.62),(4.08,3.62))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.08,3.62),(4.203,3.76))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.203,3.76),(4.325,3.48))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.325,3.48),(4.448,3.76))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.448,3.76),(4.571,3.48))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.571,3.48),(4.693,3.76))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.693,3.76),(4.816,3.48))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.816,3.48),(4.939,3.76))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.939,3.76),(5.061,3.48))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.061,3.48),(5.184,3.76))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.184,3.76),(5.307,3.48))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.307,3.48),(5.429,3.76))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.429,3.76),(5.552,3.48))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.552,3.48),(5.675,3.76))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.675,3.76),(5.797,3.48))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.797,3.48),(5.92,3.62))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.92,3.62),(6.1,3.62))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((7.1,3.62),(7.28,3.62))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((7.28,3.62),(7.409,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((7.409,3.76),(7.539,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((7.539,3.48),(7.668,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((7.668,3.76),(7.797,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((7.797,3.48),(7.927,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((7.927,3.76),(8.056,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.056,3.48),(8.185,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.185,3.76),(8.315,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.315,3.48),(8.444,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.444,3.76),(8.573,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.573,3.48),(8.703,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.703,3.76),(8.832,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.832,3.48),(8.961,3.76))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.961,3.76),(9.091,3.48))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((9.091,3.48),(9.22,3.62))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((9.22,3.62),(9.4,3.62))" stroke="#0072B2" thickness="1"/>
+              <label p="(1.75,3.82)" alignment="n" offset="(0,4)"><m>k</m></label>
+              <label p="(5.0,3.82)" alignment="n" offset="(0,4)"><m>k</m></label>
+              <label p="(8.25,3.82)" alignment="n" offset="(0,4)"><m>k</m></label>
+              <label p="(0.6,4.7)" alignment="e"><m>\text{(a) At rest: all three springs are relaxed.}</m></label>
+              <line endpoints="((0.6,0.35),(9.4,0.35))" stroke="black" thickness="2"/>
+              <line endpoints="((0.6,0.35),(0.6,1.5499999999999998))" stroke="black" thickness="4"/>
+              <line endpoints="((0.6,0.47),(0.38,0.61))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,0.71),(0.38,0.85))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,0.95),(0.38,1.09))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,1.19),(0.38,1.33))" stroke="black" thickness="1"/>
+              <line endpoints="((0.6,1.43),(0.38,1.57))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,0.35),(9.4,1.5499999999999998))" stroke="black" thickness="4"/>
+              <line endpoints="((9.4,0.47),(9.62,0.61))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,0.71),(9.62,0.85))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,0.95),(9.62,1.09))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,1.19),(9.62,1.33))" stroke="black" thickness="1"/>
+              <line endpoints="((9.4,1.43),(9.62,1.57))" stroke="black" thickness="1"/>
+              <line endpoints="((3.4,0.07),(3.4,1.2))" stroke="gray" thickness="1" dash="5 4"/>
+              <line endpoints="((6.6,0.07),(6.6,1.2))" stroke="gray" thickness="1" dash="5 4"/>
+              <polygon points="((3.3,0.4),(4.3,0.4),(4.3,1.15),(3.3,1.15))" fill="#ffe45c" stroke="black" thickness="2"/>
+              <polygon points="((7.0,0.4),(8.0,0.4),(8.0,1.15),(7.0,1.15))" fill="#fc6255" stroke="black" thickness="2"/>
+              <label p="(3.8,0.77)" alignment="c"><m>1</m></label>
+              <label p="(7.5,0.77)" alignment="c"><m>2</m></label>
+              <line endpoints="((0.6,0.77),(0.78,0.77))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((0.78,0.77),(0.936,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((0.936,0.91),(1.092,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.092,0.63),(1.248,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.248,0.91),(1.404,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.404,0.63),(1.56,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.56,0.91),(1.716,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.716,0.63),(1.872,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((1.872,0.91),(2.028,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.028,0.63),(2.184,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.184,0.91),(2.34,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.34,0.63),(2.496,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.496,0.91),(2.652,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.652,0.63),(2.808,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.808,0.91),(2.964,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((2.964,0.63),(3.12,0.77))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((3.12,0.77),(3.3,0.77))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((4.3,0.77),(4.48,0.77))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.48,0.77),(4.636,0.91))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.636,0.91),(4.792,0.63))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.792,0.63),(4.948,0.91))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((4.948,0.91),(5.104,0.63))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.104,0.63),(5.26,0.91))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.26,0.91),(5.416,0.63))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.416,0.63),(5.572,0.91))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.572,0.91),(5.728,0.63))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.728,0.63),(5.884,0.91))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((5.884,0.91),(6.04,0.63))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((6.04,0.63),(6.196,0.91))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((6.196,0.91),(6.352,0.63))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((6.352,0.63),(6.508,0.91))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((6.508,0.91),(6.664,0.63))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((6.664,0.63),(6.82,0.77))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((6.82,0.77),(7.0,0.77))" stroke="#D55E00" thickness="1"/>
+              <line endpoints="((8.0,0.77),(8.18,0.77))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.18,0.77),(8.249,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.249,0.91),(8.319,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.319,0.63),(8.388,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.388,0.91),(8.457,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.457,0.63),(8.527,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.527,0.91),(8.596,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.596,0.63),(8.665,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.665,0.91),(8.735,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.735,0.63),(8.804,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.804,0.91),(8.873,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.873,0.63),(8.943,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((8.943,0.91),(9.012,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((9.012,0.63),(9.081,0.91))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((9.081,0.91),(9.151,0.63))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((9.151,0.63),(9.22,0.77))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((9.22,0.77),(9.4,0.77))" stroke="#0072B2" thickness="1"/>
+              <line endpoints="((3.4,0.13),(3.8,0.13))" stroke="black" thickness="2" arrows="1"/>
+              <label p="(3.6,0.09)" alignment="s" offset="(0,-4)"><m>u_1</m></label>
+              <line endpoints="((6.6,0.13),(7.5,0.13))" stroke="black" thickness="2" arrows="1"/>
+              <label p="(7.05,0.09)" alignment="s" offset="(0,-4)"><m>u_2</m></label>
+              <line endpoints="((3.8,1.4),(3.34,1.4))" stroke="#0072B2" thickness="2" arrows="1"/>
+              <label p="(3.34,1.4)" alignment="w" offset="(-5,0)"><m>ku_1</m></label>
+              <line endpoints="((3.8,1.4),(4.375,1.4))" stroke="#D55E00" thickness="2" arrows="1"/>
+              <label p="(4.088,1.44)" alignment="n" offset="(0,3)"><m>k(u_2-u_1)</m></label>
+              <line endpoints="((7.5,1.4),(6.465,1.4))" stroke="#0072B2" thickness="2" arrows="1"/>
+              <label p="(6.465,1.4)" alignment="w" offset="(-5,0)"><m>ku_2</m></label>
+              <line endpoints="((7.5,1.75),(6.925,1.75))" stroke="#D55E00" thickness="2" arrows="1"/>
+              <label p="(6.925,1.75)" alignment="w" offset="(-5,0)"><m>k(u_2-u_1)</m></label>
+              <label p="(0.6,2.2)" alignment="e"><m>\text{(b) Displaced by } u_1 \text{ and } u_2\text{, measured from the rest positions}</m></label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
     <p>
       The two equations are <em>coupled</em>: <m>u_2</m> appears in the equation for
       <m>u_1</m> and vice versa, because the middle spring ties the carts together.

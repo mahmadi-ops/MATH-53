@@ -1,0 +1,687 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-spring-forces-figure" width="640" height="350" viewBox="0 0 640 350">
+  <defs>
+    <clipPath id="pf-spring-forces-__clipPath-0">
+      <rect x="10.0" y="10.0" width="620.0" height="330.0"/>
+    </clipPath>
+    <clipPath id="pf-spring-forces-__clipPath-1">
+      <rect x="10.0" y="10.0" width="620.0" height="330.0"/>
+    </clipPath>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-h0072B2" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#0072B2" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-h0072B2-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-hD55E00" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#D55E00" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-hD55E00-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+  </defs>
+  <line id="pf-spring-forces-__line-0" x1="47.2" y1="132.7" x2="592.8" y2="132.7" stroke="black" stroke-width="2" fill="none"/>
+  <line id="pf-spring-forces-__line-1" x1="47.2" y1="132.7" x2="47.2" y2="62.6" stroke="black" stroke-width="4" fill="none"/>
+  <line id="pf-spring-forces-__line-2" x1="47.2" y1="125.6" x2="33.6" y2="117.5" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-3" x1="47.2" y1="111.6" x2="33.6" y2="103.5" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-4" x1="47.2" y1="97.6" x2="33.6" y2="89.4" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-5" x1="47.2" y1="83.6" x2="33.6" y2="75.4" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-6" x1="47.2" y1="69.6" x2="33.6" y2="61.4" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-7" x1="592.8" y1="132.7" x2="592.8" y2="62.6" stroke="black" stroke-width="4" fill="none"/>
+  <line id="pf-spring-forces-__line-8" x1="592.8" y1="125.6" x2="606.4" y2="117.5" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-9" x1="592.8" y1="111.6" x2="606.4" y2="103.5" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-10" x1="592.8" y1="97.6" x2="606.4" y2="89.4" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-11" x1="592.8" y1="83.6" x2="606.4" y2="75.4" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-12" x1="592.8" y1="69.6" x2="606.4" y2="61.4" stroke="black" stroke-width="1" fill="none"/>
+  <path id="pf-spring-forces-__path-0" d="M 189.8 129.7 L 251.8 129.7 L 251.8 85.9 L 189.8 85.9" stroke="black" stroke-width="2" fill="#ffe45c" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <path id="pf-spring-forces-__path-1" d="M 388.2 129.7 L 450.2 129.7 L 450.2 85.9 L 388.2 85.9" stroke="black" stroke-width="2" fill="#fc6255" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <g id="pf-spring-forces-__label-0" transform="translate(220.8,108.1) translate(-4.5,-6.0)">
+    <g id="pf-spring-forces-__g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-2-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="1">
+              <use data-c="31" xlink:href="#pf-spring-forces-MJX-2-TEX-N-31"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-spring-forces-__label-1" transform="translate(419.2,108.1) translate(-4.5,-6.0)">
+    <g id="pf-spring-forces-__g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-3-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="2">
+              <use data-c="32" xlink:href="#pf-spring-forces-MJX-3-TEX-N-32"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-13" x1="47.2" y1="108.1" x2="58.4" y2="108.1" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-14" x1="58.4" y1="108.1" x2="66.4" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-15" x1="66.4" y1="99.9" x2="74.4" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-16" x1="74.4" y1="116.3" x2="82.4" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-17" x1="82.4" y1="99.9" x2="90.4" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-18" x1="90.4" y1="116.3" x2="98.5" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-19" x1="98.5" y1="99.9" x2="106.5" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-20" x1="106.5" y1="116.3" x2="114.5" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-21" x1="114.5" y1="99.9" x2="122.5" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-22" x1="122.5" y1="116.3" x2="130.5" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-23" x1="130.5" y1="99.9" x2="138.5" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-24" x1="138.5" y1="116.3" x2="146.6" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-25" x1="146.6" y1="99.9" x2="154.6" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-26" x1="154.6" y1="116.3" x2="162.6" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-27" x1="162.6" y1="99.9" x2="170.6" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-28" x1="170.6" y1="116.3" x2="178.6" y2="108.1" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-29" x1="178.6" y1="108.1" x2="189.8" y2="108.1" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-30" x1="251.8" y1="108.1" x2="263.0" y2="108.1" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-31" x1="263.0" y1="108.1" x2="270.6" y2="99.9" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-32" x1="270.6" y1="99.9" x2="278.2" y2="116.3" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-33" x1="278.2" y1="116.3" x2="285.8" y2="99.9" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-34" x1="285.8" y1="99.9" x2="293.4" y2="116.3" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-35" x1="293.4" y1="116.3" x2="301.0" y2="99.9" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-36" x1="301.0" y1="99.9" x2="308.6" y2="116.3" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-37" x1="308.6" y1="116.3" x2="316.2" y2="99.9" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-38" x1="316.2" y1="99.9" x2="323.8" y2="116.3" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-39" x1="323.8" y1="116.3" x2="331.4" y2="99.9" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-40" x1="331.4" y1="99.9" x2="339.0" y2="116.3" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-41" x1="339.0" y1="116.3" x2="346.6" y2="99.9" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-42" x1="346.6" y1="99.9" x2="354.2" y2="116.3" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-43" x1="354.2" y1="116.3" x2="361.8" y2="99.9" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-44" x1="361.8" y1="99.9" x2="369.4" y2="116.3" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-45" x1="369.4" y1="116.3" x2="377.0" y2="108.1" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-46" x1="377.0" y1="108.1" x2="388.2" y2="108.1" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-47" x1="450.2" y1="108.1" x2="461.4" y2="108.1" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-48" x1="461.4" y1="108.1" x2="469.4" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-49" x1="469.4" y1="99.9" x2="477.4" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-50" x1="477.4" y1="116.3" x2="485.4" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-51" x1="485.4" y1="99.9" x2="493.4" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-52" x1="493.4" y1="116.3" x2="501.5" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-53" x1="501.5" y1="99.9" x2="509.5" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-54" x1="509.5" y1="116.3" x2="517.5" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-55" x1="517.5" y1="99.9" x2="525.5" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-56" x1="525.5" y1="116.3" x2="533.5" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-57" x1="533.5" y1="99.9" x2="541.5" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-58" x1="541.5" y1="116.3" x2="549.6" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-59" x1="549.6" y1="99.9" x2="557.6" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-60" x1="557.6" y1="116.3" x2="565.6" y2="99.9" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-61" x1="565.6" y1="99.9" x2="573.6" y2="116.3" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-62" x1="573.6" y1="116.3" x2="581.6" y2="108.1" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-63" x1="581.6" y1="108.1" x2="592.8" y2="108.1" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <g id="pf-spring-forces-__label-2" transform="translate(118.5,88.4) translate(-4.7,-12.8)">
+    <g id="pf-spring-forces-__g-2">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="9.432px" height="12.760px" role="img" focusable="false" viewBox="0 -694 521 705" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-4-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="k">
+              <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-4-TEX-I-1D458"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-spring-forces-__label-3" transform="translate(320.0,88.4) translate(-4.7,-12.8)">
+    <g id="pf-spring-forces-__g-3">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="9.432px" height="12.760px" role="img" focusable="false" viewBox="0 -694 521 705" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-5-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="k">
+              <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-5-TEX-I-1D458"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-spring-forces-__label-4" transform="translate(521.5,88.4) translate(-4.7,-12.8)">
+    <g id="pf-spring-forces-__g-4">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="9.432px" height="12.760px" role="img" focusable="false" viewBox="0 -694 521 705" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-6-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="k">
+              <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-6-TEX-I-1D458"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-spring-forces-__label-5" transform="translate(51.2,45.0) translate(0.0,-9.0)">
+    <g id="pf-spring-forces-__g-5">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="310.784px" height="18.096px" role="img" focusable="false" viewBox="0 -750 17171 1000" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-7-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-20" d=""/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-78" d="M201 0Q189 3 102 3Q26 3 17 0H11V46H25Q48 47 67 52T96 61T121 78T139 96T160 122T180 150L226 210L168 288Q159 301 149 315T133 336T122 351T113 363T107 370T100 376T94 379T88 381T80 383Q74 383 44 385H16V431H23Q59 429 126 429Q219 429 229 431H237V385Q201 381 201 369Q201 367 211 353T239 315T268 274L272 270L297 304Q329 345 329 358Q329 364 327 369T322 376T317 380T310 384L307 385H302V431H309Q324 428 408 428Q487 428 493 431H499V385H492Q443 385 411 368Q394 360 377 341T312 257L296 236L358 151Q424 61 429 57T446 50Q464 46 499 46H516V0H510H502Q494 1 482 1T457 2T432 2T414 3Q403 3 377 3T327 1L304 0H295V46H298Q309 46 320 51T331 63Q331 65 291 120L250 175Q249 174 219 133T185 88Q181 83 181 74Q181 63 188 55T206 46Q208 46 208 23V0H201Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"/>
+          <path id="pf-spring-forces-MJX-7-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-speech="left parenthesis a right parenthesis At rest colon all three springs are relaxed period">
+              <use data-c="28" xlink:href="#pf-spring-forces-MJX-7-TEX-N-28"/>
+              <use data-c="61" xlink:href="#pf-spring-forces-MJX-7-TEX-N-61" transform="translate(389,0)"/>
+              <use data-c="29" xlink:href="#pf-spring-forces-MJX-7-TEX-N-29" transform="translate(889,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-7-TEX-N-20" transform="translate(1278,0)"/>
+              <use data-c="41" xlink:href="#pf-spring-forces-MJX-7-TEX-N-41" transform="translate(1528,0)"/>
+              <use data-c="74" xlink:href="#pf-spring-forces-MJX-7-TEX-N-74" transform="translate(2278,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-7-TEX-N-20" transform="translate(2667,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-7-TEX-N-72" transform="translate(2917,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-7-TEX-N-65" transform="translate(3309,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-7-TEX-N-73" transform="translate(3753,0)"/>
+              <use data-c="74" xlink:href="#pf-spring-forces-MJX-7-TEX-N-74" transform="translate(4147,0)"/>
+              <use data-c="3A" xlink:href="#pf-spring-forces-MJX-7-TEX-N-3A" transform="translate(4536,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-7-TEX-N-20" transform="translate(4814,0)"/>
+              <use data-c="61" xlink:href="#pf-spring-forces-MJX-7-TEX-N-61" transform="translate(5064,0)"/>
+              <use data-c="6C" xlink:href="#pf-spring-forces-MJX-7-TEX-N-6C" transform="translate(5564,0)"/>
+              <use data-c="6C" xlink:href="#pf-spring-forces-MJX-7-TEX-N-6C" transform="translate(5842,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-7-TEX-N-20" transform="translate(6120,0)"/>
+              <use data-c="74" xlink:href="#pf-spring-forces-MJX-7-TEX-N-74" transform="translate(6370,0)"/>
+              <use data-c="68" xlink:href="#pf-spring-forces-MJX-7-TEX-N-68" transform="translate(6759,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-7-TEX-N-72" transform="translate(7315,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-7-TEX-N-65" transform="translate(7707,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-7-TEX-N-65" transform="translate(8151,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-7-TEX-N-20" transform="translate(8595,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-7-TEX-N-73" transform="translate(8845,0)"/>
+              <use data-c="70" xlink:href="#pf-spring-forces-MJX-7-TEX-N-70" transform="translate(9239,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-7-TEX-N-72" transform="translate(9795,0)"/>
+              <use data-c="69" xlink:href="#pf-spring-forces-MJX-7-TEX-N-69" transform="translate(10187,0)"/>
+              <use data-c="6E" xlink:href="#pf-spring-forces-MJX-7-TEX-N-6E" transform="translate(10465,0)"/>
+              <use data-c="67" xlink:href="#pf-spring-forces-MJX-7-TEX-N-67" transform="translate(11021,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-7-TEX-N-73" transform="translate(11521,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-7-TEX-N-20" transform="translate(11915,0)"/>
+              <use data-c="61" xlink:href="#pf-spring-forces-MJX-7-TEX-N-61" transform="translate(12165,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-7-TEX-N-72" transform="translate(12665,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-7-TEX-N-65" transform="translate(13057,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-7-TEX-N-20" transform="translate(13501,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-7-TEX-N-72" transform="translate(13751,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-7-TEX-N-65" transform="translate(14143,0)"/>
+              <use data-c="6C" xlink:href="#pf-spring-forces-MJX-7-TEX-N-6C" transform="translate(14587,0)"/>
+              <use data-c="61" xlink:href="#pf-spring-forces-MJX-7-TEX-N-61" transform="translate(14865,0)"/>
+              <use data-c="78" xlink:href="#pf-spring-forces-MJX-7-TEX-N-78" transform="translate(15365,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-7-TEX-N-65" transform="translate(15893,0)"/>
+              <use data-c="64" xlink:href="#pf-spring-forces-MJX-7-TEX-N-64" transform="translate(16337,0)"/>
+              <use data-c="2E" xlink:href="#pf-spring-forces-MJX-7-TEX-N-2E" transform="translate(16893,0)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-64" x1="47.2" y1="299.1" x2="592.8" y2="299.1" stroke="black" stroke-width="2" fill="none"/>
+  <line id="pf-spring-forces-__line-65" x1="47.2" y1="299.1" x2="47.2" y2="229.0" stroke="black" stroke-width="4" fill="none"/>
+  <line id="pf-spring-forces-__line-66" x1="47.2" y1="292.1" x2="33.6" y2="283.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-67" x1="47.2" y1="278.1" x2="33.6" y2="269.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-68" x1="47.2" y1="264.1" x2="33.6" y2="255.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-69" x1="47.2" y1="250.1" x2="33.6" y2="241.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-70" x1="47.2" y1="236.0" x2="33.6" y2="227.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-71" x1="592.8" y1="299.1" x2="592.8" y2="229.0" stroke="black" stroke-width="4" fill="none"/>
+  <line id="pf-spring-forces-__line-72" x1="592.8" y1="292.1" x2="606.4" y2="283.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-73" x1="592.8" y1="278.1" x2="606.4" y2="269.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-74" x1="592.8" y1="264.1" x2="606.4" y2="255.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-75" x1="592.8" y1="250.1" x2="606.4" y2="241.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-76" x1="592.8" y1="236.0" x2="606.4" y2="227.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-77" x1="220.8" y1="315.5" x2="220.8" y2="249.5" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+  <line id="pf-spring-forces-__line-78" x1="419.2" y1="315.5" x2="419.2" y2="249.5" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+  <path id="pf-spring-forces-__path-2" d="M 214.6 296.2 L 276.6 296.2 L 276.6 252.4 L 214.6 252.4" stroke="black" stroke-width="2" fill="#ffe45c" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <path id="pf-spring-forces-__path-3" d="M 444.0 296.2 L 506.0 296.2 L 506.0 252.4 L 444.0 252.4" stroke="black" stroke-width="2" fill="#fc6255" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <g id="pf-spring-forces-__label-6" transform="translate(245.6,274.6) translate(-4.5,-6.0)">
+    <g id="pf-spring-forces-__g-6">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-8-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="1">
+              <use data-c="31" xlink:href="#pf-spring-forces-MJX-8-TEX-N-31"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-spring-forces-__label-7" transform="translate(475.0,274.6) translate(-4.5,-6.0)">
+    <g id="pf-spring-forces-__g-7">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-9-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="2">
+              <use data-c="32" xlink:href="#pf-spring-forces-MJX-9-TEX-N-32"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-79" x1="47.2" y1="274.6" x2="58.4" y2="274.6" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-80" x1="58.4" y1="274.6" x2="68.0" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-81" x1="68.0" y1="266.4" x2="77.7" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-82" x1="77.7" y1="282.8" x2="87.4" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-83" x1="87.4" y1="266.4" x2="97.0" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-84" x1="97.0" y1="282.8" x2="106.7" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-85" x1="106.7" y1="266.4" x2="116.4" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-86" x1="116.4" y1="282.8" x2="126.1" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-87" x1="126.1" y1="266.4" x2="135.7" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-88" x1="135.7" y1="282.8" x2="145.4" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-89" x1="145.4" y1="266.4" x2="155.1" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-90" x1="155.1" y1="282.8" x2="164.8" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-91" x1="164.8" y1="266.4" x2="174.4" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-92" x1="174.4" y1="282.8" x2="184.1" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-93" x1="184.1" y1="266.4" x2="193.8" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-94" x1="193.8" y1="282.8" x2="203.4" y2="274.6" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-95" x1="203.4" y1="274.6" x2="214.6" y2="274.6" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-96" x1="276.6" y1="274.6" x2="287.8" y2="274.6" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-97" x1="287.8" y1="274.6" x2="297.4" y2="266.4" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-98" x1="297.4" y1="266.4" x2="307.1" y2="282.8" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-99" x1="307.1" y1="282.8" x2="316.8" y2="266.4" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-100" x1="316.8" y1="266.4" x2="326.4" y2="282.8" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-101" x1="326.4" y1="282.8" x2="336.1" y2="266.4" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-102" x1="336.1" y1="266.4" x2="345.8" y2="282.8" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-103" x1="345.8" y1="282.8" x2="355.5" y2="266.4" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-104" x1="355.5" y1="266.4" x2="365.1" y2="282.8" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-105" x1="365.1" y1="282.8" x2="374.8" y2="266.4" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-106" x1="374.8" y1="266.4" x2="384.5" y2="282.8" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-107" x1="384.5" y1="282.8" x2="394.2" y2="266.4" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-108" x1="394.2" y1="266.4" x2="403.8" y2="282.8" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-109" x1="403.8" y1="282.8" x2="413.5" y2="266.4" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-110" x1="413.5" y1="266.4" x2="423.2" y2="282.8" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-111" x1="423.2" y1="282.8" x2="432.8" y2="274.6" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-112" x1="432.8" y1="274.6" x2="444.0" y2="274.6" stroke="#D55E00" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-113" x1="506.0" y1="274.6" x2="517.2" y2="274.6" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-114" x1="517.2" y1="274.6" x2="521.4" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-115" x1="521.4" y1="266.4" x2="525.8" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-116" x1="525.8" y1="282.8" x2="530.1" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-117" x1="530.1" y1="266.4" x2="534.3" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-118" x1="534.3" y1="282.8" x2="538.7" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-119" x1="538.7" y1="266.4" x2="543.0" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-120" x1="543.0" y1="282.8" x2="547.2" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-121" x1="547.2" y1="266.4" x2="551.6" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-122" x1="551.6" y1="282.8" x2="555.8" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-123" x1="555.8" y1="266.4" x2="560.1" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-124" x1="560.1" y1="282.8" x2="564.5" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-125" x1="564.5" y1="266.4" x2="568.7" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-126" x1="568.7" y1="282.8" x2="573.0" y2="266.4" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-127" x1="573.0" y1="266.4" x2="577.4" y2="282.8" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-128" x1="577.4" y1="282.8" x2="581.6" y2="274.6" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-129" x1="581.6" y1="274.6" x2="592.8" y2="274.6" stroke="#0072B2" stroke-width="1" fill="none"/>
+  <line id="pf-spring-forces-__line-130" x1="220.8" y1="312.0" x2="243.2" y2="312.0" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-black)"/>
+  <g id="pf-spring-forces-__label-8" transform="translate(233.2,322.3) translate(-9.1,-0.0)">
+    <g id="pf-spring-forces-__g-8">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="18.256px" height="10.712px" role="img" focusable="false" viewBox="0 -442 1008.6 592" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-10-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-spring-forces-MJX-10-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-speech="u 1">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
+                <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-10-TEX-I-1D462"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                <use data-c="31" xlink:href="#pf-spring-forces-MJX-10-TEX-N-31"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-131" x1="419.2" y1="312.0" x2="472.6" y2="312.0" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-black)"/>
+  <g id="pf-spring-forces-__label-9" transform="translate(447.1,322.3) translate(-9.1,-0.0)">
+    <g id="pf-spring-forces-__g-9">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="18.256px" height="10.712px" role="img" focusable="false" viewBox="0 -442 1008.6 592" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-11-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-spring-forces-MJX-11-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-speech="u 2">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-speech="u" data-semantic-prefix="Base">
+                <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-11-TEX-I-1D462"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                <use data-c="32" xlink:href="#pf-spring-forces-MJX-11-TEX-N-32"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-132" x1="245.6" y1="237.8" x2="219.5" y2="237.8" stroke="#0072B2" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-h0072B2)"/>
+  <g id="pf-spring-forces-__label-10" transform="translate(208.1,237.8) translate(-27.7,-7.6)">
+    <g id="pf-spring-forces-__g-10">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="27.688px" height="15.280px" role="img" focusable="false" viewBox="0 -694 1529.6 844" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-12-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/>
+          <path id="pf-spring-forces-MJX-12-TEX-N-2062" d=""/>
+          <path id="pf-spring-forces-MJX-12-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-spring-forces-MJX-12-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="5" data-semantic-children="0,3" data-semantic-content="4" data-semantic-speech="k u 1">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="5" data-semantic-speech="k">
+              <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-12-TEX-I-1D458"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="4" data-semantic-parent="5" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(521,0)">
+              <use data-c="2062" xlink:href="#pf-spring-forces-MJX-12-TEX-N-2062"/>
+            </g>
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="5" data-semantic-speech="u 1" transform="translate(521,0)">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-speech="u" data-semantic-prefix="Base">
+                <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-12-TEX-I-1D462"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                <use data-c="31" xlink:href="#pf-spring-forces-MJX-12-TEX-N-31"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-133" x1="245.6" y1="237.8" x2="278.8" y2="237.8" stroke="#D55E00" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-hD55E00)"/>
+  <g id="pf-spring-forces-__label-11" transform="translate(263.5,228.5) translate(-41.1,-18.1)">
+    <g id="pf-spring-forces-__g-11">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="82.144px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4538.6 1000" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-13-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/>
+          <path id="pf-spring-forces-MJX-13-TEX-N-2062" d=""/>
+          <path id="pf-spring-forces-MJX-13-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+          <path id="pf-spring-forces-MJX-13-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-spring-forces-MJX-13-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+          <path id="pf-spring-forces-MJX-13-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+          <path id="pf-spring-forces-MJX-13-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+          <path id="pf-spring-forces-MJX-13-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="13" data-semantic-children="0,11" data-semantic-content="12" data-semantic-speech="k left parenthesis u 2 minus u 1 right parenthesis">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="13" data-semantic-speech="k">
+              <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-13-TEX-I-1D458"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="12" data-semantic-parent="13" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(521,0)">
+              <use data-c="2062" xlink:href="#pf-spring-forces-MJX-13-TEX-N-2062"/>
+            </g>
+            <g data-mml-node="mrow" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-id="11" data-semantic-children="10" data-semantic-content="1,9" data-semantic-parent="13" data-semantic-speech="left parenthesis u 2 minus u 1 right parenthesis" transform="translate(521,0)">
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="1" data-semantic-parent="11" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                <use data-c="28" xlink:href="#pf-spring-forces-MJX-13-TEX-N-28"/>
+              </g>
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="subtraction" data-semantic-id="10" data-semantic-children="4,8" data-semantic-content="5" data-semantic-parent="11" data-semantic-speech="u 2 minus u 1" transform="translate(389,0)">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="4" data-semantic-children="2,3" data-semantic-parent="10" data-semantic-speech="u 2">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="4" data-semantic-speech="u" data-semantic-prefix="Base">
+                    <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-13-TEX-I-1D462"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="4" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                    <use data-c="32" xlink:href="#pf-spring-forces-MJX-13-TEX-N-32"/>
+                  </g>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="subtraction" data-semantic-id="5" data-semantic-parent="10" data-semantic-operator="infixop,−" data-semantic-speech="minus" transform="translate(1230.8,0)">
+                  <use data-c="2212" xlink:href="#pf-spring-forces-MJX-13-TEX-N-2212"/>
+                </g>
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="8" data-semantic-children="6,7" data-semantic-parent="10" data-semantic-speech="u 1" transform="translate(2231,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="8" data-semantic-speech="u" data-semantic-prefix="Base">
+                    <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-13-TEX-I-1D462"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="7" data-semantic-parent="8" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                    <use data-c="31" xlink:href="#pf-spring-forces-MJX-13-TEX-N-31"/>
+                  </g>
+                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="9" data-semantic-parent="11" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(3628.6,0)">
+                <use data-c="29" xlink:href="#pf-spring-forces-MJX-13-TEX-N-29"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-134" x1="475.0" y1="237.8" x2="413.2" y2="237.8" stroke="#0072B2" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-h0072B2)"/>
+  <g id="pf-spring-forces-__label-12" transform="translate(401.8,237.8) translate(-27.7,-7.6)">
+    <g id="pf-spring-forces-__g-12">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.712px" width="27.688px" height="15.280px" role="img" focusable="false" viewBox="0 -694 1529.6 844" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-14-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/>
+          <path id="pf-spring-forces-MJX-14-TEX-N-2062" d=""/>
+          <path id="pf-spring-forces-MJX-14-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-spring-forces-MJX-14-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="5" data-semantic-children="0,3" data-semantic-content="4" data-semantic-speech="k u 2">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="5" data-semantic-speech="k">
+              <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-14-TEX-I-1D458"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="4" data-semantic-parent="5" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(521,0)">
+              <use data-c="2062" xlink:href="#pf-spring-forces-MJX-14-TEX-N-2062"/>
+            </g>
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="5" data-semantic-speech="u 2" transform="translate(521,0)">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-speech="u" data-semantic-prefix="Base">
+                <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-14-TEX-I-1D462"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                <use data-c="32" xlink:href="#pf-spring-forces-MJX-14-TEX-N-32"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-spring-forces-__line-135" x1="475.0" y1="217.3" x2="441.7" y2="217.3" stroke="#D55E00" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-hD55E00)"/>
+  <g id="pf-spring-forces-__label-13" transform="translate(430.3,217.3) translate(-82.1,-9.0)">
+    <g id="pf-spring-forces-__g-13">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="82.144px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4538.6 1000" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-15-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/>
+          <path id="pf-spring-forces-MJX-15-TEX-N-2062" d=""/>
+          <path id="pf-spring-forces-MJX-15-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+          <path id="pf-spring-forces-MJX-15-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-spring-forces-MJX-15-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+          <path id="pf-spring-forces-MJX-15-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/>
+          <path id="pf-spring-forces-MJX-15-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+          <path id="pf-spring-forces-MJX-15-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit" data-semantic-id="13" data-semantic-children="0,11" data-semantic-content="12" data-semantic-speech="k left parenthesis u 2 minus u 1 right parenthesis">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="13" data-semantic-speech="k">
+              <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-15-TEX-I-1D458"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="12" data-semantic-parent="13" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(521,0)">
+              <use data-c="2062" xlink:href="#pf-spring-forces-MJX-15-TEX-N-2062"/>
+            </g>
+            <g data-mml-node="mrow" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-id="11" data-semantic-children="10" data-semantic-content="1,9" data-semantic-parent="13" data-semantic-speech="left parenthesis u 2 minus u 1 right parenthesis" transform="translate(521,0)">
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="1" data-semantic-parent="11" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                <use data-c="28" xlink:href="#pf-spring-forces-MJX-15-TEX-N-28"/>
+              </g>
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="subtraction" data-semantic-id="10" data-semantic-children="4,8" data-semantic-content="5" data-semantic-parent="11" data-semantic-speech="u 2 minus u 1" transform="translate(389,0)">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="4" data-semantic-children="2,3" data-semantic-parent="10" data-semantic-speech="u 2">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="4" data-semantic-speech="u" data-semantic-prefix="Base">
+                    <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-15-TEX-I-1D462"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="4" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                    <use data-c="32" xlink:href="#pf-spring-forces-MJX-15-TEX-N-32"/>
+                  </g>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="subtraction" data-semantic-id="5" data-semantic-parent="10" data-semantic-operator="infixop,−" data-semantic-speech="minus" transform="translate(1230.8,0)">
+                  <use data-c="2212" xlink:href="#pf-spring-forces-MJX-15-TEX-N-2212"/>
+                </g>
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="8" data-semantic-children="6,7" data-semantic-parent="10" data-semantic-speech="u 1" transform="translate(2231,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="8" data-semantic-speech="u" data-semantic-prefix="Base">
+                    <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-15-TEX-I-1D462"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="7" data-semantic-parent="8" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                    <use data-c="31" xlink:href="#pf-spring-forces-MJX-15-TEX-N-31"/>
+                  </g>
+                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="9" data-semantic-parent="11" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(3628.6,0)">
+                <use data-c="29" xlink:href="#pf-spring-forces-MJX-15-TEX-N-29"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-spring-forces-__label-14" transform="translate(51.2,191.1) translate(0.0,-9.0)">
+    <g id="pf-spring-forces-__g-14">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="471.352px" height="18.096px" role="img" focusable="false" viewBox="0 -750 26042.1 1000" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-spring-forces-MJX-16-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-62" d="M307 -11Q234 -11 168 55L158 37Q156 34 153 28T147 17T143 10L138 1L118 0H98V298Q98 599 97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V543Q179 391 180 391L183 394Q186 397 192 401T207 411T228 421T254 431T286 439T323 442Q401 442 461 379T522 216Q522 115 458 52T307 -11ZM182 98Q182 97 187 90T196 79T206 67T218 55T233 44T250 35T271 29T295 26Q330 26 363 46T412 113Q424 148 424 212Q424 287 412 323Q385 405 300 405Q270 405 239 390T188 347L182 339V98Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-20" d=""/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-44" d="M130 622Q123 629 119 631T103 634T60 637H27V683H228Q399 682 419 682T461 676Q504 667 546 641T626 573T685 470T708 336Q708 210 634 116T442 3Q429 1 228 0H27V46H60Q102 47 111 49T130 61V622ZM593 338Q593 439 571 501T493 602Q439 637 355 637H322H294Q238 637 234 628Q231 624 231 344Q231 62 232 59Q233 49 248 48T339 46H350Q456 46 515 95Q561 133 577 191T593 338Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-79" d="M69 -66Q91 -66 104 -80T118 -116Q118 -134 109 -145T91 -160Q84 -163 97 -166Q104 -168 111 -168Q131 -168 148 -159T175 -138T197 -106T213 -75T225 -43L242 0L170 183Q150 233 125 297Q101 358 96 368T80 381Q79 382 78 382Q66 385 34 385H19V431H26L46 430Q65 430 88 429T122 428Q129 428 142 428T171 429T200 430T224 430L233 431H241V385H232Q183 385 185 366L286 112Q286 113 332 227L376 341V350Q376 365 366 373T348 383T334 385H331V431H337H344Q351 431 361 431T382 430T405 429T422 429Q477 429 503 431H508V385H497Q441 380 422 345Q420 343 378 235T289 9T227 -131Q180 -204 113 -204Q69 -204 44 -177T19 -116Q19 -89 35 -78T69 -66Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-A0" d=""/>
+          <path id="pf-spring-forces-MJX-16-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-75" d="M383 58Q327 -10 256 -10H249Q124 -10 105 89Q104 96 103 226Q102 335 102 348T96 369Q86 385 36 385H25V408Q25 431 27 431L38 432Q48 433 67 434T105 436Q122 437 142 438T172 441T184 442H187V261Q188 77 190 64Q193 49 204 40Q224 26 264 26Q290 26 311 35T343 58T363 90T375 120T379 144Q379 145 379 161T380 201T380 248V315Q380 361 370 372T320 385H302V431Q304 431 378 436T457 442H464V264Q464 84 465 81Q468 61 479 55T524 46H542V0Q540 0 467 -5T390 -11H383V58Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-66" d="M273 0Q255 3 146 3Q43 3 34 0H26V46H42Q70 46 91 49Q99 52 103 60Q104 62 104 224V385H33V431H104V497L105 564L107 574Q126 639 171 668T266 704Q267 704 275 704T289 705Q330 702 351 679T372 627Q372 604 358 590T321 576T284 590T270 627Q270 647 288 667H284Q280 668 273 668Q245 668 223 647T189 592Q183 572 182 497V431H293V385H185V225Q185 63 186 61T189 57T194 54T199 51T206 49T213 48T222 47T231 47T241 46T251 46H282V0H273Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"/>
+          <path id="pf-spring-forces-MJX-16-TEX-N-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-id="13" data-semantic-children="0,3,4,7,8" data-semantic-collapsed="(13 (c 9 10 11 12) 0 3 4 7 8)" data-semantic-speech="left parenthesis b right parenthesis Displaced by u 1 and u 2 comma measured from the rest positions">
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-parent="13" data-semantic-speech="left parenthesis b right parenthesis Displaced by">
+              <use data-c="28" xlink:href="#pf-spring-forces-MJX-16-TEX-N-28"/>
+              <use data-c="62" xlink:href="#pf-spring-forces-MJX-16-TEX-N-62" transform="translate(389,0)"/>
+              <use data-c="29" xlink:href="#pf-spring-forces-MJX-16-TEX-N-29" transform="translate(945,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-16-TEX-N-20" transform="translate(1334,0)"/>
+              <use data-c="44" xlink:href="#pf-spring-forces-MJX-16-TEX-N-44" transform="translate(1584,0)"/>
+              <use data-c="69" xlink:href="#pf-spring-forces-MJX-16-TEX-N-69" transform="translate(2348,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-16-TEX-N-73" transform="translate(2626,0)"/>
+              <use data-c="70" xlink:href="#pf-spring-forces-MJX-16-TEX-N-70" transform="translate(3020,0)"/>
+              <use data-c="6C" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6C" transform="translate(3576,0)"/>
+              <use data-c="61" xlink:href="#pf-spring-forces-MJX-16-TEX-N-61" transform="translate(3854,0)"/>
+              <use data-c="63" xlink:href="#pf-spring-forces-MJX-16-TEX-N-63" transform="translate(4354,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-16-TEX-N-65" transform="translate(4798,0)"/>
+              <use data-c="64" xlink:href="#pf-spring-forces-MJX-16-TEX-N-64" transform="translate(5242,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-16-TEX-N-20" transform="translate(5798,0)"/>
+              <use data-c="62" xlink:href="#pf-spring-forces-MJX-16-TEX-N-62" transform="translate(6048,0)"/>
+              <use data-c="79" xlink:href="#pf-spring-forces-MJX-16-TEX-N-79" transform="translate(6604,0)"/>
+              <use data-c="A0" xlink:href="#pf-spring-forces-MJX-16-TEX-N-A0" transform="translate(7132,0)"/>
+            </g>
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="13" data-semantic-speech="u 1" transform="translate(7382,0)">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-speech="u" data-semantic-prefix="Base">
+                <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-16-TEX-I-1D462"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                <use data-c="31" xlink:href="#pf-spring-forces-MJX-16-TEX-N-31"/>
+              </g>
+            </g>
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="4" data-semantic-parent="13" data-semantic-speech="and" transform="translate(8390.6,0)">
+              <use data-c="A0" xlink:href="#pf-spring-forces-MJX-16-TEX-N-A0"/>
+              <use data-c="61" xlink:href="#pf-spring-forces-MJX-16-TEX-N-61" transform="translate(250,0)"/>
+              <use data-c="6E" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6E" transform="translate(750,0)"/>
+              <use data-c="64" xlink:href="#pf-spring-forces-MJX-16-TEX-N-64" transform="translate(1306,0)"/>
+              <use data-c="A0" xlink:href="#pf-spring-forces-MJX-16-TEX-N-A0" transform="translate(1862,0)"/>
+            </g>
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="13" data-semantic-speech="u 2" transform="translate(10502.6,0)">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="u" data-semantic-prefix="Base">
+                <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-16-TEX-I-1D462"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(605,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="7" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                <use data-c="32" xlink:href="#pf-spring-forces-MJX-16-TEX-N-32"/>
+              </g>
+            </g>
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="8" data-semantic-parent="13" data-semantic-speech="comma measured from the rest positions" transform="translate(11511.1,0)">
+              <use data-c="2C" xlink:href="#pf-spring-forces-MJX-16-TEX-N-2C"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-16-TEX-N-20" transform="translate(278,0)"/>
+              <use data-c="6D" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6D" transform="translate(528,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-16-TEX-N-65" transform="translate(1361,0)"/>
+              <use data-c="61" xlink:href="#pf-spring-forces-MJX-16-TEX-N-61" transform="translate(1805,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-16-TEX-N-73" transform="translate(2305,0)"/>
+              <use data-c="75" xlink:href="#pf-spring-forces-MJX-16-TEX-N-75" transform="translate(2699,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-16-TEX-N-72" transform="translate(3255,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-16-TEX-N-65" transform="translate(3647,0)"/>
+              <use data-c="64" xlink:href="#pf-spring-forces-MJX-16-TEX-N-64" transform="translate(4091,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-16-TEX-N-20" transform="translate(4647,0)"/>
+              <use data-c="66" xlink:href="#pf-spring-forces-MJX-16-TEX-N-66" transform="translate(4897,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-16-TEX-N-72" transform="translate(5203,0)"/>
+              <use data-c="6F" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6F" transform="translate(5595,0)"/>
+              <use data-c="6D" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6D" transform="translate(6095,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-16-TEX-N-20" transform="translate(6928,0)"/>
+              <use data-c="74" xlink:href="#pf-spring-forces-MJX-16-TEX-N-74" transform="translate(7178,0)"/>
+              <use data-c="68" xlink:href="#pf-spring-forces-MJX-16-TEX-N-68" transform="translate(7567,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-16-TEX-N-65" transform="translate(8123,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-16-TEX-N-20" transform="translate(8567,0)"/>
+              <use data-c="72" xlink:href="#pf-spring-forces-MJX-16-TEX-N-72" transform="translate(8817,0)"/>
+              <use data-c="65" xlink:href="#pf-spring-forces-MJX-16-TEX-N-65" transform="translate(9209,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-16-TEX-N-73" transform="translate(9653,0)"/>
+              <use data-c="74" xlink:href="#pf-spring-forces-MJX-16-TEX-N-74" transform="translate(10047,0)"/>
+              <use data-c="20" xlink:href="#pf-spring-forces-MJX-16-TEX-N-20" transform="translate(10436,0)"/>
+              <use data-c="70" xlink:href="#pf-spring-forces-MJX-16-TEX-N-70" transform="translate(10686,0)"/>
+              <use data-c="6F" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6F" transform="translate(11242,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-16-TEX-N-73" transform="translate(11742,0)"/>
+              <use data-c="69" xlink:href="#pf-spring-forces-MJX-16-TEX-N-69" transform="translate(12136,0)"/>
+              <use data-c="74" xlink:href="#pf-spring-forces-MJX-16-TEX-N-74" transform="translate(12414,0)"/>
+              <use data-c="69" xlink:href="#pf-spring-forces-MJX-16-TEX-N-69" transform="translate(12803,0)"/>
+              <use data-c="6F" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6F" transform="translate(13081,0)"/>
+              <use data-c="6E" xlink:href="#pf-spring-forces-MJX-16-TEX-N-6E" transform="translate(13581,0)"/>
+              <use data-c="73" xlink:href="#pf-spring-forces-MJX-16-TEX-N-73" transform="translate(14137,0)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+</svg>
