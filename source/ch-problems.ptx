@@ -119,6 +119,90 @@
       </solution>
     </exercise>
 
+    <exercise xml:id="lab-shape-more-examples">
+      <title>Four More Echelon Shapes</title>
+      <statement>
+        <p>
+          Again <m>*</m> denotes an arbitrary number and <m>\blacksquare</m> a nonzero
+          number. For each augmented matrix, say whether the system has no solution, a
+          unique solution, or infinitely many solutions <mdash /> and in the last case say
+          how many parameters the general solution has. If the shape does not determine the
+          answer, say so.
+          <md>
+            \text{(a)} \quad
+            \left[ \begin{array}{cccc|c}
+              \blacksquare \amp * \amp * \amp * \amp * \\
+              0 \amp \blacksquare \amp * \amp * \amp * \\
+              0 \amp 0 \amp \blacksquare \amp * \amp * \\
+              0 \amp 0 \amp 0 \amp \blacksquare \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{array} \right]
+          </md>
+          <md>
+            \text{(b)} \quad
+            \left[ \begin{array}{cccc|c}
+              \blacksquare \amp * \amp * \amp * \amp \blacksquare \\
+              0 \amp 0 \amp \blacksquare \amp * \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{array} \right]
+          </md>
+          <md>
+            \text{(c)} \quad
+            \left[ \begin{array}{cccc|c}
+              \blacksquare \amp * \amp * \amp * \amp * \\
+              0 \amp * \amp \blacksquare \amp * \amp * \\
+              0 \amp 0 \amp 0 \amp * \amp \blacksquare \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{array} \right]
+          </md>
+          <md>
+            \text{(d)} \quad
+            \left[ \begin{array}{cccc|c}
+              \blacksquare \amp * \amp * \amp * \amp \blacksquare \\
+              0 \amp 0 \amp \blacksquare \amp 0 \amp \blacksquare \\
+              0 \amp 0 \amp \blacksquare \amp 0 \amp 0
+            \end{array} \right]
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> There are four variables and the last row is entirely zero, so
+          no row reads <m>0 = d</m> with <m>d \neq 0</m>: the system is consistent. All
+          four columns of the coefficient matrix carry a leading entry, so there are no
+          free variables and the solution is <term>unique</term>.
+        </p>
+        <p>
+          <term>(b)</term> The zero row again rules out inconsistency. The leading entries
+          sit in columns <m>1</m> and <m>3</m>, so <m>x_2</m> and <m>x_4</m> are free:
+          <term>infinitely many solutions, with two parameters</term>. Note that the
+          <m>\blacksquare</m> in the augmented column of row <m>1</m> is a red herring
+          <mdash /> a nonzero constant in a row that <em>does</em> have a leading entry
+          causes no trouble at all.
+        </p>
+        <p>
+          <term>(c)</term> Here the shape is <em>not</em> enough. Row <m>3</m> reads
+          <md>
+            0x_1 + 0x_2 + 0x_3 + (*)\,x_4 = \blacksquare .
+          </md>
+          If that <m>*</m> happens to be <m>0</m>, the row says <m>0 = \blacksquare \neq
+          0</m> and the system is <term>inconsistent</term>. If it is nonzero, it is a
+          leading entry, the system is consistent, and there are leading entries in three
+          of the four columns (column <m>1</m>, then column <m>2</m> or <m>3</m> from row
+          <m>2</m>, then column <m>4</m>), leaving one free variable and infinitely many
+          solutions. <term>The shape does not determine the answer.</term>
+        </p>
+        <p>
+          <term>(d)</term> This matrix is not in row-echelon form, so read the rows as
+          equations directly. Row <m>3</m> says <m>\blacksquare x_3 = 0</m>, hence
+          <m>x_3 = 0</m>. Row <m>2</m> says <m>\blacksquare x_3 = \blacksquare \neq 0</m>,
+          hence <m>x_3 \neq 0</m>. The two demands cannot both hold, so the system has
+          <term>no solution</term>. (Subtracting row <m>3</m> from row <m>2</m> makes this
+          visible: it produces the row <m>[\,0\ 0\ 0\ 0 \mid \blacksquare\,]</m>.)
+        </p>
+      </solution>
+    </exercise>
+
     <exercise xml:id="lab-h-and-k">
       <title>Choosing Parameters to Control the Outcome</title>
       <statement>
@@ -153,6 +237,399 @@
           <term>(c) Infinitely many solutions.</term> If <m>h = 2</m> and <m>k = 4</m>,
           the second row is entirely zero, <m>x_2</m> is free, and there are infinitely
           many solutions.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-parameters-two-equations">
+      <title>Parameters in Two Equations, Two Unknowns</title>
+      <statement>
+        <p>
+          <term>(a)</term> For which values of <m>h</m> and <m>k</m> does the system
+          <m>x + 3y = k</m>, <m>4x + hy = h</m> have infinitely many solutions?
+        </p>
+        <p>
+          <term>(b)</term> For which values of <m>a</m> and <m>b</m> does the system
+          <m>ax + 2y = 5</m>, <m>x + by = -1</m> have infinitely many solutions?
+        </p>
+        <p>
+          <term>(c)</term> Consider <m>3x + ky = 1</m>, <m>x - y = 5</m>, where
+          <m>k \in \R</m>. Decide which of these five statements is false, and justify
+          your answer.
+          <ol marker="(i)">
+            <li><p>The system has no solutions when <m>k = -3</m>.</p></li>
+            <li><p>The system has infinitely many solutions when <m>k = -3</m>.</p></li>
+            <li><p>
+              The system has the unique solution
+              <m>x = \frac{5k+1}{k+3}</m>, <m>y = -\frac{14}{k+3}</m> when <m>k \neq -3</m>.
+            </p></li>
+            <li><p>The system has a unique solution when <m>k \neq -3</m>.</p></li>
+            <li><p>The system cannot have infinitely many solutions.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Row reduce:
+          <md>
+            \left[ \begin{array}{cc|c} 1 \amp 3 \amp k \\ 4 \amp h \amp h \end{array} \right]
+            \xrightarrow{-4r_1 + r_2}
+            \left[ \begin{array}{cc|c} 1 \amp 3 \amp k \\ 0 \amp h - 12 \amp h - 4k \end{array} \right].
+          </md>
+          Infinitely many solutions requires the second row to vanish entirely: <m>h = 12</m>
+          and <m>h - 4k = 0</m>, so <m>k = 3</m>. Answer: <m>h = 12</m> and <m>k = 3</m>.
+        </p>
+        <p>
+          <term>(b)</term> Swap the rows first so the pivot is a <m>1</m>:
+          <md>
+            \left[ \begin{array}{cc|c} a \amp 2 \amp 5 \\ 1 \amp b \amp -1 \end{array} \right]
+            \xrightarrow{r_1 \leftrightarrow r_2}
+            \left[ \begin{array}{cc|c} 1 \amp b \amp -1 \\ a \amp 2 \amp 5 \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-a r_1 + r_2}
+            \left[ \begin{array}{cc|c} 1 \amp b \amp -1 \\ 0 \amp 2 - ab \amp 5 + a \end{array} \right].
+          </md>
+          Both entries of the second row must vanish: <m>a = -5</m> and <m>ab = 2</m>, so
+          <m>b = -\tfrac{2}{5}</m>. Answer: <m>a = -5</m> and <m>b = -\tfrac{2}{5}</m>.
+        </p>
+        <p>
+          <term>(c)</term> Reducing,
+          <md>
+            \left[ \begin{array}{cc|c} 3 \amp k \amp 1 \\ 1 \amp -1 \amp 5 \end{array} \right]
+            \xrightarrow{r_1 \leftrightarrow r_2}
+            \left[ \begin{array}{cc|c} 1 \amp -1 \amp 5 \\ 3 \amp k \amp 1 \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-3r_1 + r_2}
+            \left[ \begin{array}{cc|c} 1 \amp -1 \amp 5 \\ 0 \amp k + 3 \amp -14 \end{array} \right].
+          </md>
+          If <m>k \neq -3</m> there are two leading entries and the solution is unique:
+          <m>y = -\frac{14}{k+3}</m> and
+          <m>x = 5 + y = \frac{5(k+3) - 14}{k+3} = \frac{5k+1}{k+3}</m>.
+          If <m>k = -3</m> the second row reads <m>0 = -14</m> and the system is
+          inconsistent.
+        </p>
+        <p>
+          So (i), (iii), (iv) and (v) are all true, and <term>(ii) is the false
+          statement</term>: the constant <m>-14</m> is never zero, so this system can never
+          have infinitely many solutions.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-three-outcomes-parameter">
+      <title>All Three Outcomes from One Parameter</title>
+      <statement>
+        <p>
+          Find conditions on <m>a</m> under which the system
+          <md>
+            <mrow>
+              x - 2y - az \amp = 2
+            </mrow>
+            <mrow>
+              -ax + 2ay + 4z \amp = 4
+            </mrow>
+            <mrow>
+              x - y + az \amp = 2
+            </mrow>
+          </md>
+          has no solution, exactly one solution, or infinitely many solutions.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reduce the augmented matrix. Adding <m>a</m> times row <m>1</m> to row
+          <m>2</m> clears the first entry of row <m>2</m>:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp -a \amp 2 \\
+              -a \amp 2a \amp 4 \amp 4 \\
+              1 \amp -1 \amp a \amp 2
+            \end{array} \right]
+            \xrightarrow{a r_1 + r_2}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp -a \amp 2 \\
+              0 \amp 0 \amp 4 - a^2 \amp 4 + 2a \\
+              1 \amp -1 \amp a \amp 2
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-r_1 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp -a \amp 2 \\
+              0 \amp 0 \amp 4 - a^2 \amp 4 + 2a \\
+              0 \amp 1 \amp 2a \amp 0
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{r_2 \leftrightarrow r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp -a \amp 2 \\
+              0 \amp 1 \amp 2a \amp 0 \\
+              0 \amp 0 \amp 4 - a^2 \amp 4 + 2a
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          Everything hinges on the last row, since
+          <m>4 - a^2 = (2-a)(2+a)</m> and <m>4 + 2a = 2(a+2)</m>.
+        </p>
+        <p>
+          <term>One solution.</term> If <m>4 - a^2 \neq 0</m>, that is
+          <m>a \neq 2</m> and <m>a \neq -2</m>, all three columns carry a leading entry
+          and the solution is unique.
+        </p>
+        <p>
+          <term>No solution.</term> If <m>a = 2</m> then <m>4 - a^2 = 0</m> while
+          <m>4 + 2a = 8 \neq 0</m>, so the last row reads <m>0 = 8</m>.
+        </p>
+        <p>
+          <term>Infinitely many solutions.</term> If <m>a = -2</m> then both
+          <m>4 - a^2</m> and <m>4 + 2a</m> are zero, the last row vanishes, <m>z</m> is
+          free, and there are infinitely many solutions.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-two-parameters-outcomes">
+      <title>Two Parameters, Three Outcomes</title>
+      <statement>
+        <p>
+          Find conditions on <m>a</m> and <m>b</m> under which the system
+          <md>
+            <mrow>
+              x \phantom{{}+ y} + z \amp = 2
+            </mrow>
+            <mrow>
+              y \phantom{{}+ az} \amp = -3
+            </mrow>
+            <mrow>
+              x + y + az \amp = b - 1
+            </mrow>
+          </md>
+          has no solution, exactly one solution, or infinitely many solutions.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The first two rows are already in the shape we want, so subtract row <m>1</m>
+          and then row <m>2</m> from row <m>3</m>:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 1 \amp 2 \\
+              0 \amp 1 \amp 0 \amp -3 \\
+              1 \amp 1 \amp a \amp b-1
+            \end{array} \right]
+            \xrightarrow{-r_1 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 1 \amp 2 \\
+              0 \amp 1 \amp 0 \amp -3 \\
+              0 \amp 1 \amp a-1 \amp b-3
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-r_2 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 1 \amp 2 \\
+              0 \amp 1 \amp 0 \amp -3 \\
+              0 \amp 0 \amp a-1 \amp b
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          <term>One solution</term> when <m>a - 1 \neq 0</m>, that is <m>a \neq 1</m>
+          <mdash /> whatever <m>b</m> is.
+        </p>
+        <p>
+          <term>No solution</term> when <m>a = 1</m> and <m>b \neq 0</m>, since the last
+          row then reads <m>0 = b \neq 0</m>.
+        </p>
+        <p>
+          <term>Infinitely many solutions</term> when <m>a = 1</m> and <m>b = 0</m>: the
+          last row vanishes and <m>z</m> becomes free.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-parameter-in-augmented">
+      <title>A Parameter Inside the Augmented Matrix</title>
+      <statement>
+        <p>
+          In each part, <m>a</m> is an arbitrary number. Describe the solutions of the
+          system with the given augmented matrix, for every value of <m>a</m>.
+          <md>
+            \text{(a)} \quad
+            \left[ \begin{array}{ccc|c}
+              1 \amp 5 \amp 0 \amp 1 \\
+              0 \amp 0 \amp 1 \amp 2 \\
+              0 \amp 0 \amp a \amp 6
+            \end{array} \right]
+            \qquad
+            \text{(b)} \quad
+            \left[ \begin{array}{ccc|c}
+              1 \amp 5 \amp 0 \amp 1 \\
+              0 \amp 0 \amp 0 \amp a^2 \\
+              0 \amp 0 \amp a-1 \amp 1
+            \end{array} \right]
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Use row <m>2</m> to clear the <m>a</m> below it:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 5 \amp 0 \amp 1 \\
+              0 \amp 0 \amp 1 \amp 2 \\
+              0 \amp 0 \amp a \amp 6
+            \end{array} \right]
+            \xrightarrow{-a r_2 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 5 \amp 0 \amp 1 \\
+              0 \amp 0 \amp 1 \amp 2 \\
+              0 \amp 0 \amp 0 \amp 6 - 2a
+            \end{array} \right].
+          </md>
+          If <m>a \neq 3</m> the last row reads <m>0 = 6 - 2a \neq 0</m> and the system is
+          <term>inconsistent</term>. If <m>a = 3</m> the last row vanishes, the system is
+          consistent, and <m>x_2</m> is free, so there are <term>infinitely many
+          solutions</term>. Notice there is no value of <m>a</m> giving a unique solution:
+          column <m>2</m> never carries a leading entry.
+        </p>
+        <p>
+          <term>(b)</term> Row <m>2</m> reads <m>0 = a^2</m>, so the system is
+          inconsistent unless <m>a = 0</m>. With <m>a = 0</m> the matrix becomes
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 5 \amp 0 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp -1 \amp 1
+            \end{array} \right],
+          </md>
+          which is consistent with <m>x_3 = -1</m>, <m>x_1 + 5x_2 = 1</m> and <m>x_2</m>
+          free. So the system has <term>infinitely many solutions exactly when
+          <m>a = 0</m></term>, and no solution for every other <m>a</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-when-wide-system-fails">
+      <title>When Does a Wide System Fail?</title>
+      <statement>
+        <p>
+          Find all values of <m>a</m> and <m>b</m> for which the system
+          <md>
+            <mrow>
+              2x + 3y + z \amp = b
+            </mrow>
+            <mrow>
+              6x + a^2 y + (b^2 - 1)z \amp = 2a
+            </mrow>
+          </md>
+          has infinitely many solutions.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          There are three unknowns and only two equations, so as soon as the system is
+          consistent at least one variable is free and there are infinitely many
+          solutions. The question is therefore really <em>when is it inconsistent?</em>
+        </p>
+        <p>
+          One row operation:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              2 \amp 3 \amp 1 \amp b \\
+              6 \amp a^2 \amp b^2 - 1 \amp 2a
+            \end{array} \right]
+            \xrightarrow{-3r_1 + r_2}
+            \left[ \begin{array}{ccc|c}
+              2 \amp 3 \amp 1 \amp b \\
+              0 \amp a^2 - 9 \amp b^2 - 4 \amp 2a - 3b
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          The system is inconsistent precisely when the second row reads
+          <m>0 = \text{nonzero}</m>, that is when
+          <md>
+            a^2 - 9 = 0, \qquad b^2 - 4 = 0, \qquad 2a - 3b \neq 0.
+          </md>
+          The first two force <m>a = \pm 3</m> and <m>b = \pm 2</m>. Of the four
+          combinations, <m>(a,b) = (3,2)</m> gives <m>2a - 3b = 0</m> and
+          <m>(a,b) = (-3,-2)</m> gives <m>2a - 3b = 0</m>, so those two are consistent.
+          The remaining two, <m>(a,b) = (3,-2)</m> and <m>(a,b) = (-3,2)</m>, give
+          <m>2a - 3b = \pm 12 \neq 0</m>.
+        </p>
+        <p>
+          So the system has infinitely many solutions for <term>every</term> pair
+          <m>(a,b)</m> <em>except</em> <m>(3,-2)</m> and <m>(-3,2)</m>, where it has no
+          solution at all.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-counting-parameters">
+      <title>Counting Parameters</title>
+      <statement>
+        <p>
+          For each system, say whether it is inconsistent, has a unique solution, or has
+          infinitely many solutions <mdash /> and in the last case give the number of
+          parameters.
+          <ol marker="(a)">
+            <li><p><m>x + 2y + 3z = 0</m> and <m>x + y + z = 2</m>.</p></li>
+            <li><p><m>x - 2y + 3z = -1</m> and <m>2x + 5y + 6z = 4</m>.</p></li>
+            <li><p><m>x - y + 2z = 1</m> and <m>-2x + 2y - 4z = 2</m>.</p></li>
+            <li><p>
+              <m>-x_1 + 2x_2 + 3x_3 + x_4 = 0</m> and
+              <m>2x_1 - 4x_2 - 6x_3 - x_4 = 0</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term>
+          <md>
+            \left[ \begin{array}{ccc|c} 1 \amp 2 \amp 3 \amp 0 \\ 1 \amp 1 \amp 1 \amp 2 \end{array} \right]
+            \xrightarrow{-r_1 + r_2}
+            \left[ \begin{array}{ccc|c} 1 \amp 2 \amp 3 \amp 0 \\ 0 \amp -1 \amp -2 \amp 2 \end{array} \right].
+          </md>
+          Leading entries in columns <m>1</m> and <m>2</m>, so <m>z</m> is free:
+          <term>infinitely many solutions, one parameter</term>.
+        </p>
+        <p>
+          <term>(b)</term>
+          <md>
+            \left[ \begin{array}{ccc|c} 1 \amp -2 \amp 3 \amp -1 \\ 2 \amp 5 \amp 6 \amp 4 \end{array} \right]
+            \xrightarrow{-2r_1 + r_2}
+            \left[ \begin{array}{ccc|c} 1 \amp -2 \amp 3 \amp -1 \\ 0 \amp 9 \amp 0 \amp 6 \end{array} \right].
+          </md>
+          Again <m>z</m> is free: <term>infinitely many solutions, one parameter</term>.
+        </p>
+        <p>
+          <term>(c)</term>
+          <md>
+            \left[ \begin{array}{ccc|c} 1 \amp -1 \amp 2 \amp 1 \\ -2 \amp 2 \amp -4 \amp 2 \end{array} \right]
+            \xrightarrow{2r_1 + r_2}
+            \left[ \begin{array}{ccc|c} 1 \amp -1 \amp 2 \amp 1 \\ 0 \amp 0 \amp 0 \amp 4 \end{array} \right].
+          </md>
+          The second row reads <m>0 = 4</m>: <term>no solution</term>. The second equation
+          is <m>-2</m> times the left side of the first, but not <m>-2</m> times its right
+          side.
+        </p>
+        <p>
+          <term>(d)</term>
+          <md>
+            \left[ \begin{array}{cccc|c} -1 \amp 2 \amp 3 \amp 1 \amp 0 \\ 2 \amp -4 \amp -6 \amp -1 \amp 0 \end{array} \right]
+            \xrightarrow{2r_1 + r_2}
+            \left[ \begin{array}{cccc|c} -1 \amp 2 \amp 3 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \amp 0 \end{array} \right].
+          </md>
+          Leading entries in columns <m>1</m> and <m>4</m>, so <m>x_2</m> and <m>x_3</m>
+          are free: <term>infinitely many solutions, two parameters</term>. (A homogeneous
+          system is always consistent, by
+          <xref ref="def-homogeneous" text="type-global" />.)
         </p>
       </solution>
     </exercise>
@@ -193,6 +670,45 @@
             = \begin{bmatrix} -4s + 2 \\ 4s - 1 \\ s \end{bmatrix},
             \qquad s \in \R.
           </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-general-solution-check">
+      <title>Checking a Proposed General Solution</title>
+      <statement>
+        <p>
+          Which of the following is the general solution of the system
+          <m>x - y - z = 0</m>, <m>x + y + z = 4</m>?
+          <ol marker="(a)">
+            <li><p><m>x = 2</m>, <m>y = 0</m>, <m>z = 2</m></p></li>
+            <li><p><m>x = 2</m>, <m>y = 1</m>, <m>z = 1</m></p></li>
+            <li><p><m>x = 2</m>, <m>y = 2 - s</m>, <m>z = s</m></p></li>
+            <li><p><m>x = 2</m>, <m>y = 2 + s</m>, <m>z = s</m></p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            \left[ \begin{array}{ccc|c} 1 \amp -1 \amp -1 \amp 0 \\ 1 \amp 1 \amp 1 \amp 4 \end{array} \right]
+            \xrightarrow{-r_1 + r_2}
+            \left[ \begin{array}{ccc|c} 1 \amp -1 \amp -1 \amp 0 \\ 0 \amp 2 \amp 2 \amp 4 \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{\frac{1}{2} r_2}
+            \left[ \begin{array}{ccc|c} 1 \amp -1 \amp -1 \amp 0 \\ 0 \amp 1 \amp 1 \amp 2 \end{array} \right]
+            \xrightarrow{r_2 + r_1}
+            \left[ \begin{array}{ccc|c} 1 \amp 0 \amp 0 \amp 2 \\ 0 \amp 1 \amp 1 \amp 2 \end{array} \right].
+          </md>
+          So <m>x = 2</m>, and with <m>z = s</m> free, <m>y = 2 - s</m>. The answer is
+          <term>(c)</term>.
+        </p>
+        <p>
+          Options (a) and (b) are individual solutions <mdash /> they are the cases
+          <m>s = 2</m> and <m>s = 1</m> <mdash /> but neither is the <em>general</em>
+          solution. Option (d) has the wrong sign and satisfies neither equation: for
+          instance <m>s = 1</m> gives <m>(2,3,1)</m>, and <m>2 - 3 - 1 = -2 \neq 0</m>.
         </p>
       </solution>
     </exercise>
@@ -246,6 +762,913 @@
               z \amp = t, \qquad t \in \R.
             </mrow>
           </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-vector-form-from-rref">
+      <title>Vector Form and Basic Solutions</title>
+      <statement>
+        <p>
+          A system <m>A\vec{x} = \vec{b}</m> has an augmented matrix whose reduced
+          row-echelon form is
+          <md>
+            \left[ \begin{array}{ccccc|c}
+              1 \amp -2 \amp 0 \amp 0 \amp 5 \amp -7 \\
+              0 \amp 0 \amp 1 \amp 0 \amp -4 \amp 6 \\
+              0 \amp 0 \amp 0 \amp 1 \amp 3 \amp -8 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+          <ol marker="(a)">
+            <li><p>How many solutions does the system have?</p></li>
+            <li><p>Find the general solution and express it in vector form.</p></li>
+            <li><p>
+              Find a set of basic solutions for the associated homogeneous system
+              <m>A\vec{x} = \vec{0}</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> No row reads <m>0 = d</m> with <m>d \neq 0</m>, so the system
+          is consistent. The leading <m>1</m>s sit in columns <m>1</m>, <m>3</m> and
+          <m>4</m>, so <m>x_2</m> and <m>x_5</m> are free: there are
+          <term>infinitely many solutions</term>.
+        </p>
+        <p>
+          <term>(b)</term> Put <m>x_2 = s</m> and <m>x_5 = t</m>. Reading the rows,
+          <md>
+            <mrow>
+              x_1 \amp = 2s - 5t - 7
+            </mrow>
+            <mrow>
+              x_3 \amp = 4t + 6
+            </mrow>
+            <mrow>
+              x_4 \amp = -3t - 8 ,
+            </mrow>
+          </md>
+          so in the vector form of
+          <xref ref="def-vector-form" text="type-global" />,
+          <md>
+            \vec{x}
+            = s \begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+            + t \begin{bmatrix} -5 \\ 0 \\ 4 \\ -3 \\ 1 \end{bmatrix}
+            + \begin{bmatrix} -7 \\ 0 \\ 6 \\ -8 \\ 0 \end{bmatrix},
+          </md>
+          with <m>s, t \in \R</m>.
+        </p>
+        <p>
+          <term>(c)</term> Dropping the constant vector leaves exactly the general
+          solution of <m>A\vec{x} = \vec{0}</m>, so a set of basic solutions is
+          <md>
+            \left\{
+            \begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix},
+            \begin{bmatrix} -5 \\ 0 \\ 4 \\ -3 \\ 1 \end{bmatrix}
+            \right\}.
+          </md>
+          This is
+          <xref ref="thm-particular-plus-homogeneous" text="type-global" /> in action: the
+          solution set is one particular solution plus the solutions of the homogeneous
+          system.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-homogeneous-spanning-set">
+      <title>Spanning the Solutions of a Homogeneous System</title>
+      <statement>
+        <p>
+          Every solution <m>[x_1\ x_2\ x_3\ x_4\ x_5]^T</m> of
+          <md>
+            <mrow>
+              x_1 + 2x_2 + 4x_3 + x_4 - 3x_5 \amp = 0
+            </mrow>
+            <mrow>
+              x_1 + 3x_2 + 4x_3 + x_4 - 3x_5 \amp = 0
+            </mrow>
+            <mrow>
+              x_1 + 2x_2 + 4x_3 + 2x_4 - 6x_5 \amp = 0
+            </mrow>
+          </md>
+          is a linear combination of which of the following sets of vectors?
+          <ol marker="(a)">
+            <li><p><m>[-4\ 0\ 1\ {-6}\ {-2}]^T</m>.</p></li>
+            <li><p><m>[8\ 0\ {-2}\ 3\ 1]^T</m>.</p></li>
+            <li><p><m>[-4\ 0\ 1\ 0\ 0]^T</m> and <m>[-8\ 0\ 2\ 0\ 0]^T</m>.</p></li>
+            <li><p><m>[4\ 0\ {-1}\ 0\ 0]^T</m> and <m>[0\ 0\ 0\ 3\ 1]^T</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Subtracting row <m>1</m> from rows <m>2</m> and <m>3</m> is enough:
+          <md>
+            \begin{bmatrix}
+              1 \amp 2 \amp 4 \amp 1 \amp -3 \\
+              1 \amp 3 \amp 4 \amp 1 \amp -3 \\
+              1 \amp 2 \amp 4 \amp 2 \amp -6
+            \end{bmatrix}
+            \longrightarrow
+            \begin{bmatrix}
+              1 \amp 2 \amp 4 \amp 1 \amp -3 \\
+              0 \amp 1 \amp 0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 1 \amp -3
+            \end{bmatrix}.
+          </md>
+          So <m>x_2 = 0</m>, <m>x_4 = 3x_5</m>, and the first row then gives
+          <m>x_1 + 4x_3 + x_4 - 3x_5 = x_1 + 4x_3 = 0</m>, i.e. <m>x_1 = -4x_3</m>.
+        </p>
+        <p>
+          With <m>x_3 = s</m> and <m>x_5 = t</m> free,
+          <md>
+            \vec{x}
+            = s \begin{bmatrix} -4 \\ 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+            + t \begin{bmatrix} 0 \\ 0 \\ 0 \\ 3 \\ 1 \end{bmatrix}.
+          </md>
+          The answer is <term>(d)</term>: <m>[4\ 0\ {-1}\ 0\ 0]^T</m> is
+          <m>-1</m> times the first basic solution, so the two vectors in (d) span exactly
+          the same set.
+        </p>
+        <p>
+          Options (a) and (b) are individual solutions <mdash /> they are the cases
+          <m>(s,t) = (1,-2)</m> and <m>(s,t) = (-2,1)</m> <mdash /> but a single vector
+          spans only a line, and the solution set here needs two parameters. Option (c)
+          fails for the same reason in disguise: its two vectors are parallel, since
+          <m>[-8\ 0\ 2\ 0\ 0]^T = 2 \cdot [-4\ 0\ 1\ 0\ 0]^T</m>, so together they still
+          span only a line and miss every solution with <m>x_4 \neq 0</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-rank-and-solutions">
+      <title>What Rank Tells You</title>
+      <statement>
+        <p>
+          Let <m>C</m> be the coefficient matrix and <m>A</m> the augmented matrix of a
+          system of <m>m</m> linear equations in <m>n</m> variables. Decide whether each
+          statement is always true, and justify your answer.
+          <ol marker="(a)">
+            <li><p>
+              If <m>\operatorname{rank} C \lt n</m>, the system has infinitely many
+              solutions.
+            </p></li>
+            <li><p>If <m>\operatorname{rank} C = m</m>, the system is consistent.</p></li>
+            <li><p>
+              If <m>\operatorname{rank} C = n</m>, the system has a unique solution.
+            </p></li>
+            <li><p>
+              If <m>\operatorname{rank} A = \operatorname{rank} C = n</m>, the system has a
+              unique solution.
+            </p></li>
+            <li><p>
+              If the system is inconsistent, then <m>\operatorname{rank} A \geq 1</m>.
+            </p></li>
+            <li><p>
+              A system of five equations in four variables with
+              <m>\operatorname{rank} C = 4</m> has either no solution or a unique
+              solution.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Throughout, recall from
+          <xref ref="obs-rank-is-pivots" text="type-global" /> that the rank counts the
+          leading <m>1</m>s in the reduced row-echelon form.
+        </p>
+        <p>
+          <term>(a) False.</term> Rank less than <m>n</m> only says there is at least one
+          non-pivot column; the system could still be inconsistent. Take
+          <m>0x = 1</m>: here <m>n = 1</m>, <m>\operatorname{rank} C = 0 \lt 1</m>, and
+          there is no solution.
+        </p>
+        <p>
+          <term>(b) True.</term> If <m>C</m> has <m>m</m> leading <m>1</m>s then
+          <em>every</em> one of its <m>m</m> rows carries a leading <m>1</m>. Row reducing
+          <m>A</m> performs the same operations, so no row of the reduced <m>A</m> can be
+          of the form <m>[\,0\ \cdots\ 0 \mid d\,]</m> with <m>d \neq 0</m>. By
+          <xref ref="rem-inconsistency-test" text="type-global" /> the system is
+          consistent.
+        </p>
+        <p>
+          <term>(c) False.</term> Rank <m>n</m> rules out free variables but not
+          inconsistency. The system <m>x = 1</m>, <m>0 = 1</m> has <m>n = 1</m> and
+          <m>\operatorname{rank} C = 1</m>, and no solution.
+        </p>
+        <p>
+          <term>(d) True.</term> Now the extra hypothesis
+          <m>\operatorname{rank} A = \operatorname{rank} C</m> says the augmented column
+          adds no new leading <m>1</m>, so the system is consistent; and rank <m>n</m>
+          means every variable is basic, so there are no parameters. The solution is
+          unique.
+        </p>
+        <p>
+          <term>(e) True.</term> Inconsistency means the reduced <m>A</m> contains a row
+          <m>[\,0\ \cdots\ 0 \mid 1\,]</m>. That row itself has a leading <m>1</m>, so
+          <m>\operatorname{rank} A \geq 1</m>.
+        </p>
+        <p>
+          <term>(f) True.</term> This is (b) and (d) combined: <m>C</m> is
+          <m>5 \times 4</m> with <m>\operatorname{rank} C = 4 = n</m>, so there are never
+          any free variables. Either <m>\operatorname{rank} A = 5</m>, in which case the
+          fifth row is <m>[\,0\ 0\ 0\ 0 \mid 1\,]</m> and there is no solution, or
+          <m>\operatorname{rank} A = 4</m> and the solution is unique.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-rank-of-a-matrix">
+      <title>Computing a Rank</title>
+      <statement>
+        <p>
+          Find the rank of
+          <m>A = \begin{bmatrix} 1 \amp -3 \amp 2 \\ 1 \amp 0 \amp -1 \\ 1 \amp -4 \amp 3 \\ 1 \amp 1 \amp -2 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Clear the first column using row <m>1</m>:
+          <md>
+            \begin{bmatrix} 1 \amp -3 \amp 2 \\ 1 \amp 0 \amp -1 \\ 1 \amp -4 \amp 3 \\ 1 \amp 1 \amp -2 \end{bmatrix}
+            \longrightarrow
+            \begin{bmatrix} 1 \amp -3 \amp 2 \\ 0 \amp 3 \amp -3 \\ 0 \amp -1 \amp 1 \\ 0 \amp 4 \amp -4 \end{bmatrix}.
+          </md>
+          Rows <m>2</m>, <m>3</m> and <m>4</m> are all multiples of <m>[0\ 1\ {-1}]</m>,
+          so two more rounds of row operations give
+          <md>
+            \begin{bmatrix} 1 \amp 0 \amp -1 \\ 0 \amp 1 \amp -1 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}.
+          </md>
+          There are two leading <m>1</m>s, so
+          <m>\operatorname{rank} A = 2</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-rank-designing-b">
+      <title>Designing the Right-Hand Side</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix}
+              1 \amp 0 \amp -3 \amp -2 \amp 0 \\
+              0 \amp 1 \amp 2 \amp -1 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{bmatrix}.
+          </md>
+          <ol marker="(a)">
+            <li><p>What is the rank of <m>A</m>?</p></li>
+            <li><p>
+              How many parameters are there in the general solution of
+              <m>A\vec{x} = \vec{0}</m>?
+            </p></li>
+            <li><p>
+              If possible, find a nonzero <m>\vec{b}</m> with <m>A\vec{x} = \vec{b}</m>
+              having no solution; otherwise explain why none exists.
+            </p></li>
+            <li><p>
+              Same question, with <m>A\vec{x} = \vec{b}</m> having a unique solution.
+            </p></li>
+            <li><p>
+              Same question, with <m>A\vec{x} = \vec{b}</m> having infinitely many
+              solutions.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> <m>A</m> is already in reduced row-echelon form with leading
+          <m>1</m>s in columns <m>1</m>, <m>2</m> and <m>5</m>, so
+          <m>\operatorname{rank} A = 3</m>.
+        </p>
+        <p>
+          <term>(b)</term> There are five variables and three of them are basic, so
+          <m>x_3</m> and <m>x_4</m> are free: <term>two parameters</term>. (Equivalently,
+          <m>5 - 3 = 2</m> by <xref ref="thm-rank-nullity" text="type-global" />.)
+        </p>
+        <p>
+          <term>(c)</term> Write <m>\vec{b} = [b_1\ b_2\ b_3\ b_4]^T</m>. Since the fourth
+          row of <m>A</m> is zero, the augmented matrix <m>[A \mid \vec{b}]</m> has last
+          row <m>[\,0\ 0\ 0\ 0\ 0 \mid b_4\,]</m>. So <term>any</term> <m>\vec{b}</m> with
+          <m>b_4 \neq 0</m> works, for instance <m>\vec{b} = [0\ 0\ 0\ 1]^T</m>.
+        </p>
+        <p>
+          <term>(d)</term> <term>No such vector exists.</term> Whenever the system is
+          consistent, <m>x_3</m> and <m>x_4</m> are still free, so there are always
+          infinitely many solutions.
+        </p>
+        <p>
+          <term>(e)</term> Any nonzero <m>\vec{b}</m> with <m>b_4 = 0</m>, for instance
+          <m>\vec{b} = [1\ 0\ 0\ 0]^T</m>. Then the system is consistent and, by (d), has
+          infinitely many solutions.
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-vectors-rn">
+    <title>Vectors in <m>\R^n</m></title>
+    <exercises>
+
+    <exercise xml:id="lab-parallelogram-vertex">
+      <title>Completing a Parallelogram</title>
+      <statement>
+        <p>
+          Given <m>A = (2,1,0)</m>, <m>B = (-3,1,3)</m> and <m>C = (1,3,-1)</m>, find
+          <m>D</m> so that <m>ABCD</m> is a parallelogram.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In the parallelogram <m>ABCD</m> the vertices are listed in order, so the sides
+          are <m>AB</m>, <m>BC</m>, <m>CD</m> and <m>DA</m>. Opposite sides are parallel
+          and of equal length, which in vector language says
+          <md>
+            \overrightarrow{CD} = \overrightarrow{BA}.
+          </md>
+        </p>
+        <p>
+          Writing position vectors from the origin and using
+          <xref ref="fig-parallelogram-law" text="type-global" />,
+          <md>
+            \overrightarrow{OD} = \overrightarrow{OC} + \overrightarrow{BA}
+            = \overrightarrow{OC} + \left( \overrightarrow{OA} - \overrightarrow{OB} \right).
+          </md>
+        </p>
+        <p>
+          Now <m>\overrightarrow{BA} = (2,1,0) - (-3,1,3) = (5,0,-3)</m>, so
+          <md>
+            \overrightarrow{OD}
+            = \begin{bmatrix} 1 \\ 3 \\ -1 \end{bmatrix}
+            + \begin{bmatrix} 5 \\ 0 \\ -3 \end{bmatrix}
+            = \begin{bmatrix} 6 \\ 3 \\ -4 \end{bmatrix},
+          </md>
+          that is, <m>D = (6,3,-4)</m>.
+        </p>
+        <p>
+          As a check, <m>\overrightarrow{AD} = (6,3,-4) - (2,1,0) = (4,2,-4)</m> and
+          <m>\overrightarrow{BC} = (1,3,-1) - (-3,1,3) = (4,2,-4)</m>. The two remaining
+          sides are parallel and equal in length, as they must be. <m>\checkmark</m>
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-linear-combinations">
+    <title>Linear Combinations</title>
+    <exercises>
+
+
+    <exercise xml:id="lab-linear-combination">
+      <title>Writing One Vector in Terms of Others</title>
+      <statement>
+        <p>
+          Consider
+          <md>
+            \vec{C}_1 = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad
+            \vec{C}_2 = \begin{bmatrix} -2 \\ -4 \\ -2 \end{bmatrix}, \quad
+            \vec{C}_3 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}, \quad
+            \vec{B} = \begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix}.
+          </md>
+          Determine whether <m>\vec{B}</m> can be written as a linear combination of
+          <m>\vec{C}_1</m>, <m>\vec{C}_2</m>, <m>\vec{C}_3</m>, and if so give a specific
+          such combination.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The question asks whether there exist <m>x, y, z</m> with
+          <m>x\vec{C}_1 + y\vec{C}_2 + z\vec{C}_3 = \vec{B}</m>, which by
+          <xref ref="def-matrix-vector-product" text="type-global" /> is the system with
+          augmented matrix
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp 0 \amp -1 \\
+              2 \amp -4 \amp 1 \amp 1 \\
+              1 \amp -2 \amp 1 \amp 2
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp 0 \amp -1 \\
+              0 \amp 0 \amp 1 \amp 3 \\
+              0 \amp 0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          The system is consistent, so the answer is yes. Here <m>y</m> is free; with
+          <m>y = s</m> we get <m>z = 3</m> and <m>x = -1 + 2s</m>, so
+          <md>
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix} -1 + 2s \\ s \\ 3 \end{bmatrix}, \qquad s \in \R.
+          </md>
+        </p>
+        <p>
+          Taking <m>s = 0</m> gives the specific combination
+          <m>(x,y,z) = (-1, 0, 3)</m>, and checking it,
+          <md>
+            -\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+            + 0 \begin{bmatrix} -2 \\ -4 \\ -2 \end{bmatrix}
+            + 3 \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix} = \vec{B}. \checkmark
+          </md>
+        </p>
+        <p>
+          That <m>y</m> is free is no accident: <m>\vec{C}_2 = -2\vec{C}_1</m>, so
+          <m>\{\vec{C}_1, \vec{C}_2, \vec{C}_3\}</m> is linearly dependent and the
+          combination is far from unique.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-which-are-combinations">
+      <title>Which Vectors Are Combinations?</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            \vec{X}_1 = \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}, \quad
+            \vec{X}_2 = \begin{bmatrix} 1 \\ 1 \\ -2 \end{bmatrix}, \quad
+            \vec{W} = \begin{bmatrix} -1 \\ 0 \\ 3 \end{bmatrix}, \quad
+            \vec{Y} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \quad
+            \vec{Z} = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}.
+          </md>
+          Which of <m>\vec{W}</m>, <m>\vec{Y}</m>, <m>\vec{Z}</m> lie in
+          <m>\operatorname{Span}\{\vec{X}_1, \vec{X}_2\}</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Test all three at once by row reducing a single matrix with three augmented
+          columns:
+          <md>
+            \left[ \begin{array}{cc|ccc}
+              1 \amp 1 \amp -1 \amp 1 \amp 0 \\
+              2 \amp 1 \amp 0 \amp 0 \amp 1 \\
+              -1 \amp -2 \amp 3 \amp 0 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow[r_1 + r_3]{-2r_1 + r_2}
+            \left[ \begin{array}{cc|ccc}
+              1 \amp 1 \amp -1 \amp 1 \amp 0 \\
+              0 \amp -1 \amp 2 \amp -2 \amp 1 \\
+              0 \amp -1 \amp 2 \amp 1 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-r_2 + r_3}
+            \left[ \begin{array}{cc|ccc}
+              1 \amp 1 \amp -1 \amp 1 \amp 0 \\
+              0 \amp -1 \amp 2 \amp -2 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 3 \amp 0
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          Read off the last row for each right-hand side. For <m>\vec{W}</m> it is
+          <m>0 = 0</m> and for <m>\vec{Z}</m> it is <m>0 = 0</m>: both systems are
+          consistent. For <m>\vec{Y}</m> it is <m>0 = 3</m>: inconsistent.
+        </p>
+        <p>
+          So <term><m>\vec{W}</m> and <m>\vec{Z}</m> are linear combinations of
+          <m>\vec{X}_1</m> and <m>\vec{X}_2</m>, and <m>\vec{Y}</m> is not.</term>
+          Solving back gives the explicit combinations
+          <md>
+            \vec{W} = \vec{X}_1 - 2\vec{X}_2,
+            \qquad
+            \vec{Z} = \vec{X}_1 - \vec{X}_2,
+          </md>
+          which are worth verifying entry by entry.
+        </p>
+        <p>
+          Note that adding <m>\vec{W}</m> to the spanning set would change nothing:
+          since <m>\vec{W} \in \operatorname{Span}\{\vec{X}_1, \vec{X}_2\}</m>, we have
+          <m>\operatorname{Span}\{\vec{X}_1, \vec{X}_2, \vec{W}\}
+          = \operatorname{Span}\{\vec{X}_1, \vec{X}_2\}</m>, so <m>\vec{Y}</m> is still
+          outside it.
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-linear-transformations">
+    <title>Linear Transformations</title>
+    <exercises>
+
+    <exercise xml:id="lab-transformation-from-two-values">
+      <title>A Transformation from Two of Its Values</title>
+      <statement>
+        <p>
+          Let <m>T : \R^3 \to \R^4</m> be a linear transformation with
+          <md>
+            T \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 3 \\ -2 \\ 1 \\ 0 \end{bmatrix},
+            \qquad
+            T \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 2 \\ -2 \end{bmatrix}.
+          </md>
+          Find <m>T \begin{bmatrix} -1 \\ -1 \\ 4 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A linear transformation is determined on any vector we can write as a
+          combination of vectors whose images we know, by
+          <xref ref="thm-linear-transformation-properties" text="type-global" />. So look
+          for <m>a</m> and <m>b</m> with
+          <md>
+            a \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}
+            + b \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}
+            = \begin{bmatrix} -1 \\ -1 \\ 4 \end{bmatrix}.
+          </md>
+          The second entry gives <m>-a = -1</m>, so <m>a = 1</m>; the first then gives
+          <m>1 + b = -1</m>, so <m>b = -2</m>. The third entry checks:
+          <m>2(1) - (-2) = 4</m>. <m>\checkmark</m>
+        </p>
+        <p>
+          Therefore
+          <md>
+            T \begin{bmatrix} -1 \\ -1 \\ 4 \end{bmatrix}
+            = 1 \begin{bmatrix} 3 \\ -2 \\ 1 \\ 0 \end{bmatrix}
+            - 2 \begin{bmatrix} 1 \\ 1 \\ 2 \\ -2 \end{bmatrix}
+            = \begin{bmatrix} 1 \\ -4 \\ -3 \\ 4 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-transformation-not-determined">
+      <title>When Two Values Are Not Enough</title>
+      <statement>
+        <p>
+          Let <m>T : \R^3 \to \R^3</m> be a linear transformation with
+          <md>
+            T \begin{bmatrix} 0 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix},
+            \qquad
+            T \begin{bmatrix} 1 \\ 1 \\ -2 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}.
+          </md>
+          Find <m>T \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix}</m> and
+          <m>T \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both questions come down to writing the target as a combination of the two
+          vectors we know. Row reduce with both right-hand sides at once:
+          <md>
+            \left[ \begin{array}{cc|cc}
+              0 \amp 1 \amp 2 \amp 2 \\
+              -1 \amp 1 \amp 1 \amp 1 \\
+              2 \amp -2 \amp -2 \amp -3
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{cc|cc}
+              1 \amp 0 \amp 1 \amp 1 \\
+              0 \amp 1 \amp 2 \amp 2 \\
+              0 \amp 0 \amp 0 \amp -1
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          <term>The first vector.</term> Its column of the reduced matrix ends in
+          <m>0</m>, so the system is consistent and
+          <md>
+            \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix}
+            = 1 \begin{bmatrix} 0 \\ -1 \\ 2 \end{bmatrix}
+            + 2 \begin{bmatrix} 1 \\ 1 \\ -2 \end{bmatrix}.
+          </md>
+          Applying <m>T</m>,
+          <md>
+            T \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix}
+            = \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}
+            + 2 \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} 4 \\ 1 \\ 3 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>The second vector.</term> Its column ends in <m>-1</m>, so that system
+          reads <m>0 = -1</m> and is inconsistent:
+          <m>[2\ 1\ {-3}]^T</m> is <em>not</em> in
+          <m>\operatorname{Span}\left\{ [0\ {-1}\ 2]^T, [1\ 1\ {-2}]^T \right\}</m>.
+          The two given values place no constraint on <m>T</m> there, so
+          <term><m>T \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix}</m> cannot be
+          determined</term> from the information given.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-matrix-from-two-values">
+      <title>The Matrix from Two Values</title>
+      <statement>
+        <p>
+          A linear transformation <m>T : \R^2 \to \R^2</m> satisfies
+          <md>
+            T \begin{bmatrix} 2 \\ -1 \end{bmatrix} = \begin{bmatrix} a \\ b \end{bmatrix},
+            \qquad
+            T \begin{bmatrix} 1 \\ -1 \end{bmatrix} = \begin{bmatrix} c \\ d \end{bmatrix}.
+          </md>
+          Find the matrix of <m>T</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The matrix of <m>T</m> has columns <m>T(\vec{e}_1)</m> and <m>T(\vec{e}_2)</m>,
+          so we need to express the standard basis vectors in terms of the two given
+          ones.
+        </p>
+        <p>
+          Subtracting,
+          <md>
+            \begin{bmatrix} 2 \\ -1 \end{bmatrix} - \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+            = \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \vec{e}_1,
+          </md>
+          and, looking for <m>\alpha, \beta</m> with
+          <m>\alpha (2,-1) + \beta (1,-1) = (0,1)</m>, the equations
+          <m>2\alpha + \beta = 0</m> and <m>-\alpha - \beta = 1</m> give
+          <m>\alpha = 1</m>, <m>\beta = -2</m>:
+          <md>
+            \begin{bmatrix} 2 \\ -1 \end{bmatrix} - 2\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \vec{e}_2.
+          </md>
+        </p>
+        <p>
+          Applying <m>T</m> to both,
+          <md>
+            T(\vec{e}_1) = \begin{bmatrix} a - c \\ b - d \end{bmatrix},
+            \qquad
+            T(\vec{e}_2) = \begin{bmatrix} a - 2c \\ b - 2d \end{bmatrix},
+          </md>
+          so the matrix of <m>T</m> is
+          <md>
+            \begin{bmatrix} a - c \amp a - 2c \\ b - d \amp b - 2d \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-reflection-y-equals-minus-x">
+      <title>Reflection in the Line <m>y = -x</m></title>
+      <statement>
+        <p>
+          Let <m>Q : \R^2 \to \R^2</m> be the reflection in the line <m>y = -x</m>.
+          <ol marker="(a)">
+            <li><p>Find the matrix of <m>Q</m>.</p></li>
+            <li><p>
+              Compute <m>Q^{-1} \begin{bmatrix} 2 \\ 1 \end{bmatrix}</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Reflecting in <m>y = -x</m> swaps the two axes and reverses
+          them: the point <m>(x,y)</m> goes to <m>(-y,-x)</m>. In particular
+          <m>\vec{e}_1 = (1,0) \mapsto (0,-1)</m> and
+          <m>\vec{e}_2 = (0,1) \mapsto (-1,0)</m>, so
+          <md>
+            Q = \begin{bmatrix} 0 \amp -1 \\ -1 \amp 0 \end{bmatrix}.
+          </md>
+          This is the case <m>m = -1</m> of
+          <xref ref="eg-reflection-y-mx" text="type-global" />.
+        </p>
+        <p>
+          <term>(b)</term> A reflection undoes itself, so <m>Q^{-1} = Q</m>. Indeed
+          <md>
+            Q^2 = \begin{bmatrix} 0 \amp -1 \\ -1 \amp 0 \end{bmatrix}
+                  \begin{bmatrix} 0 \amp -1 \\ -1 \amp 0 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+          </md>
+          Therefore
+          <md>
+            Q^{-1} \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+            = Q \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} -1 \\ -2 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-identify-transformation">
+      <title>Identifying a Transformation from Its Matrix</title>
+      <statement>
+        <p>
+          The matrix transformation <m>T</m> induced by
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m> is which of the
+          following: reflection in the <m>x</m>-axis, reflection in the <m>y</m>-axis,
+          rotation through <m>-\pi/2</m>, or rotation through <m>\pi/2</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Compute the effect on a general vector:
+          <md>
+            T \begin{bmatrix} x \\ y \end{bmatrix}
+            = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
+              \begin{bmatrix} x \\ y \end{bmatrix}
+            = \begin{bmatrix} x \\ -y \end{bmatrix}.
+          </md>
+          The first coordinate is unchanged and the second is negated, which is exactly
+          <term>reflection in the <m>x</m>-axis</term>; compare
+          <xref ref="eg-reflection-x-axis" text="type-global" />.
+        </p>
+        <p>
+          The two rotations are ruled out at once: by
+          <xref ref="def-rotation" text="type-global" />, rotation through
+          <m>\pm \pi/2</m> has matrix
+          <m>\begin{bmatrix} 0 \amp \mp 1 \\ \pm 1 \amp 0 \end{bmatrix}</m>, whose
+          diagonal entries are zero. Reflection in the <m>y</m>-axis would send
+          <m>(x,y)</m> to <m>(-x,y)</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-composition-of-transformations">
+      <title>Composing Two Transformations</title>
+      <statement>
+        <p>
+          Let <m>S, T : \R^2 \to \R^2</m> be linear transformations with
+          <md>
+            S \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ -2 \end{bmatrix},
+            \quad
+            S \begin{bmatrix} 0 \\ -2 \end{bmatrix} = \begin{bmatrix} 0 \\ 3 \end{bmatrix},
+            \quad
+            T \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+          </md>
+          Find <m>(S \circ T) \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By definition
+          <m>(S \circ T)(\vec{v}) = S\bigl(T(\vec{v})\bigr)</m>, so
+          <md>
+            (S \circ T) \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            = S \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+          </md>
+          We are not told <m>S(1,-1)</m> directly, so write it in terms of the two
+          vectors whose <m>S</m>-images we do know. Looking for <m>a, b</m> with
+          <md>
+            a \begin{bmatrix} 1 \\ 1 \end{bmatrix} + b \begin{bmatrix} 0 \\ -2 \end{bmatrix}
+            = \begin{bmatrix} 1 \\ -1 \end{bmatrix},
+          </md>
+          the first entry gives <m>a = 1</m> and the second gives
+          <m>1 - 2b = -1</m>, so <m>b = 1</m>.
+        </p>
+        <p>
+          Therefore
+          <md>
+            S \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ -2 \end{bmatrix} + \begin{bmatrix} 0 \\ 3 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ 1 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-reflection-then-rotation">
+      <title>A Reflection Followed by a Rotation</title>
+      <statement>
+        <p>
+          Find the matrix of the linear transformation obtained by reflecting in the
+          <m>y</m>-axis and then rotating through <m>\pi</m> radians. What familiar
+          transformation is the result?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Reflection in the <m>y</m>-axis sends <m>\vec{e}_1 \mapsto -\vec{e}_1</m> and
+          fixes <m>\vec{e}_2</m>, so its matrix is
+          <m>M_y = \begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>. Rotation
+          through <m>\pi</m> reverses every vector, so by
+          <xref ref="def-rotation" text="type-global" /> its matrix is
+          <m>R_\pi = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m>.
+        </p>
+        <p>
+          Doing the reflection first means multiplying by <m>M_y</m> first, so the
+          composite matrix is <m>R_\pi M_y</m>, with <m>M_y</m> on the right:
+          <md>
+            R_\pi M_y
+            = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
+              \begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix}
+            = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          That is <term>reflection in the <m>x</m>-axis</term>
+          (<xref ref="eg-reflection-x-axis" text="type-global" />) <mdash /> a reflection,
+          not a rotation. Composing two reflections gives a rotation, but here we composed
+          a reflection with a rotation.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-triple-composition">
+      <title>Three Transformations in a Row</title>
+      <statement>
+        <p>
+          Find the matrix of the transformation that reflects in the line <m>y = -x</m>,
+          then rotates through <m>\pi/6</m>, then reflects in the <m>y</m>-axis.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The three matrices are
+          <md>
+            Q = \begin{bmatrix} 0 \amp -1 \\ -1 \amp 0 \end{bmatrix},
+            \quad
+            R = \begin{bmatrix} \frac{\sqrt{3}}{2} \amp -\frac{1}{2} \\[2pt] \frac{1}{2} \amp \frac{\sqrt{3}}{2} \end{bmatrix},
+            \quad
+            M = \begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix},
+          </md>
+          using <xref ref="lab-reflection-y-equals-minus-x" text="type-global" /> for
+          <m>Q</m> and <xref ref="def-rotation" text="type-global" /> with
+          <m>\theta = \pi/6</m> for <m>R</m>.
+        </p>
+        <p>
+          The transformation applied <em>first</em> stands rightmost, so we want
+          <m>MRQ</m>. First
+          <md>
+            RQ = \begin{bmatrix} \frac{\sqrt{3}}{2} \amp -\frac{1}{2} \\[2pt] \frac{1}{2} \amp \frac{\sqrt{3}}{2} \end{bmatrix}
+                 \begin{bmatrix} 0 \amp -1 \\ -1 \amp 0 \end{bmatrix}
+               = \begin{bmatrix} \frac{1}{2} \amp -\frac{\sqrt{3}}{2} \\[2pt] -\frac{\sqrt{3}}{2} \amp -\frac{1}{2} \end{bmatrix},
+          </md>
+          and then multiplying on the left by <m>M</m> negates the first row:
+          <md>
+            M(RQ) = \begin{bmatrix} -\frac{1}{2} \amp \frac{\sqrt{3}}{2} \\[2pt] -\frac{\sqrt{3}}{2} \amp -\frac{1}{2} \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-inverse-transformation">
+      <title>Undoing a Transformation</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Let <m>T</m> be induced by
+              <m>A = \begin{bmatrix} 4 \amp -3 \\ 2 \amp -2 \end{bmatrix}</m>. Find the
+              matrix of <m>T^{-1}</m>.
+            </p></li>
+            <li><p>
+              Let <m>T : \R^2 \to \R^2</m> be linear with
+              <m>T(1,0) = (2,1)</m> and <m>T(0,-2) = (2,0)</m>. Find
+              <m>T^{-1}(1,2)</m>.
+            </p></li>
+            <li><p>
+              Let <m>T</m> be the <m>x</m>-shear
+              <m>T(x,y) = (x + ay,\ y)</m>. By which matrix is <m>T^{-1}</m> induced?
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Here <m>\det A = 4(-2) - (-3)(2) = -2 \neq 0</m>, so <m>A</m>
+          is invertible and by
+          <xref ref="thm-two-by-two-inverse" text="type-global" />
+          <md>
+            A^{-1} = \frac{1}{-2} \begin{bmatrix} -2 \amp 3 \\ -2 \amp 4 \end{bmatrix}
+                   = \begin{bmatrix} 1 \amp -\frac{3}{2} \\[2pt] 1 \amp -2 \end{bmatrix}.
+          </md>
+          Checking, <m>A^{-1}A = \begin{bmatrix} 4 - 3 \amp -3 + 3 \\ 4 - 4 \amp -3 + 4 \end{bmatrix} = I</m>.
+          <m>\checkmark</m>
+        </p>
+        <p>
+          <term>(b)</term> From <m>T(0,-2) = (2,0)</m> and linearity,
+          <m>T(0,1) = -\tfrac{1}{2}(2,0) = (-1,0)</m>. So the matrix of <m>T</m> is
+          <md>
+            A = \begin{bmatrix} 2 \amp -1 \\ 1 \amp 0 \end{bmatrix},
+            \qquad \det A = 0 - (-1) = 1,
+          </md>
+          <md>
+            A^{-1} = \begin{bmatrix} 0 \amp 1 \\ -1 \amp 2 \end{bmatrix}.
+          </md>
+          Hence
+          <md>
+            T^{-1} \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} 0 \amp 1 \\ -1 \amp 2 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} 2 \\ 3 \end{bmatrix}.
+          </md>
+          As a check, <m>T(2,3) = 2(2,1) + 3(-1,0) = (1,2)</m>. <m>\checkmark</m>
+        </p>
+        <p>
+          <term>(c)</term> The shear is induced by
+          <m>A = \begin{bmatrix} 1 \amp a \\ 0 \amp 1 \end{bmatrix}</m>, with
+          <m>\det A = 1</m>, so
+          <md>
+            A^{-1} = \begin{bmatrix} 1 \amp -a \\ 0 \amp 1 \end{bmatrix}.
+          </md>
+          Undoing a shear by <m>a</m> is shearing by <m>-a</m>, exactly as the picture in
+          <xref ref="fig-shear-interactive" text="type-global" /> suggests.
         </p>
       </solution>
     </exercise>
@@ -351,72 +1774,2722 @@
         </p>
       </solution>
     </exercise>
-    </exercises>
-  </section>
 
-  <section xml:id="sec-problems-linear-combinations">
-    <title>Linear Combinations</title>
-    <exercises>
-
-
-    <exercise xml:id="lab-linear-combination">
-      <title>Writing One Vector in Terms of Others</title>
+    <exercise xml:id="lab-product-of-three">
+      <title>A Product of Three Matrices</title>
       <statement>
         <p>
-          Consider
+          Compute and simplify
           <md>
-            \vec{C}_1 = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad
-            \vec{C}_2 = \begin{bmatrix} -2 \\ -4 \\ -2 \end{bmatrix}, \quad
-            \vec{C}_3 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}, \quad
-            \vec{B} = \begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix}.
+            \begin{bmatrix} 1 \amp 1 \end{bmatrix}
+            \begin{bmatrix} a \amp b \\ a \amp -b \end{bmatrix}
+            \begin{bmatrix} -1 \\ 1 \end{bmatrix}.
           </md>
-          Determine whether <m>\vec{B}</m> can be written as a linear combination of
-          <m>\vec{C}_1</m>, <m>\vec{C}_2</m>, <m>\vec{C}_3</m>, and if so give a specific
-          such combination.
         </p>
       </statement>
       <solution>
         <p>
-          The question asks whether there exist <m>x, y, z</m> with
-          <m>x\vec{C}_1 + y\vec{C}_2 + z\vec{C}_3 = \vec{B}</m>, which by
-          <xref ref="def-matrix-vector-product" text="type-global" /> is the system with
-          augmented matrix
+          Matrix multiplication is associative, so group whichever way is easier. Taking
+          the first two factors,
           <md>
-            \left[ \begin{array}{ccc|c}
-              1 \amp -2 \amp 0 \amp -1 \\
-              2 \amp -4 \amp 1 \amp 1 \\
-              1 \amp -2 \amp 1 \amp 2
+            \begin{bmatrix} 1 \amp 1 \end{bmatrix}
+            \begin{bmatrix} a \amp b \\ a \amp -b \end{bmatrix}
+            = \begin{bmatrix} 2a \amp 0 \end{bmatrix},
+          </md>
+          and then
+          <md>
+            \begin{bmatrix} 2a \amp 0 \end{bmatrix} \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} -2a \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          The <m>b</m>s cancel because the two rows of the middle matrix agree in the
+          first column and differ only in sign in the second.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-single-entry-of-product">
+      <title>A Single Entry of a Product</title>
+      <statement>
+        <p>
+          Find the <m>(2,3)</m>-entry of <m>AB</m>, where
+          <md>
+            A = \begin{bmatrix} 1 \amp 4 \amp -2 \\ 1 \amp -2 \amp 1 \\ 2 \amp 1 \amp -9 \end{bmatrix},
+            \qquad
+            B = \begin{bmatrix} 17 \amp 6 \amp 4 \\ 10 \amp -9 \amp 2 \\ 3 \amp 0 \amp 3 \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          There is no need to compute the whole product. By
+          <xref ref="thm-ij-entry-of-product" text="type-global" />, the
+          <m>(2,3)</m>-entry is row <m>2</m> of <m>A</m> against column <m>3</m> of
+          <m>B</m>:
+          <md>
+            (AB)_{23} = 1 \cdot 4 + (-2) \cdot 2 + 1 \cdot 3 = 4 - 4 + 3 = 3.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-sizes-and-transposes">
+      <title>Sizes, Transposes, and Three False Claims</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 2 \amp 0 \end{bmatrix},
+            \qquad
+            B = \begin{bmatrix} 1 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \end{bmatrix}.
+          </md>
+          Which of the following statements are incorrect?
+          <ol marker="(a)">
+            <li><p><m>AB \neq BA</m>, since they have different sizes.</p></li>
+            <li><p><m>BA = I_2</m>.</p></li>
+            <li><p><m>A = B^T</m>.</p></li>
+            <li><p>
+              <m>AB = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 0 \end{bmatrix}</m>.
+            </p></li>
+            <li><p><m>BA</m> is not invertible.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Compute both products. <m>A</m> is <m>3 \times 2</m> and <m>B</m> is
+          <m>2 \times 3</m>, so <m>AB</m> is <m>3 \times 3</m> and <m>BA</m> is
+          <m>2 \times 2</m>:
+          <md>
+            AB = \begin{bmatrix} 1 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \\ 2 \amp 0 \amp 4 \end{bmatrix},
+            \qquad
+            BA = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(a) Correct.</term> The two products are <m>3 \times 3</m> and
+          <m>2 \times 2</m>, so they cannot be equal.
+        </p>
+        <p>
+          <term>(b) Incorrect.</term> <m>BA = \begin{bmatrix} 5 \amp 0 \\ 0 \amp 1 \end{bmatrix} \neq I_2</m>.
+          The <m>(1,1)</m>-entry is <m>1 \cdot 1 + 0 \cdot 0 + 2 \cdot 2 = 5</m>.
+        </p>
+        <p>
+          <term>(c) Correct.</term> Transposing <m>B</m> turns its rows into columns,
+          giving exactly <m>A</m>; see
+          <xref ref="def-transpose" text="type-global" />.
+        </p>
+        <p>
+          <term>(d) Incorrect.</term> The third column of <m>AB</m> is
+          <m>[2\ 0\ 4]^T</m>, not <m>[0\ 0\ 0]^T</m>.
+        </p>
+        <p>
+          <term>(e) Incorrect.</term> <m>BA</m> is diagonal with nonzero diagonal
+          entries, so it is invertible, with
+          <m>(BA)^{-1} = \begin{bmatrix} 1/5 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>.
+        </p>
+        <p>
+          So three of the five statements fail. The exercise is a useful reminder that
+          <m>BA = I</m> is a genuine condition to be checked, not something guaranteed by
+          <m>A = B^T</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-nilpotent">
+      <title>Nilpotent Matrices</title>
+      <statement>
+        <p>
+          A square matrix <m>A</m> is called <term>nilpotent</term> if
+          <m>A^2 = 0</m>. Which of
+          <md>
+            B = \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+            \quad
+            C = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+            \quad
+            D = \begin{bmatrix} 1 \amp 1 \\ -1 \amp -1 \end{bmatrix}
+          </md>
+          are nilpotent?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Square each one:
+          <md>
+            B^2 = \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+                  \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+                = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+          </md>
+          <md>
+            C^2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} \neq 0,
+          </md>
+          <md>
+            D^2 = \begin{bmatrix} 1 \amp 1 \\ -1 \amp -1 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 1 \\ -1 \amp -1 \end{bmatrix}
+                = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}.
+          </md>
+          So <term><m>B</m> and <m>D</m> are nilpotent</term>, and <m>C</m> is not.
+        </p>
+        <p>
+          Note that <m>C</m> instead satisfies <m>C^2 = C</m>, the condition studied in
+          <xref ref="lab-idempotent" text="type-global" />.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-idempotent">
+      <title>Matrices with <m>A^2 = A</m></title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix and <m>I</m> the <m>n \times n</m>
+          identity. Which of the following statements is always true?
+          <ol marker="(a)">
+            <li><p>If <m>A^2 = A</m>, then <m>A = 0</m> or <m>A = I</m>.</p></li>
+            <li><p>If <m>A^2 = A</m> and <m>A \neq 0</m>, then <m>A</m> is invertible.</p></li>
+            <li><p>
+              If <m>A^2 = A</m>, then <m>\det A = 0</m> or <m>\det A = 1</m>.
+            </p></li>
+            <li><p>
+              If <m>\det A = 0</m> or <m>\det A = 1</m>, then <m>A^2 = A</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A single example settles (a) and (b). Take
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m>. Then
+          <m>A^2 = A</m>, yet <m>A</m> is neither <m>0</m> nor <m>I</m>, and
+          <m>\det A = 0</m> so <m>A</m> is not invertible. <term>Both (a) and (b) are
+          false.</term>
+        </p>
+        <p>
+          <term>(c) is true.</term> Taking determinants in <m>A^2 = A</m> and using
+          <xref ref="thm-det-product" text="type-global" />,
+          <md>
+            (\det A)^2 = \det A, \qquad\text{so}\qquad \det A (\det A - 1) = 0,
+          </md>
+          which forces <m>\det A = 0</m> or <m>\det A = 1</m>.
+        </p>
+        <p>
+          <term>(d) is false</term> <mdash /> it is the converse of (c), and converses of
+          true statements need not hold. For instance
+          <m>A = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m> has
+          <m>\det A = 1</m>, but
+          <m>A^2 = \begin{bmatrix} 1 \amp 2 \\ 0 \amp 1 \end{bmatrix} \neq A</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-always-true-identities">
+      <title>Which Identities Always Hold?</title>
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> be <m>n \times n</m> matrices. Decide whether each
+          identity holds for <em>every</em> such pair, and give a counterexample when it
+          does not.
+          <ol marker="(a)">
+            <li><p><m>(A + B)^T = A^T + B^T</m>.</p></li>
+            <li><p><m>(AB)^T = A^T B^T</m>.</p></li>
+            <li><p><m>\det(A + B^T) = \det(A^T + B)</m>.</p></li>
+            <li><p>If <m>AB = 0</m> then <m>BA = 0</m>.</p></li>
+            <li><p><m>AB - BA = 0</m>.</p></li>
+            <li><p>If <m>A^{-1} = B</m> then <m>AB = BA</m>.</p></li>
+            <li><p>
+              If <m>A + B</m> is invertible, then <m>A</m> and <m>B</m> are both
+              invertible.
+            </p></li>
+            <li><p><m>(A + B)(A - B) = A^2 - B^2</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a) Always true.</term> Transposition is computed entry by entry, so it
+          respects sums; see
+          <xref ref="thm-transpose-properties" text="type-global" />.
+        </p>
+        <p>
+          <term>(b) False.</term> The correct rule is <m>(AB)^T = B^T A^T</m> and the
+          order matters. With
+          <m>A = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m> and
+          <m>B = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix}</m>,
+          <m>(AB)^T = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m> while
+          <m>A^T B^T = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 2 \end{bmatrix}</m>.
+        </p>
+        <p>
+          <term>(c) Always true.</term> The two matrices are transposes of one another,
+          since <m>(A + B^T)^T = A^T + B</m>, and a matrix and its transpose have the same
+          determinant by
+          <xref ref="thm-det-transpose" text="type-global" />.
+        </p>
+        <p>
+          <term>(d) False.</term> With <m>A = \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m>
+          and <m>B = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m> we get
+          <m>AB = 0</m> but <m>BA = \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} \neq 0</m>.
+        </p>
+        <p>
+          <term>(e) False</term> <mdash /> this just says every pair of matrices commutes,
+          which <xref ref="eg-ab-not-ba" text="type-global" /> already refutes.
+        </p>
+        <p>
+          <term>(f) Always true.</term> If <m>B = A^{-1}</m> then
+          <m>AB = AA^{-1} = I</m> and <m>BA = A^{-1}A = I</m>, so both equal <m>I</m>.
+          This is one of the rare pairs that <em>is</em> guaranteed to commute.
+        </p>
+        <p>
+          <term>(g) False.</term> Take <m>A = I</m> and <m>B = 0</m>. Then
+          <m>A + B = I</m> is invertible while <m>B</m> is not. (Or take
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m> and
+          <m>B = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>: neither is
+          invertible but their sum is <m>I</m>.)
+        </p>
+        <p>
+          <term>(h) False.</term> Expanding gives
+          <m>(A+B)(A-B) = A^2 - AB + BA - B^2</m>, which equals <m>A^2 - B^2</m> only when
+          <m>AB = BA</m>. The pair in (d) provides a counterexample.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-cancellation-fails">
+      <title>When Cancellation Fails</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Find <m>2 \times 2</m> matrices <m>A</m>, <m>C</m>, <m>D</m> with
+              <m>A \neq 0</m> and <m>C \neq D</m>, but <m>AC = AD</m>.
+            </p></li>
+            <li><p>
+              Can this be done with <m>AC \neq 0</m>?
+            </p></li>
+            <li><p>
+              Give an example of matrices <m>A</m>, <m>B</m>, neither of them zero, with
+              <m>AB = 0</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> The condition <m>AC = AD</m> is the same as
+          <m>A(C - D) = 0</m>, so we need a nonzero <m>A</m> that kills some nonzero
+          matrix. Any <m>A</m> whose columns are linearly dependent will do. Take
+          <md>
+            A = \begin{bmatrix} 1 \amp -1 \\ -1 \amp 1 \end{bmatrix},
+            \quad
+            C = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix},
+            \quad
+            D = \begin{bmatrix} 2 \amp 2 \\ 2 \amp 2 \end{bmatrix}.
+          </md>
+          Every column of <m>C</m> and of <m>D</m> has equal entries, and <m>A</m>
+          annihilates such a column, so
+          <md>
+            AC = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} = AD,
+          </md>
+          while <m>C \neq D</m> and <m>A \neq 0</m>.
+        </p>
+        <p>
+          <term>(b)</term> Yes. We only need <m>A(C-D) = 0</m>; nothing forces
+          <m>AC</m> itself to vanish. Take
+          <md>
+            A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+            \quad
+            C = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+            \quad
+            D = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 0 \end{bmatrix}.
+          </md>
+          Then
+          <md>
+            AC = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} = AD \neq 0,
+          </md>
+          and still <m>C \neq D</m>.
+        </p>
+        <p>
+          <term>(c)</term> This is the case <m>D = 0</m> of part (a): we need a nonzero
+          <m>B</m> whose columns all solve <m>A\vec{x} = \vec{0}</m>. Such a nonzero
+          <m>\vec{x}</m> exists exactly when <m>A</m> is not invertible. With the same
+          <m>A</m> as in (a),
+          <md>
+            \begin{bmatrix} 1 \amp -1 \\ -1 \amp 1 \end{bmatrix}
+            \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}
+            = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}.
+          </md>
+          Note that <m>B</m> may have any number of columns; a single column
+          <m>[1\ 1]^T</m> works just as well.
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-matrix-inverses">
+    <title>Matrix Inverses</title>
+    <exercises>
+
+    <exercise xml:id="lab-cancellation-works">
+      <title>When Cancellation Works</title>
+      <statement>
+        <p>
+          Explain why, if <m>AB = AC</m> and <m>A^{-1}</m> exists, then <m>B = C</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Multiply both sides on the <em>left</em> by <m>A^{-1}</m>:
+          <md>
+            <mrow>
+              A^{-1}(AB) \amp = A^{-1}(AC)
+            </mrow>
+            <mrow>
+              (A^{-1}A)B \amp = (A^{-1}A)C
+            </mrow>
+            <mrow>
+              IB \amp = IC
+            </mrow>
+            <mrow>
+              B \amp = C.
+            </mrow>
+          </md>
+          The second step is associativity of matrix multiplication
+          (<xref ref="thm-matrix-product-properties" text="type-global" />), and the last
+          uses that <m>I</m> is the identity for multiplication.
+        </p>
+        <p>
+          Invertibility is essential, not decorative:
+          <xref ref="lab-cancellation-fails" text="type-global" /> shows that cancellation
+          can fail outright when <m>A^{-1}</m> does not exist. Note also that we must
+          multiply on the same side on both sides of the equation <mdash /> left-cancelling
+          <m>A</m> tells us nothing about an equation of the form <m>BA = CA</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-inverses-of-transposes-and-products">
+      <title>Inverses of Transposes and Products</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Show that if <m>A</m> is an invertible <m>n \times n</m> matrix, then so is
+              <m>A^T</m>, and <m>(A^T)^{-1} = (A^{-1})^T</m>.
+            </p></li>
+            <li><p>
+              Show that <m>(AB)^{-1} = B^{-1}A^{-1}</m> by verifying both
+              <m>AB(B^{-1}A^{-1}) = I</m> and <m>B^{-1}A^{-1}(AB) = I</m>.
+            </p></li>
+            <li><p>Show that <m>(ABC)^{-1} = C^{-1}B^{-1}A^{-1}</m>.</p></li>
+          </ol>
+          Throughout you may use that an inverse, when it exists, is unique
+          (<xref ref="thm-inverse-unique" text="type-global" />): if <m>MN = I</m> and
+          <m>NM = I</m>, then <m>N = M^{-1}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> We show that <m>(A^{-1})^T</m> behaves like an inverse of
+          <m>A^T</m>. Using <m>M^T N^T = (NM)^T</m>,
+          <md>
+            A^T (A^{-1})^T = (A^{-1}A)^T = I^T = I,
+          </md>
+          <md>
+            (A^{-1})^T A^T = (AA^{-1})^T = I^T = I.
+          </md>
+          By uniqueness of the inverse, <m>A^T</m> is invertible with
+          <m>(A^T)^{-1} = (A^{-1})^T</m>.
+        </p>
+        <p>
+          <term>(b)</term> Regroup and cancel from the inside out:
+          <md>
+            (AB)(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AIA^{-1} = AA^{-1} = I,
+          </md>
+          <md>
+            (B^{-1}A^{-1})(AB) = B^{-1}(A^{-1}A)B = B^{-1}IB = B^{-1}B = I.
+          </md>
+          So <m>B^{-1}A^{-1}</m> acts as the inverse of <m>AB</m>, and by uniqueness
+          <m>(AB)^{-1} = B^{-1}A^{-1}</m>.
+        </p>
+        <p>
+          <term>(c)</term> The same peeling, one layer deeper:
+          <md>
+            <mrow>
+              (ABC)(C^{-1}B^{-1}A^{-1}) \amp = AB(CC^{-1})B^{-1}A^{-1}
+            </mrow>
+            <mrow>
+              \amp = A(BB^{-1})A^{-1} = AA^{-1} = I,
+            </mrow>
+          </md>
+          <md>
+            <mrow>
+              (C^{-1}B^{-1}A^{-1})(ABC) \amp = C^{-1}B^{-1}(A^{-1}A)BC
+            </mrow>
+            <mrow>
+              \amp = C^{-1}(B^{-1}B)C = C^{-1}C = I.
+            </mrow>
+          </md>
+          Both (b) and (c) are instances of
+          <xref ref="thm-inverses-transposes-products" text="type-global" />: inverting a
+          product reverses the order of the factors, just as transposing one does.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-inversion-algorithm-3x3">
+      <title>The Inversion Algorithm</title>
+      <statement>
+        <p>
+          Let
+          <m>A = \begin{bmatrix} 1 \amp 0 \amp -1 \\ -1 \amp 2 \amp 0 \\ 2 \amp 1 \amp -3 \end{bmatrix}</m>
+          and <m>\vec{b} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}</m>.
+          <ol marker="(a)">
+            <li><p>Use the matrix inversion algorithm to find <m>A^{-1}</m>.</p></li>
+            <li><p>Use your answer to solve <m>A\vec{x} = \vec{b}</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Following
+          <xref ref="alg-matrix-inversion" text="type-global" />, row reduce
+          <m>[\,A \mid I\,]</m>:
+          <md>
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp -1 \amp 1 \amp 0 \amp 0 \\
+              -1 \amp 2 \amp 0 \amp 0 \amp 1 \amp 0 \\
+              2 \amp 1 \amp -3 \amp 0 \amp 0 \amp 1
             \end{array} \right]
-            \longrightarrow
-            \left[ \begin{array}{ccc|c}
-              1 \amp -2 \amp 0 \amp -1 \\
-              0 \amp 0 \amp 1 \amp 3 \\
-              0 \amp 0 \amp 0 \amp 0
+          </md>
+          <md>
+            \xrightarrow[-2r_1 + r_3]{r_1 + r_2}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp -1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 2 \amp -1 \amp 1 \amp 1 \amp 0 \\
+              0 \amp 1 \amp -1 \amp -2 \amp 0 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-2r_3 + r_2}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp -1 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 1 \amp 5 \amp 1 \amp -2 \\
+              0 \amp 1 \amp -1 \amp -2 \amp 0 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow[r_2 + r_3]{r_2 + r_1}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 6 \amp 1 \amp -2 \\
+              0 \amp 0 \amp 1 \amp 5 \amp 1 \amp -2 \\
+              0 \amp 1 \amp 0 \amp 3 \amp 1 \amp -1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{r_2 \leftrightarrow r_3}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 6 \amp 1 \amp -2 \\
+              0 \amp 1 \amp 0 \amp 3 \amp 1 \amp -1 \\
+              0 \amp 0 \amp 1 \amp 5 \amp 1 \amp -2
+            \end{array} \right].
+          </md>
+          The left half is <m>I</m>, so
+          <md>
+            A^{-1} = \begin{bmatrix} 6 \amp 1 \amp -2 \\ 3 \amp 1 \amp -1 \\ 5 \amp 1 \amp -2 \end{bmatrix}.
+          </md>
+          Checking one entry of <m>AA^{-1}</m>: row <m>1</m> of <m>A</m> against column
+          <m>1</m> of <m>A^{-1}</m> is <m>6 + 0 - 5 = 1</m>. <m>\checkmark</m>
+        </p>
+        <p>
+          <term>(b)</term> Since <m>A</m> is invertible, <m>\vec{x} = A^{-1}\vec{b}</m>.
+          As <m>\vec{b} = \vec{e}_2</m>, this simply picks out the second column of
+          <m>A^{-1}</m>:
+          <md>
+            \vec{x} = \begin{bmatrix} 6 \amp 1 \amp -2 \\ 3 \amp 1 \amp -1 \\ 5 \amp 1 \amp -2 \end{bmatrix}
+                      \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+                    = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}.
+          </md>
+          Check: <m>A[1\ 1\ 1]^T = (1 + 0 - 1,\ -1 + 2 + 0,\ 2 + 1 - 3) = (0,1,0)</m>.
+          <m>\checkmark</m>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-one-inverse-many-systems">
+      <title>One Inverse, Many Systems</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 1 \amp 0 \amp 3 \\ 2 \amp 3 \amp 4 \\ 1 \amp 0 \amp 2 \end{bmatrix}</m>.
+          <ol marker="(a)">
+            <li><p>Find <m>A^{-1}</m>.</p></li>
+            <li><p>
+              Use it to solve <m>A\vec{x} = \vec{b}</m> for each of
+              <md>
+                \vec{b} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix},\
+                \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix},\
+                \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},\
+                \begin{bmatrix} 3 \\ -1 \\ -2 \end{bmatrix}.
+              </md>
+            </p></li>
+            <li><p>
+              Give the solution in terms of a general right-hand side
+              <m>[a\ b\ c]^T</m>.
+            </p></li>
+            <li><p>Find all solutions of <m>A\vec{x} = \vec{0}</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> The inversion algorithm gives
+          <md>
+            A^{-1} = \begin{bmatrix}
+              -2 \amp 0 \amp 3 \\
+              0 \amp \frac{1}{3} \amp -\frac{2}{3} \\
+              1 \amp 0 \amp -1
+            \end{bmatrix}.
+          </md>
+          Verify with one row: row <m>2</m> of <m>A</m> against column <m>3</m> of
+          <m>A^{-1}</m> gives <m>2(3) + 3\left(-\tfrac{2}{3}\right) + 4(-1) = 6 - 2 - 4 = 0</m>.
+          <m>\checkmark</m>
+        </p>
+        <p>
+          <term>(b)</term> This is the point of computing an inverse once: each system is
+          now a single matrix-vector product, <m>\vec{x} = A^{-1}\vec{b}</m>.
+          <md>
+            A^{-1}\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} = \begin{bmatrix} 7 \\ -\frac{4}{3} \\ -2 \end{bmatrix},
+            \qquad
+            A^{-1}\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} -4 \\ \frac{1}{3} \\ 2 \end{bmatrix},
+          </md>
+          <md>
+            A^{-1}\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ -\frac{2}{3} \\ 0 \end{bmatrix},
+            \qquad
+            A^{-1}\begin{bmatrix} 3 \\ -1 \\ -2 \end{bmatrix} = \begin{bmatrix} -12 \\ 1 \\ 5 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(c)</term> The same product with symbols:
+          <md>
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix}
+                -2 \amp 0 \amp 3 \\
+                0 \amp \frac{1}{3} \amp -\frac{2}{3} \\
+                1 \amp 0 \amp -1
+              \end{bmatrix}
+              \begin{bmatrix} a \\ b \\ c \end{bmatrix}
+            = \begin{bmatrix} -2a + 3c \\ \frac{1}{3}b - \frac{2}{3}c \\ a - c \end{bmatrix}.
+          </md>
+          Setting <m>(a,b,c)</m> to each of the four right-hand sides reproduces the
+          answers in (b).
+        </p>
+        <p>
+          <term>(d)</term> Since <m>A^{-1}</m> exists,
+          <m>A\vec{x} = \vec{0}</m> gives
+          <m>\vec{x} = A^{-1}\vec{0} = \vec{0}</m>. The trivial solution is the
+          <em>only</em> solution <mdash /> one of the equivalences in
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" />.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-inverting-and-solving">
+      <title>Inverting and Solving</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Use the matrix inversion algorithm to find <m>A^{-1}</m> for
+              <m>A = \begin{bmatrix} 1 \amp -1 \amp 2 \\ 0 \amp 1 \amp -2 \\ -1 \amp -1 \amp 3 \end{bmatrix}</m>.
+            </p></li>
+            <li><p>
+              Let <m>M = \begin{bmatrix} 0 \amp 1 \amp 1 \\ -1 \amp 0 \amp -1 \\ -1 \amp -1 \amp -3 \end{bmatrix}</m>
+              and <m>\vec{b} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</m>. Given that
+              <m>M^{-1} = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 2 \amp -1 \amp 1 \\ -1 \amp 1 \amp -1 \end{bmatrix}</m>,
+              solve <m>M\vec{x} = \vec{b}</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Row reduce <m>[\,A \mid I\,]</m>:
+          <md>
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp -1 \amp 2 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp -2 \amp 0 \amp 1 \amp 0 \\
+              -1 \amp -1 \amp 3 \amp 0 \amp 0 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{r_1 + r_3}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp -1 \amp 2 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp -2 \amp 0 \amp 1 \amp 0 \\
+              0 \amp -2 \amp 5 \amp 1 \amp 0 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow[2r_2 + r_3]{r_2 + r_1}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 1 \amp 1 \amp 0 \\
+              0 \amp 1 \amp -2 \amp 0 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 1 \amp 1 \amp 2 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{2r_3 + r_2}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 1 \amp 1 \amp 0 \\
+              0 \amp 1 \amp 0 \amp 2 \amp 5 \amp 2 \\
+              0 \amp 0 \amp 1 \amp 1 \amp 2 \amp 1
+            \end{array} \right],
+          </md>
+          so
+          <md>
+            A^{-1} = \begin{bmatrix} 1 \amp 1 \amp 0 \\ 2 \amp 5 \amp 2 \\ 1 \amp 2 \amp 1 \end{bmatrix}.
+          </md>
+          Check the middle entry of <m>AA^{-1}</m>: row <m>2</m> of <m>A</m> against
+          column <m>2</m> of <m>A^{-1}</m> is <m>0(1) + 1(5) + (-2)(2) = 1</m>.
+          <m>\checkmark</m>
+        </p>
+        <p>
+          <term>(b)</term> Multiply through by <m>M^{-1}</m>:
+          <md>
+            \vec{x} = M^{-1}\vec{b}
+            = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 2 \amp -1 \amp 1 \\ -1 \amp 1 \amp -1 \end{bmatrix}
+              \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ 3 \\ -2 \end{bmatrix}.
+          </md>
+          Check: <m>M[0\ 3\ {-2}]^T = (0 + 3 - 2,\ 0 + 0 + 2,\ 0 - 3 + 6) = (1,2,3)</m>.
+          <m>\checkmark</m>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-one-entry-of-inverse">
+      <title>One Entry of an Inverse</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 1 \amp 1 \amp 1 \\ 1 \amp 2 \amp 4 \end{bmatrix}</m>.
+          Find the <m>(2,3)</m>-entry of <m>A^{-1}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Run the inversion algorithm:
+          <md>
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+              1 \amp 1 \amp 1 \amp 0 \amp 1 \amp 0 \\
+              1 \amp 2 \amp 4 \amp 0 \amp 0 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow[-r_1 + r_3]{-r_1 + r_2}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 1 \amp -1 \amp 1 \amp 0 \\
+              0 \amp 2 \amp 4 \amp -1 \amp 0 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-2r_2 + r_3}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 1 \amp -1 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 2 \amp 1 \amp -2 \amp 1
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{\frac{1}{2} r_3}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 1 \amp -1 \amp 1 \amp 0 \\
+              0 \amp 0 \amp 1 \amp \frac{1}{2} \amp -1 \amp \frac{1}{2}
+            \end{array} \right]
+          </md>
+          <md>
+            \xrightarrow{-r_3 + r_2}
+            \left[ \begin{array}{ccc|ccc}
+              1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+              0 \amp 1 \amp 0 \amp -\frac{3}{2} \amp 2 \amp -\frac{1}{2} \\
+              0 \amp 0 \amp 1 \amp \frac{1}{2} \amp -1 \amp \frac{1}{2}
             \end{array} \right].
           </md>
         </p>
         <p>
-          The system is consistent, so the answer is yes. Here <m>y</m> is free; with
-          <m>y = s</m> we get <m>z = 3</m> and <m>x = -1 + 2s</m>, so
+          So
+          <m>A^{-1} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -\frac{3}{2} \amp 2 \amp -\frac{1}{2} \\ \frac{1}{2} \amp -1 \amp \frac{1}{2} \end{bmatrix}</m>,
+          and the <m>(2,3)</m>-entry is <m>-\tfrac{1}{2}</m>.
+        </p>
+        <p>
+          Check: row <m>2</m> of <m>A</m> against column <m>3</m> of <m>A^{-1}</m> is
+          <m>1(0) + 1\left(-\tfrac{1}{2}\right) + 1\left(\tfrac{1}{2}\right) = 0</m>, as
+          the <m>(2,3)</m>-entry of <m>I</m> should be. <m>\checkmark</m>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-solving-for-a-matrix">
+      <title>Solving for an Unknown Matrix</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Find <m>A</m> if
+              <m>(A - 2I)^{-1} = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>.
+            </p></li>
+            <li><p>
+              Find <m>A</m> if
+              <m>\left( A^{-1} + 3 \begin{bmatrix} 1 \amp 1 \\ 1 \amp 0 \end{bmatrix} \right)^{-1} = 4A</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Inverting both sides, and writing
+          <m>M = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> with
+          <m>\det M = -1</m>,
           <md>
-            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
-            = \begin{bmatrix} -1 + 2s \\ s \\ 3 \end{bmatrix}, \qquad s \in \R.
+            A - 2I = M^{-1} = \frac{1}{-1}\begin{bmatrix} 0 \amp -1 \\ -1 \amp 1 \end{bmatrix}
+                            = \begin{bmatrix} 0 \amp 1 \\ 1 \amp -1 \end{bmatrix}.
+          </md>
+          Hence
+          <md>
+            A = 2I + \begin{bmatrix} 0 \amp 1 \\ 1 \amp -1 \end{bmatrix}
+              = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}.
           </md>
         </p>
         <p>
-          Taking <m>s = 0</m> gives the specific combination
-          <m>(x,y,z) = (-1, 0, 3)</m>, and checking it,
+          <term>(b)</term> Invert both sides again. The right-hand side inverts to
+          <m>(4A)^{-1} = \tfrac{1}{4}A^{-1}</m>, so
           <md>
-            -\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
-            + 0 \begin{bmatrix} -2 \\ -4 \\ -2 \end{bmatrix}
-            + 3 \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
-            = \begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix} = \vec{B}. \checkmark
+            A^{-1} + 3M = \tfrac{1}{4}A^{-1}.
+          </md>
+          Collecting the <m>A^{-1}</m> terms,
+          <md>
+            3M = \tfrac{1}{4}A^{-1} - A^{-1} = -\tfrac{3}{4}A^{-1},
+            \qquad\text{so}\qquad
+            A^{-1} = -4M.
+          </md>
+          Therefore
+          <md>
+            A = (-4M)^{-1} = -\tfrac{1}{4}M^{-1}
+              = -\tfrac{1}{4}\begin{bmatrix} 0 \amp 1 \\ 1 \amp -1 \end{bmatrix}
+              = \tfrac{1}{4}\begin{bmatrix} 0 \amp -1 \\ -1 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-inverse-from-polynomial-equation">
+      <title>An Inverse from a Polynomial Equation</title>
+      <statement>
+        <p>
+          Suppose the <m>n \times n</m> matrix <m>A</m> satisfies
+          <m>A^3 - 4A - I = 0</m>. Express <m>A^{-1}</m> in terms of <m>A</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Move the identity to the other side and factor out <m>A</m>:
+          <md>
+            A^3 - 4A = I,
+            \qquad\text{so}\qquad
+            A(A^2 - 4I) = I.
+          </md>
+          The same factoring on the other side gives <m>(A^2 - 4I)A = I</m>, since powers
+          of <m>A</m> commute with <m>A</m>. So <m>A^2 - 4I</m> acts as an inverse of
+          <m>A</m>, and by uniqueness
+          <md>
+            A^{-1} = A^2 - 4I.
+          </md>
+          Compare <xref ref="eg-inverse-from-polynomial" text="type-global" />. Note in
+          passing that this argument also <em>proves</em> <m>A</m> is invertible <mdash />
+          we did not have to assume it.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-recovering-b">
+      <title>Recovering <m>B</m> from <m>AB</m></title>
+      <statement>
+        <p>
+          Suppose <m>A = \begin{bmatrix} 1 \amp 1 \\ 3 \amp 4 \end{bmatrix}</m> and
+          <md>
+            AB = \begin{bmatrix} 1 \amp 1 \amp 0 \amp 3 \\ -1 \amp 4 \amp 2 \amp 5 \end{bmatrix}.
+          </md>
+          Find the <m>(1,1)</m>-entry and the <m>(1,4)</m>-entry of <m>B</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>\det A = 4 - 3 = 1 \neq 0</m>, <m>A</m> is invertible and
+          <m>B = A^{-1}(AB)</m>. By
+          <xref ref="thm-two-by-two-inverse" text="type-global" />,
+          <md>
+            A^{-1} = \frac{1}{1}\begin{bmatrix} 4 \amp -1 \\ -3 \amp 1 \end{bmatrix}
+                   = \begin{bmatrix} 4 \amp -1 \\ -3 \amp 1 \end{bmatrix}.
           </md>
         </p>
         <p>
-          That <m>y</m> is free is no accident: <m>\vec{C}_2 = -2\vec{C}_1</m>, so
-          <m>\{\vec{C}_1, \vec{C}_2, \vec{C}_3\}</m> is linearly dependent and the
-          combination is far from unique.
+          Only row <m>1</m> of <m>A^{-1}</m> is needed. Against column <m>1</m> of
+          <m>AB</m>,
+          <md>
+            B_{11} = 4(1) + (-1)(-1) = 5,
+          </md>
+          and against column <m>4</m>,
+          <md>
+            B_{14} = 4(3) + (-1)(5) = 7.
+          </md>
+        </p>
+        <p>
+          For the record, the whole matrix is
+          <m>B = \begin{bmatrix} 5 \amp 0 \amp -2 \amp 7 \\ -4 \amp 1 \amp 2 \amp -4 \end{bmatrix}</m>,
+          and <m>AB</m> can be recomputed from it to confirm the answer.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-matrix-equations">
+      <title>Matrix Equations with Invertible Coefficients</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Let
+              <m>A = \begin{bmatrix} 2 \amp 3 \\ 1 \amp 2 \end{bmatrix}</m>,
+              <m>B = \begin{bmatrix} 1 \amp 3 \\ 2 \amp 5 \end{bmatrix}</m>,
+              <m>C = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m>.
+              If <m>AYB = C</m>, find <m>Y</m>.
+            </p></li>
+            <li><p>
+              Let <m>A = \begin{bmatrix} 2 \amp 3 \\ 1 \amp 2 \end{bmatrix}</m>. What can
+              be said about the solutions <m>Y</m> of <m>AY = BA</m>, where <m>Y</m> and
+              <m>B</m> are <m>2 \times 2</m> matrices?
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Both <m>A</m> and <m>B</m> are invertible:
+          <m>\det A = 4 - 3 = 1</m> and <m>\det B = 5 - 6 = -1</m>. Multiply the equation
+          by <m>A^{-1}</m> on the left and <m>B^{-1}</m> on the right:
+          <md>
+            Y = A^{-1} C B^{-1}.
+          </md>
+          Now
+          <md>
+            A^{-1} = \begin{bmatrix} 2 \amp -3 \\ -1 \amp 2 \end{bmatrix},
+            \qquad
+            B^{-1} = -\begin{bmatrix} 5 \amp -3 \\ -2 \amp 1 \end{bmatrix}
+                   = \begin{bmatrix} -5 \amp 3 \\ 2 \amp -1 \end{bmatrix},
+          </md>
+          so
+          <md>
+            A^{-1}C = \begin{bmatrix} 2 \amp -3 \\ -1 \amp 2 \end{bmatrix}
+                      \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}
+                    = \begin{bmatrix} -1 \amp -1 \\ 1 \amp 1 \end{bmatrix},
+          </md>
+          <md>
+            Y = \begin{bmatrix} -1 \amp -1 \\ 1 \amp 1 \end{bmatrix}
+                \begin{bmatrix} -5 \amp 3 \\ 2 \amp -1 \end{bmatrix}
+              = \begin{bmatrix} 3 \amp -2 \\ -3 \amp 2 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(b)</term> Again <m>\det A = 1 \neq 0</m>, so <m>A^{-1}</m> exists and
+          <md>
+            AY = BA
+            \quad\Longleftrightarrow\quad
+            Y = A^{-1}BA.
+          </md>
+          <term>There is exactly one <m>Y</m> for each <m>B</m>, no matter what
+          <m>B</m> is.</term> The point is that invertibility of the coefficient matrix
+          turns a matrix equation into a formula, exactly as it does for
+          <m>A\vec{x} = \vec{b}</m>. The matrix <m>Y = A^{-1}BA</m> is <em>similar</em> to
+          <m>B</m> in the sense of
+          <xref ref="def-similar" text="type-global" />.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-invertibility-parameter-2x2">
+      <title>A Parameter and Invertibility</title>
+      <statement>
+        <p>
+          Find all values of <m>a</m> for which
+          <m>A = \begin{bmatrix} 1 \amp 2 \\ a \amp 1 \end{bmatrix}</m> is invertible.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By <xref ref="thm-det-nonzero-iff-invertible" text="type-global" />, <m>A</m> is
+          invertible exactly when <m>\det A \neq 0</m>, and
+          <md>
+            \det A = 1 \cdot 1 - 2 \cdot a = 1 - 2a.
+          </md>
+          This vanishes only at <m>a = \tfrac{1}{2}</m>, so <m>A</m> is invertible for
+          every <m>a \neq \tfrac{1}{2}</m>.
+        </p>
+        <p>
+          The same conclusion comes from row reduction without ever mentioning
+          determinants:
+          <md>
+            \begin{bmatrix} 1 \amp 2 \\ a \amp 1 \end{bmatrix}
+            \xrightarrow{-a r_1 + r_2}
+            \begin{bmatrix} 1 \amp 2 \\ 0 \amp 1 - 2a \end{bmatrix},
+          </md>
+          and the reduced row-echelon form is <m>I</m> precisely when
+          <m>1 - 2a \neq 0</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-b-equals-ua">
+      <title>Reading <m>B = UA</m> Correctly</title>
+      <statement>
+        <p>
+          Let <m>A</m> and <m>B</m> be <m>m \times n</m> matrices, and suppose <m>U</m> is
+          an invertible matrix with <m>B = UA</m>. Which of the following is always true?
+          <ol marker="(a)">
+            <li><p><m>A = BU^{-1}</m>.</p></li>
+            <li><p><m>A = BU</m>.</p></li>
+            <li><p><m>A = U^{-1}B</m>.</p></li>
+            <li><p><m>B = AU</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>U</m> multiplies <m>A</m> on the <em>left</em>, so we must undo it on the
+          left:
+          <md>
+            U^{-1}B = U^{-1}(UA) = (U^{-1}U)A = IA = A.
+          </md>
+          The answer is <term>(c)</term>.
+        </p>
+        <p>
+          Options (a) and (b) multiply on the wrong side and are not even defined in
+          general: if <m>A</m> is <m>m \times n</m> with <m>m \neq n</m>, then <m>U</m> is
+          <m>m \times m</m> and the product <m>BU</m> requires <m>n = m</m>. Option (d)
+          fails for the same reason, and in any case says something different from the
+          hypothesis.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-imt-equivalences">
+      <title>Which Statements Are Equivalent to Invertibility?</title>
+      <statement>
+        <p>
+          Let <m>A</m> be a square matrix. Which of the following are equivalent to
+          <m>A</m> being invertible?
+          <ol marker="(a)">
+            <li><p>The reduced row-echelon form of <m>A</m> is <m>I</m>.</p></li>
+            <li><p><m>A\vec{x} = \vec{b}</m> has a unique solution for every <m>\vec{b}</m>.</p></li>
+            <li><p><m>A\vec{x} = \vec{0}</m> has a unique solution.</p></li>
+            <li><p><m>A</m> is a product of elementary matrices.</p></li>
+            <li><p><m>A\vec{x} = \vec{0}</m> has infinitely many solutions.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Statements <term>(a) through (d) are all equivalent</term> to invertibility.
+          Items (a), (b) and (d) appear verbatim in
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" />. For (c), note
+          that <m>\vec{x} = \vec{0}</m> is always a solution of the homogeneous system, so
+          <q>a unique solution</q> means <q>only the trivial solution</q>, which is again
+          on that list.
+        </p>
+        <p>
+          <term>(e) is not equivalent</term> <mdash /> it is the exact opposite. If
+          <m>A\vec{x} = \vec{0}</m> has infinitely many solutions then it has a nontrivial
+          one, and <m>A</m> is <em>not</em> invertible. For a square matrix these are the
+          only two possibilities: <m>A\vec{x} = \vec{0}</m> has either only the trivial
+          solution (and <m>A</m> is invertible) or infinitely many (and it is not).
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-elementary-matrices">
+    <title>Elementary Matrices</title>
+    <exercises>
+
+    <exercise xml:id="lab-product-of-three-elementary">
+      <title>Writing a Matrix as a Product of Elementary Matrices</title>
+      <statement>
+        <p>
+          Express <m>A = \begin{bmatrix} 0 \amp 5 \\ 1 \amp 3 \end{bmatrix}</m> as a
+          product of three elementary matrices.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reduce <m>A</m> to <m>I</m>, recording each operation:
+          <md>
+            \begin{bmatrix} 0 \amp 5 \\ 1 \amp 3 \end{bmatrix}
+            \xrightarrow{r_1 \leftrightarrow r_2}
+            \begin{bmatrix} 1 \amp 3 \\ 0 \amp 5 \end{bmatrix}
+          </md>
+          <md>
+            \xrightarrow{\frac{1}{5}r_2}
+            \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \end{bmatrix}
+            \xrightarrow{-3r_2 + r_1}
+            \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          The corresponding elementary matrices, each obtained by doing the operation to
+          <m>I</m>, are
+          <md>
+            E_1 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix},
+            \quad
+            E_2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp \frac{1}{5} \end{bmatrix},
+            \quad
+            E_3 = \begin{bmatrix} 1 \amp -3 \\ 0 \amp 1 \end{bmatrix},
+          </md>
+          and <m>E_3 E_2 E_1 A = I</m>. Solving for <m>A</m> and using
+          <xref ref="lab-inverses-of-transposes-and-products" text="type-global" />,
+          <md>
+            A = E_1^{-1} E_2^{-1} E_3^{-1}.
+          </md>
+        </p>
+        <p>
+          Each inverse is elementary, being the matrix of the reversing operation
+          (<xref ref="eg-inverse-of-elementary" text="type-global" />):
+          <md>
+            E_1^{-1} = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix},
+            \quad
+            E_2^{-1} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 5 \end{bmatrix},
+            \quad
+            E_3^{-1} = \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          So
+          <md>
+            A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+                \begin{bmatrix} 1 \amp 0 \\ 0 \amp 5 \end{bmatrix}
+                \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \end{bmatrix},
+          </md>
+          and multiplying out from the left,
+          <md>
+            \begin{bmatrix} 0 \amp 5 \\ 1 \amp 0 \end{bmatrix}
+            \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \end{bmatrix}
+            = \begin{bmatrix} 0 \amp 5 \\ 1 \amp 3 \end{bmatrix} = A. \checkmark
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-u-from-row-operations">
+      <title>Finding <m>U</m> with <m>B = UA</m></title>
+      <statement>
+        <p>
+          Let
+          <m>A = \begin{bmatrix} -2 \amp 1 \amp 0 \\ -3 \amp 3 \amp 1 \end{bmatrix}</m>
+          and
+          <m>B = \begin{bmatrix} 3 \amp 0 \amp 1 \\ 2 \amp -1 \amp 0 \end{bmatrix}</m>.
+          Find an invertible matrix <m>U</m> with <m>B = UA</m>, and express <m>U</m> as a
+          product of elementary matrices.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reduce <m>A</m> towards <m>B</m>:
+          <md>
+            \begin{bmatrix} -2 \amp 1 \amp 0 \\ -3 \amp 3 \amp 1 \end{bmatrix}
+            \xrightarrow{r_1 \leftrightarrow r_2}
+            \begin{bmatrix} -3 \amp 3 \amp 1 \\ -2 \amp 1 \amp 0 \end{bmatrix}
+          </md>
+          <md>
+            \xrightarrow{-r_2}
+            \begin{bmatrix} -3 \amp 3 \amp 1 \\ 2 \amp -1 \amp 0 \end{bmatrix}
+            \xrightarrow{3r_2 + r_1}
+            \begin{bmatrix} 3 \amp 0 \amp 1 \\ 2 \amp -1 \amp 0 \end{bmatrix} = B.
+          </md>
+        </p>
+        <p>
+          The three elementary matrices are
+          <md>
+            E_1 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix},
+            \quad
+            E_2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix},
+            \quad
+            E_3 = \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \end{bmatrix},
+          </md>
+          and <m>E_3 E_2 E_1 A = B</m>, so
+          <md>
+            U = E_3 E_2 E_1
+              = \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \end{bmatrix}
+                \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
+                \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+              = \begin{bmatrix} -3 \amp 1 \\ -1 \amp 0 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <m>U</m> is invertible, being a product of invertible matrices; indeed
+          <m>\det U = 0 - (-1) = 1 \neq 0</m>. Checking directly,
+          <md>
+            UA = \begin{bmatrix} -3 \amp 1 \\ -1 \amp 0 \end{bmatrix}
+                 \begin{bmatrix} -2 \amp 1 \amp 0 \\ -3 \amp 3 \amp 1 \end{bmatrix}
+               = \begin{bmatrix} 3 \amp 0 \amp 1 \\ 2 \amp -1 \amp 0 \end{bmatrix} = B. \checkmark
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-u-from-two-operations">
+      <title>Two Operations, One Matrix <m>U</m></title>
+      <statement>
+        <p>
+          Let <m>A</m> be a <m>2 \times 9</m> matrix and let <m>B</m> be obtained from
+          <m>A</m> by performing, in order,
+          <ol marker="(i)">
+            <li><p>add <m>-5</m> times row <m>2</m> to row <m>1</m>;</p></li>
+            <li><p>interchange rows <m>1</m> and <m>2</m>.</p></li>
+          </ol>
+          Then <m>B = UA</m> for which matrix <m>U</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Each operation is performed by left multiplication by the elementary matrix
+          obtained by doing that operation to <m>I_2</m>:
+          <md>
+            E_1 = \begin{bmatrix} 1 \amp -5 \\ 0 \amp 1 \end{bmatrix},
+            \qquad
+            E_2 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Applying <m>E_1</m> first and then <m>E_2</m> gives
+          <m>B = E_2(E_1 A) = (E_2 E_1)A</m>, so
+          <md>
+            U = E_2 E_1
+              = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+                \begin{bmatrix} 1 \amp -5 \\ 0 \amp 1 \end{bmatrix}
+              = \begin{bmatrix} 0 \amp 1 \\ 1 \amp -5 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          The order matters: <m>E_1 E_2 = \begin{bmatrix} -5 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>
+          is a different matrix, corresponding to doing the swap first. Note also that the
+          number of columns of <m>A</m> is irrelevant <mdash /> only the two rows matter.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-which-are-elementary">
+      <title>Which Matrices Are Elementary?</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Which of the following are elementary matrices?
+              <md>
+                A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \end{bmatrix},
+                \quad
+                B = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix},
+              </md>
+              <md>
+                C = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix},
+                \quad
+                D = \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+              </md>
+            </p></li>
+            <li><p>
+              Which of these is always true: the sum, the scalar multiple, the product, or
+              the inverse of elementary matrices is again elementary?
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> By
+          <xref ref="def-elementary-matrix" text="type-global" />, an elementary matrix
+          comes from an identity matrix by <em>one</em> elementary row operation.
+        </p>
+        <p>
+          <m>A</m> is not square, so it is not an elementary matrix at all.
+        </p>
+        <p>
+          <m>B = I_3</m> <term>is</term> elementary: multiplying any row of <m>I_3</m> by
+          the nonzero scalar <m>1</m> leaves it unchanged.
+        </p>
+        <p>
+          <m>C</m> is <term>not</term>: it has a zero row, so it is not invertible, while
+          every elementary matrix is (its operation can be reversed).
+        </p>
+        <p>
+          <m>D</m> <term>is</term>: it is <m>I_3</m> after the single operation
+          <m>-2r_3 + r_1</m>.
+        </p>
+        <p>
+          So the elementary ones are <m>B</m> and <m>D</m>.
+        </p>
+        <p>
+          <term>(b)</term> Only the <term>inverse</term>. Undoing one row operation is
+          again one row operation <mdash /> swap back, multiply by the reciprocal, subtract
+          what was added <mdash /> so the inverse of an elementary matrix is elementary,
+          as in <xref ref="eg-inverse-of-elementary" text="type-global" />.
+        </p>
+        <p>
+          The others all fail. The sum
+          <m>\begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix} + \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix} = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 2 \end{bmatrix}</m>
+          differs from <m>I</m> in four entries. The scalar multiple <m>2I</m> of the
+          elementary matrix <m>I</m> comes from <m>I</m> by <em>two</em> row scalings, not
+          one. And the product of the same two matrices above is
+          <m>\begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m>, again not elementary
+          <mdash /> indeed
+          <xref ref="lab-product-of-three-elementary" text="type-global" /> shows that a
+          general invertible matrix is a product of <em>several</em> elementary matrices,
+          which would be pointless if products stayed elementary.
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-determinants">
+    <title>Determinants</title>
+    <exercises>
+
+    <exercise xml:id="lab-two-expansions">
+      <title>Two Expansions, One Determinant</title>
+      <statement>
+        <p>
+          Find
+          <m>\det \begin{bmatrix} 1 \amp 2 \amp 1 \\ 2 \amp 1 \amp 3 \\ 2 \amp 1 \amp 1 \end{bmatrix}</m>
+          by expanding along the second row, and again by expanding along the first
+          column.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>Along row <m>2</m>.</term> The signs on row <m>2</m> alternate
+          <m>-, +, -</m>, so by
+          <xref ref="def-cofactor-expansion" text="type-global" />
+          <md>
+            <mrow>
+              \det A \amp = -2 \begin{vmatrix} 2 \amp 1 \\ 1 \amp 1 \end{vmatrix}
+                          + 1 \begin{vmatrix} 1 \amp 1 \\ 2 \amp 1 \end{vmatrix}
+                          - 3 \begin{vmatrix} 1 \amp 2 \\ 2 \amp 1 \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = -2(1) + 1(-1) - 3(-3)
+            </mrow>
+            <mrow>
+              \amp = -2 - 1 + 9 = 6.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>Along column <m>1</m>.</term> The signs down column <m>1</m> are
+          <m>+, -, +</m>:
+          <md>
+            <mrow>
+              \det A \amp = 1 \begin{vmatrix} 1 \amp 3 \\ 1 \amp 1 \end{vmatrix}
+                          - 2 \begin{vmatrix} 2 \amp 1 \\ 1 \amp 1 \end{vmatrix}
+                          + 2 \begin{vmatrix} 2 \amp 1 \\ 1 \amp 3 \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = 1(-2) - 2(1) + 2(5)
+            </mrow>
+            <mrow>
+              \amp = -2 - 2 + 10 = 6.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The two agree, as they must: every row and every column expansion of a matrix
+          gives the same number.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-determinant-by-row-reduction">
+      <title>A Determinant by Row Reduction</title>
+      <statement>
+        <p>
+          Find
+          <m>\det \begin{bmatrix} 1 \amp 2 \amp 1 \\ 2 \amp 3 \amp 2 \\ -4 \amp 1 \amp 2 \end{bmatrix}</m>
+          using row operations.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Adding a multiple of one row to another leaves the determinant unchanged
+          (<xref ref="thm-row-ops-determinant" text="type-global" />), so we may reduce
+          freely as long as we only use that one type of operation:
+          <md>
+            \begin{bmatrix} 1 \amp 2 \amp 1 \\ 2 \amp 3 \amp 2 \\ -4 \amp 1 \amp 2 \end{bmatrix}
+            \xrightarrow[4r_1 + r_3]{-2r_1 + r_2}
+            \begin{bmatrix} 1 \amp 2 \amp 1 \\ 0 \amp -1 \amp 0 \\ 0 \amp 9 \amp 6 \end{bmatrix}
+          </md>
+          <md>
+            \xrightarrow{9r_2 + r_3}
+            \begin{bmatrix} 1 \amp 2 \amp 1 \\ 0 \amp -1 \amp 0 \\ 0 \amp 0 \amp 6 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          The last matrix is upper triangular, so by
+          <xref ref="thm-triangular-determinant" text="type-global" /> its determinant is
+          the product of the diagonal entries:
+          <md>
+            \det A = 1 \cdot (-1) \cdot 6 = -6.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-determinant-true-false">
+      <title>True or False?</title>
+      <statement>
+        <p>
+          Decide whether each statement is true or false, and justify your answer.
+          <ol marker="(a)">
+            <li><p>
+              If <m>A</m> is a <m>3 \times 3</m> matrix with <m>\det A = 0</m>, then one
+              column of <m>A</m> must be a multiple of another.
+            </p></li>
+            <li><p>
+              If two columns of a square matrix are equal, then its determinant is
+              <m>0</m>.
+            </p></li>
+            <li><p>
+              For <m>n \times n</m> matrices, <m>\det(A + B) = \det A + \det B</m>.
+            </p></li>
+            <li><p>For an <m>n \times n</m> matrix, <m>\det(3A) = 3 \det A</m>.</p></li>
+            <li><p>
+              If <m>A^{-1}</m> exists then <m>\det(A^{-1}) = (\det A)^{-1}</m>.
+            </p></li>
+            <li><p>
+              If <m>B</m> is obtained by multiplying a single row of <m>A</m> by <m>4</m>,
+              then <m>\det B = 4 \det A</m>.
+            </p></li>
+            <li><p>
+              For an <m>n \times n</m> matrix, <m>\det(-A) = (-1)^n \det A</m>.
+            </p></li>
+            <li><p>
+              If <m>A</m> is a real <m>n \times n</m> matrix, then <m>\det(A^T A) \geq 0</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a) False.</term> A zero determinant means the columns are linearly
+          <em>dependent</em>, which is weaker than one being a multiple of another. Take
+          <md>
+            A = \begin{bmatrix} 1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6 \\ 7 \amp 8 \amp 9 \end{bmatrix},
+          </md>
+          whose determinant is <m>0</m> because the third column is
+          <m>2</m> times the second minus the first, yet no column is a multiple of any
+          other.
+        </p>
+        <p>
+          <term>(b) True.</term> Subtracting one of the equal columns from the other
+          produces a zero column without changing the determinant, and a matrix with a
+          zero column has determinant <m>0</m> (expand along that column).
+        </p>
+        <p>
+          <term>(c) False.</term> Determinants are not additive. Take
+          <m>A = B = I_2</m>: then <m>\det(A + B) = \det(2I_2) = 4</m>, while
+          <m>\det A + \det B = 1 + 1 = 2</m>.
+        </p>
+        <p>
+          <term>(d) False</term> for <m>n \gt 1</m>. Scaling <em>every</em> row by
+          <m>3</m> multiplies the determinant by <m>3</m> once per row, so
+          <m>\det(3A) = 3^n \det A</m>
+          (<xref ref="thm-det-scalar-multiple" text="type-global" />). With
+          <m>A = I_2</m>, <m>\det(3A) = 9 \neq 3</m>.
+        </p>
+        <p>
+          <term>(e) True.</term> From <m>AA^{-1} = I</m> and
+          <xref ref="thm-det-product" text="type-global" />,
+          <m>\det A \cdot \det(A^{-1}) = 1</m>, so
+          <m>\det(A^{-1}) = 1/\det A</m>. (Note <m>\det A \neq 0</m> since <m>A</m> is
+          invertible.)
+        </p>
+        <p>
+          <term>(f) True.</term> This is the single-row version of (d): scaling one row by
+          <m>4</m> multiplies the determinant by <m>4</m>. Expand along that row and every
+          term picks up a factor of <m>4</m>.
+        </p>
+        <p>
+          <term>(g) True.</term> <m>-A</m> is <m>A</m> with all <m>n</m> rows scaled by
+          <m>-1</m>, giving a factor of <m>(-1)^n</m>. This is (d) with the scalar
+          <m>-1</m>.
+        </p>
+        <p>
+          <term>(h) True.</term> Using
+          <xref ref="thm-det-transpose" text="type-global" /> and then
+          <xref ref="thm-det-product" text="type-global" />,
+          <md>
+            \det(A^T A) = \det(A^T)\det(A) = (\det A)^2 \geq 0,
+          </md>
+          since <m>\det A</m> is a real number.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-determinant-detects-invertibility">
+      <title>Does This Matrix Have an Inverse?</title>
+      <statement>
+        <p>
+          Determine whether
+          <m>A = \begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 2 \amp 1 \\ 3 \amp 1 \amp 1 \end{bmatrix}</m>
+          has an inverse by deciding whether its determinant is nonzero.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Expand along the first column, whose middle entry is <m>0</m>:
+          <md>
+            <mrow>
+              \det A \amp = 1 \begin{vmatrix} 2 \amp 1 \\ 1 \amp 1 \end{vmatrix}
+                          + 3 \begin{vmatrix} 2 \amp 0 \\ 2 \amp 1 \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = 1(2 - 1) + 3(2 - 0) = 1 + 6 = 7.
+            </mrow>
+          </md>
+          (The signs down column <m>1</m> are <m>+, -, +</m>, and the third-row cofactor
+          contributes <m>+3 \cdot \det \begin{bmatrix} 2 \amp 0 \\ 2 \amp 1 \end{bmatrix}</m>.)
+        </p>
+        <p>
+          Since <m>\det A = 7 \neq 0</m>, <m>A</m> <term>is invertible</term> by
+          <xref ref="thm-det-nonzero-iff-invertible" text="type-global" />. Its inverse
+          can then be found with
+          <xref ref="alg-matrix-inversion" text="type-global" />; it is
+          <md>
+            A^{-1} = \frac{1}{7}\begin{bmatrix} 1 \amp -2 \amp 2 \\ 3 \amp 1 \amp -1 \\ -6 \amp 5 \amp 2 \end{bmatrix}.
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-parameter-and-determinant">
+      <title>Parameters and Invertibility</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              For which real <m>c</m> is
+              <m>A = \begin{bmatrix} c \amp 1 \amp 2 \\ 1 \amp 0 \amp c \\ 2 \amp c \amp 0 \end{bmatrix}</m>
+              invertible?
+            </p></li>
+            <li><p>
+              For which real <m>a</m> is
+              <m>A = \begin{bmatrix} a+1 \amp 0 \amp -3 \\ 0 \amp a+1 \amp 0 \\ 4 \amp 0 \amp a-6 \end{bmatrix}</m>
+              invertible?
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Expand along the second row, which contains a <m>0</m>. The
+          signs on row <m>2</m> are <m>-, +, -</m>:
+          <md>
+            <mrow>
+              \det A \amp = -1 \begin{vmatrix} 1 \amp 2 \\ c \amp 0 \end{vmatrix}
+                          - c \begin{vmatrix} c \amp 1 \\ 2 \amp c \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = -1(0 - 2c) - c(c^2 - 2)
+            </mrow>
+            <mrow>
+              \amp = 2c - c^3 + 2c = 4c - c^3
+            </mrow>
+            <mrow>
+              \amp = c(2 - c)(2 + c).
+            </mrow>
+          </md>
+          This is zero exactly when <m>c = 0</m>, <m>c = 2</m> or <m>c = -2</m>, so
+          <m>A</m> is invertible for every value of <m>c</m> <em>except</em> those three.
+        </p>
+        <p>
+          <term>(b)</term> Expand along the second row, whose only nonzero entry is
+          <m>a+1</m> in position <m>(2,2)</m> with sign <m>+</m>:
+          <md>
+            <mrow>
+              \det A \amp = (a+1)\begin{vmatrix} a+1 \amp -3 \\ 4 \amp a-6 \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = (a+1)\bigl[(a+1)(a-6) + 12\bigr]
+            </mrow>
+            <mrow>
+              \amp = (a+1)(a^2 - 5a + 6)
+            </mrow>
+            <mrow>
+              \amp = (a+1)(a-2)(a-3).
+            </mrow>
+          </md>
+          So <m>A</m> is invertible for every <m>a</m> except <m>a = -1</m>,
+          <m>a = 2</m> and <m>a = 3</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-determinant-of-expression">
+      <title>Determinants of Complicated Expressions</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Let <m>A</m>, <m>B</m>, <m>C</m> be <m>4 \times 4</m> with
+              <m>\det A = 4</m>, <m>\det B = 2</m>, <m>\det C = -1</m>. Find
+              <m>\det\left( \tfrac{1}{2} A^{-1} B^T C^3 A^2 \right)</m>.
+            </p></li>
+            <li><p>
+              Let <m>A</m>, <m>B</m>, <m>C</m> be <m>2 \times 2</m> with
+              <m>\det A = -1</m>, <m>\det B = 2</m>, <m>\det C = -6</m>. Find
+              <m>\det\left( A^{-1} C^2 (3B^T)^{-1} A^2 \right)</m>.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Everything follows from three rules: <m>\det(MN) = \det M \det N</m>,
+          <m>\det(M^T) = \det M</m>, and <m>\det(kM) = k^n \det M</m> for
+          <m>n \times n</m> matrices.
+        </p>
+        <p>
+          <term>(a)</term> Here <m>n = 4</m>, so the scalar <m>\tfrac{1}{2}</m>
+          contributes <m>\left(\tfrac{1}{2}\right)^4 = \tfrac{1}{16}</m>:
+          <md>
+            <mrow>
+              \det\left( \tfrac{1}{2}A^{-1}B^T C^3 A^2 \right)
+              \amp = \tfrac{1}{16} \cdot \frac{1}{\det A} \cdot \det B \cdot (\det C)^3 \cdot (\det A)^2
+            </mrow>
+            <mrow>
+              \amp = \tfrac{1}{16} \cdot \tfrac{1}{4} \cdot 2 \cdot (-1)^3 \cdot 16
+            </mrow>
+            <mrow>
+              \amp = -\tfrac{1}{2}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>(b)</term> Here <m>n = 2</m>, and
+          <m>\det(3B^T) = 3^2 \det B = 9 \cdot 2 = 18</m>:
+          <md>
+            <mrow>
+              \det\left( A^{-1}C^2(3B^T)^{-1}A^2 \right)
+              \amp = \frac{1}{\det A} \cdot (\det C)^2 \cdot \frac{1}{18} \cdot (\det A)^2
+            </mrow>
+            <mrow>
+              \amp = \det A \cdot (\det C)^2 \cdot \tfrac{1}{18}
+            </mrow>
+            <mrow>
+              \amp = (-1)(36)\left(\tfrac{1}{18}\right) = -2.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Notice that in (b) the factors <m>\frac{1}{\det A}</m> and <m>(\det A)^2</m>
+          combine to a single <m>\det A</m>: since determinants are ordinary numbers, the
+          order of the matrix factors never affects the answer.
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-eigenvalues">
+    <title>Eigenvalues and Eigenvectors</title>
+    <exercises>
+
+    <exercise xml:id="lab-eigen-3x3-repeated">
+      <title>A Repeated Eigenvalue with a Two-Dimensional Eigenspace</title>
+      <statement>
+        <p>
+          Find the eigenvalues and eigenvectors of
+          <m>A = \begin{bmatrix} 4 \amp 0 \amp 0 \\ -1 \amp 3 \amp 5 \\ 1 \amp 1 \amp -1 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Expand <m>\det(A - \lambda I)</m> along the first row, which has only one
+          nonzero entry:
+          <md>
+            <mrow>
+              \det(A - \lambda I)
+              \amp = (4 - \lambda)\begin{vmatrix} 3-\lambda \amp 5 \\ 1 \amp -1-\lambda \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = (4-\lambda)\bigl[(3-\lambda)(-1-\lambda) - 5\bigr]
+            </mrow>
+            <mrow>
+              \amp = (4-\lambda)(\lambda^2 - 2\lambda - 8)
+            </mrow>
+            <mrow>
+              \amp = (4-\lambda)(\lambda - 4)(\lambda + 2).
+            </mrow>
+          </md>
+          So the eigenvalues are <m>\lambda = 4</m>, of multiplicity <m>2</m>, and
+          <m>\lambda = -2</m>.
+        </p>
+        <p>
+          <term><m>\lambda = 4</m>.</term> Solve <m>(A - 4I)\vec{x} = \vec{0}</m>:
+          <md>
+            A - 4I = \begin{bmatrix} 0 \amp 0 \amp 0 \\ -1 \amp -1 \amp 5 \\ 1 \amp 1 \amp -5 \end{bmatrix}
+            \longrightarrow
+            \begin{bmatrix} 1 \amp 1 \amp -5 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}.
+          </md>
+          The single equation is <m>x_1 + x_2 - 5x_3 = 0</m>, so <m>x_2</m> and
+          <m>x_3</m> are free and the eigenspace is two-dimensional. Basic eigenvectors:
+          <md>
+            \vec{v}_1 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix},
+            \qquad
+            \vec{v}_2 = \begin{bmatrix} 5 \\ 0 \\ 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term><m>\lambda = -2</m>.</term>
+          <md>
+            A + 2I = \begin{bmatrix} 6 \amp 0 \amp 0 \\ -1 \amp 5 \amp 5 \\ 1 \amp 1 \amp 1 \end{bmatrix}
+            \longrightarrow
+            \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 0 \end{bmatrix},
+          </md>
+          giving <m>x_1 = 0</m> and <m>x_2 = -x_3</m>, so
+          <m>\vec{v}_3 = \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}</m>.
+        </p>
+        <p>
+          Checking all three:
+          <md>
+            A\vec{v}_1 = \begin{bmatrix} -4 \\ 4 \\ 0 \end{bmatrix} = 4\vec{v}_1,
+            \qquad
+            A\vec{v}_2 = \begin{bmatrix} 20 \\ 0 \\ 4 \end{bmatrix} = 4\vec{v}_2,
+          </md>
+          <md>
+            A\vec{v}_3 = \begin{bmatrix} 0 \\ -2 \\ 2 \end{bmatrix} = -2\vec{v}_3. \checkmark
+          </md>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-eigen-3x3-second">
+      <title>A Second <m>3 \times 3</m> Matrix</title>
+      <statement>
+        <p>
+          Find the eigenvalues and eigenvectors of
+          <m>A = \begin{bmatrix} 3 \amp -2 \amp -1 \\ 0 \amp 5 \amp 1 \\ 0 \amp 2 \amp 4 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Expanding down the first column, which has a single nonzero entry,
+          <md>
+            <mrow>
+              \det(A - \lambda I)
+              \amp = (3-\lambda)\begin{vmatrix} 5-\lambda \amp 1 \\ 2 \amp 4-\lambda \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = (3-\lambda)\bigl[(5-\lambda)(4-\lambda) - 2\bigr]
+            </mrow>
+            <mrow>
+              \amp = (3-\lambda)(\lambda^2 - 9\lambda + 18)
+            </mrow>
+            <mrow>
+              \amp = (3-\lambda)(\lambda - 3)(\lambda - 6).
+            </mrow>
+          </md>
+          The eigenvalues are <m>\lambda = 3</m>, of multiplicity <m>2</m>, and
+          <m>\lambda = 6</m>.
+        </p>
+        <p>
+          <term><m>\lambda = 3</m>.</term>
+          <md>
+            A - 3I = \begin{bmatrix} 0 \amp -2 \amp -1 \\ 0 \amp 2 \amp 1 \\ 0 \amp 2 \amp 1 \end{bmatrix}
+            \longrightarrow
+            \begin{bmatrix} 0 \amp 2 \amp 1 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}.
+          </md>
+          The one equation is <m>2x_2 + x_3 = 0</m>, so <m>x_1</m> and <m>x_2</m> are
+          free:
+          <md>
+            \vec{v}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+            \qquad
+            \vec{v}_2 = \begin{bmatrix} 0 \\ 1 \\ -2 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term><m>\lambda = 6</m>.</term>
+          <md>
+            A - 6I = \begin{bmatrix} -3 \amp -2 \amp -1 \\ 0 \amp -1 \amp 1 \\ 0 \amp 2 \amp -2 \end{bmatrix}.
+          </md>
+          Row <m>2</m> gives <m>x_3 = x_2</m>, and row <m>1</m> then gives
+          <m>-3x_1 - 3x_2 = 0</m>, so <m>x_1 = -x_2</m>:
+          <m>\vec{v}_3 = \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}</m>.
+        </p>
+        <p>
+          Checking the last one,
+          <m>A\vec{v}_3 = (-3 - 2 - 1,\ 0 + 5 + 1,\ 0 + 2 + 4) = (-6, 6, 6) = 6\vec{v}_3</m>.
+          <m>\checkmark</m>
+        </p>
+        <p>
+          (This lab came without a solution key, so every answer here has been checked by
+          substituting back into <m>A\vec{x} = \lambda \vec{x}</m>.)
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-eigen-2x2">
+      <title>A <m>2 \times 2</m> Characteristic Polynomial</title>
+      <statement>
+        <p>
+          Find the characteristic polynomial, eigenvalues and eigenvectors of
+          <m>A = \begin{bmatrix} -4 \amp 2 \\ 3 \amp -5 \end{bmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By <xref ref="def-characteristic-polynomial" text="type-global" />,
+          <md>
+            <mrow>
+              c_A(\lambda) \amp = \begin{vmatrix} -4-\lambda \amp 2 \\ 3 \amp -5-\lambda \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = (-4-\lambda)(-5-\lambda) - 6
+            </mrow>
+            <mrow>
+              \amp = \lambda^2 + 9\lambda + 14 = (\lambda + 2)(\lambda + 7),
+            </mrow>
+          </md>
+          so the eigenvalues are <m>\lambda = -2</m> and <m>\lambda = -7</m>.
+        </p>
+        <p>
+          <term><m>\lambda = -2</m>.</term>
+          <m>A + 2I = \begin{bmatrix} -2 \amp 2 \\ 3 \amp -3 \end{bmatrix}</m>, so
+          <m>x_1 = x_2</m> and
+          <m>\vec{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>.
+        </p>
+        <p>
+          <term><m>\lambda = -7</m>.</term>
+          <m>A + 7I = \begin{bmatrix} 3 \amp 2 \\ 3 \amp 2 \end{bmatrix}</m>, so
+          <m>3x_1 + 2x_2 = 0</m> and
+          <m>\vec{v}_2 = \begin{bmatrix} 2 \\ -3 \end{bmatrix}</m>.
+        </p>
+        <p>
+          Checking:
+          <m>A\vec{v}_1 = (-4+2,\ 3-5) = (-2,-2) = -2\vec{v}_1</m> and
+          <m>A\vec{v}_2 = (-8-6,\ 6+15) = (-14,21) = -7\vec{v}_2</m>. <m>\checkmark</m>
+          (This lab also came without a key.)
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-eigen-triangular">
+      <title>Eigenvalues of a Triangular Matrix</title>
+      <statement>
+        <p>
+          Write the characteristic polynomial and the eigenvalues of
+          <md>
+            A = \begin{bmatrix}
+              6 \amp 0 \amp 0 \amp 0 \amp 0 \\
+              9 \amp -4 \amp 0 \amp 0 \amp 0 \\
+              -2 \amp 0 \amp 11 \amp 0 \amp 0 \\
+              1 \amp -1 \amp 3 \amp 0 \amp 0 \\
+              0 \amp 1 \amp -7 \amp 4 \amp 8
+            \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Every entry above the main diagonal is zero, so <m>A</m> is lower triangular,
+          and so is <m>A - \lambda I</m>. By
+          <xref ref="thm-triangular-determinant" text="type-global" /> the determinant of
+          a triangular matrix is the product of its diagonal entries, so
+          <md>
+            c_A(\lambda) = (6-\lambda)(-4-\lambda)(11-\lambda)(0-\lambda)(8-\lambda).
+          </md>
+        </p>
+        <p>
+          The eigenvalues are therefore just the diagonal entries:
+          <md>
+            \lambda = 6,\ -4,\ 11,\ 0,\ 8,
+          </md>
+          each of multiplicity one. Nothing below the diagonal <mdash /> the <m>9</m>, the
+          <m>-2</m>, the <m>-7</m>, and so on <mdash /> plays any role at all.
+        </p>
+        <p>
+          Note that <m>0</m> is an eigenvalue, so <m>A</m> is not invertible; this is the
+          content of <xref ref="thm-imt-eigenvalue" text="type-global" />. (No key was
+          supplied with this lab; the factorization above is verified directly by the
+          triangular-determinant theorem.)
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-rotation-no-real-eigenvalues">
+      <title>Why a Rotation Has No Real Eigenvalues</title>
+      <statement>
+        <p>
+          Let <m>A</m> be the matrix of the linear transformation that rotates every
+          vector in <m>\R^2</m> counterclockwise through <m>\pi/6</m>. Explain, using the
+          geometry of eigenvectors, why <m>A</m> can have no real eigenvalues.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Suppose <m>\lambda \in \R</m> were an eigenvalue with eigenvector
+          <m>\vec{v} \neq \vec{0}</m>, so <m>A\vec{v} = \lambda\vec{v}</m>. Then
+          <m>A\vec{v}</m> is a scalar multiple of <m>\vec{v}</m>, which means it lies on
+          the <em>same line through the origin</em> as <m>\vec{v}</m>. That is the
+          geometric content of being an eigenvector, as in
+          <xref ref="fig-eigenvector-direction" text="type-global" />: <m>A</m> may
+          stretch, shrink, or reverse <m>\vec{v}</m>, but it may not turn it off its own
+          line.
+        </p>
+        <p>
+          A rotation through <m>\pi/6</m> turns <em>every</em> nonzero vector by
+          <m>30^\circ</m>. Since <m>\pi/6</m> is not a multiple of <m>\pi</m>, no nonzero
+          vector ends up on its original line. So no nonzero <m>\vec{v}</m> can satisfy
+          <m>A\vec{v} = \lambda\vec{v}</m> for a real <m>\lambda</m>, and <m>A</m> has no
+          real eigenvalues.
+        </p>
+        <p>
+          The two exceptional angles are worth noting: rotation through <m>0</m> is the
+          identity, for which every nonzero vector is an eigenvector with
+          <m>\lambda = 1</m>, and rotation through <m>\pi</m> reverses every vector,
+          giving <m>\lambda = -1</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-eigenvalues-repeated-root">
+      <title>Eigenvalues with a Repeated Root</title>
+      <statement>
+        <p>
+          Find the eigenvalues of
+          <m>A = \begin{bmatrix} 1 \amp 2 \amp 0 \\ 2 \amp 1 \amp 0 \\ -2 \amp -2 \amp -1 \end{bmatrix}</m>
+          and their multiplicities.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The third column of <m>A - \lambda I</m> has a single nonzero entry, so expand
+          down it:
+          <md>
+            <mrow>
+              \det(A - \lambda I)
+              \amp = (-1-\lambda)\begin{vmatrix} 1-\lambda \amp 2 \\ 2 \amp 1-\lambda \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = (-1-\lambda)\bigl[(1-\lambda)^2 - 4\bigr]
+            </mrow>
+            <mrow>
+              \amp = (-1-\lambda)(\lambda^2 - 2\lambda - 3)
+            </mrow>
+            <mrow>
+              \amp = (-1-\lambda)(\lambda - 3)(\lambda + 1).
+            </mrow>
+          </md>
+        </p>
+        <p>
+          So the eigenvalues are <m>\lambda = 3</m> and <m>\lambda = -1</m>, the latter
+          <term>of multiplicity two</term>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-hidden-entries">
+      <title>An Eigenvalue from Two Rows</title>
+      <statement>
+        <p>
+          Let
+          <m>A = \begin{bmatrix} 1 \amp \square \amp 3 \\ \square \amp \square \amp \square \\ 1 \amp \square \amp -1 \end{bmatrix}</m>,
+          where the entries marked <m>\square</m> are unknown. If
+          <m>\vec{x} = \begin{bmatrix} 3 \\ 0 \\ 1 \end{bmatrix}</m> is an eigenvector of
+          <m>A</m>, which number must be an eigenvalue of <m>A</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The second entry of <m>\vec{x}</m> is <m>0</m>, so the unknown middle column
+          never contributes: in the product <m>A\vec{x}</m> each row is multiplied by
+          <m>(3, 0, 1)</m> and the middle entry is annihilated. That makes rows <m>1</m>
+          and <m>3</m>, which are fully known in the positions that matter, enough.
+        </p>
+        <p>
+          Row <m>1</m> gives
+          <m>1(3) + \square \cdot 0 + 3(1) = 6</m>, and row <m>3</m> gives
+          <m>1(3) + \square \cdot 0 + (-1)(1) = 2</m>. So
+          <md>
+            A\vec{x} = \begin{bmatrix} 6 \\ ? \\ 2 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Since <m>\vec{x}</m> is an eigenvector, <m>A\vec{x} = \lambda\vec{x}</m>, that
+          is <m>(6, ?, 2) = \lambda(3, 0, 1)</m>. The first coordinate gives
+          <m>\lambda = 2</m>, and the third confirms it. So <m>\lambda = 2</m> must be an
+          eigenvalue of <m>A</m>. (The middle coordinate then forces the unknown
+          <m>?</m> to be <m>0</m>, but we did not need that.)
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-dominant-eigenvalue">
+      <title>The Dominant Eigenvalue</title>
+      <statement>
+        <p>
+          Consider the linear dynamical system <m>V_{k+1} = AV_k</m> with
+          <m>A = \begin{bmatrix} -2 \amp 0 \\ 3 \amp 1 \end{bmatrix}</m>. Which eigenvalue
+          of <m>A</m> is dominant?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>A</m> is lower triangular, so its eigenvalues are the diagonal entries
+          <m>\lambda = -2</m> and <m>\lambda = 1</m>.
+        </p>
+        <p>
+          The dominant eigenvalue is the one of largest absolute value, since it is the
+          term that survives when <m>A^k</m> is applied repeatedly. Here
+          <m>|-2| = 2 \gt 1 = |1|</m>, so <term><m>\lambda = -2</m> is
+          dominant</term>.
+        </p>
+        <p>
+          A dominant eigenvalue of absolute value greater than <m>1</m> means the
+          trajectory grows without bound; contrast the Markov chains of
+          <xref ref="sec-problems-markov" text="type-global" />, where the dominant
+          eigenvalue is always <m>1</m> and the trajectory settles down instead.
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-diagonalization">
+    <title>Diagonalization</title>
+    <exercises>
+
+    <exercise xml:id="lab-diagonalize-3x3">
+      <title>Diagonalizing a <m>3 \times 3</m> Matrix</title>
+      <statement>
+        <p>
+          Given
+          <m>A = \begin{bmatrix} 3 \amp -2 \amp -1 \\ 0 \amp 5 \amp 1 \\ 0 \amp 2 \amp 4 \end{bmatrix}</m>,
+          find matrices <m>P</m> and <m>D</m> with <m>D</m> diagonal and
+          <m>A = PDP^{-1}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The eigenvalues and eigenvectors were computed in
+          <xref ref="lab-eigen-3x3-second" text="type-global" />: <m>\lambda = 3</m> with
+          basic eigenvectors <m>(1,0,0)</m> and <m>(0,1,-2)</m>, and <m>\lambda = 6</m>
+          with eigenvector <m>(-1,1,1)</m>.
+        </p>
+        <p>
+          That is three independent eigenvectors for a <m>3 \times 3</m> matrix, so by
+          <xref ref="thm-diagonalizable-iff" text="type-global" /> <m>A</m> is
+          diagonalizable. Take <m>P</m> to have those eigenvectors as columns and <m>D</m>
+          the matching eigenvalues on its diagonal, in the same order:
+          <md>
+            P = \begin{bmatrix} 1 \amp 0 \amp -1 \\ 0 \amp 1 \amp 1 \\ 0 \amp -2 \amp 1 \end{bmatrix},
+            \qquad
+            D = \begin{bmatrix} 3 \amp 0 \amp 0 \\ 0 \amp 3 \amp 0 \\ 0 \amp 0 \amp 6 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <m>P</m> is invertible: expanding along its first column,
+          <m>\det P = 1(1 + 2) = 3 \neq 0</m>.
+        </p>
+        <p>
+          Rather than compute <m>P^{-1}</m>, verify the equivalent identity
+          <m>AP = PD</m>. Column by column, <m>AP</m> has columns
+          <m>A\vec{v}_1, A\vec{v}_2, A\vec{v}_3</m> while <m>PD</m> has columns
+          <m>3\vec{v}_1, 3\vec{v}_2, 6\vec{v}_3</m>, and these agree precisely because
+          each <m>\vec{v}_i</m> is an eigenvector. <m>\checkmark</m>
+        </p>
+        <p>
+          The choice is not unique: reordering the columns of <m>P</m> (and matching the
+          diagonal of <m>D</m>) or rescaling any eigenvector gives another valid pair.
+          (This lab had no answer key; the verification <m>AP = PD</m> above is the
+          check.)
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-power-of-a-matrix">
+      <title>A Fiftieth Power</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 2 \amp 1 \amp 0 \\ 0 \amp 1 \amp 0 \\ -1 \amp -1 \amp 1 \end{bmatrix}</m>.
+          Find <m>A^{50}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Expanding <m>\det(A - \lambda I)</m> down the third column,
+          <md>
+            \det(A - \lambda I) = (1-\lambda)\begin{vmatrix} 2-\lambda \amp 1 \\ 0 \amp 1-\lambda \end{vmatrix}
+            = (2-\lambda)(1-\lambda)^2,
+          </md>
+          so the eigenvalues are <m>\lambda = 2</m> and <m>\lambda = 1</m> of multiplicity
+          two.
+        </p>
+        <p>
+          <term><m>\lambda = 2</m>.</term>
+          <m>A - 2I = \begin{bmatrix} 0 \amp 1 \amp 0 \\ 0 \amp -1 \amp 0 \\ -1 \amp -1 \amp -1 \end{bmatrix}</m>
+          gives <m>x_2 = 0</m> and <m>x_1 = -x_3</m>, so
+          <m>\vec{v}_1 = (-1, 0, 1)</m>.
+        </p>
+        <p>
+          <term><m>\lambda = 1</m>.</term>
+          <m>A - I = \begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \\ -1 \amp -1 \amp 0 \end{bmatrix}</m>
+          gives the single equation <m>x_1 + x_2 = 0</m>, so
+          <m>\vec{v}_2 = (0,0,1)</m> and <m>\vec{v}_3 = (-1,1,0)</m>.
+        </p>
+        <p>
+          Three independent eigenvectors, so <m>A</m> is diagonalizable. Put
+          <md>
+            P = \begin{bmatrix} -1 \amp 0 \amp -1 \\ 0 \amp 0 \amp 1 \\ 1 \amp 1 \amp 0 \end{bmatrix},
+            \qquad
+            D = \begin{bmatrix} 2 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Row reducing <m>[\,P \mid I\,]</m> gives
+          <md>
+            P^{-1} = \begin{bmatrix} -1 \amp -1 \amp 0 \\ 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 0 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          By <xref ref="thm-powers-of-diagonalizable" text="type-global" />,
+          <m>A^{50} = PD^{50}P^{-1}</m> with
+          <m>D^{50} = \operatorname{diag}(2^{50}, 1, 1)</m>. First
+          <md>
+            PD^{50} = \begin{bmatrix} -2^{50} \amp 0 \amp -1 \\ 0 \amp 0 \amp 1 \\ 2^{50} \amp 1 \amp 0 \end{bmatrix},
+          </md>
+          and then multiplying by <m>P^{-1}</m>,
+          <md>
+            A^{50} = \begin{bmatrix}
+              2^{50} \amp 2^{50} - 1 \amp 0 \\
+              0 \amp 1 \amp 0 \\
+              1 - 2^{50} \amp 1 - 2^{50} \amp 1
+            \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          A quick sanity check: setting the exponent to <m>1</m> in the same computation
+          returns <m>A</m> itself, and the second row of <m>A^{50}</m> is
+          <m>[0\ 1\ 0]</m>, which is right because the second row of <m>A</m> is
+          <m>[0\ 1\ 0]</m> and so is fixed by every power.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-dynamical-system">
+      <title>Solving a Dynamical System</title>
+      <statement>
+        <p>
+          A dynamical system has the form
+          <md>
+            \begin{bmatrix} x(n+1) \\ y(n+1) \end{bmatrix}
+            = \begin{bmatrix} 1.5 \amp -0.5 \\ 1 \amp 0 \end{bmatrix}
+              \begin{bmatrix} x(n) \\ y(n) \end{bmatrix}.
+          </md>
+          Find <m>x_n</m> and <m>y_n</m> for the initial conditions <m>x_0 = 20</m>,
+          <m>y_0 = 10</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Write <m>A = \begin{bmatrix} \frac{3}{2} \amp -\frac{1}{2} \\ 1 \amp 0 \end{bmatrix}</m>.
+          Then
+          <md>
+            c_A(\lambda) = \lambda^2 - \tfrac{3}{2}\lambda + \tfrac{1}{2}
+                         = (\lambda - 1)\left(\lambda - \tfrac{1}{2}\right).
+          </md>
+        </p>
+        <p>
+          For <m>\lambda = 1</m>,
+          <m>A - I = \begin{bmatrix} \frac{1}{2} \amp -\frac{1}{2} \\ 1 \amp -1 \end{bmatrix}</m>
+          gives <m>x_1 = x_2</m>, so <m>\vec{v}_1 = (1,1)</m>. For
+          <m>\lambda = \tfrac{1}{2}</m>,
+          <m>A - \tfrac{1}{2}I = \begin{bmatrix} 1 \amp -\frac{1}{2} \\ 1 \amp -\frac{1}{2} \end{bmatrix}</m>
+          gives <m>x_2 = 2x_1</m>, so <m>\vec{v}_2 = (1,2)</m>. Hence
+          <md>
+            P = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 2 \end{bmatrix},
+            \quad
+            D = \begin{bmatrix} 1 \amp 0 \\ 0 \amp \frac{1}{2} \end{bmatrix},
+            \quad
+            P^{-1} = \begin{bmatrix} 2 \amp -1 \\ -1 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Then <m>A^n = PD^nP^{-1}</m>, and
+          <md>
+            PD^n = \begin{bmatrix} 1 \amp \frac{1}{2^n} \\ 1 \amp \frac{2}{2^n} \end{bmatrix},
+          </md>
+          <md>
+            A^n = \begin{bmatrix}
+              2 - \frac{1}{2^n} \amp \frac{1}{2^n} - 1 \\[2pt]
+              2 - \frac{1}{2^{n-1}} \amp \frac{1}{2^{n-1}} - 1
+            \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Applying this to <m>[20\ 10]^T</m>,
+          <md>
+            <mrow>
+              x_n \amp = 20\left(2 - \tfrac{1}{2^n}\right) + 10\left(\tfrac{1}{2^n} - 1\right) = 30 - \tfrac{10}{2^n}
+            </mrow>
+            <mrow>
+              y_n \amp = 30 - \tfrac{10}{2^{n-1}}.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Check <m>n = 0</m>: <m>x_0 = 30 - 10 = 20</m> and <m>y_0 = 30 - 20 = 10</m>.
+          <m>\checkmark</m> And <m>n = 1</m>: the recursion gives
+          <m>x_1 = 1.5(20) - 0.5(10) = 25</m>, matching <m>30 - 5</m>. <m>\checkmark</m>
+        </p>
+        <p>
+          Both sequences tend to <m>30</m>, because the dominant eigenvalue is
+          <m>\lambda = 1</m> and the other eigenvalue <m>\tfrac{1}{2}</m> contributes a
+          term that dies away.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-not-diagonalizable">
+      <title>A Matrix That Is Not Diagonalizable</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 3 \amp -2 \\ 0 \amp 2 \amp -1 \end{bmatrix}</m>.
+          <ol marker="(a)">
+            <li><p>Find the characteristic polynomial of <m>A</m>.</p></li>
+            <li><p>Find the eigenvalues and their multiplicities.</p></li>
+            <li><p>Is <m>A</m> diagonalizable? Give the simplest reason you can.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Expanding along the first row,
+          <md>
+            <mrow>
+              c_A(\lambda) \amp = (1 - \lambda)\begin{vmatrix} 3-\lambda \amp -2 \\ 2 \amp -1-\lambda \end{vmatrix}
+            </mrow>
+            <mrow>
+              \amp = (1-\lambda)\bigl[(3-\lambda)(-1-\lambda) + 4\bigr]
+            </mrow>
+            <mrow>
+              \amp = (1-\lambda)(\lambda^2 - 2\lambda + 1)
+            </mrow>
+            <mrow>
+              \amp = (1-\lambda)(\lambda - 1)^2.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>(b)</term> The only eigenvalue is <m>\lambda = 1</m>, of multiplicity
+          <m>3</m>.
+        </p>
+        <p>
+          <term>(c)</term> <term>No.</term> Solve <m>(A - I)\vec{x} = \vec{0}</m>:
+          <md>
+            A - I = \begin{bmatrix} 0 \amp 0 \amp 0 \\ 0 \amp 2 \amp -2 \\ 0 \amp 2 \amp -2 \end{bmatrix}
+            \longrightarrow
+            \begin{bmatrix} 0 \amp 1 \amp -1 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}.
+          </md>
+          There is one equation and three unknowns, so the general solution has
+          <m>2</m> parameters and the eigenspace is two-dimensional.
+        </p>
+        <p>
+          A <m>3 \times 3</m> matrix is diagonalizable only if it has <m>3</m>
+          independent eigenvectors, but here we can find only <m>2</m>. In the language of
+          <xref ref="thm-characterizing-diagonalizable" text="type-global" />: the
+          multiplicity of <m>\lambda = 1</m> is <m>3</m> while the number of basic
+          eigenvectors for it is <m>2</m>, and <m>3 \neq 2</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-reading-a-factorization">
+      <title>Reading a Factorization</title>
+      <statement>
+        <p>
+          <ol marker="(a)">
+            <li><p>
+              Let
+              <m>A = \begin{bmatrix} -1 \amp 1 \\ 1 \amp 2 \end{bmatrix}
+                     \begin{bmatrix} 0 \amp 0 \\ 0 \amp 3 \end{bmatrix}
+                     \begin{bmatrix} -\frac{2}{3} \amp \frac{1}{3} \\ \frac{1}{3} \amp \frac{1}{3} \end{bmatrix}</m>.
+              Which of these must be <em>false</em>?
+              <ol marker="(i)">
+                <li><p><m>A</m> is diagonalizable.</p></li>
+                <li><p><m>[1\ {-1}]^T</m> is an eigenvector of <m>A</m>.</p></li>
+                <li><p>
+                  For every integer <m>n \geq 2</m>,
+                  <m>A^n = 3^{n-1}\begin{bmatrix} 1 \amp 1 \\ 2 \amp 2 \end{bmatrix}</m>.
+                </p></li>
+                <li><p>
+                  The characteristic polynomial of <m>A</m> is
+                  <m>c_A(x) = x(x+3)</m>.
+                </p></li>
+                <li><p><m>A</m> has distinct eigenvalues.</p></li>
+              </ol>
+            </p></li>
+            <li><p>
+              Let
+              <m>A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 1 \end{bmatrix}
+                     \begin{bmatrix} 2 \amp 0 \\ 0 \amp 2 \end{bmatrix}
+                     \begin{bmatrix} 1 \amp -1 \\ -1 \amp 2 \end{bmatrix}</m>.
+              Which of these is <em>false</em>?
+              <ol marker="(i)">
+                <li><p><m>A</m> is diagonalizable.</p></li>
+                <li><p><m>2</m> is its only eigenvalue, of multiplicity two.</p></li>
+                <li><p>For every <m>n \geq 2</m>, <m>A^n = 2^n I</m>.</p></li>
+                <li><p>
+                  The general solution of <m>(2I - A)\vec{x} = \vec{0}</m> has exactly
+                  one parameter.
+                </p></li>
+              </ol>
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> The three factors have the shape <m>PDP^{-1}</m> <mdash />
+          check that the outer two are inverses of each other <mdash /> so <m>A</m>
+          <em>is</em> diagonalizable, with eigenvalues the diagonal entries of <m>D</m>,
+          namely <m>0</m> and <m>3</m>, and eigenvectors the columns of <m>P</m>.
+        </p>
+        <p>
+          Statement (i) is true. Statement (ii) is true: <m>[1\ {-1}]^T</m> is
+          <m>-1</m> times the first column of <m>P</m>, and any nonzero multiple of an
+          eigenvector is an eigenvector. Statement (v) is true, since <m>0 \neq 3</m>.
+        </p>
+        <p>
+          For (iii), <m>A^n = PD^nP^{-1}</m> with
+          <m>D^n = \operatorname{diag}(0, 3^n)</m>, so
+          <md>
+            A^n = \begin{bmatrix} 0 \amp 3^n \\ 0 \amp 2 \cdot 3^n \end{bmatrix}
+                  \begin{bmatrix} -\frac{2}{3} \amp \frac{1}{3} \\ \frac{1}{3} \amp \frac{1}{3} \end{bmatrix}
+                = 3^{n-1}\begin{bmatrix} 1 \amp 1 \\ 2 \amp 2 \end{bmatrix},
+          </md>
+          so (iii) is true as well.
+        </p>
+        <p>
+          That leaves <term>(iv), which must be false</term>: the eigenvalues are
+          <m>0</m> and <m>3</m>, so the characteristic polynomial is <m>x(x-3)</m>, not
+          <m>x(x+3)</m>.
+        </p>
+        <p>
+          <term>(b)</term> Again the outer factors are inverses, and the middle factor is
+          <m>2I</m>. But <m>P(2I)P^{-1} = 2PP^{-1} = 2I</m>, so <m>A = 2I</m> outright.
+        </p>
+        <p>
+          Statement (i) is true (<m>2I</m> is already diagonal), (ii) is true, and (iii)
+          is true since <m>A^n = 2^nI</m>.
+        </p>
+        <p>
+          <term>(iv) is false.</term> Here <m>2I - A = 0</m>, so <m>(2I - A)\vec{x} = \vec{0}</m>
+          is satisfied by <em>every</em> <m>\vec{x} \in \R^2</m> and its general solution
+          has two parameters, not one. This is exactly why <m>2I</m> is diagonalizable
+          despite having a repeated eigenvalue: its eigenspace is as large as the
+          multiplicity demands.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-diagonalizability-statements">
+      <title>What Guarantees Diagonalizability?</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix. Which of the following is always
+          true?
+          <ol marker="(a)">
+            <li><p><m>A</m> is always diagonalizable.</p></li>
+            <li><p>
+              If for some <m>\lambda</m> the system <m>(\lambda I - A)\vec{x} = \vec{0}</m>
+              has infinitely many solutions, then <m>A</m> is diagonalizable.
+            </p></li>
+            <li><p>
+              If the characteristic polynomial of <m>A</m> has a single root of
+              multiplicity <m>n</m>, then <m>A</m> is diagonalizable.
+            </p></li>
+            <li><p>
+              If the characteristic polynomial of <m>A</m> has <m>n</m> distinct roots,
+              then <m>A</m> is diagonalizable.
+            </p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a) False.</term>
+          <xref ref="lab-not-diagonalizable" text="type-global" /> gives a
+          <m>3 \times 3</m> counterexample, and
+          <m>\begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m> gives a
+          <m>2 \times 2</m> one.
+        </p>
+        <p>
+          <term>(b) False.</term> That <m>(\lambda I - A)\vec{x} = \vec{0}</m> has a
+          nontrivial solution says only that <m>\lambda</m> <em>is</em> an eigenvalue
+          <mdash /> true of every eigenvalue of every matrix, diagonalizable or not.
+          Again <m>\begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m> with
+          <m>\lambda = 1</m> is a counterexample.
+        </p>
+        <p>
+          <term>(c) False.</term> This is precisely the situation of
+          <xref ref="lab-not-diagonalizable" text="type-global" />: a single root of
+          multiplicity <m>n</m> whose eigenspace is too small. (It <em>can</em> happen
+          that such a matrix is diagonalizable <mdash /> when <m>A = \lambda I</m> <mdash />
+          but it is not guaranteed.)
+        </p>
+        <p>
+          <term>(d) True.</term> Eigenvectors belonging to distinct eigenvalues are
+          linearly independent, so <m>n</m> distinct roots produce <m>n</m> independent
+          eigenvectors, which is exactly the criterion of
+          <xref ref="thm-diagonalizable-iff" text="type-global" />. See also
+          <xref ref="eg-three-distinct-eigenvalues" text="type-global" />.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-two-small-matrices">
+      <title>Two Small Matrices</title>
+      <statement>
+        <p>
+          For each matrix, decide which of the statements <q><m>A^2 = A</m></q>,
+          <q><m>A</m> is not diagonalizable</q>, <q><m>A</m> is not invertible</q> are
+          true.
+          <md>
+            \text{(a)} \quad A = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix}
+            \qquad
+            \text{(b)} \quad A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> <m>A^2 = \begin{bmatrix} 1 \amp 0 \\ 2 \amp 1 \end{bmatrix} \neq A</m>,
+          so the first statement is false. <m>\det A = 1 \neq 0</m>, so <m>A</m> is
+          invertible and the third is false.
+        </p>
+        <p>
+          For the second, <m>c_A(\lambda) = (1-\lambda)^2</m>, so <m>\lambda = 1</m> is
+          the only eigenvalue, with multiplicity <m>2</m>. But
+          <md>
+            A - I = \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix},
+          </md>
+          whose null space is spanned by the single vector <m>[0\ 1]^T</m>. One
+          independent eigenvector is not enough for a <m>2 \times 2</m> matrix, so
+          <term><m>A</m> is not diagonalizable</term> <mdash /> the second statement is
+          the true one.
+        </p>
+        <p>
+          <term>(b)</term> <m>A^2 = I \neq A</m>, so the first is false.
+          <m>\det A = -1 \neq 0</m>, so <m>A</m> is invertible and the third is false.
+          And <m>c_A(\lambda) = \lambda^2 - 1 = (\lambda-1)(\lambda+1)</m> has two
+          distinct roots, so by
+          <xref ref="lab-diagonalizability-statements" text="type-global" /> <m>A</m>
+          <em>is</em> diagonalizable and the second is false too.
+        </p>
+        <p>
+          So for (b) <term>all three statements are false</term>. Geometrically <m>A</m>
+          is the reflection in the line <m>y = x</m>, whose eigenvectors
+          <m>[1\ 1]^T</m> (fixed) and <m>[1\ {-1}]^T</m> (reversed) are visible without
+          any computation; compare
+          <xref ref="eg-eigenvector-reflection" text="type-global" />.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-which-p-diagonalizes">
+      <title>Which <m>P</m> Diagonalizes <m>A</m>?</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 0 \amp 1 \\ 3 \amp 2 \end{bmatrix}</m>. Which of the
+          following matrices <m>P</m> diagonalizes <m>A</m>?
+          <md>
+            \text{(a)} \begin{bmatrix} 1 \amp 3 \\ -1 \amp 1 \end{bmatrix}
+            \quad
+            \text{(b)} \begin{bmatrix} -1 \amp -1 \\ -3 \amp 1 \end{bmatrix}
+            \quad
+            \text{(c)} \begin{bmatrix} 1 \amp 3 \\ -1 \amp -1 \end{bmatrix}
+            \quad
+            \text{(d)} \begin{bmatrix} 1 \amp 1 \\ 3 \amp 1 \end{bmatrix}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A matrix <m>P</m> diagonalizes <m>A</m> exactly when its columns are
+          independent eigenvectors of <m>A</m>, so find those first:
+          <md>
+            c_A(\lambda) = \lambda^2 - 2\lambda - 3 = (\lambda - 3)(\lambda + 1).
+          </md>
+        </p>
+        <p>
+          For <m>\lambda = 3</m>,
+          <m>A - 3I = \begin{bmatrix} -3 \amp 1 \\ 3 \amp -1 \end{bmatrix}</m> gives
+          <m>x_2 = 3x_1</m>, so the eigenvectors are the multiples of <m>[1\ 3]^T</m>.
+          For <m>\lambda = -1</m>,
+          <m>A + I = \begin{bmatrix} 1 \amp 1 \\ 3 \amp 3 \end{bmatrix}</m> gives
+          <m>x_2 = -x_1</m>, so the eigenvectors are the multiples of
+          <m>[1\ {-1}]^T</m>.
+        </p>
+        <p>
+          Now inspect the candidates. Only <term>(b)</term> has both columns of the right
+          kind: <m>[-1\ {-3}]^T = -[1\ 3]^T</m> and
+          <m>[-1\ 1]^T = -[1\ {-1}]^T</m>.
+        </p>
+        <p>
+          In (a) the first column is an eigenvector but <m>[3\ 1]^T</m> is not. In (c)
+          the second column <m>[3\ {-1}]^T</m> is not. In (d) the second column
+          <m>[1\ 1]^T</m> is not. With <m>P</m> as in (b),
+          <m>P^{-1}AP = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-long-run-powers">
+      <title>Long-Run Powers</title>
+      <statement>
+        <p>
+          Let <m>A = \begin{bmatrix} 0 \amp 1 \\ \frac{1}{3} \amp \frac{2}{3} \end{bmatrix}</m>.
+          It turns out that <m>P^{-1}AP = D</m> where
+          <md>
+            P = \begin{bmatrix} 1 \amp -3 \\ 1 \amp 1 \end{bmatrix},
+            \qquad
+            D = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -\frac{1}{3} \end{bmatrix}.
+          </md>
+          For large <m>n</m>, what do the entries of <m>A^n</m> approach?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From <m>P^{-1}AP = D</m> we get <m>A = PDP^{-1}</m> and hence
+          <m>A^n = PD^nP^{-1}</m>, with
+          <md>
+            D^n = \begin{bmatrix} 1 \amp 0 \\ 0 \amp \left(-\frac{1}{3}\right)^n \end{bmatrix}.
+          </md>
+          Since <m>\left|-\tfrac{1}{3}\right| \lt 1</m>, the lower-right entry tends to
+          <m>0</m>, so <m>D^n \to \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}</m>.
+        </p>
+        <p>
+          Here <m>\det P = 1 - (-3) = 4</m>, so
+          <m>P^{-1} = \tfrac{1}{4}\begin{bmatrix} 1 \amp 3 \\ -1 \amp 1 \end{bmatrix}</m>.
+          Therefore
+          <md>
+            A^n \longrightarrow
+            \begin{bmatrix} 1 \amp -3 \\ 1 \amp 1 \end{bmatrix}
+            \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}
+            \cdot \tfrac{1}{4}\begin{bmatrix} 1 \amp 3 \\ -1 \amp 1 \end{bmatrix}
+          </md>
+          <md>
+            = \tfrac{1}{4}\begin{bmatrix} 1 \amp 0 \\ 1 \amp 0 \end{bmatrix}
+              \begin{bmatrix} 1 \amp 3 \\ -1 \amp 1 \end{bmatrix}
+            = \tfrac{1}{4}\begin{bmatrix} 1 \amp 3 \\ 1 \amp 3 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          The columns of the limit are both multiples of the first column of <m>P</m>,
+          the eigenvector for the dominant eigenvalue <m>\lambda = 1</m>. That is the
+          general pattern: in the long run only the dominant eigenvalue survives, which is
+          exactly why steady-state vectors exist for the Markov chains of
+          <xref ref="sec-problems-markov" text="type-global" />.
+        </p>
+      </solution>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-problems-markov">
+    <title>Markov Chains</title>
+    <exercises>
+
+    <exercise xml:id="lab-steady-state-2x2">
+      <title>Steady-State Vectors</title>
+      <statement>
+        <p>
+          Find a steady-state vector for the Markov chain <m>S_{n+1} = PS_n</m> with
+          transition matrix
+          <md>
+            \text{(a)} \quad P = \begin{bmatrix} \frac{1}{3} \amp \frac{1}{4} \\[2pt] \frac{2}{3} \amp \frac{3}{4} \end{bmatrix}
+            \qquad
+            \text{(b)} \quad P = \begin{bmatrix} \frac{1}{2} \amp \frac{1}{3} \\[2pt] \frac{1}{2} \amp \frac{2}{3} \end{bmatrix}
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both matrices are stochastic, since every column sums to <m>1</m>, so by
+          <xref ref="thm-finding-steady-state" text="type-global" /> a steady state is a
+          solution of <m>(P - I)\vec{x} = \vec{0}</m> whose entries sum to <m>1</m>.
+        </p>
+        <p>
+          <term>(a)</term>
+          <md>
+            P - I = \begin{bmatrix} -\frac{2}{3} \amp \frac{1}{4} \\[2pt] \frac{2}{3} \amp -\frac{1}{4} \end{bmatrix}.
+          </md>
+          The two rows are negatives of each other, so the single equation is
+          <m>-\tfrac{2}{3}x_1 + \tfrac{1}{4}x_2 = 0</m>, i.e. <m>x_2 = \tfrac{8}{3}x_1</m>.
+          Taking <m>x_1 = 3</m> gives <m>(3, 8)</m>, which sums to <m>11</m>, so the
+          steady state is
+          <md>
+            \vec{x} = \begin{bmatrix} \frac{3}{11} \\[2pt] \frac{8}{11} \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(b)</term>
+          <md>
+            P - I = \begin{bmatrix} -\frac{1}{2} \amp \frac{1}{3} \\[2pt] \frac{1}{2} \amp -\frac{1}{3} \end{bmatrix},
+          </md>
+          giving <m>x_2 = \tfrac{3}{2}x_1</m>. Taking <m>x_1 = 2</m> gives <m>(2,3)</m>,
+          which sums to <m>5</m>, so
+          <md>
+            \vec{x} = \begin{bmatrix} \frac{2}{5} \\[2pt] \frac{3}{5} \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Both <m>P</m> have all entries positive, hence are regular
+          (<xref ref="def-regular-matrix" text="type-global" />), so by
+          <xref ref="thm-unique-steady-state" text="type-global" /> these steady states
+          are unique and every starting distribution converges to them.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-migration-populations">
+      <title>A Migration Matrix and a Population</title>
+      <statement>
+        <p>
+          Consider the migration matrix
+          <md>
+            A = \begin{bmatrix}
+              0.6 \amp 0 \amp 0.1 \\
+              0.2 \amp 0.8 \amp 0 \\
+              0.2 \amp 0.2 \amp 0.9
+            \end{bmatrix}
+          </md>
+          for locations <m>1</m>, <m>2</m> and <m>3</m>. Initially there are <m>100</m>
+          residents in location <m>1</m>, <m>200</m> in location <m>2</m> and <m>400</m>
+          in location <m>3</m>. Find the population of each location in the long run.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Each column of <m>A</m> sums to <m>1</m>, so <m>A</m> is stochastic
+          (<xref ref="def-stochastic-matrix" text="type-global" />) and has <m>1</m> as an
+          eigenvalue. Solve <m>(A - I)\vec{x} = \vec{0}</m>:
+          <md>
+            A - I = \begin{bmatrix}
+              -0.4 \amp 0 \amp 0.1 \\
+              0.2 \amp -0.2 \amp 0 \\
+              0.2 \amp 0.2 \amp -0.1
+            \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Row <m>1</m> gives <m>x_3 = 4x_1</m> and row <m>2</m> gives <m>x_2 = x_1</m>;
+          row <m>3</m> is then automatically satisfied, since
+          <m>0.2 + 0.2 - 0.4 = 0</m>. So the eigenvectors for <m>\lambda = 1</m> are the
+          multiples of
+          <md>
+            \vec{x} = \begin{bmatrix} 1 \\ 1 \\ 4 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Migration moves people around but does not create or destroy them, so the total
+          population stays at <m>100 + 200 + 400 = 700</m> forever. The entries of
+          <m>[1\ 1\ 4]^T</m> sum to <m>6</m>, so rescale by <m>\tfrac{700}{6}</m>:
+          <md>
+            \frac{700}{6}\begin{bmatrix} 1 \\ 1 \\ 4 \end{bmatrix}
+            = \begin{bmatrix} \frac{350}{3} \\[2pt] \frac{350}{3} \\[2pt] \frac{1400}{3} \end{bmatrix}
+            \approx \begin{bmatrix} 116.7 \\ 116.7 \\ 466.7 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          So in the long run locations <m>1</m> and <m>2</m> each hold
+          <m>\tfrac{350}{3}</m> residents and location <m>3</m> holds
+          <m>\tfrac{1400}{3}</m>. As a check, these sum to
+          <m>\tfrac{2100}{3} = 700</m>. <m>\checkmark</m>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="lab-migration-proportions">
+      <title>Long-Run Proportions</title>
+      <statement>
+        <p>
+          A migration matrix is given by
+          <md>
+            A = \begin{bmatrix}
+              \frac{1}{5} \amp \frac{1}{2} \amp \frac{1}{5} \\[2pt]
+              \frac{1}{4} \amp \frac{1}{4} \amp \frac{1}{2} \\[2pt]
+              \frac{11}{20} \amp \frac{1}{4} \amp \frac{3}{10}
+            \end{bmatrix}.
+          </md>
+          Compare the populations of the three locations in the long run.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Every column sums to <m>1</m>: for instance the first is
+          <m>\tfrac{4}{20} + \tfrac{5}{20} + \tfrac{11}{20} = 1</m>. So <m>A</m> is
+          stochastic and <m>\lambda = 1</m> is an eigenvalue.
+        </p>
+        <p>
+          Set <m>x_3 = 1</m> and solve <m>(A - I)\vec{x} = \vec{0}</m>. The first two rows
+          read
+          <md>
+            <mrow>
+              -\tfrac{4}{5}x_1 + \tfrac{1}{2}x_2 + \tfrac{1}{5} \amp = 0
+            </mrow>
+            <mrow>
+              \tfrac{1}{4}x_1 - \tfrac{3}{4}x_2 + \tfrac{1}{2} \amp = 0 .
+            </mrow>
+          </md>
+          Clearing denominators gives <m>8x_1 - 5x_2 = 2</m> and
+          <m>x_1 - 3x_2 = -2</m>. Substituting <m>x_1 = 3x_2 - 2</m> into the first,
+          <md>
+            8(3x_2 - 2) - 5x_2 = 2
+            \quad\Longrightarrow\quad
+            19x_2 = 18,
+          </md>
+          so <m>x_2 = \tfrac{18}{19}</m> and <m>x_1 = \tfrac{54}{19} - \tfrac{38}{19} = \tfrac{16}{19}</m>.
+        </p>
+        <p>
+          The third row is then satisfied automatically, as it must be:
+          <m>\tfrac{11}{20}\cdot\tfrac{16}{19} + \tfrac{1}{4}\cdot\tfrac{18}{19} - \tfrac{7}{10} = 0</m>.
+          <m>\checkmark</m>
+        </p>
+        <p>
+          So the steady-state direction is
+          <m>\left[ \tfrac{16}{19}\ \tfrac{18}{19}\ 1 \right]^T</m>, whose entries sum to
+          <m>\tfrac{53}{19}</m>. Rescaling to make the entries proportions,
+          <md>
+            \frac{19}{53} \begin{bmatrix} \frac{16}{19} \\[2pt] \frac{18}{19} \\[2pt] 1 \end{bmatrix}
+            = \begin{bmatrix} \frac{16}{53} \\[2pt] \frac{18}{53} \\[2pt] \frac{19}{53} \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          In the long run <m>\tfrac{16}{53}</m> of the population lives in location
+          <m>1</m>, <m>\tfrac{18}{53}</m> in location <m>2</m>, and
+          <m>\tfrac{19}{53}</m> in location <m>3</m> <mdash /> whatever the starting
+          distribution, since all entries of <m>A</m> are positive and so <m>A</m> is
+          regular.
         </p>
       </solution>
     </exercise>
