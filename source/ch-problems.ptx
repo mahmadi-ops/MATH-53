@@ -3559,10 +3559,10 @@
           By <xref ref="def-characteristic-polynomial" text="type-global" />,
           <md>
             <mrow>
-              c_A(\lambda) \amp = \begin{vmatrix} -4-\lambda \amp 2 \\ 3 \amp -5-\lambda \end{vmatrix}
+              c_A(\lambda) \amp = \begin{vmatrix} \lambda + 4 \amp -2 \\ -3 \amp \lambda + 5 \end{vmatrix}
             </mrow>
             <mrow>
-              \amp = (-4-\lambda)(-5-\lambda) - 6
+              \amp = (\lambda + 4)(\lambda + 5) - 6
             </mrow>
             <mrow>
               \amp = \lambda^2 + 9\lambda + 14 = (\lambda + 2)(\lambda + 7),
@@ -3610,11 +3610,11 @@
       <solution>
         <p>
           Every entry above the main diagonal is zero, so <m>A</m> is lower triangular,
-          and so is <m>A - \lambda I</m>. By
+          and so is <m>\lambda I - A</m>. By
           <xref ref="thm-triangular-determinant" text="type-global" /> the determinant of
           a triangular matrix is the product of its diagonal entries, so
           <md>
-            c_A(\lambda) = (6-\lambda)(-4-\lambda)(11-\lambda)(0-\lambda)(8-\lambda).
+            c_A(\lambda) = (\lambda - 6)(\lambda + 4)(\lambda - 11)\lambda(\lambda - 8).
           </md>
         </p>
         <p>
@@ -3982,19 +3982,19 @@
       </statement>
       <solution>
         <p>
-          <term>(a)</term> Expanding along the first row,
+          <term>(a)</term> Expanding <m>\det(\lambda I - A)</m> along the first row,
           <md>
             <mrow>
-              c_A(\lambda) \amp = (1 - \lambda)\begin{vmatrix} 3-\lambda \amp -2 \\ 2 \amp -1-\lambda \end{vmatrix}
+              c_A(\lambda) \amp = (\lambda - 1)\begin{vmatrix} \lambda - 3 \amp 2 \\ -2 \amp \lambda + 1 \end{vmatrix}
             </mrow>
             <mrow>
-              \amp = (1-\lambda)\bigl[(3-\lambda)(-1-\lambda) + 4\bigr]
+              \amp = (\lambda - 1)\bigl[(\lambda-3)(\lambda+1) + 4\bigr]
             </mrow>
             <mrow>
-              \amp = (1-\lambda)(\lambda^2 - 2\lambda + 1)
+              \amp = (\lambda - 1)(\lambda^2 - 2\lambda + 1)
             </mrow>
             <mrow>
-              \amp = (1-\lambda)(\lambda - 1)^2.
+              \amp = (\lambda - 1)^3.
             </mrow>
           </md>
         </p>
@@ -4187,7 +4187,7 @@
           invertible and the third is false.
         </p>
         <p>
-          For the second, <m>c_A(\lambda) = (1-\lambda)^2</m>, so <m>\lambda = 1</m> is
+          For the second, <m>c_A(\lambda) = (\lambda - 1)^2</m>, so <m>\lambda = 1</m> is
           the only eigenvalue, with multiplicity <m>2</m>. But
           <md>
             A - I = \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix},
