@@ -154,26 +154,6 @@
           </md>
         </p>
         <p>
-          <term>(III) Third method.</term> Work directly with the basis relations:
-          <md>
-            <mrow>
-              T \left( x\vec{e}_1 + y\vec{e}_2 \right)
-              \amp = x \, T(\vec{e}_1) + y \, T(\vec{e}_2)
-            </mrow>
-            <mrow>
-              \amp = x \left( -5\vec{e}_1 - 3\vec{e}_2 \right)
-                   + y \left( 6\vec{e}_1 + 4\vec{e}_2 \right)
-            </mrow>
-            <mrow>
-              \amp = x \left( -\vec{b}_1 - 2\vec{b}_2 \right)
-                   + y \left( 2\vec{b}_1 + 2\vec{b}_2 \right)
-            </mrow>
-            <mrow>
-              \amp = (-x + 2y)\vec{b}_1 + (-2x + 2y)\vec{b}_2.
-            </mrow>
-          </md>
-        </p>
-        <p>
           <term>(IV) First method.</term>
           <md>
             \left[ T(\vec{b}_1) \right]_{\mathcal{B}} = \begin{bmatrix} 1 \\ 1 \end{bmatrix},
@@ -198,6 +178,134 @@
                   \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}
                 = \begin{bmatrix} 1 \amp -4 \\ 1 \amp -2 \end{bmatrix}. \checkmark
           </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-four-matrices-p2">
+      <title>The Same Game in <m>\mathbb{P}_2</m></title>
+      <statement>
+        <p>
+          Let <m>T : \mathbb{P}_2 \to \mathbb{P}_2</m> be the linear transformation
+          <md>
+            T\left( p(x) \right) = p(x) + p'(x),
+          </md>
+          and consider the ordered bases
+          <m>\mathcal{B}_1 = \{ 1, x, x^2 \}</m> and
+          <m>\mathcal{B}_2 = \{ 1, \; 1 + x, \; 1 + x + x^2 \}</m> of
+          <m>\mathbb{P}_2</m>.
+        </p>
+        <p>
+          <ol marker="I">
+            <li><p>Compute the matrix <m>A_1</m> of <m>T</m> with respect to <m>\mathcal{B}_1</m>.</p></li>
+            <li><p>Compute the matrix <m>A_2</m> of <m>T</m> with respect to <m>\mathcal{B}_2</m>.</p></li>
+            <li>
+              <p>
+                Find the matrix <m>A_3</m> of <m>T</m> if the bases <m>\mathcal{B}_1</m>
+                and <m>\mathcal{B}_2</m> are used for domain and codomain respectively.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the matrix <m>A_4</m> of <m>T</m> if the bases <m>\mathcal{B}_2</m>
+                and <m>\mathcal{B}_1</m> are used for domain and codomain respectively.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Unlike the previous example, the vectors here are polynomials, not columns.
+          The coordinate maps are the bridge: they are isomorphisms
+          <m>\mathbb{P}_2 \to \R^3</m>, and once every polynomial is replaced by its
+          coordinate vector, all four computations become the same matrix arithmetic in
+          <m>\R^3</m> as before.
+        </p>
+        <p>
+          First the change-of-basis matrices, exactly as in
+          <xref ref="eg-p2-change-of-basis" text="type-global" />: reading the elements
+          of <m>\mathcal{B}_2</m> in the basis <m>\mathcal{B}_1</m> columnwise, and
+          inverting,
+          <md>
+            P_{\mathcal{B}_1 \leftarrow \mathcal{B}_2}
+            = \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix},
+            \qquad
+            P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}
+            = \begin{bmatrix} 1 \amp -1 \amp 0 \\ 0 \amp 1 \amp -1 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(I)</term> Transform the basis elements of <m>\mathcal{B}_1</m> and read
+          the outputs in <m>\mathcal{B}_1</m>:
+          <md>
+            T(1) = 1, \qquad
+            T(x) = x + 1, \qquad
+            T(x^2) = x^2 + 2x,
+          </md>
+          whose coordinate vectors form the columns
+          <md>
+            A_1 = \begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(II) First method.</term> Transform the basis elements of
+          <m>\mathcal{B}_2</m> and express the outputs in <m>\mathcal{B}_2</m>:
+          <md>
+            <mrow>
+              T(1) \amp = 1 = 1(1) \; \longrightarrow \; (1, 0, 0),
+            </mrow>
+            <mrow>
+              T(1 + x) \amp = 2 + x = 1(1) + 1(1 + x) \; \longrightarrow \; (1, 1, 0),
+            </mrow>
+            <mrow>
+              T(1 + x + x^2) \amp = 2 + 3x + x^2
+              = -1(1) + 2(1 + x) + 1(1 + x + x^2) \; \longrightarrow \; (-1, 2, 1),
+            </mrow>
+          </md>
+          so
+          <md>
+            A_2 = \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(II) Second method.</term> Exactly as in the previous example,
+          <md>
+            A_2 = P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} \, A_1 \,
+                  P_{\mathcal{B}_1 \leftarrow \mathcal{B}_2}
+                = \begin{bmatrix} 1 \amp -1 \amp 0 \\ 0 \amp 1 \amp -1 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}. \checkmark
+          </md>
+        </p>
+        <p>
+          <term>(III)</term> Multiplying
+          <m>A_1 [\, p \,]_{\mathcal{B}_1} = [\, T(p) \,]_{\mathcal{B}_1}</m> on the
+          left by <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m> converts the
+          output coordinates,
+          <md>
+            A_3 = P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1} \, A_1
+                = \begin{bmatrix} 1 \amp -1 \amp 0 \\ 0 \amp 1 \amp -1 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+          </md>
+          As a spot check on the second column: <m>T(x) = 1 + x</m> is itself the second
+          element of <m>\mathcal{B}_2</m>, so its <m>\mathcal{B}_2</m>-coordinates are
+          <m>(0, 1, 0)</m>. <m>\checkmark</m>
+        </p>
+        <p>
+          <term>(IV)</term> This time the input coordinates arrive in
+          <m>\mathcal{B}_2</m> and must be converted before <m>A_1</m> can act:
+          <md>
+            A_4 = A_1 \, P_{\mathcal{B}_1 \leftarrow \mathcal{B}_2}
+                = \begin{bmatrix} 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                  \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+                = \begin{bmatrix} 1 \amp 2 \amp 2 \\ 0 \amp 1 \amp 3 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+          </md>
+          As a spot check on the third column:
+          <m>T(1 + x + x^2) = 2 + 3x + x^2</m>, whose
+          <m>\mathcal{B}_1</m>-coordinates are <m>(2, 3, 1)</m>. <m>\checkmark</m>
         </p>
       </solution>
     </example>
