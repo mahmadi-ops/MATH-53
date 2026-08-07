@@ -309,6 +309,81 @@
         </p>
       </solution>
     </example>
+
+    <example xml:id="eg-polar-frame-matrix">
+      <title>The Matrix between Cartesian and Polar Frames</title>
+      <statement>
+        <p>
+          In <xref ref="eg-cartesian-polar" text="type-global" /> we attached to each
+          angle <m>\theta</m> the rotated orthonormal basis
+          <md>
+            \mathcal{B}_{\theta} = \{ \vec{u}_r, \vec{u}_\theta \}
+            = \left\{
+              \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix},
+              \begin{bmatrix} -\sin\theta \\ \cos\theta \end{bmatrix}
+            \right\}
+          </md>
+          of <m>\R^2</m>. Compute the matrix that converts between Cartesian
+          coordinates and <m>\mathcal{B}_{\theta}</m>-coordinates, and use it for
+          <m>\vec{v} = \begin{bmatrix} 1 \\ \sqrt{3} \end{bmatrix}</m> with
+          <m>\theta = \frac{\pi}{3}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The conversion is the matrix of the identity transformation
+          <m>\operatorname{id} : \R^2 \to \R^2</m> with respect to the basis
+          <m>\mathcal{B}_{\theta}</m> of the domain and the standard basis
+          <m>\mathcal{E}</m> of the codomain. Its columns are the basis vectors of
+          <m>\mathcal{B}_{\theta}</m> written in Cartesian coordinates, which is
+          exactly the rotation matrix by the angle <m>\theta</m>:
+          <md>
+            P_{\mathcal{E} \leftarrow \mathcal{B}_{\theta}}
+            = \begin{bmatrix} \cos\theta \amp -\sin\theta \\ \sin\theta \amp \cos\theta \end{bmatrix}.
+          </md>
+          Because the columns are orthonormal, the inverse is simply the transpose
+          <mdash /> rotation by <m>-\theta</m>:
+          <md>
+            P_{\mathcal{B}_{\theta} \leftarrow \mathcal{E}}
+            = \left( P_{\mathcal{E} \leftarrow \mathcal{B}_{\theta}} \right)^{-1}
+            = \begin{bmatrix} \cos\theta \amp \sin\theta \\ -\sin\theta \amp \cos\theta \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          For <m>\theta = \frac{\pi}{3}</m>,
+          <md>
+            P_{\mathcal{E} \leftarrow \mathcal{B}_{\pi/3}}
+            = \begin{bmatrix} 1/2 \amp -\sqrt{3}/2 \\ \sqrt{3}/2 \amp 1/2 \end{bmatrix},
+          </md>
+          and the two coordinate vectors of <m>\vec{v}</m> convert into each other as
+          promised:
+          <md>
+            P_{\mathcal{E} \leftarrow \mathcal{B}_{\pi/3}}
+            \begin{bmatrix} 2 \\ 0 \end{bmatrix}
+            = \begin{bmatrix} 1 \\ \sqrt{3} \end{bmatrix}
+            = [\vec{v}]_{\mathcal{E}},
+            \qquad
+            P_{\mathcal{B}_{\pi/3} \leftarrow \mathcal{E}}
+            \begin{bmatrix} 1 \\ \sqrt{3} \end{bmatrix}
+            = \begin{bmatrix} 1/2 + 3/2 \\ -\sqrt{3}/2 + \sqrt{3}/2 \end{bmatrix}
+            = \begin{bmatrix} 2 \\ 0 \end{bmatrix}
+            = [\vec{v}]_{\mathcal{B}_{\pi/3}}. \checkmark
+          </md>
+        </p>
+        <p>
+          A word of caution. This matrix converts between two systems of
+          <em>basis</em> coordinates <mdash /> Cartesian on one side, the polar frame
+          pinned at the angle <m>\theta</m> on the other, where the first
+          <m>\mathcal{B}_{\theta}</m>-coordinate of a radial vector is the polar
+          <m>r</m>. No matrix can send
+          <m>\begin{bmatrix} x \\ y \end{bmatrix}</m> to the polar pair
+          <m>(r, \theta)</m> itself: as we saw in
+          <xref ref="eg-cartesian-polar" text="type-global" />, that map is not linear.
+          The change between Cartesian and polar <em>frames</em> is linear; the change
+          between Cartesian and polar <em>coordinates</em> is not.
+        </p>
+      </solution>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-transformation-between-spaces">

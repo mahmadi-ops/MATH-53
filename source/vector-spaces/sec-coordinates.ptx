@@ -171,6 +171,82 @@
         </sidebyside>
       </figure>
     </example>
+
+    <example xml:id="eg-cartesian-polar">
+      <title>A Vector in Cartesian and Polar Coordinates</title>
+      <statement>
+        <p>
+          Let <m>\vec{v} = \begin{bmatrix} 1 \\ \sqrt{3} \end{bmatrix} \in \R^2</m>.
+          Represent <m>\vec{v}</m> in Cartesian and in polar coordinates, and decide
+          which of the two descriptions is a coordinate vector in the sense of
+          <xref ref="def-coordinate-vector" text="type-global" />.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>Cartesian coordinates.</term> Relative to the standard basis
+          <m>\mathcal{E} = \{ \vec{e}_1, \vec{e}_2 \}</m>,
+          <md>
+            \vec{v} = 1\,\vec{e}_1 + \sqrt{3}\,\vec{e}_2,
+            \qquad
+            [\vec{v}]_{\mathcal{E}} = \begin{bmatrix} 1 \\ \sqrt{3} \end{bmatrix}.
+          </md>
+          Cartesian coordinates are exactly coordinates relative to a basis.
+        </p>
+        <p>
+          <term>Polar coordinates.</term> The same vector is described by its length and
+          its angle with the positive <m>x</m>-axis:
+          <md>
+            r = \sqrt{1 + 3} = 2,
+            \qquad
+            \tan \theta = \sqrt{3} \implies \theta = \frac{\pi}{3},
+          </md>
+          so that
+          <md>
+            \vec{v} = \begin{bmatrix} r\cos\theta \\ r\sin\theta \end{bmatrix}
+            = \begin{bmatrix} 2 \cos \frac{\pi}{3} \\ 2 \sin \frac{\pi}{3} \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          Is the pair <m>(r, \theta) = \left( 2, \frac{\pi}{3} \right)</m> a coordinate
+          vector relative to some basis? No. Coordinate mappings are linear, and
+          <m>\vec{v} \mapsto (r, \theta)</m> is not: doubling the vector gives
+          <m>2\vec{v} = \begin{bmatrix} 2 \\ 2\sqrt{3} \end{bmatrix}</m> with polar data
+          <m>\left( 4, \frac{\pi}{3} \right)</m>, whereas doubling the pair would give
+          <m>\left( 4, \frac{2\pi}{3} \right)</m>. The length doubles, but the angle
+          does not. Polar coordinates are a genuinely nonlinear way of labeling the
+          plane.
+        </p>
+        <p>
+          <term>The linear part of the polar picture.</term> What polar coordinates
+          <em>do</em> contribute to linear algebra is the rotated orthonormal basis
+          pointing along and across the direction <m>\theta</m>:
+          <md>
+            \mathcal{B}_{\theta} = \{ \vec{u}_r, \vec{u}_\theta \}
+            = \left\{
+              \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix},
+              \begin{bmatrix} -\sin\theta \\ \cos\theta \end{bmatrix}
+            \right\}
+            \overset{\theta = \pi/3}{=}
+            \left\{
+              \begin{bmatrix} 1/2 \\ \sqrt{3}/2 \end{bmatrix},
+              \begin{bmatrix} -\sqrt{3}/2 \\ 1/2 \end{bmatrix}
+            \right\}.
+          </md>
+          Relative to this basis the vector is purely radial:
+          <md>
+            \vec{v} = 2\,\vec{u}_r + 0\,\vec{u}_\theta,
+            \qquad
+            [\vec{v}]_{\mathcal{B}_{\pi/3}} = \begin{bmatrix} 2 \\ 0 \end{bmatrix},
+          </md>
+          and this <em>is</em> an honest coordinate vector: its first entry is the polar
+          <m>r</m>, while the angle has been absorbed into the choice of basis. In
+          <xref ref="eg-polar-frame-matrix" text="type-global" /> we compute the matrix
+          that converts between <m>\mathcal{E}</m>-coordinates and
+          <m>\mathcal{B}_{\theta}</m>-coordinates.
+        </p>
+      </solution>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-change-of-basis">
