@@ -240,10 +240,7 @@
             [\vec{v}]_{\mathcal{B}_{\pi/3}} = \begin{bmatrix} 2 \\ 0 \end{bmatrix},
           </md>
           and this <em>is</em> an honest coordinate vector: its first entry is the polar
-          <m>r</m>, while the angle has been absorbed into the choice of basis. In
-          <xref ref="eg-polar-frame-matrix" text="type-global" /> we compute the matrix
-          that converts between <m>\mathcal{E}</m>-coordinates and
-          <m>\mathcal{B}_{\theta}</m>-coordinates.
+          <m>r</m>, while the angle has been absorbed into the choice of basis.
         </p>
       </solution>
     </example>

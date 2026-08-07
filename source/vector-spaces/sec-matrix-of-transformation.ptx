@@ -331,10 +331,7 @@
       </statement>
       <solution>
         <p>
-          The conversion is the matrix of the identity transformation
-          <m>\operatorname{id} : \R^2 \to \R^2</m> with respect to the basis
-          <m>\mathcal{B}_{\theta}</m> of the domain and the standard basis
-          <m>\mathcal{E}</m> of the codomain. Its columns are the basis vectors of
+          The columns of the conversion matrix are the basis vectors of
           <m>\mathcal{B}_{\theta}</m> written in Cartesian coordinates, which is
           exactly the rotation matrix by the angle <m>\theta</m>:
           <md>
