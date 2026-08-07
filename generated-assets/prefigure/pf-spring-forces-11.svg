@@ -68,8 +68,8 @@
   <line id="pf-spring-forces-__line-10" x1="592.8" y1="97.6" x2="606.4" y2="89.4" stroke="black" stroke-width="1" fill="none"/>
   <line id="pf-spring-forces-__line-11" x1="592.8" y1="83.6" x2="606.4" y2="75.4" stroke="black" stroke-width="1" fill="none"/>
   <line id="pf-spring-forces-__line-12" x1="592.8" y1="69.6" x2="606.4" y2="61.4" stroke="black" stroke-width="1" fill="none"/>
-  <path id="pf-spring-forces-__path-0" d="M 189.8 129.7 L 251.8 129.7 L 251.8 85.9 L 189.8 85.9" stroke="black" stroke-width="2" fill="#ffe45c" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
-  <path id="pf-spring-forces-__path-1" d="M 388.2 129.7 L 450.2 129.7 L 450.2 85.9 L 388.2 85.9" stroke="black" stroke-width="2" fill="#fc6255" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <path id="pf-spring-forces-__path-0" d="M 189.8 129.7 L 251.8 129.7 L 251.8 85.9 L 189.8 85.9 L 189.8 129.7" stroke="black" stroke-width="2" fill="#ffe45c" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <path id="pf-spring-forces-__path-1" d="M 388.2 129.7 L 450.2 129.7 L 450.2 85.9 L 388.2 85.9 L 388.2 129.7" stroke="black" stroke-width="2" fill="#fc6255" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
   <g id="pf-spring-forces-__label-0" transform="translate(220.8,108.1) translate(-4.5,-6.0)">
     <g id="pf-spring-forces-__g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
@@ -290,10 +290,10 @@
   <line id="pf-spring-forces-__line-74" x1="592.8" y1="264.1" x2="606.4" y2="255.9" stroke="black" stroke-width="1" fill="none"/>
   <line id="pf-spring-forces-__line-75" x1="592.8" y1="250.1" x2="606.4" y2="241.9" stroke="black" stroke-width="1" fill="none"/>
   <line id="pf-spring-forces-__line-76" x1="592.8" y1="236.0" x2="606.4" y2="227.9" stroke="black" stroke-width="1" fill="none"/>
-  <line id="pf-spring-forces-__line-77" x1="220.8" y1="315.5" x2="220.8" y2="249.5" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
-  <line id="pf-spring-forces-__line-78" x1="419.2" y1="315.5" x2="419.2" y2="249.5" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
-  <path id="pf-spring-forces-__path-2" d="M 214.6 296.2 L 276.6 296.2 L 276.6 252.4 L 214.6 252.4" stroke="black" stroke-width="2" fill="#ffe45c" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
-  <path id="pf-spring-forces-__path-3" d="M 444.0 296.2 L 506.0 296.2 L 506.0 252.4 L 444.0 252.4" stroke="black" stroke-width="2" fill="#fc6255" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <line id="pf-spring-forces-__line-77" x1="419.2" y1="315.5" x2="419.2" y2="249.5" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+  <path id="pf-spring-forces-__path-2" d="M 214.6 296.2 L 276.6 296.2 L 276.6 252.4 L 214.6 252.4 L 214.6 296.2" stroke="black" stroke-width="2" fill="#ffe45c" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+  <line id="pf-spring-forces-__line-78" x1="220.8" y1="315.5" x2="220.8" y2="249.5" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+  <path id="pf-spring-forces-__path-3" d="M 444.0 296.2 L 506.0 296.2 L 506.0 252.4 L 444.0 252.4 L 444.0 296.2" stroke="black" stroke-width="2" fill="#fc6255" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
   <g id="pf-spring-forces-__label-6" transform="translate(245.6,274.6) translate(-4.5,-6.0)">
     <g id="pf-spring-forces-__g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">

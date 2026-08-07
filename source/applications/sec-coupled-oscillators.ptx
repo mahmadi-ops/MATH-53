@@ -94,8 +94,8 @@
               <line endpoints="((9.4,3.8),(9.62,3.94))" stroke="black" thickness="1"/>
               <line endpoints="((9.4,4.04),(9.62,4.18))" stroke="black" thickness="1"/>
               <line endpoints="((9.4,4.28),(9.62,4.42))" stroke="black" thickness="1"/>
-              <polygon points="((2.9,3.25),(3.9,3.25),(3.9,4.0),(2.9,4.0))" fill="#ffe45c" stroke="black" thickness="2"/>
-              <polygon points="((6.1,3.25),(7.1,3.25),(7.1,4.0),(6.1,4.0))" fill="#fc6255" stroke="black" thickness="2"/>
+              <polygon points="((2.9,3.25),(3.9,3.25),(3.9,4.0),(2.9,4.0),(2.9,3.25))" fill="#ffe45c" stroke="black" thickness="2"/>
+              <polygon points="((6.1,3.25),(7.1,3.25),(7.1,4.0),(6.1,4.0),(6.1,3.25))" fill="#fc6255" stroke="black" thickness="2"/>
               <label p="(3.4,3.62)" alignment="c"><m>1</m></label>
               <label p="(6.6,3.62)" alignment="c"><m>2</m></label>
               <line endpoints="((0.6,3.62),(0.78,3.62))" stroke="#0072B2" thickness="1"/>
@@ -166,10 +166,10 @@
               <line endpoints="((9.4,0.95),(9.62,1.09))" stroke="black" thickness="1"/>
               <line endpoints="((9.4,1.19),(9.62,1.33))" stroke="black" thickness="1"/>
               <line endpoints="((9.4,1.43),(9.62,1.57))" stroke="black" thickness="1"/>
-              <line endpoints="((3.4,0.07),(3.4,1.2))" stroke="gray" thickness="1" dash="5 4"/>
               <line endpoints="((6.6,0.07),(6.6,1.2))" stroke="gray" thickness="1" dash="5 4"/>
-              <polygon points="((3.3,0.4),(4.3,0.4),(4.3,1.15),(3.3,1.15))" fill="#ffe45c" stroke="black" thickness="2"/>
-              <polygon points="((7.0,0.4),(8.0,0.4),(8.0,1.15),(7.0,1.15))" fill="#fc6255" stroke="black" thickness="2"/>
+              <polygon points="((3.3,0.4),(4.3,0.4),(4.3,1.15),(3.3,1.15),(3.3,0.4))" fill="#ffe45c" stroke="black" thickness="2"/>
+              <line endpoints="((3.4,0.07),(3.4,1.2))" stroke="gray" thickness="1" dash="5 4"/>
+              <polygon points="((7.0,0.4),(8.0,0.4),(8.0,1.15),(7.0,1.15),(7.0,0.4))" fill="#fc6255" stroke="black" thickness="2"/>
               <label p="(3.8,0.77)" alignment="c"><m>1</m></label>
               <label p="(7.5,0.77)" alignment="c"><m>2</m></label>
               <line endpoints="((0.6,0.77),(0.78,0.77))" stroke="#0072B2" thickness="1"/>
