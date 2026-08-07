@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appendix xml:id="app-lab-problems" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab Problems</title>
+
+  <introduction>
+    <p>
+      The problems collected here are grouped by topic rather than by the week in which
+      they were assigned, so that each group sits alongside the material of the chapter it
+      belongs to. Problems on topics not developed in these notes have been omitted.
+    </p>
+  </introduction>
+
+  <section xml:id="app-sec-linear-systems">
+    <title>Systems of Linear Equations</title>
+
+    <example xml:id="lab-geometry-of-solutions">
+      <title>The Geometry of a Solution Set</title>
+      <statement>
+        <p>
+          You have a system of <m>k</m> equations in two variables, <m>k \geq 2</m>.
+          Explain the geometric significance of
+          <ol>
+            <li><p>no solution;</p></li>
+            <li><p>a unique solution;</p></li>
+            <li><p>an infinite number of solutions.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Each equation is a line in the plane, and a solution is a point lying on
+          <em>every</em> one of them, as in
+          <xref ref="fig-three-possibilities" text="type-global" />.
+        </p>
+        <p>
+          <term>(1) No solution.</term> The <m>k</m> lines have no point in common. This
+          happens as soon as two of them are parallel and distinct, but it can also happen
+          with no two parallel <mdash /> three lines meeting pairwise in three different
+          points already have no common point.
+        </p>
+        <p>
+          <term>(2) A unique solution.</term> All <m>k</m> lines pass through the same
+          single point.
+        </p>
+        <p>
+          <term>(3) Infinitely many solutions.</term> All <m>k</m> equations describe the
+          same line, so every point of that line is a solution.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="lab-shape-consistent-unique">
+      <title>Reading Consistency off an Echelon Shape</title>
+      <statement>
+        <p>
+          In each augmented matrix below, <m>*</m> denotes an arbitrary number and
+          <m>\blacksquare</m> a nonzero number. Determine whether the corresponding system
+          is consistent, and if so whether the solution is unique.
+          <md>
+            \text{(a)} \quad
+            \left[ \begin{array}{ccc|c}
+              \blacksquare \amp * \amp * \amp * \\
+              0 \amp \blacksquare \amp * \amp * \\
+              0 \amp 0 \amp \blacksquare \amp *
+            \end{array} \right]
+          </md>
+          <md>
+            \text{(b)} \quad
+            \left[ \begin{array}{ccccc|c}
+              \blacksquare \amp * \amp * \amp * \amp * \amp * \\
+              0 \amp \blacksquare \amp * \amp * \amp 0 \amp * \\
+              0 \amp 0 \amp \blacksquare \amp * \amp * \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp \blacksquare \amp *
+            \end{array} \right]
+          </md>
+          <md>
+            \text{(c)} \quad
+            \left[ \begin{array}{ccccc|c}
+              \blacksquare \amp * \amp * \amp * \amp * \amp * \\
+              0 \amp \blacksquare \amp * \amp * \amp 0 \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp \blacksquare \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0 \amp * \amp \blacksquare
+            \end{array} \right]
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Every row has a leading entry, so no row reads
+          <m>0 = d</m> with <m>d \neq 0</m> and the system is consistent by
+          <xref ref="rem-inconsistency-test" text="type-global" />. Every column of the
+          coefficient matrix also has a leading entry, so there are no free variables and
+          the solution is <term>unique</term>.
+        </p>
+        <p>
+          <term>(b)</term> Again every row has a leading entry, so the system is
+          consistent. But column <m>4</m> has no leading entry, so <m>x_4</m> is a free
+          variable and there are <term>infinitely many solutions</term>.
+        </p>
+        <p>
+          <term>(c)</term> This one needs a further step. Using the leading entry in row
+          <m>3</m> to clear the entry below it makes the <m>(4,5)</m> entry zero, while
+          the last column entry stays nonzero, because the <m>(3,6)</m> entry is
+          <m>0</m>:
+          <md>
+            \left[ \begin{array}{ccccc|c}
+              \blacksquare \amp * \amp * \amp * \amp * \amp * \\
+              0 \amp \blacksquare \amp * \amp * \amp 0 \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp \blacksquare \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \blacksquare
+            \end{array} \right].
+          </md>
+          The last row now reads
+          <m>0x_1 + 0x_2 + 0x_3 + 0x_4 + 0x_5 = \blacksquare</m>, that is
+          <m>0 = \blacksquare \neq 0</m>. The system is <term>inconsistent</term>.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="lab-h-and-k">
+      <title>Choosing Parameters to Control the Outcome</title>
+      <statement>
+        <p>
+          Choose <m>h</m> and <m>k</m> so that the system with augmented matrix
+          <md>
+            \left[ \begin{array}{cc|c} 1 \amp h \amp 2 \\ 2 \amp 4 \amp k \end{array} \right]
+          </md>
+          has (a) one solution, (b) no solution, (c) infinitely many solutions.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          One row operation puts the matrix in echelon form:
+          <md>
+            \left[ \begin{array}{cc|c} 1 \amp h \amp 2 \\ 2 \amp 4 \amp k \end{array} \right]
+            \xrightarrow{-2r_1 + r_2}
+            \left[ \begin{array}{cc|c} 1 \amp h \amp 2 \\ 0 \amp 4 - 2h \amp k - 4 \end{array} \right].
+          </md>
+          Everything depends on whether <m>4 - 2h</m> is zero.
+        </p>
+        <p>
+          <term>(a) One solution.</term> If <m>4 - 2h \neq 0</m>, i.e.
+          <m>h \neq 2</m>, then both columns have a leading entry, there are no free
+          variables, and the solution is unique <mdash /> whatever <m>k</m> is.
+        </p>
+        <p>
+          <term>(b) No solution.</term> If <m>h = 2</m> and <m>k \neq 4</m>, the second
+          row reads <m>0 = k - 4 \neq 0</m>, so the system is inconsistent.
+        </p>
+        <p>
+          <term>(c) Infinitely many solutions.</term> If <m>h = 2</m> and <m>k = 4</m>,
+          the second row is entirely zero, <m>x_2</m> is free, and there are infinitely
+          many solutions.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="lab-general-solution-2x3">
+      <title>A General Solution in Parametric Form</title>
+      <statement>
+        <p>
+          Find the general solution of the system whose augmented matrix is
+          <m>\left[ \begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 1 \\ 1 \amp 0 \amp 4 \amp 2 \end{array} \right]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 1 \\ 1 \amp 0 \amp 4 \amp 2 \end{array} \right]
+              \amp \xrightarrow{-r_1 + r_2}
+              \left[ \begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 1 \\ 0 \amp -1 \amp 4 \amp 1 \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2}
+              \left[ \begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp -4 \amp -1 \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2 + r_1}
+              \left[ \begin{array}{ccc|c} 1 \amp 0 \amp 4 \amp 2 \\ 0 \amp 1 \amp -4 \amp -1 \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Columns <m>1</m> and <m>2</m> are pivot columns, so <m>x</m> and <m>y</m> are
+          basic and <m>z</m> is free. Setting <m>z = s</m>, the rows read
+          <m>x + 4s = 2</m> and <m>y - 4s = -1</m>, so the solution set in parametric form
+          is
+          <md>
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix} -4s + 2 \\ 4s - 1 \\ s \end{bmatrix},
+            \qquad s \in \R.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="lab-complete-solution-3x3">
+      <title>The Complete Solution of a System</title>
+      <statement>
+        <p>
+          Give the complete solution to the system
+          <md>
+            <mrow>
+              3x - y + 4z \amp = 6
+            </mrow>
+            <mrow>
+              y + 8z \amp = 0
+            </mrow>
+            <mrow>
+              -2x + y \phantom{{}+ 8z} \amp = -4
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Row reducing the augmented matrix,
+          <md>
+            \left[ \begin{array}{ccc|c}
+              3 \amp -1 \amp 4 \amp 6 \\
+              0 \amp 1 \amp 8 \amp 0 \\
+              -2 \amp 1 \amp 0 \amp -4
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 4 \amp 2 \\
+              0 \amp 1 \amp 8 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          The third row is zero, so the system is consistent and <m>z</m> is a free
+          variable. With <m>z = t</m>,
+          <md>
+            <mrow>
+              x \amp = 2 - 4t
+            </mrow>
+            <mrow>
+              y \amp = -8t
+            </mrow>
+            <mrow>
+              z \amp = t, \qquad t \in \R.
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+  </section>
+
+  <section xml:id="app-sec-matrix-operations">
+    <title>Matrix Operations</title>
+
+    <example xml:id="lab-which-products-exist">
+      <title>Which Combinations Are Defined?</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix} 1 \amp 2 \amp 3 \\ 2 \amp 1 \amp 7 \end{bmatrix},
+            \quad
+            B = \begin{bmatrix} 3 \amp -1 \amp 2 \\ -3 \amp 2 \amp 1 \end{bmatrix},
+            \quad
+            C = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 1 \end{bmatrix},
+            \quad
+            E = \begin{bmatrix} 2 \\ 3 \end{bmatrix}.
+          </md>
+          Find, if possible, <m>-3A</m>, <m>3B - A</m>, <m>AC</m>, <m>CB</m>,
+          <m>AE</m>, and <m>EA</m>. If a combination is not possible, explain why.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>Scalar multiple and sum.</term> Both are computed entry by entry, and
+          <m>A</m> and <m>B</m> have the same size, so both are defined:
+          <md>
+            -3A = \begin{bmatrix} -3 \amp -6 \amp -9 \\ -6 \amp -3 \amp -21 \end{bmatrix},
+            \qquad
+            3B - A = \begin{bmatrix} 8 \amp -5 \amp 3 \\ -11 \amp 5 \amp -4 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term><m>AC</m> is not possible.</term> <m>A</m> is <m>2 \times 3</m> and
+          <m>C</m> is <m>2 \times 2</m>. By
+          <xref ref="rem-product-size" text="type-global" /> the product needs the number
+          of columns of <m>A</m> to equal the number of rows of <m>C</m>, and
+          <m>3 \neq 2</m>.
+        </p>
+        <p>
+          <term><m>CB</m> is defined</term> and is <m>2 \times 3</m>:
+          <md>
+            CB = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 1 \end{bmatrix}
+                 \begin{bmatrix} 3 \amp -1 \amp 2 \\ -3 \amp 2 \amp 1 \end{bmatrix}
+               = \begin{bmatrix} -3 \amp 3 \amp 4 \\ 6 \amp -1 \amp 7 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term><m>AE</m> and <m>EA</m> are not possible.</term> <m>A</m> is
+          <m>2 \times 3</m> and <m>E</m> is <m>2 \times 1</m>: for <m>AE</m> we would need
+          <m>3 = 2</m>, and for <m>EA</m> we would need <m>1 = 2</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="lab-products-both-orders">
+      <title>Products in Both Orders</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix} 1 \amp 1 \\ -2 \amp -1 \\ 1 \amp 2 \end{bmatrix},
+            \quad
+            B = \begin{bmatrix} 1 \amp -1 \amp -2 \\ 2 \amp 1 \amp -2 \end{bmatrix},
+            \quad
+            C = \begin{bmatrix} 1 \amp 1 \amp -3 \\ -1 \amp 2 \amp 0 \\ -3 \amp -1 \amp 0 \end{bmatrix}.
+          </md>
+          Find, if possible, <m>AB</m>, <m>BA</m>, <m>AC</m>, <m>CA</m>, <m>BC</m>, and
+          <m>CB</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The sizes are <m>A_{3 \times 2}</m>, <m>B_{2 \times 3}</m>,
+          <m>C_{3 \times 3}</m>. Checking inner dimensions:
+          <md>
+            AB = \begin{bmatrix} 3 \amp 0 \amp -4 \\ -4 \amp 1 \amp 6 \\ 5 \amp 1 \amp -6 \end{bmatrix}_{3 \times 3},
+            \qquad
+            BA = \begin{bmatrix} 1 \amp -2 \\ -2 \amp -3 \end{bmatrix}_{2 \times 2},
+          </md>
+          <md>
+            CA = \begin{bmatrix} -4 \amp -6 \\ -5 \amp -3 \\ -1 \amp -2 \end{bmatrix}_{3 \times 2},
+            \qquad
+            BC = \begin{bmatrix} 8 \amp 1 \amp -3 \\ 7 \amp 6 \amp -6 \end{bmatrix}_{2 \times 3}.
+          </md>
+        </p>
+        <p>
+          <m>AC</m> is not possible, since <m>A</m> has <m>2</m> columns while <m>C</m>
+          has <m>3</m> rows; and <m>CB</m> is not possible, since <m>C</m> has <m>3</m>
+          columns while <m>B</m> has <m>2</m> rows.
+        </p>
+        <p>
+          Note that <m>AB</m> and <m>BA</m> are both defined here but are not even the
+          same size, a stronger failure of commutativity than
+          <xref ref="eg-ab-not-ba" text="type-global" />.
+        </p>
+      </solution>
+    </example>
+  </section>
+
+  <section xml:id="app-sec-linear-combinations">
+    <title>Linear Combinations</title>
+
+    <example xml:id="lab-linear-combination">
+      <title>Writing One Vector in Terms of Others</title>
+      <statement>
+        <p>
+          Consider
+          <md>
+            \vec{C}_1 = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad
+            \vec{C}_2 = \begin{bmatrix} -2 \\ -4 \\ -2 \end{bmatrix}, \quad
+            \vec{C}_3 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}, \quad
+            \vec{B} = \begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix}.
+          </md>
+          Determine whether <m>\vec{B}</m> can be written as a linear combination of
+          <m>\vec{C}_1</m>, <m>\vec{C}_2</m>, <m>\vec{C}_3</m>, and if so give a specific
+          such combination.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The question asks whether there exist <m>x, y, z</m> with
+          <m>x\vec{C}_1 + y\vec{C}_2 + z\vec{C}_3 = \vec{B}</m>, which by
+          <xref ref="def-matrix-vector-product" text="type-global" /> is the system with
+          augmented matrix
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp 0 \amp -1 \\
+              2 \amp -4 \amp 1 \amp 1 \\
+              1 \amp -2 \amp 1 \amp 2
+            \end{array} \right]
+            \longrightarrow
+            \left[ \begin{array}{ccc|c}
+              1 \amp -2 \amp 0 \amp -1 \\
+              0 \amp 0 \amp 1 \amp 3 \\
+              0 \amp 0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          The system is consistent, so the answer is yes. Here <m>y</m> is free; with
+          <m>y = s</m> we get <m>z = 3</m> and <m>x = -1 + 2s</m>, so
+          <md>
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix} -1 + 2s \\ s \\ 3 \end{bmatrix}, \qquad s \in \R.
+          </md>
+        </p>
+        <p>
+          Taking <m>s = 0</m> gives the specific combination
+          <m>(x,y,z) = (-1, 0, 3)</m>, and checking it,
+          <md>
+            -\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+            + 0 \begin{bmatrix} -2 \\ -4 \\ -2 \end{bmatrix}
+            + 3 \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix} = \vec{B}. \checkmark
+          </md>
+        </p>
+        <p>
+          That <m>y</m> is free is no accident: <m>\vec{C}_2 = -2\vec{C}_1</m>, so
+          <m>\{\vec{C}_1, \vec{C}_2, \vec{C}_3\}</m> is linearly dependent and the
+          combination is far from unique.
+        </p>
+      </solution>
+    </example>
+  </section>
+</appendix>

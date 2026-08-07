@@ -31,6 +31,10 @@
     <xi:include href="ch-vector-spaces.ptx" />
     <xi:include href="ch-eigenvalues.ptx" />
     <xi:include href="ch-applications.ptx" />
+
+    <backmatter>
+      <xi:include href="appendix-labs.ptx" />
+    </backmatter>
   </book>
 
 </pretext>
