@@ -121,6 +121,24 @@ html:root:not(.dark-mode) .ptx-masthead .subtitle {
     color: black;
 }
 
+/* Hyperlinks in olive green instead of the theme's blue. This olive is
+   dark enough to stay AA-legible (>=4.5:1) on every background the book
+   uses, including the proof grey #d9d9d9. --knowl-link-color follows
+   --link-text-color, so cross-reference knowls come along; the table of
+   contents sets its own colors and is unaffected. */
+html:root:not(.dark-mode) {
+    --link-text-color: #4A5D23;
+    /* The theme lightens hovered in-content links, which washes out over
+       its grey pill, so darken instead. This only reaches "a.internal"
+       inside the content, which the book does not generate yet; it is
+       here so prose links match once it gains its first "url" element. */
+    --link-active-text-color: #3A4A1C;
+    /* The pill behind a hovered cross-reference was a pale blue; tint it
+       olive to match. This variable is used only for that pill, so the
+       example and proof panels painted above are unaffected. */
+    --knowl-background: #EDF0E6;
+}
+
 /* Clicked/active and hovered items in the table of contents use the
    same dark grey as the example titles instead of the theme's blue. */
 html:root:not(.dark-mode) {
