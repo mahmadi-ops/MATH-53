@@ -1652,6 +1652,150 @@
         </solution>
       </exercise>
       </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Problems for <xref ref="sec-polynomial-interpolation" text="title" />
+            (<xref ref="sec-polynomial-interpolation" text="type-global" />).
+          </p>
+        </introduction>
+
+      <exercise xml:id="star-interpolation-quadratic">
+        <title>★ A Parabola Through Three Points</title>
+        <statement>
+          <p>
+            Find a polynomial <m>p(x)</m> of degree at most two whose graph passes
+            through the points <m>(0, 1)</m>, <m>(1, 0)</m> and <m>(2, 3)</m>, and use
+            it to estimate the value of <m>p(3)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Write <m>p(x) = r_0 + r_1 x + r_2 x^2</m>. Substituting the three data
+            points gives
+            <md>
+              <mrow>
+                p(0) = r_0 \amp = 1
+              </mrow>
+              <mrow>
+                p(1) = r_0 + r_1 + r_2 \amp = 0
+              </mrow>
+              <mrow>
+                p(2) = r_0 + 2r_1 + 4r_2 \amp = 3.
+              </mrow>
+            </md>
+            Row reducing the augmented matrix,
+            <md>
+              <mrow>
+                \left[ \begin{array}{ccc|c}
+                  1 \amp 0 \amp 0 \amp 1 \\
+                  1 \amp 1 \amp 1 \amp 0 \\
+                  1 \amp 2 \amp 4 \amp 3
+                \end{array} \right]
+                \amp \xrightarrow{\substack{-r_1 + r_2 \\ -r_1 + r_3}}
+                \left[ \begin{array}{ccc|c}
+                  1 \amp 0 \amp 0 \amp 1 \\
+                  0 \amp 1 \amp 1 \amp -1 \\
+                  0 \amp 2 \amp 4 \amp 2
+                \end{array} \right]
+                \xrightarrow{-2r_2 + r_3}
+                \left[ \begin{array}{ccc|c}
+                  1 \amp 0 \amp 0 \amp 1 \\
+                  0 \amp 1 \amp 1 \amp -1 \\
+                  0 \amp 0 \amp 2 \amp 4
+                \end{array} \right]
+              </mrow>
+              <mrow>
+                \amp \xrightarrow{\frac{1}{2} r_3}
+                \left[ \begin{array}{ccc|c}
+                  1 \amp 0 \amp 0 \amp 1 \\
+                  0 \amp 1 \amp 1 \amp -1 \\
+                  0 \amp 0 \amp 1 \amp 2
+                \end{array} \right]
+                \xrightarrow{-r_3 + r_2}
+                \left[ \begin{array}{ccc|c}
+                  1 \amp 0 \amp 0 \amp 1 \\
+                  0 \amp 1 \amp 0 \amp -3 \\
+                  0 \amp 0 \amp 1 \amp 2
+                \end{array} \right].
+              </mrow>
+            </md>
+            Therefore <m>r_0 = 1</m>, <m>r_1 = -3</m>, <m>r_2 = 2</m>, and
+            <md>
+              p(x) = 1 - 3x + 2x^2.
+            </md>
+            As a check, <m>p(0) = 1</m>, <m>p(1) = 1 - 3 + 2 = 0</m>, and
+            <m>p(2) = 1 - 6 + 8 = 3</m>. The estimate is
+            <md>
+              p(3) = 1 - 3(3) + 2(3^2) = 1 - 9 + 18 = 10.
+            </md>
+          </p>
+        </solution>
+      </exercise>
+      <exercise xml:id="star-interpolation-cubic">
+        <title>★ A Cubic Through Four Points</title>
+        <statement>
+          <p>
+            Find the interpolating polynomial for the data points <m>(-1, -3)</m>,
+            <m>(0, 1)</m>, <m>(1, 3)</m> and <m>(2, 9)</m>, and use it to estimate the
+            value of <m>p\!\left(\frac{1}{2}\right)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            With four data points we look for
+            <m>p(x) = r_0 + r_1 x + r_2 x^2 + r_3 x^3</m>. Substituting the points,
+            <md>
+              <mrow>
+                p(-1) = r_0 - r_1 + r_2 - r_3 \amp = -3
+              </mrow>
+              <mrow>
+                p(0) = r_0 \amp = 1
+              </mrow>
+              <mrow>
+                p(1) = r_0 + r_1 + r_2 + r_3 \amp = 3
+              </mrow>
+              <mrow>
+                p(2) = r_0 + 2r_1 + 4r_2 + 8r_3 \amp = 9.
+              </mrow>
+            </md>
+            The second equation gives <m>r_0 = 1</m> at once. Substituting it into the
+            others,
+            <md>
+              <mrow>
+                -r_1 + r_2 - r_3 \amp = -4
+              </mrow>
+              <mrow>
+                r_1 + r_2 + r_3 \amp = 2
+              </mrow>
+              <mrow>
+                2r_1 + 4r_2 + 8r_3 \amp = 8.
+              </mrow>
+            </md>
+            Adding the first two equations gives <m>2r_2 = -2</m>, so <m>r_2 = -1</m>.
+            The last two equations then read <m>r_1 + r_3 = 3</m> and, after dividing
+            by two, <m>r_1 + 2r_2 + 4r_3 = 4</m>, i.e. <m>r_1 + 4r_3 = 6</m>.
+            Subtracting, <m>3r_3 = 3</m>, so <m>r_3 = 1</m> and <m>r_1 = 2</m>.
+            (Row reducing the full augmented matrix leads to the same solution.)
+          </p>
+          <p>
+            The interpolating polynomial is
+            <md>
+              p(x) = 1 + 2x - x^2 + x^3,
+            </md>
+            and indeed <m>p(-1) = 1 - 2 - 1 - 1 = -3</m>, <m>p(0) = 1</m>,
+            <m>p(1) = 1 + 2 - 1 + 1 = 3</m>, <m>p(2) = 1 + 4 - 4 + 8 = 9</m>. The
+            estimate is
+            <md>
+              p\!\left(\tfrac{1}{2}\right)
+              = 1 + 1 - \tfrac{1}{4} + \tfrac{1}{8}
+              = \tfrac{15}{8}.
+            </md>
+          </p>
+        </solution>
+      </exercise>
+      </exercisegroup>
     </exercises>
   </section>
 

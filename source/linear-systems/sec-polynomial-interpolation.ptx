@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-polynomial-interpolation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>A First Application: Polynomial Interpolation</title>
+
+  <introduction>
+    <p>
+      When studying a set of data that relates two variables <m>x</m> and <m>y</m>, it is
+      often useful to find a polynomial that <q>fits</q> the data, that is, a polynomial
+      whose graph passes exactly through every data point. Once such a polynomial is
+      found, it can be used to estimate <m>y</m>-values at points where no data was
+      collected. Finding this polynomial may sound like a new kind of problem, but it is
+      not: as we are about to see, it is a system of linear equations in disguise, and
+      the row reduction algorithm of <xref ref="sec-row-reduction" text="type-global"/>
+      solves it.
+    </p>
+    <p>
+      Suppose we are given <m>n</m> data points
+      <md>
+        (x_1, y_1), \; (x_2, y_2), \; \ldots, \; (x_n, y_n),
+      </md>
+      where the <m>x_i</m> are distinct, and we look for a polynomial
+      <md>
+        p(x) = r_0 + r_1 x + r_2 x^2 + \cdots + r_{n-1} x^{n-1}
+      </md>
+      of degree at most <m>n - 1</m> satisfying <m>p(x_i) = y_i</m> for
+      <m>i = 1, 2, \ldots, n</m>. The unknowns here are the coefficients
+      <m>r_0, r_1, \ldots, r_{n-1}</m>, not <m>x</m>: each condition
+      <m>p(x_i) = y_i</m> substitutes a known number <m>x_i</m> into <m>p</m>, and so
+      becomes a <em>linear</em> equation in <m>r_0, r_1, \ldots, r_{n-1}</m>. Imposing
+      all <m>n</m> conditions produces a system of <m>n</m> linear equations in the
+      <m>n</m> unknown coefficients.
+    </p>
+  </introduction>
+
+  <example xml:id="eg-interpolation-quadratic">
+    <title>A Parabola Through Three Points</title>
+    <statement>
+      <p>
+        Find a polynomial <m>p(x)</m> of degree at most two whose graph passes through
+        the points <m>(-1, 4)</m>, <m>(1, 2)</m> and <m>(3, 16)</m>, and use it to
+        estimate the value of <m>p(2)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We look for
+        <md>
+          p(x) = r_0 + r_1 x + r_2 x^2.
+        </md>
+        Substituting the three data points gives three linear equations in the unknowns
+        <m>r_0</m>, <m>r_1</m>, <m>r_2</m>:
+        <md>
+          <mrow>
+            p(-1) = r_0 - r_1 + r_2 \amp = 4
+          </mrow>
+          <mrow>
+            p(1) = r_0 + r_1 + r_2 \amp = 2
+          </mrow>
+          <mrow>
+            p(3) = r_0 + 3r_1 + 9r_2 \amp = 16.
+          </mrow>
+        </md>
+      </p>
+      <p>
+        We row reduce the augmented matrix:
+        <md>
+          <mrow>
+            \left[ \begin{array}{ccc|c}
+              1 \amp -1 \amp 1 \amp 4 \\
+              1 \amp 1 \amp 1 \amp 2 \\
+              1 \amp 3 \amp 9 \amp 16
+            \end{array} \right]
+            \amp \xrightarrow{\substack{-r_1 + r_2 \\ -r_1 + r_3}}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -1 \amp 1 \amp 4 \\
+              0 \amp 2 \amp 0 \amp -2 \\
+              0 \amp 4 \amp 8 \amp 12
+            \end{array} \right]
+            \xrightarrow{\frac{1}{2} r_2}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -1 \amp 1 \amp 4 \\
+              0 \amp 1 \amp 0 \amp -1 \\
+              0 \amp 4 \amp 8 \amp 12
+            \end{array} \right]
+          </mrow>
+          <mrow>
+            \amp \xrightarrow{-4r_2 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -1 \amp 1 \amp 4 \\
+              0 \amp 1 \amp 0 \amp -1 \\
+              0 \amp 0 \amp 8 \amp 16
+            \end{array} \right]
+            \xrightarrow{\frac{1}{8} r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -1 \amp 1 \amp 4 \\
+              0 \amp 1 \amp 0 \amp -1 \\
+              0 \amp 0 \amp 1 \amp 2
+            \end{array} \right]
+          </mrow>
+          <mrow>
+            \amp \xrightarrow{\substack{r_2 + r_1 \\ -r_3 + r_1}}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 0 \amp 1 \\
+              0 \amp 1 \amp 0 \amp -1 \\
+              0 \amp 0 \amp 1 \amp 2
+            \end{array} \right].
+          </mrow>
+        </md>
+      </p>
+      <p>
+        Therefore <m>r_0 = 1</m>, <m>r_1 = -1</m>, <m>r_2 = 2</m>, and
+        <md>
+          p(x) = 1 - x + 2x^2.
+        </md>
+        As a check, <m>p(-1) = 1 + 1 + 2 = 4</m>, <m>p(1) = 1 - 1 + 2 = 2</m>, and
+        <m>p(3) = 1 - 3 + 18 = 16</m>, as required. Finally, the estimate at
+        <m>x = 2</m> is
+        <md>
+          p(2) = 1 - 2 + 2(2^2) = 7.
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Nothing in this method depended on having three points: any number of data points,
+    and any degree of polynomial, can be handled in the same way.
+  </p>
+
+  <remark xml:id="rem-interpolation-steps">
+    <title>The Interpolation Procedure</title>
+    <p>
+      To fit a polynomial through the <m>n</m> data points
+      <m>(x_1,y_1), \ldots, (x_n,y_n)</m> with distinct <m>x_i</m>:
+      <ol>
+        <li>
+          <p>
+            Write down <m>p(x) = r_0 + r_1 x + \cdots + r_{n-1}x^{n-1}</m> with unknown
+            coefficients <m>r_0, r_1, \ldots, r_{n-1}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Substitute each data point: the condition <m>p(x_i) = y_i</m> gives one
+            linear equation in the coefficients, for a total of <m>n</m> equations in
+            <m>n</m> unknowns.
+          </p>
+        </li>
+        <li>
+          <p>
+            Form the augmented matrix of the system and row reduce it, following
+            <xref ref="alg-row-reduction" text="type-global"/>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Read off <m>r_0, r_1, \ldots, r_{n-1}</m> and write down <m>p(x)</m>. To
+            estimate the <m>y</m>-value at a point <m>x</m> not in the data, evaluate
+            <m>p(x)</m> there.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <theorem xml:id="thm-interpolating-polynomial">
+    <title>Polynomial Interpolation</title>
+    <statement>
+      <p>
+        Given <m>n</m> data points <m>(x_1,y_1), (x_2,y_2), \ldots, (x_n,y_n)</m> with
+        the <m>x_i</m> distinct, there is a unique polynomial
+        <m>p(x) = r_0 + r_1 x + \cdots + r_{n-1}x^{n-1}</m> of degree at most
+        <m>n - 1</m> such that <m>p(x_i) = y_i</m> for <m>i = 1, 2, \ldots, n</m>. The
+        polynomial <m>p(x)</m> is called the <term>interpolating polynomial</term> for
+        the data points.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    In other words, the linear system produced by the procedure above always has
+    exactly one solution <mdash/> the row reduction never ends in an inconsistent row,
+    and never leaves a free variable. We do not yet have the tools to prove this; the
+    reason will become clear in later chapters. For now we take the theorem as a
+    promise and put it to work on a larger example.
+  </p>
+
+  <example xml:id="eg-interpolation-cubic">
+    <title>A Cubic Through Four Points</title>
+    <statement>
+      <p>
+        Find the interpolating polynomial for the data points <m>(-1, 4)</m>,
+        <m>(0, 3)</m>, <m>(1, 2)</m> and <m>(2, 7)</m>, and use it to estimate the
+        value of <m>p\!\left(\frac{3}{2}\right)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        With four data points we look for a polynomial of degree at most three,
+        <md>
+          p(x) = r_0 + r_1 x + r_2 x^2 + r_3 x^3.
+        </md>
+        Substituting the four points,
+        <md>
+          <mrow>
+            p(-1) = r_0 - r_1 + r_2 - r_3 \amp = 4
+          </mrow>
+          <mrow>
+            p(0) = r_0 \amp = 3
+          </mrow>
+          <mrow>
+            p(1) = r_0 + r_1 + r_2 + r_3 \amp = 2
+          </mrow>
+          <mrow>
+            p(2) = r_0 + 2r_1 + 4r_2 + 8r_3 \amp = 7.
+          </mrow>
+        </md>
+      </p>
+      <p>
+        The augmented matrix is
+        <md>
+          \left[ \begin{array}{cccc|c}
+            1 \amp -1 \amp 1 \amp -1 \amp 4 \\
+            1 \amp 0 \amp 0 \amp 0 \amp 3 \\
+            1 \amp 1 \amp 1 \amp 1 \amp 2 \\
+            1 \amp 2 \amp 4 \amp 8 \amp 7
+          \end{array} \right],
+        </md>
+        and row reduction (left as an exercise in following
+        <xref ref="alg-row-reduction" text="type-global"/>) brings it to
+        <md>
+          \left[ \begin{array}{cccc|c}
+            1 \amp 0 \amp 0 \amp 0 \amp 3 \\
+            0 \amp 1 \amp 0 \amp 0 \amp -2 \\
+            0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+            0 \amp 0 \amp 0 \amp 1 \amp 1
+          \end{array} \right].
+        </md>
+      </p>
+      <p>
+        Therefore <m>r_0 = 3</m>, <m>r_1 = -2</m>, <m>r_2 = 0</m>, <m>r_3 = 1</m>, and
+        the interpolating polynomial is
+        <md>
+          p(x) = 3 - 2x + x^3.
+        </md>
+        Notice that <m>r_2 = 0</m>: the theorem promises a polynomial of degree
+        <em>at most</em> <m>n - 1</m>, and some coefficients may well turn out to be
+        zero. The estimate is
+        <md>
+          p\!\left(\tfrac{3}{2}\right)
+          = 3 - 2\left(\tfrac{3}{2}\right) + \left(\tfrac{3}{2}\right)^3
+          = 3 - 3 + \tfrac{27}{8}
+          = \tfrac{27}{8}.
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    A word of caution is in order. The interpolating polynomial passes exactly through
+    the given data points, and estimates taken <em>between</em> data points are usually
+    reasonable. Far outside the range of the data, however, polynomials grow rapidly,
+    and the values of <m>p(x)</m> there should not be trusted as predictions.
+  </p>
+</section>

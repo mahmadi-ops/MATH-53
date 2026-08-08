@@ -16,5 +16,6 @@
   <xi:include href="linear-systems/sec-elementary-operations.ptx" />
   <xi:include href="linear-systems/sec-augmented-matrix.ptx" />
   <xi:include href="linear-systems/sec-row-reduction.ptx" />
+  <xi:include href="linear-systems/sec-polynomial-interpolation.ptx" />
 
 </chapter>
