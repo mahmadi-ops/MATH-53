@@ -75,6 +75,19 @@
       <p>
         Hence <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m> is the <m>yz</m>-plane.
       </p>
+
+      <figure xml:id="fig-span-yz-plane">
+        <caption>
+          The same span, as the range of <m>T(\vec{x}) = A\vec{x}</m> with
+          <m>\vec{u}</m> and <m>\vec{v}</m> as the columns of <m>A</m>. Every output has
+          first entry <m>0</m>, so the teal range in the right pane is the
+          <m>yz</m>-plane. Click and drag the head of <m>\vec{x}</m> in the left pane: the
+          output <m>x_1\vec{u} + x_2\vec{v}</m> sweeps out that plane and never leaves it.
+          Drag <m>\vec{b}</m> off the plane instead and the equation is marked
+          inconsistent.
+        </caption>
+        <interactive xml:id="int-span-yz-plane" iframe="demos-manim/axb.html?mat=0,0:1,2:2,3&amp;x=1,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+      </figure>
     </solution>
   </example>
 
@@ -124,6 +137,21 @@
         The moral: a new vector enlarges the span exactly when it is not already in the
         span. This is the idea that the next section makes precise.
       </p>
+
+      <figure xml:id="fig-span-grows-to-r3">
+        <caption>
+          Case (II), with <m>\vec{u}</m>, <m>\vec{v}</m>, and
+          <m>\vec{w} = (1,-1,0)</m> as the columns of <m>A</m>. Because <m>\vec{w}</m>
+          points off the <m>yz</m>-plane, the teal range now fills the whole output pane:
+          <m>\operatorname{Span}\{\vec{u},\vec{v},\vec{w}\} = \R^3</m>. Click and drag
+          the head of <m>\vec{b}</m> anywhere <mdash /> it is always reachable, and the
+          violet solution set stays a single point. Compare
+          <xref ref="fig-span-yz-plane" text="type-global" />: had we instead added the
+          <m>\vec{w}</m> of Case (I), which already lies in the plane, the range would
+          have stayed that same plane and the solution set would have grown to a line.
+        </caption>
+        <interactive xml:id="int-span-grows-to-r3" iframe="demos-manim/axb.html?mat=0,0,1:1,2,-1:2,3,0&amp;x=1,1,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+      </figure>
     </solution>
   </example>
 

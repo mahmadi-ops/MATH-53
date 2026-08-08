@@ -20,7 +20,7 @@
   </docinfo>
 
   <book xml:id="math53-linear-algebra">
-    <title>Linear Algebra Notes for MATH 53</title>
+    <title>MATH 53--Linear Algebra</title>
     <xi:include href="frontmatter.ptx" />
     <xi:include href="ch-linear-systems.ptx" />
     <xi:include href="ch-vectors.ptx" />
@@ -31,6 +31,8 @@
     <xi:include href="ch-vector-spaces.ptx" />
     <xi:include href="ch-eigenvalues.ptx" />
     <xi:include href="ch-applications.ptx" />
+    <xi:include href="ch-problems.ptx" />
+
   </book>
 
 </pretext>
