@@ -62,6 +62,19 @@ html:root:not(.dark-mode) {
     --toclevel3-background: #909090;
 }
 
+/* Examples and solutions share the same moon grey background as the
+   table of contents. They render as expandable knowls, whose open
+   panels take the generic knowl background, so those are painted
+   directly as well. */
+html:root:not(.dark-mode) {
+    --example-like-body-background: #909090;
+    --solution-like-body-background: #909090;
+}
+html:root:not(.dark-mode) .example-like.knowl__content,
+html:root:not(.dark-mode) .solution-like.knowl__content {
+    background-color: #909090;
+}
+
 /* Interactive figures: PreTeXt bakes a pixel size onto the iframe at
    build time from the theme's default column, so it never scales.
    Make it fluid, keeping the 5:4 aspect the source asks for. */
