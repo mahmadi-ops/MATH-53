@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-determinant-volume" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>An Application: The Determinant as Volume</title>
+
+  <introduction>
+    <p>
+      When we first met the determinant in
+      <xref ref="sec-cofactor-expansion" text="type-global"/>, we mentioned that for a
+      <m>2 \times 2</m> matrix, <m>|\det A|</m> is the area of the parallelogram spanned
+      by the columns of <m>A</m>. In this section we prove the three-dimensional
+      version of that statement: the volume of the slanted box spanned by three vectors
+      in <m>\R^3</m> is the absolute value of a <m>3 \times 3</m> determinant. We then
+      draw a striking consequence for the linear transformation
+      <m>T(\vec{x}) = A\vec{x}</m>: it scales the volume of every box by the same
+      factor <m>|\det A|</m> <mdash/> a number that calculus calls the
+      <term>Jacobian determinant</term> of <m>T</m>.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-dot-cross-tools">
+    <title>Two Tools: the Dot Product and the Cross Product</title>
+
+    <definition xml:id="def-dot-product">
+      <title>Dot Product, Length, and Angle</title>
+      <statement>
+        <p>
+          For <m>\vec{u} = \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}</m> and
+          <m>\vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}</m> in
+          <m>\R^3</m>, the <term>dot product</term> and the <term>length</term> (or
+          norm) are
+          <md>
+            \vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + u_3v_3,
+            \qquad
+            \| \vec{u} \| = \sqrt{\vec{u} \cdot \vec{u}},
+          </md>
+          and the angle <m>\theta \in [0, \pi]</m> between two nonzero vectors is
+          determined by
+          <m>\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-cross-product">
+      <title>Cross Product</title>
+      <statement>
+        <p>
+          The <term>cross product</term> of <m>\vec{u}, \vec{v} \in \R^3</m> is the
+          vector
+          <md>
+            \vec{u} \times \vec{v}
+            = \begin{bmatrix} u_2v_3 - u_3v_2 \\ u_3v_1 - u_1v_3 \\ u_1v_2 - u_2v_1 \end{bmatrix}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-cross-mnemonic">
+      <p>
+        There is no need to memorize the entries: they are exactly the three
+        <m>2 \times 2</m> cofactors from
+        <xref ref="sec-cofactor-expansion" text="type-global"/>. Symbolically,
+        expanding along the first row,
+        <md>
+          \vec{u} \times \vec{v}
+          = \det \begin{bmatrix}
+              \vec{e}_1 \amp \vec{e}_2 \amp \vec{e}_3 \\
+              u_1 \amp u_2 \amp u_3 \\
+              v_1 \amp v_2 \amp v_3
+            \end{bmatrix},
+        </md>
+        where <m>\vec{e}_1, \vec{e}_2, \vec{e}_3</m> are the standard basis vectors.
+      </p>
+    </remark>
+
+    <p>
+      The cross product packages two geometric facts, both provable by direct
+      computation with the formulas above.
+    </p>
+
+    <lemma xml:id="lem-cross-area">
+      <title>Length of the Cross Product is an Area</title>
+      <statement>
+        <p>
+          For all <m>\vec{u}, \vec{v} \in \R^3</m>,
+          <md>
+            \| \vec{u} \times \vec{v} \|^2
+            = \| \vec{u} \|^2 \| \vec{v} \|^2 - (\vec{u} \cdot \vec{v})^2,
+          </md>
+          and consequently the parallelogram with edges <m>\vec{u}</m>, <m>\vec{v}</m>
+          has area
+          <m>\| \vec{u} \| \| \vec{v} \| \sin\theta = \| \vec{u} \times \vec{v} \|</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Expanding both sides in coordinates,
+          <md>
+            \| \vec{u} \times \vec{v} \|^2 = \sum_{i \lt j} (u_iv_j - u_jv_i)^2,
+            \qquad
+            \| \vec{u} \|^2 \| \vec{v} \|^2 - (\vec{u} \cdot \vec{v})^2
+            = \Big( \sum_i u_i^2 \Big) \Big( \sum_j v_j^2 \Big)
+              - \Big( \sum_i u_iv_i \Big)^2,
+          </md>
+          and multiplying out the right-hand side, the terms <m>u_i^2v_i^2</m> cancel
+          and the cross terms regroup as <m>\sum_{i \lt j}(u_iv_j - u_jv_i)^2</m>
+          <mdash/> an algebraic identity checked by direct expansion. Then, using
+          <m>\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta</m>,
+          <md>
+            \| \vec{u} \times \vec{v} \|^2
+            = \| \vec{u} \|^2 \| \vec{v} \|^2 \left( 1 - \cos^2\theta \right)
+            = \left( \| \vec{u} \| \| \vec{v} \| \sin\theta \right)^2,
+          </md>
+          and both sides are nonnegative, so
+          <m>\| \vec{u} \times \vec{v} \| = \| \vec{u} \| \| \vec{v} \| \sin\theta</m>,
+          which is base times height for the parallelogram.
+        </p>
+      </proof>
+    </lemma>
+
+    <lemma xml:id="lem-cross-orthogonal">
+      <title>The Cross Product is Perpendicular to Both Factors</title>
+      <statement>
+        <p>
+          <m>\vec{u} \cdot (\vec{u} \times \vec{v}) = 0</m> and
+          <m>\vec{v} \cdot (\vec{u} \times \vec{v}) = 0</m>. Hence, when
+          <m>\vec{n} = \vec{u} \times \vec{v} \neq \vec{0}</m>, the vector
+          <m>\vec{n}</m> is perpendicular to the entire plane
+          <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Direct computation:
+          <md>
+            \vec{u} \cdot (\vec{u} \times \vec{v})
+            = u_1(u_2v_3 - u_3v_2) + u_2(u_3v_1 - u_1v_3) + u_3(u_1v_2 - u_2v_1) = 0
+          </md>
+          after cancellation in pairs, and symmetrically for <m>\vec{v}</m>. Any
+          vector of the plane has the form <m>s\vec{u} + t\vec{v}</m>, and
+          <m>(s\vec{u} + t\vec{v}) \cdot \vec{n} = s(\vec{u} \cdot \vec{n}) + t(\vec{v} \cdot \vec{n}) = 0</m>.
+        </p>
+      </proof>
+    </lemma>
+
+    <lemma xml:id="lem-triple-product">
+      <title>The Scalar Triple Product is a Determinant</title>
+      <statement>
+        <p>
+          For <m>\vec{u}, \vec{v}, \vec{w} \in \R^3</m>,
+          <md>
+            \vec{w} \cdot (\vec{u} \times \vec{v})
+            = \det \begin{bmatrix}
+                u_1 \amp v_1 \amp w_1 \\
+                u_2 \amp v_2 \amp w_2 \\
+                u_3 \amp v_3 \amp w_3
+              \end{bmatrix}
+            = \det \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right].
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Expanding the dot product,
+          <md>
+            \vec{w} \cdot (\vec{u} \times \vec{v})
+            = w_1(u_2v_3 - u_3v_2) + w_2(u_3v_1 - u_1v_3) + w_3(u_1v_2 - u_2v_1),
+          </md>
+          and comparing with the cofactor expansion of
+          <m>\det [\, \vec{u} \mid \vec{v} \mid \vec{w} \,]</m> along its third
+          column (<xref ref="def-cofactor-expansion" text="type-global"/>): the three
+          <m>2 \times 2</m> minors of the columns <m>\vec{u}, \vec{v}</m> are exactly
+          the parenthesized factors, with matching signs. The two expressions agree
+          term by term.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+
+  <subsection xml:id="subsec-parallelepiped-volume">
+    <title>The Volume of a Parallelepiped</title>
+
+    <definition xml:id="def-parallelepiped">
+      <title>Parallelepiped</title>
+      <statement>
+        <p>
+          Given <m>\vec{u}, \vec{v}, \vec{w} \in \R^3</m>, the
+          <term>parallelepiped</term> they span is
+          <md>
+            P(\vec{u}, \vec{v}, \vec{w})
+            = \left\{ t_1\vec{u} + t_2\vec{v} + t_3\vec{w}
+              \; : \; 0 \leq t_1, t_2, t_3 \leq 1 \right\}:
+          </md>
+          the slanted box with one corner at the origin and edges <m>\vec{u}</m>,
+          <m>\vec{v}</m>, <m>\vec{w}</m>. Its volume is
+          <em>base times height</em>: taking the parallelogram with edges
+          <m>\vec{u}, \vec{v}</m> as the base,
+          <md>
+            \operatorname{vol} P(\vec{u}, \vec{v}, \vec{w})
+            = (\text{area of base}) \times h,
+          </md>
+          where <m>h</m> is the perpendicular distance from the tip of <m>\vec{w}</m>
+          to the plane of the base.
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-volume-det">
+      <title>Volume Equals the Absolute Determinant</title>
+      <statement>
+        <p>
+          <md>
+            \operatorname{vol} P(\vec{u}, \vec{v}, \vec{w})
+            = \left| \det \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right] \right|.
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Assume first that the base is honest, so
+          <m>\vec{n} = \vec{u} \times \vec{v} \neq \vec{0}</m>. By
+          <xref ref="lem-cross-orthogonal" text="type-global"/>, <m>\vec{n}</m> points
+          along the perpendicular to the base plane. If <m>\varphi</m> is the angle
+          between <m>\vec{w}</m> and <m>\vec{n}</m>, then the height of the box is the
+          leg of a right triangle with hypotenuse <m>\| \vec{w} \|</m>:
+          <md>
+            h = \| \vec{w} \| \, | \cos\varphi |
+            = \| \vec{w} \| \, \frac{| \vec{w} \cdot \vec{n} |}{\| \vec{w} \| \| \vec{n} \|}
+            = \frac{| \vec{w} \cdot (\vec{u} \times \vec{v}) |}{\| \vec{u} \times \vec{v} \|}.
+          </md>
+          Therefore, by <xref ref="lem-cross-area" text="type-global"/> and
+          <xref ref="lem-triple-product" text="type-global"/>,
+          <md>
+            \operatorname{vol} = (\text{area of base}) \times h
+            = \| \vec{u} \times \vec{v} \|
+              \cdot \frac{| \vec{w} \cdot (\vec{u} \times \vec{v}) |}{\| \vec{u} \times \vec{v} \|}
+            = | \vec{w} \cdot (\vec{u} \times \vec{v}) |
+            = \left| \det \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right] \right|.
+          </md>
+        </p>
+        <p>
+          If instead <m>\vec{u} \times \vec{v} = \vec{0}</m>, then
+          <m>\sin\theta = 0</m> by <xref ref="lem-cross-area" text="type-global"/>, so
+          <m>\vec{u}</m> and <m>\vec{v}</m> are parallel (or one is
+          <m>\vec{0}</m>), the box is flat, and <m>\operatorname{vol} = 0</m>.
+          Consistently, the matrix has linearly dependent columns and its determinant
+          is <m>0</m>. The theorem holds in all cases.
+        </p>
+      </proof>
+    </theorem>
+
+    <figure xml:id="fig-parallelepiped-volume">
+      <caption>
+        The theorem, live. The parallelepiped spanned by <m>\vec{u}</m> (yellow),
+        <m>\vec{v}</m> (teal) and <m>\vec{w}</m> (red), with the base parallelogram
+        shaded, the normal <m>\vec{n} = \vec{u} \times \vec{v}</m> in violet, and the
+        dashed height drop from the tip of <m>\vec{w}</m> to the base plane. The
+        readout shows base area <m>\| \vec{u} \times \vec{v} \|</m>, height <m>h</m>,
+        the determinant, and the volume. Drag the heads of the three vectors and watch
+        <m>\operatorname{vol} = |\det|</m> hold; slide <m>\vec{w}</m> into the base
+        plane and the volume dies to zero exactly as the determinant does. Drag the
+        background to rotate.
+      </caption>
+      <interactive xml:id="int-parallelepiped-volume" iframe="demos-manim/volume.html?u=2,0,0&amp;v=1,2,0&amp;w=0.5,0.5,1.5&amp;theme=dark" width="66%" aspect="4:5"/>
+    </figure>
+
+    <remark xml:id="rem-why-det">
+      <title>Why the Determinant Had to Appear</title>
+      <p>
+        Consider the <em>signed</em> volume
+        <m>D(\vec{u}, \vec{v}, \vec{w}) = \vec{w} \cdot (\vec{u} \times \vec{v})</m>
+        as a function of the three edges. It is:
+        <ol marker="I">
+          <li>
+            <p>
+              linear in each edge separately, by linearity of the dot and cross
+              products in each argument;
+            </p>
+          </li>
+          <li>
+            <p>
+              alternating <mdash/> if two edges coincide, the box is flat and
+              <m>D = 0</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              normalized <mdash/> the unit cube <m>P(\vec{e}_1, \vec{e}_2, \vec{e}_3)</m>
+              gives <m>D = 1</m>.
+            </p>
+          </li>
+        </ol>
+        The determinant is the unique function of the columns with these three
+        properties, so signed volume <em>is</em> the determinant, and unsigned volume
+        is <m>|\det|</m>. Property (II) also explains shear invariance:
+        <m>D(\vec{u}, \vec{v}, \vec{w} + c\vec{u}) = D(\vec{u}, \vec{v}, \vec{w})</m>,
+        so sliding the top face parallel to the base changes neither the base nor the
+        height. This is the geometric face of a fact we proved algebraically in
+        <xref ref="sec-determinants-row-operations" text="type-global"/>: adding a
+        multiple of one column to another does not change the determinant.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-jacobian">
+    <title>The Jacobian Determinant of a Linear Map</title>
+
+    <p>
+      Let <m>T : \R^3 \to \R^3</m> be the linear transformation
+      <m>T(\vec{x}) = A\vec{x}</m> with
+      <m>A = \begin{bmatrix} a_{ij} \end{bmatrix}</m>. Its component functions are
+      <md>
+        T_i(x_1, x_2, x_3) = a_{i1}x_1 + a_{i2}x_2 + a_{i3}x_3,
+        \qquad \text{so} \qquad
+        \frac{\partial T_i}{\partial x_j} = a_{ij}.
+      </md>
+      In the language of multivariable calculus: the matrix of partial derivatives of
+      <m>T</m> <mdash/> its <term>Jacobian matrix</term> <mdash/> is the constant
+      matrix <m>A</m> at every point, and the <term>Jacobian determinant</term> of
+      <m>T</m> is the constant <m>\det A</m>. A linear map is its own linear
+      approximation everywhere. The next lemma says exactly what this number does.
+    </p>
+
+    <lemma xml:id="lem-image-parallelepiped">
+      <title>How <m>T</m> Transforms Parallelepipeds</title>
+      <statement>
+        <p>
+          <m>T</m> maps <m>P(\vec{u}, \vec{v}, \vec{w})</m> onto
+          <m>P(A\vec{u}, A\vec{v}, A\vec{w})</m>, and
+          <md>
+            \operatorname{vol} T\big( P(\vec{u}, \vec{v}, \vec{w}) \big)
+            = | \det A | \cdot \operatorname{vol} P(\vec{u}, \vec{v}, \vec{w}).
+          </md>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By linearity,
+          <m>T(t_1\vec{u} + t_2\vec{v} + t_3\vec{w}) = t_1A\vec{u} + t_2A\vec{v} + t_3A\vec{w}</m>
+          with the same coefficients <m>t_i \in [0, 1]</m>: the image of a
+          parallelepiped under a linear map is again a parallelepiped, spanned by the
+          images of its edges.
+        </p>
+        <p>
+          Now let
+          <m>V = \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right]</m>. The
+          edge matrix of the image is
+          <m>\left[ \, A\vec{u} \; | \; A\vec{v} \; | \; A\vec{w} \, \right] = AV</m>.
+          By <xref ref="thm-volume-det" text="type-global"/> and the product rule for
+          determinants (<xref ref="thm-det-product" text="type-global"/>),
+          <md>
+            \operatorname{vol} P(A\vec{u}, A\vec{v}, A\vec{w})
+            = | \det (AV) |
+            = | \det A | \, | \det V |
+            = | \det A | \cdot \operatorname{vol} P(\vec{u}, \vec{v}, \vec{w}).
+          </md>
+          The entire geometric content is carried by one algebraic identity:
+          <m>\det(AV) = \det A \, \det V</m>.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      Notice what the lemma says: the factor <m>|\det A|</m> does not depend on
+      <m>\vec{u}, \vec{v}, \vec{w}</m>. Whatever box we feed in <mdash/> long, thin,
+      tilted <mdash/> its volume comes out multiplied by the same number. The absolute
+      Jacobian determinant is the volume-magnification factor of <m>T</m>:
+      <md>
+        | \det A | = \frac{\operatorname{vol} T(P)}{\operatorname{vol} P}
+        \qquad \text{for every parallelepiped } P \text{ of positive volume.}
+      </md>
+      And if <m>\det A = 0</m>, the columns of <m>A</m> are dependent, every image box
+      lies in a plane (or a line) through the origin, and every image volume is zero
+      <mdash/> the formula holds trivially.
+    </p>
+
+    <figure xml:id="fig-jacobian-volume">
+      <caption>
+        Watch <m>|\det A|</m> act as a volume factor for
+        <m>A = \left[\begin{smallmatrix} 2 \amp 1 \amp 0 \\ 0 \amp 3 \amp 0 \\ 0 \amp 0 \amp 1 \end{smallmatrix}\right]</m>.
+        The slider morphs the identity into <m>A</m> through
+        <m>A_t = (1-t)I + tA</m>: the dashed unit cube is carried to the teal
+        parallelepiped with edges <m>A_t\vec{e}_1</m>, <m>A_t\vec{e}_2</m>,
+        <m>A_t\vec{e}_3</m>, while the readout tracks <m>\det A_t</m> <mdash/> the
+        volume of the image box <mdash/> growing from <m>1</m> to
+        <m>\det A = 6</m>. Drag the picture to rotate.
+      </caption>
+      <interactive xml:id="int-jacobian-volume" iframe="demos-manim/jacobian.html?mat=2,1,0:0,3,0:0,0,1&amp;theme=dark" width="66%" aspect="4:5"/>
+    </figure>
+
+    <remark xml:id="rem-change-of-variables">
+      <title>Connection to Change of Variables</title>
+      <p>
+        This is the linear heart of the change-of-variables formula for triple
+        integrals. A differentiable map <m>\Phi : \R^3 \to \R^3</m> is approximately
+        linear near each point,
+        <m>\Phi(\vec{x}) \approx \Phi(\vec{x}_0) + D\Phi(\vec{x}_0)(\vec{x} - \vec{x}_0)</m>,
+        so a tiny box of volume <m>dV</m> at <m>\vec{x}_0</m> is carried to
+        (approximately) a tiny parallelepiped of volume
+        <m>| \det D\Phi(\vec{x}_0) | \, dV</m>. Summing over a fine grid and passing
+        to the limit gives the formula from multivariable calculus,
+        <md>
+          \iiint_{\Phi(E)} f \; dV
+          = \iiint_{E} (f \circ \Phi) \left| \det D\Phi \right| dV.
+        </md>
+        The absolute Jacobian determinant is the local volume-magnification factor
+        <mdash/> constant, and equal to <m>|\det A|</m>, when
+        <m>\Phi(\vec{x}) = A\vec{x}</m> is linear.
+      </p>
+    </remark>
+
+    <example xml:id="eg-volume-scaling">
+      <title>A Volume Factor of Six</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix}
+              2 \amp 1 \amp 0 \\
+              0 \amp 3 \amp 0 \\
+              0 \amp 0 \amp 1
+            \end{bmatrix}.
+          </md>
+          Find the image of the unit cube under <m>T(\vec{x}) = A\vec{x}</m> and
+          verify that its volume is <m>|\det A|</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Expanding along the third row (or the third column),
+          <m>\det A = 1 \cdot (2 \cdot 3 - 1 \cdot 0) = 6</m>.
+        </p>
+        <p>
+          The unit cube is <m>P(\vec{e}_1, \vec{e}_2, \vec{e}_3)</m>, so by
+          <xref ref="lem-image-parallelepiped" text="type-global"/> its image is the
+          parallelepiped with edges
+          <md>
+            A\vec{e}_1 = \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix},
+            \qquad
+            A\vec{e}_2 = \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix},
+            \qquad
+            A\vec{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+          </md>
+          <mdash/> the columns of <m>A</m>. Its volume is the absolute scalar triple
+          product:
+          <md>
+            A\vec{e}_1 \times A\vec{e}_2
+            = \begin{bmatrix} 0 \\ 0 \\ 6 \end{bmatrix},
+            \qquad
+            A\vec{e}_3 \cdot \left( A\vec{e}_1 \times A\vec{e}_2 \right)
+            = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \cdot
+              \begin{bmatrix} 0 \\ 0 \\ 6 \end{bmatrix} = 6.
+          </md>
+          The unit cube has volume <m>1</m>, and its image has volume
+          <m>6 = |\det A| \cdot 1</m>. <m>\checkmark</m> This is the transformation
+          animated in <xref ref="fig-jacobian-volume" text="type-global"/>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+</section>

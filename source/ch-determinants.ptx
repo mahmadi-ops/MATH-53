@@ -6,10 +6,13 @@
       The determinant condenses a square matrix into a single number that decides
       invertibility. We define it by cofactor expansion, learn how row operations change
       it <mdash /> which makes it computable by row reduction <mdash /> and then establish
-      how it interacts with inverses, products, and transposes.
+      how it interacts with inverses, products, and transposes. The chapter closes with
+      the determinant's geometric meaning: it measures volume, and tells us how a linear
+      transformation scales it.
     </p>
   </introduction>
   <xi:include href="determinants/sec-cofactor-expansion.ptx" />
   <xi:include href="determinants/sec-determinants-row-operations.ptx" />
   <xi:include href="determinants/sec-determinants-inverses-products.ptx" />
+  <xi:include href="determinants/sec-determinant-volume.ptx" />
 </chapter>
