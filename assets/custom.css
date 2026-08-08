@@ -46,6 +46,12 @@ html:root:not(.dark-mode) {
     --proof-like-body-background: #f9f3f4;
 }
 
+/* Remarks: mustard yellow accent with a pale mustard body tint. */
+html:root:not(.dark-mode) {
+    --remark-like-border-color: #E1AD01;
+    --remark-like-body-background: #fbf7e8;
+}
+
 /* Interactive figures: PreTeXt bakes a pixel size onto the iframe at
    build time from the theme's default column, so it never scales.
    Make it fluid, keeping the 5:4 aspect the source asks for. */
