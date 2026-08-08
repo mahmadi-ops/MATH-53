@@ -262,4 +262,69 @@
     reasonable. Far outside the range of the data, however, polynomials grow rapidly,
     and the values of <m>p(x)</m> there should not be trusted as predictions.
   </p>
+
+  <p>
+    <term>An activity in Sage.</term>
+    We close with a computer activity. Each block of code below is an interactive
+    <term>Sage cell</term>: press <term>Evaluate</term> to run it in your browser. The
+    cells share their variables, so run them in order. First, let us hand the row
+    reduction of <xref ref="eg-interpolation-cubic" text="type-global"/> <mdash/> the
+    one we left as an exercise <mdash/> to Sage. The command <c>matrix(QQ, [...])</c>
+    enters the augmented matrix row by row (the ring <c>QQ</c> keeps the arithmetic in
+    exact fractions), and <c>.rref()</c> returns its reduced row-echelon form.
+  </p>
+
+  <sage>
+    <input>
+      A = matrix(QQ, [[1, -1, 1, -1, 4],
+                      [1,  0, 0,  0, 3],
+                      [1,  1, 1,  1, 2],
+                      [1,  2, 4,  8, 7]])
+      A.rref()
+    </input>
+  </sage>
+
+  <p>
+    The result is exactly the reduced matrix stated in the example, so
+    <m>r_0 = 3</m>, <m>r_1 = -2</m>, <m>r_2 = 0</m>, <m>r_3 = 1</m>, and
+    <m>p(x) = 3 - 2x + x^3</m>. Now let us <em>see</em> the interpolation. The cell
+    below draws the graph of <m>p</m> together with the four data points; the command
+    <c>plot</c> draws the curve on the interval <m>-1.5 \leq x \leq 2.5</m>, and
+    <c>points</c> marks the data.
+  </p>
+
+  <sage>
+    <input>
+      p(x) = 3 - 2*x + x^3
+      data = [(-1, 4), (0, 3), (1, 2), (2, 7)]
+      graph = plot(p, (x, -1.5, 2.5), thickness=2)
+      graph = graph + points(data, color='red', size=50)
+      show(graph)
+    </input>
+  </sage>
+
+  <p>
+    The curve passes exactly through every red point, which is precisely what
+    <m>p(x_i) = y_i</m> means. Now make the activity your own:
+    <ol>
+      <li>
+        <p>
+          Edit the two cells to redo <xref ref="eg-interpolation-quadratic"
+          text="type-global"/>: row reduce its augmented matrix, then graph
+          <m>p(x) = 1 - x + 2x^2</m> together with the data points <m>(-1,4)</m>,
+          <m>(1,2)</m>, <m>(3,16)</m> on the interval <m>-2 \leq x \leq 4</m>. Add the
+          extra point <m>(2, 7)</m> in a different color to display the estimate from
+          the example on the graph.
+        </p>
+      </li>
+      <li>
+        <p>
+          Invent four data points of your own (keep the <m>x</m>-values distinct), find
+          the interpolating polynomial with <c>.rref()</c>, and graph it with your
+          points. Then extend the plot interval far beyond your data and look at how
+          quickly the polynomial takes off <mdash/> the caution above, in a picture.
+        </p>
+      </li>
+    </ol>
+  </p>
 </section>
