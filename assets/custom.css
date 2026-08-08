@@ -16,3 +16,14 @@ mjx-container[jax="CHTML"][display="true"] {
 mjx-container[jax="CHTML"] {
   max-width: 100%;
 }
+
+/* Definitions and theorem-like blocks (theorems, lemmas, corollaries, ...)
+   use the wine accent #5E011C for the border and heading, with a matching
+   pale wine tint for the body. The html: prefix outranks theme.css, which
+   loads after this file. */
+html:root:not(.dark-mode) {
+  --definition-like-border-color: #5E011C;
+  --theorem-like-border-color: #5E011C;
+  --definition-like-body-background: #faf4f5;
+  --theorem-like-body-background: #faf4f5;
+}
