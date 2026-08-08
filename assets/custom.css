@@ -67,6 +67,13 @@ html:root:not(.dark-mode) .solution-like.knowl__content {
     background-color: #d9d9d9;
 }
 
+/* Clicked/active and hovered items in the table of contents use the
+   same dark grey as the example titles instead of the theme's blue. */
+html:root:not(.dark-mode) {
+    --tocitem-active-background: #404040;
+    --tocitem-highlight-background: #404040;
+}
+
 /* Example and solution titles in dark grey. */
 html:root:not(.dark-mode) details.example-like > summary.knowl__link,
 html:root:not(.dark-mode) details.solution-like > summary.knowl__link {
