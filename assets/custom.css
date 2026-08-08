@@ -67,6 +67,19 @@ html:root:not(.dark-mode) .solution-like.knowl__content {
     background-color: #d9d9d9;
 }
 
+/* Example and solution titles in dark grey. */
+html:root:not(.dark-mode) details.example-like > summary.knowl__link,
+html:root:not(.dark-mode) details.solution-like > summary.knowl__link {
+    color: #404040;
+}
+
+/* The pill behind the solution title (shown on hover and while open)
+   matches the statement background instead of the theme's pale blue. */
+html:root:not(.dark-mode) details.solution-like > summary.knowl__link:is(:hover, :focus, [open]),
+html:root:not(.dark-mode) details.solution-like[open] > summary.knowl__link {
+    background-color: #e6e6e6;
+}
+
 /* Interactive figures: PreTeXt bakes a pixel size onto the iframe at
    build time from the theme's default column, so it never scales.
    Make it fluid, keeping the 5:4 aspect the source asks for. */
