@@ -28,3 +28,23 @@ rank, and the particular solution are computed in-page by row reduction, so
 any small matrix works unmodified, e.g.
 
     axb.html?mat=1,2,-1:2,4,-2&x=1,1,1&show=true&theme=light
+
+## columns.html
+
+`columns.html` is a companion single-pane figure for column space and rank:
+it draws every column of an `m x n` matrix (`m ≤ 3`, any `n`) as a vector in
+`R^m`, computes the pivot columns in-page by row reduction, highlights them
+(yellow) against the non-pivot columns (grey), and shades their span — the
+column space — in teal (a line, a plane patch, or a full-pane tint when
+`Col A` is all of `R^m`). Same manim styling and behaviors as `axb.html`:
+eased build-in (columns appear one at a time, then the span), replayable via
+the animate button, ambient rotation and drag-to-rotate for 3D, and
+`prefers-reduced-motion` support.
+
+| Param  | Meaning                                                        |
+|--------|----------------------------------------------------------------|
+| `mat`  | matrix rows separated by `:`, entries by `,`                   |
+| `range`| axis range (default: auto from the largest entry)              |
+| `theme`| `dark` (default) or `light`                                    |
+
+    columns.html?mat=1,2,1,3,2:1,3,6,0,2:3,7,8,6,6&range=9&theme=dark
