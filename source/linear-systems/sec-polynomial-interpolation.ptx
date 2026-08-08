@@ -305,11 +305,64 @@
 
   <p>
     The curve passes exactly through every red point, which is precisely what
-    <m>p(x_i) = y_i</m> means. Now make the activity your own:
+    <m>p(x_i) = y_i</m> means.
+  </p>
+
+  <p>
+    Let us be honest, though: a system of four equations can still be row reduced by
+    hand, so the computer has not yet earned its keep. Now suppose an experiment
+    produces <em>ten</em> measurements,
+    <md>
+      (0, 5), \; (1, 3), \; (2, 4), \; (3, 8), \; (4, 10), \;
+      (5, 7), \; (6, 4), \; (7, 6), \; (8, 9), \; (9, 5).
+    </md>
+    By <xref ref="thm-interpolating-polynomial" text="type-global"/> there is exactly
+    one polynomial of degree at most nine through these points, and finding it means
+    solving ten equations in the ten unknowns <m>r_0, r_1, \ldots, r_9</m>. Row
+    reducing a <m>10 \times 11</m> augmented matrix by hand is out of the question
+    <mdash/> but it is no harder for Sage than the <m>4 \times 5</m> one. Rather than
+    typing all <m>110</m> entries, we let Sage build the matrix for us: for each data
+    point <m>(x_i, y_i)</m>, the corresponding row is
+    <m>[\, 1, \; x_i, \; x_i^2, \; \ldots, \; x_i^9, \; y_i \,]</m>, which the
+    comprehension <c>[xi^j for j in range(n)] + [yi]</c> produces.
+  </p>
+
+  <sage>
+    <input>
+      data = [(0, 5), (1, 3), (2, 4), (3, 8), (4, 10),
+              (5, 7), (6, 4), (7, 6), (8, 9), (9, 5)]
+      n = len(data)
+      M = matrix(QQ, [[xi^j for j in range(n)] + [yi] for (xi, yi) in data])
+      M.rref()
+    </input>
+  </sage>
+
+  <p>
+    The last column of the reduced matrix holds the coefficients, and they are
+    fractions like <m>r_1 = -\frac{296}{35}</m> and <m>r_2 = \frac{81323}{5040}</m>
+    <mdash/> imagine meeting those in a hand computation. Rather than copying them
+    over, we let Sage read off the last column with <c>.column(n)</c>, assemble the
+    polynomial, and draw it through the data.
+  </p>
+
+  <sage>
+    <input>
+      coeffs = M.rref().column(n)
+      p(x) = sum(coeffs[j] * x^j for j in range(n))
+      show(p(x))
+      graph = plot(p, (x, 0, 9), thickness=2)
+      graph = graph + points(data, color='red', size=50)
+      show(graph)
+    </input>
+  </sage>
+
+  <p>
+    One degree-nine polynomial, threading all ten points exactly <mdash/> and notice
+    how it wiggles between them to manage it. Now make the activity your own:
     <ol>
       <li>
         <p>
-          Edit the two cells to redo <xref ref="eg-interpolation-quadratic"
+          Edit the first two cells to redo <xref ref="eg-interpolation-quadratic"
           text="type-global"/>: row reduce its augmented matrix, then graph
           <m>p(x) = 1 - x + 2x^2</m> together with the data points <m>(-1,4)</m>,
           <m>(1,2)</m>, <m>(3,16)</m> on the interval <m>-2 \leq x \leq 4</m>. Add the
@@ -319,10 +372,18 @@
       </li>
       <li>
         <p>
-          Invent four data points of your own (keep the <m>x</m>-values distinct), find
-          the interpolating polynomial with <c>.rref()</c>, and graph it with your
-          points. Then extend the plot interval far beyond your data and look at how
-          quickly the polynomial takes off <mdash/> the caution above, in a picture.
+          Change the plot interval of the ten-point graph to
+          <m>-1 \leq x \leq 10</m> <mdash/> just one unit beyond the data on each side
+          <mdash/> and watch what the polynomial does. (For instance, evaluate
+          <c>p(10)</c>.) This is the extrapolation caution above, in a picture.
+        </p>
+      </li>
+      <li>
+        <p>
+          Replace <c>data</c> with ten measurements of your own (keep the
+          <m>x</m>-values distinct) and re-run both cells. The same two cells work for
+          any number of points <mdash/> that is the point of letting Sage build the
+          matrix.
         </p>
       </li>
     </ol>
