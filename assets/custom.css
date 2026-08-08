@@ -43,7 +43,7 @@ html:root:not(.dark-mode) {
     --theorem-like-border-color: #5E011C;
     --theorem-like-body-background: #f9f3f4;
     --proof-like-border-color: #5E011C;
-    --proof-like-body-background: #f9f3f4;
+    --proof-like-body-background: #d9d9d9;
 }
 
 /* Remarks: mustard yellow accent with a pale mustard body tint. */
@@ -63,7 +63,8 @@ html:root:not(.dark-mode) {
 html:root:not(.dark-mode) .example-like.knowl__content {
     background-color: #e6e6e6;
 }
-html:root:not(.dark-mode) .solution-like.knowl__content {
+html:root:not(.dark-mode) .solution-like.knowl__content,
+html:root:not(.dark-mode) .hiddenproof.knowl__content {
     background-color: #d9d9d9;
 }
 
