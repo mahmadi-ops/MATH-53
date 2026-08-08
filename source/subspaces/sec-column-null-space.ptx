@@ -109,6 +109,20 @@
           </md>
           and <m>x_1\vec{A}_1 + x_2\vec{A}_2 = \vec{0}</m> only has the trivial solution.
         </p>
+        <figure xml:id="fig-columns-interactive">
+          <caption>
+            All five columns of <m>A</m> drawn as vectors in <m>\R^3</m>, labelled
+            <m>a_1, \ldots, a_5</m>. The pivot columns <m>\vec{A}_1 = (1,1,3)</m> and
+            <m>\vec{A}_2 = (2,3,7)</m> are highlighted in yellow; the other three
+            columns are grey, and every one of them lies in the teal plane
+            <m>\operatorname{Span}\{\vec{A}_1, \vec{A}_2\} = \operatorname{Col} A</m>.
+            Five columns, but only two independent directions:
+            <m>\operatorname{rank} A = 2</m>. Press <em>animate</em> to watch the
+            columns appear one at a time, and drag to rotate <mdash /> viewed edge-on,
+            the plane is razor thin.
+          </caption>
+          <interactive xml:id="int-columns" iframe="demos-manim/columns.html?mat=1,2,1,3,2:1,3,6,0,2:3,7,8,6,6&amp;range=9&amp;theme=dark" width="66%" aspect="5:6"/>
+        </figure>
       </solution>
     </example>
 
@@ -252,6 +266,19 @@
             = \underbrace{n}_{3}. \checkmark
           </md>
         </p>
+        <figure xml:id="fig-rank-nullity-interactive">
+          <caption>
+            The rank<ndash />nullity relation seen for <m>T(\vec{x}) = A\vec{x}</m>. In
+            the input pane, the violet line is <m>\operatorname{Nul} A</m>
+            (dimension <m>1</m>): the yellow <m>\vec{x}</m> starts at the null-space
+            vector <m>(-3,1,1)</m>, and the entire line is sent to <m>\vec{0}</m>. In
+            the output pane, the teal plane is <m>\operatorname{Col} A</m> (dimension
+            <m>2</m>). Of the three input dimensions, one is crushed to zero and two
+            survive as the column space: <m>1 + 2 = 3 = n</m>. Drag <m>\vec{x}</m> or
+            <m>\vec{b}</m>, or drag inside a pane to rotate it.
+          </caption>
+          <interactive xml:id="int-rank-nullity" iframe="demos-manim/axb.html?mat=1,2,1:0,-1,1:2,3,3&amp;x=-3,1,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+        </figure>
       </solution>
     </example>
   </subsection>
