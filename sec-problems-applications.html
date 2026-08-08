@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applications of Spectral Theory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: true,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="MATH 53--Linear Algebra">
+<meta property="og:title" content="MATH 53--Linear Algebra">
+<meta property="book:title" content="MATH 53--Linear Algebra">
+<meta name="twitter:description" content="Linear algebra notes for Santa Clara University's MATH 53.">
+<meta property="og:description" content="Linear algebra notes for Santa Clara University's MATH 53.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.44"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f00d2d175c91fc71.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/diagcess/diagcess.js"></script><script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="math53" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="math53-linear-algebra.html"><span class="title">MATH 53--Linear Algebra</span></a></div>
+<p class="byline">Mehdi Ahmadi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-problems-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-problems.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\real}{\Bbb R}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth4 focused" data-preexpanded-levels="0" data-max-levels="4"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-ch-linear-systems" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-systems-of-linear-equations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-sec-systems-of-linear-equations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-systems-vocabulary" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Systems, Solutions, and Consistency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-graphical-solutions" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Graphical Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-parametric-form" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Parametric Form of a Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-augmented-matrix.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Augmented Matrix and Echelon Forms</span></a></div>
+<ul id="ptx-toc-group-sec-augmented-matrix" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-augmented-matrix" class="internal"><span class="codenumber">1.3.1</span> <span class="title">The Augmented Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-echelon-forms" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Row-Echelon and Reduced Row-Echelon Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-pivots" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Pivots, Basic Variables, and Free Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-row-reduction.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Row Reduction Algorithm</span></a></div>
+<ul id="ptx-toc-group-sec-row-reduction" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-the-algorithm" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-three-outcomes" class="internal"><span class="codenumber">1.4.2</span> <span class="title">The Three Possible Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-systems-with-parameters" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Systems Depending on Parameters</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynomial-interpolation.html" class="internal"><span class="codenumber">1.5</span> <span class="title">A First Application: Polynomial Interpolation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-vectors.html" class="internal"><span class="codenumber">2</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-ch-vectors" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors-in-rn.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-vectors-in-rn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-vector-notation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Notation and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-algebra-in-rn" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Algebra in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-geometry-of-addition" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Geometry of Vector Addition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-form.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Vector and Matrix Forms of a Linear System</span></a></div>
+<ul id="ptx-toc-group-sec-vector-form" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-form.html#subsec-vector-form" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Vector Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-form.html#subsec-matrix-form" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Matrix Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-homogeneous-systems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Homogeneous Systems</span></a></div>
+<ul id="ptx-toc-group-sec-homogeneous-systems" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-homogeneous-definition" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Homogeneous Systems and the Trivial Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-basic-solutions" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Linear Combinations and Basic Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-structure-of-solutions" class="internal"><span class="codenumber">2.3.3</span> <span class="title">The Structure of the Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-span.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Span of a Set of Vectors</span></a></div>
+<ul id="ptx-toc-group-sec-span" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-span.html#subsec-seeing-a-span" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Seeing a Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-span.html#subsec-span-challenge" class="internal"><span class="codenumber">2.4.2</span> <span class="title">A Harder Example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-independence.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-sec-linear-independence" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-definition" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-as-combination" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Linear Independence as a Linear Combination</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-seeing-independence" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Seeing Dependence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-challenge" class="internal"><span class="codenumber">2.5.4</span> <span class="title">A Harder Example</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-transformations.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-ch-linear-transformations" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-transformations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Transformations and Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-transformations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-transformations" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-linear-transformations" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-matrix-transformations-are-linear" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix Transformations Are Linear</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injections-surjections.html" class="internal"><span class="codenumber">3.2</span> <span class="title">One-to-One and Onto Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-injections-surjections" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-injections" class="internal"><span class="codenumber">3.2.1</span> <span class="title">One-to-One Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-surjections" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Onto Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-injective-surjective-together" class="internal"><span class="codenumber">3.2.3</span> <span class="title">One-to-One and Onto Together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-special-transformations.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Special Transformations of <span class="process-math">\(\R^2\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-special-transformations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-rotations" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Rotations in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-reflections" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Reflections in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-shear-projection" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Reflection through the Origin, Projections, and Shears</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrix-algebra.html" class="internal"><span class="codenumber">4</span> <span class="title">Matrix Algebra</span></a></div>
+<ul id="ptx-toc-group-ch-matrix-algebra" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-operations.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Matrix Operations</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-operations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-matrix-terminology" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Matrices and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-matrix-addition" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Matrix Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-scalar-multiplication" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Scalar Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-multiplication.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Matrix Multiplication</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-multiplication" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-product-definition" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Product of Two Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-entry-of-product" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Computing the <span class="process-math">\((i,j)\)</span>-Entry of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-when-products-exist" class="internal"><span class="codenumber">4.2.3</span> <span class="title">When Does a Product Exist?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-product-properties" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-transpose.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Matrix Transposition</span></a></div>
+<ul id="ptx-toc-group-sec-transpose" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-transpose-definition" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-symmetric-matrices" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Symmetric Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-transpose-equations" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Solving Equations Involving the Transpose</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inverse.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul id="ptx-toc-group-sec-inverse" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverse-definition" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Definition and Uniqueness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-two-by-two-inverse" class="internal"><span class="codenumber">4.4.2</span> <span class="title">The Inverse of a <span class="process-math">\(2 \times 2\)</span> Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inversion-algorithm" class="internal"><span class="codenumber">4.4.3</span> <span class="title">The Matrix Inversion Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverse-and-ax-b" class="internal"><span class="codenumber">4.4.4</span> <span class="title">The Inverse and the Matrix Equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverses-transposes-products" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Inverses of Transposes and Products</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-elementary-matrices.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Elementary Matrices</span></a></div>
+<ul id="ptx-toc-group-sec-elementary-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-elementary-matrix-definition" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Elementary Matrices and Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-inverses-of-elementary-matrices" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Inverses of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-product-of-elementary-matrices" class="internal"><span class="codenumber">4.5.3</span> <span class="title">A Matrix as a Product of Elementary Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html" class="internal"><span class="codenumber">4.6</span> <span class="title">The Invertible Matrix Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-invertible-matrix-theorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-statement" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Statement of the Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-proof" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Proof of the Equivalences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-applications" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Using the Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-subspaces.html" class="internal"><span class="codenumber">5</span> <span class="title">Subspaces, Basis, and Dimension</span></a></div>
+<ul id="ptx-toc-group-ch-subspaces" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-sec-subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces.html#subsec-subspace-definition" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Definition and Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces.html#subsec-subspaces-are-spans" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Subspaces Are Spans</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis-dimension.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Basis and Dimension</span></a></div>
+<ul id="ptx-toc-group-sec-basis-dimension" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-basis" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Basis of a Subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-all-bases-same-size" class="internal"><span class="codenumber">5.2.2</span> <span class="title">All Bases Have the Same Size</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-dimension" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Dimension</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-column-null-space.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Column Space, Null Space, and Rank</span></a></div>
+<ul id="ptx-toc-group-sec-column-null-space" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-column-space" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Column Space and Rank</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-null-space" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Null Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-rank-nullity" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Rank–Nullity Relation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-imt-continued" class="internal"><span class="codenumber">5.3.4</span> <span class="title">The Invertible Matrix Theorem (Continued)</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-determinants.html" class="internal"><span class="codenumber">6</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-ch-determinants" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cofactor-expansion.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Cofactor Expansion</span></a></div>
+<ul id="ptx-toc-group-sec-cofactor-expansion" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-minors-cofactors" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Minors and Cofactors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-expansion" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Cofactor Expansion Along a Row or Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-triangular-determinants" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Determinants of Triangular Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinants-row-operations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Determinants and Row Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-determinants-inverses-products.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Determinants of Inverses, Products, and Transposes</span></a></div>
+<ul id="ptx-toc-group-sec-determinants-inverses-products" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-and-invertibility" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Determinant Detects Invertibility</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-of-product" class="internal"><span class="codenumber">6.3.2</span> <span class="title">The Determinant of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-computations" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Putting the Rules Together</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">7</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-ch-vector-spaces" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Vector Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspaces-of-vector-spaces.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Subspaces and Bases in a Vector Space</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-isomorphisms.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Linear Transformations and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-sec-isomorphisms" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-isomorphisms.html#subsec-general-linear-transformations" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Linear Transformations between Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-isomorphisms.html#subsec-isomorphisms" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Isomorphisms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coordinates.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Coordinates and Change of Basis</span></a></div>
+<ul id="ptx-toc-group-sec-coordinates" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coordinates" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Coordinates Relative to a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-change-of-basis" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Change of Basis Matrix</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-of-transformation.html" class="internal"><span class="codenumber">7.5</span> <span class="title">The Matrix of a Linear Transformation</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-of-transformation" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-of-transformation.html#subsec-matrix-wrt-bases" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Four Matrices for One Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-of-transformation.html#subsec-transformation-between-spaces" class="internal"><span class="codenumber">7.5.2</span> <span class="title">A Transformation between Different Vector Spaces</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-eigenvalues.html" class="internal"><span class="codenumber">8</span> <span class="title">Eigenvalues and Eigenvectors (Spectral Theory)</span></a></div>
+<ul id="ptx-toc-group-ch-eigenvalues" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-eigenvalues.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-sec-eigenvalues" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalue-motivation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Motivation: Powers of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalue-definition" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-characteristic-polynomial" class="internal"><span class="codenumber">8.1.3</span> <span class="title">The Characteristic Polynomial</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Multiplicity, Eigenspaces, and Diagonalization</span></a></div>
+<ul id="ptx-toc-group-sec-diagonalization" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-multiplicity" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Multiplicity and Basic Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-eigenspace" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-similar-matrices" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Similar Matrices</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-applications.html" class="internal"><span class="codenumber">9</span> <span class="title">Applications of Spectral Theory</span></a></div>
+<ul id="ptx-toc-group-ch-applications" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-markov-chains.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Markov Chains and Steady States</span></a></div>
+<ul id="ptx-toc-group-sec-markov-chains" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-markov-motivation" class="internal"><span class="codenumber">9.1.1</span> <span class="title">A First Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-regular-stochastic" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Regular and Stochastic Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-steady-state" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Existence of a Unique Steady State</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-more-markov.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Long-Run Behaviour: Two More Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-epidemic-sage.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Epidemic Dynamics</span></a></div>
+<ul id="ptx-toc-group-sec-epidemic-sage" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-model" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-sage-setup" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Setting Up the Model in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-sage-plot" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Simulating and Plotting the Epidemic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-long-run" class="internal"><span class="codenumber">9.3.4</span> <span class="title">The Long Run</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-epidemic-sage.html#exercises-epidemic-sage" class="internal"><span class="codenumber">9.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-pagerank.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The PageRank Algorithm: The 25 Billion Dollar Eigenvector</span></a></div>
+<ul id="ptx-toc-group-sec-pagerank" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-pagerank-probabilities" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Random Surfer</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-dangling-links" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Pages with No Outbound Links</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-damping" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Making the Model More Realistic (Adding Boredom)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coupled-oscillators.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Coupled Oscillators and Normal Modes</span></a></div>
+<ul id="ptx-toc-group-sec-coupled-oscillators" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-setup" class="internal"><span class="codenumber">9.5.1</span> <span class="title">The Equations of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-decoupling" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Diagonalization Decouples the Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-example" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Solving a Specific Motion</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-problems.html" class="internal"><span class="codenumber">10</span> <span class="title">Problems</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-problems">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-linear-systems.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-sec-problems-linear-systems" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-linear-systems.html#sec-problems-linear-systems-2" class="internal"><span class="codenumber">10.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-vectors.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-problems-vectors" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-vectors.html#sec-problems-vectors-2" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-linear-transformations.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-problems-linear-transformations" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-linear-transformations.html#sec-problems-linear-transformations-2" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-matrix-algebra.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Matrix Algebra</span></a></div>
+<ul id="ptx-toc-group-sec-problems-matrix-algebra" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-matrix-algebra.html#sec-problems-matrix-algebra-2" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-subspaces.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Subspaces, Basis, and Dimension</span></a></div>
+<ul id="ptx-toc-group-sec-problems-subspaces" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-subspaces.html#sec-problems-subspaces-2" class="internal"><span class="codenumber">10.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-determinants.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-sec-problems-determinants" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-determinants.html#sec-problems-determinants-2" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-vector-spaces.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-sec-problems-vector-spaces" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-vector-spaces.html#sec-problems-vector-spaces-2" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-eigenvalues.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-sec-problems-eigenvalues" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-eigenvalues.html#sec-problems-eigenvalues-2" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-problems-applications.html" class="internal"><span class="codenumber">10.9</span> <span class="title">Applications of Spectral Theory</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-problems-applications"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-applications.html#sec-problems-applications-2" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-problems-applications">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Applications of Spectral Theory</span>
+</h1>
+<section class="exercises" id="sec-problems-applications-2">
+<h2 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h2>
+<div class="exercisegroup" id="sec-problems-applications-2-1">
+<h3 class="heading"><span class="title">Exercise Group.</span></h3>
+<div class="introduction" id="sec-problems-applications-2-1-1">
+<div class="para" id="sec-problems-applications-2-1-1-1">Problems for <a href="sec-markov-chains.html" class="internal" title="Section 9.1: Markov Chains and Steady States">Markov Chains and Steady States</a> (<a href="sec-markov-chains.html" class="internal" title="Section 9.1: Markov Chains and Steady States">Section 9.1</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-problems-applications-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="lab-steady-state-2x2"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Steady-State Vectors.</span>
+</h4>
+<div class="para logical" id="lab-steady-state-2x2-2-1">
+<div class="para">Find a steady-state vector for the Markov chain <span class="process-math">\(S_{n+1} = PS_n\)</span> with transition matrix</div>
+<div class="displaymath process-math" id="lab-steady-state-2x2-2-1-2">
+\begin{equation*}
+\text{(a)} \quad P = \begin{bmatrix} \frac{1}{3} \amp \frac{1}{4} \\[2pt] \frac{2}{3} \amp \frac{3}{4} \end{bmatrix}
+\qquad
+\text{(b)} \quad P = \begin{bmatrix} \frac{1}{2} \amp \frac{1}{3} \\[2pt] \frac{1}{2} \amp \frac{2}{3} \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-steady-state-2x2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="lab-steady-state-2x2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="lab-steady-state-2x2-3-1">Both matrices are stochastic, since every column sums to <span class="process-math">\(1\text{,}\)</span> so by <a href="sec-markov-chains.html#thm-finding-steady-state" class="xref" data-knowl="./knowl/xref/thm-finding-steady-state.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.13: Finding the Steady State">Theorem 9.13</a> a steady state is a solution of <span class="process-math">\((P - I)\vec{x} = \vec{0}\)</span> whose entries sum to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-steady-state-2x2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lab-steady-state-2x2-3-2">
+<div class="para"><dfn class="terminology">(a)</dfn></div>
+<div class="displaymath process-math" id="lab-steady-state-2x2-3-2-2">
+\begin{equation*}
+P - I = \begin{bmatrix} -\frac{2}{3} \amp \frac{1}{4} \\[2pt] \frac{2}{3} \amp -\frac{1}{4} \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">The two rows are negatives of each other, so the single equation is <span class="process-math">\(-\tfrac{2}{3}x_1 + \tfrac{1}{4}x_2 = 0\text{,}\)</span> i.e. <span class="process-math">\(x_2 = \tfrac{8}{3}x_1\text{.}\)</span> Taking <span class="process-math">\(x_1 = 3\)</span> gives <span class="process-math">\((3, 8)\text{,}\)</span> which sums to <span class="process-math">\(11\text{,}\)</span> so the steady state is</div>
+<div class="displaymath process-math" id="lab-steady-state-2x2-3-2-8">
+\begin{equation*}
+\vec{x} = \begin{bmatrix} \frac{3}{11} \\[2pt] \frac{8}{11} \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-steady-state-2x2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lab-steady-state-2x2-3-3">
+<div class="para"><dfn class="terminology">(b)</dfn></div>
+<div class="displaymath process-math" id="lab-steady-state-2x2-3-3-2">
+\begin{equation*}
+P - I = \begin{bmatrix} -\frac{1}{2} \amp \frac{1}{3} \\[2pt] \frac{1}{2} \amp -\frac{1}{3} \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">giving <span class="process-math">\(x_2 = \tfrac{3}{2}x_1\text{.}\)</span> Taking <span class="process-math">\(x_1 = 2\)</span> gives <span class="process-math">\((2,3)\text{,}\)</span> which sums to <span class="process-math">\(5\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="lab-steady-state-2x2-3-3-7">
+\begin{equation*}
+\vec{x} = \begin{bmatrix} \frac{2}{5} \\[2pt] \frac{3}{5} \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-steady-state-2x2-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lab-steady-state-2x2-3-4">Both <span class="process-math">\(P\)</span> have all entries positive, hence are regular (<a href="sec-markov-chains.html#def-regular-matrix" class="xref" data-knowl="./knowl/xref/def-regular-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 9.4: Regular Matrix">Definition 9.4</a>), so by <a href="sec-markov-chains.html#thm-unique-steady-state" class="xref" data-knowl="./knowl/xref/thm-unique-steady-state.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.12: Existence of a Unique Steady State">Theorem 9.12</a> these steady states are unique and every starting distribution converges to them.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-steady-state-2x2-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.1.1"><a tabindex="-1" href="#lab-steady-state-2x2-3" title="Copy heading and permalink for Solution 10.9.1.1" aria-label="Copy heading and permalink for Solution 10.9.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.1: Steady-State Vectors"><a tabindex="-1" href="#lab-steady-state-2x2" title="Copy heading and permalink for Exercise 10.9.1: Steady-State Vectors" aria-label="Copy heading and permalink for Exercise 10.9.1: Steady-State Vectors">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-bob-coffee"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Bob’s Coffee.</span>
+</h4>
+<div class="para logical" id="star-bob-coffee-2-1">
+<div class="para">Bob always drinks his morning coffee either at café <span class="process-math">\(X\)</span> or at café <span class="process-math">\(Y\text{.}\)</span> Suppose that</div>
+<ul class="disc" id="star-bob-coffee-2-1-3">
+<li id="star-bob-coffee-2-1-3-1">
+<div class="para" id="star-bob-coffee-2-1-3-1-1">on day <span class="process-math">\(0\)</span> he is certainly at <span class="process-math">\(X\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bob-coffee-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#star-bob-coffee-2-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="star-bob-coffee-2-1-3-2">
+<div class="para" id="star-bob-coffee-2-1-3-2-1">he never goes to <span class="process-math">\(Y\)</span> two days in a row;<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bob-coffee-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#star-bob-coffee-2-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="star-bob-coffee-2-1-3-3">
+<div class="para" id="star-bob-coffee-2-1-3-3-1">if he is at <span class="process-math">\(X\)</span> one day, the next day he is twice as likely to be at <span class="process-math">\(Y\)</span> as at <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bob-coffee-2-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#star-bob-coffee-2-1-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Write the transition matrix and compute the state vectors for the first few days. What do you notice?</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bob-coffee-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-bob-coffee-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-bob-coffee-3-1">
+<div class="para">The initial state vector is <span class="process-math">\(\vec{S}_0 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\text{.}\)</span> The second condition says that from <span class="process-math">\(Y\)</span> he always moves to <span class="process-math">\(X\text{;}\)</span> the third says that from <span class="process-math">\(X\)</span> he stays with probability <span class="process-math">\(\tfrac{1}{3}\)</span> and moves with probability <span class="process-math">\(\tfrac{2}{3}\text{.}\)</span> Indexing columns by today and rows by tomorrow,</div>
+<div class="displaymath process-math" id="star-bob-coffee-3-1-7">
+\begin{equation*}
+T = \begin{bmatrix} \frac{1}{3} \amp 1 \\[2pt] \frac{2}{3} \amp 0 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Each column sums to <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(T\)</span> is stochastic.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bob-coffee-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-bob-coffee-3-2">
+<div class="para">Iterating <span class="process-math">\(\vec{S}_{k+1} = T\vec{S}_k\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="star-bob-coffee-3-2-2">
+\begin{align*}
+\vec{S}_1 \amp = \begin{bmatrix} 0.3333 \\ 0.6667 \end{bmatrix},\\
+\vec{S}_2 \amp = \begin{bmatrix} 0.7778 \\ 0.2222 \end{bmatrix},\\
+\vec{S}_3 \amp = \begin{bmatrix} 0.4815 \\ 0.5185 \end{bmatrix},\\
+\vec{S}_4 \amp = \begin{bmatrix} 0.6790 \\ 0.3210 \end{bmatrix},\\
+\vec{S}_8 \amp = \begin{bmatrix} 0.6031 \\ 0.3969 \end{bmatrix}.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bob-coffee-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-bob-coffee-3-3">The state vectors oscillate but close in on <span class="process-math">\(\begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix}\text{.}\)</span> Trying other starting vectors gives the same limit, so the long-run behaviour appears not to depend on where Bob started. That limit is computed exactly in <a href="sec-problems-applications.html#star-steady-state-bob" class="xref" data-knowl="./knowl/xref/star-steady-state-bob.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.8: ★ The Steady State for Bob’s Coffee">Exercise 10.9.8</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bob-coffee-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.2.1"><a tabindex="-1" href="#star-bob-coffee-3" title="Copy heading and permalink for Solution 10.9.2.1" aria-label="Copy heading and permalink for Solution 10.9.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.2: ★ Bob’s Coffee"><a tabindex="-1" href="#star-bob-coffee" title="Copy heading and permalink for Exercise 10.9.2: ★ Bob’s Coffee" aria-label="Copy heading and permalink for Exercise 10.9.2: ★ Bob’s Coffee">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-regular"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ A Regular Matrix.</span>
+</h4>
+<div class="para" id="star-regular-2-1">Show that <span class="process-math">\(T = \begin{bmatrix} \frac{1}{3} \amp 1 \\[2pt] \frac{2}{3} \amp 0 \end{bmatrix}\)</span> is regular.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-regular-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-regular-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-regular-3-1">
+<div class="para">By <a href="sec-markov-chains.html#def-regular-matrix" class="xref" data-knowl="./knowl/xref/def-regular-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 9.4: Regular Matrix">Definition 9.4</a>, we need some power of <span class="process-math">\(T\)</span> with all entries positive. The matrix itself has a zero in the <span class="process-math">\((2,2)\)</span> position, so try the square:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-regular-matrix.html" id="star-regular-3-1-4">
+\begin{equation*}
+T^2 = \begin{bmatrix} \frac{1}{3} \amp 1 \\[2pt] \frac{2}{3} \amp 0 \end{bmatrix}
+\begin{bmatrix} \frac{1}{3} \amp 1 \\[2pt] \frac{2}{3} \amp 0 \end{bmatrix}
+= \begin{bmatrix} \frac{7}{9} \amp \frac{1}{3} \\[2pt] \frac{2}{9} \amp \frac{2}{3} \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Every entry of <span class="process-math">\(T^2\)</span> is positive, so <span class="process-math">\(T\)</span> is <dfn class="terminology">regular</dfn>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-regular-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-regular-3-2">In words: even though Bob cannot go from <span class="process-math">\(Y\)</span> to <span class="process-math">\(Y\)</span> in one day, he <em class="emphasis">can</em> in two (via <span class="process-math">\(X\)</span>), and that is exactly what the positive <span class="process-math">\((2,2)\)</span>-entry of <span class="process-math">\(T^2\)</span> records.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-regular-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.3.1"><a tabindex="-1" href="#star-regular-3" title="Copy heading and permalink for Solution 10.9.3.1" aria-label="Copy heading and permalink for Solution 10.9.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.3: ★ A Regular Matrix"><a tabindex="-1" href="#star-regular" title="Copy heading and permalink for Exercise 10.9.3: ★ A Regular Matrix" aria-label="Copy heading and permalink for Exercise 10.9.3: ★ A Regular Matrix">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-not-regular"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ A Matrix That Is Not Regular.</span>
+</h4>
+<div class="para" id="star-not-regular-2-1">Show that <span class="process-math">\(P = \begin{bmatrix} 1 \amp \frac{1}{2} \\[2pt] 0 \amp \frac{1}{2} \end{bmatrix}\)</span> is stochastic but not regular.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-not-regular-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-not-regular-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-not-regular-3-1">
+<div class="para">Both columns sum to <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(P\)</span> is stochastic. Computing powers,</div>
+<div class="displaymath process-math" id="star-not-regular-3-1-3">
+\begin{equation*}
+P^2 = \begin{bmatrix} 1 \amp \frac{3}{4} \\[2pt] 0 \amp \frac{1}{4} \end{bmatrix},
+\qquad
+P^3 = \begin{bmatrix} 1 \amp \frac{7}{8} \\[2pt] 0 \amp \frac{1}{8} \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">and in general</div>
+<div class="displaymath process-math" id="star-not-regular-3-1-4">
+\begin{equation*}
+P^n = \begin{bmatrix} 1 \amp 1 - 2^{-n} \\[2pt] 0 \amp 2^{-n} \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-not-regular-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-not-regular-3-2">The <span class="process-math">\((2,1)\)</span>-entry is <span class="process-math">\(0\)</span> for every <span class="process-math">\(n\text{,}\)</span> so no power of <span class="process-math">\(P\)</span> has all entries positive and <span class="process-math">\(P\)</span> is <dfn class="terminology">not regular</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-not-regular-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-not-regular-3-3">The reason is structural: state <span class="process-math">\(1\)</span> is <dfn class="terminology">absorbing</dfn>. Once the chain reaches it, the first column of <span class="process-math">\(P\)</span> keeps it there forever, so state <span class="process-math">\(2\)</span> can never be reached from state <span class="process-math">\(1\text{,}\)</span> no matter how many steps are allowed.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-not-regular-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.4.1"><a tabindex="-1" href="#star-not-regular-3" title="Copy heading and permalink for Solution 10.9.4.1" aria-label="Copy heading and permalink for Solution 10.9.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.4: ★ A Matrix That Is Not Regular"><a tabindex="-1" href="#star-not-regular" title="Copy heading and permalink for Exercise 10.9.4: ★ A Matrix That Is Not Regular" aria-label="Copy heading and permalink for Exercise 10.9.4: ★ A Matrix That Is Not Regular">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-stochastic-preserves-probability"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Stochastic Matrices Preserve Probability Vectors.</span>
+</h4>
+<div class="para" id="star-stochastic-preserves-probability-2-1">A <dfn class="terminology">probability vector</dfn> is a vector with non-negative entries summing to <span class="process-math">\(1\text{.}\)</span> Show that if <span class="process-math">\(T\)</span> is stochastic and <span class="process-math">\(\vec{x}\)</span> is a probability vector, then so is <span class="process-math">\(T\vec{x}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-preserves-probability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-stochastic-preserves-probability-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-stochastic-preserves-probability-3-1">
+<div class="para">
+<dfn class="terminology">Non-negativity.</dfn> The <span class="process-math">\(i\)</span>th entry of <span class="process-math">\(T\vec{x}\)</span> is</div>
+<div class="displaymath process-math" id="star-stochastic-preserves-probability-3-1-4">
+\begin{equation*}
+\left( T\vec{x} \right)_i = \sum_{j=1}^{n} T_{ij} x_j,
+\end{equation*}
+</div>
+<div class="para">a sum of products of non-negative numbers, since every <span class="process-math">\(T_{ij} \geq 0\)</span> and every <span class="process-math">\(x_j \geq 0\text{.}\)</span> So every entry of <span class="process-math">\(T\vec{x}\)</span> is non-negative.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-preserves-probability-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-stochastic-preserves-probability-3-2">
+<dfn class="terminology">The entries still sum to one.</dfn> By <a href="sec-markov-chains.html#eg-stochastic-preserves-sum" class="xref" data-knowl="./knowl/xref/eg-stochastic-preserves-sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.9: Stochastic Matrices Preserve Sums">Example 9.9</a>, a stochastic matrix preserves the sum of entries. Since the entries of <span class="process-math">\(\vec{x}\)</span> sum to <span class="process-math">\(1\text{,}\)</span> so do those of <span class="process-math">\(T\vec{x}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-preserves-probability-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-stochastic-preserves-probability-3-3">Hence <span class="process-math">\(T\vec{x}\)</span> is again a probability vector. This is what makes the whole model coherent: a state vector of a Markov chain remains a legitimate list of probabilities at every step, however many transitions are applied.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-preserves-probability-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.5.1"><a tabindex="-1" href="#star-stochastic-preserves-probability-3" title="Copy heading and permalink for Solution 10.9.5.1" aria-label="Copy heading and permalink for Solution 10.9.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.5: ★ Stochastic Matrices Preserve Probability Vectors"><a tabindex="-1" href="#star-stochastic-preserves-probability" title="Copy heading and permalink for Exercise 10.9.5: ★ Stochastic Matrices Preserve Probability Vectors" aria-label="Copy heading and permalink for Exercise 10.9.5: ★ Stochastic Matrices Preserve Probability Vectors">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-powers-stochastic"><h4 class="heading">
+<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Powers of a Stochastic Matrix Are Stochastic.</span>
+</h4>
+<div class="para" id="star-powers-stochastic-2-1">Show that if <span class="process-math">\(T\)</span> is stochastic, then <span class="process-math">\(T^k\)</span> is stochastic for every integer <span class="process-math">\(k \geq 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-powers-stochastic-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-powers-stochastic-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-powers-stochastic-3-1">
+<div class="para">Write <span class="process-math">\(\vec{e} = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\text{.}\)</span> Saying that every column of <span class="process-math">\(T\)</span> sums to <span class="process-math">\(1\)</span> is exactly saying that</div>
+<div class="displaymath process-math" id="star-powers-stochastic-3-1-4">
+\begin{equation*}
+\vec{e}^{\,T} T = \vec{e}^{\,T},
+\end{equation*}
+</div>
+<div class="para">since the <span class="process-math">\(j\)</span>th entry of <span class="process-math">\(\vec{e}^{\,T}T\)</span> is the sum of column <span class="process-math">\(j\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-powers-stochastic-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-powers-stochastic-3-2">
+<div class="para">Now argue by induction. The case <span class="process-math">\(k = 1\)</span> is the hypothesis. If <span class="process-math">\(\vec{e}^{\,T}T^{k} = \vec{e}^{\,T}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="star-powers-stochastic-3-2-3">
+\begin{equation*}
+\vec{e}^{\,T} T^{k+1} = \left( \vec{e}^{\,T} T^{k} \right) T
+= \vec{e}^{\,T} T = \vec{e}^{\,T},
+\end{equation*}
+</div>
+<div class="para">so the columns of <span class="process-math">\(T^{k+1}\)</span> also sum to <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-powers-stochastic-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-powers-stochastic-3-3">The entries of <span class="process-math">\(T^k\)</span> are non-negative too, being sums of products of non-negative numbers. So <span class="process-math">\(T^k\)</span> is stochastic.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-powers-stochastic-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-powers-stochastic-3-4">This is what licenses the phrase “<span class="process-math">\(k\)</span> steps of the chain”: applying <span class="process-math">\(T\)</span> repeatedly is the same as applying the single stochastic matrix <span class="process-math">\(T^k\text{,}\)</span> and the result is still a Markov transition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-powers-stochastic-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.6.1"><a tabindex="-1" href="#star-powers-stochastic-3" title="Copy heading and permalink for Solution 10.9.6.1" aria-label="Copy heading and permalink for Solution 10.9.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.6: ★ Powers of a Stochastic Matrix Are Stochastic"><a tabindex="-1" href="#star-powers-stochastic" title="Copy heading and permalink for Exercise 10.9.6: ★ Powers of a Stochastic Matrix Are Stochastic" aria-label="Copy heading and permalink for Exercise 10.9.6: ★ Powers of a Stochastic Matrix Are Stochastic">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-stochastic-eigenvalue-bound"><h4 class="heading">
+<span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Checking the Eigenvalue Bound.</span>
+</h4>
+<div class="para" id="star-stochastic-eigenvalue-bound-2-1">Find both eigenvalues of <span class="process-math">\(T = \begin{bmatrix} \frac{1}{3} \amp 1 \\[2pt] \frac{2}{3} \amp 0 \end{bmatrix}\)</span> and confirm that they satisfy <span class="process-math">\(|\lambda| \leq 1\text{,}\)</span> with <span class="process-math">\(\lambda = 1\)</span> among them.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-eigenvalue-bound-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-stochastic-eigenvalue-bound-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-stochastic-eigenvalue-bound-3-1">
+<div class="para">The characteristic polynomial is</div>
+<div class="displaymath process-math" id="star-stochastic-eigenvalue-bound-3-1-1">
+\begin{align*}
+c_T(\lambda) \amp = \begin{vmatrix} \lambda - \frac{1}{3} \amp -1 \\[2pt] -\frac{2}{3} \amp \lambda \end{vmatrix}\\
+\amp = \lambda^2 - \tfrac{1}{3}\lambda - \tfrac{2}{3}\\
+\amp = (\lambda - 1)\left( \lambda + \tfrac{2}{3} \right).
+\end{align*}
+</div>
+<div class="para">So the eigenvalues are <span class="process-math">\(\lambda = 1\)</span> and <span class="process-math">\(\lambda = -\tfrac{2}{3}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-eigenvalue-bound-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-stochastic-eigenvalue-bound-3-2">Both bounds hold: <span class="process-math">\(|1| = 1\)</span> and <span class="process-math">\(\left| -\tfrac{2}{3} \right| = \tfrac{2}{3} \lt 1\text{,}\)</span> as <a href="sec-markov-chains.html#eg-stochastic-eigenvalue-bound" class="xref" data-knowl="./knowl/xref/eg-stochastic-eigenvalue-bound.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.11: Eigenvalues of a Stochastic Matrix Satisfy |\lambda| \leq 1">Example 9.11</a> guarantees for any stochastic matrix, and <span class="process-math">\(\lambda = 1\)</span> appears as <a href="sec-markov-chains.html#eg-stochastic-eigenvalue-one" class="xref" data-knowl="./knowl/xref/eg-stochastic-eigenvalue-one.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.10: Every Stochastic Matrix Has Eigenvalue One">Example 9.10</a> promises.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-eigenvalue-bound-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-stochastic-eigenvalue-bound-3-3">The gap between the two matters. The second eigenvalue has absolute value strictly less than <span class="process-math">\(1\text{,}\)</span> so its contribution dies away under repeated application, leaving only the <span class="process-math">\(\lambda = 1\)</span> direction — which is why the state vectors in <a href="sec-problems-applications.html#star-bob-coffee" class="xref" data-knowl="./knowl/xref/star-bob-coffee.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.2: ★ Bob’s Coffee">Exercise 10.9.2</a> settled down.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-stochastic-eigenvalue-bound-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.7.1"><a tabindex="-1" href="#star-stochastic-eigenvalue-bound-3" title="Copy heading and permalink for Solution 10.9.7.1" aria-label="Copy heading and permalink for Solution 10.9.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.7: ★ Checking the Eigenvalue Bound"><a tabindex="-1" href="#star-stochastic-eigenvalue-bound" title="Copy heading and permalink for Exercise 10.9.7: ★ Checking the Eigenvalue Bound" aria-label="Copy heading and permalink for Exercise 10.9.7: ★ Checking the Eigenvalue Bound">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-steady-state-bob"><h4 class="heading">
+<span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ The Steady State for Bob’s Coffee.</span>
+</h4>
+<div class="para" id="star-steady-state-bob-2-1">Does <span class="process-math">\(T = \begin{bmatrix} \frac{1}{3} \amp 1 \\[2pt] \frac{2}{3} \amp 0 \end{bmatrix}\)</span> have a unique steady state vector? If so, find it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-steady-state-bob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-steady-state-bob-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="star-steady-state-bob-3-1">
+<dfn class="terminology">(I)</dfn> <span class="process-math">\(T\)</span> is stochastic, since each column sums to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-steady-state-bob-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-steady-state-bob-3-2">
+<dfn class="terminology">(II)</dfn> <span class="process-math">\(T\)</span> is regular, by <a href="sec-problems-applications.html#star-regular" class="xref" data-knowl="./knowl/xref/star-regular.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.3: ★ A Regular Matrix">Exercise 10.9.3</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-steady-state-bob-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-steady-state-bob-3-3">From (I) and (II) and <a href="sec-markov-chains.html#thm-unique-steady-state" class="xref" data-knowl="./knowl/xref/thm-unique-steady-state.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.12: Existence of a Unique Steady State">Theorem 9.12</a>, <span class="process-math">\(T\)</span> has a <em class="emphasis">unique</em> steady state vector.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-steady-state-bob-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-steady-state-bob-3-4">
+<div class="para">To find it, solve <span class="process-math">\((T - I)\vec{S} = \vec{0}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="star-steady-state-bob-3-4-2">
+\begin{equation*}
+\left[ \begin{array}{cc|c}
+-\frac{2}{3} \amp 1 \amp 0 \\[2pt] \frac{2}{3} \amp -1 \amp 0
+\end{array} \right]
+\longrightarrow
+\left[ \begin{array}{cc|c}
+2 \amp -3 \amp 0 \\ 0 \amp 0 \amp 0
+\end{array} \right],
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(2a = 3b\)</span> and <span class="process-math">\(\vec{S} = t\begin{bmatrix} 3 \\ 2 \end{bmatrix}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-steady-state-bob-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-steady-state-bob-3-5">
+<div class="para">The entries are probabilities, so they must sum to <span class="process-math">\(1\text{:}\)</span> <span class="process-math">\(5t = 1\)</span> gives <span class="process-math">\(t = \tfrac{1}{5}\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/star-bob-coffee.html" id="star-steady-state-bob-3-5-4">
+\begin{equation*}
+\vec{S} = \begin{bmatrix} \frac{3}{5} \\[2pt] \frac{2}{5} \end{bmatrix}
+= \begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">confirming the numerical limit observed in <a href="sec-problems-applications.html#star-bob-coffee" class="xref" data-knowl="./knowl/xref/star-bob-coffee.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.2: ★ Bob’s Coffee">Exercise 10.9.2</a>. Checking, <span class="process-math">\(T(0.6, 0.4) = (0.2 + 0.4,\ 0.4) = (0.6, 0.4)\text{.}\)</span> <span class="process-math">\(\checkmark\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-steady-state-bob-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.8.1"><a tabindex="-1" href="#star-steady-state-bob-3" title="Copy heading and permalink for Solution 10.9.8.1" aria-label="Copy heading and permalink for Solution 10.9.8.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.8: ★ The Steady State for Bob’s Coffee"><a tabindex="-1" href="#star-steady-state-bob" title="Copy heading and permalink for Exercise 10.9.8: ★ The Steady State for Bob’s Coffee" aria-label="Copy heading and permalink for Exercise 10.9.8: ★ The Steady State for Bob’s Coffee">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-two-by-two-steady-state-proof"><h4 class="heading">
+<span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Why the Steady State Is Reached.</span>
+</h4>
+<div class="para" id="star-two-by-two-steady-state-proof-2-1">For <span class="process-math">\(T = \begin{bmatrix} \frac{1}{3} \amp 1 \\[2pt] \frac{2}{3} \amp 0 \end{bmatrix}\text{,}\)</span> diagonalize <span class="process-math">\(T\)</span> and use the result to show that <span class="process-math">\(T^n \vec{x}_0\)</span> converges to the steady state for <em class="emphasis">every</em> probability vector <span class="process-math">\(\vec{x}_0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-two-by-two-steady-state-proof-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-two-by-two-steady-state-proof-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-two-by-two-steady-state-proof-3-1">
+<div class="para">The eigenvalues are <span class="process-math">\(1\)</span> and <span class="process-math">\(-\tfrac{2}{3}\text{,}\)</span> by <a href="sec-problems-applications.html#star-stochastic-eigenvalue-bound" class="xref" data-knowl="./knowl/xref/star-stochastic-eigenvalue-bound.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.7: ★ Checking the Eigenvalue Bound">Exercise 10.9.7</a>. For <span class="process-math">\(\lambda = 1\)</span> the eigenvector is <span class="process-math">\((3,2)\text{,}\)</span> from <a href="sec-problems-applications.html#star-steady-state-bob" class="xref" data-knowl="./knowl/xref/star-steady-state-bob.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.8: ★ The Steady State for Bob’s Coffee">Exercise 10.9.8</a>. For <span class="process-math">\(\lambda = -\tfrac{2}{3}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/star-stochastic-eigenvalue-bound.html ./knowl/xref/star-steady-state-bob.html" id="star-two-by-two-steady-state-proof-3-1-8">
+\begin{equation*}
+T + \tfrac{2}{3}I = \begin{bmatrix} 1 \amp 1 \\[2pt] \frac{2}{3} \amp \frac{2}{3} \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">gives <span class="process-math">\(a + b = 0\text{,}\)</span> so <span class="process-math">\((1,-1)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-two-by-two-steady-state-proof-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-two-by-two-steady-state-proof-3-2">
+<div class="para">Hence <span class="process-math">\(T = PDP^{-1}\)</span> with</div>
+<div class="displaymath process-math" id="star-two-by-two-steady-state-proof-3-2-2">
+\begin{equation*}
+P = \begin{bmatrix} 3 \amp 1 \\ 2 \amp -1 \end{bmatrix},
+\quad
+D = \begin{bmatrix} 1 \amp 0 \\[2pt] 0 \amp -\frac{2}{3} \end{bmatrix},
+\quad
+P^{-1} = \tfrac{1}{5}\begin{bmatrix} 1 \amp 1 \\ 2 \amp -3 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-two-by-two-steady-state-proof-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-two-by-two-steady-state-proof-3-3">
+<div class="para">Then <span class="process-math">\(T^n = PD^nP^{-1}\text{,}\)</span> and since <span class="process-math">\(\left( -\tfrac{2}{3} \right)^n \to 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="star-two-by-two-steady-state-proof-3-3-3">
+\begin{equation*}
+D^n \longrightarrow \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix},
+\qquad
+T^n \longrightarrow \tfrac{1}{5}\begin{bmatrix} 3 \amp 3 \\ 2 \amp 2 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-two-by-two-steady-state-proof-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-two-by-two-steady-state-proof-3-4">
+<div class="para">Finally, apply this limit to any probability vector <span class="process-math">\(\vec{x}_0 = (a,b)\)</span> with <span class="process-math">\(a + b = 1\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="star-two-by-two-steady-state-proof-3-4-3">
+\begin{equation*}
+\tfrac{1}{5}\begin{bmatrix} 3 \amp 3 \\ 2 \amp 2 \end{bmatrix}
+\begin{bmatrix} a \\ b \end{bmatrix}
+= \tfrac{1}{5}\begin{bmatrix} 3(a+b) \\ 2(a+b) \end{bmatrix}
+= \begin{bmatrix} \frac{3}{5} \\[2pt] \frac{2}{5} \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">The starting vector has vanished from the answer, which is precisely the claim. The mechanism is the eigenvalue gap: everything except the <span class="process-math">\(\lambda = 1\)</span> direction decays.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-two-by-two-steady-state-proof-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.9.1"><a tabindex="-1" href="#star-two-by-two-steady-state-proof-3" title="Copy heading and permalink for Solution 10.9.9.1" aria-label="Copy heading and permalink for Solution 10.9.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.9: ★ Why the Steady State Is Reached"><a tabindex="-1" href="#star-two-by-two-steady-state-proof" title="Copy heading and permalink for Exercise 10.9.9: ★ Why the Steady State Is Reached" aria-label="Copy heading and permalink for Exercise 10.9.9: ★ Why the Steady State Is Reached">🔗</a></div>
+</article>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise Group 10.9.1–9"><a tabindex="-1" href="#sec-problems-applications-2-1" title="Copy heading and permalink for Exercise Group 10.9.1–9" aria-label="Copy heading and permalink for Exercise Group 10.9.1–9">🔗</a></div>
+</div>
+<div class="exercisegroup" id="sec-problems-applications-2-2">
+<h3 class="heading"><span class="title">Exercise Group.</span></h3>
+<div class="introduction" id="sec-problems-applications-2-2-1">
+<div class="para" id="sec-problems-applications-2-2-1-1">Problems for <a href="sec-more-markov.html" class="internal" title="Section 9.2: Long-Run Behaviour: Two More Examples">Long-Run Behaviour: Two More Examples</a> (<a href="sec-more-markov.html" class="internal" title="Section 9.2: Long-Run Behaviour: Two More Examples">Section 9.2</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-problems-applications-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="lab-migration-populations"><h4 class="heading">
+<span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Migration Matrix and a Population.</span>
+</h4>
+<div class="para logical" id="lab-migration-populations-2-1">
+<div class="para">Consider the migration matrix</div>
+<div class="displaymath process-math" id="lab-migration-populations-2-1-1">
+\begin{equation*}
+A = \begin{bmatrix}
+0.6 \amp 0 \amp 0.1 \\
+0.2 \amp 0.8 \amp 0 \\
+0.2 \amp 0.2 \amp 0.9
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">for locations <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(2\)</span> and <span class="process-math">\(3\text{.}\)</span> Initially there are <span class="process-math">\(100\)</span> residents in location <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(200\)</span> in location <span class="process-math">\(2\)</span> and <span class="process-math">\(400\)</span> in location <span class="process-math">\(3\text{.}\)</span> Find the population of each location in the long run.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-populations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="lab-migration-populations-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="lab-migration-populations-3-1">
+<div class="para">Each column of <span class="process-math">\(A\)</span> sums to <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(A\)</span> is stochastic (<a href="sec-markov-chains.html#def-stochastic-matrix" class="xref" data-knowl="./knowl/xref/def-stochastic-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 9.7: Stochastic Matrix">Definition 9.7</a>) and has <span class="process-math">\(1\)</span> as an eigenvalue. Solve <span class="process-math">\((A - I)\vec{x} = \vec{0}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-stochastic-matrix.html" id="lab-migration-populations-3-1-7">
+\begin{equation*}
+A - I = \begin{bmatrix}
+-0.4 \amp 0 \amp 0.1 \\
+0.2 \amp -0.2 \amp 0 \\
+0.2 \amp 0.2 \amp -0.1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-populations-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lab-migration-populations-3-2">
+<div class="para">Row <span class="process-math">\(1\)</span> gives <span class="process-math">\(x_3 = 4x_1\)</span> and row <span class="process-math">\(2\)</span> gives <span class="process-math">\(x_2 = x_1\text{;}\)</span> row <span class="process-math">\(3\)</span> is then automatically satisfied, since <span class="process-math">\(0.2 + 0.2 - 0.4 = 0\text{.}\)</span> So the eigenvectors for <span class="process-math">\(\lambda = 1\)</span> are the multiples of</div>
+<div class="displaymath process-math" id="lab-migration-populations-3-2-8">
+\begin{equation*}
+\vec{x} = \begin{bmatrix} 1 \\ 1 \\ 4 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-populations-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lab-migration-populations-3-3">
+<div class="para">Migration moves people around but does not create or destroy them, so the total population stays at <span class="process-math">\(100 + 200 + 400 = 700\)</span> forever. The entries of <span class="process-math">\([1\ 1\ 4]^T\)</span> sum to <span class="process-math">\(6\text{,}\)</span> so rescale by <span class="process-math">\(\tfrac{700}{6}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="lab-migration-populations-3-3-5">
+\begin{equation*}
+\frac{700}{6}\begin{bmatrix} 1 \\ 1 \\ 4 \end{bmatrix}
+= \begin{bmatrix} \frac{350}{3} \\[2pt] \frac{350}{3} \\[2pt] \frac{1400}{3} \end{bmatrix}
+\approx \begin{bmatrix} 116.7 \\ 116.7 \\ 466.7 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-populations-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lab-migration-populations-3-4">So in the long run locations <span class="process-math">\(1\)</span> and <span class="process-math">\(2\)</span> each hold <span class="process-math">\(\tfrac{350}{3}\)</span> residents and location <span class="process-math">\(3\)</span> holds <span class="process-math">\(\tfrac{1400}{3}\text{.}\)</span> As a check, these sum to <span class="process-math">\(\tfrac{2100}{3} = 700\text{.}\)</span> <span class="process-math">\(\checkmark\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-populations-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.10.1"><a tabindex="-1" href="#lab-migration-populations-3" title="Copy heading and permalink for Solution 10.9.10.1" aria-label="Copy heading and permalink for Solution 10.9.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.10: A Migration Matrix and a Population"><a tabindex="-1" href="#lab-migration-populations" title="Copy heading and permalink for Exercise 10.9.10: A Migration Matrix and a Population" aria-label="Copy heading and permalink for Exercise 10.9.10: A Migration Matrix and a Population">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="lab-migration-proportions"><h4 class="heading">
+<span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Long-Run Proportions.</span>
+</h4>
+<div class="para logical" id="lab-migration-proportions-2-1">
+<div class="para">A migration matrix is given by</div>
+<div class="displaymath process-math" id="lab-migration-proportions-2-1-1">
+\begin{equation*}
+A = \begin{bmatrix}
+\frac{1}{5} \amp \frac{1}{2} \amp \frac{1}{5} \\[2pt]
+\frac{1}{4} \amp \frac{1}{4} \amp \frac{1}{2} \\[2pt]
+\frac{11}{20} \amp \frac{1}{4} \amp \frac{3}{10}
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Compare the populations of the three locations in the long run.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-proportions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="lab-migration-proportions-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="lab-migration-proportions-3-1">Every column sums to <span class="process-math">\(1\text{:}\)</span> for instance the first is <span class="process-math">\(\tfrac{4}{20} + \tfrac{5}{20} + \tfrac{11}{20} = 1\text{.}\)</span> So <span class="process-math">\(A\)</span> is stochastic and <span class="process-math">\(\lambda = 1\)</span> is an eigenvalue.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-proportions-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lab-migration-proportions-3-2">
+<div class="para">Set <span class="process-math">\(x_3 = 1\)</span> and solve <span class="process-math">\((A - I)\vec{x} = \vec{0}\text{.}\)</span> The first two rows read</div>
+<div class="displaymath process-math" id="lab-migration-proportions-3-2-3">
+\begin{align*}
+-\tfrac{4}{5}x_1 + \tfrac{1}{2}x_2 + \tfrac{1}{5} \amp = 0\\
+\tfrac{1}{4}x_1 - \tfrac{3}{4}x_2 + \tfrac{1}{2} \amp = 0 .
+\end{align*}
+</div>
+<div class="para">Clearing denominators gives <span class="process-math">\(8x_1 - 5x_2 = 2\)</span> and <span class="process-math">\(x_1 - 3x_2 = -2\text{.}\)</span> Substituting <span class="process-math">\(x_1 = 3x_2 - 2\)</span> into the first,</div>
+<div class="displaymath process-math" id="lab-migration-proportions-3-2-7">
+\begin{equation*}
+8(3x_2 - 2) - 5x_2 = 2
+\quad\Longrightarrow\quad
+19x_2 = 18,
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(x_2 = \tfrac{18}{19}\)</span> and <span class="process-math">\(x_1 = \tfrac{54}{19} - \tfrac{38}{19} = \tfrac{16}{19}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-proportions-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lab-migration-proportions-3-3">The third row is then satisfied automatically, as it must be: <span class="process-math">\(\tfrac{11}{20}\cdot\tfrac{16}{19} + \tfrac{1}{4}\cdot\tfrac{18}{19} - \tfrac{7}{10} = 0\text{.}\)</span> <span class="process-math">\(\checkmark\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-proportions-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lab-migration-proportions-3-4">
+<div class="para">So the steady-state direction is <span class="process-math">\(\left[ \tfrac{16}{19}\ \tfrac{18}{19}\ 1 \right]^T\text{,}\)</span> whose entries sum to <span class="process-math">\(\tfrac{53}{19}\text{.}\)</span> Rescaling to make the entries proportions,</div>
+<div class="displaymath process-math" id="lab-migration-proportions-3-4-3">
+\begin{equation*}
+\frac{19}{53} \begin{bmatrix} \frac{16}{19} \\[2pt] \frac{18}{19} \\[2pt] 1 \end{bmatrix}
+= \begin{bmatrix} \frac{16}{53} \\[2pt] \frac{18}{53} \\[2pt] \frac{19}{53} \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-proportions-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lab-migration-proportions-3-5">In the long run <span class="process-math">\(\tfrac{16}{53}\)</span> of the population lives in location <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(\tfrac{18}{53}\)</span> in location <span class="process-math">\(2\text{,}\)</span> and <span class="process-math">\(\tfrac{19}{53}\)</span> in location <span class="process-math">\(3\)</span> — whatever the starting distribution, since all entries of <span class="process-math">\(A\)</span> are positive and so <span class="process-math">\(A\)</span> is regular.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lab-migration-proportions-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.11.1"><a tabindex="-1" href="#lab-migration-proportions-3" title="Copy heading and permalink for Solution 10.9.11.1" aria-label="Copy heading and permalink for Solution 10.9.11.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.11: Long-Run Proportions"><a tabindex="-1" href="#lab-migration-proportions" title="Copy heading and permalink for Exercise 10.9.11: Long-Run Proportions" aria-label="Copy heading and permalink for Exercise 10.9.11: Long-Run Proportions">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-bike-share"><h4 class="heading">
+<span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ A Bike-Share Network.</span>
+</h4>
+<div class="para logical" id="star-bike-share-2-1">
+<div class="para">A bike-share company has three stations. Let <span class="process-math">\(A\)</span> be the matrix whose <span class="process-math">\((i,j)\)</span>-entry is the probability that a bike rented at station <span class="process-math">\(j\)</span> is returned to station <span class="process-math">\(i\text{,}\)</span> and suppose</div>
+<div class="displaymath process-math" id="star-bike-share-2-1-5">
+\begin{equation*}
+A = \begin{bmatrix}
+0.4 \amp 0.2 \amp 0.2 \\
+0.2 \amp 0.4 \amp 0.2 \\
+0.4 \amp 0.4 \amp 0.6
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Initially the bikes are distributed as <span class="process-math">\(\vec{V}_0 = \begin{bmatrix} 10 \\ 20 \\ 30 \end{bmatrix}\text{.}\)</span> How are they distributed in the long run?</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bike-share-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-bike-share-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="star-bike-share-3-1">Each column sums to <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(A\)</span> is stochastic and has <span class="process-math">\(1\)</span> as an eigenvalue. All entries are positive, so <span class="process-math">\(A\)</span> is regular and the steady state is unique.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bike-share-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-bike-share-3-2">
+<div class="para">Solve <span class="process-math">\((A - I)\vec{x} = \vec{0}\text{.}\)</span> Multiplying through by <span class="process-math">\(10\)</span> to clear decimals,</div>
+<div class="displaymath process-math" id="star-bike-share-3-2-3">
+\begin{equation*}
+\begin{bmatrix} -6 \amp 2 \amp 2 \\ 2 \amp -6 \amp 2 \\ 4 \amp 4 \amp -4 \end{bmatrix}
+\longrightarrow
+\begin{bmatrix} -3 \amp 1 \amp 1 \\ 1 \amp -3 \amp 1 \\ 0 \amp 0 \amp 0 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">the last row being the negative of the sum of the first two, as it must be for a stochastic matrix.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bike-share-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-bike-share-3-3">
+<div class="para">The two remaining equations are <span class="process-math">\(3x = y + z\)</span> and <span class="process-math">\(3y = x + z\text{.}\)</span> Subtracting gives <span class="process-math">\(3(x - y) = y - x\text{,}\)</span> so <span class="process-math">\(4(x-y) = 0\)</span> and <span class="process-math">\(x = y\text{.}\)</span> Then <span class="process-math">\(3x = x + z\)</span> gives <span class="process-math">\(z = 2x\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="star-bike-share-3-3-8">
+\begin{equation*}
+\vec{x} = t \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bike-share-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-bike-share-3-4">
+<div class="para">Bikes are neither created nor destroyed, so the total stays at <span class="process-math">\(10 + 20 + 30 = 60\text{.}\)</span> The entries of <span class="process-math">\((1,1,2)\)</span> sum to <span class="process-math">\(4\text{,}\)</span> so take <span class="process-math">\(t = 15\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="star-bike-share-3-4-5">
+\begin{equation*}
+\vec{V}_\infty = \begin{bmatrix} 15 \\ 15 \\ 30 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">that is <span class="process-math">\(25\%\text{,}\)</span> <span class="process-math">\(25\%\)</span> and <span class="process-math">\(50\%\)</span> of the fleet. Checking, <span class="process-math">\(A(15,15,30) = (6+3+6,\ 3+6+6,\ 6+6+18) = (15,15,30)\text{.}\)</span> <span class="process-math">\(\checkmark\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-bike-share-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.12.1"><a tabindex="-1" href="#star-bike-share-3" title="Copy heading and permalink for Solution 10.9.12.1" aria-label="Copy heading and permalink for Solution 10.9.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.12: ★ A Bike-Share Network"><a tabindex="-1" href="#star-bike-share" title="Copy heading and permalink for Exercise 10.9.12: ★ A Bike-Share Network" aria-label="Copy heading and permalink for Exercise 10.9.12: ★ A Bike-Share Network">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-deer-population"><h4 class="heading">
+<span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ A Deer Population.</span>
+</h4>
+<div class="para logical" id="star-deer-population-2-1">
+<div class="para">A deer population consists of <span class="process-math">\(40\)</span> fawns and <span class="process-math">\(40\)</span> adult does. Suppose that</div>
+<ol class="lower-alpha lower-alpha-level-1" id="star-deer-population-2-1-3">
+<li id="star-deer-population-2-1-3-1">
+<div class="para" id="star-deer-population-2-1-3-1-1">the number of fawns born in any year is twice the number of adult does in the previous year;<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 10.9.13.a"><a tabindex="-1" href="#star-deer-population-2-1-3-1" title="Copy heading and permalink for Item 10.9.13.a" aria-label="Copy heading and permalink for Item 10.9.13.a">🔗</a></div>
+</li>
+<li id="star-deer-population-2-1-3-2">
+<div class="para" id="star-deer-population-2-1-3-2-1">
+<span class="process-math">\(70\%\)</span> of adult does survive to the next year;<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 10.9.13.b"><a tabindex="-1" href="#star-deer-population-2-1-3-2" title="Copy heading and permalink for Item 10.9.13.b" aria-label="Copy heading and permalink for Item 10.9.13.b">🔗</a></div>
+</li>
+<li id="star-deer-population-2-1-3-3">
+<div class="para" id="star-deer-population-2-1-3-3-1">
+<span class="process-math">\(30\%\)</span> of fawns survive to become adult does.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-2-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 10.9.13.c"><a tabindex="-1" href="#star-deer-population-2-1-3-3" title="Copy heading and permalink for Item 10.9.13.c" aria-label="Copy heading and permalink for Item 10.9.13.c">🔗</a></div>
+</li>
+</ol>
+<div class="para">Will the population survive?</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-deer-population-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-deer-population-3-1">
+<div class="para">Let <span class="process-math">\(\vec{V}_k = \begin{bmatrix} f_k \\ a_k \end{bmatrix}\)</span> record fawns and adults in year <span class="process-math">\(k\text{.}\)</span> The three rules say</div>
+<div class="displaymath process-math" id="star-deer-population-3-1-3">
+\begin{equation*}
+f_{k+1} = 2a_k,
+\qquad
+a_{k+1} = 0.3 f_k + 0.7 a_k,
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\vec{V}_{k+1} = A\vec{V}_k\)</span> with</div>
+<div class="displaymath process-math" id="star-deer-population-3-1-5">
+\begin{equation*}
+A = \begin{bmatrix} 0 \amp 2 \\ 0.3 \amp 0.7 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Note <span class="process-math">\(A\)</span> is <em class="emphasis">not</em> stochastic: the population is not conserved.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-deer-population-3-2">
+<div class="para">The long-run behaviour is governed by the dominant eigenvalue. The characteristic polynomial is</div>
+<div class="displaymath process-math" id="star-deer-population-3-2-1">
+\begin{equation*}
+c_A(\lambda) = \lambda(\lambda - 0.7) - 0.6 = \lambda^2 - 0.7\lambda - 0.6,
+\end{equation*}
+</div>
+<div class="para">whose roots are</div>
+<div class="displaymath process-math" id="star-deer-population-3-2-2">
+\begin{equation*}
+\lambda = \frac{0.7 \pm \sqrt{0.49 + 2.4}}{2} = \frac{0.7 \pm 1.7}{2},
+\end{equation*}
+</div>
+<div class="para">that is <span class="process-math">\(\lambda_1 = 1.2\)</span> and <span class="process-math">\(\lambda_2 = -0.5\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-deer-population-3-3">The dominant eigenvalue is <span class="process-math">\(1.2 \gt 1\text{,}\)</span> so <dfn class="terminology">the population survives and in fact grows by about <span class="process-math">\(20\%\)</span> per year</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-deer-population-3-4">For the eigenvector of <span class="process-math">\(\lambda_1 = 1.2\text{,}\)</span> <span class="process-math">\(A - 1.2I = \begin{bmatrix} -1.2 \amp 2 \\ 0.3 \amp -0.5 \end{bmatrix}\)</span> gives <span class="process-math">\(1.2f = 2a\text{,}\)</span> so <span class="process-math">\((f,a) = (5,3)\text{.}\)</span> Checking, <span class="process-math">\(A(5,3) = (6,\ 1.5 + 2.1) = (6, 3.6) = 1.2(5,3)\text{.}\)</span> <span class="process-math">\(\checkmark\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-deer-population-3-5">So whatever the starting counts, the herd settles into the ratio <span class="process-math">\(5\)</span> fawns to <span class="process-math">\(3\)</span> adult does, and thereafter multiplies by <span class="process-math">\(1.2\)</span> each year. The second eigenvalue <span class="process-math">\(-0.5\)</span> has absolute value less than <span class="process-math">\(1\text{,}\)</span> so its contribution dies out; had the dominant eigenvalue been less than <span class="process-math">\(1\text{,}\)</span> the herd would have dwindled to nothing instead.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-deer-population-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.13.1"><a tabindex="-1" href="#star-deer-population-3" title="Copy heading and permalink for Solution 10.9.13.1" aria-label="Copy heading and permalink for Solution 10.9.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.13: ★ A Deer Population"><a tabindex="-1" href="#star-deer-population" title="Copy heading and permalink for Exercise 10.9.13: ★ A Deer Population" aria-label="Copy heading and permalink for Exercise 10.9.13: ★ A Deer Population">🔗</a></div>
+</article>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise Group 10.9.10–13"><a tabindex="-1" href="#sec-problems-applications-2-2" title="Copy heading and permalink for Exercise Group 10.9.10–13" aria-label="Copy heading and permalink for Exercise Group 10.9.10–13">🔗</a></div>
+</div>
+<div class="exercisegroup" id="sec-problems-applications-2-3">
+<h3 class="heading"><span class="title">Exercise Group.</span></h3>
+<div class="introduction" id="sec-problems-applications-2-3-1">
+<div class="para" id="sec-problems-applications-2-3-1-1">Problems for <a href="sec-pagerank.html" class="internal" title="Section 9.4: The PageRank Algorithm: The 25 Billion Dollar Eigenvector">The PageRank Algorithm: The 25 Billion Dollar Eigenvector</a> (<a href="sec-pagerank.html" class="internal" title="Section 9.4: The PageRank Algorithm: The 25 Billion Dollar Eigenvector">Section 9.4</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-problems-applications-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-problems-applications-2-3-1-2">
+<div class="para">These problems rebuild the development of <a href="sec-pagerank.html" class="internal" title="Section 9.4: The PageRank Algorithm: The 25 Billion Dollar Eigenvector">Section 9.4</a> on a small web of three pages, with links</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-pagerank.html" id="sec-problems-applications-2-3-1-2-2">
+\begin{equation*}
+1 \to 2, \quad 1 \to 3, \quad 2 \to 3, \quad 3 \to 1.
+\end{equation*}
+</div>
+<div class="para">So page <span class="process-math">\(1\)</span> links out to pages <span class="process-math">\(2\)</span> and <span class="process-math">\(3\text{,}\)</span> page <span class="process-math">\(2\)</span> links only to page <span class="process-math">\(3\text{,}\)</span> and page <span class="process-math">\(3\)</span> links only to page <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-problems-applications-2-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="star-pagerank-q1"><h4 class="heading">
+<span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Question 1.</span>
+</h4>
+<div class="para" id="star-pagerank-q1-2-1">A surfer starts by choosing one of the <span class="process-math">\(N = 3\)</span> pages at random. Let <span class="process-math">\(p_i(t)\)</span> be the probability that the surfer is on page <span class="process-math">\(i\)</span> at time <span class="process-math">\(t\text{.}\)</span> What are <span class="process-math">\(p_i(0)\)</span> and <span class="process-math">\(p_i(t+1)\text{?}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-pagerank-q1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-pagerank-q1-3-1">
+<div class="para">
+<dfn class="terminology">At time <span class="process-math">\(0\text{.}\)</span></dfn> All three pages are equally likely, so</div>
+<div class="displaymath process-math" id="star-pagerank-q1-3-1-2">
+\begin{equation*}
+p_i(0) = \frac{1}{N} = \frac{1}{3}
+\qquad \text{for } i = 1, 2, 3.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-pagerank-q1-3-2">
+<div class="para">
+<dfn class="terminology">At time <span class="process-math">\(t+1\text{.}\)</span></dfn> The surfer arrives at page <span class="process-math">\(i\)</span> by having been on some page <span class="process-math">\(j\)</span> that links to <span class="process-math">\(i\text{,}\)</span> and then choosing the link to <span class="process-math">\(i\)</span> from among the <span class="process-math">\(\ell_j\)</span> outbound links of page <span class="process-math">\(j\text{.}\)</span> So</div>
+<div class="displaymath process-math" id="star-pagerank-q1-3-2-8">
+\begin{equation*}
+p_i(t+1) = \sum_{j \to i} \frac{p_j(t)}{\ell_j},
+\end{equation*}
+</div>
+<div class="para">where the sum runs over the pages <span class="process-math">\(j\)</span> that link to <span class="process-math">\(i\)</span> and <span class="process-math">\(\ell_j\)</span> is the number of outbound links of page <span class="process-math">\(j\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q1-3-3">Here <span class="process-math">\(\ell_1 = 2\text{,}\)</span> <span class="process-math">\(\ell_2 = 1\text{,}\)</span> <span class="process-math">\(\ell_3 = 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q1-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.14.1"><a tabindex="-1" href="#star-pagerank-q1-3" title="Copy heading and permalink for Solution 10.9.14.1" aria-label="Copy heading and permalink for Solution 10.9.14.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.14: ★ Question 1"><a tabindex="-1" href="#star-pagerank-q1" title="Copy heading and permalink for Exercise 10.9.14: ★ Question 1" aria-label="Copy heading and permalink for Exercise 10.9.14: ★ Question 1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-pagerank-q2"><h4 class="heading">
+<span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Question 2.</span>
+</h4>
+<div class="para" id="star-pagerank-q2-2-1">Find <span class="process-math">\(p_3(t+1)\)</span> for this web.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-pagerank-q2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-pagerank-q2-3-1">
+<div class="para">Which pages link to page <span class="process-math">\(3\text{?}\)</span> Both page <span class="process-math">\(1\)</span> and page <span class="process-math">\(2\)</span> do. Page <span class="process-math">\(1\)</span> has <span class="process-math">\(\ell_1 = 2\)</span> outbound links, so a surfer there picks the link to page <span class="process-math">\(3\)</span> with probability <span class="process-math">\(\tfrac{1}{2}\text{.}\)</span> Page <span class="process-math">\(2\)</span> has <span class="process-math">\(\ell_2 = 1\text{,}\)</span> so a surfer there goes to page <span class="process-math">\(3\)</span> with certainty. Therefore</div>
+<div class="displaymath process-math" id="star-pagerank-q2-3-1-11">
+\begin{equation*}
+p_3(t+1) = \frac{p_1(t)}{2} + p_2(t).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q2-3-2">For comparison, page <span class="process-math">\(1\)</span> is reached only from page <span class="process-math">\(3\text{,}\)</span> giving <span class="process-math">\(p_1(t+1) = p_3(t)\text{,}\)</span> and page <span class="process-math">\(2\)</span> only from page <span class="process-math">\(1\text{,}\)</span> giving <span class="process-math">\(p_2(t+1) = \tfrac{1}{2}p_1(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.15.1"><a tabindex="-1" href="#star-pagerank-q2-3" title="Copy heading and permalink for Solution 10.9.15.1" aria-label="Copy heading and permalink for Solution 10.9.15.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.15: ★ Question 2"><a tabindex="-1" href="#star-pagerank-q2" title="Copy heading and permalink for Exercise 10.9.15: ★ Question 2" aria-label="Copy heading and permalink for Exercise 10.9.15: ★ Question 2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-pagerank-q3"><h4 class="heading">
+<span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Question 3.</span>
+</h4>
+<div class="para" id="star-pagerank-q3-2-1">Find the matrix <span class="process-math">\(L\)</span> representing the evolution of the probabilities from time <span class="process-math">\(t\)</span> to time <span class="process-math">\(t+1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-pagerank-q3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-pagerank-q3-3-1">
+<div class="para">Collect the three relations of <a href="sec-problems-applications.html#star-pagerank-q2" class="xref" data-knowl="./knowl/xref/star-pagerank-q2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.15: ★ Question 2">Exercise 10.9.15</a> into <span class="process-math">\(\vec{p}(t+1) = L\vec{p}(t)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/star-pagerank-q2.html" id="star-pagerank-q3-3-1-3">
+\begin{equation*}
+L = \begin{bmatrix}
+0 \amp 0 \amp 1 \\
+\frac{1}{2} \amp 0 \amp 0 \\
+\frac{1}{2} \amp 1 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q3-3-2">Column <span class="process-math">\(j\)</span> records where a surfer on page <span class="process-math">\(j\)</span> goes: column <span class="process-math">\(1\)</span> splits <span class="process-math">\(\tfrac{1}{2}\)</span> and <span class="process-math">\(\tfrac{1}{2}\)</span> between pages <span class="process-math">\(2\)</span> and <span class="process-math">\(3\text{;}\)</span> columns <span class="process-math">\(2\)</span> and <span class="process-math">\(3\)</span> each send everything to a single page.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q3-3-3">Every column sums to <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(L\)</span> is stochastic (<a href="sec-markov-chains.html#def-stochastic-matrix" class="xref" data-knowl="./knowl/xref/def-stochastic-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 9.7: Stochastic Matrix">Definition 9.7</a>) — as it must be, since the surfer certainly lands somewhere.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q3-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.16.1"><a tabindex="-1" href="#star-pagerank-q3-3" title="Copy heading and permalink for Solution 10.9.16.1" aria-label="Copy heading and permalink for Solution 10.9.16.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.16: ★ Question 3"><a tabindex="-1" href="#star-pagerank-q3" title="Copy heading and permalink for Exercise 10.9.16: ★ Question 3" aria-label="Copy heading and permalink for Exercise 10.9.16: ★ Question 3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-pagerank-q4"><h4 class="heading">
+<span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Question 4.</span>
+</h4>
+<div class="para" id="star-pagerank-q4-2-1">Suppose a fourth page is added with <em class="emphasis">no</em> outbound links, and no page links to it. Modify the matrix, assuming that a surfer on a page with no outbound link jumps to one of the <span class="process-math">\(4\)</span> pages at random.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-pagerank-q4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="star-pagerank-q4-3-1">Page <span class="process-math">\(4\)</span> is a <dfn class="terminology">dangling node</dfn>: <span class="process-math">\(\ell_4 = 0\text{,}\)</span> so the recipe <span class="process-math">\(p_j(t)/\ell_j\)</span> makes no sense and its column of the link matrix would be all zeros. Such a matrix is not stochastic, and probability would leak away.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-pagerank-q4-3-2">
+<div class="para">The fix is to declare that a surfer stuck on page <span class="process-math">\(4\)</span> picks any of the <span class="process-math">\(N = 4\)</span> pages uniformly, which fills that column with <span class="process-math">\(\tfrac{1}{4}\)</span>s:</div>
+<div class="displaymath process-math" id="star-pagerank-q4-3-2-4">
+\begin{equation*}
+L = \begin{bmatrix}
+0 \amp 0 \amp 1 \amp \frac{1}{4} \\
+\frac{1}{2} \amp 0 \amp 0 \amp \frac{1}{4} \\
+\frac{1}{2} \amp 1 \amp 0 \amp \frac{1}{4} \\
+0 \amp 0 \amp 0 \amp \frac{1}{4}
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q4-3-3">Every column again sums to <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(L\)</span> is stochastic. Note that the fourth <em class="emphasis">row</em> is nearly empty: nobody links to page <span class="process-math">\(4\text{,}\)</span> so it is reached only by the random jump out of itself, and its long-run share will be very small.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q4-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.17.1"><a tabindex="-1" href="#star-pagerank-q4-3" title="Copy heading and permalink for Solution 10.9.17.1" aria-label="Copy heading and permalink for Solution 10.9.17.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.17: ★ Question 4"><a tabindex="-1" href="#star-pagerank-q4" title="Copy heading and permalink for Exercise 10.9.17: ★ Question 4" aria-label="Copy heading and permalink for Exercise 10.9.17: ★ Question 4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-pagerank-q5"><h4 class="heading">
+<span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Question 5.</span>
+</h4>
+<div class="para" id="star-pagerank-q5-2-1">Let <span class="process-math">\(\alpha\)</span> be the probability that the surfer stays interested and follows a link, the <dfn class="terminology">damping factor</dfn>. How are the probabilities <span class="process-math">\(p_i(t+1)\)</span> modified?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-pagerank-q5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-pagerank-q5-3-1">
+<div class="para">With probability <span class="process-math">\(\alpha\)</span> the surfer follows a link, exactly as before; with probability <span class="process-math">\(1 - \alpha\)</span> the surfer gets bored and jumps to a page chosen uniformly at random from all <span class="process-math">\(N\)</span> pages, which contributes <span class="process-math">\(\dfrac{1 - \alpha}{N}\)</span> to every page. So</div>
+<div class="displaymath process-math" id="star-pagerank-q5-3-1-5">
+\begin{equation*}
+p_i(t+1) = \alpha \sum_{j \to i} \frac{p_j(t)}{\ell_j} + \frac{1 - \alpha}{N}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q5-3-2">The two terms are the two things a surfer can do, weighted by how likely each is. Setting <span class="process-math">\(\alpha = 1\)</span> recovers <a href="sec-problems-applications.html#star-pagerank-q1" class="xref" data-knowl="./knowl/xref/star-pagerank-q1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.14: ★ Question 1">Exercise 10.9.14</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q5-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.18.1"><a tabindex="-1" href="#star-pagerank-q5-3" title="Copy heading and permalink for Solution 10.9.18.1" aria-label="Copy heading and permalink for Solution 10.9.18.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.18: ★ Question 5"><a tabindex="-1" href="#star-pagerank-q5" title="Copy heading and permalink for Exercise 10.9.18: ★ Question 5" aria-label="Copy heading and permalink for Exercise 10.9.18: ★ Question 5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-pagerank-q6"><h4 class="heading">
+<span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Question 6.</span>
+</h4>
+<div class="para" id="star-pagerank-q6-2-1">Express the previous answer as a matrix equation, and show that the resulting matrix is stochastic and regular.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-pagerank-q6-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-pagerank-q6-3-1">
+<div class="para">Let <span class="process-math">\(J\)</span> be the <span class="process-math">\(N \times N\)</span> matrix all of whose entries are <span class="process-math">\(1\text{.}\)</span> Since the entries of <span class="process-math">\(\vec{p}(t)\)</span> sum to <span class="process-math">\(1\text{,}\)</span> we have <span class="process-math">\(J\vec{p}(t) = \vec{e}\text{,}\)</span> the all-ones vector, so the constant term <span class="process-math">\(\frac{1-\alpha}{N}\)</span> in every coordinate can be written as <span class="process-math">\(\frac{1-\alpha}{N}J\vec{p}(t)\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="star-pagerank-q6-3-1-9">
+\begin{equation*}
+\vec{p}(t+1) = M \vec{p}(t),
+\qquad
+M = \alpha L + \frac{1 - \alpha}{N} J.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-pagerank-q6-3-2">
+<div class="para">
+<dfn class="terminology"><span class="process-math">\(M\)</span> is stochastic.</dfn> Each column of <span class="process-math">\(L\)</span> sums to <span class="process-math">\(1\)</span> and each column of <span class="process-math">\(J\)</span> sums to <span class="process-math">\(N\text{,}\)</span> so each column of <span class="process-math">\(M\)</span> sums to</div>
+<div class="displaymath process-math" id="star-pagerank-q6-3-2-7">
+\begin{equation*}
+\alpha (1) + \frac{1 - \alpha}{N}(N) = \alpha + 1 - \alpha = 1.
+\end{equation*}
+</div>
+<div class="para">Its entries are non-negative, being non-negative combinations of non-negative numbers.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q6-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q6-3-3">
+<dfn class="terminology"><span class="process-math">\(M\)</span> is regular.</dfn> For <span class="process-math">\(0 \lt \alpha \lt 1\)</span> every entry of <span class="process-math">\(\frac{1-\alpha}{N}J\)</span> is strictly positive, and adding the non-negative matrix <span class="process-math">\(\alpha L\)</span> cannot destroy that. So <span class="process-math">\(M\)</span> itself already has all entries positive, and <span class="process-math">\(M^1\)</span> witnesses regularity.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q6-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q6-3-4">By <a href="sec-markov-chains.html#thm-unique-steady-state" class="xref" data-knowl="./knowl/xref/thm-unique-steady-state.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.12: Existence of a Unique Steady State">Theorem 9.12</a>, <span class="process-math">\(M\)</span> therefore has a unique steady state, and every starting distribution converges to it. That steady state is the PageRank vector — and the damping factor is what guarantees it exists.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q6-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.19.1"><a tabindex="-1" href="#star-pagerank-q6-3" title="Copy heading and permalink for Solution 10.9.19.1" aria-label="Copy heading and permalink for Solution 10.9.19.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.19: ★ Question 6"><a tabindex="-1" href="#star-pagerank-q6" title="Copy heading and permalink for Exercise 10.9.19: ★ Question 6" aria-label="Copy heading and permalink for Exercise 10.9.19: ★ Question 6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="star-pagerank-q7"><h4 class="heading">
+<span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Question 7.</span>
+</h4>
+<div class="para" id="star-pagerank-q7-2-1">Take <span class="process-math">\(\alpha = \tfrac{1}{2}\)</span> and find the steady state of the Markov chain for the three-page web, using the matrix <span class="process-math">\(L\)</span> of <a href="sec-problems-applications.html#star-pagerank-q3" class="xref" data-knowl="./knowl/xref/star-pagerank-q3.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.16: ★ Question 3">Exercise 10.9.16</a>. Which page ranks highest?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-pagerank-q7-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-pagerank-q7-3-1">
+<div class="para">With <span class="process-math">\(N = 3\)</span> and <span class="process-math">\(\alpha = \tfrac{1}{2}\text{,}\)</span> the damping term contributes <span class="process-math">\(\frac{1-\alpha}{N} = \frac{1}{6}\)</span> to every entry, so</div>
+<div class="displaymath process-math" id="star-pagerank-q7-3-1-4">
+\begin{equation*}
+M = \tfrac{1}{2}L + \tfrac{1}{6}J
+= \begin{bmatrix}
+\frac{1}{6} \amp \frac{1}{6} \amp \frac{2}{3} \\[2pt]
+\frac{5}{12} \amp \frac{1}{6} \amp \frac{1}{6} \\[2pt]
+\frac{5}{12} \amp \frac{2}{3} \amp \frac{1}{6}
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Each column sums to <span class="process-math">\(1\text{.}\)</span> <span class="process-math">\(\checkmark\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-pagerank-q7-3-2">
+<div class="para">Solve <span class="process-math">\((M - I)\vec{x} = \vec{0}\text{.}\)</span> Clearing denominators, the first two rows give</div>
+<div class="displaymath process-math" id="star-pagerank-q7-3-2-2">
+\begin{equation*}
+-5x_1 + x_2 + 4x_3 = 0,
+\qquad
+5x_1 - 10x_2 + 2x_3 = 0.
+\end{equation*}
+</div>
+<div class="para">Adding them gives <span class="process-math">\(-9x_2 + 6x_3 = 0\text{,}\)</span> so <span class="process-math">\(x_3 = \tfrac{3}{2}x_2\text{.}\)</span> Substituting into the first, <span class="process-math">\(-5x_1 + x_2 + 6x_2 = 0\text{,}\)</span> so <span class="process-math">\(x_1 = \tfrac{7}{5}x_2\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q7-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-pagerank-q7-3-3">
+<div class="para">Taking <span class="process-math">\(x_2 = 10\)</span> gives <span class="process-math">\(x_1 = 14\)</span> and <span class="process-math">\(x_3 = 15\text{,}\)</span> which sum to <span class="process-math">\(39\text{.}\)</span> Normalizing,</div>
+<div class="displaymath process-math" id="star-pagerank-q7-3-3-5">
+\begin{equation*}
+\vec{x} = \begin{bmatrix} \frac{14}{39} \\[2pt] \frac{10}{39} \\[2pt] \frac{15}{39} \end{bmatrix}
+\approx \begin{bmatrix} 0.359 \\ 0.256 \\ 0.385 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">The third row of <span class="process-math">\(M - I\)</span> is satisfied automatically, as it must be: <span class="process-math">\(5(14) + 8(10) - 10(15) = 0\text{.}\)</span> <span class="process-math">\(\checkmark\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q7-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-pagerank-q7-3-4">
+<dfn class="terminology">Page <span class="process-math">\(3\)</span> ranks highest</dfn>, then page <span class="process-math">\(1\text{,}\)</span> then page <span class="process-math">\(2\text{.}\)</span> That is reasonable: page <span class="process-math">\(3\)</span> is the only page with two incoming links, and one of them comes from page <span class="process-math">\(1\text{,}\)</span> which is itself well ranked. PageRank rewards not just being linked to, but being linked to by pages that are themselves important.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-pagerank-q7-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.20.1"><a tabindex="-1" href="#star-pagerank-q7-3" title="Copy heading and permalink for Solution 10.9.20.1" aria-label="Copy heading and permalink for Solution 10.9.20.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.20: ★ Question 7"><a tabindex="-1" href="#star-pagerank-q7" title="Copy heading and permalink for Exercise 10.9.20: ★ Question 7" aria-label="Copy heading and permalink for Exercise 10.9.20: ★ Question 7">🔗</a></div>
+</article>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise Group 10.9.14–20"><a tabindex="-1" href="#sec-problems-applications-2-3" title="Copy heading and permalink for Exercise Group 10.9.14–20" aria-label="Copy heading and permalink for Exercise Group 10.9.14–20">🔗</a></div>
+</div>
+<div class="exercisegroup" id="sec-problems-applications-2-4">
+<h3 class="heading"><span class="title">Exercise Group.</span></h3>
+<div class="introduction" id="sec-problems-applications-2-4-1">
+<div class="para" id="sec-problems-applications-2-4-1-1">Problems for <a href="sec-coupled-oscillators.html" class="internal" title="Section 9.5: Coupled Oscillators and Normal Modes">Coupled Oscillators and Normal Modes</a> (<a href="sec-coupled-oscillators.html" class="internal" title="Section 9.5: Coupled Oscillators and Normal Modes">Section 9.5</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-problems-applications-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="star-coupled-oscillators-release"><h4 class="heading">
+<span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">★ Two Other Ways to Let Go.</span>
+</h4>
+<div class="para logical" id="star-coupled-oscillators-release-2-1">
+<div class="para">For the coupled carts of <a href="sec-coupled-oscillators.html" class="internal" title="Section 9.5: Coupled Oscillators and Normal Modes">Section 9.5</a>, with normal modes <span class="process-math">\(\vec{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\)</span> at frequency <span class="process-math">\(\omega_1\)</span> and <span class="process-math">\(\vec{x}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}\)</span> at frequency <span class="process-math">\(\omega_2\text{,}\)</span> find <span class="process-math">\(\vec{u}(t)\)</span> when both carts are released from rest with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-coupled-oscillators.html" id="star-coupled-oscillators-release-2-1-7">
+\begin{equation*}
+\text{(a) } \vec{u}(0) = \begin{bmatrix} 1 \\ 1 \end{bmatrix},
+\qquad
+\text{(b) } \vec{u}(0) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-coupled-oscillators-release-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="star-coupled-oscillators-release-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="star-coupled-oscillators-release-3-1">
+<div class="para">In both parts the carts start at rest, so as in <a href="sec-coupled-oscillators.html#eg-coupled-oscillators-release" class="xref" data-knowl="./knowl/xref/eg-coupled-oscillators-release.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.32: Pull One Cart and Let Go">Example 9.32</a> every sine coefficient vanishes and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-coupled-oscillators-release.html" id="star-coupled-oscillators-release-3-1-2">
+\begin{equation*}
+\vec{u}(t) = a_1 \cos(\omega_1 t)\vec{x}_1 + a_2 \cos(\omega_2 t)\vec{x}_2,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a_1, a_2\)</span> are the coordinates of <span class="process-math">\(\vec{u}(0)\)</span> in the eigenvector basis.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-coupled-oscillators-release-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-coupled-oscillators-release-3-2">
+<div class="para">
+<dfn class="terminology">(a)</dfn> Here <span class="process-math">\(\vec{u}(0) = \vec{x}_1\)</span> exactly, so <span class="process-math">\(a_1 = 1\)</span> and <span class="process-math">\(a_2 = 0\text{,}\)</span> and</div>
+<div class="displaymath process-math" id="star-coupled-oscillators-release-3-2-5">
+\begin{equation*}
+\vec{u}(t) = \cos(\omega_1 t) \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Both carts move together, in step, forever: a <em class="emphasis">pure</em> slow mode. The middle spring is never stretched or compressed, so no energy is ever traded, and the motion is exactly periodic with period <span class="process-math">\(2\pi/\omega_1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-coupled-oscillators-release-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="star-coupled-oscillators-release-3-3">
+<div class="para">
+<dfn class="terminology">(b)</dfn> Now solve</div>
+<div class="displaymath process-math" id="star-coupled-oscillators-release-3-3-2">
+\begin{equation*}
+\begin{bmatrix} 0 \\ 1 \end{bmatrix}
+= a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix}
++ a_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">giving <span class="process-math">\(a_1 + a_2 = 0\)</span> and <span class="process-math">\(a_1 - a_2 = 1\text{,}\)</span> so <span class="process-math">\(a_1 = \tfrac{1}{2}\)</span> and <span class="process-math">\(a_2 = -\tfrac{1}{2}\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="star-coupled-oscillators-release-3-3-7">
+\begin{align*}
+u_1(t) \amp = \tfrac{1}{2}\cos(\omega_1 t) - \tfrac{1}{2}\cos(\omega_2 t),\\
+u_2(t) \amp = \tfrac{1}{2}\cos(\omega_1 t) + \tfrac{1}{2}\cos(\omega_2 t).
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-coupled-oscillators-release-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-coupled-oscillators-release-3-4">This is the mirror image of the example: pulling the <em class="emphasis">second</em> cart gives the same messy energy-trading motion with the roles of the carts exchanged. Since <span class="process-math">\(\omega_2 / \omega_1 = \sqrt{3}\)</span> is irrational, the two cosines never come back into step and the motion never exactly repeats.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-coupled-oscillators-release-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="star-coupled-oscillators-release-3-5">The contrast between (a) and (b) is the whole point of diagonalizing: released along an eigenvector the system is simple, and released along anything else it is a superposition of the two simple motions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#star-coupled-oscillators-release-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.9.21.1"><a tabindex="-1" href="#star-coupled-oscillators-release-3" title="Copy heading and permalink for Solution 10.9.21.1" aria-label="Copy heading and permalink for Solution 10.9.21.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 10.9.21: ★ Two Other Ways to Let Go"><a tabindex="-1" href="#star-coupled-oscillators-release" title="Copy heading and permalink for Exercise 10.9.21: ★ Two Other Ways to Let Go" aria-label="Copy heading and permalink for Exercise 10.9.21: ★ Two Other Ways to Let Go">🔗</a></div>
+</article>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise Group 10.9.21–21"><a tabindex="-1" href="#sec-problems-applications-2-4" title="Copy heading and permalink for Exercise Group 10.9.21–21" aria-label="Copy heading and permalink for Exercise Group 10.9.21–21">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercises 10.9"><a tabindex="-1" href="#sec-problems-applications-2" title="Copy heading and permalink for Exercises 10.9" aria-label="Copy heading and permalink for Exercises 10.9">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 10.9: Applications of Spectral Theory"><a tabindex="-1" href="#sec-problems-applications" title="Copy heading and permalink for Section 10.9: Applications of Spectral Theory" aria-label="Copy heading and permalink for Section 10.9: Applications of Spectral Theory">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-problems-eigenvalues.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script><script src="external/custom.js"></script>
+</body>
+</html>

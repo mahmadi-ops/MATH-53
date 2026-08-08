@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.54</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverting an Elementary Matrix by Inspection.</span>
+</h2>
+<div class="para logical">
+<div class="para">Without using the matrix inversion algorithm, find the inverse of the elementary matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+G = \begin{bmatrix}
+1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0 \\
+-3 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inverse-of-elementary-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para">
+<dfn class="terminology">Hint.</dfn> What row operation can be applied to <span class="process-math">\(G\)</span> to transform it to <span class="process-math">\(I_4\text{?}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inverse-of-elementary-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(G\)</span> was obtained from <span class="process-math">\(I_4\)</span> by the row operation <span class="process-math">\(-3R_1 + R_3\text{.}\)</span> The row operation that undoes it is <span class="process-math">\(+3R_1 + R_3\text{,}\)</span> so applying that inverse row operation to <span class="process-math">\(I_4\)</span> gives <span class="process-math">\(G^{-1}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I_4 \xrightarrow[\text{row operation}]{\;-3R_1 + R_3\;} G
+\xrightarrow[\text{inverse row operation}]{\;+3R_1 + R_3\;}
+G^{-1} = \begin{bmatrix}
+1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0 \\
+3 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inverse-of-elementary-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.54.1"><a tabindex="-1" href="#eg-inverse-of-elementary-3" title="Copy heading and permalink for Solution 4.54.1" aria-label="Copy heading and permalink for Solution 4.54.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.54: Inverting an Elementary Matrix by Inspection"><a tabindex="-1" href="#eg-inverse-of-elementary" title="Copy heading and permalink for Example 4.54: Inverting an Elementary Matrix by Inspection" aria-label="Copy heading and permalink for Example 4.54: Inverting an Elementary Matrix by Inspection">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-elementary-matrices.html#eg-inverse-of-elementary">In Context</a></span>
+</body>
+</html>

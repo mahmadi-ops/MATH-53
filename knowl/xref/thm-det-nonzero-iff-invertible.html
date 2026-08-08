@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invertibility and the Determinant.</span>
+</h2>
+<div class="para logical">
+<div class="para">An <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible (Statement 1) if and only if <span class="process-math">\(\det A \neq 0\)</span> (Statement 2). In this case,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(A^{-1}) = \frac{1}{\det A}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-nonzero-iff-invertible-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 6.16: Invertibility and the Determinant"><a tabindex="-1" href="#thm-det-nonzero-iff-invertible" title="Copy heading and permalink for Theorem 6.16: Invertibility and the Determinant" aria-label="Copy heading and permalink for Theorem 6.16: Invertibility and the Determinant">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">
+<dfn class="terminology">Statement 1 <span class="process-math">\(\Longrightarrow\)</span> Statement 2.</dfn> If <span class="process-math">\(A_{n \times n}\)</span> is invertible, then we know that <span class="process-math">\(\left[ A \mid I \right]\)</span> can be carried to <span class="process-math">\(\left[ I \mid A^{-1} \right]\)</span> by elementary operations. We also know that elementary operations are reversible. Hence <span class="process-math">\(A\)</span> can be obtained from <span class="process-math">\(I\)</span> by performing a sequence of elementary operations. By <a href="sec-determinants-row-operations.html#thm-row-ops-determinant" class="xref" data-knowl="./knowl/xref/thm-row-ops-determinant.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.11: Row Operations and Determinants">Theorem 6.11</a>, each such operation multiplies the determinant by a nonzero factor, so we conclude that <span class="process-math">\(\det A = \alpha \det I = \alpha\text{,}\)</span> where <span class="process-math">\(\alpha \in \R\)</span> and <span class="process-math">\(\alpha \neq 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-nonzero-iff-invertible-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<dfn class="terminology">Statement 2 <span class="process-math">\(\Longrightarrow\)</span> Statement 1.</dfn> We show that if Statement 1 is NOT true, then Statement 2 is NOT true. If <span class="process-math">\(A\)</span> is not invertible, then <span class="process-math">\(A\)</span> must have fewer than <span class="process-math">\(n\)</span> pivot positions. This means the reduced row-echelon matrix will have at least one zero on its main diagonal, and since that matrix is upper triangular, its determinant is the product of the entries on the main diagonal, and hence <span class="process-math">\(\det A = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-nonzero-iff-invertible-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The fact that <span class="process-math">\(\det A^{-1} = \dfrac{1}{\det A}\)</span> is shown in <a href="sec-determinants-inverses-products.html#cor-det-inverse" class="xref" data-knowl="./knowl/xref/cor-det-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.20: Determinant of an Inverse">Corollary 6.20</a>, after we discuss <span class="process-math">\(\det(AB) = \det A \det B\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-nonzero-iff-invertible-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.16.1"><a tabindex="-1" href="#thm-det-nonzero-iff-invertible-3" title="Copy heading and permalink for Proof 6.16.1" aria-label="Copy heading and permalink for Proof 6.16.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-determinants-inverses-products.html#thm-det-nonzero-iff-invertible">In Context</a></span>
+</body>
+</html>

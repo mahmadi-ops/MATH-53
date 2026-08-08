@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Eigenvalue of Multiplicity Two.</span>
+</h2>
+<div class="para">Find the eigenvalues and eigenvectors of <span class="process-math">\(A = \begin{bmatrix} 4 \amp 1 \amp 2 \\ 0 \amp 3 \amp -2 \\ 0 \amp -1 \amp 2 \end{bmatrix}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-repeated-eigenvalue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+\det(\lambda I - A)
+\amp = \det \begin{bmatrix}
+\lambda - 4 \amp -1 \amp -2 \\
+0 \amp \lambda - 3 \amp 2 \\
+0 \amp 1 \amp \lambda - 2
+\end{bmatrix}
+= (\lambda - 4) \begin{vmatrix} \lambda - 3 \amp 2 \\ 1 \amp \lambda - 2 \end{vmatrix}\\
+\amp = (\lambda - 4) \left[ (\lambda - 3)(\lambda - 2) - 2 \right]
+= (\lambda - 4)\left( \lambda^2 - 5\lambda + 4 \right)\\
+\amp = (\lambda - 4)^2 (\lambda - 1).
+\end{align*}
+</div>
+<div class="para">We say that <span class="process-math">\(\lambda = 4\)</span> has <dfn class="terminology">multiplicity</dfn> <span class="process-math">\(2\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-repeated-eigenvalue-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">For <span class="process-math">\(\lambda_1 = 4\text{,}\)</span></dfn> solving <span class="process-math">\((4I - A)\vec{x} = \vec{0}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[ \begin{array}{ccc|c}
+0 \amp -1 \amp -2 \amp 0 \\ 0 \amp 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 2 \amp 0
+\end{array} \right]
+\longrightarrow
+\left[ \begin{array}{ccc|c}
+0 \amp 1 \amp 2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
+\end{array} \right]
+\; \Longrightarrow \;
+\vec{x} = \begin{bmatrix} s \\ -2t \\ t \end{bmatrix}
+= s \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
++ t \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Hence the eigenvalue <span class="process-math">\(\lambda_1 = 4\)</span> has two corresponding basic eigenvectors, <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}\text{.}\)</span> Note that the basic eigenvectors are NOT scalar multiples of each other.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-repeated-eigenvalue-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para"><dfn class="terminology">For <span class="process-math">\(\lambda_2 = 1\text{:}\)</span></dfn></div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[ \begin{array}{ccc|c}
+-3 \amp -1 \amp -2 \amp 0 \\ 0 \amp -2 \amp 2 \amp 0 \\ 0 \amp 1 \amp -1 \amp 0
+\end{array} \right]
+\longrightarrow
+\left[ \begin{array}{ccc|c}
+-3 \amp -1 \amp -2 \amp 0 \\ 0 \amp 1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
+\end{array} \right]
+\; \Longrightarrow \;
+\vec{x} = \begin{bmatrix} -t \\ t \\ t \end{bmatrix}
+= t \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-repeated-eigenvalue-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">In summary, <span class="process-math">\(A\)</span> has two eigenvalues <span class="process-math">\(\lambda_1 = 4\)</span> and <span class="process-math">\(\lambda_2 = 1\)</span> with multiplicities <span class="process-math">\(2\)</span> and <span class="process-math">\(1\)</span> respectively. There are two basic eigenvectors corresponding to <span class="process-math">\(\lambda_1 = 4\)</span> and one basic eigenvector corresponding to <span class="process-math">\(\lambda_2 = 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-repeated-eigenvalue-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Note that any linear combination of basic eigenvectors corresponding to the same eigenvalue is also an eigenvector of <span class="process-math">\(A\text{.}\)</span> For instance, since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} = 4 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+\qquad \text{and} \qquad
+A \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} = 4 \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \left( 2 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + 3 \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} \right)
+= 4 \left( 2 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + 3 \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} \right).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-repeated-eigenvalue-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 8.13.1"><a tabindex="-1" href="#eg-repeated-eigenvalue-3" title="Copy heading and permalink for Solution 8.13.1" aria-label="Copy heading and permalink for Solution 8.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.13: An Eigenvalue of Multiplicity Two"><a tabindex="-1" href="#eg-repeated-eigenvalue" title="Copy heading and permalink for Example 8.13: An Eigenvalue of Multiplicity Two" aria-label="Copy heading and permalink for Example 8.13: An Eigenvalue of Multiplicity Two">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-diagonalization.html#eg-repeated-eigenvalue">In Context</a></span>
+</body>
+</html>

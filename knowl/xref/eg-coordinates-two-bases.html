@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Same Vector in Two Coordinate Systems.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\mathcal{B}_1 = \{ \vec{e}_1, \vec{e}_2 \}\)</span> be the standard basis of <span class="process-math">\(\R^2\)</span> and let <span class="process-math">\(\mathcal{B}_2 = \{ \vec{b}_1, \vec{b}_2 \}\)</span> be a second basis, related to the first by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{e}_1 = \tfrac{1}{2}\vec{b}_1,
+\qquad
+\vec{e}_2 = \tfrac{1}{2}\vec{b}_1 + \vec{b}_2.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-coordinates-two-bases-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">A vector <span class="process-math">\(\vec{x}\)</span> with <span class="process-math">\([\vec{x}]_{\mathcal{B}_1} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\text{,}\)</span> i.e., <span class="process-math">\(\vec{x} = \vec{e}_1 + 2\vec{e}_2\text{,}\)</span> has</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[\vec{x}]_{\mathcal{B}_2} = \begin{bmatrix} \frac{3}{2} \\ 2 \end{bmatrix},
+\qquad \text{i.e.} \qquad
+\vec{x} = \tfrac{3}{2}\vec{b}_1 + 2\vec{b}_2.
+\end{equation*}
+</div>
+<div class="para">The vector <span class="process-math">\(\vec{x}\)</span> has not moved; only the grid we measure it against has changed.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-coordinates-two-bases-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Solving the two relations above for <span class="process-math">\(\vec{b}_1\)</span> and <span class="process-math">\(\vec{b}_2\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{b}_1 = 2\vec{e}_1 = \begin{bmatrix} 2 \\ 0 \end{bmatrix},
+\qquad
+\vec{b}_2 = \vec{e}_2 - \vec{e}_1 = \begin{bmatrix} -1 \\ 1 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\mathcal{B}_2\)</span> rules the plane with a grid of parallelograms rather than squares.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-coordinates-two-bases-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:3%;margin-right:3%;grid-template-columns:46.8085106382979% 46.8085106382979%;column-gap:6%;">
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like"><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/pf-standard-grid-diagcess.svg" data-cml="generated/prefigure/pf-standard-grid-annotations.xml"></div></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>In <span class="process-math">\(\mathcal{B}_1\text{:}\)</span> <span class="process-math">\(\vec{x} = \vec{e}_1 + 2\vec{e}_2\text{,}\)</span> so <span class="process-math">\([\vec{x}]_{\mathcal{B}_1} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 7.20(a)"><a tabindex="-1" href="#fig-standard-grid" title="Copy heading and permalink for Figure 7.20(a)" aria-label="Copy heading and permalink for Figure 7.20(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like"><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/pf-skew-grid-diagcess.svg" data-cml="generated/prefigure/pf-skew-grid-annotations.xml"></div></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>In <span class="process-math">\(\mathcal{B}_2\text{:}\)</span> <span class="process-math">\(\vec{x} = \tfrac{3}{2}\vec{b}_1 + 2\vec{b}_2\text{,}\)</span> so <span class="process-math">\([\vec{x}]_{\mathcal{B}_2} = \begin{bmatrix} \frac{3}{2} \\ 2 \end{bmatrix}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 7.20(b)"><a tabindex="-1" href="#fig-skew-grid" title="Copy heading and permalink for Figure 7.20(b)" aria-label="Copy heading and permalink for Figure 7.20(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<details class="instructions diagcess__instructions"><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The same vector <span class="process-math">\(\vec{x}\)</span> measured against two different bases. Its coordinates change because the grid changes, not because the vector moves. In each panel the two scaled basis vectors are laid tip to tail, and <span class="process-math">\(\vec{x}\)</span> is the diagonal of the parallelogram they span.<div class="autopermalink" aria-hidden="true" data-description="Figure 7.20"><a tabindex="-1" href="#fig-two-coordinate-grids" title="Copy heading and permalink for Figure 7.20" aria-label="Copy heading and permalink for Figure 7.20">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Example 7.19: The Same Vector in Two Coordinate Systems"><a tabindex="-1" href="#eg-coordinates-two-bases" title="Copy heading and permalink for Example 7.19: The Same Vector in Two Coordinate Systems" aria-label="Copy heading and permalink for Example 7.19: The Same Vector in Two Coordinate Systems">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-coordinates.html#eg-coordinates-two-bases">In Context</a></span>
+</body>
+</html>
