@@ -52,27 +52,16 @@ html:root:not(.dark-mode) {
     --remark-like-body-background: #fbf7e8;
 }
 
-/* Table of contents: moon grey (#909090) background. The per-level
-   item backgrounds default to the page background, so they are set
-   too; highlighted/active items keep the theme's dark accent. */
+/* Examples and solutions share a light neutral grey background.
+   They render as expandable knowls, whose open panels take the
+   generic knowl background, so those are painted directly as well. */
 html:root:not(.dark-mode) {
-    --toc-background: #909090;
-    --toclevel1-background: #909090;
-    --toclevel2-background: #909090;
-    --toclevel3-background: #909090;
-}
-
-/* Examples and solutions share the same moon grey background as the
-   table of contents. They render as expandable knowls, whose open
-   panels take the generic knowl background, so those are painted
-   directly as well. */
-html:root:not(.dark-mode) {
-    --example-like-body-background: #909090;
-    --solution-like-body-background: #909090;
+    --example-like-body-background: #d9d9d9;
+    --solution-like-body-background: #d9d9d9;
 }
 html:root:not(.dark-mode) .example-like.knowl__content,
 html:root:not(.dark-mode) .solution-like.knowl__content {
-    background-color: #909090;
+    background-color: #d9d9d9;
 }
 
 /* Interactive figures: PreTeXt bakes a pixel size onto the iframe at
