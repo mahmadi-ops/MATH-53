@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-epidemic-sage" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sage Lab: Epidemic Dynamics</title>
+
+  <introduction>
+    <p>
+      In this section we model the spread of a disease through a population as a Markov
+      chain, and we use the computer algebra system
+      <url href="https://www.sagemath.org" visual="sagemath.org">Sage</url> to simulate
+      the model and plot how the population evolves over time. In the process we will
+      revisit the main themes of this chapter: transition matrices, stochastic matrices,
+      steady states, and eigenvalues.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-epidemic-model">
+    <title>The Model</title>
+
+    <p>
+      A disease is introduced into a population. In each period (say, days) we count the
+      fraction of the population that is in four different infection states:
+      <ul>
+        <li>
+          <p>
+            <term>Susceptible.</term> These individuals can acquire the disease the next
+            day.
+          </p>
+        </li>
+        <li>
+          <p><term>Infected.</term> These individuals have the disease.</p>
+        </li>
+        <li>
+          <p>
+            <term>Recovered</term> (and immune). These individuals had the disease and
+            survived, and now have immunity.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Deceased.</term> These individuals had the disease, and unfortunately
+            died from it.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Let <m>s_k</m>, <m>i_k</m>, <m>r_k</m>, and <m>d_k</m> be the fractions of the
+      population in each of the four states on day <m>k</m>, and collect them into the
+      state vector
+      <md>
+        \vec{S}_k = \begin{bmatrix} s_k \\ i_k \\ r_k \\ d_k \end{bmatrix} \in \R^4.
+      </md>
+      For example,
+      <m>\vec{S}_k = \begin{bmatrix} 0.75 \\ 0.10 \\ 0.10 \\ 0.05 \end{bmatrix}</m>
+      means that on day <m>k</m>, <m>75\%</m> of the population is susceptible,
+      <m>10\%</m> is infected, <m>10\%</m> is recovered and immune, and <m>5\%</m> has
+      died from the disease. Note that the entries of <m>\vec{S}_k</m> are nonnegative
+      and add up to one, so <m>\vec{S}_k</m> is a probability vector.
+    </p>
+
+    <p>
+      Our model assumes the following happens over each day.
+      <ul>
+        <li>
+          <p>
+            <m>5\%</m> of the susceptible population will acquire the disease. (The
+            other <m>95\%</m> will remain susceptible.)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1\%</m> of the infected population will die from the disease, <m>10\%</m>
+            will recover and acquire immunity, and <m>4\%</m> will recover and not
+            acquire immunity (and therefore, become susceptible). The remaining
+            <m>85\%</m> will remain infected.
+          </p>
+        </li>
+        <li>
+          <p>
+            Those who have recovered with immunity and those who have died remain in
+            those states.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Let us translate these rules into equations. Tomorrow's susceptible individuals
+      are today's susceptible individuals who did not become infected, which is
+      <m>0.95\,s_k</m>, plus today's infected individuals who recovered without
+      immunity, which is <m>0.04\,i_k</m>. Tomorrow's infected individuals are those
+      who remain infected, <m>0.85\,i_k</m>, plus the susceptible individuals who
+      acquire the disease, <m>0.05\,s_k</m>. Similar arguments for the last two states
+      give the system
+      <md>
+        <mrow>s_{k+1} \amp = 0.95\,s_k + 0.04\,i_k,</mrow>
+        <mrow>i_{k+1} \amp = 0.05\,s_k + 0.85\,i_k,</mrow>
+        <mrow>r_{k+1} \amp = r_k + 0.10\,i_k,</mrow>
+        <mrow>d_{k+1} \amp = d_k + 0.01\,i_k.</mrow>
+      </md>
+      We put these together in matrix form as <m>\vec{S}_{k+1} = T\vec{S}_k</m>, where
+      the transition matrix is
+      <md>
+        T = \begin{bmatrix}
+          0.95 \amp 0.04 \amp 0 \amp 0 \\
+          0.05 \amp 0.85 \amp 0 \amp 0 \\
+          0 \amp 0.10 \amp 1 \amp 0 \\
+          0 \amp 0.01 \amp 0 \amp 1
+        \end{bmatrix}.
+      </md>
+    </p>
+
+    <p>
+      Each column of <m>T</m> is a probability vector, so <m>T</m> is a stochastic
+      matrix as in <xref ref="def-stochastic-matrix" text="type-global"/>. We will
+      simulate the model starting from
+      <m>\vec{S}_0 = \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}</m>: everyone is
+      susceptible, and the disease is about to be introduced. Iterating
+      <m>\vec{S}_{k+1} = T\vec{S}_k</m> by hand for hundreds of days is hopeless, so we
+      hand the iteration to Sage.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-epidemic-sage-setup">
+    <title>Setting Up the Model in Sage</title>
+
+    <p>
+      Each block of code below is an interactive <term>Sage cell</term>: press
+      <term>Evaluate</term> to run it in your browser. (You can also copy the code into
+      <url href="https://sagecell.sagemath.org" visual="sagecell.sagemath.org">the Sage
+      cell server</url> or a CoCalc worksheet.) Within a single page the cells share
+      their variables, but they must be evaluated in order, so run each cell as you
+      reach it.
+    </p>
+
+    <p>
+      <term>Step 1: enter <m>T</m> and <m>\vec{S}_0</m>.</term>
+      In Sage, <c>matrix(QQ, [...])</c> builds a matrix from a list of rows, and
+      <c>vector(QQ, [...])</c> builds a vector. The ring <c>QQ</c> tells Sage to store
+      the entries as exact rational numbers, so no rounding errors accumulate during
+      the iteration.
+    </p>
+
+    <sage>
+      <input>
+        T = matrix(QQ, [[0.95, 0.04, 0, 0],
+                        [0.05, 0.85, 0, 0],
+                        [0,    0.10, 1, 0],
+                        [0,    0.01, 0, 1]])
+        S0 = vector(QQ, [1, 0, 0, 0])
+        T
+      </input>
+    </sage>
+
+    <p>
+      <term>Step 2: check that <m>T</m> is stochastic.</term>
+      Before simulating, it is good practice to make sure we typed the matrix
+      correctly. The command below computes the sum of the entries of each column of
+      <m>T</m>; every sum should equal one.
+    </p>
+
+    <sage>
+      <input>
+        [sum(col) for col in T.columns()]
+      </input>
+    </sage>
+
+    <p>
+      <term>Step 3: compute the first few days.</term>
+      Matrix-vector multiplication in Sage is written <c>T*S</c>, so one day of the
+      epidemic is one multiplication. The loop below computes
+      <m>\vec{S}_1, \ldots, \vec{S}_5</m>; the method <c>.n(digits=4)</c> displays each
+      exact answer as a decimal with four significant digits.
+    </p>
+
+    <sage>
+      <input>
+        S = S0
+        for k in range(1, 6):
+            S = T*S
+            print(k, S.n(digits=4))
+      </input>
+    </sage>
+
+    <p>
+      Check the first line against the model: after one day we expect
+      <m>\vec{S}_1 = T\vec{S}_0 = \begin{bmatrix} 0.95 \\ 0.05 \\ 0 \\ 0 \end{bmatrix}</m>,
+      since on day zero there is nobody infected yet, and <m>5\%</m> of the susceptible
+      population acquires the disease.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-epidemic-sage-plot">
+    <title>Simulating and Plotting the Epidemic</title>
+
+    <p>
+      <term>Step 4: simulate <m>200</m> days and plot the four fractions.</term>
+      To draw the graphs we store the whole history of the simulation: the list
+      <c>history</c> holds <m>\vec{S}_0, \vec{S}_1, \ldots, \vec{S}_{200}</m>, where
+      each new state is obtained by multiplying the previous one
+      (<c>history[-1]</c> is the last entry of the list) by <m>T</m>. Then, for each
+      state <m>j = 1, 2, 3, 4</m>, the command <c>line</c> plots the points
+      <m>\left( k, (\vec{S}_k)_j \right)</m> for <m>k = 0, 1, \ldots, 200</m> and
+      connects them with a curve. (In Sage, list and vector indices start at zero, so
+      the entry <m>(\vec{S}_k)_j</m> is written <c>history[k][j-1]</c>; the loop
+      variable <c>j</c> below runs through <m>0, 1, 2, 3</m>.) Adding the four plots
+      combines them into a single figure with a legend.
+    </p>
+
+    <sage>
+      <input>
+        N = 200
+        history = [S0]
+        for k in range(N):
+            history.append(T * history[-1])
+
+        labels = ["susceptible", "infected", "recovered", "deceased"]
+        colors = ["blue", "red", "green", "black"]
+        p = sum(line([(k, history[k][j]) for k in range(N + 1)],
+                     color=colors[j], legend_label=labels[j], thickness=2)
+                for j in range(4))
+        p.axes_labels(["day $k$", "fraction of population"])
+        p.show(ymin=0, ymax=1)
+      </input>
+    </sage>
+
+    <p>
+      You should see the susceptible fraction decay from one towards zero, the infected
+      fraction rise to a peak of roughly <m>21\%</m> around day <m>11</m> and then die
+      out, and the recovered and deceased fractions climb towards limiting values. The
+      simulation shows that after around <m>100</m> days, the state converges to one
+      with a little under <m>10\%</m> of the population deceased, and the remaining
+      population immune.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-epidemic-long-run">
+    <title>The Long Run</title>
+
+    <p>
+      <term>Step 5: where does the epidemic end?</term>
+      The plot suggests that the state vectors converge. To see the limit numerically,
+      ask Sage for a state far in the future, say
+      <m>\vec{S}_{1000} = T^{1000}\,\vec{S}_0</m>.
+    </p>
+
+    <sage>
+      <input>
+        (T^1000 * S0).n(digits=4)
+      </input>
+    </sage>
+
+    <p>
+      So in the long run about <m>90.9\%</m> of the population ends up recovered and
+      immune, and about <m>9.1\%</m> deceased. (In <xref ref="exercises-epidemic-sage"
+      text="type-global"/> you will show that the exact limits are
+      <m>\frac{10}{11}</m> and <m>\frac{1}{11}</m>.)
+    </p>
+
+    <p>
+      <term>Step 6: compare with the eigenvalue point of view.</term>
+      By <xref ref="eg-stochastic-eigenvalue-one" text="type-global"/>, the stochastic
+      matrix <m>T</m> must have eigenvalue one. Let us ask Sage for all the eigenvalues
+      and eigenvectors of <m>T</m>. The command below returns a list of triples
+      <c>(eigenvalue, [eigenvectors], multiplicity)</c>.
+    </p>
+
+    <sage>
+      <input>
+        T.eigenvectors_right()
+      </input>
+    </sage>
+
+    <p>
+      Sage reports the eigenvalue <m>\lambda = 1</m> with multiplicity <em>two</em>,
+      together with the two independent eigenvectors
+      <md>
+        \vec{x}_1 = \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix},
+        \qquad
+        \vec{x}_2 = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix},
+      </md>
+      and two further eigenvalues with absolute value less than one. This is consistent
+      with what the simulation showed: the states <q>everyone recovered</q> and
+      <q>everyone deceased</q> are both fixed by <m>T</m>, and so is any probability
+      vector <m>a\vec{x}_1 + b\vec{x}_2</m> built from them. The epidemic therefore has
+      infinitely many steady states, and which one the population converges to depends
+      on the initial state <m>\vec{S}_0</m>.
+    </p>
+
+    <remark xml:id="rem-epidemic-not-regular">
+      <title>Why the Steady State Is Not Unique</title>
+      <p>
+        Does this contradict <xref ref="thm-unique-steady-state" text="type-global"/>?
+        No: that theorem assumes the transition matrix is <em>regular</em>, and
+        <m>T</m> is not. However high the power <m>T^k</m>, its third and fourth
+        columns remain <m>\vec{x}_1</m> and <m>\vec{x}_2</m> (recovered and deceased
+        individuals never leave their states), so <m>T^k</m> always has zero entries.
+        You can confirm this in Sage by evaluating, say, <c>T^50</c>.
+      </p>
+    </remark>
+  </subsection>
+
+  <exercises xml:id="exercises-epidemic-sage">
+
+    <exercise xml:id="exer-epidemic-initial-state">
+      <statement>
+        <p>
+          Rerun the simulation of <xref ref="subsec-epidemic-sage-plot"
+          text="type-global"/> with the initial state
+          <m>\vec{S}_0 = \begin{bmatrix} 0.75 \\ 0.10 \\ 0.10 \\ 0.05 \end{bmatrix}</m>.
+          Do the state vectors still converge? Do they converge to the same limit as
+          before? Explain how your answer is consistent with
+          <xref ref="rem-epidemic-not-regular" text="type-global"/>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="exer-epidemic-vaccination">
+      <statement>
+        <p>
+          Suppose a vaccine becomes available, and each day <m>2\%</m> of the
+          susceptible population is vaccinated, acquiring immunity without ever being
+          infected (so vaccinated individuals move directly from susceptible to
+          recovered). Modify the equations of the model, write down the new transition
+          matrix, and adapt your Sage simulation. How does the graph change, and what
+          fraction of the population is deceased in the long run?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="exer-epidemic-exact-limit">
+      <statement>
+        <p>
+          Show that with <m>\vec{S}_0 = \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}</m>,
+          the deceased fraction converges to exactly <m>\frac{1}{11}</m>, and the
+          recovered fraction to exactly <m>\frac{10}{11}</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Each day, <m>0.01\,i_k</m> is added to the deceased fraction and
+          <m>0.10\,i_k</m> to the recovered fraction, so their limits are
+          <m>0.01\sum_{k=0}^{\infty} i_k</m> and <m>0.10\sum_{k=0}^{\infty} i_k</m> in
+          the ratio <m>1 : 10</m>. Since eventually everyone is either recovered or
+          deceased, the two limits add up to one.
+        </p>
+      </hint>
+    </exercise>
+
+    <exercise xml:id="exer-epidemic-peak">
+      <statement>
+        <p>
+          Use your <c>history</c> list from the simulation to find the day on which the
+          infected fraction peaks, and the value of the peak. (Try
+          <c>max((history[k][1], k) for k in range(N + 1))</c>, which compares the
+          pairs <m>\left( i_k, k \right)</m>.)
+        </p>
+      </statement>
+    </exercise>
+
+  </exercises>
+</section>
