@@ -52,14 +52,17 @@ html:root:not(.dark-mode) {
     --remark-like-body-background: #fbf7e8;
 }
 
-/* Examples and solutions share a light neutral grey background.
-   They render as expandable knowls, whose open panels take the
-   generic knowl background, so those are painted directly as well. */
+/* Examples on a light neutral grey, with the problem statement a
+   shade lighter (#e6e6e6) than the solution (#d9d9d9). They render
+   as expandable knowls, whose open panels take the generic knowl
+   background, so those are painted directly as well. */
 html:root:not(.dark-mode) {
-    --example-like-body-background: #d9d9d9;
+    --example-like-body-background: #e6e6e6;
     --solution-like-body-background: #d9d9d9;
 }
-html:root:not(.dark-mode) .example-like.knowl__content,
+html:root:not(.dark-mode) .example-like.knowl__content {
+    background-color: #e6e6e6;
+}
 html:root:not(.dark-mode) .solution-like.knowl__content {
     background-color: #d9d9d9;
 }
