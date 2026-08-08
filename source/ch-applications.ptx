@@ -6,13 +6,15 @@
       A process that moves probability around a finite set of states is described by a
       matrix, and its long-run behaviour is governed by the eigenvector belonging to
       eigenvalue one. This chapter follows that idea from a toy example about lunch
-      through population models to the algorithm that ranked the early web, and closes
+      through population models and a computer simulation of an epidemic to the
+      algorithm that ranked the early web, and closes
       with a physical system<mdash/>two carts coupled by springs<mdash/>whose vibrations
       are untangled by diagonalization.
     </p>
   </introduction>
   <xi:include href="applications/sec-markov-chains.ptx" />
   <xi:include href="applications/sec-more-markov.ptx" />
+  <xi:include href="applications/sec-epidemic-sage.ptx" />
   <xi:include href="applications/sec-pagerank.ptx" />
   <xi:include href="applications/sec-coupled-oscillators.ptx" />
 </chapter>
