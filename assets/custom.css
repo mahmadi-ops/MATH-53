@@ -52,6 +52,16 @@ html:root:not(.dark-mode) {
     --remark-like-body-background: #fbf7e8;
 }
 
+/* Table of contents: moon grey (#909090) background. The per-level
+   item backgrounds default to the page background, so they are set
+   too; highlighted/active items keep the theme's dark accent. */
+html:root:not(.dark-mode) {
+    --toc-background: #909090;
+    --toclevel1-background: #909090;
+    --toclevel2-background: #909090;
+    --toclevel3-background: #909090;
+}
+
 /* Interactive figures: PreTeXt bakes a pixel size onto the iframe at
    build time from the theme's default column, so it never scales.
    Make it fluid, keeping the 5:4 aspect the source asks for. */
