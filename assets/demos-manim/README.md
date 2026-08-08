@@ -48,3 +48,26 @@ the animate button, ambient rotation and drag-to-rotate for 3D, and
 | `theme`| `dark` (default) or `light`                                    |
 
     columns.html?mat=1,2,1,3,2:1,3,6,0,2:3,7,8,6,6&range=9&theme=dark
+
+## volume.html
+
+`volume.html` illustrates vol P(u,v,w) = |det[u|v|w]|: the parallelepiped
+spanned by three draggable vectors in `R^3`, with the base parallelogram
+shaded, the normal `n = u x v` drawn, the dashed height drop from the tip of
+`w`, and a live readout of base area, height, determinant, and volume.
+Params: `u`, `v`, `w` (comma-separated vectors), `range` (default 5),
+`theme`. Same manim styling and behaviors (build-in, replay, drag-rotate,
+reduced motion) as the other demos.
+
+    volume.html?u=2,0,0&v=1,2,0&w=0.5,0.5,1.5&theme=dark
+
+## jacobian.html
+
+`jacobian.html` shows the Jacobian determinant of `T(x) = Ax` as a volume
+factor: a slider (and looping animate button) morphs the identity into `A`
+through `A_t = (1-t)I + tA`, carrying the dashed unit cube to the
+parallelepiped with edges `A_t e_1, A_t e_2, A_t e_3`, while a readout
+tracks `det A_t` = volume of the image box. Params: `mat` (3 rows), `range`
+(default: auto), `theme`.
+
+    jacobian.html?mat=2,1,0:0,3,0:0,0,1&theme=dark
