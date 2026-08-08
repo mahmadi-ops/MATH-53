@@ -67,6 +67,17 @@ html:root:not(.dark-mode) .solution-like.knowl__content {
     background-color: #d9d9d9;
 }
 
+/* Book, chapter, and section titles in black instead of the theme's
+   navy. */
+html:root:not(.dark-mode) {
+    --doc-title-color: black;
+    --body-title-color: black;
+}
+html:root:not(.dark-mode) .ptx-masthead .title,
+html:root:not(.dark-mode) .ptx-masthead .subtitle {
+    color: black;
+}
+
 /* Clicked/active and hovered items in the table of contents use the
    same dark grey as the example titles instead of the theme's blue. */
 html:root:not(.dark-mode) {
