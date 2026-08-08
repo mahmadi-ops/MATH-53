@@ -13,9 +13,124 @@
       draw a striking consequence for the linear transformation
       <m>T(\vec{x}) = A\vec{x}</m>: it scales the volume of every box by the same
       factor <m>|\det A|</m> <mdash/> a number that calculus calls the
-      <term>Jacobian determinant</term> of <m>T</m>.
+      <term>Jacobian determinant</term> of <m>T</m>. We begin in two dimensions, with
+      the picture from calculus that explains why anyone would want such a scaling
+      factor in the first place.
     </p>
   </introduction>
+
+  <subsection xml:id="subsec-jacobian-2d">
+    <title>Motivation: Rectangles into Parallelograms</title>
+
+    <p>
+      Consider a transformation <mdash/> not necessarily linear <mdash/> that carries
+      the Cartesian <m>xy</m>-plane to the <m>uv</m>-plane,
+      <md>
+        T(x, y) = \big( u(x, y), \; v(x, y) \big),
+      </md>
+      where <m>u</m> and <m>v</m> are differentiable functions of <m>x</m> and
+      <m>y</m>. Under such a map, straight lines generally bend: for instance,
+      <m>u = x^2 - y^2</m>, <m>v = 2xy</m> sends the vertical and horizontal grid
+      lines of the <m>xy</m>-plane to two families of parabolas in the
+      <m>uv</m>-plane. A small rectangle of the grid is therefore carried to a small
+      <em>curved</em> patch <mdash/> but only slightly curved, and here is the key
+      idea: <em>locally, the image of a rectangle is approximately a
+      parallelogram</em>.
+    </p>
+
+    <p>
+      To see why, take the rectangle <m>R</m> with corner <m>(x_0, y_0)</m> and side
+      lengths <m>\Delta x</m> and <m>\Delta y</m>. Its corner is sent to
+      <m>(u_0, v_0) = T(x_0, y_0)</m>. Where do the two adjacent corners go? By the
+      linear approximation of calculus, applied to each of <m>u</m> and <m>v</m> (all
+      partial derivatives evaluated at <m>(x_0, y_0)</m>),
+      <md>
+        <mrow>
+          T(x_0 + \Delta x, \; y_0)
+          \amp \approx \left( u_0 + \frac{\partial u}{\partial x}\Delta x, \;\;
+            v_0 + \frac{\partial v}{\partial x}\Delta x \right),
+        </mrow>
+        <mrow>
+          T(x_0, \; y_0 + \Delta y)
+          \amp \approx \left( u_0 + \frac{\partial u}{\partial y}\Delta y, \;\;
+            v_0 + \frac{\partial v}{\partial y}\Delta y \right).
+        </mrow>
+      </md>
+      In the <m>uv</m>-plane, then, the two edges of <m>R</m> leaving the corner
+      <m>(x_0, y_0)</m> are carried, approximately, onto the two vectors
+      <md>
+        \vec{a} = \Delta x
+          \begin{bmatrix} \dfrac{\partial u}{\partial x} \\[2ex] \dfrac{\partial v}{\partial x} \end{bmatrix},
+        \qquad
+        \vec{b} = \Delta y
+          \begin{bmatrix} \dfrac{\partial u}{\partial y} \\[2ex] \dfrac{\partial v}{\partial y} \end{bmatrix},
+      </md>
+      based at <m>(u_0, v_0)</m>, and the curved image patch is approximately the
+      parallelogram they span.
+    </p>
+
+    <p>
+      Now compare areas. The area of a parallelogram in the plane spanned by two
+      vectors is the absolute value of the <m>2 \times 2</m> determinant of their
+      coordinates <mdash/> the fact quoted in
+      <xref ref="sec-cofactor-expansion" text="type-global"/>, and a special case of
+      the tools below: give both vectors a third coordinate <m>0</m>, and
+      <xref ref="lem-cross-area" text="type-global"/> hands back exactly the
+      <m>2 \times 2</m> determinant. Therefore
+      <md>
+        \text{area of parallelogram}
+        = \left| \det \left[ \, \vec{a} \; | \; \vec{b} \, \right] \right|
+        = \left| \det \begin{bmatrix}
+            \dfrac{\partial u}{\partial x} \amp \dfrac{\partial u}{\partial y} \\[2ex]
+            \dfrac{\partial v}{\partial x} \amp \dfrac{\partial v}{\partial y}
+          \end{bmatrix} \right| \, \Delta x \, \Delta y,
+      </md>
+      after factoring <m>\Delta x</m> out of the first column and <m>\Delta y</m> out
+      of the second (<xref ref="sec-determinants-row-operations" text="type-global"/>).
+      Since <m>\Delta x \, \Delta y</m> is the area of the rectangle <m>R</m>, the
+      determinant in the middle <mdash/> the <term>Jacobian determinant</term> of the
+      transformation, often written
+      <m>\dfrac{\partial(u, v)}{\partial(x, y)}</m> <mdash/> is precisely the local
+      area-magnification factor:
+      <md>
+        \text{area of image} \approx
+        \left| \frac{\partial(u, v)}{\partial(x, y)} \right| \cdot \text{area of } R.
+      </md>
+    </p>
+
+    <p>
+      One more observation ties this to linear algebra. Collect the four partial
+      derivatives into the <term>Jacobian matrix</term>
+      <md>
+        DT = \begin{bmatrix}
+          \dfrac{\partial u}{\partial x} \amp \dfrac{\partial u}{\partial y} \\[2ex]
+          \dfrac{\partial v}{\partial x} \amp \dfrac{\partial v}{\partial y}
+        \end{bmatrix},
+      </md>
+      evaluated at <m>(x_0, y_0)</m>. The two approximations above are exactly the
+      statement
+      <md>
+        T(x, y) \approx T(x_0, y_0)
+        + DT \begin{bmatrix} x - x_0 \\ y - y_0 \end{bmatrix}
+        \qquad \text{near } (x_0, y_0),
+      </md>
+      and the <em>linear transformation</em> with matrix <m>DT</m> carries the edge
+      vectors <m>\Delta x \, \vec{e}_1</m> and <m>\Delta y \, \vec{e}_2</m> of the
+      rectangle exactly onto <m>\vec{a}</m> and <m>\vec{b}</m>; the term
+      <m>T(x_0, y_0)</m> merely translates the result into place. So the two
+      approximations are one and the same:
+      <em>replacing the curved image patch by a parallelogram amounts to replacing
+      <m>T</m>, near the point, by a linear transformation</em> <mdash/> and the
+      determinant of that linear transformation measures how areas scale.
+    </p>
+
+    <p>
+      This is why the question <q>how does a linear transformation scale area and
+      volume?</q> deserves an exact answer. The rest of this section gives one in
+      <m>\R^3</m>: for a genuinely linear map there is no approximation at all, and
+      the scaling factor is exactly the absolute determinant.
+    </p>
+  </subsection>
 
   <subsection xml:id="subsec-dot-cross-tools">
     <title>Two Tools: the Dot Product and the Cross Product</title>
