@@ -113,7 +113,7 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
     </button>
     <button type="button" id="pick-claude">
       <span class="pname">Anthropic Claude</span>
-      <span class="pdesc">Needs ~$5 API credit (lasts a whole quarter)</span>
+      <span class="pdesc">New accounts get ~$5 free credit (lasts a quarter)</span>
     </button>
   </div>
 
@@ -130,8 +130,9 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
 
   <div id="claude-steps" class="hidden">
     <ol>
-      <li>Go to <a href="https://console.anthropic.com/" target="_blank" rel="noopener">console.anthropic.com</a> and create an account.</li>
-      <li>Add credit under <b>Billing</b> (minimum $5 &#8212; a tutoring session costs about a cent).</li>
+      <li>Go to <a href="https://console.anthropic.com/" target="_blank" rel="noopener">console.anthropic.com</a> and create an account (phone verification, no credit card).</li>
+      <li>New accounts include about $5 of free API credit &#8212; plenty for a whole quarter of
+          hints. If yours has none, add credit under <b>Billing</b>.</li>
       <li>Create a key under <b>API keys</b> and paste it below.</li>
     </ol>
     <input id="keyinput-claude" type="password" placeholder="Paste your API key (sk-ant-...)" autocomplete="off">
