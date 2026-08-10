@@ -94,18 +94,21 @@ html:root:not(.dark-mode) {
     --remark-like-body-background: #fbf7e8;
 }
 
-/* Examples on a light neutral grey, with the problem statement a
-   shade lighter (#e6e6e6) than the solution (#d9d9d9). They render
-   as expandable knowls, whose open panels take the generic knowl
-   background, so those are painted directly as well. */
+/* Examples on a pale tint of the hyperlink olive, with the problem
+   statement a shade lighter (#EDF0E6) than the solution (#DDE2CF).
+   They render as expandable knowls, whose open panels take the knowl
+   background, so those are painted directly as well. Proofs keep the
+   neutral grey #d9d9d9, matching their inline panels above. */
 html:root:not(.dark-mode) {
-    --example-like-body-background: #e6e6e6;
-    --solution-like-body-background: #d9d9d9;
+    --example-like-body-background: #EDF0E6;
+    --solution-like-body-background: #DDE2CF;
 }
 html:root:not(.dark-mode) .example-like.knowl__content {
-    background-color: #e6e6e6;
+    background-color: #EDF0E6;
 }
-html:root:not(.dark-mode) .solution-like.knowl__content,
+html:root:not(.dark-mode) .solution-like.knowl__content {
+    background-color: #DDE2CF;
+}
 html:root:not(.dark-mode) .hiddenproof.knowl__content {
     background-color: #d9d9d9;
 }
@@ -123,7 +126,8 @@ html:root:not(.dark-mode) .ptx-masthead .subtitle {
 
 /* Hyperlinks in olive green instead of the theme's blue. This olive is
    dark enough to stay AA-legible (>=4.5:1) on every background the book
-   uses, including the proof grey #d9d9d9. --knowl-link-color follows
+   uses, including the proof grey #d9d9d9 and the solution olive
+   #DDE2CF. --knowl-link-color follows
    --link-text-color, so cross-reference knowls come along; the table of
    contents sets its own colors and is unaffected. */
 html:root:not(.dark-mode) {
@@ -140,26 +144,33 @@ html:root:not(.dark-mode) {
 }
 
 /* Clicked/active and hovered items in the table of contents use the
-   same dark grey as the example titles instead of the theme's blue. */
+   same dark olive as the example titles instead of the theme's blue. */
 html:root:not(.dark-mode) {
-    --tocitem-active-background: #404040;
-    --tocitem-highlight-background: #404040;
+    --tocitem-active-background: #3A4A1C;
+    --tocitem-highlight-background: #3A4A1C;
 }
 
-/* Example, solution, and proof titles in dark grey. */
+/* Example and solution titles in the dark olive, a step down from the
+   #4A5D23 of prose links so the headings read as headings. Proof
+   titles stay dark grey. */
 html:root:not(.dark-mode) details.example-like > summary.knowl__link,
-html:root:not(.dark-mode) details.solution-like > summary.knowl__link,
+html:root:not(.dark-mode) details.solution-like > summary.knowl__link {
+    color: #3A4A1C;
+}
 html:root:not(.dark-mode) details.hiddenproof > summary.knowl__link {
     color: #404040;
 }
 
-/* The pill behind the example, solution, and proof titles (shown on
-   hover and while open) matches the statement background instead of
-   the theme's pale blue. */
+/* The pill behind the example and solution titles (shown on hover and
+   while open) matches the statement background, which is also the
+   --knowl-background used for cross-reference pills. The proof pill
+   keeps the grey it had. */
 html:root:not(.dark-mode) details.example-like > summary.knowl__link:is(:hover, :focus, [open]),
 html:root:not(.dark-mode) details.example-like[open] > summary.knowl__link,
 html:root:not(.dark-mode) details.solution-like > summary.knowl__link:is(:hover, :focus, [open]),
-html:root:not(.dark-mode) details.solution-like[open] > summary.knowl__link,
+html:root:not(.dark-mode) details.solution-like[open] > summary.knowl__link {
+    background-color: #EDF0E6;
+}
 html:root:not(.dark-mode) details.hiddenproof > summary.knowl__link:is(:hover, :focus, [open]),
 html:root:not(.dark-mode) details.hiddenproof[open] > summary.knowl__link {
     background-color: #e6e6e6;
