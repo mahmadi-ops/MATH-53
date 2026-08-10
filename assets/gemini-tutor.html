@@ -125,7 +125,11 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
 // at the top of this file before enabling.
 const INSTRUCTOR_API_KEY = "";
 
-const MODEL = "gemini-2.5-flash";
+// "gemini-flash-latest" is Google's rolling alias for the newest Flash model,
+// so the widget keeps working as models are retired. The rest are concrete
+// fallbacks tried in order if a model is rejected as unavailable.
+const MODEL_CANDIDATES = ["gemini-flash-latest", "gemini-3.6-flash", "gemini-3.5-flash"];
+let modelIndex = 0;
 const STORAGE_KEY = "math53-gemini-key";
 
 const SYSTEM_INSTRUCTION = `You are a Socratic tutor for MATH 53 (Santa Clara University). You work with students on exactly one problem, "The Geometry of a Solution Set": You have a system of $k$ linear equations in two variables, $k \\geq 2$. Explain the geometric significance of (1) no solution; (2) a unique solution; (3) an infinite number of solutions.
@@ -189,21 +193,32 @@ function show(view) {
 
 /* ===== Gemini API ======================================================== */
 
+function modelUnavailable(status, message) {
+  return status === 404 || /no longer available|not found|not supported|deprecated/i.test(message || "");
+}
+
 async function askGemini() {
-  const url = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL + ":generateContent";
   const body = {
     systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
     contents: history.map(m => ({ role: m.role, parts: [{ text: m.text }] })),
     generationConfig: { temperature: 0.7, maxOutputTokens: 2048 },
   };
-  const resp = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey() },
-    body: JSON.stringify(body),
-  });
-  if (!resp.ok) {
+  let resp;
+  while (true) {
+    const url = "https://generativelanguage.googleapis.com/v1beta/models/"
+      + MODEL_CANDIDATES[modelIndex] + ":generateContent";
+    resp = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey() },
+      body: JSON.stringify(body),
+    });
+    if (resp.ok) break;
     let detail = "";
     try { detail = (await resp.json()).error.message; } catch (e) {}
+    if (modelUnavailable(resp.status, detail) && modelIndex < MODEL_CANDIDATES.length - 1) {
+      modelIndex++;      // this model was retired; try the next candidate
+      continue;
+    }
     const err = new Error(detail || ("Request failed (" + resp.status + ")"));
     err.status = resp.status;
     throw err;
