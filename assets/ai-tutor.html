@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Socratic Tutor</title>
 <!--
-  Socratic AI tutor widget for MATH 53.
-  The system instructions (SYSTEM_INSTRUCTION below) are sent to Gemini in the
-  background; students never see them and cannot get the final answer.
+  Socratic AI tutor widget for MATH 53. Supports two providers:
+    - Google Gemini (free-tier API keys from AI Studio)
+    - Anthropic Claude (API keys need a small prepaid credit balance)
+  The system instructions (SYSTEM_INSTRUCTION below) are sent in the background;
+  students never see them and cannot get the final answer.
 
-  API key: by default each student pastes their own free Google AI Studio key
-  the first time (stored only in their browser's localStorage). To skip that
-  step for everyone, put a course API key in INSTRUCTOR_API_KEY below — but be
-  aware that any key published on a public site can be extracted and used by
-  anyone, so only do this with a free-tier key, ideally restricted to this
-  site's domain in Google Cloud console.
+  API keys: by default each student pastes their own key the first time
+  (stored only in their browser's localStorage). To skip that step for
+  everyone, put a course key in INSTRUCTOR_KEYS below — but be aware that any
+  key published on a public site can be extracted and used by anyone. For
+  Gemini, only do this with a free-tier key restricted to this site's domain;
+  for Claude, set a low workspace spend limit in the Anthropic console.
 -->
 <script>
 MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enableMenu: false } };
@@ -68,17 +70,25 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
     font-weight: 600; padding: 0 16px; cursor: pointer;
   }
   button.send:disabled { opacity: 0.5; cursor: default; }
-  /* first-run key setup */
+  /* first-run setup */
   #setup { flex: 1; overflow-y: auto; padding: 18px 16px; }
   #setup h2 { margin: 0 0 10px; font-size: 17px; }
   #setup p { margin: 0 0 10px; line-height: 1.5; }
   #setup ol { margin: 0 0 12px; padding-left: 22px; line-height: 1.6; }
   #setup a { color: var(--accent); }
-  #setup input {
+  #setup input[type=password] {
     width: 100%; padding: 8px 10px; font: inherit; border: 1px solid var(--border);
     border-radius: 8px; background: var(--bg); color: var(--fg); margin-bottom: 10px;
   }
   #setup .note { color: var(--muted); font-size: 12.5px; }
+  .providers { display: flex; gap: 10px; margin: 0 0 14px; }
+  .providers button {
+    flex: 1; padding: 10px; border: 1.5px solid var(--border); border-radius: 10px;
+    background: var(--bg); color: var(--fg); font: inherit; cursor: pointer; text-align: left;
+  }
+  .providers button.selected { border-color: var(--accent); outline: 1px solid var(--accent); }
+  .providers .pname { font-weight: 600; display: block; }
+  .providers .pdesc { color: var(--muted); font-size: 12px; }
   .hidden { display: none !important; }
 </style>
 </head>
@@ -86,27 +96,52 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
 
 <header>
   <span class="title">Socratic tutor</span>
-  <span class="sub">asks questions, never gives the answer &#8226; powered by Gemini</span>
+  <span class="sub" id="subtitle">asks questions, never gives the answer</span>
   <span class="spacer"></span>
   <button id="reset" type="button" title="Start the conversation over">restart</button>
-  <button id="changekey" type="button" title="Use a different API key">key</button>
+  <button id="changekey" type="button" title="Change provider or API key">key</button>
 </header>
 
 <div id="setup" class="hidden">
   <h2>One-time setup</h2>
   <p>This tutor chats with you about the problem above without ever revealing the
-     answer. To use it, you need a free Google AI Studio key (takes about a minute):</p>
-  <ol>
-    <li>Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> and sign in with a <b>personal</b> Google account (a regular Gmail).
-        <br><span class="note">Don't use your <code>@scu.edu</code> account &#8212; the university has this
-        service turned off, and you'll see <em>&#8220;Your account is managed by an organization&#8230;&#8221;</em></span></li>
-    <li>Click <b>Create API key</b> and copy it.</li>
-    <li>Paste it below.</li>
-  </ol>
-  <input id="keyinput" type="password" placeholder="Paste your API key (AIza...)" autocomplete="off">
-  <button class="send" id="savekey" type="button">Save and start</button>
-  <p class="note">The key is stored only in your browser (localStorage) and sent only
-     to Google's Gemini API. It is never shared with this site.</p>
+     answer. Pick which AI should power it:</p>
+  <div class="providers">
+    <button type="button" id="pick-gemini">
+      <span class="pname">Google Gemini</span>
+      <span class="pdesc">Free &#8212; needs a personal Google account</span>
+    </button>
+    <button type="button" id="pick-claude">
+      <span class="pname">Anthropic Claude</span>
+      <span class="pdesc">Needs ~$5 API credit (lasts a whole quarter)</span>
+    </button>
+  </div>
+
+  <div id="gemini-steps" class="hidden">
+    <ol>
+      <li>Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> and sign in with a <b>personal</b> Google account (a regular Gmail).
+          <br><span class="note">Don't use your <code>@scu.edu</code> account &#8212; the university has this
+          service turned off, and you'll see <em>&#8220;Your account is managed by an organization&#8230;&#8221;</em></span></li>
+      <li>Click <b>Create API key</b> and copy it.</li>
+      <li>Paste it below.</li>
+    </ol>
+    <input id="keyinput-gemini" type="password" placeholder="Paste your API key (AIza...)" autocomplete="off">
+  </div>
+
+  <div id="claude-steps" class="hidden">
+    <ol>
+      <li>Go to <a href="https://console.anthropic.com/" target="_blank" rel="noopener">console.anthropic.com</a> and create an account.</li>
+      <li>Add credit under <b>Billing</b> (minimum $5 &#8212; a tutoring session costs about a cent).</li>
+      <li>Create a key under <b>API keys</b> and paste it below.</li>
+    </ol>
+    <input id="keyinput-claude" type="password" placeholder="Paste your API key (sk-ant-...)" autocomplete="off">
+  </div>
+
+  <div id="setup-footer" class="hidden">
+    <button class="send" id="savekey" type="button">Save and start</button>
+    <p class="note" style="margin-top:10px">The key is stored only in your browser (localStorage) and sent only
+       to the provider you chose. It is never shared with this site.</p>
+  </div>
 </div>
 
 <div id="messages" class="hidden"></div>
@@ -121,16 +156,19 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
 
 /* ===== configuration ===================================================== */
 
-// Optional: a course-wide key so students skip the setup step. See the note
-// at the top of this file before enabling.
-const INSTRUCTOR_API_KEY = "";
+// Optional course-wide keys so students skip setup. See the note at the top
+// of this file before enabling either one.
+const INSTRUCTOR_KEYS = { gemini: "", claude: "" };
 
-// "gemini-flash-latest" is Google's rolling alias for the newest Flash model,
-// so the widget keeps working as models are retired. The rest are concrete
-// fallbacks tried in order if a model is rejected as unavailable.
-const MODEL_CANDIDATES = ["gemini-flash-latest", "gemini-3.6-flash", "gemini-3.5-flash"];
-let modelIndex = 0;
-const STORAGE_KEY = "math53-gemini-key";
+// Gemini: rolling alias first, concrete fallbacks if a model is retired.
+const GEMINI_MODELS = ["gemini-flash-latest", "gemini-3.6-flash", "gemini-3.5-flash"];
+let geminiModelIndex = 0;
+
+const CLAUDE_MODEL = "claude-opus-5";
+
+const PROVIDER_KEY = "math53-tutor-provider";
+const STORAGE_KEYS = { gemini: "math53-gemini-key", claude: "math53-claude-key" };
+const PROVIDER_NAMES = { gemini: "Gemini", claude: "Claude" };
 
 const SYSTEM_INSTRUCTION = `You are a Socratic tutor for MATH 53 (Santa Clara University). You work with students on exactly one problem, "The Geometry of a Solution Set": You have a system of $k$ linear equations in two variables, $k \\geq 2$. Explain the geometric significance of (1) no solution; (2) a unique solution; (3) an infinite number of solutions.
 
@@ -155,19 +193,22 @@ const els = {
   chat: document.getElementById("chat"),
   input: document.getElementById("input"),
   sendbtn: document.getElementById("sendbtn"),
+  subtitle: document.getElementById("subtitle"),
 };
-let history = [];   // [{role: "user"|"model", text: string}]
+// history entries: {role: "user"|"assistant", text: string, claudeContent?: array}
+// claudeContent preserves Claude's full content blocks (incl. thinking) so the
+// conversation can be replayed to the API verbatim, as the API requires.
+let history = [];
 let busy = false;
+let pendingProvider = null;
 
-function apiKey() {
-  return INSTRUCTOR_API_KEY || localStorage.getItem(STORAGE_KEY) || "";
-}
+function provider() { return localStorage.getItem(PROVIDER_KEY) || ""; }
+function apiKey(p) { return INSTRUCTOR_KEYS[p] || localStorage.getItem(STORAGE_KEYS[p]) || ""; }
+function ready() { const p = provider(); return p && apiKey(p); }
 
 /* ===== rendering ========================================================= */
 
 function renderText(text) {
-  // Escape HTML, then apply minimal markdown (bold, code, paragraphs).
-  // Math stays as $...$ for MathJax.
   let s = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   s = s.replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
   s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
@@ -191,32 +232,35 @@ function show(view) {
   els.chat.classList.toggle("hidden", view !== "chat");
 }
 
-/* ===== Gemini API ======================================================== */
+/* ===== Gemini ============================================================ */
 
-function modelUnavailable(status, message) {
+function geminiModelUnavailable(status, message) {
   return status === 404 || /no longer available|not found|not supported|deprecated/i.test(message || "");
 }
 
 async function askGemini() {
   const body = {
     systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
-    contents: history.map(m => ({ role: m.role, parts: [{ text: m.text }] })),
+    contents: history.map(m => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.text }],
+    })),
     generationConfig: { temperature: 0.7, maxOutputTokens: 2048 },
   };
   let resp;
   while (true) {
     const url = "https://generativelanguage.googleapis.com/v1beta/models/"
-      + MODEL_CANDIDATES[modelIndex] + ":generateContent";
+      + GEMINI_MODELS[geminiModelIndex] + ":generateContent";
     resp = await fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey() },
+      headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey("gemini") },
       body: JSON.stringify(body),
     });
     if (resp.ok) break;
     let detail = "";
     try { detail = (await resp.json()).error.message; } catch (e) {}
-    if (modelUnavailable(resp.status, detail) && modelIndex < MODEL_CANDIDATES.length - 1) {
-      modelIndex++;      // this model was retired; try the next candidate
+    if (geminiModelUnavailable(resp.status, detail) && geminiModelIndex < GEMINI_MODELS.length - 1) {
+      geminiModelIndex++;
       continue;
     }
     const err = new Error(detail || ("Request failed (" + resp.status + ")"));
@@ -228,10 +272,64 @@ async function askGemini() {
     && data.candidates[0].content.parts || [];
   const text = parts.map(p => p.text || "").join("").trim();
   if (!text) throw new Error("The tutor sent an empty reply. Please try again.");
-  return text;
+  return { text: text };
+}
+
+/* ===== Claude ============================================================ */
+
+async function askClaude() {
+  const resp = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey("claude"),
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true",
+      "anthropic-beta": "server-side-fallback-2026-07-01",
+    },
+    body: JSON.stringify({
+      model: CLAUDE_MODEL,
+      max_tokens: 4096,
+      fallbacks: "default",
+      output_config: { effort: "low" },
+      system: SYSTEM_INSTRUCTION,
+      messages: history.map(m =>
+        m.role === "assistant" && m.claudeContent
+          ? { role: "assistant", content: m.claudeContent }
+          : { role: m.role, content: m.text }
+      ),
+    }),
+  });
+  if (!resp.ok) {
+    let detail = "";
+    try { detail = (await resp.json()).error.message; } catch (e) {}
+    const err = new Error(detail || ("Request failed (" + resp.status + ")"));
+    err.status = resp.status;
+    throw err;
+  }
+  const data = await resp.json();
+  if (data.stop_reason === "refusal") {
+    throw new Error("The tutor declined that request. Try rephrasing your question about the problem.");
+  }
+  const text = (data.content || []).filter(b => b.type === "text").map(b => b.text).join("").trim();
+  if (!text) throw new Error("The tutor sent an empty reply. Please try again.");
+  return { text: text, claudeContent: data.content };
 }
 
 /* ===== interactions ====================================================== */
+
+function friendlyError(err, p) {
+  if (err.status === 401 || err.status === 403 ||
+      (err.status === 400 && p === "gemini")) {
+    return "Your API key was rejected (" + err.message + "). Click “key” above to enter a new one.";
+  }
+  if (p === "claude" && err.status === 400 && /credit/i.test(err.message)) {
+    return "Your Claude account is out of API credit — add credit at console.anthropic.com, or click “key” to switch to Gemini (free).";
+  }
+  if (err.status === 429) return "Rate limit reached — wait a few seconds and try again.";
+  if (err.status >= 500) return "The AI service is having a hiccup — try again in a moment.";
+  return "Something went wrong: " + err.message;
+}
 
 async function send() {
   const text = els.input.value.trim();
@@ -244,21 +342,16 @@ async function send() {
   busy = true;
   els.sendbtn.disabled = true;
   const typing = addMessage("tutor typing", "thinking…");
+  const p = provider();
   try {
-    const reply = await askGemini();
+    const reply = await (p === "claude" ? askClaude() : askGemini());
     typing.remove();
-    addMessage("tutor", reply);
-    history.push({ role: "model", text: reply });
+    addMessage("tutor", reply.text);
+    history.push({ role: "assistant", text: reply.text, claudeContent: reply.claudeContent });
   } catch (err) {
     typing.remove();
     history.pop(); // let the student resend the same question
-    if (err.status === 400 || err.status === 401 || err.status === 403) {
-      addMessage("error", "Your API key was rejected (" + err.message + "). Click “key” above to enter a new one.");
-    } else if (err.status === 429) {
-      addMessage("error", "Rate limit reached — wait a few seconds and try again.");
-    } else {
-      addMessage("error", "Something went wrong: " + err.message);
-    }
+    addMessage("error", friendlyError(err, p));
   } finally {
     busy = false;
     els.sendbtn.disabled = false;
@@ -267,6 +360,7 @@ async function send() {
 }
 
 function startChat() {
+  els.subtitle.textContent = "asks questions, never gives the answer • powered by " + PROVIDER_NAMES[provider()];
   show("chat");
   if (history.length === 0) {
     els.messages.innerHTML = "";
@@ -274,6 +368,33 @@ function startChat() {
   }
   els.input.focus();
 }
+
+function showSetup() {
+  pendingProvider = provider() || null;
+  refreshSetup();
+  show("setup");
+}
+
+function refreshSetup() {
+  document.getElementById("pick-gemini").classList.toggle("selected", pendingProvider === "gemini");
+  document.getElementById("pick-claude").classList.toggle("selected", pendingProvider === "claude");
+  document.getElementById("gemini-steps").classList.toggle("hidden", pendingProvider !== "gemini");
+  document.getElementById("claude-steps").classList.toggle("hidden", pendingProvider !== "claude");
+  document.getElementById("setup-footer").classList.toggle("hidden", !pendingProvider);
+}
+
+document.getElementById("pick-gemini").addEventListener("click", () => { pendingProvider = "gemini"; refreshSetup(); });
+document.getElementById("pick-claude").addEventListener("click", () => { pendingProvider = "claude"; refreshSetup(); });
+
+document.getElementById("savekey").addEventListener("click", () => {
+  if (!pendingProvider) return;
+  const k = document.getElementById("keyinput-" + pendingProvider).value.trim();
+  if (!k && !apiKey(pendingProvider)) return;  // allow re-selecting a provider whose key is already stored
+  if (k) localStorage.setItem(STORAGE_KEYS[pendingProvider], k);
+  localStorage.setItem(PROVIDER_KEY, pendingProvider);
+  history = [];
+  startChat();
+});
 
 document.getElementById("chat").addEventListener("submit", e => { e.preventDefault(); send(); });
 els.input.addEventListener("keydown", e => {
@@ -286,22 +407,16 @@ els.input.addEventListener("input", () => {
 document.getElementById("reset").addEventListener("click", () => {
   history = [];
   els.messages.innerHTML = "";
-  if (apiKey()) startChat(); else show("setup");
+  if (ready()) startChat(); else showSetup();
 });
-document.getElementById("changekey").addEventListener("click", () => {
-  localStorage.removeItem(STORAGE_KEY);
-  document.getElementById("keyinput").value = "";
-  show("setup");
-});
-document.getElementById("savekey").addEventListener("click", () => {
-  const k = document.getElementById("keyinput").value.trim();
-  if (!k) return;
-  localStorage.setItem(STORAGE_KEY, k);
-  history = [];
-  startChat();
-});
+document.getElementById("changekey").addEventListener("click", showSetup);
 
-if (apiKey()) startChat(); else show("setup");
+// Students who set up the earlier Gemini-only widget already have a stored
+// key; carry them over without repeating setup.
+if (!provider() && localStorage.getItem(STORAGE_KEYS.gemini)) {
+  localStorage.setItem(PROVIDER_KEY, "gemini");
+}
+if (ready()) startChat(); else showSetup();
 </script>
 </body>
 </html>

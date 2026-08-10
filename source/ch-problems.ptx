@@ -41,7 +41,7 @@
             knows this problem, will guide you with questions and graduated hints,
             and will never give away the answer.
           </p>
-          <interactive xml:id="int-tutor-geometry-of-solutions" iframe="gemini-tutor.html" width="100%" aspect="6:5"/>
+          <interactive xml:id="int-tutor-geometry-of-solutions" iframe="ai-tutor.html" width="100%" aspect="6:5"/>
         </statement>
         <solution>
           <p>
