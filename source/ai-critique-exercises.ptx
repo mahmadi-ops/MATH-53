@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  "Critique the AI" exercises for MATH 53.
+
+  Each exercise presents a plausible-looking but flawed solution attributed to
+  an AI assistant. The student's job is to find the error, explain why the
+  reasoning breaks, and give a correct account. The deliverable is the
+  critique, which makes these resistant to being solved *by* an AI: a student
+  who pastes the problem into a chatbot still has to judge whether the
+  chatbot's critique is itself correct.
+
+  Not yet wired into the book's table of contents — include it where you like
+  with:
+      <xi:include href="./ai-critique-exercises.ptx" />
+  (add the xinclude namespace to the parent element if it isn't already there).
+-->
+<section xml:id="sec-ai-critique" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Find the Flaw: Critiquing an AI's Reasoning</title>
+
+  <introduction>
+    <p>
+      Each problem below shows a solution written by an AI assistant. Every one
+      <em>looks</em> reasonable and reaches a confident conclusion, but each
+      contains a genuine error in reasoning <mdash /> not a typo, but a mistaken
+      idea. For each, do three things:
+      <ol>
+        <li><p>Identify the first step where the reasoning goes wrong.</p></li>
+        <li><p>Explain <em>why</em> it is wrong, in your own words.</p></li>
+        <li><p>Give a correct argument or a specific counterexample.</p></li>
+      </ol>
+      Catching a confident, well-written mistake is a different skill from
+      solving from scratch <mdash /> and a more important one.
+    </p>
+  </introduction>
+
+  <exercise xml:id="crit-parallel-lines">
+    <title>Does &#8220;No Solution&#8221; Mean Parallel?</title>
+    <statement>
+      <p>An AI assistant was asked when a system of linear equations in two
+      variables has no solution. It replied:</p>
+      <blockquote>
+        <p>
+          A system of linear equations in two variables is inconsistent
+          <em>if and only if</em> two of its lines are parallel. Here is why:
+          each equation is a line, and a solution is a point on every line. If
+          two of the lines are parallel they never meet, so there is no common
+          point and the system has no solution. Conversely, if no two lines are
+          parallel, then every pair of lines crosses somewhere, so the system
+          must have a solution.
+        </p>
+      </blockquote>
+      <p>The final sentence <mdash /> the &#8220;conversely&#8221; <mdash /> is
+      false. Find a specific system (or a picture) that breaks it, and explain
+      the mistake in the reasoning.</p>
+    </statement>
+    <solution>
+      <p>
+        The converse fails. Take three lines that form a triangle <mdash /> for
+        instance <m>x_2 = 0</m>, <m>x_2 = x_1</m>, and <m>x_2 = -x_1 + 2</m>. No
+        two are parallel, yet the three cross pairwise at three
+        <em>different</em> points <m>(0,0)</m>, <m>(1,1)</m>, and <m>(2,0)</m>,
+        so no single point lies on all three and the system is inconsistent.
+      </p>
+      <p>
+        The flaw is that &#8220;every pair meets&#8221; only guarantees pairwise
+        intersection points; it does not force those points to coincide. A
+        common solution must be a single point shared by <em>all</em> the lines
+        at once, which is a much stronger condition once there are more than two
+        equations. (The forward direction is also loosely stated: two lines that
+        coincide are sometimes called parallel, yet such a system can be
+        consistent <mdash /> the careful statement is &#8220;two distinct
+        parallel lines.&#8221;)
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="crit-zero-row">
+    <title>A Row of Zeros</title>
+    <statement>
+      <p>An AI assistant row-reduced the augmented matrix of the system
+      <md>
+        <mrow>x_1 + x_2 + x_3 \amp = 3</mrow>
+        <mrow>2x_1 + 2x_2 + 2x_3 \amp = 6</mrow>
+        <mrow>x_1 - x_2 \amp = 0</mrow>
+      </md>
+      and wrote:</p>
+      <blockquote>
+        <p>
+          Subtracting twice the first equation from the second turns the second
+          row into <m>0 = 0</m>, that is <m>\begin{bmatrix} 0 &amp; 0 &amp; 0
+          &amp; 0 \end{bmatrix}</m>. A row of all zeros cannot be satisfied by
+          any choice of variables, so this equation is impossible. Therefore the
+          system is inconsistent and has no solution.
+        </p>
+      </blockquote>
+      <p>The conclusion is wrong. What did the assistant misread, and how many
+      solutions does the system actually have?</p>
+    </statement>
+    <solution>
+      <p>
+        The row <m>\begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}</m>
+        encodes the equation <m>0 = 0</m>, which is <em>always</em> true, not
+        impossible. It simply means the second equation carried no new
+        information (it was twice the first). The assistant confused it with a
+        row like <m>\begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 5 \end{bmatrix}</m>,
+        meaning <m>0 = 5</m> <mdash /> <em>that</em> is the impossible one that
+        signals inconsistency.
+      </p>
+      <p>
+        After the redundant equation is dropped, two genuine equations remain in
+        three unknowns, leaving a free variable, so the system has
+        <em>infinitely many</em> solutions. (Solving: <m>x_1 = x_2</m> from the
+        third equation, and then <m>2x_1 + x_3 = 3</m>, so
+        <m>x_1 = x_2 = t</m>, <m>x_3 = 3 - 2t</m> for any <m>t</m>.)
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="crit-independence-count">
+    <title>&#8220;None Is a Multiple of Another&#8221;</title>
+    <statement>
+      <p>An AI assistant was asked whether the vectors
+      <m>\mathbf{v}_1 = (1,2)</m>, <m>\mathbf{v}_2 = (3,1)</m>, and
+      <m>\mathbf{v}_3 = (2,5)</m> in <m>\mathbb{R}^2</m> are linearly
+      independent. It answered:</p>
+      <blockquote>
+        <p>
+          Check each pair: <m>\mathbf{v}_1</m> is not a scalar multiple of
+          <m>\mathbf{v}_2</m>, <m>\mathbf{v}_1</m> is not a scalar multiple of
+          <m>\mathbf{v}_3</m>, and <m>\mathbf{v}_2</m> is not a scalar multiple
+          of <m>\mathbf{v}_3</m>. Since no vector is a multiple of another, none
+          is redundant, so the three vectors are linearly independent.
+        </p>
+      </blockquote>
+      <p>The answer is wrong. Explain why the test used is not enough, and
+      exhibit an actual linear dependence among the three vectors.</p>
+    </statement>
+    <solution>
+      <p>
+        &#8220;No vector is a scalar multiple of another&#8221; only rules out
+        dependence <em>within pairs</em>; independence of the whole set is a
+        stronger condition. In fact any three vectors in <m>\mathbb{R}^2</m> are
+        automatically dependent, because you cannot have more independent
+        vectors than the dimension of the space.
+      </p>
+      <p>
+        Concretely, solve <m>a\mathbf{v}_1 + b\mathbf{v}_2 = \mathbf{v}_3</m>:
+        <m>a + 3b = 2</m> and <m>2a + b = 5</m> give <m>a = \tfrac{13}{5}</m>,
+        <m>b = -\tfrac{1}{5}</m>. Thus
+        <me>\tfrac{13}{5}\,\mathbf{v}_1 - \tfrac{1}{5}\,\mathbf{v}_2 - \mathbf{v}_3 = \mathbf{0},</me>
+        a nontrivial dependence, so the set is linearly dependent.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="crit-homogeneous">
+    <title>The Zero Solution</title>
+    <statement>
+      <p>An AI assistant was asked how many solutions a homogeneous system
+      <m>A\mathbf{x} = \mathbf{0}</m> has. It said:</p>
+      <blockquote>
+        <p>
+          The zero vector always satisfies <m>A\mathbf{0} = \mathbf{0}</m>, so
+          <m>\mathbf{x} = \mathbf{0}</m> is a solution. And the zero vector is
+          unique. Therefore every homogeneous system has exactly one solution,
+          the trivial one.
+        </p>
+      </blockquote>
+      <p>The first sentence is true but the conclusion is false. Where is the
+      leap, and when does a homogeneous system have more than one solution?</p>
+    </statement>
+    <solution>
+      <p>
+        The error is sliding from &#8220;the zero <em>vector</em> is
+        unique&#8221; to &#8220;the <em>solution</em> is unique.&#8221; Those are
+        different claims. The zero vector is always <em>a</em> solution, so a
+        homogeneous system is never inconsistent, but there can be many other,
+        nonzero solutions.
+      </p>
+      <p>
+        Nontrivial solutions appear exactly when the row-reduced system has a
+        free variable <mdash /> for example whenever there are more unknowns than
+        pivots (in particular, more unknowns than equations). The system
+        <m>x_1 - x_2 = 0</m> alone has the whole line
+        <m>(t, t)</m> as solutions. A homogeneous system has the trivial
+        solution as its <em>only</em> solution precisely when the columns of
+        <m>A</m> are linearly independent.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="crit-span">
+    <title>Independent, Therefore Spanning?</title>
+    <statement>
+      <p>An AI assistant was asked whether <m>(1,0,0)</m> and <m>(0,1,0)</m> span
+      <m>\mathbb{R}^3</m>. It replied:</p>
+      <blockquote>
+        <p>
+          These two vectors are linearly independent, since neither is a scalar
+          multiple of the other. Linearly independent vectors always span the
+          space they live in. Therefore <m>(1,0,0)</m> and <m>(0,1,0)</m> span
+          <m>\mathbb{R}^3</m>.
+        </p>
+      </blockquote>
+      <p>The vectors really are independent, but the conclusion is false. Which
+      sentence is the culprit, and what vector in <m>\mathbb{R}^3</m> is
+      <em>not</em> in their span?</p>
+    </statement>
+    <solution>
+      <p>
+        The false sentence is &#8220;linearly independent vectors always span the
+        space.&#8221; Independence and spanning are separate properties:
+        independence says the vectors are not redundant, spanning says there are
+        enough of them to reach every point. A basis needs <em>both</em>.
+      </p>
+      <p>
+        Every combination <m>a(1,0,0) + b(0,1,0) = (a, b, 0)</m> has third
+        coordinate <m>0</m>, so the span is only the <m>x_1x_2</m>-plane. The
+        vector <m>(0,0,1)</m> is not in the span. Spanning
+        <m>\mathbb{R}^3</m> requires three independent vectors, not two.
+      </p>
+    </solution>
+  </exercise>
+
+</section>
