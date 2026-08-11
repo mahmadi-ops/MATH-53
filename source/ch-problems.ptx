@@ -66,9 +66,16 @@
         Choose the problem you are working on from the drop-down at the top of the
         panel, then tell the tutor what you have tried so far <mdash /> the more of
         your own thinking you show, the more useful its questions become. The tutor
-        can nudge you toward a starting point, tell you <em>where</em> your reasoning
-        goes wrong (though not how to fix it), and point you to sections and worked
-        examples in these notes to study.
+        can nudge you toward a starting point, and it can point you to sections and
+        worked examples in these notes to study.
+      </p>
+      <p>
+        If your answer is wrong, the tutor will tell you so and help you understand
+        <em>why</em> it is wrong: which step breaks, what misconception is behind it,
+        and what picture or small example will let you see the failure for yourself.
+        What it will not do is tell you how to correct it <mdash /> no fixed-up step,
+        no <q>instead, you should&#8230;</q> Finding the right path once you
+        understand why the old one fails is your part of the work.
       </p>
       <figure xml:id="fig-tutor-panel">
         <caption>The open panel: the problem picker and hints-left meter at the top,
@@ -123,9 +130,9 @@
       </p>
       <p>
         Finally, know what the tutor will not do: it will not state answers, confirm
-        your answer, or complete a solution <mdash /> no matter how you ask. Checking
-        your conclusion against the worked examples in these notes, or at office
-        hours, is part of the exercise.
+        your answer, complete a solution, or turn a wrong answer into a right one
+        <mdash /> no matter how you ask. Checking your conclusion against the worked
+        examples in these notes, or at office hours, is part of the exercise.
       </p>
     </paragraphs>
   </introduction>
