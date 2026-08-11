@@ -11,11 +11,72 @@
       topics not developed in these notes have been omitted.
     </p>
     <p>
-      <em>Stuck?</em> A Socratic AI tutor is available from the chat button in the
-      lower-right corner of each problems page. It knows the problems on the page and
-      will coach you with questions and gentle hints <mdash /> but it will never give
-      away an answer.
+      <em>Stuck?</em> A Socratic AI tutor is available on every problems page. It knows
+      the problems on the page and will coach you with questions and gentle hints
+      <mdash /> but it will never give away an answer. Here is how to use it.
     </p>
+    <paragraphs xml:id="paras-tutor-opening">
+      <title>Opening the tutor</title>
+      <p>
+        On any problems page, click the round <q>Tutor</q> button in the lower-right
+        corner. A chat panel opens and stays in place as you scroll, so you can read a
+        problem and talk to the tutor at the same time. The dash button in the panel's
+        title bar minimizes it back to the button.
+      </p>
+    </paragraphs>
+    <paragraphs xml:id="paras-tutor-setup">
+      <title>One-time setup</title>
+      <p>
+        The first time you open the tutor it asks for a free Google AI Studio key
+        (this takes about a minute):
+        <ol>
+          <li>
+            <p>
+              Go to <url href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</url>
+              and sign in with a <em>personal</em> Google account <mdash /> a regular
+              Gmail. Do <em>not</em> use your <c>@scu.edu</c> account: the university
+              has this service turned off, and you will see <q>Your account is managed
+              by an organization.</q>
+            </p>
+          </li>
+          <li><p>Click <em>Create API key</em> and copy it.</p></li>
+          <li><p>Paste it into the tutor.</p></li>
+        </ol>
+        The key is stored only in your own browser and is sent only to Google; this
+        site never sees it. One caution: on Google's free tier your conversations may
+        be reviewed to improve Google's products, so keep the chat about math and never
+        paste personal information into it.
+      </p>
+    </paragraphs>
+    <paragraphs xml:id="paras-tutor-using">
+      <title>Working with the tutor</title>
+      <p>
+        Choose the problem you are working on from the drop-down at the top of the
+        panel, then tell the tutor what you have tried so far <mdash /> the more of
+        your own thinking you show, the more useful its questions become. The tutor
+        can nudge you toward a starting point, tell you <em>where</em> your reasoning
+        goes wrong (though not how to fix it), and point you to sections and worked
+        examples in these notes to study.
+      </p>
+    </paragraphs>
+    <paragraphs xml:id="paras-tutor-limits">
+      <title>Hints are limited on purpose</title>
+      <p>
+        You get at most <em>three hints per problem per day</em>, and after each hint
+        the tutor locks for five minutes <mdash /> a countdown is shown, and the wait
+        applies across all problems. Use that time to push on the problem yourself:
+        the point of the tutor is to get you unstuck, not to walk you to the answer.
+        The panel shows how many hints you have left on the problem you selected.
+        When your hints for a problem run out, bring your work to office hours
+        <mdash /> working through it together is exactly what office hours are for.
+      </p>
+      <p>
+        Finally, know what the tutor will not do: it will not state answers, confirm
+        your answer, or complete a solution <mdash /> no matter how you ask. Checking
+        your conclusion against the worked examples in these notes, or at office
+        hours, is part of the exercise.
+      </p>
+    </paragraphs>
   </introduction>
 
   <section xml:id="sec-problems-linear-systems">
