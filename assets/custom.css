@@ -186,3 +186,81 @@ html:root:not(.dark-mode) details.hiddenproof[open] > summary.knowl__link {
     max-width: 100%;
     aspect-ratio: 5 / 4;
 }
+
+/* ------------------------------------------------------------------ *
+ * Floating Socratic AI tutor (problems pages) — see custom.js.         *
+ * ------------------------------------------------------------------ */
+#m53-tutor-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 3000;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font: 600 15px/1 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    background: #205f80;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+#m53-tutor-fab:hover { background: #2b7aa3; }
+
+#m53-tutor-panel {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 3000;
+    width: 390px;
+    max-width: calc(100vw - 24px);
+    height: min(72vh, 580px);
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #b9b9b9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3);
+}
+#m53-tutor-panel.m53-open { display: flex; }
+
+#m53-tutor-bar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #205f80;
+    color: #fff;
+    font: 600 13.5px/1.2 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}
+#m53-tutor-min {
+    border: none;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border-radius: 5px;
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+#m53-tutor-min:hover { background: rgba(255, 255, 255, 0.32); }
+
+#m53-tutor-frame {
+    flex: 1 1 auto;
+    width: 100%;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    #m53-tutor-panel {
+        right: 8px;
+        bottom: 8px;
+        height: 68vh;
+    }
+}
+@media print {
+    #m53-tutor-fab, #m53-tutor-panel { display: none !important; }
+}

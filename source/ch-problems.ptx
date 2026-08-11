@@ -10,6 +10,12 @@
       with a star (<m>\star</m>) accompany a specific worked example in the text. Problems on
       topics not developed in these notes have been omitted.
     </p>
+    <p>
+      <em>Stuck?</em> A Socratic AI tutor is available from the chat button in the
+      lower-right corner of each problems page. It knows the problems on the page and
+      will coach you with questions and gentle hints <mdash /> but it will never give
+      away an answer.
+    </p>
   </introduction>
 
   <section xml:id="sec-problems-linear-systems">
@@ -36,12 +42,6 @@
               <li><p>an infinite number of solutions.</p></li>
             </ol>
           </p>
-          <p>
-            <em>Want coaching without spoilers?</em> Chat with the tutor below. It
-            knows this problem, will guide you with questions and graduated hints,
-            and will never give away the answer.
-          </p>
-          <interactive xml:id="int-tutor-geometry-of-solutions" iframe="gemini-tutor.html" width="100%" aspect="6:5"/>
         </statement>
         <solution>
           <p>
