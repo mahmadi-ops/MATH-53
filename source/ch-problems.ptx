@@ -80,9 +80,9 @@
         <ul>
           <li>
             <p>
-              You get at most <em>three hints per problem per day</em>. The panel
-              always shows how many you have left on the problem you selected
-              (<q>Hints left: 2/3</q>).
+              You get at most <em>three hints per problem, total</em> <mdash /> the
+              budget never resets. The panel always shows how many you have left on
+              the problem you selected (<q>Hints left: 2/3</q>).
             </p>
           </li>
           <li>
@@ -103,7 +103,8 @@
           <li>
             <p>
               Restarting the conversation, reloading the page, or switching problems
-              does not refill hints. Counters reset once a day.
+              does not refill hints. Spend them thoughtfully <mdash /> full solutions
+              will be published after the due date.
             </p>
           </li>
           <li>

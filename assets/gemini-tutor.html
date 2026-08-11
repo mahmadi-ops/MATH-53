@@ -203,11 +203,11 @@ function systemInstruction() {
   if (currentProb && currentProb !== GENERAL) {
     const used = hintsUsed(currentProb);
     s += "\n\nThe student has selected the problem: \"" + currentProb + "\". "
-      + "The interface allows at most " + HINT_LIMIT + " hints per problem per day, with a "
+      + "The interface allows at most " + HINT_LIMIT + " hints per problem IN TOTAL — they never reset — with a "
       + "5-minute wait between hints, and it enforces this itself — so far you have given "
       + used + " of " + HINT_LIMIT + " hints on this problem. Your NEXT reply counts as a hint, so make it count. "
       + (used >= HINT_LIMIT - 1
-        ? "This is the LAST hint available today: make it your best small nudge, and close by warmly suggesting the student bring their work to office hours for more help."
+        ? "This is the LAST hint this student will ever get on this problem: make it your best small nudge, and close by warmly suggesting they bring their work to office hours for more help."
         : "Keep each hint small so the student gets the most from their limited supply.");
   }
   return s;
@@ -244,23 +244,22 @@ function apiKey() {
 }
 
 /* ===== hint budget ======================================================= */
-// Hard limits enforced by the interface, not the model: per problem per day,
-// the first tutor reply (asking what you've tried) is free, then at most
-// HINT_LIMIT hints, with COOLDOWN_MS between hints. Counters live in
-// localStorage and survive restarts; they reset each day.
+// Hard limits enforced by the interface, not the model: per problem, the
+// first tutor reply (asking what you've tried) is free, then at most
+// HINT_LIMIT hints total, with COOLDOWN_MS between hints. Counters live in
+// localStorage, survive restarts and reloads, and never reset — solutions
+// are published after the due date.
 
 const HINT_LIMIT = 3;
 const COOLDOWN_MS = 5 * 60 * 1000;
 const HINT_STORE = "math53-hints-v2";
 
-function todayKey() { return new Date().toISOString().slice(0, 10); }
-
 function loadHints() {
   try {
     const d = JSON.parse(localStorage.getItem(HINT_STORE) || "{}");
-    if (d.day === todayKey() && d.probs) return d;
+    if (d.probs) return d;
   } catch (e) {}
-  return { day: todayKey(), probs: {}, lastHintAt: 0 };
+  return { probs: {}, lastHintAt: 0 };
 }
 
 function recordReply(label) {
@@ -287,9 +286,9 @@ function cooldownLeftMs() {
   return Math.max(0, d.lastHintAt + COOLDOWN_MS - Date.now());
 }
 
-const OFFICE_HOURS_MSG = "You've used all " + HINT_LIMIT + " hints for this problem today. " +
-  "For more help, bring your work to office hours — walking through it together is exactly what they're for. " +
-  "You can keep working on other problems here in the meantime.";
+const OFFICE_HOURS_MSG = "You've used all " + HINT_LIMIT + " hints for this problem. " +
+  "For more help, bring your work to office hours — walking through it together is exactly what they're for — " +
+  "and full solutions will be published after the due date. You can keep working on other problems here.";
 
 let cdTimer = null;
 function refreshGate() {
