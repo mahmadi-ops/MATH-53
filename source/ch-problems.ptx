@@ -73,9 +73,11 @@
         If your answer is wrong, the tutor will tell you so and help you understand
         <em>why</em> it is wrong: which step breaks, what misconception is behind it,
         and what picture or small example will let you see the failure for yourself.
-        What it will not do is tell you how to correct it <mdash /> no fixed-up step,
-        no <q>instead, you should&#8230;</q> Finding the right path once you
-        understand why the old one fails is your part of the work.
+        Note that this requires showing your reasoning <mdash /> a bare answer with no
+        work, right or wrong, will simply get asked for the thinking behind it. And
+        what the tutor will not do is tell you how to correct an error <mdash /> no
+        fixed-up step, no <q>instead, you should&#8230;</q> Finding the right path
+        once you understand why the old one fails is your part of the work.
       </p>
       <figure xml:id="fig-tutor-panel">
         <caption>The open panel: the problem picker and hints-left meter at the top,
