@@ -10,37 +10,31 @@
       with a star (<m>\star</m>) accompany a specific worked example in the text. Problems on
       topics not developed in these notes have been omitted.
     </p>
-    <p>
-      <em>Stuck?</em> A Socratic AI tutor is available on every problems page. It knows
-      the problems on the page and will coach you with questions and gentle hints
-      <mdash /> but it will never give away an answer. Here is how to use it.
-    </p>
-    <paragraphs xml:id="paras-tutor-opening">
-      <title>Opening the tutor</title>
+    <assemblage xml:id="assemblage-tutor-guide">
+      <title>Using the AI Tutor</title>
       <p>
-        On a problems page, click the round <q>Tutor</q> button in the lower-right
-        corner. A chat panel opens and stays in place as you scroll, so you can read a
-        problem and talk to the tutor at the same time. The dash button in the panel's
-        title bar minimizes it back to the button.
+        <em>Stuck?</em> A Socratic AI tutor is available on every problems page. It
+        knows the problems on the page and will coach you with questions and gentle
+        hints <mdash /> but it will never give away an answer. Here is how to use it.
       </p>
-      <figure xml:id="fig-tutor-button">
-        <caption>The tutor button sits in the lower-right corner of the problems page
-        and stays there as you scroll.</caption>
-        <image source="tutor-button.png" width="93%">
-          <shortdescription>A problems page with the round Tutor button circled in the lower-right corner</shortdescription>
-        </image>
-      </figure>
+      <p>
+        <alert>Opening the tutor.</alert> On a problems page, click the round
+        <q>Tutor</q> button in the lower-right corner. A chat panel opens and stays in
+        place as you scroll, so you can read a problem and talk to the tutor at the
+        same time. The dash button in the panel's title bar minimizes it back to the
+        button.
+      </p>
+      <image source="tutor-button.png" width="93%">
+        <shortdescription>A problems page with the round Tutor button circled in the lower-right corner</shortdescription>
+      </image>
       <p>
         For now the tutor is available on the <xref ref="sec-problems-linear-systems"
         text="title" /> problems page only; it will be rolled out to the rest of the
         exercises soon.
       </p>
-    </paragraphs>
-    <paragraphs xml:id="paras-tutor-setup">
-      <title>One-time setup</title>
       <p>
-        The first time you open the tutor it asks for a free Google AI Studio key
-        (this takes about a minute):
+        <alert>One-time setup.</alert> The first time you open the tutor it asks for a
+        free Google AI Studio key (this takes about a minute):
         <ol>
           <li>
             <p>
@@ -59,15 +53,12 @@
         be reviewed to improve Google's products, so keep the chat about math and never
         paste personal information into it.
       </p>
-    </paragraphs>
-    <paragraphs xml:id="paras-tutor-using">
-      <title>Working with the tutor</title>
       <p>
-        Choose the problem you are working on from the drop-down at the top of the
-        panel, then tell the tutor what you have tried so far <mdash /> the more of
-        your own thinking you show, the more useful its questions become. The tutor
-        can nudge you toward a starting point, and it can point you to sections and
-        worked examples in these notes to study.
+        <alert>Working with the tutor.</alert> Choose the problem you are working on
+        from the drop-down at the top of the panel, then tell the tutor what you have
+        tried so far <mdash /> the more of your own thinking you show, the more useful
+        its questions become. The tutor can nudge you toward a starting point, and it
+        can point you to sections and worked examples in these notes to study.
       </p>
       <p>
         If your answer is wrong, the tutor will tell you so and help you understand
@@ -79,19 +70,13 @@
         fixed-up step, no <q>instead, you should&#8230;</q> Finding the right path
         once you understand why the old one fails is your part of the work.
       </p>
-      <figure xml:id="fig-tutor-panel">
-        <caption>The open panel: the problem picker and hints-left meter at the top,
-        and the five-minute timer running after a hint.</caption>
-        <image source="tutor-panel.png" width="55%">
-          <shortdescription>The tutor chat panel showing a problem selected, two of three hints remaining, a Socratic exchange, and a countdown reading five minutes</shortdescription>
-        </image>
-      </figure>
-    </paragraphs>
-    <paragraphs xml:id="paras-tutor-limits">
-      <title>Hints are limited on purpose</title>
+      <image source="tutor-panel.png" width="55%">
+        <shortdescription>The tutor chat panel showing a problem selected, two of three hints remaining, a Socratic exchange, and a countdown reading five minutes</shortdescription>
+      </image>
       <p>
-        The point of the tutor is to get you unstuck, not to walk you to the answer,
-        so hints are deliberately scarce. The exact rules:
+        <alert>Hints are limited on purpose.</alert> The point of the tutor is to get
+        you unstuck, not to walk you to the answer, so hints are deliberately scarce.
+        The exact rules:
         <ul>
           <li>
             <p>
@@ -136,7 +121,7 @@
         <mdash /> no matter how you ask. Checking your conclusion against the worked
         examples in these notes, or at office hours, is part of the exercise.
       </p>
-    </paragraphs>
+    </assemblage>
   </introduction>
 
   <section xml:id="sec-problems-linear-systems">

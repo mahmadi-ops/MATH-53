@@ -195,16 +195,20 @@ html:root:not(.dark-mode) details.hiddenproof[open] > summary.knowl__link {
     right: 18px;
     bottom: 18px;
     z-index: 3000;
-    border: none;
+    border: 2px solid #fff;
     border-radius: 999px;
-    padding: 12px 18px;
-    font: 600 15px/1 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    padding: 16px 28px;
+    font: 700 19px/1 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0.3px;
     background: #205f80;
     color: #fff;
     cursor: pointer;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
-#m53-tutor-fab:hover { background: #2b7aa3; }
+#m53-tutor-fab:hover { background: #2b7aa3; transform: scale(1.04); }
+@media (max-width: 600px) {
+    #m53-tutor-fab { padding: 13px 20px; font-size: 16px; }
+}
 
 #m53-tutor-panel {
     position: fixed;
