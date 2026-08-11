@@ -57,6 +57,23 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
   .student { background: var(--student-bg); margin-left: auto; border-bottom-right-radius: 3px; }
   .error { background: transparent; border: 1px dashed var(--border); color: var(--muted); font-size: 13px; }
   .typing { color: var(--muted); font-style: italic; }
+  #probbar {
+    display: flex; align-items: center; gap: 8px; flex: 0 0 auto;
+    padding: 7px 12px; border-bottom: 1px solid var(--border); font-size: 13px;
+  }
+  #probbar label { color: var(--muted); }
+  #probsel {
+    flex: 1; min-width: 0; font: inherit; padding: 3px 6px;
+    border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--fg);
+  }
+  #hintmeter { color: var(--muted); white-space: nowrap; }
+  #hintmeter.out { color: #b3372e; font-weight: 600; }
+  #cooldown {
+    flex: 0 0 auto; padding: 8px 12px; font-size: 13px; text-align: center;
+    background: var(--tutor-bg); border-top: 1px solid var(--border); color: var(--fg);
+  }
+  #cooldown b { font-variant-numeric: tabular-nums; }
   form#chat { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--border); flex: 0 0 auto; }
   #input {
     flex: 1; resize: none; border: 1px solid var(--border); border-radius: 8px;
@@ -109,7 +126,17 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
      to Google's Gemini API. It is never shared with this site.</p>
 </div>
 
+<div id="probbar" class="hidden">
+  <label for="probsel">Problem:</label>
+  <select id="probsel"><option value="">&#8212; choose a problem &#8212;</option></select>
+  <span id="hintmeter"></span>
+</div>
+
 <div id="messages" class="hidden"></div>
+
+<div id="cooldown" class="hidden">
+  Next hint in <b id="cdtime">5:00</b> &#8212; use the time to push on the problem yourself.
+</div>
 
 <form id="chat" class="hidden" autocomplete="off">
   <textarea id="input" rows="1" placeholder="Ask for a hint, or describe what you've tried&#8230;"></textarea>
@@ -157,17 +184,32 @@ Style: warm, encouraging, brief — one question at a time, at most a short para
 let pageContext = null;
 window.addEventListener("message", e => {
   const d = e.data;
-  if (d && d.type === "math53-exercises" && Array.isArray(d.exercises)) pageContext = d;
+  if (d && d.type === "math53-exercises" && Array.isArray(d.exercises)) {
+    pageContext = d;
+    populateProblems();
+  }
 });
 
 function systemInstruction() {
-  if (!pageContext || !pageContext.exercises.length) return BASE_INSTRUCTION;
-  const probs = pageContext.exercises
-    .map(x => "--- " + x.label + " ---\n" + x.text).join("\n\n");
-  return BASE_INSTRUCTION
-    + "\n\nThe student's current page is \"" + (pageContext.section || "Problems")
-    + "\". The problems on it (statements only) are listed below so you know exactly what each one asks. This list is for your reference — never quote a problem's answer, and treat every one of these as covered by THE ONE RULE.\n\n"
-    + probs;
+  let s = BASE_INSTRUCTION;
+  if (pageContext && pageContext.exercises.length) {
+    const probs = pageContext.exercises
+      .map(x => "--- " + x.label + " ---\n" + x.text).join("\n\n");
+    s += "\n\nThe student's current page is \"" + (pageContext.section || "Problems")
+      + "\". The problems on it (statements only) are listed below so you know exactly what each one asks. This list is for your reference — never quote a problem's answer, and treat every one of these as covered by THE ONE RULE.\n\n"
+      + probs;
+  }
+  if (currentProb && currentProb !== GENERAL) {
+    const used = hintsUsed(currentProb);
+    s += "\n\nThe student has selected the problem: \"" + currentProb + "\". "
+      + "The interface allows at most " + HINT_LIMIT + " hints per problem per day, with a "
+      + "5-minute wait between hints, and it enforces this itself — so far you have given "
+      + used + " of " + HINT_LIMIT + " hints on this problem. Your NEXT reply counts as a hint, so make it count. "
+      + (used >= HINT_LIMIT - 1
+        ? "This is the LAST hint available today: make it your best small nudge, and close by warmly suggesting the student bring their work to office hours for more help."
+        : "Keep each hint small so the student gets the most from their limited supply.");
+  }
+  return s;
 }
 
 const GREETING = "Hi! I'm here to help you think through the problems on this page — I'll ask questions and give hints, but I won't give away answers. Which problem are you working on, and what have you tried so far?";
@@ -180,12 +222,116 @@ const els = {
   chat: document.getElementById("chat"),
   input: document.getElementById("input"),
   sendbtn: document.getElementById("sendbtn"),
+  probbar: document.getElementById("probbar"),
+  probsel: document.getElementById("probsel"),
+  hintmeter: document.getElementById("hintmeter"),
+  cooldown: document.getElementById("cooldown"),
+  cdtime: document.getElementById("cdtime"),
 };
-let history = [];   // [{role: "user"|"model", text: string}]
+const GENERAL = "General question about the material";
+let histories = {};          // problem label -> [{role, text}]
+let currentProb = "";        // selected problem label ("" = none chosen yet)
 let busy = false;
+
+function curHistory() {
+  if (!histories[currentProb]) histories[currentProb] = [];
+  return histories[currentProb];
+}
 
 function apiKey() {
   return INSTRUCTOR_API_KEY || localStorage.getItem(STORAGE_KEY) || "";
+}
+
+/* ===== hint budget ======================================================= */
+// Hard limits enforced by the interface, not the model: per problem per day,
+// the first tutor reply (asking what you've tried) is free, then at most
+// HINT_LIMIT hints, with COOLDOWN_MS between hints. Counters live in
+// localStorage and survive restarts; they reset each day.
+
+const HINT_LIMIT = 3;
+const COOLDOWN_MS = 5 * 60 * 1000;
+const HINT_STORE = "math53-hints-v2";
+
+function todayKey() { return new Date().toISOString().slice(0, 10); }
+
+function loadHints() {
+  try {
+    const d = JSON.parse(localStorage.getItem(HINT_STORE) || "{}");
+    if (d.day === todayKey() && d.probs) return d;
+  } catch (e) {}
+  return { day: todayKey(), probs: {}, lastHintAt: 0 };
+}
+
+function recordReply(label) {
+  const d = loadHints();
+  const p = d.probs[label] || { replies: 0 };
+  p.replies += 1;
+  d.probs[label] = p;
+  // ONE timer for the whole widget: any counted hint, on any problem,
+  // starts the same global cooldown. The first reply on a problem is
+  // free intake ("what have you tried?") and starts no timer.
+  if (p.replies > 1) d.lastHintAt = Date.now();
+  try { localStorage.setItem(HINT_STORE, JSON.stringify(d)); } catch (e) {}
+  return p;
+}
+
+function hintsUsed(label) {
+  const p = loadHints().probs[label] || { replies: 0 };
+  return Math.max(0, p.replies - 1);
+}
+function hintsLeft(label) { return Math.max(0, HINT_LIMIT - hintsUsed(label)); }
+function cooldownLeftMs() {
+  const d = loadHints();
+  if (!d.lastHintAt) return 0;
+  return Math.max(0, d.lastHintAt + COOLDOWN_MS - Date.now());
+}
+
+const OFFICE_HOURS_MSG = "You've used all " + HINT_LIMIT + " hints for this problem today. " +
+  "For more help, bring your work to office hours — walking through it together is exactly what they're for. " +
+  "You can keep working on other problems here in the meantime.";
+
+let cdTimer = null;
+function refreshGate() {
+  // Enable/disable the input based on the selected problem's budget & cooldown.
+  if (cdTimer) { clearInterval(cdTimer); cdTimer = null; }
+  els.cooldown.classList.add("hidden");
+
+  if (!currentProb) {
+    els.input.disabled = true;
+    els.sendbtn.disabled = true;
+    els.input.placeholder = "Choose a problem above to start…";
+    els.hintmeter.textContent = "";
+    return;
+  }
+  const left = hintsLeft(currentProb);
+  els.hintmeter.textContent = "Hints left: " + left + "/" + HINT_LIMIT;
+  els.hintmeter.classList.toggle("out", left === 0);
+
+  if (left === 0) {
+    els.input.disabled = true;
+    els.sendbtn.disabled = true;
+    els.input.placeholder = "Hint limit reached for this problem — see office hours.";
+    return;
+  }
+  const wait = cooldownLeftMs();   // global: one timer across all problems
+  if (wait > 0) {
+    els.input.disabled = true;
+    els.sendbtn.disabled = true;
+    els.input.placeholder = "Timer running — think it through while you wait…";
+    els.cooldown.classList.remove("hidden");
+    const tick = () => {
+      const ms = cooldownLeftMs();
+      if (ms <= 0) { refreshGate(); els.input.focus(); return; }
+      const total = Math.ceil(ms / 1000);
+      els.cdtime.textContent = Math.floor(total / 60) + ":" + String(total % 60).padStart(2, "0");
+    };
+    tick();
+    cdTimer = setInterval(tick, 250);
+    return;
+  }
+  els.input.disabled = busy;
+  els.sendbtn.disabled = busy;
+  els.input.placeholder = "Ask for a hint, or describe what you've tried…";
 }
 
 /* ===== rendering ========================================================= */
@@ -214,6 +360,8 @@ function show(view) {
   els.setup.classList.toggle("hidden", view !== "setup");
   els.messages.classList.toggle("hidden", view !== "chat");
   els.chat.classList.toggle("hidden", view !== "chat");
+  els.probbar.classList.toggle("hidden", view !== "chat");
+  if (view !== "chat") els.cooldown.classList.add("hidden");
 }
 
 /* ===== Gemini API ======================================================== */
@@ -225,7 +373,7 @@ function modelUnavailable(status, message) {
 async function askGemini() {
   const body = {
     systemInstruction: { parts: [{ text: systemInstruction() }] },
-    contents: history.map(m => ({ role: m.role, parts: [{ text: m.text }] })),
+    contents: curHistory().map(m => ({ role: m.role, parts: [{ text: m.text }] })),
     generationConfig: { temperature: 0.4, maxOutputTokens: 2048 },
   };
   let resp;
@@ -260,23 +408,29 @@ async function askGemini() {
 
 async function send() {
   const text = els.input.value.trim();
-  if (!text || busy) return;
+  if (!text || busy || !currentProb) return;
+  if (hintsLeft(currentProb) === 0 || cooldownLeftMs() > 0) { refreshGate(); return; }
   els.input.value = "";
   els.input.style.height = "";
   addMessage("student", text);
-  history.push({ role: "user", text: text });
+  curHistory().push({ role: "user", text: text });
 
   busy = true;
+  els.input.disabled = true;
   els.sendbtn.disabled = true;
   const typing = addMessage("tutor typing", "thinking…");
   try {
     const reply = await askGemini();
     typing.remove();
     addMessage("tutor", reply);
-    history.push({ role: "model", text: reply });
+    curHistory().push({ role: "model", text: reply });
+    const p = recordReply(currentProb);
+    if (p.replies > 1 && hintsLeft(currentProb) === 0) {
+      addMessage("error", OFFICE_HOURS_MSG);
+    }
   } catch (err) {
     typing.remove();
-    history.pop(); // let the student resend the same question
+    curHistory().pop(); // let the student resend the same question
     if (err.status === 400 || err.status === 401 || err.status === 403) {
       addMessage("error", "Your API key was rejected (" + err.message + "). Click “key” above to enter a new one.");
     } else if (err.status === 429) {
@@ -286,18 +440,46 @@ async function send() {
     }
   } finally {
     busy = false;
-    els.sendbtn.disabled = false;
-    els.input.focus();
+    refreshGate();
+    if (!els.input.disabled) els.input.focus();
   }
+}
+
+function populateProblems() {
+  const labels = (pageContext && pageContext.exercises.length)
+    ? pageContext.exercises.map(x => x.label) : [];
+  labels.push(GENERAL);
+  const prev = currentProb;
+  els.probsel.innerHTML = '<option value="">— choose a problem —</option>';
+  labels.forEach(l => {
+    const o = document.createElement("option");
+    o.value = l;
+    o.textContent = l;
+    els.probsel.appendChild(o);
+  });
+  if (prev && labels.indexOf(prev) >= 0) els.probsel.value = prev;
+  else { currentProb = ""; els.probsel.value = ""; }
+  refreshGate();
+}
+
+function selectProblem(label) {
+  currentProb = label;
+  els.messages.innerHTML = "";
+  if (!label) { refreshGate(); return; }
+  if (curHistory().length === 0) {
+    addMessage("tutor", GREETING);
+  } else {
+    curHistory().forEach(m => addMessage(m.role === "user" ? "student" : "tutor", m.text));
+  }
+  if (hintsLeft(label) === 0 && label !== GENERAL) addMessage("error", OFFICE_HOURS_MSG);
+  refreshGate();
 }
 
 function startChat() {
   show("chat");
-  if (history.length === 0) {
-    els.messages.innerHTML = "";
-    addMessage("tutor", GREETING);
-  }
-  els.input.focus();
+  els.probbar.classList.remove("hidden");
+  if (els.probsel.options.length <= 1) populateProblems();
+  selectProblem(currentProb);
 }
 
 document.getElementById("chat").addEventListener("submit", e => { e.preventDefault(); send(); });
@@ -308,8 +490,12 @@ els.input.addEventListener("input", () => {
   els.input.style.height = "";
   els.input.style.height = Math.min(els.input.scrollHeight, 90) + "px";
 });
+els.probsel.addEventListener("change", () => selectProblem(els.probsel.value));
+
 document.getElementById("reset").addEventListener("click", () => {
-  history = [];
+  // Clears the current conversation only — hint counters and the cooldown
+  // timer are NOT reset (otherwise restarting would be a free refill).
+  if (currentProb) histories[currentProb] = [];
   els.messages.innerHTML = "";
   if (apiKey()) startChat(); else show("setup");
 });
@@ -322,7 +508,7 @@ document.getElementById("savekey").addEventListener("click", () => {
   const k = document.getElementById("keyinput").value.trim();
   if (!k) return;
   localStorage.setItem(STORAGE_KEY, k);
-  history = [];
+  histories = {};
   startChat();
 });
 
