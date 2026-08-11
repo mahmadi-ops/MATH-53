@@ -10,7 +10,9 @@
   
 
 
-  <exercise-divisional solution="yes"/> 
+  <!-- Solutions hidden until after the due date; flip both to "yes" to publish. -->
+  <exercise-divisional solution="no"/>
+  <exercise-inline solution="no"/> 
       <tableofcontents level="4"/>
         <!-- When writing an article for a specific journal, you can   -->
         <!-- specify the name of the journal to get appropriate latex. -->
