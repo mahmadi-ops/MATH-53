@@ -206,6 +206,16 @@ html:root:not(.dark-mode) details.hiddenproof[open] > summary.knowl__link {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 #m53-tutor-fab:hover { background: #2b7aa3; transform: scale(1.04); }
+
+/* One-time attention pulse on a student's first visit — see custom.js. */
+@keyframes m53-tutor-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4); }
+    50% { transform: scale(1.14); box-shadow: 0 6px 30px rgba(32, 95, 128, 0.75); }
+}
+#m53-tutor-fab.m53-pulse { animation: m53-tutor-pulse 0.9s ease-in-out 2; }
+@media (prefers-reduced-motion: reduce) {
+    #m53-tutor-fab.m53-pulse { animation: none; }
+}
 @media (max-width: 600px) {
     #m53-tutor-fab { padding: 13px 20px; font-size: 16px; }
 }

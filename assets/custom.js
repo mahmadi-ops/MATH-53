@@ -126,4 +126,18 @@
     var wasOpen = false;
     try { wasOpen = localStorage.getItem("math53-tutor-open") === "1"; } catch (e) {}
     if (wasOpen) openPanel();
+
+    // First visit only: pulse the button twice so new students notice it,
+    // then never again on this browser.
+    try {
+        if (!wasOpen && !localStorage.getItem("math53-tutor-seen")) {
+            localStorage.setItem("math53-tutor-seen", "1");
+            setTimeout(function () {
+                fab.classList.add("m53-pulse");
+                fab.addEventListener("animationend", function () {
+                    fab.classList.remove("m53-pulse");
+                }, { once: true });
+            }, 900);
+        }
+    } catch (e) {}
 })();
