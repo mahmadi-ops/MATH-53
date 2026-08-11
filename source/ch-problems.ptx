@@ -18,10 +18,22 @@
     <paragraphs xml:id="paras-tutor-opening">
       <title>Opening the tutor</title>
       <p>
-        On any problems page, click the round <q>Tutor</q> button in the lower-right
+        On a problems page, click the round <q>Tutor</q> button in the lower-right
         corner. A chat panel opens and stays in place as you scroll, so you can read a
         problem and talk to the tutor at the same time. The dash button in the panel's
         title bar minimizes it back to the button.
+      </p>
+      <figure xml:id="fig-tutor-button">
+        <caption>The tutor button sits in the lower-right corner of the problems page
+        and stays there as you scroll.</caption>
+        <image source="tutor-button.png" width="93%">
+          <shortdescription>A problems page with the round Tutor button circled in the lower-right corner</shortdescription>
+        </image>
+      </figure>
+      <p>
+        For now the tutor is available on the <xref ref="sec-problems-linear-systems"
+        text="title" /> problems page only; it will be rolled out to the rest of the
+        exercises soon.
       </p>
     </paragraphs>
     <paragraphs xml:id="paras-tutor-setup">
@@ -58,17 +70,56 @@
         goes wrong (though not how to fix it), and point you to sections and worked
         examples in these notes to study.
       </p>
+      <figure xml:id="fig-tutor-panel">
+        <caption>The open panel: the problem picker and hints-left meter at the top,
+        and the five-minute timer running after a hint.</caption>
+        <image source="tutor-panel.png" width="55%">
+          <shortdescription>The tutor chat panel showing a problem selected, two of three hints remaining, a Socratic exchange, and a countdown reading five minutes</shortdescription>
+        </image>
+      </figure>
     </paragraphs>
     <paragraphs xml:id="paras-tutor-limits">
       <title>Hints are limited on purpose</title>
       <p>
-        You get at most <em>three hints per problem per day</em>, and after each hint
-        the tutor locks for five minutes <mdash /> a countdown is shown, and the wait
-        applies across all problems. Use that time to push on the problem yourself:
-        the point of the tutor is to get you unstuck, not to walk you to the answer.
-        The panel shows how many hints you have left on the problem you selected.
-        When your hints for a problem run out, bring your work to office hours
-        <mdash /> working through it together is exactly what office hours are for.
+        The point of the tutor is to get you unstuck, not to walk you to the answer,
+        so hints are deliberately scarce. The exact rules:
+        <ul>
+          <li>
+            <p>
+              You get at most <em>three hints per problem per day</em>. The panel
+              always shows how many you have left on the problem you selected
+              (<q>Hints left: 2/3</q>).
+            </p>
+          </li>
+          <li>
+            <p>
+              The tutor's first reply on a problem <mdash /> where it asks what you
+              have tried <mdash /> is free and does not count as a hint.
+            </p>
+          </li>
+          <li>
+            <p>
+              After each hint the tutor locks for <em>five minutes</em>, with a
+              countdown shown in the panel. There is one shared timer: the wait
+              applies across <em>all</em> problems, so switching problems does not
+              skip it. Use the five minutes to push on the problem yourself
+              <mdash /> that is what the pause is for.
+            </p>
+          </li>
+          <li>
+            <p>
+              Restarting the conversation, reloading the page, or switching problems
+              does not refill hints. Counters reset once a day.
+            </p>
+          </li>
+          <li>
+            <p>
+              When your hints for a problem run out, bring your work to office hours
+              <mdash /> working through it together is exactly what office hours are
+              for.
+            </p>
+          </li>
+        </ul>
       </p>
       <p>
         Finally, know what the tutor will not do: it will not state answers, confirm
