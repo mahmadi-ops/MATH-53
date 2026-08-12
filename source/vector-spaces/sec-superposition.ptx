@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-superposition" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Superposition: Schrödinger's Cat as a Linear Combination</title>
+
+  <introduction>
+    <p>
+      The definition of a vector space says nothing about columns of numbers, so anything
+      satisfying the axioms of <xref ref="def-vector-space" text="type-global" /> may be
+      added and scaled exactly as vectors in <m>\R^n</m> are. We have already seen that
+      matrices form such a space. In this section we take the two pictures below
+      <mdash /> a cat alive in its box, and the same cat dead in the same box <mdash />
+      read each one as a single vector, and form linear combinations of them. The
+      pictures that result are the ones physics draws when it wants to depict
+      <term>Schrödinger's cat</term>: neither cat, and both at once.
+    </p>
+    <p>
+      Nothing here is new mathematics. Every step is scalar multiplication, addition,
+      span, basis, and coordinates, applied in a vector space whose vectors happen to be
+      pictures. That is the point of generalizing: the machinery built for arrows in
+      the plane runs unchanged on a space of dimension four hundred thousand.
+    </p>
+    <p>
+      Interactive <term>Sage cells</term> appear throughout. Press <term>Evaluate</term>
+      to run one in your browser, or copy the code into
+      <url href="https://sagecell.sagemath.org" visual="sagecell.sagemath.org">the Sage
+      cell server</url>. Each cell is safe to edit and re-run as often as you like; the
+      lines marked <c># change me</c> are the ones worth experimenting with. The cells on
+      this page share their variables and must be evaluated in order, so run each one as
+      you reach it.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-superposition-pictures">
+    <title>A Picture Is a Vector</title>
+
+    <p>
+      Let <m>\mathbb{M}_{mn}</m> denote the set of all <m>m \times n</m> matrices with
+      real entries. The verification in
+      <xref ref="eg-m22-vector-space" text="type-global" /> used nothing about the size
+      <m>2 \times 2</m>, so it applies word for word to any fixed <m>m</m> and <m>n</m>:
+      <m>\mathbb{M}_{mn}</m> is a vector space. Its dimension is <m>mn</m>, since the
+      matrices <m>E_{ij}</m> with a <m>1</m> in position <m>(i,j)</m> and zeros elsewhere
+      span <m>\mathbb{M}_{mn}</m> and are linearly independent: a linear combination
+      <m>\sum_{i,j} c_{ij} E_{ij}</m> is the matrix whose <m>(i,j)</m> entry is
+      <m>c_{ij}</m>, and that matrix is zero exactly when every <m>c_{ij}</m> is zero.
+    </p>
+
+    <p>
+      A grayscale picture is an element of this space. As in
+      <xref ref="sec-images-as-matrices" text="title" />, a picture <m>m</m> pixels tall
+      and <m>n</m> pixels wide is the <m>m \times n</m> matrix whose <m>(i,j)</m> entry is
+      the brightness of the pixel in row <m>i</m> and column <m>j</m>, on a scale where
+      <m>0</m> is black and <m>255</m> is white. The two pictures in
+      <xref ref="fig-cat-basis" text="global" /> are <m>780</m> pixels tall and
+      <m>520</m> pixels wide, so each is a vector in <m>\mathbb{M}_{780,520}</m>, a space
+      of dimension <m>405{,}600</m>. Call them
+      <md>
+        A = \text{the alive cat}, \qquad D = \text{the dead cat}.
+      </md>
+    </p>
+
+    <figure xml:id="fig-cat-basis">
+      <caption>
+        Two vectors in <m>\mathbb{M}_{780,520}</m>. The two pictures share their box,
+        their label, and their lighting, so the matrices <m>A</m> and <m>D</m> differ
+        mainly where the cat is.
+      </caption>
+      <sidebyside widths="44% 44%" margins="auto">
+        <figure xml:id="fig-cat-alive">
+          <caption>The alive cat: the matrix <m>A</m>.</caption>
+          <image source="images/cat-alive.png">
+            <shortdescription>A grayscale illustration of a cat sitting upright inside a wooden box labelled Schrodinger's Cat, beside a mechanism connected to a container marked with a skull and crossbones</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-cat-dead">
+          <caption>The dead cat: the matrix <m>D</m>.</caption>
+          <image source="images/cat-dead.png">
+            <shortdescription>The same box and mechanism in grayscale, with the cat lying motionless on the floor of the box and the container gone</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <p>
+      These two vectors are linearly independent. If one were a scalar multiple of the
+      other, say <m>A = cD</m>, then the same <m>c</m> would have to work at every pixel.
+      The pixel in row <m>337</m> and column <m>256</m>, in the cat's left eye, has
+      <m>A</m> entry <m>210</m> and <m>D</m> entry <m>75</m>, forcing
+      <m>c = \frac{210}{75} = \frac{14}{5}</m>; the pixel in row <m>601</m> and column
+      <m>301</m>, on the floor of the box, has <m>A</m> entry <m>68</m> and the same
+      <m>D</m> entry <m>75</m>, forcing <m>c = \frac{68}{75}</m>. No single scalar does
+      both, and reversing the roles of <m>A</m> and <m>D</m> fails for the same reason.
+      So <m>\{A, D\}</m> is a linearly independent set of two vectors in a space of
+      dimension <m>405{,}600</m>.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-superposition-combination">
+    <title>The Superposition</title>
+
+    <p>
+      Quantum mechanics describes a system that can be found in either of two states by a
+      linear combination of those states, called a <term>superposition</term>. Writing
+      the two states as our two matrices, a superposition of the alive cat and the dead
+      cat is
+      <md>
+        S = \alpha A + \beta D, \qquad \alpha^2 + \beta^2 = 1.
+      </md>
+      The scalars <m>\alpha</m> and <m>\beta</m> are the <term>amplitudes</term>. The
+      normalization <m>\alpha^2 + \beta^2 = 1</m> is what makes the numbers
+      <m>\alpha^2</m> and <m>\beta^2</m> add up to <m>1</m>, and physics reads them as the
+      probability of finding the cat alive and the probability of finding it dead when the
+      box is opened. Every such pair is <m>(\alpha, \beta) = (\cos t, \sin t)</m> for some
+      angle <m>t</m>, so a single parameter sweeps through all the superpositions of these
+      two states.
+    </p>
+
+    <p>
+      There is one practical wrinkle before we can look at <m>S</m>. Its entries run as
+      high as <m>255(\alpha + \beta)</m>, which for <m>t = 45^\circ</m> is about
+      <m>360</m>, and no screen can display a brightness above <m>255</m>. So we display
+      the scalar multiple
+      <md>
+        \widehat{S} = \frac{1}{\alpha + \beta}\left( \alpha A + \beta D \right)
+        = \frac{\alpha}{\alpha + \beta} A + \frac{\beta}{\alpha + \beta} D,
+      </md>
+      whose coefficients are nonnegative and add to <m>1</m>, so that every entry lies
+      between the corresponding entries of <m>A</m> and <m>D</m> and therefore between
+      <m>0</m> and <m>255</m>. Rescaling changes nothing that matters: <m>S</m> and
+      <m>\widehat{S}</m> span the same line through the origin, and physics likewise
+      regards a state and any nonzero multiple of it as the same state.
+      <xref ref="fig-cat-superposition" text="global" /> shows the result for five
+      choices of <m>t</m>.
+    </p>
+
+    <figure xml:id="fig-cat-superposition">
+      <caption>
+        The superposition <m>\alpha A + \beta D</m> with
+        <m>(\alpha, \beta) = (\cos t, \sin t)</m>, rescaled for display, at
+        <m>t = 0^\circ, 30^\circ, 45^\circ, 60^\circ, 90^\circ</m>. The captions give
+        <m>\alpha^2</m>, the probability of finding the cat alive. Only the two ends of
+        the row are pictures of a cat; everything between them is a vector in
+        <m>\mathbb{M}_{780,520}</m> that happens to be drawable.
+      </caption>
+      <sidebyside widths="18% 18% 18% 18% 18%" margins="auto">
+        <figure xml:id="fig-cat-super-100">
+          <caption><m>\alpha^2 = 1</m></caption>
+          <image source="images/cat-super-100.png">
+            <shortdescription>The alive cat alone</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-cat-super-075">
+          <caption><m>\alpha^2 = \frac{3}{4}</m></caption>
+          <image source="images/cat-super-075.png">
+            <shortdescription>The alive cat clearly visible with a faint ghost of the lying cat beneath it</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-cat-super-050">
+          <caption><m>\alpha^2 = \frac{1}{2}</m></caption>
+          <image source="images/cat-super-050.png">
+            <shortdescription>Both cats equally faint, the sitting cat and the lying cat overlapping in the same box</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-cat-super-025">
+          <caption><m>\alpha^2 = \frac{1}{4}</m></caption>
+          <image source="images/cat-super-025.png">
+            <shortdescription>The lying cat clearly visible with a faint ghost of the sitting cat above it</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-cat-super-000">
+          <caption><m>\alpha^2 = 0</m></caption>
+          <image source="images/cat-super-000.png">
+            <shortdescription>The dead cat alone</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <remark xml:id="rem-superposition-not-subspace">
+      <title>Displayable Pictures Do Not Form a Subspace</title>
+      <p>
+        The rescaling above was forced on us, and it is worth saying why in the language
+        of this chapter. The set
+        <md>
+          \mathcal{P} = \left\{ M \in \mathbb{M}_{mn} \; \middle| \;
+            0 \leq m_{ij} \leq 255 \text{ for all } i, j \right\}
+        </md>
+        of pictures a screen can show is <em>not</em> a subspace of <m>\mathbb{M}_{mn}</m>.
+        It contains <m>A</m> but not <m>2A</m>, so it fails closure under scalar
+        multiplication, and it contains <m>A</m> and <m>D</m> but not <m>A + D</m>. It is
+        a bounded box inside the vector space, not a subspace of it. The vector space is
+        the larger, simpler object: the arithmetic is unrestricted, and only the last step
+        <mdash /> looking at the answer <mdash /> requires the entries to be in range.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-superposition-numbers">
+    <title>The Arithmetic Behind One Blend</title>
+
+    <p>
+      The pictures are made of arithmetic, and the arithmetic is small enough to inspect.
+      Take from each picture the patch around the alive cat's left eye <mdash /> the
+      same corner of the picture magnified in
+      <xref ref="sec-images-as-matrices" text="title" /> <mdash /> and average it in
+      blocks down to eight rows and six columns. From the alive cat this gives
+      <m>A_0</m>, and from the dead cat, whose box is empty in that corner, it gives
+      <m>D_0</m>:
+      <md>
+        A_0 = \begin{bmatrix}
+             65 \amp  63 \amp  80 \amp  84 \amp  81 \amp  79 \\
+             73 \amp  86 \amp  90 \amp  88 \amp  90 \amp  87 \\
+             81 \amp  89 \amp  86 \amp  90 \amp  93 \amp  86 \\
+             89 \amp  68 \amp  76 \amp  69 \amp  95 \amp  91 \\
+            103 \amp  91 \amp  78 \amp  87 \amp  91 \amp  91 \\
+            100 \amp  99 \amp 108 \amp  83 \amp  99 \amp  94 \\
+             90 \amp  97 \amp 104 \amp 100 \amp 102 \amp  86 \\
+             84 \amp  94 \amp 110 \amp 107 \amp  70 \amp  63
+        \end{bmatrix},
+        \qquad
+        D_0 = \begin{bmatrix}
+            71 \amp 69 \amp 69 \amp 65 \amp 64 \amp 62 \\
+            74 \amp 72 \amp 71 \amp 67 \amp 66 \amp 65 \\
+            77 \amp 74 \amp 73 \amp 70 \amp 68 \amp 66 \\
+            78 \amp 76 \amp 73 \amp 71 \amp 69 \amp 68 \\
+            82 \amp 78 \amp 76 \amp 73 \amp 70 \amp 69 \\
+            82 \amp 80 \amp 77 \amp 75 \amp 72 \amp 71 \\
+            85 \amp 82 \amp 79 \amp 76 \amp 74 \amp 72 \\
+            86 \amp 82 \amp 79 \amp 77 \amp 75 \amp 72
+        \end{bmatrix}.
+      </md>
+      The eye leaves <m>A_0</m> mottled: the pupil darkens the fourth row to <m>68</m>
+      and <m>69</m>, and the bright iris below it pushes several entries past
+      <m>100</m>. The empty
+      wall leaves <m>D_0</m> a smooth gradient, every row a little lighter than the one
+      above it and every column a little darker than the one to its left.
+    </p>
+
+    <p>
+      The half-and-half superposition is <m>t = 45^\circ</m>, where
+      <m>\alpha = \beta = \frac{1}{\sqrt{2}}</m> and the rescaled matrix
+      <m>\widehat{S}</m> is the average
+      <md>
+        \frac{1}{2}\left( A_0 + D_0 \right) = \begin{bmatrix}
+            68 \amp 66 \amp 74 \amp 74 \amp 72 \amp 70 \\
+            74 \amp 79 \amp 80 \amp 78 \amp 78 \amp 76 \\
+            79 \amp 82 \amp 80 \amp 80 \amp 80 \amp 76 \\
+            84 \amp 72 \amp 74 \amp 70 \amp 82 \amp 80 \\
+            92 \amp 84 \amp 77 \amp 80 \amp 80 \amp 80 \\
+            91 \amp 90 \amp 92 \amp 79 \amp 86 \amp 82 \\
+            88 \amp 90 \amp 92 \amp 88 \amp 88 \amp 79 \\
+            85 \amp 88 \amp 94 \amp 92 \amp 72 \amp 68
+        \end{bmatrix},
+      </md>
+      rounded to integers. Every entry sits halfway between the two originals, which is
+      why the eye in <xref ref="fig-cat-blocks" text="global" /> survives the blend at
+      half strength. In <m>A_0</m> the pupil entry <m>68</m> lies <m>21</m> below the
+      <m>89</m> directly above it; in the average, <m>72</m> lies <m>10</m> below
+      <m>82</m>. The contrast, like everything else, has been halved.
+    </p>
+
+    <figure xml:id="fig-cat-blocks">
+      <caption>
+        The two blocks and their average, magnified so that the individual entries are
+        visible. Each square is one entry, on the same scale as the pictures: <m>0</m>
+        would be black and <m>255</m> would be white.
+      </caption>
+      <sidebyside widths="27% 27% 27%" margins="auto">
+        <figure xml:id="fig-cat-block-alive">
+          <caption><m>A_0</m></caption>
+          <image source="images/cat-block-alive.png">
+            <shortdescription>A coarse grid of gray squares with a darker patch where the pupil is</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-cat-block-mix">
+          <caption><m>\frac{1}{2}(A_0 + D_0)</m></caption>
+          <image source="images/cat-block-mix.png">
+            <shortdescription>The same grid with the dark patch half as pronounced</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-cat-block-dead">
+          <caption><m>D_0</m></caption>
+          <image source="images/cat-block-dead.png">
+            <shortdescription>A coarse grid of gray squares shading smoothly from dark at the top to lighter at the bottom</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <p>
+      Enter the two blocks in Sage. The helper <c>show_pictures</c> defined here draws
+      each matrix the way <xref ref="fig-cat-blocks" text="global" /> is drawn, with
+      <c>vmin=0, vmax=255</c> pinning the ends of the scale so that a given number always
+      produces the same shade.
+    </p>
+
+    <sage>
+      <input>
+        A0 = matrix(ZZ, [
+        [ 65,  63,  80,  84,  81,  79],
+        [ 73,  86,  90,  88,  90,  87],
+        [ 81,  89,  86,  90,  93,  86],
+        [ 89,  68,  76,  69,  95,  91],
+        [103,  91,  78,  87,  91,  91],
+        [100,  99, 108,  83,  99,  94],
+        [ 90,  97, 104, 100, 102,  86],
+        [ 84,  94, 110, 107,  70,  63]])
+        D0 = matrix(ZZ, [
+        [71, 69, 69, 65, 64, 62],
+        [74, 72, 71, 67, 66, 65],
+        [77, 74, 73, 70, 68, 66],
+        [78, 76, 73, 71, 69, 68],
+        [82, 78, 76, 73, 70, 69],
+        [82, 80, 77, 75, 72, 71],
+        [85, 82, 79, 76, 74, 72],
+        [86, 82, 79, 77, 75, 72]])
+
+        def show_pictures(*pictures):
+            plots = [matrix_plot(M.change_ring(RDF), cmap='gray', vmin=0, vmax=255)
+                     for M in pictures]
+            graphics_array(plots, nrows=1).show(figsize=[3*len(plots), 3])
+
+        show_pictures(A0, (A0 + D0)/2, D0)
+      </input>
+    </sage>
+
+    <p>
+      Now put the amplitudes under your own control. The cell below draws
+      <m>\widehat{S}</m> for whatever angle you choose with the slider, and prints the
+      amplitudes together with the two probabilities. Drag from one end to the other and
+      watch one cat fade into the other.
+    </p>
+
+    <sage>
+      <input>
+        @interact
+        def superpose(degrees=slider(0, 90, 5, default=45, label="angle t (degrees)")):
+            t = RDF(degrees*pi/180)
+            alpha, beta = cos(t), sin(t)
+            print("alpha =", alpha.n(digits=4), "   beta =", beta.n(digits=4),
+                  "   alpha^2 + beta^2 =", (alpha^2 + beta^2).n(digits=4))
+            print("P(alive) =", (alpha^2).n(digits=4),
+                  "   P(dead) =", (beta^2).n(digits=4))
+            if abs(alpha + beta) &lt; 1e-6:
+                print("alpha + beta is zero here, so there is no rescaling to make")
+            else:
+                S = (alpha*A0 + beta*D0)/(alpha + beta)  # rescaled so it can be drawn
+                show_pictures(A0, S, D0)
+      </input>
+    </sage>
+
+    <p>
+      Two experiments are worth running in the cell above. First, change the upper end of
+      the slider range from <c>90</c> to <c>180</c>. Past <m>90^\circ</m> the amplitude
+      <m>\alpha</m> is negative, so the combination subtracts one picture from the other
+      and the entries leave the displayable range; at <m>135^\circ</m> we have
+      <m>\beta = -\alpha</m>, the rescaling would divide by zero, and the guard in the
+      cell says so instead. The vector <m>\alpha A + \beta D</m> exists at every one of
+      those angles. It is only the drawing that fails. Second, delete the division by
+      <c>alpha + beta</c> and evaluate again: the entries now run past <m>255</m>, every
+      bright region collapses to the same white, and
+      <xref ref="rem-superposition-not-subspace" text="type-global" /> is on the screen.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-superposition-plane">
+    <title>The Plane Spanned by the Two Cats</title>
+
+    <p>
+      Collect all the linear combinations at once. By
+      <xref ref="thm-span-is-subspace" text="type-global" />,
+      <md>
+        W = \operatorname{Span}\{A, D\}
+        = \left\{ \alpha A + \beta D \; \middle| \; \alpha, \beta \in \R \right\}
+      </md>
+      is a subspace of <m>\mathbb{M}_{780,520}</m>, and since <m>\{A, D\}</m> is linearly
+      independent it is a basis for <m>W</m>. So <m>W</m> is a two-dimensional subspace of
+      a space of dimension <m>405{,}600</m>: a plane of cats, sitting inside an
+      enormous space of pictures, containing every superposition of these two states and
+      nothing else.
+    </p>
+
+    <p>
+      Two dimensions means two coordinates. With <m>\mathcal{B} = \{A, D\}</m>, the
+      coordinate vector of a superposition in the sense of
+      <xref ref="def-coordinate-vector" text="type-global" /> is
+      <md>
+        [S]_{\mathcal{B}} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix} \in \R^2,
+      </md>
+      and by <xref ref="thm-coordinates-unique" text="type-global" /> no other pair of
+      scalars produces the same picture. The coordinate mapping is an isomorphism from
+      <m>W</m> to <m>\R^2</m>, so by <xref ref="rem-isomorphic-same" text="type-global" />
+      the plane of cats <em>is</em> <m>\R^2</m> for every purpose that involves adding and
+      scaling. The normalization <m>\alpha^2 + \beta^2 = 1</m> now has a shape: the
+      normalized superpositions are the coordinate vectors on the unit circle, which is
+      why one angle <m>t</m> was enough to list them all.
+    </p>
+
+    <p>
+      A plane has more than one basis, and the alternative one matters here. Set
+      <md>
+        C_{+} = \frac{1}{\sqrt{2}}(A + D), \qquad
+        C_{-} = \frac{1}{\sqrt{2}}(A - D).
+      </md>
+      These are the two states physics calls the <term>cat states</term>. Up to the
+      rescaling that any display requires, the first is the half-and-half blend in the
+      middle of <xref ref="fig-cat-superposition" text="global" /> and the second is the
+      picture in <xref ref="fig-cat-difference" text="global" />, which records where the
+      two pictures disagree. Since
+      <md>
+        A = \frac{1}{\sqrt{2}}\left( C_{+} + C_{-} \right), \qquad
+        D = \frac{1}{\sqrt{2}}\left( C_{+} - C_{-} \right),
+      </md>
+      each basis is contained in the span of the other, so
+      <m>\mathcal{C} = \{C_{+}, C_{-}\}</m> is another basis for the same plane <m>W</m>.
+      The change of basis of <xref ref="def-change-of-basis" text="type-global" /> is
+      carried out by
+      <md>
+        [S]_{\mathcal{C}} = P [S]_{\mathcal{B}}, \qquad
+        P = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \amp 1 \\ 1 \amp -1 \end{bmatrix},
+      </md>
+      a matrix satisfying <m>P^2 = I_2</m>, so the same <m>P</m> converts back again.
+    </p>
+
+    <figure xml:id="fig-cat-difference">
+      <caption>
+        The difference <m>A - D</m>, shifted by <m>128J</m> so that it can be displayed:
+        mid-gray marks the pixels where the two pictures agree, and the departures from
+        mid-gray are exactly where they do not. The box, the label, and the lighting
+        cancel; the cat does not.
+      </caption>
+      <image source="images/cat-difference.png" width="44%">
+        <shortdescription>An almost uniformly gray picture in which the box has vanished and two faint ghostly cats remain, one sitting and one lying</shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      This is the whole content of the measurement puzzle, in coordinates. The alive cat
+      is a basis vector of <m>\mathcal{B}</m> and has coordinates
+      <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> there, but in <m>\mathcal{C}</m> its
+      coordinates are <m>\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>: a
+      state that is definitely alive in one basis is an even superposition in the other.
+      Being a superposition is not a property of the state. It is a property of the state
+      <em>together with the basis</em> you chose to measure it against, exactly as a
+      vector in <m>\R^2</m> has no coordinates until a basis is named.
+    </p>
+
+    <p>
+      The cell below builds the two cat states out of the blocks, checks that <m>P</m>
+      really does convert coordinates, and draws <m>C_{-}</m>. That last picture needs the
+      shift used in <xref ref="fig-cat-difference" text="global" />, since a difference of
+      two pictures has negative entries wherever the second is the brighter.
+    </p>
+
+    <sage>
+      <input>
+        r = 1/sqrt(RDF(2))
+        Cplus  = r*(A0 + D0)
+        Cminus = r*(A0 - D0)
+        P = matrix(RDF, [[r, r], [r, -r]])
+
+        alpha, beta = RDF(0.6), RDF(0.8)          # change me: keep alpha^2 + beta^2 = 1
+        S = alpha*A0 + beta*D0
+        coordsB = vector(RDF, [alpha, beta])
+        coordsC = P*coordsB
+        print("coordinates in B:", coordsB)
+        print("coordinates in C:", coordsC)
+        print("same picture?",
+              (coordsC[0]*Cplus + coordsC[1]*Cminus - S).norm() &lt; 1e-9)
+        print("P^2 = I?", (P*P - identity_matrix(RDF, 2)).norm() &lt; 1e-9)
+
+        J = ones_matrix(RDF, 8, 6)
+        show_pictures(Cplus, 128*J + Cminus)
+      </input>
+    </sage>
+
+    <p>
+      Both checks compare a computed matrix with the one it should equal by measuring how
+      far apart they are, rather than asking whether they are equal on the nose. Floating
+      point arithmetic rounds at every step, so <c>==</c> can report <c>False</c> for two
+      quantities that differ only in the sixteenth digit; the mathematics is exact even
+      when the arithmetic is not. Change <c>alpha</c> and <c>beta</c> and evaluate again:
+      the coordinates change in both bases, and both checks still pass.
+    </p>
+
+    <p>
+      One detail of the last line is worth noticing. The blocks are dark enough that
+      <m>C_{+}</m> can be drawn as it stands, but for the full pictures it cannot: the
+      brightest entries of <m>A</m> and <m>D</m> are <m>214</m> and <m>184</m>, and
+      <m>\frac{1}{\sqrt{2}}(214 + 184)</m> is well over <m>255</m>. That is why
+      <xref ref="fig-cat-superposition" text="global" /> shows
+      <m>\frac{1}{2}(A + D)</m>, the rescaled version of <m>C_{+}</m>, rather than
+      <m>C_{+}</m> itself.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-superposition-limits">
+    <title>What the Pictures Do and Do Not Say</title>
+
+    <p>
+      The mathematics above is honest linear algebra, and it is worth being equally clear
+      about where the analogy with physics stops.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <term>The real state space is complex.</term> Quantum states are vectors in a
+            complex vector space, so the amplitudes are complex numbers with
+            <m>|\alpha|^2 + |\beta|^2 = 1</m>. All ten axioms of
+            <xref ref="def-vector-space" text="type-global" /> hold with
+            <m>\mathbb{C}</m> in place of <m>\R</m>, and everything in this chapter
+            carries over unchanged. Keeping the amplitudes real, as we did, keeps the
+            pictures drawable; what it leaves out is the phase a complex amplitude
+            carries, and the interference that comes with it.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>A superposition is not a blurred picture.</term> Opening the box
+            produces one cat or the other, never the blend in the middle of
+            <xref ref="fig-cat-superposition" text="global" />. The faded pictures depict
+            the coefficients, not what anyone would see.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Adding pictures is not adding states.</term> Averaging two pictures is
+            a statement about brightness, and nothing physical happens when it is done.
+            The combination means what it means here only because we declared these two
+            pictures to stand for the two states; what you are looking at is a picture of
+            <m>\alpha</m> and <m>\beta</m>, not of light leaving a box.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      What survives the caveats is the part this chapter is about. Two objects that are
+      not columns of numbers <mdash /> two photographs, or two quantum states <mdash />
+      can be added and scaled, and once that is granted, span, linear independence, basis,
+      dimension, coordinates, and change of basis all apply without a word of
+      modification. That is what the axioms of
+      <xref ref="def-vector-space" text="type-global" /> bought us.
+    </p>
+  </subsection>
+</section>

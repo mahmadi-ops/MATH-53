@@ -9,10 +9,17 @@
       coordinates: once a basis is chosen, an abstract vector space behaves exactly like
       <m>\R^n</m>, and an abstract linear transformation becomes a matrix.
     </p>
+    <p>
+      The chapter closes with an application in which the vectors are photographs. Two
+      pictures of the same cat, alive in one and dead in the other, are combined into the
+      superpositions that quantum mechanics describes, using nothing beyond the span,
+      basis, and coordinates developed here.
+    </p>
   </introduction>
   <xi:include href="vector-spaces/sec-vector-spaces.ptx" />
   <xi:include href="vector-spaces/sec-subspaces-of-vector-spaces.ptx" />
   <xi:include href="vector-spaces/sec-isomorphisms.ptx" />
   <xi:include href="vector-spaces/sec-coordinates.ptx" />
   <xi:include href="vector-spaces/sec-matrix-of-transformation.ptx" />
+  <xi:include href="vector-spaces/sec-superposition.ptx" />
 </chapter>
