@@ -8,7 +8,8 @@
       matrices can be added, scaled, multiplied, and <mdash /> sometimes <mdash />
       inverted. In this chapter we develop that arithmetic, paying close attention to
       which familiar rules of algebra survive the move from numbers to matrices and
-      which do not.
+      which do not. The chapter closes with applications, where the operations developed
+      here are put to work on a problem from outside mathematics.
     </p>
   </introduction>
 
@@ -18,5 +19,6 @@
   <xi:include href="matrix-algebra/sec-inverse.ptx" />
   <xi:include href="matrix-algebra/sec-elementary-matrices.ptx" />
   <xi:include href="matrix-algebra/sec-invertible-matrix-theorem.ptx" />
+  <xi:include href="matrix-algebra/sec-images-as-matrices.ptx" />
 
 </chapter>

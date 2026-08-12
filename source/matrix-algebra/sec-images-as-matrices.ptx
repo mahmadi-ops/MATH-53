@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-images-as-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Digital Images as Matrices</title>
+
+  <introduction>
+    <p>
+      Every operation in this chapter was introduced through its arithmetic. In this
+      section we look at the same operations through a different window: a digital
+      photograph <em>is</em> a matrix, so each operation we have defined does something
+      visible to a picture. Scaling a matrix changes the brightness, transposing it
+      reflects the picture across a diagonal, multiplying by a suitable matrix flips or
+      crops it, and multiplying by an inverse undoes a scramble. Nothing new is
+      introduced here; the point is that the arithmetic already developed has content
+      you can see.
+    </p>
+    <p>
+      Interactive <term>Sage cells</term> are scattered throughout. Press
+      <term>Evaluate</term> to run one in your browser, or copy the code into
+      <url href="https://sagecell.sagemath.org" visual="sagecell.sagemath.org">the Sage
+      cell server</url>. The cells on this page share their variables, but they must be
+      evaluated in order, so run each one as you reach it.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-images-grayscale">
+    <title>A Photograph Is a Matrix</title>
+
+    <p>
+      A digital image is a rectangular grid of <term>pixels</term>. A colour image
+      records three numbers at each pixel <mdash /> the intensities of red, green, and
+      blue <mdash /> so an image that is <m>m</m> pixels tall and <m>n</m> pixels wide
+      is stored as three <m>m \times n</m> matrices <m>R</m>, <m>G</m>, and <m>B</m>.
+      Each entry is an integer between <m>0</m> and <m>255</m>, where <m>0</m> means
+      none of that colour and <m>255</m> means as much as the display can produce.
+    </p>
+
+    <p>
+      To convert the image to grayscale we must replace the three numbers at each pixel
+      by a single number recording how bright that pixel is. The standard choice is the
+      weighted average
+      <md>
+        M = 0.299\,R + 0.587\,G + 0.114\,B,
+      </md>
+      with the resulting entries rounded to integers. Read that formula again with the
+      chapter in mind: it is a linear combination of three matrices, built from exactly
+      the scalar multiplication and addition of
+      <xref ref="sec-matrix-operations" text="title" />. The weights are
+      unequal because the human eye is far more sensitive to green light than to blue,
+      so an unweighted average <m>\frac{1}{3}(R + G + B)</m> would render greens too dark
+      and blues too light.
+    </p>
+
+    <figure xml:id="fig-sca-gray">
+      <caption>
+        A colour image (a) and its grayscale version (b), obtained by forming the linear
+        combination <m>M = 0.299\,R + 0.587\,G + 0.114\,B</m> of the three colour
+        matrices. From here on we work with the single matrix <m>M</m> in (b).
+      </caption>
+      <sidebyside widths="44% 44%" margins="auto">
+        <figure xml:id="fig-sca-colour">
+          <caption>The colour image, stored as three matrices.</caption>
+          <image source="images/sca-colour.png">
+            <shortdescription>An illustration of a cat sitting inside a wooden box labelled Schrodinger's Cat, beside a mechanism connected to a container marked with a skull and crossbones</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-sca-grayscale">
+          <caption>The grayscale image, stored as the single matrix <m>M</m>.</caption>
+          <image source="images/sca-gray.png">
+            <shortdescription>The same illustration in shades of gray</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <p>
+      The grayscale image in <xref ref="fig-sca-grayscale" text="global" /> is
+      <m>780</m> pixels tall and <m>520</m> pixels wide, so <m>M</m> is a
+      <m>780 \times 520</m> matrix with <m>405{,}600</m> entries
+      <mdash /> far too large to print. But nothing stops us from looking at a piece of
+      it. A <term>submatrix</term> of <m>M</m>, obtained by keeping some of its rows and
+      some of its columns, is exactly a rectangular patch of the picture. The patch
+      around the cat's left eye <mdash /> rows <m>297</m> through <m>376</m> and columns
+      <m>231</m> through <m>290</m> <mdash /> is an <m>80 \times 60</m> submatrix, which
+      is still <m>4800</m> numbers. So we shrink it: cut the patch into
+      <m>5 \times 5</m> blocks of pixels and replace each block by the average of its
+      <m>25</m> entries. Averaging blocks like this is how an image is reduced to a
+      lower resolution, and it leaves the <m>16 \times 12</m> matrix
+      <md>
+        D = \begin{bmatrix}
+             74 \amp  66 \amp  53 \amp  52 \amp  73 \amp  78 \amp  80 \amp  82 \amp  82 \amp  78 \amp  82 \amp  77 \\
+             62 \amp  56 \amp  65 \amp  84 \amp  83 \amp  87 \amp  83 \amp  89 \amp  84 \amp  80 \amp  84 \amp  74 \\
+             73 \amp  67 \amp  84 \amp  87 \amp  87 \amp  89 \amp  92 \amp  89 \amp  91 \amp  86 \amp  89 \amp  81 \\
+             70 \amp  80 \amp  85 \amp  87 \amp  91 \amp  91 \amp  91 \amp  82 \amp  94 \amp  90 \amp  91 \amp  86 \\
+             67 \amp  84 \amp  87 \amp  92 \amp  97 \amp  95 \amp  95 \amp  82 \amp  95 \amp  91 \amp  85 \amp  86 \\
+             83 \amp  90 \amp  92 \amp  87 \amp  75 \amp  76 \amp  91 \amp  93 \amp  95 \amp  91 \amp  86 \amp  86 \\
+             90 \amp  90 \amp  80 \amp  47 \amp  70 \amp  75 \amp  55 \amp  87 \amp  95 \amp  93 \amp  88 \amp  90 \\
+             87 \amp  88 \amp  54 \amp  89 \amp 123 \amp  36 \amp  76 \amp  59 \amp  96 \amp  95 \amp  94 \amp  91 \\
+             95 \amp 106 \amp  60 \amp 116 \amp 103 \amp  27 \amp  76 \amp  74 \amp  92 \amp  94 \amp  96 \amp  89 \\
+             99 \amp 111 \amp  81 \amp 108 \amp 133 \amp  49 \amp 120 \amp  78 \amp  84 \amp  95 \amp  94 \amp  86 \\
+            101 \amp 107 \amp 109 \amp  72 \amp 115 \amp 132 \amp 104 \amp  48 \amp  88 \amp 102 \amp 101 \amp  83 \\
+             93 \amp 100 \amp 104 \amp 111 \amp  97 \amp  86 \amp  94 \amp  86 \amp  99 \amp 106 \amp 105 \amp  90 \\
+             91 \amp  94 \amp  97 \amp 102 \amp 101 \amp  99 \amp 104 \amp  95 \amp 118 \amp 120 \amp 111 \amp  91 \\
+             84 \amp  91 \amp  91 \amp  98 \amp 105 \amp 110 \amp 116 \amp  85 \amp  85 \amp  83 \amp  78 \amp  62 \\
+             79 \amp  94 \amp  98 \amp 100 \amp 103 \amp 115 \amp 118 \amp  79 \amp  60 \amp  79 \amp  57 \amp  51 \\
+             79 \amp  84 \amp  92 \amp  85 \amp 109 \amp 113 \amp 116 \amp 116 \amp  76 \amp  64 \amp  53 \amp  90
+        \end{bmatrix}
+      </md>
+      shown magnified in <xref ref="fig-sca-detail" text="global" />. Each entry is now
+      one square of the picture: the small numbers are the dark squares and the large
+      ones are the light squares. The <m>27</m> in row <m>9</m> is the darkest part of
+      the pupil, and the <m>133</m> in the row below it is the brightest.
+    </p>
+
+    <figure xml:id="fig-sca-detail">
+      <caption>
+        The <m>16 \times 12</m> matrix <m>D</m>, drawn as an image and magnified so that
+        the individual squares are visible. Every square is one entry of <m>D</m>, and
+        every entry is the average of a <m>5 \times 5</m> block of pixels from around
+        the cat's left eye; <m>0</m> would be black and <m>255</m> would be white.
+      </caption>
+      <image source="images/sca-detail.png" width="34%">
+        <shortdescription>A coarse grid of gray squares, each square one entry of the matrix D</shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      Let us confirm in Sage that these numbers really do produce that picture. The
+      command <c>matrix_plot</c> draws one square per entry, and the option
+      <c>cmap='gray'</c> asks for the shading we have just described. The option
+      <c>vmin=0, vmax=255</c> pins the ends of the scale to black and white, so that a
+      given number always produces the same shade.
+    </p>
+
+    <sage>
+      <input>
+        D = matrix(ZZ, [
+        [ 74,  66,  53,  52,  73,  78,  80,  82,  82,  78,  82,  77],
+        [ 62,  56,  65,  84,  83,  87,  83,  89,  84,  80,  84,  74],
+        [ 73,  67,  84,  87,  87,  89,  92,  89,  91,  86,  89,  81],
+        [ 70,  80,  85,  87,  91,  91,  91,  82,  94,  90,  91,  86],
+        [ 67,  84,  87,  92,  97,  95,  95,  82,  95,  91,  85,  86],
+        [ 83,  90,  92,  87,  75,  76,  91,  93,  95,  91,  86,  86],
+        [ 90,  90,  80,  47,  70,  75,  55,  87,  95,  93,  88,  90],
+        [ 87,  88,  54,  89, 123,  36,  76,  59,  96,  95,  94,  91],
+        [ 95, 106,  60, 116, 103,  27,  76,  74,  92,  94,  96,  89],
+        [ 99, 111,  81, 108, 133,  49, 120,  78,  84,  95,  94,  86],
+        [101, 107, 109,  72, 115, 132, 104,  48,  88, 102, 101,  83],
+        [ 93, 100, 104, 111,  97,  86,  94,  86,  99, 106, 105,  90],
+        [ 91,  94,  97, 102, 101,  99, 104,  95, 118, 120, 111,  91],
+        [ 84,  91,  91,  98, 105, 110, 116,  85,  85,  83,  78,  62],
+        [ 79,  94,  98, 100, 103, 115, 118,  79,  60,  79,  57,  51],
+        [ 79,  84,  92,  85, 109, 113, 116, 116,  76,  64,  53,  90]])
+        matrix_plot(D, cmap='gray', vmin=0, vmax=255)
+      </input>
+    </sage>
+
+    <p>
+      Change one entry to <c>0</c> and evaluate the cell again: a single square turns
+      black. The matrix and the picture are the same object.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-images-scalar-addition">
+    <title>Scalar Multiplication and Addition: Brightness and Negatives</title>
+
+    <p>
+      Multiplying <m>M</m> by a scalar <m>c > 1</m> raises every intensity by the same
+      factor and so brightens the picture, while <m>0 \lt c \lt 1</m> darkens it. There
+      is a wrinkle: an intensity above <m>255</m> is not a colour any display can show,
+      so after computing <m>cM</m> the values above <m>255</m> must be replaced by
+      <m>255</m>. That last step is <em>not</em> a matrix operation, and it destroys
+      information <mdash /> several distinct bright values collapse to the same white,
+      which is why an overexposed photograph cannot be repaired by darkening it.
+    </p>
+
+    <p>
+      Addition is just as visible. Let <m>J</m> be the <m>m \times n</m> matrix all of
+      whose entries are <m>1</m>, so that <m>255J</m> is a completely white image. Then
+      <md>
+        N = 255J - M
+      </md>
+      replaces each intensity <m>v</m> by <m>255 - v</m>, turning black into white and
+      white into black. This is the photographic <term>negative</term>, and it needs no
+      clipping: if <m>0 \leq v \leq 255</m> then <m>0 \leq 255 - v \leq 255</m>
+      automatically.
+    </p>
+
+    <figure xml:id="fig-sca-negative">
+      <caption>
+        Scalar multiplication and addition applied to <m>M</m>. In (a) every entry is
+        multiplied by <m>1.4</m> and anything exceeding <m>255</m> is clipped; in (b)
+        every entry <m>v</m> is replaced by <m>255 - v</m>.
+      </caption>
+      <sidebyside widths="44% 44%" margins="auto">
+        <figure xml:id="fig-sca-brighter">
+          <caption>Brightened: <m>1.4\,M</m>, clipped at <m>255</m>.</caption>
+          <image source="images/sca-brighter.png">
+            <shortdescription>The grayscale illustration, noticeably lighter, with the brightest areas washed out to white</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-sca-negative-image">
+          <caption>The negative: <m>255J - M</m>.</caption>
+          <image source="images/sca-negative.png">
+            <shortdescription>The grayscale illustration with light and dark reversed, like a photographic negative</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <p>
+      Both operations are worth trying on the submatrix <m>D</m>. In Sage,
+      <c>D.nrows()</c> and <c>D.ncols()</c> report the dimensions of <m>D</m>, and
+      <c>ones_matrix</c> builds the matrix <m>J</m> of that same size.
+    </p>
+
+    <sage>
+      <input>
+        m, n = D.nrows(), D.ncols()
+        J = ones_matrix(ZZ, m, n)
+        N = 255*J - D
+        graphics_array([matrix_plot(D, cmap='gray', vmin=0, vmax=255),
+                        matrix_plot(N, cmap='gray', vmin=0, vmax=255)]).show()
+      </input>
+    </sage>
+
+    <p>
+      Applying the operation twice returns the original, since
+      <m>255J - (255J - M) = M</m>. Replace <c>N</c> by <c>255*J - N</c> in the cell
+      above and evaluate again to watch the second negative undo the first.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-images-transpose">
+    <title>Transposition: Reflecting Across the Diagonal</title>
+
+    <p>
+      Transposition interchanges the roles of the row index and the column index, so the
+      pixel in row <m>i</m> and column <m>j</m> of <m>M^T</m> is the pixel in row
+      <m>j</m> and column <m>i</m> of <m>M</m>. Geometrically, the picture is reflected
+      across the main diagonal, the line running from the upper-left corner to the
+      lower-right corner. Note also that a tall <m>m \times n</m> image becomes a wide
+      <m>n \times m</m> one.
+    </p>
+
+    <figure xml:id="fig-sca-transpose">
+      <caption>
+        The transpose <m>M^T</m>: the picture reflected across the diagonal running from
+        its upper-left to its lower-right corner. The image is now as wide as the
+        original was tall.
+      </caption>
+      <image source="images/sca-transpose.png" width="72%">
+        <shortdescription>The grayscale illustration reflected across its main diagonal, so that it lies on its side and appears mirrored</shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      A reflection is not a rotation, and it is easy to conflate the two. Turning the
+      page to look at <xref ref="fig-sca-transpose" text="global" /> sideways does not
+      recover the original picture: the reflected image is also mirrored. We will see in
+      <xref ref="subsec-images-multiplication" text="title" /> that a genuine rotation
+      requires a transposition <em>and</em> a flip.
+    </p>
+
+    <sage>
+      <input>
+        graphics_array([matrix_plot(D, cmap='gray', vmin=0, vmax=255),
+                        matrix_plot(D.transpose(), cmap='gray', vmin=0, vmax=255)]).show()
+      </input>
+    </sage>
+  </subsection>
+
+  <subsection xml:id="subsec-images-multiplication">
+    <title>Matrix Multiplication: Flips and Crops</title>
+
+    <p>
+      Multiplication is the operation whose visual meaning is least obvious, so we build
+      it up from the identity matrix. Since <m>I_m M = M</m> and <m>M I_n = M</m>,
+      multiplying by an identity matrix leaves the picture alone. Now permute the columns
+      of the identity: let <m>K_n</m> be the <m>n \times n</m> matrix obtained from
+      <m>I_n</m> by writing its columns in the reverse order,
+      <md>
+        K_4 = \begin{bmatrix}
+          0 \amp 0 \amp 0 \amp 1 \\
+          0 \amp 0 \amp 1 \amp 0 \\
+          0 \amp 1 \amp 0 \amp 0 \\
+          1 \amp 0 \amp 0 \amp 0
+        \end{bmatrix}.
+      </md>
+      Multiplying on the right by <m>K_n</m> reverses the order of the columns of
+      <m>M</m>, and multiplying on the left by <m>K_m</m> reverses the order of its rows.
+      In pictures, <m>M K_n</m> is the mirror image of <m>M</m> and <m>K_m M</m> is
+      <m>M</m> turned upside down.
+    </p>
+
+    <remark xml:id="rem-images-noncommutative">
+      <p>
+        Here is <xref ref="sec-matrix-multiplication" text="title" /> made visible: the
+        products <m>K M</m> and <m>M K</m> are genuinely different pictures, one flipped
+        top to bottom and the other left to right. Multiplication does not commute, and
+        which side you multiply on decides what happens.
+      </p>
+    </remark>
+
+    <p>
+      With both flips available we can say precisely what a rotation is. Reflecting
+      across the diagonal and then reversing the order of the columns gives
+      <md>
+        M^T K_m,
+      </md>
+      which is <m>M</m> rotated a quarter turn clockwise. So a rotation is a
+      transposition followed by a flip, exactly as promised in
+      <xref ref="subsec-images-transpose" text="title" />.
+    </p>
+
+    <figure xml:id="fig-sca-flips">
+      <caption>
+        Two products of <m>M</m> with a reversal matrix. Multiplying on the right
+        reverses the columns; multiplying on the left reverses the rows.
+      </caption>
+      <sidebyside widths="44% 44%" margins="auto">
+        <figure xml:id="fig-sca-flip-lr">
+          <caption>Mirrored: <m>M K_n</m>.</caption>
+          <image source="images/sca-flip-lr.png">
+            <shortdescription>The grayscale illustration mirrored left to right, with the cat now facing the other way</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-sca-flip-ud">
+          <caption>Upside down: <m>K_m M</m>.</caption>
+          <image source="images/sca-flip-ud.png">
+            <shortdescription>The grayscale illustration turned upside down</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <p>
+      Cropping is the same idea with a non-square factor. Delete rows from <m>I_m</m> to
+      leave a <m>k \times m</m> matrix <m>E</m>, keeping only the rows of the identity
+      that correspond to the rows of the picture you want; then <m>EM</m> is the
+      <m>k \times n</m> matrix consisting of just those rows. Doing the same on the right
+      selects columns, so a rectangular crop is a product <m>EMF</m>. This is how the
+      <m>80 \times 60</m> patch around the eye in
+      <xref ref="subsec-images-grayscale" text="title" /> is cut out of <m>M</m>: by
+      multiplication alone, with no need to speak of indices at all.
+    </p>
+
+    <p>
+      The reversal matrix has a <m>1</m> exactly where <m>i + j = n - 1</m>, which is
+      what the rule below builds. (Sage indexes rows and columns from zero.) Evaluate the
+      cell and compare the four pictures: the original, the two flips, and the quarter
+      turn.
+    </p>
+
+    <sage>
+      <input>
+        Km = matrix(ZZ, m, m, lambda i, j: 1 if i + j == m - 1 else 0)
+        Kn = matrix(ZZ, n, n, lambda i, j: 1 if i + j == n - 1 else 0)
+        pictures = [D, D*Kn, Km*D, D.transpose()*Km]
+        graphics_array([matrix_plot(A, cmap='gray', vmin=0, vmax=255)
+                        for A in pictures], nrows=1).show(figsize=8)
+      </input>
+    </sage>
+
+    <p>
+      One more check is worth making. Reversing the columns twice should return the
+      original picture, which says that <m>K_n K_n = I_n</m>. Sage agrees:
+    </p>
+
+    <sage>
+      <input>
+        Kn*Kn == identity_matrix(ZZ, n)
+      </input>
+    </sage>
+  </subsection>
+
+  <subsection xml:id="subsec-images-inverse">
+    <title>Inverses: Scrambling a Picture and Putting It Back</title>
+
+    <p>
+      The reversal matrix <m>K_n</m> is one example of a <term>permutation matrix</term>:
+      a matrix obtained from an identity matrix by rearranging its rows. Every such
+      matrix is a product of the row-swap elementary matrices of
+      <xref ref="sec-elementary-matrices" text="title" />, and so is invertible. If
+      <m>P</m> is an <m>m \times m</m> permutation matrix, then <m>PM</m> is the picture
+      with its rows of pixels shuffled into a new order <mdash /> unrecognizable, if the
+      shuffle is thorough.
+    </p>
+
+    <p>
+      Because <m>P</m> is invertible, no information has been lost. By condition (7) of
+      <xref ref="thm-invertible-matrix-theorem" text="type-global" />, each column of the
+      scrambled picture came from exactly one column of the original, so the original can
+      be recovered as
+      <md>
+        P^{-1}(PM) = (P^{-1}P)M = I_m M = M.
+      </md>
+      Better still, a permutation matrix satisfies <m>P^{-1} = P^T</m>, so the inverse
+      costs nothing to write down: it is the transpose. Shuffling the rows and
+      unshuffling them are the same operation performed with <m>P</m> and with
+      <m>P^T</m>.
+    </p>
+
+    <figure xml:id="fig-sca-scramble">
+      <caption>
+        A permutation matrix <m>P</m> shuffles the rows of pixels into an unrecognizable
+        image (a). Since <m>P^{-1} = P^T</m>, multiplying by <m>P^T</m> restores the
+        original exactly (b).
+      </caption>
+      <sidebyside widths="44% 44%" margins="auto">
+        <figure xml:id="fig-sca-scrambled">
+          <caption>Scrambled: <m>PM</m>.</caption>
+          <image source="images/sca-scrambled.png">
+            <shortdescription>Horizontal bands of gray in no discernible order, the rows of the illustration shuffled</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-sca-restored">
+          <caption>Restored: <m>P^T(PM) = M</m>.</caption>
+          <image source="images/sca-restored.png">
+            <shortdescription>The original grayscale illustration, recovered exactly</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
+    <p>
+      In the cell below, <c>Permutations(m).random_element()</c> picks a shuffle of the
+      <m>m</m> rows at random and <c>.to_matrix()</c> turns it into the corresponding
+      permutation matrix. The last line checks that the transpose really is the inverse.
+    </p>
+
+    <sage>
+      <input>
+        P = Permutations(m).random_element().to_matrix()
+        scrambled = P*D
+        restored = P.transpose()*scrambled
+        print(P.transpose() == P.inverse(), restored == D)
+        graphics_array([matrix_plot(A, cmap='gray', vmin=0, vmax=255)
+                        for A in [D, scrambled, restored]], nrows=1).show(figsize=6)
+      </input>
+    </sage>
+
+    <p>
+      Both printed values should be <c>True</c>, and the third picture should be
+      identical to the first. Run the cell a few times: the middle picture changes with
+      every new random <m>P</m>, and the third never does.
+    </p>
+
+    <remark xml:id="rem-images-encryption">
+      <p>
+        It is tempting to call this encryption, and in a very weak sense it is: <m>P</m>
+        is the key, <m>PM</m> is the ciphertext, and <m>P^T</m> is the decryption key.
+        But no pixel has been changed, only moved, so the shuffled image has exactly the
+        same collection of rows as the original and is easily unscrambled by anyone
+        willing to match up the edges. The mathematics that matters here is not the
+        secrecy: it is that an invertible matrix loses nothing, and a non-invertible one
+        does. Multiplying by a matrix that is not invertible <mdash /> averaging
+        neighbouring rows, say, or discarding every second one <mdash /> also produces a
+        new picture, but there is then no matrix that undoes it.
+      </p>
+    </remark>
+  </subsection>
+</section>
