@@ -136,7 +136,8 @@
       <m>\widehat{S}</m> span the same subspace of <m>\mathbb{M}_{780,520}</m>, and physics likewise
       regards a state and any nonzero multiple of it as the same state.
       <xref ref="fig-cat-superposition" text="global" /> shows the result for five
-      choices of <m>t</m>.
+      choices of the angle <m>t</m> that sets the amplitudes through
+      <m>(\alpha, \beta) = (\cos t, \sin t)</m>.
     </p>
 
     <figure xml:id="fig-cat-superposition">
