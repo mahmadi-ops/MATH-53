@@ -121,6 +121,21 @@
       two states.
     </p>
 
+    <remark xml:id="rem-superposition-disclaimer">
+      <title>This Is Not What a Superposition Really Is</title>
+      <p>
+        What we are doing here is depicting a quantum mechanical phenomenon, and the
+        depiction will not be accurate: superposition has no faithful classical
+        picture. We are only doing this to make the process more fun. We refer the
+        unstressed reader to the following lecture by Richard Feynman on quantum
+        mechanical behavior.
+      </p>
+      <figure xml:id="fig-feynman-lecture">
+        <caption>Richard Feynman lecturing on quantum mechanical behavior.</caption>
+        <video xml:id="video-feynman-lecture" youtube="xNF_3KdpdrY" width="70%" />
+      </figure>
+    </remark>
+
     <p>
       There is one practical wrinkle before we can look at <m>S</m>. Its entries run as
       high as <m>255(\alpha + \beta)</m>, which for <m>t = 45^\circ</m> is about
