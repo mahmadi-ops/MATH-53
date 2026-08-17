@@ -10,8 +10,14 @@
       matrices form such a space. In this section we take the two pictures below
       <mdash /> a cat alive in its box, and the same cat dead in the same box <mdash />
       read each one as a single vector, and form linear combinations of them. The
-      pictures that result are the ones physics draws when it wants to depict
-      <term>Schrödinger's cat</term>: neither cat, and both at once.
+      pictures that result can be used classically (as opposed to quantum mechanically)
+      to depict <term>Schrödinger's cat</term>.<fn>
+        Schrödinger's cat is a famous thought experiment created by physicist Erwin
+        Schrödinger in 1935. It explains quantum superposition <mdash /> the idea that a
+        tiny particle can be in two different states at the same time until someone looks
+        at it. In the story, a cat in a closed box is both alive and dead at once because
+        its life depends on a hidden radioactive atom.
+      </fn>
     </p>
     <p>
       Nothing here is new mathematics. Every step is scalar multiplication, addition,
