@@ -198,23 +198,31 @@
       </sidebyside>
     </figure>
 
-    <remark xml:id="rem-superposition-not-subspace">
-      <title>Displayable Pictures Do Not Form a Subspace</title>
-      <p>
-        The rescaling above was forced on us, and it is worth saying why in the language
-        of this chapter. The set
-        <md>
-          \mathcal{P} = \left\{ M \in \mathbb{M}_{mn} \; \middle| \;
-            0 \leq m_{ij} \leq 255 \text{ for all } i, j \right\}
-        </md>
-        of pictures a screen can show is <em>not</em> a subspace of <m>\mathbb{M}_{mn}</m>.
-        It contains <m>A</m> but not <m>2A</m>, so it fails closure under scalar
-        multiplication, and it contains <m>A</m> and <m>D</m> but not <m>A + D</m>. It is
-        a bounded box inside the vector space, not a subspace of it. The vector space is
-        the larger, simpler object: the arithmetic is unrestricted, and only the last step
-        <mdash /> looking at the answer <mdash /> requires the entries to be in range.
-      </p>
-    </remark>
+    <question xml:id="rem-superposition-not-subspace">
+      <title>Do Displayable Pictures Form a Subspace?</title>
+      <statement>
+        <p>
+          The rescaling above was forced on us, and it is worth asking why in the
+          language of this chapter. Consider the set
+          <md>
+            \mathcal{P} = \left\{ M \in \mathbb{M}_{mn} \; \middle| \;
+              0 \leq m_{ij} \leq 255 \text{ for all } i, j \right\}
+          </md>
+          of pictures a screen can show. Is <m>\mathcal{P}</m> a subspace of
+          <m>\mathbb{M}_{mn}</m>?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          No. <m>\mathcal{P}</m> contains <m>A</m> but not <m>2A</m>, so it fails closure
+          under scalar multiplication, and it contains <m>A</m> and <m>D</m> but not
+          <m>A + D</m>. It is a bounded box inside the vector space, not a subspace of
+          it. The vector space is the larger, simpler object: the arithmetic is
+          unrestricted, and only the last step <mdash /> looking at the answer
+          <mdash /> requires the entries to be in range.
+        </p>
+      </answer>
+    </question>
   </subsection>
 
   <subsection xml:id="subsec-superposition-numbers">
