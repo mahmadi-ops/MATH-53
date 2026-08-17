@@ -133,7 +133,7 @@
       whose coefficients are nonnegative and add to <m>1</m>, so that every entry lies
       between the corresponding entries of <m>A</m> and <m>D</m> and therefore between
       <m>0</m> and <m>255</m>. Rescaling changes nothing that matters: <m>S</m> and
-      <m>\widehat{S}</m> span the same line through the origin, and physics likewise
+      <m>\widehat{S}</m> span the same subspace of <m>\mathbb{M}_{780,520}</m>, and physics likewise
       regards a state and any nonzero multiple of it as the same state.
       <xref ref="fig-cat-superposition" text="global" /> shows the result for five
       choices of <m>t</m>.
