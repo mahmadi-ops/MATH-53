@@ -6,15 +6,12 @@ images of the linear combinations discussed in the section:
 
     alive          A                     the first basis matrix
     dead           D                     the second basis matrix
-    super-<p>      alpha A + beta D      a superposition, rescaled for display
-    difference     128 J + (A - D)/2     the difference, shifted into view
+    blend-<p>      (1 - t)A + t D        a blend, at t = p/100
+    difference     128 J + (A - D)/2     the matrix Delta, shifted into view
 
-The superpositions use amplitudes (alpha, beta) = (cos t, sin t) with
-alpha^2 + beta^2 = 1, at the angles t whose squared amplitudes are the round
-percentages 100, 75, 50, 25, and 0. Since alpha A + beta D has entries as
-large as 255(alpha + beta) > 255, each combination is divided by
-alpha + beta before it is saved; that scalar multiple is the same state, and
-it keeps every entry inside the displayable range 0 to 255.
+The blends use the coefficients (1 - t, t) at t = 0, 1/4, 1/2, 3/4, 1. Those
+coefficients are nonnegative and add to 1, so every entry of a blend lies
+between the corresponding entries of A and D and no rescaling is needed.
 
 It also block-averages the same small patch of both pictures down to a
 PATCH_ROWS x PATCH_COLS matrix and prints the two blocks in ready-to-paste
@@ -41,9 +38,10 @@ OUTDIR = ROOT / "assets" / "images"
 # Width, in pixels, of the full-photograph figures written for the book.
 FIGURE_WIDTH = 520
 
-# The superpositions to draw, as (percent alive, angle in degrees). The angle t
-# gives the amplitudes (cos t, sin t), and cos^2 t is the percentage.
-ANGLES = [(100, 0), (75, 30), (50, 45), (25, 60), (0, 90)]
+# The blends to draw, as percentages: the blend parameter is t = percent/100,
+# and the picture drawn is (1 - t)A + t D. So 0 is the alive cat and 100 the
+# dead one.
+BLENDS = [0, 25, 50, 75, 100]
 
 # Size of the small block whose entries are printed into the section.
 PATCH_ROWS = 8
@@ -146,32 +144,34 @@ def main() -> None:
     save(A, "cat-alive")
     save(D, "cat-dead")
 
-    # --- the superpositions ---------------------------------------------------
-    # alpha A + beta D with alpha^2 + beta^2 = 1, divided by alpha + beta so
-    # that the entries stay within the range a screen can show.
-    for percent, degrees in ANGLES:
-        t = np.radians(degrees)
-        alpha, beta = np.cos(t), np.sin(t)
-        S = (alpha * A + beta * D) / (alpha + beta)
-        save(S, f"cat-super-{percent:03d}")
-        print(f"    alpha = {alpha:.4f}, beta = {beta:.4f},"
-              f" alpha^2 = {alpha**2:.2f}, range {S.min():.0f} to {S.max():.0f}")
+    # --- the blends -----------------------------------------------------------
+    # (1 - t)A + t D, a convex combination of the two pictures: the entries
+    # stay between those of A and D, hence inside the range a screen can show.
+    for percent in BLENDS:
+        t = percent / 100
+        S = (1 - t) * A + t * D
+        save(S, f"cat-blend-{percent:03d}")
+        print(f"    t = {Fraction(percent, 100)}, coefficients"
+              f" {Fraction(100 - percent, 100)} and {Fraction(percent, 100)},"
+              f" range {S.min():.0f} to {S.max():.0f}")
 
-    # --- the difference, shifted so that it can be seen -----------------------
-    # A - D has negative entries wherever the dead picture is the brighter of
-    # the two, so it cannot be displayed as it stands. Adding 128J shifts it
-    # into view: mid-gray marks the pixels where the two pictures agree.
+    # --- the difference matrix, shifted so that it can be seen ----------------
+    # Delta = (A - D)/2 has negative entries wherever the dead picture is the
+    # brighter of the two, so it cannot be displayed as it stands. Adding 128J
+    # shifts it into view: mid-gray marks the pixels where the pictures agree.
     J = np.ones_like(A)
-    difference = 128 * J + (A - D)
-    outside = np.mean((difference < 0) | (difference > 255))
-    print(f"    difference range {(A - D).min():.0f} to {(A - D).max():.0f};"
+    Delta = (A - D) / 2
+    shifted = 128 * J + Delta
+    outside = np.mean((shifted < 0) | (shifted > 255))
+    print(f"    Delta range {Delta.min():.0f} to {Delta.max():.0f};"
           f" {outside:.4%} of the shifted entries fall outside 0 to 255")
-    save(difference, "cat-difference")
+    save(shifted, "cat-difference")
 
     # --- the small blocks used by the Sage cells ------------------------------
     A_block = block_average(A, args.crop)
     D_block = block_average(D, args.crop)
     mix_block = ((A_block + D_block) / 2).round().astype(int)
+    delta_block = ((A_block - D_block) / 2).round().astype(int)
     print(f"\npatch means: alive {A_block.mean():.1f}, dead {D_block.mean():.1f},"
           f" largest difference {np.abs(A_block - D_block).max()}")
     save_magnified(A_block, "cat-block-alive")
@@ -179,14 +179,11 @@ def main() -> None:
     save_magnified(mix_block, "cat-block-mix")
     print_block("alive", A_block)
     print_block("dead", D_block)
-    print_block("half and half", mix_block)
+    print_block("half and half (the block of M)", mix_block)
+    print_block("half difference (the block of Delta)", delta_block)
 
-    # Amplitudes at the angles used above, as exact values for the captions.
-    print("\n--- amplitudes ---")
-    for percent, degrees in ANGLES:
-        t = np.radians(degrees)
-        print(f"  {degrees:3d} deg: alpha = {np.cos(t):.6f}, beta = {np.sin(t):.6f},"
-              f" alpha^2 = {Fraction(percent, 100)}")
+    # The brightest entries of the two pictures, quoted in the section.
+    print(f"\nbrightest entries: alive {A.max():.0f}, dead {D.max():.0f}")
 
 
 if __name__ == "__main__":

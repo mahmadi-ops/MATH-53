@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="sec-superposition" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Superposition: Schrödinger's Cat as a Linear Combination</title>
+  <title>A Plane of Cats: Linear Combinations of Images</title>
 
   <introduction>
     <p>
@@ -9,14 +9,11 @@
       added and scaled exactly as vectors in <m>\R^n</m> are. We have already seen that
       matrices form such a space. In this section we take the two pictures below
       <mdash /> a cat alive in its box, and the same cat dead in the same box <mdash />
-      read each one as a single vector, and form linear combinations of them. The
-      pictures that result can be used classically (as opposed to quantum mechanically)
-      to depict <term>Schrödinger's cat</term>.<fn>
-        Schrödinger's cat is a famous thought experiment created by physicist Erwin
-        Schrödinger in 1935. It explains quantum superposition <mdash /> the idea that a
-        tiny particle can be in two different states at the same time until someone looks
-        at it. In the story, a cat in a closed box is both alive and dead at once because
-        its life depends on a hidden radioactive atom.
+      read each one as a single vector, and form linear combinations of them.<fn>
+        The two illustrations show <term>Schrödinger's cat</term>, a famous thought
+        experiment created by physicist Erwin Schrödinger in 1935. The physics is deferred
+        to <xref ref="subsec-superposition-quantum" text="title" /> at the end of the
+        section; until then the pictures are simply two matrices.
       </fn>
     </p>
     <p>
@@ -101,132 +98,112 @@
     </p>
   </subsection>
 
-  <subsection xml:id="subsec-superposition-combination">
-    <title>The Superposition</title>
+  <subsection xml:id="subsec-superposition-blend">
+    <title>Blending the Two Images</title>
 
     <p>
-      Quantum mechanics describes a system that can be found in either of two states by a
-      linear combination of those states, called a <term>superposition</term>. Writing
-      the two states as our two matrices, a superposition of the alive cat and the dead
-      cat is
+      The simplest linear combinations of <m>A</m> and <m>D</m> are the ones a screen can
+      show. For a <term>blend parameter</term> <m>\lambda</m> between <m>0</m> and
+      <m>1</m>, define
       <md>
-        S = \alpha A + \beta D, \qquad \alpha^2 + \beta^2 = 1.
+        S_{\lambda} = (1 - \lambda) A + \lambda D, \qquad 0 \leq \lambda \leq 1.
       </md>
-      The scalars <m>\alpha</m> and <m>\beta</m> are the <term>amplitudes</term>. The
-      normalization <m>\alpha^2 + \beta^2 = 1</m> is what makes the numbers
-      <m>\alpha^2</m> and <m>\beta^2</m> add up to <m>1</m>, and physics reads them as the
-      probability of finding the cat alive and the probability of finding it dead when the
-      box is opened. Every such pair is <m>(\alpha, \beta) = (\cos t, \sin t)</m> for some
-      angle <m>t</m>, so a single parameter sweeps through all the superpositions of these
-      two states.
+      The coefficient of <m>A</m> is always <m>1 - \lambda</m> and the coefficient of
+      <m>D</m> is always <m>\lambda</m>. These two numbers are nonnegative and add to
+      <m>1</m>, so each entry of <m>S_\lambda</m> is a weighted average of the
+      corresponding entries of <m>A</m> and <m>D</m> and therefore lies between them. Both
+      of those lie between <m>0</m> and <m>255</m>, so every blend can be displayed
+      exactly as it is computed. No rescaling and no normalization are needed anywhere in
+      this subsection.
     </p>
 
-    <remark xml:id="rem-superposition-disclaimer">
-      <title>This Is Not What a Superposition Really Is</title>
-      <p>
-        What we are doing here is depicting a quantum mechanical phenomenon, and the
-        depiction will not be accurate: superposition has no faithful classical
-        picture. We are only doing this to make the process more fun. We refer the
-        interested reader to the following lecture by Richard Feynman on quantum
-        mechanical behavior.
-      </p>
-      <figure xml:id="fig-feynman-lecture">
-        <caption>Richard Feynman lecturing on quantum mechanical behavior.</caption>
-        <video xml:id="video-feynman-lecture" youtube="xNF_3KdpdrY" width="70%" />
-      </figure>
-    </remark>
+    <table xml:id="tab-cat-blends">
+      <title>The five blends drawn in <xref ref="fig-cat-blend" text="global" />.</title>
+      <tabular halign="center" top="minor" bottom="minor">
+        <row header="yes" bottom="medium">
+          <cell><m>\lambda</m></cell>
+          <cell>displayed matrix <m>S_{\lambda}</m></cell>
+          <cell>interpretation</cell>
+        </row>
+        <row>
+          <cell><m>0</m></cell>
+          <cell><m>A</m></cell>
+          <cell>the alive cat</cell>
+        </row>
+        <row>
+          <cell><m>\frac{1}{4}</m></cell>
+          <cell><m>\frac{3}{4} A + \frac{1}{4} D</m></cell>
+          <cell>mostly <m>A</m></cell>
+        </row>
+        <row>
+          <cell><m>\frac{1}{2}</m></cell>
+          <cell><m>\frac{1}{2} A + \frac{1}{2} D</m></cell>
+          <cell>an equal blend</cell>
+        </row>
+        <row>
+          <cell><m>\frac{3}{4}</m></cell>
+          <cell><m>\frac{1}{4} A + \frac{3}{4} D</m></cell>
+          <cell>mostly <m>D</m></cell>
+        </row>
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>D</m></cell>
+          <cell>the dead cat</cell>
+        </row>
+      </tabular>
+    </table>
 
-    <p>
-      There is one practical wrinkle before we can look at <m>S</m>. Its entries run as
-      high as <m>255(\alpha + \beta)</m>, which for <m>t = 45^\circ</m> is about
-      <m>360</m>, and no screen can display a brightness above <m>255</m>. So we display
-      the scalar multiple
-      <md>
-        \widehat{S} = \frac{1}{\alpha + \beta}\left( \alpha A + \beta D \right)
-        = \frac{\alpha}{\alpha + \beta} A + \frac{\beta}{\alpha + \beta} D,
-      </md>
-      whose coefficients are nonnegative and add to <m>1</m>, so that every entry lies
-      between the corresponding entries of <m>A</m> and <m>D</m> and therefore between
-      <m>0</m> and <m>255</m>. Rescaling changes nothing that matters: <m>S</m> and
-      <m>\widehat{S}</m> span the same subspace of <m>\mathbb{M}_{780,520}</m>, and physics likewise
-      regards a state and any nonzero multiple of it as the same state.
-      <xref ref="fig-cat-superposition" text="global" /> shows the result for five
-      choices of the angle <m>t</m> that sets the amplitudes through
-      <m>(\alpha, \beta) = (\cos t, \sin t)</m>.
-    </p>
-
-    <figure xml:id="fig-cat-superposition">
+    <figure xml:id="fig-cat-blend">
       <caption>
-        The superposition <m>\alpha A + \beta D</m> with
-        <m>(\alpha, \beta) = (\cos t, \sin t)</m>, rescaled for display, at
-        <m>t = 0^\circ, 30^\circ, 45^\circ, 60^\circ, 90^\circ</m>. The captions give
-        <m>\alpha^2</m>, the probability of finding the cat alive. Only the two ends of
+        The blend <m>S_{\lambda} = (1 - \lambda) A + \lambda D</m> at
+        <m>\lambda = 0, \frac{1}{4}, \frac{1}{2}, \frac{3}{4}, 1</m>. Only the two ends of
         the row are pictures of a cat; everything between them is a vector in
         <m>\mathbb{M}_{780,520}</m> that happens to be drawable.
       </caption>
       <sidebyside widths="18% 18% 18% 18% 18%" margins="auto">
-        <figure xml:id="fig-cat-super-100">
-          <caption><m>\alpha^2 = 1</m></caption>
-          <image source="images/cat-super-100.png">
+        <figure xml:id="fig-cat-blend-000">
+          <caption><m>\lambda = 0</m></caption>
+          <image source="images/cat-blend-000.png">
             <shortdescription>The alive cat alone</shortdescription>
           </image>
         </figure>
-        <figure xml:id="fig-cat-super-075">
-          <caption><m>\alpha^2 = \frac{3}{4}</m></caption>
-          <image source="images/cat-super-075.png">
+        <figure xml:id="fig-cat-blend-025">
+          <caption><m>\lambda = \frac{1}{4}</m></caption>
+          <image source="images/cat-blend-025.png">
             <shortdescription>The alive cat clearly visible with a faint ghost of the lying cat beneath it</shortdescription>
           </image>
         </figure>
-        <figure xml:id="fig-cat-super-050">
-          <caption><m>\alpha^2 = \frac{1}{2}</m></caption>
-          <image source="images/cat-super-050.png">
+        <figure xml:id="fig-cat-blend-050">
+          <caption><m>\lambda = \frac{1}{2}</m></caption>
+          <image source="images/cat-blend-050.png">
             <shortdescription>Both cats equally faint, the sitting cat and the lying cat overlapping in the same box</shortdescription>
           </image>
         </figure>
-        <figure xml:id="fig-cat-super-025">
-          <caption><m>\alpha^2 = \frac{1}{4}</m></caption>
-          <image source="images/cat-super-025.png">
+        <figure xml:id="fig-cat-blend-075">
+          <caption><m>\lambda = \frac{3}{4}</m></caption>
+          <image source="images/cat-blend-075.png">
             <shortdescription>The lying cat clearly visible with a faint ghost of the sitting cat above it</shortdescription>
           </image>
         </figure>
-        <figure xml:id="fig-cat-super-000">
-          <caption><m>\alpha^2 = 0</m></caption>
-          <image source="images/cat-super-000.png">
+        <figure xml:id="fig-cat-blend-100">
+          <caption><m>\lambda = 1</m></caption>
+          <image source="images/cat-blend-100.png">
             <shortdescription>The dead cat alone</shortdescription>
           </image>
         </figure>
       </sidebyside>
     </figure>
 
-    <question xml:id="rem-superposition-not-subspace">
-      <title>Do Displayable Pictures Form a Subspace?</title>
-      <statement>
-        <p>
-          The rescaling above was forced on us, and it is worth asking why in the
-          language of this chapter. Consider the set
-          <md>
-            \mathcal{P} = \left\{ M \in \mathbb{M}_{mn} \; \middle| \;
-              0 \leq m_{ij} \leq 255 \text{ for all } i, j \right\}
-          </md>
-          of pictures a screen can show. Is <m>\mathcal{P}</m> a subspace of
-          <m>\mathbb{M}_{mn}</m>?
-        </p>
-      </statement>
-      <answer>
-        <p>
-          No. <m>\mathcal{P}</m> contains <m>A</m> but not <m>2A</m>, so it fails closure
-          under scalar multiplication, and it contains <m>A</m> and <m>D</m> but not
-          <m>A + D</m>. It is a bounded box inside the vector space, not a subspace of
-          it. The vector space is the larger, simpler object: the arithmetic is
-          unrestricted, and only the last step <mdash /> looking at the answer
-          <mdash /> requires the entries to be in range.
-        </p>
-      </answer>
-    </question>
+    <p>
+      One parameter with one meaning runs through the whole row: <m>\lambda</m> is how far
+      the blend has travelled from <m>A</m> towards <m>D</m>. The number that appears in
+      the formula, in the caption, and in the pixel arithmetic of the next subsection is
+      the same number every time.
+    </p>
   </subsection>
 
   <subsection xml:id="subsec-superposition-numbers">
-    <title>The Arithmetic Behind One Blend</title>
+    <title>The Arithmetic Behind a Blend</title>
 
     <p>
       The pictures are made of arithmetic, and the arithmetic is small enough to inspect.
@@ -267,11 +244,10 @@
     </p>
 
     <p>
-      The half-and-half superposition is <m>t = 45^\circ</m>, where
-      <m>\alpha = \beta = \frac{1}{\sqrt{2}}</m> and the rescaled matrix
-      <m>\widehat{S}</m> is the average
+      At <m>\lambda = \frac{1}{2}</m> both coefficients are <m>\frac{1}{2}</m>, so the
+      blend is the average
       <md>
-        \frac{1}{2}\left( A_0 + D_0 \right) = \begin{bmatrix}
+        \frac{1}{2} A_0 + \frac{1}{2} D_0 = \begin{bmatrix}
             68 \amp 66 \amp 74 \amp 74 \amp 72 \amp 70 \\
             74 \amp 79 \amp 80 \amp 78 \amp 78 \amp 76 \\
             79 \amp 82 \amp 80 \amp 80 \amp 80 \amp 76 \\
@@ -303,7 +279,7 @@
           </image>
         </figure>
         <figure xml:id="fig-cat-block-mix">
-          <caption><m>\frac{1}{2}(A_0 + D_0)</m></caption>
+          <caption><m>\frac{1}{2} A_0 + \frac{1}{2} D_0</m></caption>
           <image source="images/cat-block-mix.png">
             <shortdescription>The same grid with the dark patch half as pronounced</shortdescription>
           </image>
@@ -350,186 +326,326 @@
                      for M in pictures]
             graphics_array(plots, nrows=1).show(figsize=[3*len(plots), 3])
 
-        show_pictures(A0, (A0 + D0)/2, D0)
+        show_pictures(A0, (1/2)*A0 + (1/2)*D0, D0)
       </input>
     </sage>
 
     <p>
-      Now put the amplitudes under your own control. The cell below draws
-      <m>\widehat{S}</m> for whatever angle you choose with the slider, and prints the
-      amplitudes together with the two probabilities. Drag from one end to the other and
-      watch one cat fade into the other.
+      Now put the blend parameter under your own control. The cell below draws
+      <m>S_{\lambda}</m> for whatever <m>\lambda</m> you choose with the slider, prints the
+      two coefficients, and reports the largest and smallest entry of the result. The
+      variable is called <c>lam</c> because <c>lambda</c> is a reserved word in Python.
+      Drag from one end to the other and watch one cat fade into the other.
     </p>
 
     <sage>
       <input>
         @interact
-        def superpose(degrees=slider(0, 90, 5, default=45, label="angle t (degrees)")):
-            t = RDF(degrees*pi/180)
-            alpha, beta = cos(t), sin(t)
-            print("alpha =", alpha.n(digits=4), "   beta =", beta.n(digits=4),
-                  "   alpha^2 + beta^2 =", (alpha^2 + beta^2).n(digits=4))
-            print("P(alive) =", (alpha^2).n(digits=4),
-                  "   P(dead) =", (beta^2).n(digits=4))
-            if abs(alpha + beta) &lt; 1e-6:
-                print("alpha + beta is zero here, so there is no rescaling to make")
-            else:
-                S = (alpha*A0 + beta*D0)/(alpha + beta)  # rescaled so it can be drawn
-                show_pictures(A0, S, D0)
+        def blend(lam=slider(0, 1, 0.05, default=0.5, label="lambda")):
+            S = (1 - lam)*A0 + lam*D0
+            print("coefficient of A0 =", n(1 - lam, digits=3),
+                  "   coefficient of D0 =", n(lam, digits=3),
+                  "   sum =", n((1 - lam) + lam, digits=3))
+            print("entries run from", n(min(S.list()), digits=4),
+                  "to", n(max(S.list()), digits=4))
+            show_pictures(A0, S, D0)
       </input>
     </sage>
 
     <p>
-      Two experiments are worth running in the cell above. First, change the upper end of
-      the slider range from <c>90</c> to <c>180</c>. Past <m>90^\circ</m> the amplitude
-      <m>\alpha</m> is negative, so the combination subtracts one picture from the other
-      and the entries leave the displayable range; at <m>135^\circ</m> we have
-      <m>\beta = -\alpha</m>, the rescaling would divide by zero, and the guard in the
-      cell says so instead. The vector <m>\alpha A + \beta D</m> exists at every one of
-      those angles. It is only the drawing that fails. Second, delete the division by
-      <c>alpha + beta</c> and evaluate again: the entries now run past <m>255</m>, every
-      bright region collapses to the same white, and
-      <xref ref="rem-superposition-not-subspace" text="type-global" /> is on the screen.
+      One experiment is worth running in the cell above: change the slider range from
+      <c>slider(0, 1, 0.05, ...)</c> to <c>slider(-1, 2, 0.05, ...)</c> and drag past the
+      ends. The two coefficients still add to <m>1</m>, but one of them is now negative,
+      so one picture is being subtracted from the other and the printed range leaves
+      <m>0</m> to <m>255</m>. The drawing does not fail gracefully: every
+      entry below <m>0</m> is drawn as black and every entry above <m>255</m> as white, so
+      whole regions collapse to a single shade. The vector <m>(1 - \lambda)A + \lambda D</m>
+      exists for every real <m>\lambda</m>. It is only the drawing that fails.
     </p>
   </subsection>
 
-  <subsection xml:id="subsec-superposition-plane">
-    <title>The Plane Spanned by the Two Cats</title>
+  <subsection xml:id="subsec-superposition-span">
+    <title>From Blends to Span</title>
 
     <p>
-      Collect all the linear combinations at once. By
-      <xref ref="thm-span-is-subspace" text="type-global" />,
+      That experiment separates three sets of pictures, each larger than the last. The
+      blends themselves are the line segment
+      <md>
+        L = \left\{ (1 - \lambda) A + \lambda D \; \middle| \; 0 \leq \lambda \leq 1
+        \right\},
+      </md>
+      whose endpoints are <m>A</m> and <m>D</m>. Letting <m>\lambda</m> be any real number
+      gives the whole affine line through <m>A</m> and <m>D</m>, the combinations
+      <m>xA + yD</m> whose coefficients still satisfy <m>x + y = 1</m>. Dropping that
+      condition too, and letting the two coefficients vary independently, gives everything:
+      by <xref ref="thm-span-is-subspace" text="type-global" />,
       <md>
         W = \operatorname{Span}\{A, D\}
-        = \left\{ \alpha A + \beta D \; \middle| \; \alpha, \beta \in \R \right\}
+        = \left\{ xA + yD \; \middle| \; x, y \in \R \right\}
       </md>
       is a subspace of <m>\mathbb{M}_{780,520}</m>, and since <m>\{A, D\}</m> is linearly
       independent it is a basis for <m>W</m>. So <m>W</m> is a two-dimensional subspace of
-      a space of dimension <m>405{,}600</m>: a plane of cats, sitting inside an
-      enormous space of pictures, containing every superposition of these two states and
-      nothing else.
+      a space of dimension <m>405{,}600</m>: a plane of cats, sitting inside an enormous
+      space of pictures. The five pictures we displayed occupy a segment of one line in
+      that plane.
     </p>
 
     <p>
       Two dimensions means two coordinates. With <m>\mathcal{B} = \{A, D\}</m>, the
-      coordinate vector of a superposition in the sense of
+      coordinate vector of <m>X = xA + yD</m> in the sense of
       <xref ref="def-coordinate-vector" text="type-global" /> is
       <md>
-        [S]_{\mathcal{B}} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix} \in \R^2,
+        [X]_{\mathcal{B}} = \begin{bmatrix} x \\ y \end{bmatrix} \in \R^2,
       </md>
       and by <xref ref="thm-coordinates-unique" text="type-global" /> no other pair of
       scalars produces the same picture. The coordinate mapping is an isomorphism from
       <m>W</m> to <m>\R^2</m>, so by <xref ref="rem-isomorphic-same" text="type-global" />
       the plane of cats <em>is</em> <m>\R^2</m> for every purpose that involves adding and
-      scaling. The normalization <m>\alpha^2 + \beta^2 = 1</m> now has a shape: the
-      normalized superpositions are the coordinate vectors on the unit circle, which is
-      why one angle <m>t</m> was enough to list them all.
+      scaling. In those coordinates the blends are the segment joining
+      <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> to
+      <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, the affine line is the line through
+      those two points, and <m>W</m> is the whole plane.
     </p>
 
     <p>
-      A plane has more than one basis, and the alternative one matters here. Set
-      <md>
-        C_{+} = \frac{1}{\sqrt{2}}(A + D), \qquad
-        C_{-} = \frac{1}{\sqrt{2}}(A - D).
-      </md>
-      These are the two states physics calls the <term>cat states</term>. Up to the
-      rescaling that any display requires, the first is the half-and-half blend in the
-      middle of <xref ref="fig-cat-superposition" text="global" /> and the second is the
-      picture in <xref ref="fig-cat-difference" text="global" />, which records where the
-      two pictures disagree. Since
-      <md>
-        A = \frac{1}{\sqrt{2}}\left( C_{+} + C_{-} \right), \qquad
-        D = \frac{1}{\sqrt{2}}\left( C_{+} - C_{-} \right),
-      </md>
-      each basis is contained in the span of the other, so
-      <m>\mathcal{C} = \{C_{+}, C_{-}\}</m> is another basis for the same plane <m>W</m>.
-      The change of basis of <xref ref="def-change-of-basis" text="type-global" /> is
-      carried out by
-      <md>
-        [S]_{\mathcal{C}} = P [S]_{\mathcal{B}}, \qquad
-        P = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \amp 1 \\ 1 \amp -1 \end{bmatrix},
-      </md>
-      a matrix satisfying <m>P^2 = I_2</m>, so the same <m>P</m> converts back again.
-    </p>
-
-    <figure xml:id="fig-cat-difference">
-      <caption>
-        The difference <m>A - D</m>, shifted by <m>128J</m> so that it can be displayed:
-        mid-gray marks the pixels where the two pictures agree, and the departures from
-        mid-gray are exactly where they do not. The box, the label, and the lighting
-        cancel; the cat does not.
-      </caption>
-      <image source="images/cat-difference.png" width="44%">
-        <shortdescription>An almost uniformly gray picture in which the box has vanished and two faint ghostly cats remain, one sitting and one lying</shortdescription>
-      </image>
-    </figure>
-
-    <p>
-      This is the whole content of the measurement puzzle, in coordinates. The alive cat
-      is a basis vector of <m>\mathcal{B}</m> and has coordinates
-      <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> there, but in <m>\mathcal{C}</m> its
-      coordinates are <m>\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>: a
-      state that is definitely alive in one basis is an even superposition in the other.
-      Being a superposition is not a property of the state. It is a property of the state
-      <em>together with the basis</em> you chose to measure it against, exactly as a
-      vector in <m>\R^2</m> has no coordinates until a basis is named.
-    </p>
-
-    <p>
-      The cell below builds the two cat states out of the blocks, checks that <m>P</m>
-      really does convert coordinates, and draws <m>C_{-}</m>. That last picture needs the
-      shift used in <xref ref="fig-cat-difference" text="global" />, since a difference of
-      two pictures has negative entries wherever the second is the brighter.
+      The cell below reports, for coefficients of your choosing, the range of entries in
+      <m>xA_0 + yD_0</m> and whether a screen could show it. Only the first of the three
+      combinations it runs is a blend; the second is a legitimate vector of <m>W</m> that
+      exaggerates the difference between the two pictures instead of interpolating between
+      them, and the third leaves the displayable range entirely. Watch what a screen does with each.
     </p>
 
     <sage>
       <input>
-        r = 1/sqrt(RDF(2))
-        Cplus  = r*(A0 + D0)
-        Cminus = r*(A0 - D0)
-        P = matrix(RDF, [[r, r], [r, -r]])
+        def report(x, y):
+            X = x*A0 + y*D0
+            lo, hi = min(X.list()), max(X.list())
+            print("x =", x, "  y =", y,
+                  "  entries from", n(lo, digits=4), "to", n(hi, digits=4),
+                  "  displayable?", bool(0 &lt;= lo and hi &lt;= 255))
+            show_pictures(X)
 
-        alpha, beta = RDF(0.6), RDF(0.8)          # change me: keep alpha^2 + beta^2 = 1
-        S = alpha*A0 + beta*D0
-        coordsB = vector(RDF, [alpha, beta])
+        report(3/4, 1/4)   # change me: a blend, since x, y are nonnegative and x + y = 1
+        report(2, -1)      # on the affine line, but outside the segment of blends
+        report(2, 2)       # in W, and too bright for a screen: every entry is doubled
+      </input>
+    </sage>
+
+    <question xml:id="rem-superposition-not-subspace">
+      <title>Do Displayable Pictures Form a Subspace?</title>
+      <statement>
+        <p>
+          Only some of the vectors in <m>W</m> can be put on a screen, and it is worth
+          saying what that means in the language of this chapter. Consider the set
+          <md>
+            \mathcal{P} = \left\{ M \in \mathbb{M}_{mn} \; \middle| \;
+              0 \leq m_{ij} \leq 255 \text{ for all } i, j \right\}
+          </md>
+          of pictures a screen can show. Is <m>\mathcal{P}</m> a subspace of
+          <m>\mathbb{M}_{mn}</m>?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          No. <m>\mathcal{P}</m> contains <m>A</m> but not <m>2A</m>, so it fails closure
+          under scalar multiplication, and it contains <m>A</m> and <m>D</m> but not
+          <m>A + D</m>: the brightest entries of the two pictures are <m>214</m> and
+          <m>184</m>, and their sum <m>398</m> is far outside the range. It is a bounded
+          box inside the vector space, not a subspace of it. The vector space is the
+          larger, simpler object: the arithmetic is unrestricted, and only the last step
+          <mdash /> looking at the answer <mdash /> requires the entries to be in range.
+          Blends are exactly the combinations for which that last step is free.
+        </p>
+      </answer>
+    </question>
+  </subsection>
+
+  <subsection xml:id="subsec-superposition-basis">
+    <title>Average and Difference</title>
+
+    <p>
+      A plane has more than one basis, and a second one is worth having here because its
+      vectors mean something about images. Set
+      <md>
+        M = \frac{1}{2}\left( A + D \right), \qquad
+        \Delta = \frac{1}{2}\left( A - D \right).
+      </md>
+      The <term>average</term> <m>M</m> is the middle picture of
+      <xref ref="fig-cat-blend" text="global" />, the blend at <m>\lambda = \frac{1}{2}</m>.
+      The <term>difference</term> <m>\Delta</m> records where the two pictures disagree:
+      its entries are close to zero on the box, the label, and the lighting, which the two
+      pictures very nearly share, and they are largest where a cat is. Its entries run from
+      <m>-52</m> to <m>76</m>, so it is not itself displayable: it is negative wherever
+      the dead picture is the brighter of the two. For that reason
+      <xref ref="fig-cat-difference" text="global" /> shows <m>128J + \Delta</m>, where
+      <m>J</m> is the matrix of all ones; mid-gray then marks the pixels where the two
+      pictures agree.
+    </p>
+
+    <figure xml:id="fig-cat-difference">
+      <caption>
+        The difference <m>\Delta = \frac{1}{2}(A - D)</m>, shifted by <m>128J</m> so that
+        it can be displayed: mid-gray marks the pixels where the two pictures agree, and
+        the departures from mid-gray are exactly where they do not. The box and the label
+        nearly cancel, leaving a faint outline; the two cats do not cancel at all.
+      </caption>
+      <image source="images/cat-difference.png" width="44%">
+        <shortdescription>An almost uniformly gray picture in which the box and its label survive only as a faint outline, while two ghostly cats remain visible, one sitting and one lying</shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      Adding and subtracting the two definitions recovers the original pictures,
+      <md>
+        A = M + \Delta, \qquad D = M - \Delta,
+      </md>
+      so each of <m>\{A, D\}</m> and <m>\{M, \Delta\}</m> lies in the span of the other.
+      Hence <m>\mathcal{C} = \{M, \Delta\}</m> is a second basis for the same plane
+      <m>W</m>. Substituting these expressions into a blend gives
+      <md>
+        S_{\lambda} = (1 - \lambda)(M + \Delta) + \lambda(M - \Delta)
+        = M + (1 - 2\lambda) \Delta.
+      </md>
+      Read in this basis, the row of pictures in <xref ref="fig-cat-blend" text="global" />
+      does one thing only: the average component stays fixed at <m>M</m> while the
+      difference coefficient <m>1 - 2\lambda</m> slides from <m>+1</m> down to <m>-1</m>.
+      At <m>\lambda = \frac{1}{2}</m> the difference coefficient is <m>0</m>, and the
+      blend is exactly the average.
+    </p>
+
+    <p>
+      The same substitution works for any vector of <m>W</m>, not just a blend. For
+      <m>X = xA + yD</m>,
+      <md>
+        X = x(M + \Delta) + y(M - \Delta) = (x + y) M + (x - y) \Delta,
+      </md>
+      which is the change of basis of
+      <xref ref="def-change-of-basis" text="type-global" /> made explicit:
+      <md>
+        [X]_{\mathcal{C}} = P [X]_{\mathcal{B}}, \qquad
+        P = \begin{bmatrix} 1 \amp 1 \\ 1 \amp -1 \end{bmatrix}.
+      </md>
+      This <m>P</m> satisfies <m>P^2 = 2 I_2</m>, so the return trip is
+      <m>P^{-1} = \frac{1}{2} P</m>: halving the sum and difference of the
+      <m>\mathcal{C}</m>-coordinates recovers <m>x</m> and <m>y</m>.
+      <xref ref="tab-cat-coordinates" text="global" /> puts the two descriptions of the
+      same picture side by side.
+    </p>
+
+    <table xml:id="tab-cat-coordinates">
+      <title>One vector <m>X</m>, two bases.</title>
+      <tabular halign="center" top="minor" bottom="minor">
+        <row header="yes" bottom="medium">
+          <cell>basis</cell>
+          <cell>expansion of <m>X</m></cell>
+          <cell>coordinate vector</cell>
+        </row>
+        <row>
+          <cell><m>\mathcal{B} = \{A, D\}</m></cell>
+          <cell><m>X = xA + yD</m></cell>
+          <cell><m>[X]_{\mathcal{B}} = \begin{bmatrix} x \\ y \end{bmatrix}</m></cell>
+        </row>
+        <row>
+          <cell><m>\mathcal{C} = \{M, \Delta\}</m></cell>
+          <cell><m>X = (x + y) M + (x - y) \Delta</m></cell>
+          <cell><m>[X]_{\mathcal{C}} = \begin{bmatrix} x + y \\ x - y \end{bmatrix}</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The picture <m>X</m> has not changed; only its coordinates have, because the basis
+      has. The alive cat is a basis vector of <m>\mathcal{B}</m> and has coordinates
+      <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> there, while in <m>\mathcal{C}</m> its
+      coordinates are <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>: a picture that is one
+      basis vector in one basis is an even combination of both in the other. Being a
+      combination of two things is not a property of the vector. It is a property of the
+      vector <em>together with the basis</em> you chose to describe it, exactly as a
+      vector in <m>\R^2</m> has no coordinates until a basis is named.
+    </p>
+
+    <p>
+      The cell below builds <m>M</m> and <m>\Delta</m> out of the blocks, checks that
+      <m>P</m> really does convert coordinates, and draws both. The second picture needs
+      the shift used in <xref ref="fig-cat-difference" text="global" />.
+    </p>
+
+    <sage>
+      <input>
+        M0     = (A0 + D0).change_ring(RDF)/2
+        Delta0 = (A0 - D0).change_ring(RDF)/2
+        P = matrix(RDF, [[1, 1], [1, -1]])
+
+        x, y = RDF(0.75), RDF(0.25)     # change me: any two coefficients at all
+        X = x*A0 + y*D0
+        coordsB = vector(RDF, [x, y])
         coordsC = P*coordsB
         print("coordinates in B:", coordsB)
         print("coordinates in C:", coordsC)
         print("same picture?",
-              (coordsC[0]*Cplus + coordsC[1]*Cminus - S).norm() &lt; 1e-9)
-        print("P^2 = I?", (P*P - identity_matrix(RDF, 2)).norm() &lt; 1e-9)
+              (coordsC[0]*M0 + coordsC[1]*Delta0 - X).norm() &lt; 1e-9)
+        print("P^2 = 2I?",
+              (P*P - 2*identity_matrix(RDF, 2)).norm() &lt; 1e-9)
+        print("back again?",
+              ((P/2)*coordsC - coordsB).norm() &lt; 1e-9)
 
         J = ones_matrix(RDF, 8, 6)
-        show_pictures(Cplus, 128*J + Cminus)
+        show_pictures(M0, 128*J + Delta0)
       </input>
     </sage>
 
     <p>
-      Both checks compare a computed matrix with the one it should equal by measuring how
-      far apart they are, rather than asking whether they are equal on the nose. Floating
+      The checks compare computed quantities with the ones they should equal by measuring
+      how far apart they are, rather than asking whether they are equal on the nose. Floating
       point arithmetic rounds at every step, so <c>==</c> can report <c>False</c> for two
       quantities that differ only in the sixteenth digit; the mathematics is exact even
-      when the arithmetic is not. Change <c>alpha</c> and <c>beta</c> and evaluate again:
-      the coordinates change in both bases, and both checks still pass.
-    </p>
-
-    <p>
-      One detail of the last line is worth noticing. The blocks are dark enough that
-      <m>C_{+}</m> can be drawn as it stands, but for the full pictures it cannot: the
-      brightest entries of <m>A</m> and <m>D</m> are <m>214</m> and <m>184</m>, and
-      <m>\frac{1}{\sqrt{2}}(214 + 184)</m> is well over <m>255</m>. That is why
-      <xref ref="fig-cat-superposition" text="global" /> shows
-      <m>\frac{1}{2}(A + D)</m>, the rescaled version of <m>C_{+}</m>, rather than
-      <m>C_{+}</m> itself.
+      when the arithmetic is not. Change <c>x</c> and <c>y</c> and evaluate again: the
+      coordinates change in both bases, and every check still passes.
     </p>
   </subsection>
 
-  <subsection xml:id="subsec-superposition-limits">
-    <title>What the Pictures Do and Do Not Say</title>
+  <subsection xml:id="subsec-superposition-quantum">
+    <title>An Optional Connection to Quantum Mechanics</title>
 
     <p>
-      The mathematics above is honest linear algebra, and it is worth being equally clear
-      about where the analogy with physics stops.
+      Everything above is finished linear algebra, and none of what follows is needed for
+      any of it. But the pictures were chosen for a reason, and the word for a linear
+      combination of states in physics is worth meeting once.
+    </p>
+
+    <remark xml:id="rem-superposition-quantum">
+      <title>For the Interested Reader</title>
+      <p>
+        Quantum mechanics describes a system that can be found in either of two states by
+        a linear combination of those states, called a <term>superposition</term>. Writing
+        the two states as our two matrices, it would take the form
+        <m>\alpha A + \beta D</m>. The resemblance to <m>S_{\lambda}</m> is real but
+        limited. There the coefficients are <term>amplitudes</term>, generally complex
+        numbers subject to <m>|\alpha|^2 + |\beta|^2 = 1</m>, and when the two states form
+        an orthonormal basis their squared magnitudes <m>|\alpha|^2</m> and
+        <m>|\beta|^2</m> are the probabilities of the two outcomes of a measurement. The
+        blends in this section are classical linear combinations of two images, not
+        representations of quantum states.
+      </p>
+    </remark>
+
+    <remark xml:id="rem-superposition-disclaimer">
+      <title>This Is Not What a Superposition Really Is</title>
+      <p>
+        Any picture of a superposition is a depiction, and the depiction will not be
+        accurate: superposition has no faithful classical picture. The blends above are
+        worth drawing because they show linear combinations, not because they show physics.
+        We refer the interested reader to the following lecture by Richard Feynman on
+        quantum mechanical behavior.
+      </p>
+      <figure xml:id="fig-feynman-lecture">
+        <caption>Richard Feynman lecturing on quantum mechanical behavior.</caption>
+        <video xml:id="video-feynman-lecture" youtube="xNF_3KdpdrY" width="70%" />
+      </figure>
+    </remark>
+
+    <p>
+      Three differences are worth stating plainly.
     </p>
 
     <p>
@@ -537,11 +653,10 @@
         <li>
           <p>
             <term>The real state space is complex.</term> Quantum states are vectors in a
-            complex vector space, so the amplitudes are complex numbers with
-            <m>|\alpha|^2 + |\beta|^2 = 1</m>. All ten axioms of
+            complex vector space, so the amplitudes are complex numbers. All ten axioms of
             <xref ref="def-vector-space" text="type-global" /> hold with
             <m>\mathbb{C}</m> in place of <m>\R</m>, and everything in this chapter
-            carries over unchanged. Keeping the amplitudes real, as we did, keeps the
+            carries over unchanged. Keeping the coefficients real, as we did, keeps the
             pictures drawable; what it leaves out is the phase a complex amplitude
             carries, and the interference that comes with it.
           </p>
@@ -550,8 +665,8 @@
           <p>
             <term>A superposition is not a blurred picture.</term> Opening the box
             produces one cat or the other, never the blend in the middle of
-            <xref ref="fig-cat-superposition" text="global" />. The faded pictures depict
-            the coefficients, not what anyone would see.
+            <xref ref="fig-cat-blend" text="global" />. A faded picture depicts the
+            coefficients, not what anyone would see.
           </p>
         </li>
         <li>
@@ -560,7 +675,7 @@
             a statement about brightness, and nothing physical happens when it is done.
             The combination means what it means here only because we declared these two
             pictures to stand for the two states; what you are looking at is a picture of
-            <m>\alpha</m> and <m>\beta</m>, not of light leaving a box.
+            <m>1 - \lambda</m> and <m>\lambda</m>, not of light leaving a box.
           </p>
         </li>
       </ul>
