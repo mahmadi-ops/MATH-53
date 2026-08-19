@@ -55,8 +55,10 @@
       </svg>
     </g>
   </g>
-  <line id="pf-cats-basis-b-__line-2" x1="102.7" y1="148.0" x2="161.0" y2="148.0" stroke="green" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-green)"/>
-  <line id="pf-cats-basis-b-__line-3" x1="102.7" y1="148.0" x2="102.7" y2="86.2" stroke="green" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-green)"/>
+  <line id="pf-cats-basis-b-__line-2" x1="71.2" y1="48.0" x2="197.5" y2="181.3" stroke="red" stroke-width="2" fill="none"/>
+  <line id="pf-cats-basis-b-__line-3" x1="165.9" y1="148.0" x2="102.7" y2="81.3" stroke="blue" stroke-width="3" fill="none"/>
+  <line id="pf-cats-basis-b-__line-4" x1="102.7" y1="148.0" x2="161.0" y2="148.0" stroke="green" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-green)"/>
+  <line id="pf-cats-basis-b-__line-5" x1="102.7" y1="148.0" x2="102.7" y2="86.2" stroke="green" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-green)"/>
   <g id="pf-cats-basis-b-__label-2" transform="translate(165.9,158.0) translate(-6.8,-0.0)">
     <g id="pf-cats-basis-b-__g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="13.576px" height="12.960px" role="img" focusable="false" viewBox="0 -716 750 716" x="0.0" y="0.0">

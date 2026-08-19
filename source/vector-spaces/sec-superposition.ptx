@@ -613,6 +613,8 @@
               <diagram dimensions="(240,240)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
                   <line endpoints="((0,0),(1,0))" stroke="green" thickness="4" arrows="1"/>
                   <line endpoints="((0,0),(0,1))" stroke="green" thickness="4" arrows="1"/>
                   <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
@@ -632,6 +634,8 @@
               <diagram dimensions="(240,240)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
                   <line at="vector-M" endpoints="((0,0),(0.5,0.5))" stroke="purple" thickness="4" arrows="1"/>
                   <line at="vector-Delta" endpoints="((0,0),(0.5,-0.5))" stroke="orange" thickness="4" arrows="1"/>
                   <point at="point-A" p="(1,0)" fill="blue" size="4"/>
