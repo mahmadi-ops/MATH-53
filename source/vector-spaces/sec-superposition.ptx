@@ -606,20 +606,17 @@
         <figure xml:id="fig-cats-basis-b">
           <caption>
             The basis <m>\mathcal{B} = \{A, D\}</m>. Its vectors point along the coordinate
-            axes, and the blends run from the tip of one to the tip of the other.
+            axes.
           </caption>
           <image>
             <prefigure label="pf-cats-basis-b" xmlns="https://prefigure.org">
               <diagram dimensions="(240,240)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
                   <line endpoints="((0,0),(1,0))" stroke="green" thickness="4" arrows="1"/>
                   <line endpoints="((0,0),(0,1))" stroke="green" thickness="4" arrows="1"/>
-                  <label p="(1,0)" alignment="s" offset="(14,-10)"><m>A</m></label>
-                  <label p="(0,1)" alignment="w" offset="(-12,8)"><m>D</m></label>
-                  <label p="(0.62,0.62)" alignment="ne" offset="(14,14)">blends</label>
+                  <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
+                  <label p="(0,1)" alignment="w" offset="(-6,0)"><m>D</m></label>
                 </coordinates>
               </diagram>
             </prefigure>
@@ -628,25 +625,26 @@
         <figure xml:id="fig-cats-basis-c">
           <caption>
             The basis <m>\mathcal{C} = \{M, \Delta\}</m>. Its vectors point along the
-            diagonals instead, and the blend line becomes one point and one direction.
+            diagonals instead, and the legend records how they recover <m>A</m> and
+            <m>D</m>.
           </caption>
           <image>
             <prefigure label="pf-cats-basis-c" xmlns="https://prefigure.org">
               <diagram dimensions="(240,240)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
-                  <line endpoints="((0,0),(0.5,0.5))" stroke="purple" thickness="4" arrows="1"/>
-                  <line endpoints="((0,0),(0.5,-0.5))" stroke="orange" thickness="4" arrows="1"/>
-                  <point p="(1,0)" fill="blue" size="4"/>
-                  <point p="(0,1)" fill="blue" size="4"/>
-                  <label p="(0.5,0.5)" alignment="nw" offset="(-10,10)"><m>M</m></label>
-                  <label p="(0.5,-0.5)" alignment="se" offset="(12,-8)"><m>\Delta</m></label>
-                  <label p="(1,0)" alignment="s" offset="(14,-10)"><m>A</m></label>
-                  <label p="(0,1)" alignment="w" offset="(-12,8)"><m>D</m></label>
-                  <label p="(1.45,1.55)" alignment="c"><m>A = M + \Delta</m></label>
-                  <label p="(1.45,1.05)" alignment="c"><m>D = M - \Delta</m></label>
+                  <line at="vector-M" endpoints="((0,0),(0.5,0.5))" stroke="purple" thickness="4" arrows="1"/>
+                  <line at="vector-Delta" endpoints="((0,0),(0.5,-0.5))" stroke="orange" thickness="4" arrows="1"/>
+                  <point at="point-A" p="(1,0)" fill="blue" size="4"/>
+                  <point at="point-D" p="(0,1)" fill="blue" size="4"/>
+                  <label p="(0.5,0.5)" alignment="ne"><m>M</m></label>
+                  <label p="(0.5,-0.5)" alignment="se"><m>\Delta</m></label>
+                  <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
+                  <label p="(0,1)" alignment="w" offset="(-6,0)"><m>D</m></label>
+                  <legend anchor="(2.2,2.0)" alignment="sw" scale="0.9">
+                    <item ref="point-A"><m>A = M + \Delta</m></item>
+                    <item ref="point-D"><m>D = M - \Delta</m></item>
+                  </legend>
                 </coordinates>
               </diagram>
             </prefigure>
