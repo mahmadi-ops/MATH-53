@@ -247,9 +247,8 @@
 
     <sage>
       <input>
-        from random import normalvariate, seed
-        seed(53)          # change me: any integer gives a different night of photographs
-        sigma = 25        # change me: the typical size of the grain, in gray levels
+        set_random_seed(53)   # change me: any integer gives a different night of photographs
+        sigma = 25            # change me: the typical size of the grain, in gray levels
 
         def grainy(X, sigma):
             noise = matrix(RDF, 8, 6, [normalvariate(0, sigma) for _ in range(48)])
