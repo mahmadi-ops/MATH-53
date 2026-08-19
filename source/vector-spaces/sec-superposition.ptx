@@ -6,8 +6,9 @@
     <p>
       The definition of a vector space says nothing about columns of numbers, so anything
       satisfying the axioms of <xref ref="def-vector-space" text="type-global" /> may be
-      added and scaled exactly as vectors in <m>\R^n</m> are. We have already seen that
-      matrices form such a space. In this section we take the two pictures below
+      added and scaled exactly as vectors in <m>\R^n</m> are. We have already seen in
+      <xref ref="eg-m22-vector-space" text="type-global" /> that matrices form such a
+      space. In this section we take the two pictures below
       <mdash /> a cat alive in its box, and the same cat dead in the same box <mdash />
       read each one as a single vector, and form linear combinations of them.<fn>
         The two illustrations show <term>Schrödinger's cat</term>, a famous thought
@@ -354,13 +355,14 @@
 
     <p>
       One experiment is worth running in the cell above: change the slider range from
-      <c>slider(0, 1, 0.05, ...)</c> to <c>slider(-1, 2, 0.05, ...)</c> and drag past the
-      ends. The two coefficients still add to <m>1</m>, but one of them is now negative,
-      so one picture is being subtracted from the other and the printed range leaves
-      <m>0</m> to <m>255</m>. The drawing does not fail gracefully: every
+      <c>slider(0, 1, 0.05, ...)</c> to <c>slider(-1, 2, 0.05, ...)</c> and drag past
+      <m>0</m> and <m>1</m>. The two coefficients still add to <m>1</m>, but one of them is
+      now negative, so one picture is being subtracted from the other and the printed range
+      no longer stays between <m>0</m> and <m>255</m>. The drawing fails silently: every
       entry below <m>0</m> is drawn as black and every entry above <m>255</m> as white, so
-      whole regions collapse to a single shade. The vector <m>(1 - \lambda)A + \lambda D</m>
-      exists for every real <m>\lambda</m>. It is only the drawing that fails.
+      whole regions collapse to a single shade with nothing to announce that it happened.
+      The vector <m>(1 - \lambda)A_0 + \lambda D_0</m> exists for every real
+      <m>\lambda</m>. It is only the drawing that fails.
     </p>
   </subsection>
 
@@ -375,7 +377,7 @@
         \right\},
       </md>
       whose endpoints are <m>A</m> and <m>D</m>. Letting <m>\lambda</m> be any real number
-      gives the whole affine line through <m>A</m> and <m>D</m>, the combinations
+      gives the whole line through <m>A</m> and <m>D</m>, the combinations
       <m>xA + yD</m> whose coefficients still satisfy <m>x + y = 1</m>. Dropping that
       condition too, and letting the two coefficients vary independently, gives everything:
       by <xref ref="thm-span-is-subspace" text="type-global" />,
@@ -401,11 +403,92 @@
       scalars produces the same picture. The coordinate mapping is an isomorphism from
       <m>W</m> to <m>\R^2</m>, so by <xref ref="rem-isomorphic-same" text="type-global" />
       the plane of cats <em>is</em> <m>\R^2</m> for every purpose that involves adding and
-      scaling. In those coordinates the blends are the segment joining
-      <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> to
-      <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, the affine line is the line through
-      those two points, and <m>W</m> is the whole plane.
+      scaling. Carrying the three sets of pictures across that isomorphism turns each one
+      into a familiar subset of <m>\R^2</m>, as in
+      <xref ref="fig-cats-coordinates" text="global" />: the blends become the segment
+      joining <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> to
+      <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, the combinations with <m>x + y = 1</m>
+      become the whole line through those two points, and <m>W</m> becomes all of
+      <m>\R^2</m>. Everything on the right-hand side of that correspondence is a picture
+      you could have drawn in a first course; the isomorphism is what lets us reason about
+      a space of dimension <m>405{,}600</m> by drawing in the plane.
     </p>
+
+    <figure xml:id="fig-cats-coordinates">
+      <caption>
+        The three sets of pictures carried over to <m>\R^2</m> by the coordinate
+        isomorphism <m>X \mapsto [X]_{\mathcal{B}}</m>, taken with respect to the basis
+        <m>\mathcal{B} = \{A, D\}</m>. The live cat <m>A</m> sits at
+        <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and the dead cat <m>D</m> at
+        <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>; each set below contains the one
+        before it.
+      </caption>
+      <sidebyside widths="30% 30% 30%" margins="auto">
+        <figure xml:id="fig-cats-segment">
+          <caption>
+            The blends: the segment where <m>x + y = 1</m> and <m>x, y \geq 0</m>.
+          </caption>
+          <image>
+            <prefigure label="pf-cats-segment" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
+                  <point p="(1,0)" fill="blue" size="4"/>
+                  <point p="(0,1)" fill="blue" size="4"/>
+                  <label p="(1,0)" alignment="s" offset="(6,-8)"><m>[A]_\mathcal{B}</m></label>
+                  <label p="(0,1)" alignment="w" offset="(-10,6)"><m>[D]_\mathcal{B}</m></label>
+                  <label p="(0.5,0.5)" alignment="ne" offset="(14,14)">blends</label>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        <figure xml:id="fig-cats-line">
+          <caption>
+            The line <m>x + y = 1</m>, where the coefficients still sum to one.
+          </caption>
+          <image>
+            <prefigure label="pf-cats-line" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="red" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
+                  <point p="(1,0)" fill="blue" size="4"/>
+                  <point p="(0,1)" fill="blue" size="4"/>
+                  <label p="(1.4,1.6)" alignment="c"><m>x+y=1</m></label>
+                  <label p="(-1.5,1.3)" alignment="c">x negative</label>
+                  <label p="(1.5,-1.3)" alignment="c">y negative</label>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        <figure xml:id="fig-cats-plane">
+          <caption>
+            All of <m>W</m>: the coefficients vary independently, filling the plane.
+          </caption>
+          <image>
+            <prefigure label="pf-cats-plane" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
+                  <polygon points="((-2.4,-2.4),(2.6,-2.4),(2.6,2.6),(-2.4,2.6))" fill="#dbe7f5" stroke="none"/>
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="red" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
+                  <point p="(1,0)" fill="blue" size="4"/>
+                  <point p="(0,1)" fill="blue" size="4"/>
+                  <point p="(1.5,1.3)" fill="purple" size="4"/>
+                  <label p="(1.5,1.3)" alignment="e" offset="(8,4)"><m>[X]_\mathcal{B}</m></label>
+                  <label p="(-1.5,-1.5)" alignment="c"><m>W \cong \mathbb{R}^2</m></label>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
 
     <p>
       The cell below reports, for coefficients of your choosing, the range of entries in
@@ -426,7 +509,7 @@
             show_pictures(X)
 
         report(3/4, 1/4)   # change me: a blend, since x, y are nonnegative and x + y = 1
-        report(2, -1)      # on the affine line, but outside the segment of blends
+        report(2, -1)      # still has x + y = 1, but outside the segment of blends
         report(2, 2)       # in W, and too bright for a screen: every entry is doubled
       </input>
     </sage>
@@ -512,6 +595,65 @@
       At <m>\lambda = \frac{1}{2}</m> the difference coefficient is <m>0</m>, and the
       blend is exactly the average.
     </p>
+
+    <figure xml:id="fig-cats-two-bases">
+      <caption>
+        The same plane, still drawn in <m>\mathcal{B}</m>-coordinates, with each of its two
+        bases marked. Changing basis moves no picture at all; it changes only the pair of
+        arrows used to reach one.
+      </caption>
+      <sidebyside widths="44% 44%" margins="auto">
+        <figure xml:id="fig-cats-basis-b">
+          <caption>
+            The basis <m>\mathcal{B} = \{A, D\}</m>. Its vectors point along the coordinate
+            axes, and the blends run from the tip of one to the tip of the other.
+          </caption>
+          <image>
+            <prefigure label="pf-cats-basis-b" xmlns="https://prefigure.org">
+              <diagram dimensions="(240,240)" margins="8">
+                <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
+                  <line endpoints="((0,0),(1,0))" stroke="green" thickness="4" arrows="1"/>
+                  <line endpoints="((0,0),(0,1))" stroke="green" thickness="4" arrows="1"/>
+                  <label p="(1,0)" alignment="s" offset="(14,-10)"><m>A</m></label>
+                  <label p="(0,1)" alignment="w" offset="(-12,8)"><m>D</m></label>
+                  <label p="(0.62,0.62)" alignment="ne" offset="(14,14)">blends</label>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        <figure xml:id="fig-cats-basis-c">
+          <caption>
+            The basis <m>\mathcal{C} = \{M, \Delta\}</m>. Its vectors point along the
+            diagonals instead, and the blend line becomes one point and one direction.
+          </caption>
+          <image>
+            <prefigure label="pf-cats-basis-c" xmlns="https://prefigure.org">
+              <diagram dimensions="(240,240)" margins="8">
+                <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
+                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
+                  <line endpoints="((0,0),(0.5,0.5))" stroke="purple" thickness="4" arrows="1"/>
+                  <line endpoints="((0,0),(0.5,-0.5))" stroke="orange" thickness="4" arrows="1"/>
+                  <point p="(1,0)" fill="blue" size="4"/>
+                  <point p="(0,1)" fill="blue" size="4"/>
+                  <label p="(0.5,0.5)" alignment="nw" offset="(-10,10)"><m>M</m></label>
+                  <label p="(0.5,-0.5)" alignment="se" offset="(12,-8)"><m>\Delta</m></label>
+                  <label p="(1,0)" alignment="s" offset="(14,-10)"><m>A</m></label>
+                  <label p="(0,1)" alignment="w" offset="(-12,8)"><m>D</m></label>
+                  <label p="(1.45,1.55)" alignment="c"><m>A = M + \Delta</m></label>
+                  <label p="(1.45,1.05)" alignment="c"><m>D = M - \Delta</m></label>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
 
     <p>
       The same substitution works for any vector of <m>W</m>, not just a blend. For
