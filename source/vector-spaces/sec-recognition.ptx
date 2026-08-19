@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-recognition" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Finding the Cat: A First Look at Image Recognition</title>
+
+  <introduction>
+    <p>
+      In <xref ref="sec-images-as-matrices" text="title" /> we did arithmetic to
+      pictures, and in <xref ref="sec-superposition" text="title" /> we added and scaled
+      them. Neither section asked the question a person answers the instant a picture
+      appears: <em>what does it show?</em> This section builds a machine that answers one
+      such question. Handed a small patch of pixels, it must decide whether the patch was
+      cut from the corner of the box where the cat's eye is, or from the same corner of
+      the other photograph, where there is nothing but wall. The machine will not be
+      clever. It will subtract, square, add, and compare<mdash />and that will be enough
+      to recognize the eye through camera grain that all but buries it.
+    </p>
+    <p>
+      Everything is built from tools already on the table: pictures as vectors and
+      averages of pictures from <xref ref="sec-superposition" text="title" />,
+      coordinates from <xref ref="sec-coordinates" text="title" />, linear
+      transformations from <xref ref="sec-isomorphisms" text="title" />, and one import
+      from <xref ref="sec-determinant-volume" text="title" />: the dot product. The
+      result is a first step, not a finished subject, and the section ends with the
+      failures as well as the successes. The failures are the more instructive half.
+    </p>
+    <p>
+      As in <xref ref="sec-superposition" text="title" />, interactive Sage cells appear
+      throughout, the cells on this page share their variables, and each should be
+      evaluated as you reach it. The lines marked <c># change me</c> are the ones worth
+      experimenting with.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-recognition-distance">
+    <title>The Distance Between Two Pictures</title>
+
+    <p>
+      Recognition, as this section practices it, is comparison: the machine remembers
+      what each corner looks like and asks which memory the new patch resembles more. So
+      the first thing needed is a number that measures how far apart two pictures are.
+      The dot product of <xref ref="def-dot-product" text="type-global" /> was stated in
+      <m>\R^3</m>, but its formula<mdash />multiply matching coordinates, add<mdash />
+      never uses the fact that there are three of them. Word for word, the same recipe
+      runs on any number of coordinates, and a picture in <m>\mathbb{M}_{mn}</m>,
+      read through its pixel entries, has <m>mn</m> coordinates to offer it.
+    </p>
+
+    <definition xml:id="def-picture-distance">
+      <title>Dot Product, Length, and Distance for Pictures</title>
+      <statement>
+        <p>
+          For pictures <m>X = [x_{ij}]</m> and <m>Y = [y_{ij}]</m> in
+          <m>\mathbb{M}_{mn}</m>, the <term>dot product</term>, the <term>length</term>,
+          and the <term>distance</term> are
+          <md>
+            X \cdot Y = \sum_{i,j} x_{ij}\, y_{ij},
+            \qquad
+            \| X \| = \sqrt{X \cdot X},
+            \qquad
+            \operatorname{dist}(X, Y) = \| X - Y \|.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Two properties can be read directly off the formula and will be used without
+      comment: the dot product is symmetric, <m>X \cdot Y = Y \cdot X</m>, and it is
+      linear in each argument, so that expressions like <m>(X + Y) \cdot Z</m> and
+      <m>(cX) \cdot Z</m> expand exactly as ordinary products do. One consequence is
+      worth displaying now, because it will be used twice:
+      <md>
+        \| X - Y \|^2 = \| X \|^2 - 2\, X \cdot Y + \| Y \|^2.
+      </md>
+      Two more consequences give the distance its meaning. Since
+      <m>\| X - Y \|^2</m> is a sum of squares, it is zero exactly when every term is
+      zero: the distance between two pictures is <m>0</m> precisely when they agree at
+      every pixel. And <m>\| cX \|^2 = (cX) \cdot (cX) = c^2 \| X \|^2</m>, so scaling a
+      picture by <m>c</m> scales its length by <m>|c|</m>.
+    </p>
+
+    <p>
+      On a <m>2 \times 2</m> example the definition is a triangle in disguise. The
+      pictures
+      <md>
+        U = \begin{bmatrix} 90 \amp 60 \\ 120 \amp 30 \end{bmatrix},
+        \qquad
+        V = \begin{bmatrix} 86 \amp 63 \\ 120 \amp 30 \end{bmatrix}
+      </md>
+      agree on their bottom row and disagree by <m>4</m> and <m>-3</m> on the top, so
+      <md>
+        \operatorname{dist}(U, V) = \sqrt{4^2 + (-3)^2 + 0^2 + 0^2} = 5:
+      </md>
+      a <m>3</m>-<m>4</m>-<m>5</m> right triangle, hiding in a four-dimensional space of
+      tiny pictures.
+    </p>
+
+    <p>
+      The pictures this section will recognize are the two blocks of
+      <xref ref="subsec-superposition-numbers" text="title" />: the patch <m>A_0</m>
+      around the alive cat's left eye, and the patch <m>D_0</m> cut from the same corner
+      of the dead-cat photograph, where the wall is bare. Enter them, together with the
+      drawing helper from that section and the distance just defined.
+    </p>
+
+    <sage>
+      <input>
+        A0 = matrix(ZZ, [
+        [ 65,  63,  80,  84,  81,  79],
+        [ 73,  86,  90,  88,  90,  87],
+        [ 81,  89,  86,  90,  93,  86],
+        [ 89,  68,  76,  69,  95,  91],
+        [103,  91,  78,  87,  91,  91],
+        [100,  99, 108,  83,  99,  94],
+        [ 90,  97, 104, 100, 102,  86],
+        [ 84,  94, 110, 107,  70,  63]])
+        D0 = matrix(ZZ, [
+        [71, 69, 69, 65, 64, 62],
+        [74, 72, 71, 67, 66, 65],
+        [77, 74, 73, 70, 68, 66],
+        [78, 76, 73, 71, 69, 68],
+        [82, 78, 76, 73, 70, 69],
+        [82, 80, 77, 75, 72, 71],
+        [85, 82, 79, 76, 74, 72],
+        [86, 82, 79, 77, 75, 72]])
+
+        def show_pictures(*pictures):
+            plots = [matrix_plot(M.change_ring(RDF), cmap='gray', vmin=0, vmax=255)
+                     for M in pictures]
+            graphics_array(plots, nrows=1).show(figsize=[3*len(plots), 3])
+
+        def dist(X, Y):
+            return sqrt(sum(p^2 for p in (X - Y).list()))
+
+        print("distance between the two corners:", n(dist(A0, D0), digits=4))
+        show_pictures(A0, D0)
+      </input>
+    </sage>
+
+    <p>
+      The two corners sit <m>\sqrt{15678} \approx 125.2</m> units apart. That one number
+      is the yardstick for everything that follows: it is the distance a patch would have
+      to travel to go from being one corner to being the other, and every verdict the
+      machine renders will amount to asking which side of that journey a patch is on.
+    </p>
+
+    <question xml:id="rem-recognition-which-basis">
+      <title>Whose Coordinates Does the Distance Use?</title>
+      <statement>
+        <p>
+          The formula in <xref ref="def-picture-distance" text="type-global" /> reads a
+          picture through its pixel entries<mdash />its coordinates with respect to the
+          basis of matrices <m>E_{ij}</m> from
+          <xref ref="sec-superposition" text="title" />. But
+          <xref ref="tab-cat-coordinates" text="global" /> showed the same picture
+          wearing different coordinates in a different basis. If we computed the same
+          formula from those coordinates instead, would we get the same length?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          No. Inside the plane of cats of
+          <xref ref="sec-superposition" text="title" />, the picture <m>A</m> has
+          <m>\mathcal{B}</m>-coordinates <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>,
+          whose formula gives <m>1</m>, and <m>\mathcal{C}</m>-coordinates
+          <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>, whose formula gives
+          <m>\sqrt{2}</m>; and the <m>405{,}600</m> pixel entries of the photograph
+          itself give yet a third, vastly larger number. A length is not attached to a vector alone but to a vector together
+          with the basis whose coordinates are fed into the formula. Throughout this
+          section that basis is fixed once and for all: the pixel basis, one coordinate
+          per pixel, which is also exactly the choice under which
+          <xref ref="def-picture-distance" text="type-global" /> agrees with
+          <xref ref="def-dot-product" text="type-global" /> in <m>\R^3</m>.
+        </p>
+      </answer>
+    </question>
+  </subsection>
+
+  <subsection xml:id="subsec-recognition-nearest">
+    <title>Recognition by Nearest Reference</title>
+
+    <p>
+      The machine can now be stated in one sentence.
+    </p>
+
+    <definition xml:id="def-nearest-reference">
+      <title>The Nearest-Reference Rule</title>
+      <statement>
+        <p>
+          Fix <term>reference pictures</term> <m>P</m> and <m>Q</m>, each carrying a
+          label. Given a new picture <m>X</m>, compute
+          <m>\operatorname{dist}(X, P)</m> and <m>\operatorname{dist}(X, Q)</m>, and
+          assign <m>X</m> the label of the nearer reference. If the two distances are
+          equal, the rule declines to answer.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Take <m>P = A_0</m> with the label <em>cat</em> and <m>Q = D_0</m> with the label
+      <em>empty wall</em>, and test the rule first on pictures whose right answer we can
+      feel: the blends <m>S_{\lambda} = (1 - \lambda) A_0 + \lambda D_0</m> of
+      <xref ref="sec-superposition" text="title" />. No computer is needed, because both
+      distances collapse by algebra. Since
+      <m>S_{\lambda} - A_0 = \lambda (D_0 - A_0)</m> and
+      <m>S_{\lambda} - D_0 = (1 - \lambda)(A_0 - D_0)</m>, the scaling property of the
+      length gives
+      <md>
+        \operatorname{dist}(S_{\lambda}, A_0) = \lambda \, \| A_0 - D_0 \|,
+        \qquad
+        \operatorname{dist}(S_{\lambda}, D_0) = (1 - \lambda) \, \| A_0 - D_0 \|,
+      </md>
+      for <m>0 \leq \lambda \leq 1</m>. The rule therefore says <em>cat</em> for every
+      <m>\lambda \lt \frac{1}{2}</m>, says <em>empty wall</em> for every
+      <m>\lambda \gt \frac{1}{2}</m>, and falls exactly silent at
+      <m>\lambda = \frac{1}{2}</m>, where the blend really is halfway to being either
+      thing. Its first verdicts are the sensible ones.
+    </p>
+
+    <sage>
+      <input>
+        @interact
+        def classify_blend(lam=slider(0, 1, 0.05, default=0.3, label="lambda")):
+            S = (1 - lam)*A0 + lam*D0
+            dc, dw = dist(S, A0), dist(S, D0)
+            print("distance to the cat corner:  ", n(dc, digits=4))
+            print("distance to the empty corner:", n(dw, digits=4))
+            if dc &lt; dw:
+                print("verdict: cat")
+            elif dw &lt; dc:
+                print("verdict: empty wall")
+            else:
+                print("verdict: undecided")
+            show_pictures(S)
+      </input>
+    </sage>
+
+    <p>
+      Blends are a tame test: they live on the line segment joining the two references.
+      A real second photograph of either corner would not. Sensors add
+      <term>grain</term><mdash />each pixel arrives a little brighter or darker than the
+      scene, by an amount that differs from shot to shot<mdash />so a new photograph of
+      the cat corner is <m>A_0</m> plus a picture of pure noise. The cell below
+      manufactures such photographs, with grain of a size you control, and scores the
+      rule on two hundred of them.
+    </p>
+
+    <sage>
+      <input>
+        from random import normalvariate, seed
+        seed(53)          # change me: any integer gives a different night of photographs
+        sigma = 25        # change me: the typical size of the grain, in gray levels
+
+        def grainy(X, sigma):
+            noise = matrix(RDF, 8, 6, [normalvariate(0, sigma) for _ in range(48)])
+            return X.change_ring(RDF) + noise
+
+        trials, correct = 200, 0
+        for k in range(trials):
+            corner = A0 if k % 2 == 0 else D0
+            shot = grainy(corner, sigma)
+            verdict = A0 if dist(shot, A0) &lt; dist(shot, D0) else D0
+            correct += (verdict is corner)
+        print(correct, "correct out of", trials)
+        print("typical distance the grain moves a shot:",
+              n(sigma*sqrt(48), digits=4))
+        show_pictures(grainy(A0, sigma), A0)
+      </input>
+    </sage>
+
+    <p>
+      At <c>sigma = 25</c> the rule is nearly perfect, and that should be more surprising
+      than it looks. Grain of that size moves a shot about
+      <m>25\sqrt{48} \approx 173</m> units<mdash />farther than the <m>125.2</m> that
+      separate the two corners in the first place. Every grainy photograph of the eye
+      ends up farther from <m>A_0</m> than the empty corner is, and the rule still sorts
+      them correctly. Why the verdicts survive a displacement larger than the gap between the
+      classes is explained two subsections from now; it is the central fact of the whole
+      section. First, a practical improvement.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-recognition-average">
+    <title>Learning from Many Photographs</title>
+
+    <p>
+      No recognizer in practice is handed the true, grainless corner to use as its
+      reference. It is handed photographs<mdash />several of each thing, every one
+      contaminated<mdash />and must build its own references out of them. The tool for
+      combining several pictures into one has been in hand since
+      <xref ref="sec-superposition" text="title" />: the average. What that section did
+      for two pictures works for any number of them, and averaging turns out to be not
+      merely a way of combining the photographs but, in a precise sense, the best one.
+    </p>
+
+    <theorem xml:id="thm-average-prototype">
+      <title>The Average Is the Best Single Reference</title>
+      <statement>
+        <p>
+          Let <m>X_1, \dots, X_k</m> be pictures in <m>\mathbb{M}_{mn}</m> and let
+          <m>M = \frac{1}{k}\left( X_1 + \cdots + X_k \right)</m> be their average. Then
+          for every picture <m>C</m>,
+          <md>
+            \sum_{i=1}^{k} \| X_i - C \|^2
+            = \sum_{i=1}^{k} \| X_i - M \|^2 + k \, \| M - C \|^2.
+          </md>
+          In particular, the total squared distance from the photographs to <m>C</m> is
+          smallest for exactly one picture: <m>C = M</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Write <m>X_i - C = (X_i - M) + (M - C)</m> and expand the square with the dot
+          product:
+          <md>
+            \| X_i - C \|^2
+            = \| X_i - M \|^2 + 2\, (X_i - M) \cdot (M - C) + \| M - C \|^2.
+          </md>
+          Sum over <m>i</m>. The middle terms contribute
+          <m>2 \left( \sum_{i=1}^{k} (X_i - M) \right) \cdot (M - C)</m>, and the
+          definition of the average says precisely that
+          <m>\sum_{i=1}^{k} (X_i - M) = X_1 + \cdots + X_k - kM</m> is the zero picture.
+          What survives is the claimed identity, and since <m>k \| M - C \|^2 \geq 0</m>
+          with equality only at <m>C = M</m>, the minimum is at the average and nowhere
+          else.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      A reference built this way is called a <term>prototype</term>. The cell below
+      photographs each corner six times through heavy grain, averages each set of six
+      into a prototype, and then compares two machines: the nearest-reference rule using
+      a single grainy photograph as its memory of each corner, and the same rule using
+      the prototypes. The grain here is deliberately brutal<mdash /><c>sigma = 35</c>
+      <mdash />so that a single photograph is a poor memory.
+    </p>
+
+    <sage>
+      <input>
+        shots_cat  = [grainy(A0, 35) for _ in range(6)]
+        shots_wall = [grainy(D0, 35) for _ in range(6)]
+        Mcat  = sum(shots_cat)/6      # the prototypes: averages, as in the theorem
+        Mwall = sum(shots_wall)/6
+
+        def accuracy(refC, refW, trials=200):
+            correct = 0
+            for k in range(trials):
+                corner = A0 if k % 2 == 0 else D0
+                shot = grainy(corner, 35)
+                says_cat = dist(shot, refC) &lt; dist(shot, refW)
+                correct += (says_cat == (corner is A0))
+            return correct/trials
+
+        print("one grainy photograph as each reference:",
+              n(accuracy(shots_cat[0], shots_wall[0]), digits=3))
+        print("the average of six as each prototype:   ",
+              n(accuracy(Mcat, Mwall), digits=3))
+        print("distance from one shot to the true corner: ",
+              n(dist(shots_cat[0], A0), digits=4))
+        print("distance from the prototype to it:         ",
+              n(dist(Mcat, A0), digits=4))
+        show_pictures(shots_cat[0], Mcat, A0)
+      </input>
+    </sage>
+
+    <p>
+      The single-photograph machine hovers near guessing; the prototype machine recovers
+      most of what the grain destroyed. The drawing shows why. Grain pushes each pixel up
+      or down at random, so at any given pixel the six errors largely cancel, and the
+      average of six shots sits several times closer to the true corner than any one of
+      them does. The prototype is a picture no camera ever took<mdash />it was computed,
+      not photographed<mdash />and it is a better memory of the corner than any
+      photograph in the pile. This is the first moment in the book where a machine can
+      fairly be said to <em>learn</em>: shown examples, it compresses them, by nothing
+      deeper than a linear combination with coefficients <m>\frac{1}{6}</m>, into a
+      reference it was never given.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-recognition-score">
+    <title>The Score Behind the Decision</title>
+
+    <p>
+      The rule as stated computes two distances and compares them. Expanding both with
+      the identity from
+      <xref ref="subsec-recognition-distance" text="title" /> shows that it is secretly
+      doing something simpler. The picture <m>X</m> is closer to <m>P</m> than to
+      <m>Q</m> exactly when <m>\| X - P \|^2 \lt \| X - Q \|^2</m>, that is, when
+      <md>
+        \| X \|^2 - 2\, X \cdot P + \| P \|^2
+        \lt \| X \|^2 - 2\, X \cdot Q + \| Q \|^2.
+      </md>
+      The term <m>\| X \|^2</m> cancels from both sides<mdash />the length of the
+      incoming picture never mattered at all<mdash />and what remains rearranges to
+      <md>
+        X \cdot W \gt \tau,
+        \qquad \text{where} \quad
+        W = P - Q, \quad \tau = \tfrac{1}{2}\left( \| P \|^2 - \| Q \|^2 \right).
+      </md>
+      Everything the machine will ever decide is contained in one picture and one
+      number: the <term>weight picture</term> <m>W</m>, and the <term>threshold</term>
+      <m>\tau</m>. Define the <term>score</term> of a picture to be
+      <m>s(X) = X \cdot W - \tau</m>. The rule says <em>cat</em> when the score is
+      positive, <em>empty wall</em> when it is negative, and nothing when it is zero.
+    </p>
+
+    <p>
+      For our references <m>P = A_0</m> and <m>Q = D_0</m>, the numbers are concrete:
+      <m>\tau = \frac{1}{2}(375632 - 259930) = 57851</m>, and the two references
+      themselves score
+      <md>
+        s(A_0) = +\tfrac{1}{2}\, \| W \|^2 = +7839,
+        \qquad
+        s(D_0) = -\tfrac{1}{2}\, \| W \|^2 = -7839,
+      </md>
+      symmetric endpoints of a scale on which every patch in the world lands somewhere.
+      The map <m>T(X) = X \cdot W</m> is a linear transformation from
+      <m>\mathbb{M}_{8,6}</m> to <m>\R</m> in the sense of
+      <xref ref="def-general-linear-transformation" text="type-global" />, because the
+      dot product is linear in its first argument; the score differs from it only by the
+      constant <m>\tau</m>. Linearity is not a spectator here<mdash />it is why the
+      blends of the previous subsection behaved so cleanly: a linear score along the
+      segment from <m>A_0</m> to <m>D_0</m> is <m>s(S_\lambda) = 7839\,(1 - 2\lambda)</m>,
+      sliding at constant speed from <m>+7839</m> to <m>-7839</m> and crossing zero at
+      exactly <m>\lambda = \frac{1}{2}</m>.
+    </p>
+
+    <p>
+      As in <xref ref="sec-matrix-of-transformation" text="title" />, the transformation
+      <m>T</m> has a matrix with respect to the pixel basis: the <m>1 \times 48</m> row
+      that lists the <m>48</m> weights. By
+      <xref ref="thm-rank-nullity" text="type-global" /> its null space<mdash />the
+      pictures the score cannot see at all<mdash />has dimension <m>47</m>, and the tie
+      set <m>s(X) = 0</m> is that subspace shifted: a flat, <m>47</m>-dimensional wall
+      slicing picture space into a cat side and an empty side. Recognition, for this
+      machine, is one linear transformation followed by one comparison.
+    </p>
+
+    <p>
+      The weight picture itself is worth looking at, and it is an old friend: for these
+      references, <m>W = A_0 - D_0</m> is exactly twice the difference picture
+      <m>\Delta</m> of <xref ref="sec-superposition" text="title" />. Its entries are
+      near zero along the wall and the lighting that the two corners share, and largest
+      in size at the eye, where they disagree (compare
+      <xref ref="fig-cat-difference" text="global" />). The machine was never told where
+      to look. Subtracting the two references built its attention for it: shared
+      background cancels, and whatever remains is precisely what distinguishes the
+      classes. The cell below draws <m>W</m>, shifted to mid-gray for display exactly as
+      <m>\Delta</m> was, and confirms the scores.
+    </p>
+
+    <sage>
+      <input>
+        W   = A0 - D0
+        tau = (sum(p^2 for p in A0.list()) - sum(p^2 for p in D0.list()))/2
+
+        def score(X):
+            return sum(x*w for x, w in zip(X.list(), W.list())) - tau
+
+        print("tau =", tau)
+        print("score of the cat corner:  ", score(A0))
+        print("score of the empty corner:", score(D0))
+        lam = 0.3   # change me
+        print("score of the blend:", n(score((1 - lam)*A0 + lam*D0), digits=5),
+              "  predicted 7839*(1 - 2*lambda) =", n(7839*(1 - 2*lam), digits=5))
+
+        J = ones_matrix(ZZ, 8, 6)
+        show_pictures(128*J + W)
+      </input>
+    </sage>
+
+    <remark xml:id="rem-recognition-neuron">
+      <title>One Neuron</title>
+      <p>
+        An object that multiplies its inputs by fixed weights, adds, subtracts a
+        threshold, and reports only the sign has a name: it is an
+        <term>artificial neuron</term>, and a machine made of exactly one of them is the
+        <term>perceptron</term>, proposed in 1958 as a model of how a nerve cell might
+        decide.<fn>
+          Frank Rosenblatt built the first one at the Cornell Aeronautical Laboratory;
+          its intended application was, from the beginning, recognizing images.
+        </fn>
+        A modern image recognizer is millions of these composed in layers, with two
+        upgrades: the weights are not obtained by averaging two references but adjusted
+        step by step to reduce error on examples, and a simple nonlinear function is
+        applied between layers<mdash />necessarily, since applying one linear
+        transformation after another yields a transformation that is again linear, so
+        that without the nonlinearity a whole stack of layers could do no more than one
+        neuron pretending to be many. The scale is new; the arithmetic inside is the
+        arithmetic of this section.
+      </p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-recognition-limits">
+    <title>What the Distance Does Not See</title>
+
+    <p>
+      The score also explains the promised surprise, and then exposes the machine's
+      weaknesses, both in one line: for any disturbance <m>G</m>,
+      <md>
+        s(X + G) = s(X) + G \cdot W.
+      </md>
+      The verdict on <m>X + G</m> differs from the verdict on <m>X</m> only through the
+      single number <m>G \cdot W</m>. Grain is a picture whose <m>48</m> entries have no
+      relationship to <m>W</m>: in the sum <m>G \cdot W</m> its terms arrive with both
+      signs and largely cancel, so grain can move a shot <m>173</m> units while barely
+      touching the score. The distance saw an enormous displacement; the score, which is
+      all that decides, saw almost none. That is why the verdicts survived.
+    </p>
+
+    <p>
+      The same line predicts exactly what will <em>not</em> be survived: a disturbance
+      that pushes every pixel the same way. Underexposing a patch by <m>t</m> gray
+      levels adds <m>G = -tJ</m>, where <m>J</m> is the all-ones picture, and
+      <m>J \cdot W</m> is simply the sum of the entries of <m>W</m><mdash />the total
+      brightness of <m>A_0</m> minus the total brightness of <m>D_0</m>:
+      <md>
+        J \cdot W = 4210 - 3522 = 688,
+      </md>
+      positive because the cat corner is on the whole brighter than the bare wall. Nothing cancels;
+      all <m>48</m> terms push together. The score of a darkened eye patch is
+      <m>s(A_0) - 688\,t = 7839 - 688\,t</m>, which turns negative as soon as
+      <m>t \gt \frac{7839}{688} \approx 11.4</m>. Darken every pixel by twelve gray
+      levels out of <m>255</m><mdash />a displacement of only
+      <m>\| 12 J \| \approx 83</m> units, less than half of what the grain
+      inflicted<mdash />and the machine calls the cat's eye an empty wall. Turning the
+      exposure down by scaling does the same: <m>s(cA_0) = 65690\,c - 57851</m> crosses
+      zero at <m>c \approx 0.88</m>, so any shot at less than <m>88</m> percent of the
+      original exposure is pronounced catless. The machine that shrugged off grain which
+      buried the picture is undone by a hint of dusk.
+    </p>
+
+    <p>
+      A second blindness costs nothing to state and everything in practice. Photograph
+      the eye one pixel to the right, so that the identical content lands one column
+      over, and the patch moves <m>74</m> units away from <m>A_0</m><mdash />more than
+      half the distance separating a cat from no cat at all. The verdict happens to
+      survive this once, but the lesson does not improve with luck: the distance
+      compares pixel against pixel by position, and has no way of knowing that two
+      pictures contain the same thing in different places. Try all three failures below.
+    </p>
+
+    <sage>
+      <input>
+        t = -12       # change me: exposure shift, in gray levels
+        c = 0.85      # change me: exposure scale
+        darker = A0 + t*J
+        scaled = c*A0.change_ring(RDF)
+        slid   = A0.matrix_from_columns([1, 2, 3, 4, 5, 5])  # the eye, one pixel over
+
+        for name, X in [("shifted", darker), ("scaled", scaled), ("slid", slid)]:
+            verdict = "cat" if dist(X, A0) &lt; dist(X, D0) else "empty wall"
+            print(name, "  distance moved:", n(dist(X, A0), digits=4),
+                  "  verdict:", verdict)
+        show_pictures(darker, scaled, slid, A0)
+      </input>
+    </sage>
+
+    <p>
+      Each failure names the repair it is waiting for, and each repair is a course that
+      exists. Dividing out brightness so that only pattern remains, and measuring
+      pictures along a few well-chosen directions instead of all <m>48</m> at once, are
+      the business of orthogonality, projections, and least squares<mdash />the linear
+      algebra that usually follows this book. And the deepest question raised
+      here<mdash />the verdict lived or died with one direction, <m>W</m>; which
+      directions in a space does a matrix itself single out as the ones that
+      matter?<mdash />is not a later course at all. It is the next chapter.
+    </p>
+
+    <p>
+      This closes the story the cat has been carrying since
+      <xref ref="sec-images-as-matrices" text="title" />. There, arithmetic acted on one
+      picture; in <xref ref="sec-superposition" text="title" />, two pictures spanned a
+      plane; here, pictures are compared, averaged, and finally judged. A machine that
+      tells a cat from a bare wall by squaring forty-eight subtractions is not yet
+      seeing. But it is deciding, its decision is a linear transformation and a
+      threshold, and every improvement on it that the modern world runs at
+      scale<mdash />through billions of weights instead of forty-eight<mdash />is
+      built of the operations this chapter defined: adding pictures, scaling them, and
+      taking their dot products.
+    </p>
+  </subsection>
+</section>

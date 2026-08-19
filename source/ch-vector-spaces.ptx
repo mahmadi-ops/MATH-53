@@ -10,10 +10,13 @@
       <m>\R^n</m>, and an abstract linear transformation becomes a matrix.
     </p>
     <p>
-      The chapter closes with an application in which the vectors are photographs. Two
+      The chapter closes with two applications in which the vectors are photographs. Two
       pictures of the same cat, alive in one and dead in the other, are combined into the
       superpositions that quantum mechanics describes, using nothing beyond the span,
-      basis, and coordinates developed here.
+      basis, and coordinates developed here. Then the question is turned around: instead
+      of making new pictures out of old ones, a machine is built that looks at a picture
+      and decides what it shows<mdash />a first step into image recognition, powered by
+      the same coordinates together with the dot product of the previous chapter.
     </p>
   </introduction>
   <xi:include href="vector-spaces/sec-vector-spaces.ptx" />
@@ -22,4 +25,5 @@
   <xi:include href="vector-spaces/sec-coordinates.ptx" />
   <xi:include href="vector-spaces/sec-matrix-of-transformation.ptx" />
   <xi:include href="vector-spaces/sec-superposition.ptx" />
+  <xi:include href="vector-spaces/sec-recognition.ptx" />
 </chapter>
