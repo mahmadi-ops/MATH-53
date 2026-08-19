@@ -606,7 +606,7 @@
         <figure xml:id="fig-cats-basis-b">
           <caption>
             The basis <m>\mathcal{B} = \{A, D\}</m>. Its vectors point along the coordinate
-            axes.
+            axes, and the blends run from the tip of one to the tip of the other.
           </caption>
           <image>
             <prefigure label="pf-cats-basis-b" xmlns="https://prefigure.org">
@@ -625,8 +625,7 @@
         <figure xml:id="fig-cats-basis-c">
           <caption>
             The basis <m>\mathcal{C} = \{M, \Delta\}</m>. Its vectors point along the
-            diagonals instead, and the legend records how they recover <m>A</m> and
-            <m>D</m>.
+            diagonals instead, and the blend line becomes one point and one direction.
           </caption>
           <image>
             <prefigure label="pf-cats-basis-c" xmlns="https://prefigure.org">
