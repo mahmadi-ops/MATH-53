@@ -17,22 +17,27 @@
 
     <figure xml:id="fig-recognition-two-photos">
       <caption>
-        The two photographs the machine must tell apart. Both patches are cut from the
-        same corner of the box: in <xref ref="fig-recognition-alive" text="global" /> the
-        corner holds the cat's left eye, and in
-        <xref ref="fig-recognition-dead" text="global" /> the same corner is bare wall.
+        The two photographs the machine must tell apart, with the cut marked on each.
+        The outlined rectangle occupies the same place in both<mdash />columns
+        <m>231</m> to <m>291</m> and rows <m>297</m> to <m>377</m> of the
+        <m>520 \times 780</m> grid of pixels<mdash />and the faint lines inside it divide
+        it into the <m>8 \times 6</m> array of <m>10 \times 10</m> blocks whose averages
+        are the entries of the matrix. In <xref ref="fig-recognition-alive" text="global" />
+        that rectangle holds the cat's left eye; in
+        <xref ref="fig-recognition-dead" text="global" /> the cat has left the corner and
+        the very same rectangle holds nothing but wall.
       </caption>
       <sidebyside widths="44% 44%" margins="auto">
         <figure xml:id="fig-recognition-alive">
-          <caption>The alive cat: the eye is in the corner.</caption>
-          <image source="images/cat-alive.png">
-            <shortdescription>A grayscale illustration of a cat sitting upright inside a wooden box labelled Schrodinger's Cat, beside a mechanism connected to a container marked with a skull and crossbones</shortdescription>
+          <caption>The alive cat: the marked block is <m>A_0</m>, and the eye is in it.</caption>
+          <image source="images/cat-alive-patch.png">
+            <shortdescription>A grayscale illustration of a cat sitting upright inside a wooden box labelled Schrodinger's Cat, beside a mechanism connected to a container marked with a skull and crossbones; a red rectangle labelled A nought, ruled into a grid of small blocks, outlines the cat's left eye</shortdescription>
           </image>
         </figure>
         <figure xml:id="fig-recognition-dead">
-          <caption>The dead cat: the same corner is bare wall.</caption>
-          <image source="images/cat-dead.png">
-            <shortdescription>The same box and mechanism in grayscale, with the cat lying motionless on the floor of the box and the container gone</shortdescription>
+          <caption>The dead cat: the same block is <m>D_0</m>, and it is bare wall.</caption>
+          <image source="images/cat-dead-patch.png">
+            <shortdescription>The same box and mechanism in grayscale, with the cat lying motionless on the floor of the box and the container gone; a red rectangle labelled D nought, in the same position as before and ruled into the same grid, outlines an empty stretch of the back wall</shortdescription>
           </image>
         </figure>
       </sidebyside>
@@ -217,7 +222,8 @@
       The pictures this section will recognize are the two blocks of
       <xref ref="subsec-superposition-numbers" text="title" />: the patch <m>A_0</m>
       around the alive cat's left eye, and the patch <m>D_0</m> cut from the same corner
-      of the dead-cat photograph, where the wall is bare. Enter them, together with a
+      of the dead-cat photograph, where the wall is bare<mdash />the rectangle marked in
+      <xref ref="fig-recognition-two-photos" text="global" />. Enter them, together with a
       labelled version of the drawing helper from that section and the distance just
       defined. The cell prints the distance between the two corners and draws them side
       by side, each panel titled.
