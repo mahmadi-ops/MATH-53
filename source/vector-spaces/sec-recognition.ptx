@@ -6,14 +6,38 @@
     <p>
       In <xref ref="sec-images-as-matrices" text="title" /> we did arithmetic to
       pictures, and in <xref ref="sec-superposition" text="title" /> we added and scaled
-      them. Neither section asked the question a person answers the instant a picture
-      appears: <em>what does it show?</em> This section builds a machine that answers one
-      such question. Handed a small patch of pixels, it must decide whether the patch was
-      cut from the corner of the box where the cat's eye is, or from the same corner of
-      the other photograph, where there is nothing but wall. The machine will not be
-      clever. It will subtract, square, add, and compare<mdash />and that will be enough
-      to recognize the eye through camera grain that all but buries it.
+      them. This section puts that arithmetic to work on a question of a new kind: given
+      a small patch of pixels, decide whether it was cut from the corner of the box where
+      the cat's eye is, or from the same corner of the other photograph, where there is
+      nothing but wall (<xref ref="fig-recognition-two-photos" text="global" />). The
+      machine built here to decide it will not be clever. It will subtract, square, add,
+      and compare<mdash />and that will be enough to recognize the eye through camera
+      grain that all but buries it.
     </p>
+
+    <figure xml:id="fig-recognition-two-photos">
+      <caption>
+        The two photographs the machine must tell apart. Both patches are cut from the
+        same corner of the box: in <xref ref="fig-recognition-alive" text="global" /> the
+        corner holds the cat's left eye, and in
+        <xref ref="fig-recognition-dead" text="global" /> the same corner is bare wall.
+      </caption>
+      <sidebyside widths="44% 44%" margins="auto">
+        <figure xml:id="fig-recognition-alive">
+          <caption>The alive cat: the eye is in the corner.</caption>
+          <image source="images/cat-alive.png">
+            <shortdescription>A grayscale illustration of a cat sitting upright inside a wooden box labelled Schrodinger's Cat, beside a mechanism connected to a container marked with a skull and crossbones</shortdescription>
+          </image>
+        </figure>
+        <figure xml:id="fig-recognition-dead">
+          <caption>The dead cat: the same corner is bare wall.</caption>
+          <image source="images/cat-dead.png">
+            <shortdescription>The same box and mechanism in grayscale, with the cat lying motionless on the floor of the box and the container gone</shortdescription>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
     <p>
       Everything is built from tools already on the table: pictures as vectors and
       averages of pictures from <xref ref="sec-superposition" text="title" />,
@@ -27,8 +51,64 @@
       As in <xref ref="sec-superposition" text="title" />, interactive Sage cells appear
       throughout, the cells on this page share their variables, and each should be
       evaluated as you reach it. The lines marked <c># change me</c> are the ones worth
-      experimenting with.
+      experimenting with. Each cell is also described in words, so that the argument can
+      be followed with no cell evaluated at all.
     </p>
+    <p>
+      A handful of symbols carry the whole story, and each is defined where it first
+      appears. <xref ref="tab-recognition-notation" text="global" /> collects them in one
+      place to return to.
+    </p>
+
+    <table xml:id="tab-recognition-notation">
+      <title>The symbols of this section.</title>
+      <tabular halign="left" top="minor" bottom="minor">
+        <row header="yes" bottom="medium">
+          <cell>symbol</cell>
+          <cell>meaning</cell>
+        </row>
+        <row>
+          <cell><m>A_0</m></cell>
+          <cell>the clean cat-corner patch</cell>
+        </row>
+        <row>
+          <cell><m>D_0</m></cell>
+          <cell>the clean empty-corner patch</cell>
+        </row>
+        <row>
+          <cell><m>P, Q</m></cell>
+          <cell>the two references the classifier is currently using</cell>
+        </row>
+        <row>
+          <cell><m>X</m></cell>
+          <cell>an incoming picture, to be classified</cell>
+        </row>
+        <row>
+          <cell><m>M = \tfrac{1}{2}(P + Q)</m></cell>
+          <cell>the midpoint of the two references</cell>
+        </row>
+        <row>
+          <cell><m>W = P - Q</m></cell>
+          <cell>the discriminating direction, or weight picture</cell>
+        </row>
+        <row>
+          <cell><m>\tau = M \cdot W</m></cell>
+          <cell>the threshold</cell>
+        </row>
+        <row>
+          <cell><m>\overline{X}</m></cell>
+          <cell>the average of a pile of photographs<mdash />a prototype</cell>
+        </row>
+        <row>
+          <cell><m>G</m></cell>
+          <cell>a disturbance added to a picture</cell>
+        </row>
+        <row>
+          <cell><m>J</m></cell>
+          <cell>the all-ones picture</cell>
+        </row>
+      </tabular>
+    </table>
   </introduction>
 
   <subsection xml:id="subsec-recognition-distance">
@@ -43,6 +123,26 @@
       never uses the fact that there are three of them. Word for word, the same recipe
       runs on any number of coordinates, and a picture in <m>\mathbb{M}_{mn}</m>,
       read through its pixel entries, has <m>mn</m> coordinates to offer it.
+    </p>
+
+    <p>
+      It is worth naming what is being used here. Reading a picture through its pixel
+      entries<mdash />listing them in a fixed order, say row by row<mdash />is the
+      coordinate map of <xref ref="sec-coordinates" text="title" /> taken with respect to
+      the pixel basis <m>\mathcal{E} = \{ E_{ij} \}</m> of
+      <xref ref="sec-superposition" text="title" />, and that map is an isomorphism
+      <md>
+        \mathbb{M}_{mn} \;\longrightarrow\; \R^{mn},
+        \qquad
+        X \longmapsto [X]_{\mathcal{E}}.
+      </md>
+      By <xref ref="rem-isomorphic-same" text="type-global" />, then,
+      <m>\mathbb{M}_{mn}</m> and <m>\R^{mn}</m> are the same space wearing different
+      clothes: a <m>780 \times 520</m> photograph is a vector in <m>\R^{405{,}600}</m>
+      that happens to be printed in a rectangle. So the definition that follows invents
+      nothing. It is the dot product we already have on <m>\R^{mn}</m>, carried back to
+      pictures along that isomorphism<mdash />which is also why every fact proved about
+      it in <m>\R^n</m> remains true here.
     </p>
 
     <definition xml:id="def-picture-distance">
@@ -62,6 +162,18 @@
         </p>
       </statement>
     </definition>
+
+    <p>
+      Unwinding the last of these gives the comparison rule in its most concrete form,
+      the one the machine will actually execute:
+      <md>
+        \operatorname{dist}(X, Y)
+        = \sqrt{ \sum_{i,j} \left( x_{ij} - y_{ij} \right)^2 }.
+      </md>
+      Subtract the two pictures pixel by pixel, square each difference, add up the
+      squares, take the square root. It is the root-sum-square of the disagreements at
+      corresponding pixels, and nothing more.
+    </p>
 
     <p>
       Two properties can be read directly off the formula and will be used without
@@ -99,8 +211,10 @@
       The pictures this section will recognize are the two blocks of
       <xref ref="subsec-superposition-numbers" text="title" />: the patch <m>A_0</m>
       around the alive cat's left eye, and the patch <m>D_0</m> cut from the same corner
-      of the dead-cat photograph, where the wall is bare. Enter them, together with the
-      drawing helper from that section and the distance just defined.
+      of the dead-cat photograph, where the wall is bare. Enter them, together with a
+      labelled version of the drawing helper from that section and the distance just
+      defined. The cell prints the distance between the two corners and draws them side
+      by side, each panel titled.
     </p>
 
     <sage>
@@ -124,16 +238,18 @@
         [85, 82, 79, 76, 74, 72],
         [86, 82, 79, 77, 75, 72]])
 
-        def show_pictures(*pictures):
-            plots = [matrix_plot(M.change_ring(RDF), cmap='gray', vmin=0, vmax=255)
-                     for M in pictures]
+        def show_pictures(*labelled):
+            """Draw pictures in a row, each panel carrying a visible label."""
+            plots = [matrix_plot(pic.change_ring(RDF), cmap='gray',
+                                 vmin=0, vmax=255, title=label)
+                     for label, pic in labelled]
             graphics_array(plots, nrows=1).show(figsize=[3*len(plots), 3])
 
         def dist(X, Y):
             return sqrt(sum(p^2 for p in (X - Y).list()))
 
         print("distance between the two corners:", n(dist(A0, D0), digits=4))
-        show_pictures(A0, D0)
+        show_pictures(("clean cat corner", A0), ("clean empty corner", D0))
       </input>
     </sage>
 
@@ -150,7 +266,7 @@
         <p>
           The formula in <xref ref="def-picture-distance" text="type-global" /> reads a
           picture through its pixel entries<mdash />its coordinates with respect to the
-          basis of matrices <m>E_{ij}</m> from
+          pixel basis <m>\mathcal{E}</m> of
           <xref ref="sec-superposition" text="title" />. But
           <xref ref="tab-cat-coordinates" text="global" /> showed the same picture
           wearing different coordinates in a different basis. If we computed the same
@@ -165,10 +281,21 @@
           whose formula gives <m>1</m>, and <m>\mathcal{C}</m>-coordinates
           <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>, whose formula gives
           <m>\sqrt{2}</m>; and the <m>405{,}600</m> pixel entries of the photograph
-          itself give yet a third, vastly larger number. A length is not attached to a vector alone but to a vector together
-          with the basis whose coordinates are fed into the formula. Throughout this
-          section that basis is fixed once and for all: the pixel basis, one coordinate
-          per pixel, which is also exactly the choice under which
+          itself give yet a third, vastly larger number. The formula does not read the
+          vector; it reads the list of coordinates it is handed, so the number it returns
+          depends on which basis produced that list.<fn>
+            Stated carefully, a length comes from a choice of measurement rather than
+            from a choice of basis. The formula of
+            <xref ref="def-picture-distance" text="type-global" /> is one such choice,
+            known as the Frobenius inner product on <m>\mathbb{M}_{mn}</m>; the pixel
+            basis is orthonormal for it, and so is any other orthonormal basis, all of
+            which return the same length. An arbitrary basis<mdash />such as
+            <m>\mathcal{B}</m> or <m>\mathcal{C}</m> above<mdash />does not. Inner
+            products and orthonormality belong to the course that follows this one; here
+            it is enough to fix one basis and never move.
+          </fn>
+          Throughout this section that basis is fixed once and for all: the pixel basis,
+          one coordinate per pixel, which is also exactly the choice under which
           <xref ref="def-picture-distance" text="type-global" /> agrees with
           <xref ref="def-dot-product" text="type-global" /> in <m>\R^3</m>.
         </p>
@@ -231,16 +358,27 @@
                 print("verdict: empty wall")
             else:
                 print("verdict: undecided")
-            show_pictures(S)
+            show_pictures(("blend at lambda = %s" % lam, S))
       </input>
     </sage>
+
+    <p>
+      Dragging the slider draws the blend and reports the two distances. Below
+      <m>\lambda = 0.5</m> the cat corner is nearer and the verdict is <em>cat</em>;
+      above it the verdict flips; at <m>0.5</m> the two distances print the same number
+      and the rule declines, exactly as the algebra promised.
+    </p>
 
     <p>
       Blends are a tame test: they live on the line segment joining the two references.
       A real second photograph of either corner would not. Sensors add
       <term>grain</term><mdash />each pixel arrives a little brighter or darker than the
-      scene, by an amount that differs from shot to shot<mdash />so a new photograph of
-      the cat corner is <m>A_0</m> plus a picture of pure noise. The cell below
+      scene, by an amount that differs from shot to shot. Model it in the simplest way:
+      each pixel receives its own random error, independent of the others, with mean
+      <m>0</m> and standard deviation <m>\sigma</m> gray levels. A new photograph of the
+      cat corner is then <m>A_0 + G</m>, where <m>G</m> is a picture of pure noise, and
+      since gray levels below <m>0</m> or above <m>255</m> do not exist, the few pixels
+      the grain pushes outside that range are clipped back to it. The cell below
       manufactures such photographs, with grain of a size you control, and scores the
       rule on two hundred of them.
     </p>
@@ -252,7 +390,9 @@
 
         def grainy(X, sigma):
             noise = matrix(RDF, 8, 6, [normalvariate(0, sigma) for _ in range(48)])
-            return X.change_ring(RDF) + noise
+            shot  = X.change_ring(RDF) + noise
+            # gray levels live in [0, 255]: clip whatever the grain pushed outside
+            return matrix(RDF, 8, 6, [min(255.0, max(0.0, v)) for v in shot.list()])
 
         trials, correct = 200, 0
         for k in range(trials):
@@ -263,7 +403,8 @@
         print(correct, "correct out of", trials)
         print("typical distance the grain moves a shot:",
               n(sigma*sqrt(48), digits=4))
-        show_pictures(grainy(A0, sigma), A0)
+        show_pictures(("grainy cat photograph", grainy(A0, sigma)),
+                      ("clean reference", A0))
       </input>
     </sage>
 
@@ -271,114 +412,20 @@
       At <c>sigma = 25</c> the rule is nearly perfect, and that should be more surprising
       than it looks. Grain of that size moves a shot about
       <m>25\sqrt{48} \approx 173</m> units<mdash />farther than the <m>125.2</m> that
-      separate the two corners in the first place. Every grainy photograph of the eye
-      ends up farther from <m>A_0</m> than the empty corner is, and the rule still sorts
-      them correctly. Why the verdicts survive a displacement larger than the gap between the
-      classes is explained two subsections from now; it is the central fact of the whole
-      section. First, a practical improvement.
-    </p>
-  </subsection>
-
-  <subsection xml:id="subsec-recognition-average">
-    <title>Learning from Many Photographs</title>
-
-    <p>
-      No recognizer in practice is handed the true, grainless corner to use as its
-      reference. It is handed photographs<mdash />several of each thing, every one
-      contaminated<mdash />and must build its own references out of them. The tool for
-      combining several pictures into one has been in hand since
-      <xref ref="sec-superposition" text="title" />: the average. What that section did
-      for two pictures works for any number of them, and averaging turns out to be not
-      merely a way of combining the photographs but, in a precise sense, the best one.
-    </p>
-
-    <theorem xml:id="thm-average-prototype">
-      <title>The Average Is the Best Single Reference</title>
-      <statement>
-        <p>
-          Let <m>X_1, \dots, X_k</m> be pictures in <m>\mathbb{M}_{mn}</m> and let
-          <m>M = \frac{1}{k}\left( X_1 + \cdots + X_k \right)</m> be their average. Then
-          for every picture <m>C</m>,
-          <md>
-            \sum_{i=1}^{k} \| X_i - C \|^2
-            = \sum_{i=1}^{k} \| X_i - M \|^2 + k \, \| M - C \|^2.
-          </md>
-          In particular, the total squared distance from the photographs to <m>C</m> is
-          smallest for exactly one picture: <m>C = M</m>.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          Write <m>X_i - C = (X_i - M) + (M - C)</m> and expand the square with the dot
-          product:
-          <md>
-            \| X_i - C \|^2
-            = \| X_i - M \|^2 + 2\, (X_i - M) \cdot (M - C) + \| M - C \|^2.
-          </md>
-          Sum over <m>i</m>. The middle terms contribute
-          <m>2 \left( \sum_{i=1}^{k} (X_i - M) \right) \cdot (M - C)</m>, and the
-          definition of the average says precisely that
-          <m>\sum_{i=1}^{k} (X_i - M) = X_1 + \cdots + X_k - kM</m> is the zero picture.
-          What survives is the claimed identity, and since <m>k \| M - C \|^2 \geq 0</m>
-          with equality only at <m>C = M</m>, the minimum is at the average and nowhere
-          else.
-        </p>
-      </proof>
-    </theorem>
-
-    <p>
-      A reference built this way is called a <term>prototype</term>. The cell below
-      photographs each corner six times through heavy grain, averages each set of six
-      into a prototype, and then compares two machines: the nearest-reference rule using
-      a single grainy photograph as its memory of each corner, and the same rule using
-      the prototypes. The grain here is deliberately brutal<mdash /><c>sigma = 35</c>
-      <mdash />so that a single photograph is a poor memory.
-    </p>
-
-    <sage>
-      <input>
-        shots_cat  = [grainy(A0, 35) for _ in range(6)]
-        shots_wall = [grainy(D0, 35) for _ in range(6)]
-        Mcat  = sum(shots_cat)/6      # the prototypes: averages, as in the theorem
-        Mwall = sum(shots_wall)/6
-
-        def accuracy(refC, refW, trials=200):
-            correct = 0
-            for k in range(trials):
-                corner = A0 if k % 2 == 0 else D0
-                shot = grainy(corner, 35)
-                says_cat = dist(shot, refC) &lt; dist(shot, refW)
-                correct += (says_cat == (corner is A0))
-            return correct/trials
-
-        print("one grainy photograph as each reference:",
-              n(accuracy(shots_cat[0], shots_wall[0]), digits=3))
-        print("the average of six as each prototype:   ",
-              n(accuracy(Mcat, Mwall), digits=3))
-        print("distance from one shot to the true corner: ",
-              n(dist(shots_cat[0], A0), digits=4))
-        print("distance from the prototype to it:         ",
-              n(dist(Mcat, A0), digits=4))
-        show_pictures(shots_cat[0], Mcat, A0)
-      </input>
-    </sage>
-
-    <p>
-      The single-photograph machine hovers near guessing; the prototype machine recovers
-      most of what the grain destroyed. The drawing shows why. Grain pushes each pixel up
-      or down at random, so at any given pixel the six errors largely cancel, and the
-      average of six shots sits several times closer to the true corner than any one of
-      them does. The prototype is a picture no camera ever took<mdash />it was computed,
-      not photographed<mdash />and it is a better memory of the corner than any
-      photograph in the pile. This is the first moment in the book where a machine can
-      fairly be said to <em>learn</em>: shown examples, it compresses them, by nothing
-      deeper than a linear combination with coefficients <m>\frac{1}{6}</m>, into a
-      reference it was never given.
+      separate the two corners in the first place.<fn>
+        The number <m>\sigma\sqrt{48}</m> is the typical size of the displacement, not
+        its exact value in every shot: each photograph lands a little nearer or a little
+        farther, and only the average behaviour is pinned down by <m>\sigma</m>.
+      </fn>
+      A typical grainy photograph of the eye ends up farther from <m>A_0</m> than the
+      empty corner is, and the rule still sorts them correctly. Why the verdicts survive
+      a displacement larger than the gap between the classes is the central fact of the
+      whole section, and it comes out of the next subsection in a single line.
     </p>
   </subsection>
 
   <subsection xml:id="subsec-recognition-score">
-    <title>The Score Behind the Decision</title>
+    <title>The Score and the Decision Boundary</title>
 
     <p>
       The rule as stated computes two distances and compares them. Expanding both with
@@ -391,49 +438,108 @@
         \lt \| X \|^2 - 2\, X \cdot Q + \| Q \|^2.
       </md>
       The term <m>\| X \|^2</m> cancels from both sides<mdash />the length of the
-      incoming picture never mattered at all<mdash />and what remains rearranges to
-      <md>
-        X \cdot W \gt \tau,
-        \qquad \text{where} \quad
-        W = P - Q, \quad \tau = \tfrac{1}{2}\left( \| P \|^2 - \| Q \|^2 \right).
-      </md>
-      Everything the machine will ever decide is contained in one picture and one
-      number: the <term>weight picture</term> <m>W</m>, and the <term>threshold</term>
-      <m>\tau</m>. Define the <term>score</term> of a picture to be
-      <m>s(X) = X \cdot W - \tau</m>. The rule says <em>cat</em> when the score is
-      positive, <em>empty wall</em> when it is negative, and nothing when it is zero.
+      incoming picture never mattered at all<mdash />and what remains is
+      <m>2\, X \cdot (P - Q) \gt \| P \|^2 - \| Q \|^2</m>.
     </p>
 
     <p>
-      For our references <m>P = A_0</m> and <m>Q = D_0</m>, the numbers are concrete:
-      <m>\tau = \frac{1}{2}(375632 - 259930) = 57851</m>, and the two references
-      themselves score
+      Two pictures built from the references turn that inequality into geometry. Let
       <md>
-        s(A_0) = +\tfrac{1}{2}\, \| W \|^2 = +7839,
-        \qquad
-        s(D_0) = -\tfrac{1}{2}\, \| W \|^2 = -7839,
+        M = \tfrac{1}{2}(P + Q)
+        \qquad \text{and} \qquad
+        W = P - Q
       </md>
-      symmetric endpoints of a scale on which every patch in the world lands somewhere.
+      be the <term>midpoint</term> of the two references and the
+      <term>discriminating direction</term> that runs from <m>Q</m> to <m>P</m>. Since
+      <m>\| P \|^2 - \| Q \|^2 = (P + Q) \cdot (P - Q) = 2\, M \cdot W</m>, the
+      inequality above reads <m>X \cdot W \gt M \cdot W</m>, or, with everything on one
+      side,
+      <md>
+        \operatorname{dist}(X, P) \lt \operatorname{dist}(X, Q)
+        \quad \text{if and only if} \quad
+        (X - M) \cdot W \gt 0.
+      </md>
+      Define the <term>score</term> of a picture to be that quantity,
+      <md>
+        s(X) = (X - M) \cdot W.
+      </md>
+      The rule says <em>cat</em> when the score is positive, <em>empty wall</em> when it
+      is negative, and nothing when it is zero.
+    </p>
+
+    <p>
+      Written this way the score wears its meaning on the outside. It measures the
+      incoming picture from the midpoint <m>M</m>, in the single direction <m>W</m> that
+      points from the empty-wall reference toward the cat reference. Its sign says which
+      side of the midpoint <m>X</m> lies on. Its tie set <m>s(X) = 0</m><mdash />the
+      pictures the rule refuses to judge<mdash />is the flat through <m>M</m>
+      perpendicular to <m>W</m>, the <term>decision boundary</term> that cuts picture
+      space into a cat side and an empty side.
+    </p>
+
+    <p>
+      Multiplying out <m>(X - M) \cdot W</m> puts the same score in the form a machine
+      would store:
+      <md>
+        s(X) = X \cdot W - \tau,
+        \qquad \text{where} \quad
+        \tau = M \cdot W = \tfrac{1}{2}\left( \| P \|^2 - \| Q \|^2 \right).
+      </md>
+      Everything the machine will ever decide is contained in one picture and one
+      number: the <term>weight picture</term> <m>W</m> and the <term>threshold</term>
+      <m>\tau</m>. The two references themselves score
+      <md>
+        s(P) = \tfrac{1}{2}\, \| W \|^2,
+        \qquad
+        s(Q) = -\tfrac{1}{2}\, \| W \|^2,
+      </md>
+      placed symmetrically on either side of the boundary, each at the same remove from
+      it. They are not the ends of the scale, however: a picture farther out along
+      <m>W</m> than <m>P</m> scores higher than <m>P</m> does, and scores lie anywhere on
+      the number line. For our references <m>P = A_0</m> and <m>Q = D_0</m> the numbers
+      are concrete: <m>\tau = \frac{1}{2}(375632 - 259930) = 57851</m>, and
+      <m>s(A_0) = +7839</m> while <m>s(D_0) = -7839</m>.
+    </p>
+
+    <p>
       The map <m>T(X) = X \cdot W</m> is a linear transformation from
       <m>\mathbb{M}_{8,6}</m> to <m>\R</m> in the sense of
       <xref ref="def-general-linear-transformation" text="type-global" />, because the
       dot product is linear in its first argument; the score differs from it only by the
-      constant <m>\tau</m>. Linearity is not a spectator here<mdash />it is why the
-      blends of the previous subsection behaved so cleanly: a linear score along the
-      segment from <m>A_0</m> to <m>D_0</m> is <m>s(S_\lambda) = 7839\,(1 - 2\lambda)</m>,
-      sliding at constant speed from <m>+7839</m> to <m>-7839</m> and crossing zero at
-      exactly <m>\lambda = \frac{1}{2}</m>.
+      constant <m>\tau</m>.<fn>
+        Only <m>T</m> is a linear transformation. The score <m>s(X) = T(X) - \tau</m> is
+        not one unless <m>\tau = 0</m>, since a linear transformation must send the zero
+        picture to <m>0</m> and <m>s(0) = -\tau</m>. A linear transformation followed by
+        the addition of a constant is called <em>affine</em>. The distinction costs
+        nothing below, because every claim made about how the score
+        <em>changes</em> is a claim about <m>T</m>, and the constant cancels out of
+        differences.
+      </fn>
+      Linearity is not a spectator here<mdash />it is why the blends of the previous
+      subsection behaved so cleanly: along the segment from <m>A_0</m> to <m>D_0</m> the
+      score varies linearly with <m>\lambda</m>,
+      <m>s(S_\lambda) = 7839\,(1 - 2\lambda)</m>, sliding at constant speed from
+      <m>+7839</m> to <m>-7839</m> and crossing zero at exactly
+      <m>\lambda = \frac{1}{2}</m>.
     </p>
 
     <p>
       As in <xref ref="sec-matrix-of-transformation" text="title" />, the transformation
       <m>T</m> has a matrix with respect to the pixel basis: the <m>1 \times 48</m> row
-      that lists the <m>48</m> weights. By
-      <xref ref="thm-rank-nullity" text="type-global" /> its null space<mdash />the
-      pictures the score cannot see at all<mdash />has dimension <m>47</m>, and the tie
-      set <m>s(X) = 0</m> is that subspace shifted: a flat, <m>47</m>-dimensional wall
-      slicing picture space into a cat side and an empty side. Recognition, for this
-      machine, is one linear transformation followed by one comparison.
+      that lists the <m>48</m> weights. Because <m>W \neq 0</m>, that row is not the zero
+      row, so <m>T</m> has rank <m>1</m>, and
+      <xref ref="thm-rank-nullity" text="type-global" /> gives
+      <m>\dim \ker(T) = 48 - 1 = 47</m>. The kernel is where the machine's blindness
+      lives. If <m>G</m> lies in it, then adding <m>G</m> to any picture leaves the
+      verdict untouched:
+      <md>
+        s(X + G) = s(X) + G \cdot W = s(X).
+      </md>
+      Note what this does and does not say. A picture <m>G</m> in <m>\ker(T)</m> need not
+      have score zero itself; what is zero is the change it causes. So <m>\ker(T)</m> is
+      the <m>47</m>-dimensional space of directions of change the classifier cannot
+      detect, and recognition, for this machine, is one linear transformation followed by
+      one comparison.
     </p>
 
     <p>
@@ -452,7 +558,8 @@
     <sage>
       <input>
         W   = A0 - D0
-        tau = (sum(p^2 for p in A0.list()) - sum(p^2 for p in D0.list()))/2
+        M   = (A0 + D0)/2
+        tau = sum(m*w for m, w in zip(M.list(), W.list()))   # tau = M . W
 
         def score(X):
             return sum(x*w for x, w in zip(X.list(), W.list())) - tau
@@ -460,14 +567,79 @@
         print("tau =", tau)
         print("score of the cat corner:  ", score(A0))
         print("score of the empty corner:", score(D0))
+        print("score of the midpoint:    ", score(M))
         lam = 0.3   # change me
         print("score of the blend:", n(score((1 - lam)*A0 + lam*D0), digits=5),
               "  predicted 7839*(1 - 2*lambda) =", n(7839*(1 - 2*lam), digits=5))
 
         J = ones_matrix(ZZ, 8, 6)
-        show_pictures(128*J + W)
+        show_pictures(("weight picture W, mid-gray = 0", 128*J + W))
       </input>
     </sage>
+
+    <p>
+      The cell prints <m>\tau = 57851</m>, the symmetric scores <m>\pm 7839</m>, a score
+      of exactly <m>0</m> at the midpoint, and a blend score matching the linear
+      prediction. The drawing shows <m>W</m> against a mid-gray background standing for
+      zero: featureless where the two corners agree, and bright and dark only where the
+      eye is.
+    </p>
+
+    <p>
+      Read for an arbitrary <m>G</m> rather than one in the kernel, that same line
+      settles the surprise left hanging by the grain. For <em>any</em> disturbance
+      <m>G</m> whatever,
+      <md>
+        s(X + G) = s(X) + G \cdot W,
+      </md>
+      so the verdict on <m>X + G</m> differs from the verdict on <m>X</m> only through
+      the single number <m>G \cdot W</m><mdash />never through the size of <m>G</m>.
+      Grain is a picture whose <m>48</m> entries have no relationship to <m>W</m>: in the
+      sum <m>G \cdot W</m> the positive and negative contributions arrive in comparable
+      amounts and largely cancel, so grain can move a shot <m>173</m> units while barely
+      touching the score. The distance saw an enormous displacement; the score, which is
+      all that decides, saw almost none. A far shorter disturbance aimed squarely along
+      <m>W</m> would do what the grain could not.
+      <xref ref="fig-decision-boundary" text="global" /> is the whole story in two
+      dimensions.
+    </p>
+
+    <figure xml:id="fig-decision-boundary">
+      <caption>
+        What the classifier actually watches. The boundary <m>s(X) = 0</m> is the flat
+        through the midpoint <m>M</m> perpendicular to <m>W = P - Q</m>. A long
+        disturbance <m>G</m> that runs nearly along the boundary changes the score
+        hardly at all; a much shorter one aimed along <m>W</m> carries the picture across
+        it. Only the part of the movement in the <m>W</m>-direction counts.
+      </caption>
+      <image width="90%">
+        <shortdescription>A two-dimensional schematic: a vertical decision boundary line with the empty-wall region on the left and the cat region on the right; the references Q and P sit symmetrically on either side with their midpoint M on the line; an arrow labelled W runs from Q to P perpendicular to the line; a long arrow from P runs nearly parallel to the boundary and stays on the cat side; a shorter arrow from P aimed back along W crosses the boundary into the empty-wall side</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}[scale=1.1, every node/.style={font=\small}]
+            \fill[red!7]  (-4.2,-1.8) rectangle (0,3.2);
+            \fill[blue!7] (0,-1.8) rectangle (5.4,3.2);
+            \draw[very thick, black!70] (0,-1.8) -- (0,3.2);
+            \node[black!70, anchor=west] at (0.12,1.5) {$s(X)=0$};
+            \node[anchor=north east, align=right] at (-0.2,3.15)
+              {$s(X)$ negative:\\ \emph{empty wall}};
+            \node[anchor=north west, align=left] at (0.2,3.15)
+              {$s(X)$ positive:\\ \emph{cat}};
+            \draw[dashed, black!55] (-1.2,0) -- (1.2,0);
+            \fill (1.2,0) circle (1.7pt) node[below right=-1pt] {$P$};
+            \fill (-1.2,0) circle (1.7pt) node[above left=-2pt] {$Q$};
+            \fill (0,0) circle (1.7pt) node[above left=-2pt] {$M$};
+            \draw[violet, very thick, -{Stealth[length=2.2mm]}] (-1.2,-1.15) -- (1.2,-1.15);
+            \node[anchor=east] at (-1.32,-1.15) {$W = P - Q$};
+            \draw[green!50!black, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (1.85,2.5);
+            \node[anchor=west, align=left] at (1.98,2.3)
+              {grain $G$: long,\\ but $G \cdot W$ small};
+            \draw[red!80!black, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (-0.62,-0.45);
+            \node[anchor=east, align=right] at (-0.74,-0.45)
+              {dimming: short,\\ but aimed along $W$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
 
     <remark xml:id="rem-recognition-neuron">
       <title>One Neuron</title>
@@ -492,35 +664,168 @@
     </remark>
   </subsection>
 
-  <subsection xml:id="subsec-recognition-limits">
-    <title>What the Distance Does Not See</title>
+  <subsection xml:id="subsec-recognition-average">
+    <title>Learning Prototypes from Many Photographs</title>
 
     <p>
-      The score also explains the promised surprise, and then exposes the machine's
-      weaknesses, both in one line: for any disturbance <m>G</m>,
-      <md>
-        s(X + G) = s(X) + G \cdot W.
-      </md>
-      The verdict on <m>X + G</m> differs from the verdict on <m>X</m> only through the
-      single number <m>G \cdot W</m>. Grain is a picture whose <m>48</m> entries have no
-      relationship to <m>W</m>: in the sum <m>G \cdot W</m> its terms arrive with both
-      signs and largely cancel, so grain can move a shot <m>173</m> units while barely
-      touching the score. The distance saw an enormous displacement; the score, which is
-      all that decides, saw almost none. That is why the verdicts survived.
+      Everything so far has taken the two references for granted. No recognizer in
+      practice is handed the true, grainless corner to use as one. It is handed
+      photographs<mdash />several of each thing, every one contaminated<mdash />and must
+      build its own references out of them. The tool for combining several pictures into
+      one has been in hand since <xref ref="sec-superposition" text="title" />: the
+      average. Before proving anything about it, look at what it does. The cell below
+      photographs the cat corner six times through deliberately brutal grain,
+      <c>sigma = 35</c>, so that a single photograph is a poor memory, and puts the
+      average of the six beside them.
+    </p>
+
+    <sage>
+      <input>
+        shots_cat  = [grainy(A0, 35) for _ in range(6)]   # change me: 35 is heavy grain
+        shots_wall = [grainy(D0, 35) for _ in range(6)]
+        proto_cat  = sum(shots_cat)/6     # the prototypes: averages, as in the theorem
+        proto_wall = sum(shots_wall)/6
+
+        print("distance from one shot to the true corner:", n(dist(shots_cat[0], A0), digits=4))
+        print("distance from the average of six to it:   ", n(dist(proto_cat, A0), digits=4))
+        show_pictures(("grainy photograph 1", shots_cat[0]),
+                      ("grainy photograph 2", shots_cat[1]),
+                      ("grainy photograph 3", shots_cat[2]),
+                      ("average of six photographs", proto_cat),
+                      ("clean reference", A0))
+      </input>
+    </sage>
+
+    <p>
+      The three photographs are a mess and no two are the same mess. Their average is
+      visibly calmer, and the printed distances say so numerically: the average of six
+      sits several times closer to the true corner than any single shot does. Grain
+      pushes each pixel up or down at random, so at any given pixel the six errors
+      largely cancel. A reference built this way is called a <term>prototype</term>. It
+      is a picture no camera ever took<mdash />it was computed, not photographed.
     </p>
 
     <p>
-      The same line predicts exactly what will <em>not</em> be survived: a disturbance
-      that pushes every pixel the same way. Underexposing a patch by <m>t</m> gray
-      levels adds <m>G = -tJ</m>, where <m>J</m> is the all-ones picture, and
-      <m>J \cdot W</m> is simply the sum of the entries of <m>W</m><mdash />the total
-      brightness of <m>A_0</m> minus the total brightness of <m>D_0</m>:
+      Averaging is not merely one way of combining the photographs. In a precise sense it
+      is the best one.
+    </p>
+
+    <theorem xml:id="thm-average-prototype">
+      <title>The Average Is the Best Single Reference</title>
+      <statement>
+        <p>
+          Let <m>X_1, \dots, X_k</m> be pictures in <m>\mathbb{M}_{mn}</m> and let
+          <m>\overline{X} = \frac{1}{k}\left( X_1 + \cdots + X_k \right)</m> be their
+          average. Then for every picture <m>C</m>,
+          <md>
+            \sum_{i=1}^{k} \| X_i - C \|^2
+            = \sum_{i=1}^{k} \| X_i - \overline{X} \|^2
+              + k \, \| \overline{X} - C \|^2.
+          </md>
+          In particular, the total squared distance from the photographs to <m>C</m> is
+          smallest for exactly one picture: <m>C = \overline{X}</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Write <m>X_i - C = (X_i - \overline{X}) + (\overline{X} - C)</m> and expand the
+          square with the dot product:
+          <md>
+            \| X_i - C \|^2
+            = \| X_i - \overline{X} \|^2
+              + 2\, (X_i - \overline{X}) \cdot (\overline{X} - C)
+              + \| \overline{X} - C \|^2.
+          </md>
+          Sum over <m>i</m>. The middle terms contribute
+          <m>2 \left( \sum_{i=1}^{k} (X_i - \overline{X}) \right) \cdot
+          (\overline{X} - C)</m>, and the definition of the average says precisely that
+          <m>\sum_{i=1}^{k} (X_i - \overline{X}) = X_1 + \cdots + X_k - k\overline{X}</m>
+          is the zero picture. What survives is the claimed identity, and since
+          <m>k \| \overline{X} - C \|^2 \geq 0</m> with equality only at
+          <m>C = \overline{X}</m>, the minimum is at the average and nowhere else.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      The theorem settles one question and leaves another wide open.<fn>
+        What it proves is that the average is the unique best single representative of
+        the photographs in the <em>least-squares</em> sense: among all pictures, it and
+        it alone makes the total of the squared distances to the photographs as small as
+        possible. It does <em>not</em> prove that the classifier built from these
+        prototypes has the highest classification accuracy obtainable from the same
+        photographs. That is a different question, about verdicts rather than about
+        distances, and this section does not answer it.
+      </fn>
+      It is also worth being plain about what the machine is given. The procedure is
+      <term>supervised</term>: someone hands it photographs already labelled <em>cat</em>
+      or <em>empty wall</em>, and it averages each labelled pile separately. It does not
+      discover that there are two kinds of corner; it is told, and it compresses each
+      told-about pile into one picture.
+    </p>
+
+    <p>
+      Nothing in <xref ref="subsec-recognition-score" text="title" /> used what <m>P</m>
+      and <m>Q</m> were, so the classifier carries over untouched. Where it once ran on
+      <m>P = A_0</m> and <m>Q = D_0</m>, it now runs on the two prototypes, with the
+      weight picture <m>W = P - Q</m> and threshold <m>\tau = M \cdot W</m> rebuilt from
+      them. The cell below compares the two machines head to head: the nearest-reference
+      rule using a single grainy photograph as its memory of each corner, and the same
+      rule using the prototypes.
+    </p>
+
+    <sage>
+      <input>
+        def accuracy(refC, refW, trials=200):
+            correct = 0
+            for k in range(trials):
+                corner = A0 if k % 2 == 0 else D0
+                shot = grainy(corner, 35)
+                says_cat = dist(shot, refC) &lt; dist(shot, refW)
+                correct += (says_cat == (corner is A0))
+            return correct/trials
+
+        print("one grainy photograph as each reference:",
+              n(accuracy(shots_cat[0], shots_wall[0]), digits=3))
+        print("the average of six as each prototype:   ",
+              n(accuracy(proto_cat, proto_wall), digits=3))
+        show_pictures(("single-photograph reference", shots_cat[0]),
+                      ("prototype: average of six", proto_cat),
+                      ("clean reference", A0))
+      </input>
+    </sage>
+
+    <p>
+      The single-photograph machine does markedly worse than the prototype machine, which
+      recovers most of what the grain destroyed. This is the first moment in the book
+      where a machine can fairly be said to <em>learn</em>: shown examples, it compresses
+      them, by nothing deeper than a linear combination with coefficients
+      <m>\frac{1}{6}</m>, into a reference it was never given.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-recognition-limits">
+    <title>What the Method Does Not See</title>
+
+    <p>
+      Return to the clean references <m>P = A_0</m> and <m>Q = D_0</m>, so that the
+      numbers are the concrete ones of
+      <xref ref="subsec-recognition-score" text="title" />. The line that saved the
+      verdicts from grain,
+      <md>
+        s(X + G) = s(X) + G \cdot W,
+      </md>
+      predicts exactly what will <em>not</em> be survived: a disturbance that pushes
+      every pixel the same way. Underexposing a patch by <m>t</m> gray levels adds
+      <m>G = -tJ</m>, where <m>J</m> is the all-ones picture, and <m>J \cdot W</m> is
+      simply the sum of the entries of <m>W</m><mdash />the total brightness of
+      <m>A_0</m> minus the total brightness of <m>D_0</m>:
       <md>
         J \cdot W = 4210 - 3522 = 688,
       </md>
-      positive because the cat corner is on the whole brighter than the bare wall. Nothing cancels;
-      all <m>48</m> terms push together. The score of a darkened eye patch is
-      <m>s(A_0) - 688\,t = 7839 - 688\,t</m>, which turns negative as soon as
+      positive because the cat corner is on the whole brighter than the bare wall.
+      Nothing cancels; all <m>48</m> terms push together. The score of a darkened eye
+      patch is <m>s(A_0) - 688\,t = 7839 - 688\,t</m>, which turns negative as soon as
       <m>t \gt \frac{7839}{688} \approx 11.4</m>. Darken every pixel by twelve gray
       levels out of <m>255</m><mdash />a displacement of only
       <m>\| 12 J \| \approx 83</m> units, less than half of what the grain
@@ -543,19 +848,29 @@
 
     <sage>
       <input>
-        t = -12       # change me: exposure shift, in gray levels
+        t = 12        # change me: amount of darkening, in gray levels
         c = 0.85      # change me: exposure scale
-        darker = A0 + t*J
+        darker = A0 - t*J
         scaled = c*A0.change_ring(RDF)
-        slid   = A0.matrix_from_columns([1, 2, 3, 4, 5, 5])  # the eye, one pixel over
+        slid   = A0.matrix_from_columns([0, 0, 1, 2, 3, 4])  # the eye, one pixel right
 
-        for name, X in [("shifted", darker), ("scaled", scaled), ("slid", slid)]:
+        for name, X in [("darkened", darker), ("scaled", scaled), ("slid", slid)]:
             verdict = "cat" if dist(X, A0) &lt; dist(X, D0) else "empty wall"
             print(name, "  distance moved:", n(dist(X, A0), digits=4),
+                  "  score:", n(score(X), digits=5),
                   "  verdict:", verdict)
-        show_pictures(darker, scaled, slid, A0)
+        show_pictures(("darkened image", darker), ("scaled image", scaled),
+                      ("one-pixel-shifted image", slid), ("clean reference", A0))
       </input>
     </sage>
+
+    <p>
+      The printed table makes the point without the pictures: darkening moves the patch
+      about <m>83</m> units and flips the verdict to <em>empty wall</em>; scaling moves
+      it farther still and flips it too; the one-pixel shift moves it <m>74</m> units,
+      more than either, and the verdict nevertheless holds at <em>cat</em>. Distance
+      moved is not what decides. Only the score is.
+    </p>
 
     <p>
       Each failure names the repair it is waiting for, and each repair is a course that
@@ -575,10 +890,13 @@
       plane; here, pictures are compared, averaged, and finally judged. A machine that
       tells a cat from a bare wall by squaring forty-eight subtractions is not yet
       seeing. But it is deciding, its decision is a linear transformation and a
-      threshold, and every improvement on it that the modern world runs at
-      scale<mdash />through billions of weights instead of forty-eight<mdash />is
-      built of the operations this chapter defined: adding pictures, scaling them, and
-      taking their dot products.
+      threshold, and the linear part of a modern image recognizer still consists largely
+      of the operations studied here, run at scale through billions of weights instead of
+      forty-eight: weighted sums, dot products, and linear transformations. What those
+      recognizers have and this one does not is the nonlinear step of
+      <xref ref="rem-recognition-neuron" text="type-global" />, inserted between the
+      linear stages. That step is where their additional power comes from, and it is not
+      in this chapter.
     </p>
   </subsection>
 </section>
