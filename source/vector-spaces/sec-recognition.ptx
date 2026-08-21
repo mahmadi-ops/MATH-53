@@ -192,19 +192,24 @@
     </p>
 
     <p>
-      On a <m>2 \times 2</m> example the definition is a triangle in disguise. The
-      pictures
+      Try the definition on a <m>2 \times 2</m> example. Although the pictures
       <md>
         U = \begin{bmatrix} 90 \amp 60 \\ 120 \amp 30 \end{bmatrix},
         \qquad
         V = \begin{bmatrix} 86 \amp 63 \\ 120 \amp 30 \end{bmatrix}
       </md>
-      agree on their bottom row and disagree by <m>4</m> and <m>-3</m> on the top, so
+      are <m>2 \times 2</m> matrices, we can regard them as points in <m>\R^4</m>, with
+      one coordinate for each pixel. Their difference is
       <md>
-        \operatorname{dist}(U, V) = \sqrt{4^2 + (-3)^2 + 0^2 + 0^2} = 5:
+        [U - V]_{\mathcal{E}} = \begin{bmatrix} 4 \\ -3 \\ 0 \\ 0 \end{bmatrix}.
       </md>
-      a <m>3</m>-<m>4</m>-<m>5</m> right triangle, hiding in a four-dimensional space of
-      tiny pictures.
+      Therefore,
+      <md>
+        \operatorname{dist}(U, V) = \sqrt{4^2 + (-3)^2 + 0^2 + 0^2} = 5.
+      </md>
+      Since only two coordinates differ, this is precisely the Pythagorean theorem
+      applied to a <m>3</m>-<m>4</m>-<m>5</m> right triangle inside the four-dimensional
+      space of <m>2 \times 2</m> pictures.
     </p>
 
     <p>
