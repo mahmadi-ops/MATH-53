@@ -1006,7 +1006,26 @@
         random variable<mdash />the probability that such a variable falls below the
         given value. An empty-wall photograph gives the same probability, because the
         two classes sit symmetrically about the decision boundary.
+        <xref ref="fig-recognition-score-distributions" text="global" /> draws the
+        calculation: each class of shots piles its scores into a bell curve centered on
+        its reference's score, and the error probability is nothing but the area of the
+        tail that spills across the boundary.
       </p>
+
+      <figure xml:id="fig-recognition-score-distributions">
+        <caption>
+          How the scores of grainy shots distribute themselves. Wall shots pile up
+          around <m>s = -7839</m> and cat shots around <m>s = +7839</m>, each in a bell
+          curve of width <m>\sigma \| W \|</m>; a shot is misjudged exactly when its
+          score lands on the wrong side of the boundary, so each shaded tail
+          <em>is</em> the error probability. Quadrupling the spread from
+          <m>\sigma = 25</m> to <m>\sigma = 50</m> turns a negligible tail into a
+          tenth of all shots.
+        </caption>
+        <image source="images/recognition-score-distributions.svg" width="100%">
+          <shortdescription>Two panels, each showing two bell curves over the score axis: a red curve for wall shots centered at minus 7839 and a blue curve for cat shots centered at plus 7839, with a dashed vertical decision boundary at score zero. In the left panel, labeled sigma equals 25, the curves are narrow and barely overlap, and each shaded tail crossing the boundary is 0.6 percent of its curve. In the right panel, labeled sigma equals 50, the curves are twice as wide and overlap visibly, and each shaded tail is 10.5 percent of its curve</shortdescription>
+        </image>
+      </figure>
       <p>
         For the values of this section, <m>\| W \| = \sqrt{15678} \approx 125.2</m>
         and <m>\sigma = 25</m>, so
@@ -1022,7 +1041,24 @@
         calculation is exact for the unclipped Gaussian model with clean references.
         Once the references are themselves noisy learned prototypes, the formula becomes
         less transparent, and the held-out test experiment above is the clearer choice.
+        <xref ref="fig-recognition-accuracy-curve" text="global" /> puts formula and
+        experiment side by side across the whole range of grain sizes.
       </p>
+
+      <figure xml:id="fig-recognition-accuracy-curve">
+        <caption>
+          The probability of a correct verdict against the grain size <m>\sigma</m>. The
+          curve is the exact formula <m>\Phi(\| W \| / 2\sigma)</m>; each dot is a
+          held-out test of four thousand shots at that grain size, gray levels clipped to
+          <m>[0, 255]</m> as a camera would. The two agree until the grain grows so
+          large that clipping<mdash />which the formula ignores<mdash />begins to
+          distort the shots. Even at <m>\sigma = 100</m> the machine still beats
+          guessing.
+        </caption>
+        <image source="images/recognition-accuracy-curve.svg" width="82%">
+          <shortdescription>A graph of the probability of a correct verdict, from 0.5 to 1, against grain size sigma from 5 to 100. A smooth blue curve, labeled exact formula Phi of norm of W over two sigma, starts at 1 for small sigma and descends to about 0.73 at sigma equals 100. Orange dots, labeled simulation of 4000 shots each, follow the curve closely until about sigma equals 60 and then drift slightly below it, with an annotation explaining that clipping at 0 and 255 drags real shots below the unclipped formula. A dashed horizontal line at 0.5 is labeled guessing, and an annotation marks the section's cell at sigma equals 25 with accuracy approximately 0.994</shortdescription>
+        </image>
+      </figure>
     </paragraphs>
   </subsection>
 
