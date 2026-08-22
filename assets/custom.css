@@ -278,3 +278,29 @@ html:root:not(.dark-mode) details.hiddenproof[open] > summary.knowl__link {
 @media print {
     #m53-tutor-fab, #m53-tutor-panel { display: none !important; }
 }
+
+/* ---- The mind map's full-screen link -------------------------------------
+   The map is dense enough that reading it at figure size is a strain, so the
+   link to the full-size SVG has to be findable rather than buried at the tail
+   of a caption. Give it its own line and the shape of a button, in the maroon
+   the map itself uses for its third branch. */
+#fig-recognition-mindmap figcaption a.external {
+    display: block;           /* its own line, not trailing the caption */
+    width: fit-content;
+    margin: 0.7em 0 0.1em;
+    padding: 0.35em 0.9em;
+    border: 1.5px solid #5e1224;
+    border-radius: 6px;
+    background: #f7e8e9;
+    color: #5e1224;
+    font-weight: 600;
+    text-decoration: none;
+}
+#fig-recognition-mindmap figcaption a.external::after {
+    content: " \2197";        /* north-east arrow: this leaves the page */
+}
+#fig-recognition-mindmap figcaption a.external:hover,
+#fig-recognition-mindmap figcaption a.external:focus {
+    background: #5e1224;
+    color: #fdf6ee;
+}

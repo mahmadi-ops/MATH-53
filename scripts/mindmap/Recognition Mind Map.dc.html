@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>Figure 7.54 — From image to accuracy</title>
+<style>
+body { margin: 0; background: #ffffff; }
+a { color: #6d7c3f; } a:hover { color: #5e1224; }
+</style>
+<script>window.MathJax = { tex: { inlineMath: [['\\(', '\\)']] }, options: { enableMenu: false } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</helmet>
+<div style="position: relative; width: 1840px; height: 1170px; background: #fffefb; font-family: 'TeX Gyre Pagella', 'Palatino Linotype', Palatino, 'URW Palladio L', Georgia, serif; overflow: hidden;">
+  <svg width="1840" height="1170" style="position: absolute; left: 0; top: 0;">
+    <sc-for list="{{ edges }}" as="e" hint-placeholder-count="3">
+      <line x1="{{ e.x1 }}" y1="{{ e.y1 }}" x2="{{ e.x2 }}" y2="{{ e.y2 }}" stroke="{{ e.c }}" stroke-width="{{ e.w }}" stroke-opacity="0.45" stroke-linecap="round"></line>
+    </sc-for>
+  </svg>
+  <sc-for list="{{ nodes }}" as="n" hint-placeholder-count="6">
+    <div style="position: absolute; left: {{ n.x }}px; top: {{ n.y }}px; width: {{ n.w }}px; transform: translate(-50%, -50%); box-sizing: border-box; padding: {{ n.pad }}; background: {{ n.bg }}; border: 1.5px solid {{ n.bc }}; border-radius: {{ radius }}px; color: {{ n.fg }}; font-weight: {{ n.fw }}; font-size: {{ n.fs }}px; line-height: 1.35; text-align: center; text-wrap: pretty;">{{ n.label }}</div>
+  </sc-for>
+  <div style="position: absolute; left: 1500px; top: 1000px; width: 320px; transform: translate(-50%, -50%); color: #5a4813; font-size: 15px; font-style: italic; text-align: center;">* optional — leans on a few ideas from probability that the book does not develop</div>
+  <div style="position: absolute; left: 885px; top: 625px; width: 240px; height: 240px; transform: translate(-50%, -50%); border-radius: 50%; background: #5e1224; border: 3px solid #4a0e1c; color: #fdf6ee; display: flex; align-items: center; justify-content: center; text-align: center; font-size: {{ centerFs }}px; font-weight: 700; padding: 24px; box-sizing: border-box; line-height: 1.3; flex-direction: column; gap: 8px;"><span>From image to accuracy</span><span style="font-size: {{ centerSubFs }}px; font-weight: 400; font-style: italic; line-height: 1.35;">image recognition, decision protocol, and accuracy testing</span></div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1840, &quot;height&quot;: 1170}, &quot;fontScale&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0.8, &quot;max&quot;: 1.4, &quot;step&quot;: 0.05, &quot;tsType&quot;: &quot;number&quot;}, &quot;cornerRadius&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 5, &quot;min&quot;: 0, &quot;max&quot;: 18, &quot;step&quot;: 1, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;}, &quot;showNumbers&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { this.scheduleTypeset(); }
+  componentDidUpdate() { this.scheduleTypeset(); }
+  scheduleTypeset() {
+    clearTimeout(this._tsT);
+    this._tsT = setTimeout(() => {
+      const MJ = window.MathJax;
+      if (MJ && MJ.typesetPromise) MJ.typesetPromise().catch(() => {});
+      else this.scheduleTypeset();
+    }, 250);
+  }
+  renderVals() {
+    const scale = this.props.fontScale ?? 1;
+    const radius = this.props.cornerRadius ?? 5;
+    const numbers = this.props.showNumbers ?? true;
+    // Book palette: olive links, goldenrod remarks, maroon definitions
+    const P = {
+      A: { main: '#5f6f3a', tint: '#eef0df', ink: '#3c4823' },
+      B: { main: '#8a6d1f', tint: '#faf3d8', ink: '#5a4813' },
+      C: { main: '#5e1224', tint: '#f7e8e9', ink: '#5e1224' },
+    };
+    const CX = 885, CY = 625;
+    // [id, branch, level, x, y, w, label, parentId]
+    const N = [
+      ['A',  'A', 1, 680, 448, 200, '1. How the machine decides', null],
+      ['a1', 'A', 2, 545, 333, 175, 'Prepare the decision rule', 'A'],
+      ['a1a','A', 3, 385, 262, 150, '\\(M = (P + Q)/2\\)', 'a1'],
+      ['a1b','A', 3, 600, 232, 115, '\\(W = P - Q\\)', 'a1'],
+      ['a2', 'A', 2, 830, 368, 160, 'Store two references', 'A'],
+      ['a2a','A', 3, 820, 265, 145, 'Cat prototype \\(P\\)', 'a2'],
+      ['a2b','A', 3, 1056, 308, 155, 'Wall prototype \\(Q\\)', 'a2'],
+      ['a3', 'A', 2, 985, 435, 195, 'Receive a new image \\(X\\)', 'A'],
+      ['a4', 'A', 2, 370, 440, 230, 'Compute the score \\(s(X) = (X - M)\\cdot W\\): which side of the boundary \\(X\\) falls on', 'A'],
+      ['a4a','A', 3, 135, 351, 215, 'Equivalent to choosing the nearer reference', 'a4'],
+      ['a5', 'A', 2, 505, 558, 195, 'Use the sign of the score \\(s(X)\\)', 'A'],
+      ['a5a','A', 3, 218, 546, 175, '\\(s(X) < 0\\): empty wall', 'a5'],
+      ['a5b','A', 3, 355, 648, 170, '\\(s(X) = 0\\): undecided', 'a5'],
+      ['a5c','A', 3, 612, 658, 170, '\\(s(X) > 0\\): cat', 'a5'],
+      ['B',  'B', 1, 1205, 688, 195, '2. How accuracy is tested*', null],
+      ['b1', 'B', 2, 1150, 570, 200, 'Prepare new labeled test images', 'B'],
+      ['b1a','B', 3, 1272, 460, 205, 'Do not use them to build the prototypes', 'b1'],
+      ['b2', 'B', 2, 1425, 585, 210, 'Apply the same decision rule to every test image', 'B'],
+      ['b3', 'B', 2, 1520, 690, 210, 'Test accuracy = correct verdicts / total verdicts', 'B'],
+      ['b4', 'B', 2, 1505, 793, 205, 'Compare each verdict with its true label', 'B'],
+      ['b4a','B', 3, 1745, 828, 100, 'Incorrect', 'b4'],
+      ['b4b','B', 3, 1558, 900, 95, 'Correct', 'b4'],
+      ['b5', 'B', 2, 1246, 820, 170, 'For a fair comparison', 'B'],
+      ['b5a','B', 3, 1282, 930, 200, 'Give both classifiers the same test set', 'b5'],
+      ['b6', 'B', 2, 985, 798, 200, 'Use training images to build \\(P\\) and \\(Q\\)', 'B'],
+      ['C',  'C', 1, 691, 803, 200, '3. What the result establishes', null],
+      ['c1', 'C', 2, 405, 896, 215, 'Does not prove that no other classifier could do better', 'C'],
+      ['c2', 'C', 2, 740, 926, 215, 'Estimates accuracy under the chosen noise model', 'C'],
+    ];
+    const byId = {};
+    const nodes = N.map(([id, br, lv, x, y, w, label, parent]) => {
+      const p = P[br];
+      const decode = label.replace('&lt;', '<').replace('&gt;', '>');
+      const text = (lv === 1 && !numbers) ? decode.replace(/^\d+\.\s*/, '') : decode;
+      const node = {
+        id, parent, x, y, w: Math.round(w * (0.9 + 0.1 * scale)),
+        label: text,
+        bg: lv === 1 ? p.main : p.tint,
+        bc: lv === 1 ? p.main : (lv === 2 ? p.main : p.main + '99'),
+        fg: lv === 1 ? '#fdf6ee' : p.ink,
+        fw: lv === 1 ? 700 : 400,
+        fs: Math.round((lv === 1 ? 19 : lv === 2 ? 16 : 15) * scale),
+        pad: lv === 1 ? '12px 16px' : '9px 13px',
+        c: p.main, lv,
+      };
+      byId[id] = node;
+      return node;
+    });
+    const edges = nodes.map(n => {
+      const from = n.parent ? byId[n.parent] : { x: CX, y: CY };
+      return { x1: from.x, y1: from.y, x2: n.x, y2: n.y, c: n.c, w: n.lv === 1 ? 6 : n.lv === 2 ? 2.5 : 1.5 };
+    });
+    return { nodes, edges, radius, centerFs: Math.round(21 * scale), centerSubFs: Math.round(14.5 * scale) };
+  }
+}
+
+</script>
+</body>
+</html>
