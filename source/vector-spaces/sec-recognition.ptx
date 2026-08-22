@@ -828,6 +828,70 @@
       them, by nothing deeper than a linear combination with coefficients
       <m>\frac{1}{6}</m>, into a reference it was never given.
     </p>
+
+    <remark xml:id="rem-recognition-average-summary">
+      <title>What the Average Is Good For</title>
+      <p>
+        In this section the average earns its place three ways<mdash />one proved, one
+        probabilistic, one demonstrated.
+        <ol>
+          <li>
+            <p>
+              <em>It is the best one-picture summary of the pile.</em> This is what
+              <xref ref="thm-average-prototype" text="type-global" /> proves: if six
+              labelled photographs must be compressed into a single reference, the
+              average is the unique picture minimizing the total squared distance to
+              them<mdash />any other choice <m>C</m> pays the extra
+              <m>k \| \overline{X} - C \|^2</m>. Nothing about verdicts; it is purely a
+              statement about faithful summarization.
+            </p>
+          </li>
+          <li>
+            <p>
+              <em>It is a denoiser<mdash />an estimate of the clean corner the machine
+              was never given.</em> Grain pushes each pixel up or down with mean zero, so
+              at every pixel the <m>k</m> errors largely cancel, and the average of
+              <m>k</m> shots lands on the order of <m>\sqrt{k}</m> times closer to the
+              true corner than any single shot does<mdash />the improvement the first
+              cell above prints. The prototype is the best reconstruction of <m>A_0</m>
+              available from what the machine was actually handed.
+            </p>
+          </li>
+          <li>
+            <p>
+              <em>Consequently it repairs the decision boundary, which is why the
+              verdicts improve.</em> The classifier depends on its references only
+              through <m>W = P - Q</m> and <m>\tau</m>: noisy references mean a corrupted
+              <m>W</m> and a misplaced boundary, while references closer to the true
+              corners mean a boundary closer to the one built from <m>A_0</m> and
+              <m>D_0</m> themselves. That is what the head-to-head comparison
+              demonstrates.
+            </p>
+          </li>
+        </ol>
+        The footnote to <xref ref="thm-average-prototype" text="type-global" /> lives in
+        the gap between the last two items: closest to the truth in least squares
+        provably gives the best summary, and in the experiment gives better verdicts, but
+        it does not prove that no other reference choice could classify the same
+        photographs better still. The honest slogan is that the average is the best
+        memory, not provably the best judge<mdash />and a better memory happens to make a
+        better judge.
+      </p>
+      <p>
+        <xref ref="fig-recognition-mindmap" text="global" /> collects the whole story in
+        one picture: how the machine decides, how its accuracy is measured, and what such
+        a measurement does and does not establish.
+      </p>
+      <figure xml:id="fig-recognition-mindmap">
+        <caption>
+          From image to accuracy: the decision rule, the test procedure, and the meaning
+          of the result.
+        </caption>
+        <image source="images/recognition-mindmap.svg" width="100%">
+          <shortdescription>A mind map with three branches. Branch one, how the machine decides: store the cat prototype P and wall prototype Q, prepare the decision rule with W equal to P minus Q and M equal to the midpoint of P and Q, receive a new image X, compute the score s of X as X minus M dot W, equivalent to choosing the nearer reference, and use the sign of the score: positive means cat, negative means empty wall, zero means undecided. Branch two, how accuracy is tested: use training images to build P and Q, prepare new labeled test images not used to build the prototypes, apply the same decision rule to every test image, compare each verdict with its true label as correct or incorrect, and report test accuracy as correct verdicts over total verdicts, giving both classifiers the same test set for a fair comparison. Branch three, what the result establishes: it estimates accuracy under the chosen noise model and does not prove that no other classifier could do better</shortdescription>
+        </image>
+      </figure>
+    </remark>
   </subsection>
 
   <subsection xml:id="subsec-recognition-limits">
