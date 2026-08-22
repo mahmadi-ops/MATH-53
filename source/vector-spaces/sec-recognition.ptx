@@ -523,7 +523,7 @@
       the number line. For our references <m>P = A_0</m> and <m>Q = D_0</m> the numbers
       are concrete. The squared lengths are <m>\| A_0 \|^2 = 375632</m> and
       <m>\| D_0 \|^2 = 259930</m>, so
-      <m>\tau = \tfrac{1}{2}(375632 - 259930) = 57851</m>, and
+      <m>\tau = (375632 - 259930)/2 = 57851</m>, and
       <m>s(A_0) = +7839</m> while <m>s(D_0) = -7839</m>.
     </p>
 
