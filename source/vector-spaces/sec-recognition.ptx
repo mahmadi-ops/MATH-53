@@ -885,7 +885,9 @@
       <figure xml:id="fig-recognition-mindmap">
         <caption>
           From image to accuracy: the decision rule, the test procedure, and the meaning
-          of the result.
+          of the result. Open
+          <url href="external/images/recognition-mindmap.svg">the full-screen map</url>
+          in a new tab.
         </caption>
         <image source="images/recognition-mindmap.svg" width="100%">
           <shortdescription>A mind map with three branches. Branch one, how the machine decides: store the cat prototype P and wall prototype Q, prepare the decision rule with W equal to P minus Q and M equal to the midpoint of P and Q, receive a new image X, compute the score s of X as X minus M dot W, equivalent to choosing the nearer reference, and use the sign of the score: positive means cat, negative means empty wall, zero means undecided. Branch two, how accuracy is tested: use training images to build P and Q, prepare new labeled test images not used to build the prototypes, apply the same decision rule to every test image, compare each verdict with its true label as correct or incorrect, and report test accuracy as correct verdicts over total verdicts, giving both classifiers the same test set for a fair comparison. Branch three, what the result establishes: it estimates accuracy under the chosen noise model and does not prove that no other classifier could do better</shortdescription>
