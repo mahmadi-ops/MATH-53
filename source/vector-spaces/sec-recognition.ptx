@@ -186,7 +186,7 @@
       linear in each argument, so that expressions like <m>(X + Y) \cdot Z</m> and
       <m>(cX) \cdot Z</m> expand exactly as ordinary products do. One consequence is
       worth displaying now, because it will be used twice:
-      <md>
+      <md xml:id="eq-expand-square" number="yes">
         \| X - Y \|^2 = \| X \|^2 - 2\, X \cdot Y + \| Y \|^2.
       </md>
       Two more consequences give the distance its meaning. Since
@@ -226,7 +226,10 @@
       <xref ref="fig-recognition-two-photos" text="global" />. Enter them, together with a
       labelled version of the drawing helper from that section and the distance just
       defined. The cell prints the distance between the two corners and draws them side
-      by side, each panel titled.
+      by side, each panel titled. Every later cell on this page depends on the names
+      defined here, so evaluate this cell first<mdash />and evaluate it again if you
+      reload the page or return after a long pause, since either starts a fresh session
+      that has forgotten them.
     </p>
 
     <sage>
@@ -382,7 +385,8 @@
     </p>
 
     <p>
-      Blends are a tame test: they live on the line segment joining the two references.
+      Blends are a tame test: they live on the line segment joining the two references,
+      drawn in coordinates in <xref ref="fig-cats-segment" text="global" />.
       A real second photograph of either corner would not. Sensors add
       <term>grain</term><mdash />each pixel arrives a little brighter or darker than the
       scene, by an amount that differs from shot to shot. Model it in the simplest way:
@@ -441,7 +445,7 @@
 
     <p>
       The rule as stated computes two distances and compares them. Expanding both with
-      the identity from
+      the identity <xref ref="eq-expand-square" /> of
       <xref ref="subsec-recognition-distance" text="title" /> shows that it is secretly
       doing something simpler. The picture <m>X</m> is closer to <m>P</m> than to
       <m>Q</m> exactly when <m>\| X - P \|^2 \lt \| X - Q \|^2</m>, that is, when
@@ -480,13 +484,14 @@
     </p>
 
     <p>
-      Written this way the score wears its meaning on the outside. It measures the
-      incoming picture from the midpoint <m>M</m>, in the single direction <m>W</m> that
+      The score measures the incoming picture from the midpoint <m>M</m>, in the single
+      direction <m>W</m> that
       points from the empty-wall reference toward the cat reference. Its sign says which
-      side of the midpoint <m>X</m> lies on. Its tie set <m>s(X) = 0</m><mdash />the
-      pictures the rule refuses to judge<mdash />is the flat through <m>M</m>
-      perpendicular to <m>W</m>, the <term>decision boundary</term> that cuts picture
-      space into a cat side and an empty side.
+      side of the midpoint <m>X</m> lies on. The set where <m>s(X) = 0</m><mdash />the
+      pictures equidistant from both references, which the rule refuses to
+      judge<mdash />is the flat through <m>M</m> perpendicular to <m>W</m>, the
+      <term>decision boundary</term> that cuts picture space into a cat side and an
+      empty side.
     </p>
 
     <p>
@@ -498,18 +503,27 @@
         \tau = M \cdot W = \tfrac{1}{2}\left( \| P \|^2 - \| Q \|^2 \right).
       </md>
       Everything the machine will ever decide is contained in one picture and one
-      number: the <term>weight picture</term> <m>W</m> and the <term>threshold</term>
-      <m>\tau</m>. The two references themselves score
+      number: the <term>weight picture</term> <m>W</m><fn>
+        The name comes from the role the entries of <m>W</m> play in the sum. Written
+        out, the score is
+        <m>X \cdot W - \tau = \sum_{i,j} x_{ij}\, w_{ij} - \tau</m>, so each entry
+        <m>w_{ij}</m> is the <em>weight</em> attached to pixel <m>(i,j)</m>: how much
+        that pixel's brightness counts toward the verdict, and in which
+        direction<mdash />positive entries vote <em>cat</em>, negative ones vote
+        <em>empty wall</em>, and near-zero entries are ignored.
+      </fn> and the <term>threshold</term> <m>\tau</m>. The two references themselves score
       <md>
         s(P) = \tfrac{1}{2}\, \| W \|^2,
         \qquad
         s(Q) = -\tfrac{1}{2}\, \| W \|^2,
       </md>
-      placed symmetrically on either side of the boundary, each at the same remove from
+      placed symmetrically on either side of the boundary, each at the same distance from
       it. They are not the ends of the scale, however: a picture farther out along
       <m>W</m> than <m>P</m> scores higher than <m>P</m> does, and scores lie anywhere on
       the number line. For our references <m>P = A_0</m> and <m>Q = D_0</m> the numbers
-      are concrete: <m>\tau = \frac{1}{2}(375632 - 259930) = 57851</m>, and
+      are concrete. The squared lengths are <m>\| A_0 \|^2 = 375632</m> and
+      <m>\| D_0 \|^2 = 259930</m>, so
+      <m>\tau = \tfrac{1}{2}(375632 - 259930) = 57851</m>, and
       <m>s(A_0) = +7839</m> while <m>s(D_0) = -7839</m>.
     </p>
 
