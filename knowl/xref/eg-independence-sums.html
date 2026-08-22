@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.45</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Independence of the Pairwise Sums.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\vec{u}\text{,}\)</span> <span class="process-math">\(\vec{v}\text{,}\)</span> <span class="process-math">\(\vec{w}\)</span> be vectors in <span class="process-math">\(\R^n\text{.}\)</span> Show that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\{ \vec{u}, \vec{v}, \vec{w} \} \amp \text{ is linearly independent}\\
+\Longleftrightarrow \quad
+\{ \vec{u} + \vec{v}, \; \vec{v} + \vec{w}, \; \vec{w} + \vec{u} \}
+\amp \text{ is linearly independent}.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-independence-sums-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Both directions rest on one computation. For scalars <span class="process-math">\(a, b, c\text{,}\)</span> regrouping gives</div>
+<div class="displaymath process-math">
+\begin{align*}
+a(\vec{u} + \vec{v}) + b(\vec{v} + \vec{w}) + c(\vec{w} + \vec{u})\\
+\amp = (a + c)\vec{u} + (a + b)\vec{v} + (b + c)\vec{w}.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-independence-sums-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(<span class="process-math">\(\Rightarrow\)</span>)</dfn> Suppose <span class="process-math">\(\{\vec{u}, \vec{v}, \vec{w}\}\)</span> is linearly independent, and suppose the left-hand side above is <span class="process-math">\(\vec{0}\text{.}\)</span> Then all three coefficients on the right must vanish:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-independence-trivial-solution.html">
+\begin{equation*}
+a + c = 0, \qquad a + b = 0, \qquad b + c = 0.
+\end{equation*}
+</div>
+<div class="para">The first two give <span class="process-math">\(c = -a\)</span> and <span class="process-math">\(b = -a\text{;}\)</span> substituting into the third gives <span class="process-math">\(-2a = 0\text{,}\)</span> so <span class="process-math">\(a = 0\)</span> and then <span class="process-math">\(b = c = 0\text{.}\)</span> Only the trivial combination gives <span class="process-math">\(\vec{0}\text{,}\)</span> so the pairwise sums are linearly independent by <a href="sec-linear-independence.html#thm-independence-trivial-solution" class="xref" data-knowl="./knowl/xref/thm-independence-trivial-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.37: Independence and the Trivial Solution">Theorem 2.37</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-independence-sums-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(<span class="process-math">\(\Leftarrow\)</span>)</dfn> We prove the contrapositive. Suppose <span class="process-math">\(\{\vec{u}, \vec{v}, \vec{w}\}\)</span> is linearly <em class="emphasis">dependent</em>, so there are scalars <span class="process-math">\(x, y, z\text{,}\)</span> not all zero, with <span class="process-math">\(x\vec{u} + y\vec{v} + z\vec{w} = \vec{0}\text{.}\)</span> We want <span class="process-math">\(a, b, c\text{,}\)</span> not all zero, with <span class="process-math">\(a + c = x\text{,}\)</span> <span class="process-math">\(a + b = y\text{,}\)</span> <span class="process-math">\(b + c = z\text{.}\)</span> That is the system</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-invertible-matrix-theorem.html">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 0 \amp 1 \\ 1 \amp 1 \amp 0 \\ 0 \amp 1 \amp 1 \end{bmatrix}
+\begin{bmatrix} a \\ b \\ c \end{bmatrix}
+= \begin{bmatrix} x \\ y \\ z \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">and the coefficient matrix has determinant <span class="process-math">\(1(1) - 0 + 1(1) = 2 \neq 0\text{.}\)</span> By <a href="sec-invertible-matrix-theorem.html#thm-invertible-matrix-theorem" class="xref" data-knowl="./knowl/xref/thm-invertible-matrix-theorem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.57: The Invertible Matrix Theorem">Theorem 4.57</a> it is invertible, so the system has a unique solution <span class="process-math">\((a,b,c)\text{;}\)</span> and since <span class="process-math">\((x,y,z) \neq \vec{0}\text{,}\)</span> that solution is not <span class="process-math">\(\vec{0}\)</span> either.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-independence-sums-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For this choice of <span class="process-math">\(a, b, c\)</span> the displayed identity gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a(\vec{u} + \vec{v}) + b(\vec{v} + \vec{w}) + c(\vec{w} + \vec{u})
+= x\vec{u} + y\vec{v} + z\vec{w} = \vec{0},
+\end{equation*}
+</div>
+<div class="para">a nontrivial dependence among the pairwise sums. So dependence of <span class="process-math">\(\{\vec{u}, \vec{v}, \vec{w}\}\)</span> forces dependence of the sums, which is the contrapositive of the direction we wanted.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-independence-sums-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">A warning.</dfn> The <span class="process-math">\(2\)</span> in that determinant is doing real work. The same argument with <em class="emphasis">four</em> vectors and the cyclic sums <span class="process-math">\(\vec{u}_1 + \vec{u}_2, \; \vec{u}_2 + \vec{u}_3, \;
+\vec{u}_3 + \vec{u}_4, \; \vec{u}_4 + \vec{u}_1\)</span> fails: those four sums always satisfy</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\vec{u}_1 + \vec{u}_2) - (\vec{u}_2 + \vec{u}_3)
++ (\vec{u}_3 + \vec{u}_4) - (\vec{u}_4 + \vec{u}_1) = \vec{0},
+\end{equation*}
+</div>
+<div class="para">so they are dependent no matter how independent the <span class="process-math">\(\vec{u}_i\)</span> are.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-independence-sums-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.45.1"><a tabindex="-1" href="#eg-independence-sums-3" title="Copy heading and permalink for Solution 2.45.1" aria-label="Copy heading and permalink for Solution 2.45.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.45: Independence of the Pairwise Sums"><a tabindex="-1" href="#eg-independence-sums" title="Copy heading and permalink for Example 2.45: Independence of the Pairwise Sums" aria-label="Copy heading and permalink for Example 2.45: Independence of the Pairwise Sums">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-linear-independence.html#eg-independence-sums">In Context</a></span>
+</body>
+</html>

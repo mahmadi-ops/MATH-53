@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Digital Images as Matrices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: true,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="MATH 53--Linear Algebra">
+<meta property="og:title" content="MATH 53--Linear Algebra">
+<meta property="book:title" content="MATH 53--Linear Algebra">
+<meta name="twitter:description" content="Linear algebra notes for Santa Clara University's MATH 53.">
+<meta property="og:description" content="Linear algebra notes for Santa Clara University's MATH 53.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.44"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/diagcess/diagcess.js"></script><script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body id="math53" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="math53-linear-algebra.html"><span class="title">MATH 53--Linear Algebra</span></a></div>
+<p class="byline">Mehdi Ahmadi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-invertible-matrix-theorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-matrix-algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-subspaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\real}{\Bbb R}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth4 focused" data-preexpanded-levels="0" data-max-levels="4"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-ch-linear-systems" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-systems-of-linear-equations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-sec-systems-of-linear-equations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-systems-vocabulary" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Systems, Solutions, and Consistency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-graphical-solutions" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Graphical Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-parametric-form" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Parametric Form of a Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-augmented-matrix.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Augmented Matrix and Echelon Forms</span></a></div>
+<ul id="ptx-toc-group-sec-augmented-matrix" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-augmented-matrix" class="internal"><span class="codenumber">1.3.1</span> <span class="title">The Augmented Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-echelon-forms" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Row-Echelon and Reduced Row-Echelon Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-pivots" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Pivots, Basic Variables, and Free Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-row-reduction.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Row Reduction Algorithm</span></a></div>
+<ul id="ptx-toc-group-sec-row-reduction" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-the-algorithm" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-three-outcomes" class="internal"><span class="codenumber">1.4.2</span> <span class="title">The Three Possible Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-systems-with-parameters" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Systems Depending on Parameters</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynomial-interpolation.html" class="internal"><span class="codenumber">1.5</span> <span class="title">A First Application: Polynomial Interpolation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-vectors.html" class="internal"><span class="codenumber">2</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-ch-vectors" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors-in-rn.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-vectors-in-rn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-vector-notation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Notation and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-algebra-in-rn" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Algebra in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-geometry-of-addition" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Geometry of Vector Addition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-form.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Vector and Matrix Forms of a Linear System</span></a></div>
+<ul id="ptx-toc-group-sec-vector-form" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-form.html#subsec-vector-form" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Vector Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-form.html#subsec-matrix-form" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Matrix Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-homogeneous-systems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Homogeneous Systems</span></a></div>
+<ul id="ptx-toc-group-sec-homogeneous-systems" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-homogeneous-definition" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Homogeneous Systems and the Trivial Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-basic-solutions" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Linear Combinations and Basic Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-structure-of-solutions" class="internal"><span class="codenumber">2.3.3</span> <span class="title">The Structure of the Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-span.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Span of a Set of Vectors</span></a></div>
+<ul id="ptx-toc-group-sec-span" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-span.html#subsec-seeing-a-span" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Seeing a Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-span.html#subsec-span-challenge" class="internal"><span class="codenumber">2.4.2</span> <span class="title">A Harder Example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-independence.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-sec-linear-independence" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-definition" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-as-combination" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Linear Independence as a Linear Combination</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-seeing-independence" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Seeing Dependence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-challenge" class="internal"><span class="codenumber">2.5.4</span> <span class="title">A Harder Example</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-transformations.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-ch-linear-transformations" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-transformations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Transformations and Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-transformations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-transformations" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-linear-transformations" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-matrix-transformations-are-linear" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix Transformations Are Linear</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injections-surjections.html" class="internal"><span class="codenumber">3.2</span> <span class="title">One-to-One and Onto Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-injections-surjections" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-injections" class="internal"><span class="codenumber">3.2.1</span> <span class="title">One-to-One Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-surjections" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Onto Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-injective-surjective-together" class="internal"><span class="codenumber">3.2.3</span> <span class="title">One-to-One and Onto Together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-special-transformations.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Special Transformations of <span class="process-math">\(\R^2\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-special-transformations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-rotations" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Rotations in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-reflections" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Reflections in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-shear-projection" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Reflection through the Origin, Projections, and Shears</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-matrix-algebra.html" class="internal"><span class="codenumber">4</span> <span class="title">Matrix Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-matrix-algebra">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-operations.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Matrix Operations</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-operations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-matrix-terminology" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Matrices and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-matrix-addition" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Matrix Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-scalar-multiplication" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Scalar Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-multiplication.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Matrix Multiplication</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-multiplication" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-product-definition" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Product of Two Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-entry-of-product" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Computing the <span class="process-math">\((i,j)\)</span>-Entry of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-when-products-exist" class="internal"><span class="codenumber">4.2.3</span> <span class="title">When Does a Product Exist?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-product-properties" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-transpose.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Matrix Transposition</span></a></div>
+<ul id="ptx-toc-group-sec-transpose" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-transpose-definition" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-symmetric-matrices" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Symmetric Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-transpose-equations" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Solving Equations Involving the Transpose</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inverse.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul id="ptx-toc-group-sec-inverse" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverse-definition" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Definition and Uniqueness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-two-by-two-inverse" class="internal"><span class="codenumber">4.4.2</span> <span class="title">The Inverse of a <span class="process-math">\(2 \times 2\)</span> Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inversion-algorithm" class="internal"><span class="codenumber">4.4.3</span> <span class="title">The Matrix Inversion Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverse-and-ax-b" class="internal"><span class="codenumber">4.4.4</span> <span class="title">The Inverse and the Matrix Equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverses-transposes-products" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Inverses of Transposes and Products</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-elementary-matrices.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Elementary Matrices</span></a></div>
+<ul id="ptx-toc-group-sec-elementary-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-elementary-matrix-definition" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Elementary Matrices and Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-inverses-of-elementary-matrices" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Inverses of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-product-of-elementary-matrices" class="internal"><span class="codenumber">4.5.3</span> <span class="title">A Matrix as a Product of Elementary Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html" class="internal"><span class="codenumber">4.6</span> <span class="title">The Invertible Matrix Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-invertible-matrix-theorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-statement" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Statement of the Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-proof" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Proof of the Equivalences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-applications" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Using the Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-images-as-matrices.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Digital Images as Matrices</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-images-as-matrices">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-grayscale" class="internal"><span class="codenumber">4.7.1</span> <span class="title">A Photograph Is a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-scalar-addition" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Scalar Multiplication and Addition: Brightness and Negatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-transpose" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Transposition: Reflecting Across the Diagonal</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-multiplication" class="internal"><span class="codenumber">4.7.4</span> <span class="title">Matrix Multiplication: Flips and Crops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-inverse" class="internal"><span class="codenumber">4.7.5</span> <span class="title">Inverses: Scrambling a Picture and Putting It Back</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-subspaces.html" class="internal"><span class="codenumber">5</span> <span class="title">Subspaces, Basis, and Dimension</span></a></div>
+<ul id="ptx-toc-group-ch-subspaces" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-sec-subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces.html#subsec-subspace-definition" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Definition and Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces.html#subsec-subspaces-are-spans" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Subspaces Are Spans</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis-dimension.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Basis and Dimension</span></a></div>
+<ul id="ptx-toc-group-sec-basis-dimension" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-basis" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Basis of a Subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-all-bases-same-size" class="internal"><span class="codenumber">5.2.2</span> <span class="title">All Bases Have the Same Size</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-dimension" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Dimension</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-column-null-space.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Column Space, Null Space, and Rank</span></a></div>
+<ul id="ptx-toc-group-sec-column-null-space" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-column-space" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Column Space and Rank</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-null-space" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Null Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-rank-nullity" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Rank–Nullity Relation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-imt-continued" class="internal"><span class="codenumber">5.3.4</span> <span class="title">The Invertible Matrix Theorem (Continued)</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-determinants.html" class="internal"><span class="codenumber">6</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-ch-determinants" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cofactor-expansion.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Cofactor Expansion</span></a></div>
+<ul id="ptx-toc-group-sec-cofactor-expansion" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-minors-cofactors" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Minors and Cofactors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-expansion" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Cofactor Expansion Along a Row or Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-triangular-determinants" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Determinants of Triangular Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinants-row-operations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Determinants and Row Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-determinants-inverses-products.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Determinants of Inverses, Products, and Transposes</span></a></div>
+<ul id="ptx-toc-group-sec-determinants-inverses-products" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-and-invertibility" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Determinant Detects Invertibility</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-of-product" class="internal"><span class="codenumber">6.3.2</span> <span class="title">The Determinant of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-computations" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Putting the Rules Together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-determinant-volume.html" class="internal"><span class="codenumber">6.4</span> <span class="title">An Application: The Determinant as Volume</span></a></div>
+<ul id="ptx-toc-group-sec-determinant-volume" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-jacobian-2d" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Motivation: Rectangles into Parallelograms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-dot-cross-tools" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Two Tools: the Dot Product and the Cross Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-parallelepiped-volume" class="internal"><span class="codenumber">6.4.3</span> <span class="title">The Volume of a Parallelepiped</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-jacobian" class="internal"><span class="codenumber">6.4.4</span> <span class="title">The Jacobian Determinant of a Linear Map</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">7</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-ch-vector-spaces" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Vector Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspaces-of-vector-spaces.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Subspaces and Bases in a Vector Space</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-isomorphisms.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Linear Transformations and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-sec-isomorphisms" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-isomorphisms.html#subsec-general-linear-transformations" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Linear Transformations between Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-isomorphisms.html#subsec-isomorphisms" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Isomorphisms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coordinates.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Coordinates and Change of Basis</span></a></div>
+<ul id="ptx-toc-group-sec-coordinates" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coordinates" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Coordinates Relative to a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-change-of-basis" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Change of Basis Matrix</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-of-transformation.html" class="internal"><span class="codenumber">7.5</span> <span class="title">The Matrix of a Linear Transformation</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-of-transformation" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-of-transformation.html#subsec-matrix-wrt-bases" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Four Matrices for One Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-of-transformation.html#subsec-transformation-between-spaces" class="internal"><span class="codenumber">7.5.2</span> <span class="title">A Transformation between Different Vector Spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-superposition.html" class="internal"><span class="codenumber">7.6</span> <span class="title">A Plane of Cats: Linear Combinations of Images</span></a></div>
+<ul id="ptx-toc-group-sec-superposition" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-pictures" class="internal"><span class="codenumber">7.6.1</span> <span class="title">A Picture Is a Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-blend" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Blending the Two Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-numbers" class="internal"><span class="codenumber">7.6.3</span> <span class="title">The Arithmetic Behind a Blend</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-span" class="internal"><span class="codenumber">7.6.4</span> <span class="title">From Blends to Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-basis" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Average and Difference</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-quantum" class="internal"><span class="codenumber">7.6.6</span> <span class="title">An Optional Connection to Quantum Mechanics</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-recognition.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Finding the Cat: A First Look at Image Recognition</span></a></div>
+<ul id="ptx-toc-group-sec-recognition" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-distance" class="internal"><span class="codenumber">7.7.1</span> <span class="title">The Distance Between Two Pictures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-nearest" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Recognition by Nearest Reference</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-score" class="internal"><span class="codenumber">7.7.3</span> <span class="title">The Score and the Decision Boundary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-average" class="internal"><span class="codenumber">7.7.4</span> <span class="title">Learning Prototypes from Many Photographs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-accuracy" class="internal"><span class="codenumber">7.7.5</span> <span class="title">Assessing the Accuracy of the Verdicts*</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-limits" class="internal"><span class="codenumber">7.7.6</span> <span class="title">What the Method Does Not See</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-eigenvalues.html" class="internal"><span class="codenumber">8</span> <span class="title">Eigenvalues and Eigenvectors (Spectral Theory)</span></a></div>
+<ul id="ptx-toc-group-ch-eigenvalues" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-eigenvalues.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-sec-eigenvalues" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalue-motivation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Motivation: Powers of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalue-definition" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-characteristic-polynomial" class="internal"><span class="codenumber">8.1.3</span> <span class="title">The Characteristic Polynomial</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Multiplicity, Eigenspaces, and Diagonalization</span></a></div>
+<ul id="ptx-toc-group-sec-diagonalization" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-multiplicity" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Multiplicity and Basic Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-eigenspace" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-similar-matrices" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Similar Matrices</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-applications.html" class="internal"><span class="codenumber">9</span> <span class="title">Applications of Spectral Theory</span></a></div>
+<ul id="ptx-toc-group-ch-applications" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-markov-chains.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Markov Chains and Steady States</span></a></div>
+<ul id="ptx-toc-group-sec-markov-chains" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-markov-motivation" class="internal"><span class="codenumber">9.1.1</span> <span class="title">A First Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-regular-stochastic" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Regular and Stochastic Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-steady-state" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Existence of a Unique Steady State</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-more-markov.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Long-Run Behaviour: Two More Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-epidemic-sage.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Epidemic Dynamics</span></a></div>
+<ul id="ptx-toc-group-sec-epidemic-sage" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-model" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-sage-setup" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Setting Up the Model in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-sage-plot" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Simulating and Plotting the Epidemic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-long-run" class="internal"><span class="codenumber">9.3.4</span> <span class="title">The Long Run</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-epidemic-sage.html#exercises-epidemic-sage" class="internal"><span class="codenumber">9.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-pagerank.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The PageRank Algorithm: The 25 Billion Dollar Eigenvector</span></a></div>
+<ul id="ptx-toc-group-sec-pagerank" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-pagerank-probabilities" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Random Surfer</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-dangling-links" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Pages with No Outbound Links</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-damping" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Making the Model More Realistic (Adding Boredom)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coupled-oscillators.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Coupled Oscillators and Normal Modes</span></a></div>
+<ul id="ptx-toc-group-sec-coupled-oscillators" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-setup" class="internal"><span class="codenumber">9.5.1</span> <span class="title">The Equations of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-decoupling" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Diagonalization Decouples the Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-example" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Solving a Specific Motion</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-problems.html" class="internal"><span class="codenumber">10</span> <span class="title">Problems</span></a></div>
+<ul id="ptx-toc-group-ch-problems" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-linear-systems.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-sec-problems-linear-systems" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-linear-systems.html#sec-problems-linear-systems-2" class="internal"><span class="codenumber">10.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-vectors.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-problems-vectors" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-vectors.html#sec-problems-vectors-2" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-linear-transformations.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-problems-linear-transformations" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-linear-transformations.html#sec-problems-linear-transformations-2" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-matrix-algebra.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Matrix Algebra</span></a></div>
+<ul id="ptx-toc-group-sec-problems-matrix-algebra" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-matrix-algebra.html#sec-problems-matrix-algebra-2" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-subspaces.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Subspaces, Basis, and Dimension</span></a></div>
+<ul id="ptx-toc-group-sec-problems-subspaces" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-subspaces.html#sec-problems-subspaces-2" class="internal"><span class="codenumber">10.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-determinants.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-sec-problems-determinants" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-determinants.html#sec-problems-determinants-2" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-vector-spaces.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-sec-problems-vector-spaces" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-vector-spaces.html#sec-problems-vector-spaces-2" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-eigenvalues.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-sec-problems-eigenvalues" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-eigenvalues.html#sec-problems-eigenvalues-2" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-applications.html" class="internal"><span class="codenumber">10.9</span> <span class="title">Applications of Spectral Theory</span></a></div>
+<ul id="ptx-toc-group-sec-problems-applications" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-applications.html#sec-problems-applications-2" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-images-as-matrices">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Digital Images as Matrices</span>
+</h1>
+<section class="introduction" id="sec-images-as-matrices-2">
+<div class="para" id="sec-images-as-matrices-2-1">Every operation in this chapter was introduced through its arithmetic. In this section we look at the same operations through a different window: a digital photograph <em class="emphasis">is</em> a matrix, so each operation we have defined does something visible to a picture. Scaling a matrix changes the brightness, transposing it reflects the picture across a diagonal, multiplying by a suitable matrix flips or crops it, and multiplying by an inverse undoes a scramble. Nothing new is introduced here; the point is that the arithmetic already developed has content you can see.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-images-as-matrices-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-images-as-matrices-2-2">Interactive <dfn class="terminology">Sage cells</dfn> are scattered throughout. Press <dfn class="terminology">Evaluate</dfn> to run one in your browser, or copy the code into <a class="external" href="https://sagecell.sagemath.org" target="_blank">the Sage cell server</a>. The cells on this page share their variables, but they must be evaluated in order, so run each one as you reach it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-images-as-matrices-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-images-grayscale">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Photograph Is a Matrix</span>
+</h2>
+<div class="para" id="subsec-images-grayscale-2">A digital image is a rectangular grid of <dfn class="terminology">pixels</dfn>. A colour image records three numbers at each pixel — the intensities of red, green, and blue — so an image that is <span class="process-math">\(m\)</span> pixels tall and <span class="process-math">\(n\)</span> pixels wide is stored as three <span class="process-math">\(m \times n\)</span> matrices <span class="process-math">\(R\text{,}\)</span> <span class="process-math">\(G\text{,}\)</span> and <span class="process-math">\(B\text{.}\)</span> Each entry is an integer between <span class="process-math">\(0\)</span> and <span class="process-math">\(255\text{,}\)</span> where <span class="process-math">\(0\)</span> means none of that colour and <span class="process-math">\(255\)</span> means as much as the display can produce.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-grayscale-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-images-grayscale-3">
+<div class="para">To convert the image to grayscale we must replace the three numbers at each pixel by a single number recording how bright that pixel is. The standard choice is the weighted average</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-matrix-operations.html" id="subsec-images-grayscale-3-1">
+\begin{equation*}
+M = 0.299\,R + 0.587\,G + 0.114\,B,
+\end{equation*}
+</div>
+<div class="para">with the resulting entries rounded to integers. Read that formula again with the chapter in mind: it is a linear combination of three matrices, built from exactly the scalar multiplication and addition of <a href="sec-matrix-operations.html" class="internal" title="Section 4.1: Matrix Operations">Matrix Operations</a>. The weights are unequal because the human eye is far more sensitive to green light than to blue, so an unweighted average <span class="process-math">\(\frac{1}{3}(R + G + B)\)</span> would render greens too dark and blues too light.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-grayscale-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-sca-gray">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:3%;margin-right:3%;grid-template-columns:46.8085106382979% 46.8085106382979%;column-gap:6%;">
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-colour"><div class="image-box"><img src="external/images/sca-colour.png" class="contained" alt="An illustration of a cat sitting inside a wooden box labelled Schrodinger’s Cat, beside a mechanism connected to a container marked with a skull and crossbones"></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The colour image, stored as three matrices.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.63(a)"><a tabindex="-1" href="#fig-sca-colour" title="Copy heading and permalink for Figure 4.63(a)" aria-label="Copy heading and permalink for Figure 4.63(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-grayscale"><div class="image-box"><img src="external/images/sca-gray.png" class="contained" alt="The same illustration in shades of gray"></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The grayscale image, stored as the single matrix <span class="process-math">\(M\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.63(b)"><a tabindex="-1" href="#fig-sca-grayscale" title="Copy heading and permalink for Figure 4.63(b)" aria-label="Copy heading and permalink for Figure 4.63(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.63<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A colour image (a) and its grayscale version (b), obtained by forming the linear combination <span class="process-math">\(M = 0.299\,R + 0.587\,G + 0.114\,B\)</span> of the three colour matrices. From here on we work with the single matrix <span class="process-math">\(M\)</span> in (b).<div class="autopermalink" aria-hidden="true" data-description="Figure 4.63"><a tabindex="-1" href="#fig-sca-gray" title="Copy heading and permalink for Figure 4.63" aria-label="Copy heading and permalink for Figure 4.63">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="subsec-images-grayscale-5">
+<div class="para">The grayscale image in <a href="sec-images-as-matrices.html#fig-sca-grayscale" class="xref" data-knowl="./knowl/xref/fig-sca-grayscale.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.63(b)">4.63(b)</a> is <span class="process-math">\(780\)</span> pixels tall and <span class="process-math">\(520\)</span> pixels wide, so <span class="process-math">\(M\)</span> is a <span class="process-math">\(780 \times 520\)</span> matrix with <span class="process-math">\(405{,}600\)</span> entries — far too large to print. But nothing stops us from looking at a piece of it. A <dfn class="terminology">submatrix</dfn> of <span class="process-math">\(M\text{,}\)</span> obtained by keeping some of its rows and some of its columns, is exactly a rectangular patch of the picture. The patch around the cat’s left eye — rows <span class="process-math">\(297\)</span> through <span class="process-math">\(376\)</span> and columns <span class="process-math">\(231\)</span> through <span class="process-math">\(290\)</span> — is an <span class="process-math">\(80 \times 60\)</span> submatrix, which is still <span class="process-math">\(4800\)</span> numbers. So we shrink it: cut the patch into <span class="process-math">\(5 \times 5\)</span> blocks of pixels and replace each block by the average of its <span class="process-math">\(25\)</span> entries. Averaging blocks like this is how an image is reduced to a lower resolution, and it leaves the <span class="process-math">\(16 \times 12\)</span> matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-sca-grayscale.html ./knowl/xref/fig-sca-detail.html" id="subsec-images-grayscale-5-21">
+\begin{equation*}
+D = \begin{bmatrix}
+74 \amp  66 \amp  53 \amp  52 \amp  73 \amp  78 \amp  80 \amp  82 \amp  82 \amp  78 \amp  82 \amp  77 \\
+62 \amp  56 \amp  65 \amp  84 \amp  83 \amp  87 \amp  83 \amp  89 \amp  84 \amp  80 \amp  84 \amp  74 \\
+73 \amp  67 \amp  84 \amp  87 \amp  87 \amp  89 \amp  92 \amp  89 \amp  91 \amp  86 \amp  89 \amp  81 \\
+70 \amp  80 \amp  85 \amp  87 \amp  91 \amp  91 \amp  91 \amp  82 \amp  94 \amp  90 \amp  91 \amp  86 \\
+67 \amp  84 \amp  87 \amp  92 \amp  97 \amp  95 \amp  95 \amp  82 \amp  95 \amp  91 \amp  85 \amp  86 \\
+83 \amp  90 \amp  92 \amp  87 \amp  75 \amp  76 \amp  91 \amp  93 \amp  95 \amp  91 \amp  86 \amp  86 \\
+90 \amp  90 \amp  80 \amp  47 \amp  70 \amp  75 \amp  55 \amp  87 \amp  95 \amp  93 \amp  88 \amp  90 \\
+87 \amp  88 \amp  54 \amp  89 \amp 123 \amp  36 \amp  76 \amp  59 \amp  96 \amp  95 \amp  94 \amp  91 \\
+95 \amp 106 \amp  60 \amp 116 \amp 103 \amp  27 \amp  76 \amp  74 \amp  92 \amp  94 \amp  96 \amp  89 \\
+99 \amp 111 \amp  81 \amp 108 \amp 133 \amp  49 \amp 120 \amp  78 \amp  84 \amp  95 \amp  94 \amp  86 \\
+101 \amp 107 \amp 109 \amp  72 \amp 115 \amp 132 \amp 104 \amp  48 \amp  88 \amp 102 \amp 101 \amp  83 \\
+93 \amp 100 \amp 104 \amp 111 \amp  97 \amp  86 \amp  94 \amp  86 \amp  99 \amp 106 \amp 105 \amp  90 \\
+91 \amp  94 \amp  97 \amp 102 \amp 101 \amp  99 \amp 104 \amp  95 \amp 118 \amp 120 \amp 111 \amp  91 \\
+84 \amp  91 \amp  91 \amp  98 \amp 105 \amp 110 \amp 116 \amp  85 \amp  85 \amp  83 \amp  78 \amp  62 \\
+79 \amp  94 \amp  98 \amp 100 \amp 103 \amp 115 \amp 118 \amp  79 \amp  60 \amp  79 \amp  57 \amp  51 \\
+79 \amp  84 \amp  92 \amp  85 \amp 109 \amp 113 \amp 116 \amp 116 \amp  76 \amp  64 \amp  53 \amp  90
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">shown magnified in <a href="sec-images-as-matrices.html#fig-sca-detail" class="xref" data-knowl="./knowl/xref/fig-sca-detail.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.64">4.64</a>. Each entry is now one square of the picture: the small numbers are the dark squares and the large ones are the light squares. The <span class="process-math">\(27\)</span> in row <span class="process-math">\(9\)</span> is the darkest part of the pupil, and the <span class="process-math">\(133\)</span> in the row below it is the brightest.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-grayscale-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-sca-detail"><div class="image-box" style="width: 34%; margin-left: 33%; margin-right: 33%;"><img src="external/images/sca-detail.png" class="contained" alt="A coarse grid of gray squares, each square one entry of the matrix D"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.64<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The <span class="process-math">\(16 \times 12\)</span> matrix <span class="process-math">\(D\text{,}\)</span> drawn as an image and magnified so that the individual squares are visible. Every square is one entry of <span class="process-math">\(D\text{,}\)</span> and every entry is the average of a <span class="process-math">\(5 \times 5\)</span> block of pixels from around the cat’s left eye; <span class="process-math">\(0\)</span> would be black and <span class="process-math">\(255\)</span> would be white.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.64"><a tabindex="-1" href="#fig-sca-detail" title="Copy heading and permalink for Figure 4.64" aria-label="Copy heading and permalink for Figure 4.64">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-images-grayscale-7">Let us confirm in Sage that these numbers really do produce that picture. The command <code class="code-inline tex2jax_ignore">matrix_plot</code> draws one square per entry, and the option <code class="code-inline tex2jax_ignore">cmap='gray'</code> asks for the shading we have just described. The option <code class="code-inline tex2jax_ignore">vmin=0, vmax=255</code> pins the ends of the scale to black and white, so that a given number always produces the same shade.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-grayscale-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-images-grayscale-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">D = matrix(ZZ, [
+[ 74,  66,  53,  52,  73,  78,  80,  82,  82,  78,  82,  77],
+[ 62,  56,  65,  84,  83,  87,  83,  89,  84,  80,  84,  74],
+[ 73,  67,  84,  87,  87,  89,  92,  89,  91,  86,  89,  81],
+[ 70,  80,  85,  87,  91,  91,  91,  82,  94,  90,  91,  86],
+[ 67,  84,  87,  92,  97,  95,  95,  82,  95,  91,  85,  86],
+[ 83,  90,  92,  87,  75,  76,  91,  93,  95,  91,  86,  86],
+[ 90,  90,  80,  47,  70,  75,  55,  87,  95,  93,  88,  90],
+[ 87,  88,  54,  89, 123,  36,  76,  59,  96,  95,  94,  91],
+[ 95, 106,  60, 116, 103,  27,  76,  74,  92,  94,  96,  89],
+[ 99, 111,  81, 108, 133,  49, 120,  78,  84,  95,  94,  86],
+[101, 107, 109,  72, 115, 132, 104,  48,  88, 102, 101,  83],
+[ 93, 100, 104, 111,  97,  86,  94,  86,  99, 106, 105,  90],
+[ 91,  94,  97, 102, 101,  99, 104,  95, 118, 120, 111,  91],
+[ 84,  91,  91,  98, 105, 110, 116,  85,  85,  83,  78,  62],
+[ 79,  94,  98, 100, 103, 115, 118,  79,  60,  79,  57,  51],
+[ 79,  84,  92,  85, 109, 113, 116, 116,  76,  64,  53,  90]])
+matrix_plot(D, cmap='gray', vmin=0, vmax=255)
+</script></div>
+<div class="para" id="subsec-images-grayscale-9">Change one entry to <code class="code-inline tex2jax_ignore">0</code> and evaluate the cell again: a single square turns black. The matrix and the picture are the same object.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-grayscale-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 4.7.1: A Photograph Is a Matrix"><a tabindex="-1" href="#subsec-images-grayscale" title="Copy heading and permalink for Subsection 4.7.1: A Photograph Is a Matrix" aria-label="Copy heading and permalink for Subsection 4.7.1: A Photograph Is a Matrix">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-images-scalar-addition">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Scalar Multiplication and Addition: Brightness and Negatives</span>
+</h2>
+<div class="para" id="subsec-images-scalar-addition-2">Multiplying <span class="process-math">\(M\)</span> by a scalar <span class="process-math">\(c &gt; 1\)</span> raises every intensity by the same factor and so brightens the picture, while <span class="process-math">\(0 \lt c \lt 1\)</span> darkens it. There is a wrinkle: an intensity above <span class="process-math">\(255\)</span> is not a colour any display can show, so after computing <span class="process-math">\(cM\)</span> the values above <span class="process-math">\(255\)</span> must be replaced by <span class="process-math">\(255\text{.}\)</span> That last step is <em class="emphasis">not</em> a matrix operation, and it destroys information — several distinct bright values collapse to the same white, which is why an overexposed photograph cannot be repaired by darkening it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-scalar-addition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-images-scalar-addition-3">
+<div class="para">Addition is just as visible. Let <span class="process-math">\(J\)</span> be the <span class="process-math">\(m \times n\)</span> matrix all of whose entries are <span class="process-math">\(1\text{,}\)</span> so that <span class="process-math">\(255J\)</span> is a completely white image. Then</div>
+<div class="displaymath process-math" id="subsec-images-scalar-addition-3-5">
+\begin{equation*}
+N = 255J - M
+\end{equation*}
+</div>
+<div class="para">replaces each intensity <span class="process-math">\(v\)</span> by <span class="process-math">\(255 - v\text{,}\)</span> turning black into white and white into black. This is the photographic <dfn class="terminology">negative</dfn>, and it needs no clipping: if <span class="process-math">\(0 \leq v \leq 255\)</span> then <span class="process-math">\(0 \leq 255 - v \leq 255\)</span> automatically.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-scalar-addition-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-sca-negative">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:3%;margin-right:3%;grid-template-columns:46.8085106382979% 46.8085106382979%;column-gap:6%;">
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-brighter"><div class="image-box"><img src="external/images/sca-brighter.png" class="contained" alt="The grayscale illustration, noticeably lighter, with the brightest areas washed out to white"></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Brightened: <span class="process-math">\(1.4\,M\text{,}\)</span> clipped at <span class="process-math">\(255\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.65(a)"><a tabindex="-1" href="#fig-sca-brighter" title="Copy heading and permalink for Figure 4.65(a)" aria-label="Copy heading and permalink for Figure 4.65(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-negative-image"><div class="image-box"><img src="external/images/sca-negative.png" class="contained" alt="The grayscale illustration with light and dark reversed, like a photographic negative"></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The negative: <span class="process-math">\(255J - M\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.65(b)"><a tabindex="-1" href="#fig-sca-negative-image" title="Copy heading and permalink for Figure 4.65(b)" aria-label="Copy heading and permalink for Figure 4.65(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.65<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Scalar multiplication and addition applied to <span class="process-math">\(M\text{.}\)</span> In (a) every entry is multiplied by <span class="process-math">\(1.4\)</span> and anything exceeding <span class="process-math">\(255\)</span> is clipped; in (b) every entry <span class="process-math">\(v\)</span> is replaced by <span class="process-math">\(255 - v\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.65"><a tabindex="-1" href="#fig-sca-negative" title="Copy heading and permalink for Figure 4.65" aria-label="Copy heading and permalink for Figure 4.65">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-images-scalar-addition-5">Both operations are worth trying on the submatrix <span class="process-math">\(D\text{.}\)</span> In Sage, <code class="code-inline tex2jax_ignore">D.nrows()</code> and <code class="code-inline tex2jax_ignore">D.ncols()</code> report the dimensions of <span class="process-math">\(D\text{,}\)</span> and <code class="code-inline tex2jax_ignore">ones_matrix</code> builds the matrix <span class="process-math">\(J\)</span> of that same size.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-scalar-addition-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-images-scalar-addition-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">m, n = D.nrows(), D.ncols()
+J = ones_matrix(ZZ, m, n)
+N = 255*J - D
+graphics_array([matrix_plot(D, cmap='gray', vmin=0, vmax=255),
+                matrix_plot(N, cmap='gray', vmin=0, vmax=255)]).show()
+</script></div>
+<div class="para" id="subsec-images-scalar-addition-7">Applying the operation twice returns the original, since <span class="process-math">\(255J - (255J - M) = M\text{.}\)</span> Replace <code class="code-inline tex2jax_ignore">N</code> by <code class="code-inline tex2jax_ignore">255*J - N</code> in the cell above and evaluate again to watch the second negative undo the first.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-scalar-addition-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 4.7.2: Scalar Multiplication and Addition: Brightness and Negatives"><a tabindex="-1" href="#subsec-images-scalar-addition" title="Copy heading and permalink for Subsection 4.7.2: Scalar Multiplication and Addition: Brightness and Negatives" aria-label="Copy heading and permalink for Subsection 4.7.2: Scalar Multiplication and Addition: Brightness and Negatives">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-images-transpose">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Transposition: Reflecting Across the Diagonal</span>
+</h2>
+<div class="para" id="subsec-images-transpose-2">Transposition interchanges the roles of the row index and the column index, so the pixel in row <span class="process-math">\(i\)</span> and column <span class="process-math">\(j\)</span> of <span class="process-math">\(M^T\)</span> is the pixel in row <span class="process-math">\(j\)</span> and column <span class="process-math">\(i\)</span> of <span class="process-math">\(M\text{.}\)</span> Geometrically, the picture is reflected across the main diagonal, the line running from the upper-left corner to the lower-right corner. Note also that a tall <span class="process-math">\(m \times n\)</span> image becomes a wide <span class="process-math">\(n \times m\)</span> one.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-transpose-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-sca-transpose"><div class="image-box" style="width: 72%; margin-left: 14%; margin-right: 14%;"><img src="external/images/sca-transpose.png" class="contained" alt="The grayscale illustration reflected across its main diagonal, so that it lies on its side and appears mirrored"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.66<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transpose <span class="process-math">\(M^T\text{:}\)</span> the picture reflected across the diagonal running from its upper-left to its lower-right corner. The image is now as wide as the original was tall.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.66"><a tabindex="-1" href="#fig-sca-transpose" title="Copy heading and permalink for Figure 4.66" aria-label="Copy heading and permalink for Figure 4.66">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-images-transpose-4">A reflection is not a rotation, and it is easy to conflate the two. Turning the page to look at <a href="sec-images-as-matrices.html#fig-sca-transpose" class="xref" data-knowl="./knowl/xref/fig-sca-transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.66">4.66</a> sideways does not recover the original picture: the reflected image is also mirrored. We will see in <a href="sec-images-as-matrices.html#subsec-images-multiplication" class="internal" title="Subsection 4.7.4: Matrix Multiplication: Flips and Crops">Matrix Multiplication: Flips and Crops</a> that a genuine rotation requires a transposition <em class="emphasis">and</em> a flip.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-transpose-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-images-transpose-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphics_array([matrix_plot(D, cmap='gray', vmin=0, vmax=255),
+                matrix_plot(D.transpose(), cmap='gray', vmin=0, vmax=255)]).show()
+</script></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 4.7.3: Transposition: Reflecting Across the Diagonal"><a tabindex="-1" href="#subsec-images-transpose" title="Copy heading and permalink for Subsection 4.7.3: Transposition: Reflecting Across the Diagonal" aria-label="Copy heading and permalink for Subsection 4.7.3: Transposition: Reflecting Across the Diagonal">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-images-multiplication">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix Multiplication: Flips and Crops</span>
+</h2>
+<div class="para logical" id="subsec-images-multiplication-2">
+<div class="para">Multiplication is the operation whose visual meaning is least obvious, so we build it up from the identity matrix. Since <span class="process-math">\(I_m M = M\)</span> and <span class="process-math">\(M I_n = M\text{,}\)</span> multiplying by an identity matrix leaves the picture alone. Now permute the columns of the identity: let <span class="process-math">\(K_n\)</span> be the <span class="process-math">\(n \times n\)</span> matrix obtained from <span class="process-math">\(I_n\)</span> by writing its columns in the reverse order,</div>
+<div class="displaymath process-math" id="subsec-images-multiplication-2-6">
+\begin{equation*}
+K_4 = \begin{bmatrix}
+0 \amp 0 \amp 0 \amp 1 \\
+0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0 \\
+1 \amp 0 \amp 0 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Multiplying on the right by <span class="process-math">\(K_n\)</span> reverses the order of the columns of <span class="process-math">\(M\text{,}\)</span> and multiplying on the left by <span class="process-math">\(K_m\)</span> reverses the order of its rows. In pictures, <span class="process-math">\(M K_n\)</span> is the mirror image of <span class="process-math">\(M\)</span> and <span class="process-math">\(K_m M\)</span> is <span class="process-math">\(M\)</span> turned upside down.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-multiplication-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="rem-images-noncommutative"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.67</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="rem-images-noncommutative-1">Here is <a href="sec-matrix-multiplication.html" class="internal" title="Section 4.2: Matrix Multiplication">Matrix Multiplication</a> made visible: the products <span class="process-math">\(K M\)</span> and <span class="process-math">\(M K\)</span> are genuinely different pictures, one flipped top to bottom and the other left to right. Multiplication does not commute, and which side you multiply on decides what happens.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-images-noncommutative-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.67"><a tabindex="-1" href="#rem-images-noncommutative" title="Copy heading and permalink for Remark 4.67" aria-label="Copy heading and permalink for Remark 4.67">🔗</a></div>
+</article>
+<div class="para logical" id="subsec-images-multiplication-4">
+<div class="para">With both flips available we can say precisely what a rotation is. Reflecting across the diagonal and then reversing the order of the columns gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-images-transpose.html" id="subsec-images-multiplication-4-1">
+\begin{equation*}
+M^T K_m,
+\end{equation*}
+</div>
+<div class="para">which is <span class="process-math">\(M\)</span> rotated a quarter turn clockwise. So a rotation is a transposition followed by a flip, exactly as promised in <a href="sec-images-as-matrices.html#subsec-images-transpose" class="internal" title="Subsection 4.7.3: Transposition: Reflecting Across the Diagonal">Transposition: Reflecting Across the Diagonal</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-multiplication-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-sca-flips">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:3%;margin-right:3%;grid-template-columns:46.8085106382979% 46.8085106382979%;column-gap:6%;">
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-flip-lr"><div class="image-box"><img src="external/images/sca-flip-lr.png" class="contained" alt="The grayscale illustration mirrored left to right, with the cat now facing the other way"></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Mirrored: <span class="process-math">\(M K_n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.68(a)"><a tabindex="-1" href="#fig-sca-flip-lr" title="Copy heading and permalink for Figure 4.68(a)" aria-label="Copy heading and permalink for Figure 4.68(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-flip-ud"><div class="image-box"><img src="external/images/sca-flip-ud.png" class="contained" alt="The grayscale illustration turned upside down"></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Upside down: <span class="process-math">\(K_m M\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.68(b)"><a tabindex="-1" href="#fig-sca-flip-ud" title="Copy heading and permalink for Figure 4.68(b)" aria-label="Copy heading and permalink for Figure 4.68(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.68<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Two products of <span class="process-math">\(M\)</span> with a reversal matrix. Multiplying on the right reverses the columns; multiplying on the left reverses the rows.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.68"><a tabindex="-1" href="#fig-sca-flips" title="Copy heading and permalink for Figure 4.68" aria-label="Copy heading and permalink for Figure 4.68">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-images-multiplication-6">Cropping is the same idea with a non-square factor. Delete rows from <span class="process-math">\(I_m\)</span> to leave a <span class="process-math">\(k \times m\)</span> matrix <span class="process-math">\(E\text{,}\)</span> keeping only the rows of the identity that correspond to the rows of the picture you want; then <span class="process-math">\(EM\)</span> is the <span class="process-math">\(k \times n\)</span> matrix consisting of just those rows. Doing the same on the right selects columns, so a rectangular crop is a product <span class="process-math">\(EMF\text{.}\)</span> This is how the <span class="process-math">\(80 \times 60\)</span> patch around the eye in <a href="sec-images-as-matrices.html#subsec-images-grayscale" class="internal" title="Subsection 4.7.1: A Photograph Is a Matrix">A Photograph Is a Matrix</a> is cut out of <span class="process-math">\(M\text{:}\)</span> by multiplication alone, with no need to speak of indices at all.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-multiplication-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-images-multiplication-7">The reversal matrix has a <span class="process-math">\(1\)</span> exactly where <span class="process-math">\(i + j = n - 1\text{,}\)</span> which is what the rule below builds. (Sage indexes rows and columns from zero.) Evaluate the cell and compare the four pictures: the original, the two flips, and the quarter turn.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-multiplication-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-images-multiplication-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Km = matrix(ZZ, m, m, lambda i, j: 1 if i + j == m - 1 else 0)
+Kn = matrix(ZZ, n, n, lambda i, j: 1 if i + j == n - 1 else 0)
+pictures = [D, D*Kn, Km*D, D.transpose()*Km]
+graphics_array([matrix_plot(A, cmap='gray', vmin=0, vmax=255)
+                for A in pictures], nrows=1).show(figsize=8)
+</script></div>
+<div class="para" id="subsec-images-multiplication-9">One more check is worth making. Reversing the columns twice should return the original picture, which says that <span class="process-math">\(K_n K_n = I_n\text{.}\)</span> Sage agrees:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-multiplication-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-images-multiplication-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Kn*Kn == identity_matrix(ZZ, n)
+</script></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 4.7.4: Matrix Multiplication: Flips and Crops"><a tabindex="-1" href="#subsec-images-multiplication" title="Copy heading and permalink for Subsection 4.7.4: Matrix Multiplication: Flips and Crops" aria-label="Copy heading and permalink for Subsection 4.7.4: Matrix Multiplication: Flips and Crops">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-images-inverse">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverses: Scrambling a Picture and Putting It Back</span>
+</h2>
+<div class="para" id="subsec-images-inverse-2">The reversal matrix <span class="process-math">\(K_n\)</span> is one example of a <dfn class="terminology">permutation matrix</dfn>: a matrix obtained from an identity matrix by rearranging its rows. Every such matrix is a product of the row-swap elementary matrices of <a href="sec-elementary-matrices.html" class="internal" title="Section 4.5: Elementary Matrices">Elementary Matrices</a>, and so is invertible. If <span class="process-math">\(P\)</span> is an <span class="process-math">\(m \times m\)</span> permutation matrix, then <span class="process-math">\(PM\)</span> is the picture with its rows of pixels shuffled into a new order — unrecognizable, if the shuffle is thorough.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-inverse-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-images-inverse-3">
+<div class="para">Because <span class="process-math">\(P\)</span> is invertible, no information has been lost. By condition (7) of <a href="sec-invertible-matrix-theorem.html#thm-invertible-matrix-theorem" class="xref" data-knowl="./knowl/xref/thm-invertible-matrix-theorem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.57: The Invertible Matrix Theorem">Theorem 4.57</a>, each column of the scrambled picture came from exactly one column of the original, so the original can be recovered as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-invertible-matrix-theorem.html" id="subsec-images-inverse-3-3">
+\begin{equation*}
+P^{-1}(PM) = (P^{-1}P)M = I_m M = M.
+\end{equation*}
+</div>
+<div class="para">Better still, a permutation matrix satisfies <span class="process-math">\(P^{-1} = P^T\text{,}\)</span> so the inverse costs nothing to write down: it is the transpose. Shuffling the rows and unshuffling them are the same operation performed with <span class="process-math">\(P\)</span> and with <span class="process-math">\(P^T\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-inverse-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-sca-scramble">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:3%;margin-right:3%;grid-template-columns:46.8085106382979% 46.8085106382979%;column-gap:6%;">
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-scrambled"><div class="image-box"><img src="external/images/sca-scrambled.png" class="contained" alt="Horizontal bands of gray in no discernible order, the rows of the illustration shuffled"></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Scrambled: <span class="process-math">\(PM\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.69(a)"><a tabindex="-1" href="#fig-sca-scrambled" title="Copy heading and permalink for Figure 4.69(a)" aria-label="Copy heading and permalink for Figure 4.69(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<figure class="figure figure-like" id="fig-sca-restored"><div class="image-box"><img src="external/images/sca-restored.png" class="contained" alt="The original grayscale illustration, recovered exactly"></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Restored: <span class="process-math">\(P^T(PM) = M\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 4.69(b)"><a tabindex="-1" href="#fig-sca-restored" title="Copy heading and permalink for Figure 4.69(b)" aria-label="Copy heading and permalink for Figure 4.69(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.69<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A permutation matrix <span class="process-math">\(P\)</span> shuffles the rows of pixels into an unrecognizable image (a). Since <span class="process-math">\(P^{-1} = P^T\text{,}\)</span> multiplying by <span class="process-math">\(P^T\)</span> restores the original exactly (b).<div class="autopermalink" aria-hidden="true" data-description="Figure 4.69"><a tabindex="-1" href="#fig-sca-scramble" title="Copy heading and permalink for Figure 4.69" aria-label="Copy heading and permalink for Figure 4.69">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="subsec-images-inverse-5">In the cell below, <code class="code-inline tex2jax_ignore">Permutations(m).random_element()</code> picks a shuffle of the <span class="process-math">\(m\)</span> rows at random and <code class="code-inline tex2jax_ignore">.to_matrix()</code> turns it into the corresponding permutation matrix. The last line checks that the transpose really is the inverse.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-inverse-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="subsec-images-inverse-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">P = Permutations(m).random_element().to_matrix()
+scrambled = P*D
+restored = P.transpose()*scrambled
+print(P.transpose() == P.inverse(), restored == D)
+graphics_array([matrix_plot(A, cmap='gray', vmin=0, vmax=255)
+                for A in [D, scrambled, restored]], nrows=1).show(figsize=6)
+</script></div>
+<div class="para" id="subsec-images-inverse-7">Both printed values should be <code class="code-inline tex2jax_ignore">True</code>, and the third picture should be identical to the first. Run the cell a few times: the middle picture changes with every new random <span class="process-math">\(P\text{,}\)</span> and the third never does.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-images-inverse-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="rem-images-encryption"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.70</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="rem-images-encryption-1">It is tempting to call this encryption, and in a very weak sense it is: <span class="process-math">\(P\)</span> is the key, <span class="process-math">\(PM\)</span> is the ciphertext, and <span class="process-math">\(P^T\)</span> is the decryption key. But no pixel has been changed, only moved, so the shuffled image has exactly the same collection of rows as the original and is easily unscrambled by anyone willing to match up the edges. The mathematics that matters here is not the secrecy: it is that an invertible matrix loses nothing, and a non-invertible one does. Multiplying by a matrix that is not invertible — averaging neighbouring rows, say, or discarding every second one — also produces a new picture, but there is then no matrix that undoes it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-images-encryption-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.70"><a tabindex="-1" href="#rem-images-encryption" title="Copy heading and permalink for Remark 4.70" aria-label="Copy heading and permalink for Remark 4.70">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 4.7.5: Inverses: Scrambling a Picture and Putting It Back"><a tabindex="-1" href="#subsec-images-inverse" title="Copy heading and permalink for Subsection 4.7.5: Inverses: Scrambling a Picture and Putting It Back" aria-label="Copy heading and permalink for Subsection 4.7.5: Inverses: Scrambling a Picture and Putting It Back">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 4.7: Digital Images as Matrices"><a tabindex="-1" href="#sec-images-as-matrices" title="Copy heading and permalink for Section 4.7: Digital Images as Matrices" aria-label="Copy heading and permalink for Section 4.7: Digital Images as Matrices">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-invertible-matrix-theorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-subspaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script><script src="external/custom.js"></script>
+</body>
+</html>

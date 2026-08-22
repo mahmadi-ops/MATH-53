@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determinant of a Product.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(n \times n\)</span> matrices. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(AB) = \det A \times \det B.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 6.19: Determinant of a Product"><a tabindex="-1" href="#thm-det-product" title="Copy heading and permalink for Theorem 6.19: Determinant of a Product" aria-label="Copy heading and permalink for Theorem 6.19: Determinant of a Product">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">
+<dfn class="terminology">Case (I): <span class="process-math">\(A\)</span> is not invertible.</dfn> If <span class="process-math">\(A\)</span> is not invertible, then <span class="process-math">\(\det A = 0\text{.}\)</span> Also, if <span class="process-math">\(A\)</span> is not invertible, then <span class="process-math">\(AB\)</span> is not invertible by <a href="sec-determinants-inverses-products.html#eg-noninvertible-product" class="xref" data-knowl="./knowl/xref/eg-noninvertible-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.17: True or False?">Example 6.17</a>, and so <span class="process-math">\(\det(AB) = 0\text{.}\)</span> Hence, in this case, <span class="process-math">\(\det(AB) = 0 = \det A \det B\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-product-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">Case (II): <span class="process-math">\(A\)</span> is invertible.</dfn> Hence <span class="process-math">\(A\)</span> can be written as a product of elementary matrices,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-det-elementary-product.html">
+\begin{equation*}
+A = E_1 E_2 \cdots E_p,
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(\det(AB) = \det \left( E_1 E_2 \cdots E_p B \right)\text{.}\)</span> Next, we can use <a href="sec-determinants-inverses-products.html#eg-det-elementary-product" class="xref" data-knowl="./knowl/xref/eg-det-elementary-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.18: True or False?">Example 6.18</a> repeatedly to write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-det-elementary-product.html">
+\begin{align*}
+\det(AB) \amp = \det E_1 \, \det \left( E_2 \cdots E_p B \right)\\
+\amp = \det E_1 \, \det E_2 \, \det \left( E_3 \cdots E_p B \right)\\
+\amp \;\; \vdots\\
+\amp = \det E_1 \, \det E_2 \, \cdots \, \det E_p \, \det B.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-product-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Now run the same identity backwards to reassemble <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\det(AB)
+\amp = \det \left( E_1 E_2 \right) \det E_3 \cdots \det E_p \, \det B\\
+\amp \;\; \vdots\\
+\amp = \det \left( E_1 E_2 \cdots E_p \right) \det B
+= \det A \, \det B.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-det-product-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.19.1"><a tabindex="-1" href="#thm-det-product-3" title="Copy heading and permalink for Proof 6.19.1" aria-label="Copy heading and permalink for Proof 6.19.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-determinants-inverses-products.html#thm-det-product">In Context</a></span>
+</body>
+</html>

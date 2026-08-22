@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coupled oscillators</title>
+<style>
+  :root {
+    --bg: #0c0f13; --pane: #101419; --line: #232b38;
+    --ink: #e8eaf0; --muted: #8b93a7; --wall: #3a465c;
+    --m1: #ffe45c; --m2: #fc6255; --spring: #58c4dd; --mid: #b48ee0;
+  }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #wrap { max-width: 900px; margin: 0 auto; padding: 8px 8px 12px; }
+  #titlebar { display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 6px 16px; padding: 2px 4px 8px; }
+  #title { font-size: 17px; }
+  #title .dim { color: var(--muted); font-size: 13.5px; margin-left: 8px; }
+  #controls { display: flex; gap: 6px; flex-wrap: wrap; }
+  #controls button {
+    background: transparent; color: var(--ink); border: 1px solid #2a3341;
+    border-radius: 6px; padding: 3px 11px; font-size: 13px;
+    cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  #controls button:hover { background: #161c25; }
+  #controls button.active { border-color: var(--m1); color: var(--m1); }
+  #stage { background: var(--pane); border: 1px solid var(--line);
+    border-radius: 8px; display: block; width: 100%; height: auto; }
+  #caption { min-height: 3.2em; padding: 10px 6px 0; text-align: center;
+    font-size: 16px; line-height: 1.45; color: var(--ink); transition: opacity .4s; }
+  #progress { height: 3px; background: #1a2230; border-radius: 2px;
+    margin-top: 10px; overflow: hidden; }
+  #bar { height: 100%; width: 0%; background: var(--spring); }
+  /* Compact layout inside narrow iframes */
+  @media (max-width: 540px) {
+    #wrap { padding: 5px 5px 8px; }
+    #titlebar { padding: 0 2px 5px; gap: 4px 10px; }
+    #title { font-size: 14px; }
+    #title .dim { display: none; }
+    #controls { gap: 4px; }
+    #controls button { padding: 2px 7px; font-size: 11.5px; }
+    #caption { font-size: 13px; line-height: 1.35; min-height: 0;
+      padding: 6px 2px 0; }
+    #progress { margin-top: 6px; }
+  }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="titlebar">
+    <div id="title">Two carts, three springs
+      <span class="dim">a story with no algebra</span></div>
+    <div id="controls">
+      <button id="b-play" type="button">&#9654;&#xFE0E; play</button>
+      <button id="b-1" type="button">messy</button>
+      <button id="b-2" type="button">mode 1</button>
+      <button id="b-3" type="button">mode 2</button>
+      <button id="b-4" type="button">the sum</button>
+    </div>
+  </div>
+  <svg id="stage" viewBox="0 0 900 430" role="img"
+    aria-label="Animation of two carts coupled by three springs"></svg>
+  <div id="progress"><div id="bar"></div></div>
+  <div id="caption" aria-live="polite"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("stage");
+  var W = 900;
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function el(parent, tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e); return e;
+  }
+  function css(n) { return getComputedStyle(document.body).getPropertyValue(n).trim(); }
+  function ease(u) { u = Math.max(0, Math.min(1, u));
+    return u < 0.5 ? 4*u*u*u : 1 - Math.pow(-2*u + 2, 3) / 2; }
+
+  // ---------------- apparatus geometry ----------------
+  var Y = 130;                    // cart track height
+  var XL = 90, XR = 810;          // wall inner faces
+  var EQ1 = 330, EQ2 = 570;      // cart equilibrium centers
+  var CW = 74, CH = 60;           // cart size
+  var AMP = 55;                   // pixel amplitude of unit displacement
+
+  var gApp = el(svg, "g", {});
+  // walls
+  [[XL - 14, -1], [XR, 1]].forEach(function (w) {
+    el(gApp, "rect", { x: w[0], y: Y - 95, width: 14, height: 150,
+      fill: css("--wall") });
+    for (var i = 0; i < 6; i++)
+      el(gApp, "line", { x1: w[0] + (w[1] < 0 ? 0 : 14), y1: Y - 88 + i * 24,
+        x2: w[0] + (w[1] < 0 ? 14 : 0), y2: Y - 72 + i * 24,
+        stroke: "#57657f", "stroke-width": 2 });
+  });
+  // track
+  el(gApp, "line", { x1: XL - 14, y1: Y + 56, x2: XR + 14, y2: Y + 56,
+    stroke: "#2a3341", "stroke-width": 3 });
+
+  function springPath(x0, x1, color, id) {
+    return el(gApp, "path", { fill: "none", stroke: color,
+      "stroke-width": 3, "stroke-linejoin": "round", id: id });
+  }
+  var sp1 = springPath(0, 0, css("--spring"), "sp1");
+  var spM = springPath(0, 0, css("--mid"), "spM");
+  var sp2 = springPath(0, 0, css("--spring"), "sp2");
+
+  function cart(color, label) {
+    var g = el(gApp, "g", {});
+    var glow = el(g, "rect", { width: CW + 14, height: CH + 14, rx: 12,
+      fill: color, opacity: 0.25 });
+    glow.style.filter = "blur(9px)";
+    el(g, "rect", { width: CW, height: CH, rx: 8, fill: color,
+      x: 7, y: 7 });
+    [0.28, 0.72].forEach(function (f) {
+      el(g, "circle", { cx: 7 + CW * f, cy: 7 + CH + 6, r: 8,
+        fill: "#1c2330", stroke: color, "stroke-width": 2.5 });
+    });
+    var t = el(g, "text", { x: 7 + CW / 2, y: 7 + CH / 2 + 6,
+      "text-anchor": "middle", "font-size": 19, "font-style": "italic",
+      fill: "#10141a", "font-family": "Georgia, serif" });
+    t.textContent = label;
+    return g;
+  }
+  var cart1 = cart(css("--m1"), "1"), cart2 = cart(css("--m2"), "2");
+
+  // displacement traces (position vs time, scrolling)
+  var TRY1 = 275, TRY2 = 360, TRH = 34;
+  var gTr = el(svg, "g", {});
+  el(gTr, "line", { x1: 70, y1: TRY1, x2: 830, y2: TRY1, stroke: "#222c3c",
+    "stroke-width": 1 });
+  el(gTr, "line", { x1: 70, y1: TRY2, x2: 830, y2: TRY2, stroke: "#222c3c",
+    "stroke-width": 1 });
+  var lbl1 = el(gTr, "text", { x: 62, y: TRY1 + 5, "text-anchor": "end",
+    "font-size": 13, fill: css("--m1") });
+  lbl1.textContent = "cart 1";
+  var lbl2 = el(gTr, "text", { x: 62, y: TRY2 + 5, "text-anchor": "end",
+    "font-size": 13, fill: css("--m2") });
+  lbl2.textContent = "cart 2";
+  var tr1 = el(gTr, "path", { fill: "none", stroke: css("--m1"),
+    "stroke-width": 2 });
+  var tr2 = el(gTr, "path", { fill: "none", stroke: css("--m2"),
+    "stroke-width": 2 });
+
+  // ---------------- drawing ----------------
+  function zig(x0, x1) {
+    var n = 8, coil = 13, d = "M" + x0 + "," + Y;
+    d += "L" + (x0 + 12) + "," + Y;
+    var span = (x1 - x0 - 24) / n;
+    for (var i = 0; i < n; i++)
+      d += "L" + (x0 + 12 + span * (i + 0.5)) + "," +
+           (Y + (i % 2 ? coil : -coil));
+    d += "L" + (x1 - 12) + "," + Y + "L" + x1 + "," + Y;
+    return d;
+  }
+  var hist1 = [], hist2 = [], HN = 380;
+
+  function draw(u1, u2, opts) {
+    opts = opts || {};
+    var c1 = EQ1 + u1 * AMP, c2 = EQ2 + u2 * AMP;
+    cart1.setAttribute("transform",
+      "translate(" + (c1 - CW / 2 - 7) + "," + (Y - CH / 2 - 7) + ")");
+    cart2.setAttribute("transform",
+      "translate(" + (c2 - CW / 2 - 7) + "," + (Y - CH / 2 - 7) + ")");
+    sp1.setAttribute("d", zig(XL, c1 - CW / 2));
+    spM.setAttribute("d", zig(c1 + CW / 2, c2 - CW / 2));
+    sp2.setAttribute("d", zig(c2 + CW / 2, XR));
+    spM.setAttribute("stroke", opts.midQuiet ? "#3d4a63" : css("--mid"));
+    spM.setAttribute("stroke-width", opts.midBusy ? 4.5 : 3);
+    if (opts.trace) {
+      hist1.push(u1); hist2.push(u2);
+      if (hist1.length > HN) { hist1.shift(); hist2.shift(); }
+      var d1 = "", d2 = "";
+      for (var i = 0; i < hist1.length; i++) {
+        var x = 830 - (hist1.length - 1 - i) * 2;
+        d1 += (i ? "L" : "M") + x + "," + (TRY1 - hist1[i] * TRH);
+        d2 += (i ? "L" : "M") + x + "," + (TRY2 - hist2[i] * TRH);
+      }
+      tr1.setAttribute("d", d1); tr2.setAttribute("d", d2);
+      gTr.setAttribute("opacity", 1);
+    } else if (opts.clearTrace) {
+      hist1 = []; hist2 = [];
+      tr1.setAttribute("d", ""); tr2.setAttribute("d", "");
+      gTr.setAttribute("opacity", 0.15);
+    }
+  }
+
+  // ---------------- the physics (exact, two normal modes) ----------------
+  var W1 = 1.35, W2 = 1.35 * Math.sqrt(3);   // slow and fast frequencies
+  function motion(c1, c2, t) {                // c1, c2 = mode amplitudes
+    return [c1 * Math.cos(W1 * t) + c2 * Math.cos(W2 * t),
+            c1 * Math.cos(W1 * t) - c2 * Math.cos(W2 * t)];
+  }
+
+  // ---------------- scenes ----------------
+  var capEl = document.getElementById("caption");
+  var scenes = [
+    { name: "setup", dur: 5,
+      cap: "Two identical carts sit between two walls, tied together by three identical springs.",
+      run: function (t) {
+        var g = ease(t / 1.2);
+        gApp.setAttribute("opacity", g);
+        var nudge = t > 2 ? 0.06 * Math.sin(3 * (t - 2)) *
+          Math.exp(-(t - 2)) : 0;
+        draw(nudge, -nudge, { clearTrace: true });
+      } },
+    { name: "messy", dur: 14,
+      cap: "Pull the first cart aside and let go. The motion looks hopeless: the carts trade energy back and forth and neither repeats itself in any obvious way.",
+      run: function (t) {
+        var u = motion(0.5, 0.5, Math.max(0, t - 1));   // start: cart 1 only
+        if (t < 1) { var g = ease(t); u = [1 * g, 0]; }
+        draw(u[0], u[1], { trace: t >= 1 });
+      } },
+    { name: "mode1", dur: 11,
+      cap: "But two special starting shapes stay simple forever. Shift both carts the same way: the middle spring never changes length, so it might as well not exist. The pair glides side by side, slowly.",
+      run: function (t) {
+        var a = ease(t / 1.2);
+        var u = t < 1.2 ? [0.9 * a, 0.9 * a]
+                        : motion(0.9, 0, t - 1.2);
+        draw(u[0], u[1], { trace: t >= 1.2, midQuiet: true });
+      } },
+    { name: "mode2", dur: 11,
+      cap: "Or shift the carts oppositely: now the middle spring is squeezed and stretched twice as hard, so it fights back. The carts vibrate against each other, noticeably faster.",
+      run: function (t) {
+        var a = ease(t / 1.2);
+        var u = t < 1.2 ? [0.7 * a, -0.7 * a]
+                        : motion(0, 0.7, t - 1.2);
+        draw(u[0], u[1], { trace: t >= 1.2, midBusy: true });
+      } },
+    { name: "sum", dur: 16,
+      cap: "Here is the punchline: the hopeless motion is exactly these two simple motions added together — a slow side-by-side swing plus a fast opposed vibration. Finding the special shapes and their rhythms is precisely what eigenvectors and eigenvalues do.",
+      run: function (t) {
+        var u = motion(0.5, 0.5, t);
+        draw(u[0], u[1], { trace: true });
+      } },
+  ];
+
+  var playing = false, sceneIx = 0, sceneT = 0, lastNow = null;
+  var playBtn = document.getElementById("b-play");
+  var bar = document.getElementById("bar");
+
+  function setCaption(s) {
+    capEl.style.opacity = 0;
+    setTimeout(function () { capEl.textContent = s; capEl.style.opacity = 1; }, 250);
+  }
+  function enter(ix) {
+    sceneIx = ix; sceneT = 0;
+    hist1 = []; hist2 = [];
+    tr1.setAttribute("d", ""); tr2.setAttribute("d", "");
+    gTr.setAttribute("opacity", ix === 0 ? 0.15 : 1);
+    setCaption(scenes[ix].cap);
+    ["b-1", "b-2", "b-3", "b-4"].forEach(function (id, k) {
+      document.getElementById(id).classList.toggle("active", k + 1 === ix);
+    });
+  }
+  function frame(now) {
+    if (lastNow === null) lastNow = now;
+    var dt = Math.min(0.05, (now - lastNow) / 1000); lastNow = now;
+    if (playing) {
+      sceneT += dt;
+      if (sceneT > scenes[sceneIx].dur) {
+        if (sceneIx + 1 < scenes.length) enter(sceneIx + 1);
+        else { playing = false; playBtn.innerHTML = "&#8635;&#xFE0E; replay"; }
+      }
+    }
+    scenes[sceneIx].run(sceneT);
+    var total = 0, done = 0;
+    scenes.forEach(function (s, k) { total += s.dur;
+      done += k < sceneIx ? s.dur : 0; });
+    bar.style.width = Math.min(100,
+      100 * (done + Math.min(sceneT, scenes[sceneIx].dur)) / total) + "%";
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  playBtn.addEventListener("click", function () {
+    if (!playing && sceneIx === scenes.length - 1 &&
+        sceneT > scenes[sceneIx].dur) enter(0);
+    if (!playing && sceneT === 0 && sceneIx === 0) enter(0);
+    playing = !playing;
+    playBtn.innerHTML = playing ? "&#10074;&#10074; pause" : "&#9654;&#xFE0E; play";
+  });
+  ["b-1", "b-2", "b-3", "b-4"].forEach(function (id, k) {
+    document.getElementById(id).addEventListener("click", function () {
+      enter(k + 1); playing = true;
+      playBtn.innerHTML = "&#10074;&#10074; pause";
+    });
+  });
+
+  // initial state
+  enter(0);
+  if (!reduced) { playing = true; playBtn.innerHTML = "&#10074;&#10074; pause"; }
+  else draw(0, 0, { clearTrace: true });
+})();
+</script>
+</body>
+</html>

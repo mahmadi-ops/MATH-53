@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>An Application: The Determinant as Volume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: true,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="MATH 53--Linear Algebra">
+<meta property="og:title" content="MATH 53--Linear Algebra">
+<meta property="book:title" content="MATH 53--Linear Algebra">
+<meta name="twitter:description" content="Linear algebra notes for Santa Clara University's MATH 53.">
+<meta property="og:description" content="Linear algebra notes for Santa Clara University's MATH 53.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.44"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/diagcess/diagcess.js"></script><script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="math53" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="math53-linear-algebra.html"><span class="title">MATH 53--Linear Algebra</span></a></div>
+<p class="byline">Mehdi Ahmadi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-determinants-inverses-products.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-determinants.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-vector-spaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\real}{\Bbb R}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth4 focused" data-preexpanded-levels="0" data-max-levels="4"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-ch-linear-systems" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-systems-of-linear-equations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-sec-systems-of-linear-equations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-systems-vocabulary" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Systems, Solutions, and Consistency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-graphical-solutions" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Graphical Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-systems-of-linear-equations.html#subsec-parametric-form" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Parametric Form of a Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Elementary Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-augmented-matrix.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Augmented Matrix and Echelon Forms</span></a></div>
+<ul id="ptx-toc-group-sec-augmented-matrix" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-augmented-matrix" class="internal"><span class="codenumber">1.3.1</span> <span class="title">The Augmented Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-echelon-forms" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Row-Echelon and Reduced Row-Echelon Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-augmented-matrix.html#subsec-pivots" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Pivots, Basic Variables, and Free Variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-row-reduction.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Row Reduction Algorithm</span></a></div>
+<ul id="ptx-toc-group-sec-row-reduction" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-the-algorithm" class="internal"><span class="codenumber">1.4.1</span> <span class="title">The Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-three-outcomes" class="internal"><span class="codenumber">1.4.2</span> <span class="title">The Three Possible Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-row-reduction.html#subsec-systems-with-parameters" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Systems Depending on Parameters</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-polynomial-interpolation.html" class="internal"><span class="codenumber">1.5</span> <span class="title">A First Application: Polynomial Interpolation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-vectors.html" class="internal"><span class="codenumber">2</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-ch-vectors" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors-in-rn.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-vectors-in-rn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-vector-notation" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Notation and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-algebra-in-rn" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Algebra in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vectors-in-rn.html#subsec-geometry-of-addition" class="internal"><span class="codenumber">2.1.3</span> <span class="title">The Geometry of Vector Addition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-form.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Vector and Matrix Forms of a Linear System</span></a></div>
+<ul id="ptx-toc-group-sec-vector-form" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-form.html#subsec-vector-form" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Vector Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-form.html#subsec-matrix-form" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Matrix Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-homogeneous-systems.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Homogeneous Systems</span></a></div>
+<ul id="ptx-toc-group-sec-homogeneous-systems" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-homogeneous-definition" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Homogeneous Systems and the Trivial Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-basic-solutions" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Linear Combinations and Basic Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-homogeneous-systems.html#subsec-structure-of-solutions" class="internal"><span class="codenumber">2.3.3</span> <span class="title">The Structure of the Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-span.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Span of a Set of Vectors</span></a></div>
+<ul id="ptx-toc-group-sec-span" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-span.html#subsec-seeing-a-span" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Seeing a Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-span.html#subsec-span-challenge" class="internal"><span class="codenumber">2.4.2</span> <span class="title">A Harder Example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-independence.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-sec-linear-independence" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-definition" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-as-combination" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Linear Independence as a Linear Combination</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-seeing-independence" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Seeing Dependence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-independence.html#subsec-independence-challenge" class="internal"><span class="codenumber">2.5.4</span> <span class="title">A Harder Example</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-transformations.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-ch-linear-transformations" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-transformations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Transformations and Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-transformations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-transformations" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-linear-transformations" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transformations.html#subsec-matrix-transformations-are-linear" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix Transformations Are Linear</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injections-surjections.html" class="internal"><span class="codenumber">3.2</span> <span class="title">One-to-One and Onto Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-injections-surjections" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-injections" class="internal"><span class="codenumber">3.2.1</span> <span class="title">One-to-One Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-surjections" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Onto Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injections-surjections.html#subsec-injective-surjective-together" class="internal"><span class="codenumber">3.2.3</span> <span class="title">One-to-One and Onto Together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-special-transformations.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Special Transformations of <span class="process-math">\(\R^2\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-special-transformations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-rotations" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Rotations in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-reflections" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Reflections in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-special-transformations.html#subsec-shear-projection" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Reflection through the Origin, Projections, and Shears</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-matrix-algebra.html" class="internal"><span class="codenumber">4</span> <span class="title">Matrix Algebra</span></a></div>
+<ul id="ptx-toc-group-ch-matrix-algebra" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-operations.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Matrix Operations</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-operations" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-matrix-terminology" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Matrices and Terminology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-matrix-addition" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Matrix Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-operations.html#subsec-scalar-multiplication" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Scalar Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-multiplication.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Matrix Multiplication</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-multiplication" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-product-definition" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The Product of Two Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-entry-of-product" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Computing the <span class="process-math">\((i,j)\)</span>-Entry of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-when-products-exist" class="internal"><span class="codenumber">4.2.3</span> <span class="title">When Does a Product Exist?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-multiplication.html#subsec-product-properties" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-transpose.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Matrix Transposition</span></a></div>
+<ul id="ptx-toc-group-sec-transpose" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-transpose-definition" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Transpose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-symmetric-matrices" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Symmetric Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-transpose.html#subsec-transpose-equations" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Solving Equations Involving the Transpose</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inverse.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul id="ptx-toc-group-sec-inverse" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverse-definition" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Definition and Uniqueness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-two-by-two-inverse" class="internal"><span class="codenumber">4.4.2</span> <span class="title">The Inverse of a <span class="process-math">\(2 \times 2\)</span> Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inversion-algorithm" class="internal"><span class="codenumber">4.4.3</span> <span class="title">The Matrix Inversion Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverse-and-ax-b" class="internal"><span class="codenumber">4.4.4</span> <span class="title">The Inverse and the Matrix Equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inverse.html#subsec-inverses-transposes-products" class="internal"><span class="codenumber">4.4.5</span> <span class="title">Inverses of Transposes and Products</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-elementary-matrices.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Elementary Matrices</span></a></div>
+<ul id="ptx-toc-group-sec-elementary-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-elementary-matrix-definition" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Elementary Matrices and Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-inverses-of-elementary-matrices" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Inverses of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-elementary-matrices.html#subsec-product-of-elementary-matrices" class="internal"><span class="codenumber">4.5.3</span> <span class="title">A Matrix as a Product of Elementary Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html" class="internal"><span class="codenumber">4.6</span> <span class="title">The Invertible Matrix Theorem</span></a></div>
+<ul id="ptx-toc-group-sec-invertible-matrix-theorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-statement" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Statement of the Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-proof" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Proof of the Equivalences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-invertible-matrix-theorem.html#subsec-imt-applications" class="internal"><span class="codenumber">4.6.3</span> <span class="title">Using the Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-images-as-matrices.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Digital Images as Matrices</span></a></div>
+<ul id="ptx-toc-group-sec-images-as-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-grayscale" class="internal"><span class="codenumber">4.7.1</span> <span class="title">A Photograph Is a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-scalar-addition" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Scalar Multiplication and Addition: Brightness and Negatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-transpose" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Transposition: Reflecting Across the Diagonal</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-multiplication" class="internal"><span class="codenumber">4.7.4</span> <span class="title">Matrix Multiplication: Flips and Crops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-images-as-matrices.html#subsec-images-inverse" class="internal"><span class="codenumber">4.7.5</span> <span class="title">Inverses: Scrambling a Picture and Putting It Back</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-subspaces.html" class="internal"><span class="codenumber">5</span> <span class="title">Subspaces, Basis, and Dimension</span></a></div>
+<ul id="ptx-toc-group-ch-subspaces" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subspaces.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-sec-subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces.html#subsec-subspace-definition" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Definition and Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subspaces.html#subsec-subspaces-are-spans" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Subspaces Are Spans</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basis-dimension.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Basis and Dimension</span></a></div>
+<ul id="ptx-toc-group-sec-basis-dimension" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-basis" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Basis of a Subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-all-bases-same-size" class="internal"><span class="codenumber">5.2.2</span> <span class="title">All Bases Have the Same Size</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basis-dimension.html#subsec-dimension" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Dimension</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-column-null-space.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Column Space, Null Space, and Rank</span></a></div>
+<ul id="ptx-toc-group-sec-column-null-space" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-column-space" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Column Space and Rank</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-null-space" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Null Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-rank-nullity" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Rank–Nullity Relation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-column-null-space.html#subsec-imt-continued" class="internal"><span class="codenumber">5.3.4</span> <span class="title">The Invertible Matrix Theorem (Continued)</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-determinants.html" class="internal"><span class="codenumber">6</span> <span class="title">Determinants</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-determinants">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cofactor-expansion.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Cofactor Expansion</span></a></div>
+<ul id="ptx-toc-group-sec-cofactor-expansion" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-minors-cofactors" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Minors and Cofactors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-expansion" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Cofactor Expansion Along a Row or Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cofactor-expansion.html#subsec-triangular-determinants" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Determinants of Triangular Matrices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-determinants-row-operations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Determinants and Row Operations</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-determinants-inverses-products.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Determinants of Inverses, Products, and Transposes</span></a></div>
+<ul id="ptx-toc-group-sec-determinants-inverses-products" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-and-invertibility" class="internal"><span class="codenumber">6.3.1</span> <span class="title">The Determinant Detects Invertibility</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-of-product" class="internal"><span class="codenumber">6.3.2</span> <span class="title">The Determinant of a Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinants-inverses-products.html#subsec-det-computations" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Putting the Rules Together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-determinant-volume.html" class="internal"><span class="codenumber">6.4</span> <span class="title">An Application: The Determinant as Volume</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-determinant-volume">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-jacobian-2d" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Motivation: Rectangles into Parallelograms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-dot-cross-tools" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Two Tools: the Dot Product and the Cross Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-parallelepiped-volume" class="internal"><span class="codenumber">6.4.3</span> <span class="title">The Volume of a Parallelepiped</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-determinant-volume.html#subsec-jacobian" class="internal"><span class="codenumber">6.4.4</span> <span class="title">The Jacobian Determinant of a Linear Map</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-vector-spaces.html" class="internal"><span class="codenumber">7</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-ch-vector-spaces" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-vector-spaces.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Vector Spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-subspaces-of-vector-spaces.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Subspaces and Bases in a Vector Space</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-isomorphisms.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Linear Transformations and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-sec-isomorphisms" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-isomorphisms.html#subsec-general-linear-transformations" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Linear Transformations between Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-isomorphisms.html#subsec-isomorphisms" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Isomorphisms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coordinates.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Coordinates and Change of Basis</span></a></div>
+<ul id="ptx-toc-group-sec-coordinates" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-coordinates" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Coordinates Relative to a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coordinates.html#subsec-change-of-basis" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The Change of Basis Matrix</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrix-of-transformation.html" class="internal"><span class="codenumber">7.5</span> <span class="title">The Matrix of a Linear Transformation</span></a></div>
+<ul id="ptx-toc-group-sec-matrix-of-transformation" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-of-transformation.html#subsec-matrix-wrt-bases" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Four Matrices for One Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-matrix-of-transformation.html#subsec-transformation-between-spaces" class="internal"><span class="codenumber">7.5.2</span> <span class="title">A Transformation between Different Vector Spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-superposition.html" class="internal"><span class="codenumber">7.6</span> <span class="title">A Plane of Cats: Linear Combinations of Images</span></a></div>
+<ul id="ptx-toc-group-sec-superposition" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-pictures" class="internal"><span class="codenumber">7.6.1</span> <span class="title">A Picture Is a Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-blend" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Blending the Two Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-numbers" class="internal"><span class="codenumber">7.6.3</span> <span class="title">The Arithmetic Behind a Blend</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-span" class="internal"><span class="codenumber">7.6.4</span> <span class="title">From Blends to Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-basis" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Average and Difference</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-superposition.html#subsec-superposition-quantum" class="internal"><span class="codenumber">7.6.6</span> <span class="title">An Optional Connection to Quantum Mechanics</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-recognition.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Finding the Cat: A First Look at Image Recognition</span></a></div>
+<ul id="ptx-toc-group-sec-recognition" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-distance" class="internal"><span class="codenumber">7.7.1</span> <span class="title">The Distance Between Two Pictures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-nearest" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Recognition by Nearest Reference</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-score" class="internal"><span class="codenumber">7.7.3</span> <span class="title">The Score and the Decision Boundary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-average" class="internal"><span class="codenumber">7.7.4</span> <span class="title">Learning Prototypes from Many Photographs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-accuracy" class="internal"><span class="codenumber">7.7.5</span> <span class="title">Assessing the Accuracy of the Verdicts*</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recognition.html#subsec-recognition-limits" class="internal"><span class="codenumber">7.7.6</span> <span class="title">What the Method Does Not See</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-eigenvalues.html" class="internal"><span class="codenumber">8</span> <span class="title">Eigenvalues and Eigenvectors (Spectral Theory)</span></a></div>
+<ul id="ptx-toc-group-ch-eigenvalues" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-eigenvalues.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-sec-eigenvalues" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalue-motivation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Motivation: Powers of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-eigenvalue-definition" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigenvalues.html#subsec-characteristic-polynomial" class="internal"><span class="codenumber">8.1.3</span> <span class="title">The Characteristic Polynomial</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diagonalization.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Multiplicity, Eigenspaces, and Diagonalization</span></a></div>
+<ul id="ptx-toc-group-sec-diagonalization" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-multiplicity" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Multiplicity and Basic Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-eigenspace" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diagonalization.html#subsec-similar-matrices" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Similar Matrices</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-applications.html" class="internal"><span class="codenumber">9</span> <span class="title">Applications of Spectral Theory</span></a></div>
+<ul id="ptx-toc-group-ch-applications" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-markov-chains.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Markov Chains and Steady States</span></a></div>
+<ul id="ptx-toc-group-sec-markov-chains" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-markov-motivation" class="internal"><span class="codenumber">9.1.1</span> <span class="title">A First Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-regular-stochastic" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Regular and Stochastic Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-markov-chains.html#subsec-steady-state" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Existence of a Unique Steady State</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-more-markov.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Long-Run Behaviour: Two More Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-epidemic-sage.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Epidemic Dynamics</span></a></div>
+<ul id="ptx-toc-group-sec-epidemic-sage" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-model" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-sage-setup" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Setting Up the Model in Sage</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-sage-plot" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Simulating and Plotting the Epidemic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-epidemic-sage.html#subsec-epidemic-long-run" class="internal"><span class="codenumber">9.3.4</span> <span class="title">The Long Run</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-epidemic-sage.html#exercises-epidemic-sage" class="internal"><span class="codenumber">9.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-pagerank.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The PageRank Algorithm: The 25 Billion Dollar Eigenvector</span></a></div>
+<ul id="ptx-toc-group-sec-pagerank" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-pagerank-probabilities" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Random Surfer</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-dangling-links" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Pages with No Outbound Links</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pagerank.html#subsec-damping" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Making the Model More Realistic (Adding Boredom)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-coupled-oscillators.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Coupled Oscillators and Normal Modes</span></a></div>
+<ul id="ptx-toc-group-sec-coupled-oscillators" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-setup" class="internal"><span class="codenumber">9.5.1</span> <span class="title">The Equations of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-decoupling" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Diagonalization Decouples the Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-coupled-oscillators.html#subsec-oscillators-example" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Solving a Specific Motion</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-problems.html" class="internal"><span class="codenumber">10</span> <span class="title">Problems</span></a></div>
+<ul id="ptx-toc-group-ch-problems" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-linear-systems.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul id="ptx-toc-group-sec-problems-linear-systems" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-linear-systems.html#sec-problems-linear-systems-2" class="internal"><span class="codenumber">10.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-vectors.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul id="ptx-toc-group-sec-problems-vectors" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-vectors.html#sec-problems-vectors-2" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-linear-transformations.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Linear Transformations</span></a></div>
+<ul id="ptx-toc-group-sec-problems-linear-transformations" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-linear-transformations.html#sec-problems-linear-transformations-2" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-matrix-algebra.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Matrix Algebra</span></a></div>
+<ul id="ptx-toc-group-sec-problems-matrix-algebra" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-matrix-algebra.html#sec-problems-matrix-algebra-2" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-subspaces.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Subspaces, Basis, and Dimension</span></a></div>
+<ul id="ptx-toc-group-sec-problems-subspaces" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-subspaces.html#sec-problems-subspaces-2" class="internal"><span class="codenumber">10.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-determinants.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-sec-problems-determinants" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-determinants.html#sec-problems-determinants-2" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-vector-spaces.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-sec-problems-vector-spaces" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-vector-spaces.html#sec-problems-vector-spaces-2" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-eigenvalues.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-sec-problems-eigenvalues" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-eigenvalues.html#sec-problems-eigenvalues-2" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-problems-applications.html" class="internal"><span class="codenumber">10.9</span> <span class="title">Applications of Spectral Theory</span></a></div>
+<ul id="ptx-toc-group-sec-problems-applications" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-problems-applications.html#sec-problems-applications-2" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-determinant-volume">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">An Application: The Determinant as Volume</span>
+</h1>
+<section class="introduction" id="sec-determinant-volume-2">
+<div class="para" id="sec-determinant-volume-2-1">When we first met the determinant in <a href="sec-cofactor-expansion.html" class="internal" title="Section 6.1: Cofactor Expansion">Section 6.1</a>, we mentioned that for a <span class="process-math">\(2 \times 2\)</span> matrix, <span class="process-math">\(|\det A|\)</span> is the area of the parallelogram spanned by the columns of <span class="process-math">\(A\text{.}\)</span> In this section we prove the three-dimensional version of that statement: the volume of the slanted box spanned by three vectors in <span class="process-math">\(\R^3\)</span> is the absolute value of a <span class="process-math">\(3 \times 3\)</span> determinant. We then draw a striking consequence for the linear transformation <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{:}\)</span> it scales the volume of every box by the same factor <span class="process-math">\(|\det A|\)</span> — a number that calculus calls the <dfn class="terminology">Jacobian determinant</dfn> of <span class="process-math">\(T\text{.}\)</span> We begin in two dimensions, with the picture from calculus that explains why anyone would want such a scaling factor in the first place.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-determinant-volume-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-jacobian-2d">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Motivation: Rectangles into Parallelograms</span>
+</h2>
+<div class="para logical" id="subsec-jacobian-2d-2">
+<div class="para">Consider a transformation — not necessarily linear — that carries the Cartesian <span class="process-math">\(xy\)</span>-plane to the <span class="process-math">\(uv\)</span>-plane,</div>
+<div class="displaymath process-math" id="subsec-jacobian-2d-2-5">
+\begin{equation*}
+T(x, y) = \big( u(x, y), \; v(x, y) \big),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are differentiable functions of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> Under such a map, straight lines generally bend: for instance, <span class="process-math">\(u = x^2 - y^2\text{,}\)</span> <span class="process-math">\(v = 2xy\)</span> sends the vertical and horizontal grid lines of the <span class="process-math">\(xy\)</span>-plane to two families of parabolas in the <span class="process-math">\(uv\)</span>-plane. A small rectangle of the grid is therefore carried to a small <em class="emphasis">curved</em> patch — but only slightly curved, and here is the key idea: <em class="emphasis">locally, the image of a rectangle is approximately a parallelogram</em>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-2d-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-jacobian-2d-3">
+<div class="para">To see why, take the rectangle <span class="process-math">\(R\)</span> with corner <span class="process-math">\((x_0, y_0)\)</span> and side lengths <span class="process-math">\(\Delta x\)</span> and <span class="process-math">\(\Delta y\text{.}\)</span> Its corner is sent to <span class="process-math">\((u_0, v_0) = T(x_0, y_0)\text{.}\)</span> Where do the two adjacent corners go? By the linear approximation of calculus, applied to each of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> (all partial derivatives evaluated at <span class="process-math">\((x_0, y_0)\)</span>),</div>
+<div class="displaymath process-math" id="subsec-jacobian-2d-3-9">
+\begin{align*}
+T(x_0 + \Delta x, \; y_0)
+\amp \approx \left( u_0 + \frac{\partial u}{\partial x}\Delta x, \;\;
+v_0 + \frac{\partial v}{\partial x}\Delta x \right),\\
+T(x_0, \; y_0 + \Delta y)
+\amp \approx \left( u_0 + \frac{\partial u}{\partial y}\Delta y, \;\;
+v_0 + \frac{\partial v}{\partial y}\Delta y \right).
+\end{align*}
+</div>
+<div class="para">In the <span class="process-math">\(uv\)</span>-plane, then, the two edges of <span class="process-math">\(R\)</span> leaving the corner <span class="process-math">\((x_0, y_0)\)</span> are carried, approximately, onto the two vectors</div>
+<div class="displaymath process-math" id="subsec-jacobian-2d-3-13">
+\begin{equation*}
+\vec{a} = \Delta x
+\begin{bmatrix} \dfrac{\partial u}{\partial x} \\[2ex] \dfrac{\partial v}{\partial x} \end{bmatrix},
+\qquad
+\vec{b} = \Delta y
+\begin{bmatrix} \dfrac{\partial u}{\partial y} \\[2ex] \dfrac{\partial v}{\partial y} \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">based at <span class="process-math">\((u_0, v_0)\text{,}\)</span> and the curved image patch is approximately the parallelogram they span.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-2d-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-jacobian-2d-map"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/prefigure/pf-jacobian-2d-map.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A small rectangle <span class="process-math">\(R\)</span> in the <span class="process-math">\(xy\)</span>-plane, with corner <span class="process-math">\((x_0, y_0)\)</span> and sides <span class="process-math">\(\Delta x\text{,}\)</span> <span class="process-math">\(\Delta y\text{,}\)</span> and its image under a transformation <span class="process-math">\(T\)</span> into the <span class="process-math">\(uv\)</span>-plane. The true image is the region bounded by the red curves; for a small rectangle it is approximately the shaded parallelogram spanned by the vectors <span class="process-math">\(\vec{a}\)</span> and <span class="process-math">\(\vec{b}\)</span> built from the partial derivatives of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 6.23"><a tabindex="-1" href="#fig-jacobian-2d-map" title="Copy heading and permalink for Figure 6.23" aria-label="Copy heading and permalink for Figure 6.23">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="subsec-jacobian-2d-5">
+<div class="para">Now compare areas. For this we need one fact of plane geometry, and we can establish it on the spot: <em class="emphasis">the parallelogram spanned by <span class="process-math">\(\vec{a} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}\)</span> and <span class="process-math">\(\vec{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}\)</span> has area <span class="process-math">\(| a_1b_2 - a_2b_1 |\)</span></em> — and the number inside the absolute value is exactly the <span class="process-math">\(2 \times 2\)</span> determinant <span class="process-math">\(\det [\, \vec{a} \mid \vec{b} \,]\text{.}\)</span> To see it, look at <a href="sec-determinant-volume.html#fig-parallelogram-area-proof" class="xref" data-knowl="./knowl/xref/fig-parallelogram-area-proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.24">Figure 6.24</a>: for the pictured configuration, enclose the parallelogram in the rectangle with sides <span class="process-math">\(a_1 + b_1\)</span> and <span class="process-math">\(a_2 + b_2\text{,}\)</span> and subtract the six pieces that surround it — two right triangles with legs <span class="process-math">\(a_1, a_2\text{,}\)</span> two right triangles with legs <span class="process-math">\(b_1, b_2\text{,}\)</span> and two <span class="process-math">\(a_2 \times b_1\)</span> rectangles:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-area-proof.html" id="subsec-jacobian-2d-5-12">
+\begin{equation*}
+(a_1 + b_1)(a_2 + b_2)
+- 2 \cdot \tfrac{1}{2} a_1 a_2
+- 2 \cdot \tfrac{1}{2} b_1 b_2
+- 2 \, a_2 b_1
+= a_1 b_2 - a_2 b_1.
+\end{equation*}
+</div>
+<div class="para">Any other configuration can be brought to the pictured one by reflecting the plane or by exchanging the names of the two vectors, and these moves change at most the <em class="emphasis">sign</em> of <span class="process-math">\(a_1b_2 - a_2b_1\text{,}\)</span> never the area — which is exactly why the absolute value appears.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-2d-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-parallelogram-area-proof"><div class="image-box" style="width: 52%; margin-left: 24%; margin-right: 24%;"><img src="generated/prefigure/pf-parallelogram-area-proof.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.24<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Why the area is <span class="process-math">\(a_1b_2 - a_2b_1\text{.}\)</span> The parallelogram spanned by <span class="process-math">\(\vec{a}\)</span> and <span class="process-math">\(\vec{b}\)</span> sits inside the <span class="process-math">\((a_1 + b_1) \times (a_2 + b_2)\)</span> rectangle. The grey complement consists of two right triangles with legs <span class="process-math">\(a_1, a_2\text{,}\)</span> two right triangles with legs <span class="process-math">\(b_1, b_2\text{,}\)</span> and two <span class="process-math">\(a_2 \times b_1\)</span> rectangles; subtracting them from the big rectangle leaves <span class="process-math">\(a_1b_2 - a_2b_1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 6.24"><a tabindex="-1" href="#fig-parallelogram-area-proof" title="Copy heading and permalink for Figure 6.24" aria-label="Copy heading and permalink for Figure 6.24">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="subsec-jacobian-2d-7">
+<div class="para">Applying this fact to our two edge vectors,</div>
+<div class="displaymath process-math" id="subsec-jacobian-2d-7-1">
+\begin{equation*}
+\text{area of parallelogram}
+= \left| \det \left[ \, \vec{a} \; | \; \vec{b} \, \right] \right|
+= \left| \det \begin{bmatrix}
+\dfrac{\partial u}{\partial x} \amp \dfrac{\partial u}{\partial y} \\[2ex]
+\dfrac{\partial v}{\partial x} \amp \dfrac{\partial v}{\partial y}
+\end{bmatrix} \right| \, \Delta x \, \Delta y,
+\end{equation*}
+</div>
+<div class="para">where the last step factors <span class="process-math">\(\Delta x\)</span> out of the first column and <span class="process-math">\(\Delta y\)</span> out of the second — visible directly in the formula <span class="process-math">\(a_1b_2 - a_2b_1\text{,}\)</span> since each term contains one entry from each column. Since <span class="process-math">\(\Delta x \, \Delta y\)</span> is the area of the rectangle <span class="process-math">\(R\text{,}\)</span> the determinant in the middle — the <dfn class="terminology">Jacobian determinant</dfn> of the transformation, often written <span class="process-math">\(\dfrac{\partial(u, v)}{\partial(x, y)}\)</span> — is precisely the local area-magnification factor:</div>
+<div class="displaymath process-math" id="subsec-jacobian-2d-7-12">
+\begin{equation*}
+\text{area of image} \approx
+\left| \frac{\partial(u, v)}{\partial(x, y)} \right| \cdot \text{area of } R.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-2d-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-jacobian-2d-8">
+<div class="para">One more observation ties this to linear algebra. Collect the four partial derivatives into the <dfn class="terminology">Jacobian matrix</dfn>
+</div>
+<div class="displaymath process-math" id="subsec-jacobian-2d-8-2">
+\begin{equation*}
+DT = \begin{bmatrix}
+\dfrac{\partial u}{\partial x} \amp \dfrac{\partial u}{\partial y} \\[2ex]
+\dfrac{\partial v}{\partial x} \amp \dfrac{\partial v}{\partial y}
+\end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">evaluated at <span class="process-math">\((x_0, y_0)\text{.}\)</span> The two approximations above are exactly the statement</div>
+<div class="displaymath process-math" id="subsec-jacobian-2d-8-4">
+\begin{equation*}
+T(x, y) \approx T(x_0, y_0)
++ DT \begin{bmatrix} x - x_0 \\ y - y_0 \end{bmatrix}
+\qquad \text{near } (x_0, y_0),
+\end{equation*}
+</div>
+<div class="para">and the <em class="emphasis">linear transformation</em> with matrix <span class="process-math">\(DT\)</span> carries the edge vectors <span class="process-math">\(\Delta x \, \vec{e}_1\)</span> and <span class="process-math">\(\Delta y \, \vec{e}_2\)</span> of the rectangle exactly onto <span class="process-math">\(\vec{a}\)</span> and <span class="process-math">\(\vec{b}\text{;}\)</span> the term <span class="process-math">\(T(x_0, y_0)\)</span> merely translates the result into place. So the two approximations are one and the same: <em class="emphasis">replacing the curved image patch by a parallelogram amounts to replacing <span class="process-math">\(T\text{,}\)</span> near the point, by a linear transformation</em> — and the determinant of that linear transformation measures how areas scale.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-2d-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="eg-polar-jacobian" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cartesian to Polar Coordinates.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="eg-polar-jacobian-2-1">
+<div class="para">The most familiar instance of this picture is the change between polar and Cartesian coordinates. Here the roles of the variables are played by <span class="process-math">\((r, \theta)\)</span> as input and <span class="process-math">\((x, y)\)</span> as output:</div>
+<div class="displaymath process-math" id="eg-polar-jacobian-2-1-3">
+\begin{equation*}
+T(r, \theta) = (x, y) = (r\cos\theta, \; r\sin\theta).
+\end{equation*}
+</div>
+<div class="para">Find the Jacobian determinant of <span class="process-math">\(T\)</span> and interpret it geometrically.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-polar-jacobian-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="eg-polar-jacobian-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="eg-polar-jacobian-3-1">
+<div class="para">Collecting the four partial derivatives into the Jacobian matrix,</div>
+<div class="displaymath process-math" id="eg-polar-jacobian-3-1-1">
+\begin{equation*}
+DT = \begin{bmatrix}
+\dfrac{\partial x}{\partial r} \amp \dfrac{\partial x}{\partial \theta} \\[2ex]
+\dfrac{\partial y}{\partial r} \amp \dfrac{\partial y}{\partial \theta}
+\end{bmatrix}
+= \begin{bmatrix}
+\cos\theta \amp -r\sin\theta \\
+\sin\theta \amp r\cos\theta
+\end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" id="eg-polar-jacobian-3-1-2">
+\begin{equation*}
+\frac{\partial(x, y)}{\partial(r, \theta)}
+= \cos\theta \cdot r\cos\theta - (-r\sin\theta) \cdot \sin\theta
+= r\cos^2\theta + r\sin^2\theta = r.
+\end{equation*}
+</div>
+<div class="para">By the discussion above, a small <span class="process-math">\(\Delta r \times \Delta\theta\)</span> rectangle with corner <span class="process-math">\((r_0, \theta_0)\)</span> is therefore carried to a patch of area approximately <span class="process-math">\(r_0 \, \Delta r \, \Delta\theta\)</span> — the area element <span class="process-math">\(dA = r \, dr \, d\theta\)</span> of double integrals in polar coordinates.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-polar-jacobian-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="eg-polar-jacobian-3-2">
+<div class="para">Here the geometry can be checked by hand, because we know exactly what the image patch is: the <dfn class="terminology">polar rectangle</dfn> between the circles of radii <span class="process-math">\(r_0\)</span> and <span class="process-math">\(r_0 + \Delta r\)</span> and the rays at angles <span class="process-math">\(\theta_0\)</span> and <span class="process-math">\(\theta_0 + \Delta\theta\)</span> (<a href="sec-determinant-volume.html#fig-polar-jacobian" class="xref" data-knowl="./knowl/xref/fig-polar-jacobian.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.26">Figure 6.26</a>). The two edge vectors of the approximating parallelogram are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-polar-jacobian.html" id="eg-polar-jacobian-3-2-7">
+\begin{equation*}
+\vec{a} = \Delta r \begin{bmatrix} \cos\theta_0 \\ \sin\theta_0 \end{bmatrix},
+\qquad
+\vec{b} = r_0 \, \Delta\theta \begin{bmatrix} -\sin\theta_0 \\ \cos\theta_0 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">— <span class="process-math">\(\Delta r\)</span> times the first column of <span class="process-math">\(DT\)</span> and <span class="process-math">\(\Delta\theta\)</span> times the second. They are perpendicular, with lengths <span class="process-math">\(\Delta r\)</span> (the radial thickness) and <span class="process-math">\(r_0 \, \Delta\theta\)</span> (the arc length), so the parallelogram is an honest rectangle of area <span class="process-math">\(\Delta r \cdot r_0\, \Delta\theta\text{,}\)</span> in agreement with the Jacobian. In fact, for this map the exact area of the patch is elementary:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-polar-jacobian.html" id="eg-polar-jacobian-3-2-15">
+\begin{equation*}
+\tfrac{1}{2}\left( (r_0 + \Delta r)^2 - r_0^2 \right) \Delta\theta
+= r_0 \, \Delta r \, \Delta\theta
++ \tfrac{1}{2} (\Delta r)^2 \, \Delta\theta,
+\end{equation*}
+</div>
+<div class="para">which is the Jacobian’s answer plus an error that is negligible when <span class="process-math">\(\Delta r\)</span> is small — a concrete measure of the word “approximately”.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-polar-jacobian-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-polar-jacobian"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/prefigure/pf-polar-jacobian.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.26<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The polar coordinate map carries a <span class="process-math">\(\Delta r \times \Delta\theta\)</span> rectangle to the polar rectangle (red) between two circles and two rays. The approximating parallelogram (shaded) has perpendicular edges <span class="process-math">\(\vec{a}\text{,}\)</span> of length <span class="process-math">\(\Delta r\text{,}\)</span> and <span class="process-math">\(\vec{b}\text{,}\)</span> of length <span class="process-math">\(r_0 \, \Delta\theta\text{,}\)</span> so its area is <span class="process-math">\(r_0 \, \Delta r \, \Delta\theta\)</span> — the Jacobian determinant <span class="process-math">\(r\)</span> at work.<div class="autopermalink" aria-hidden="true" data-description="Figure 6.26"><a tabindex="-1" href="#fig-polar-jacobian" title="Copy heading and permalink for Figure 6.26" aria-label="Copy heading and permalink for Figure 6.26">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 6.25.1"><a tabindex="-1" href="#eg-polar-jacobian-3" title="Copy heading and permalink for Solution 6.25.1" aria-label="Copy heading and permalink for Solution 6.25.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.25: Cartesian to Polar Coordinates"><a tabindex="-1" href="#eg-polar-jacobian" title="Copy heading and permalink for Example 6.25: Cartesian to Polar Coordinates" aria-label="Copy heading and permalink for Example 6.25: Cartesian to Polar Coordinates">🔗</a></div>
+</article></details>
+<div class="para" id="subsec-jacobian-2d-10">This is why the question “how does a linear transformation scale area and volume?” deserves an exact answer. The rest of this section gives one in <span class="process-math">\(\R^3\text{:}\)</span> for a genuinely linear map there is no approximation at all, and the scaling factor is exactly the absolute determinant. The first job is to build the three-dimensional analogue of the little area formula we just proved — that is what the cross product is for.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-2d-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.1: Motivation: Rectangles into Parallelograms"><a tabindex="-1" href="#subsec-jacobian-2d" title="Copy heading and permalink for Subsection 6.4.1: Motivation: Rectangles into Parallelograms" aria-label="Copy heading and permalink for Subsection 6.4.1: Motivation: Rectangles into Parallelograms">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-dot-cross-tools">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Two Tools: the Dot Product and the Cross Product</span>
+</h2>
+<article class="definition definition-like" id="def-dot-product"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dot Product, Length, and Angle.</span>
+</h3>
+<div class="para logical" id="def-dot-product-2-1">
+<div class="para">For <span class="process-math">\(\vec{u} = \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}\)</span> and <span class="process-math">\(\vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}\)</span> in <span class="process-math">\(\R^3\text{,}\)</span> the <dfn class="terminology">dot product</dfn> and the <dfn class="terminology">length</dfn> (or norm) are</div>
+<div class="displaymath process-math" id="def-dot-product-2-1-6">
+\begin{equation*}
+\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + u_3v_3,
+\qquad
+\| \vec{u} \| = \sqrt{\vec{u} \cdot \vec{u}},
+\end{equation*}
+</div>
+<div class="para">and the angle <span class="process-math">\(\theta \in [0, \pi]\)</span> between two nonzero vectors is determined by <span class="process-math">\(\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-dot-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 6.27: Dot Product, Length, and Angle"><a tabindex="-1" href="#def-dot-product" title="Copy heading and permalink for Definition 6.27: Dot Product, Length, and Angle" aria-label="Copy heading and permalink for Definition 6.27: Dot Product, Length, and Angle">🔗</a></div>
+</article>
+<article class="definition definition-like" id="def-cross-product"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cross Product.</span>
+</h3>
+<div class="para logical" id="def-cross-product-2-1">
+<div class="para">The <dfn class="terminology">cross product</dfn> of <span class="process-math">\(\vec{u}, \vec{v} \in \R^3\)</span> is the vector</div>
+<div class="displaymath process-math" id="def-cross-product-2-1-3">
+\begin{equation*}
+\vec{u} \times \vec{v}
+= \begin{bmatrix} u_2v_3 - u_3v_2 \\ u_3v_1 - u_1v_3 \\ u_1v_2 - u_2v_1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-cross-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 6.28: Cross Product"><a tabindex="-1" href="#def-cross-product" title="Copy heading and permalink for Definition 6.28: Cross Product" aria-label="Copy heading and permalink for Definition 6.28: Cross Product">🔗</a></div>
+</article>
+<article class="remark remark-like" id="rem-cross-mnemonic"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="rem-cross-mnemonic-1">
+<div class="para">There is no need to memorize the entries: they are exactly the three <span class="process-math">\(2 \times 2\)</span> cofactors from <a href="sec-cofactor-expansion.html" class="internal" title="Section 6.1: Cofactor Expansion">Section 6.1</a>. Symbolically, expanding along the first row,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-cofactor-expansion.html" id="rem-cross-mnemonic-1-3">
+\begin{equation*}
+\vec{u} \times \vec{v}
+= \det \begin{bmatrix}
+\vec{e}_1 \amp \vec{e}_2 \amp \vec{e}_3 \\
+u_1 \amp u_2 \amp u_3 \\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\vec{e}_1, \vec{e}_2, \vec{e}_3\)</span> are the standard basis vectors.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-cross-mnemonic-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 6.29"><a tabindex="-1" href="#rem-cross-mnemonic" title="Copy heading and permalink for Remark 6.29" aria-label="Copy heading and permalink for Remark 6.29">🔗</a></div>
+</article>
+<div class="para" id="subsec-dot-cross-tools-5">The cross product packages two geometric facts, both provable by direct computation with the formulas above.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-dot-cross-tools-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-cross-area"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Length of the Cross Product is an Area.</span>
+</h3>
+<div class="para logical" id="lem-cross-area-2-1">
+<div class="para">For all <span class="process-math">\(\vec{u}, \vec{v} \in \R^3\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="lem-cross-area-2-1-2">
+\begin{equation*}
+\| \vec{u} \times \vec{v} \|^2
+= \| \vec{u} \|^2 \| \vec{v} \|^2 - (\vec{u} \cdot \vec{v})^2,
+\end{equation*}
+</div>
+<div class="para">and consequently the parallelogram with edges <span class="process-math">\(\vec{u}\text{,}\)</span> <span class="process-math">\(\vec{v}\)</span> has area <span class="process-math">\(\| \vec{u} \| \| \vec{v} \| \sin\theta = \| \vec{u} \times \vec{v} \|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-cross-area-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 6.30: Length of the Cross Product is an Area"><a tabindex="-1" href="#lem-cross-area" title="Copy heading and permalink for Lemma 6.30: Length of the Cross Product is an Area" aria-label="Copy heading and permalink for Lemma 6.30: Length of the Cross Product is an Area">🔗</a></div>
+</article>
+<details id="lem-cross-area-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="lem-cross-area-3-1">
+<div class="para">Expanding both sides in coordinates,</div>
+<div class="displaymath process-math" id="lem-cross-area-3-1-1">
+\begin{equation*}
+\| \vec{u} \times \vec{v} \|^2 = \sum_{i \lt j} (u_iv_j - u_jv_i)^2,
+\qquad
+\| \vec{u} \|^2 \| \vec{v} \|^2 - (\vec{u} \cdot \vec{v})^2
+= \Big( \sum_i u_i^2 \Big) \Big( \sum_j v_j^2 \Big)
+- \Big( \sum_i u_iv_i \Big)^2,
+\end{equation*}
+</div>
+<div class="para">and multiplying out the right-hand side, the terms <span class="process-math">\(u_i^2v_i^2\)</span> cancel and the cross terms regroup as <span class="process-math">\(\sum_{i \lt j}(u_iv_j - u_jv_i)^2\)</span> — an algebraic identity checked by direct expansion. Then, using <span class="process-math">\(\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="lem-cross-area-3-1-6">
+\begin{equation*}
+\| \vec{u} \times \vec{v} \|^2
+= \| \vec{u} \|^2 \| \vec{v} \|^2 \left( 1 - \cos^2\theta \right)
+= \left( \| \vec{u} \| \| \vec{v} \| \sin\theta \right)^2,
+\end{equation*}
+</div>
+<div class="para">and both sides are nonnegative, so <span class="process-math">\(\| \vec{u} \times \vec{v} \| = \| \vec{u} \| \| \vec{v} \| \sin\theta\text{,}\)</span> which is base times height for the parallelogram.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-cross-area-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.30.1"><a tabindex="-1" href="#lem-cross-area-3" title="Copy heading and permalink for Proof 6.30.1" aria-label="Copy heading and permalink for Proof 6.30.1">🔗</a></div>
+</article></details>
+<article class="lemma theorem-like" id="lem-cross-orthogonal"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Cross Product is Perpendicular to Both Factors.</span>
+</h3>
+<div class="para" id="lem-cross-orthogonal-2-1">
+<span class="process-math">\(\vec{u} \cdot (\vec{u} \times \vec{v}) = 0\)</span> and <span class="process-math">\(\vec{v} \cdot (\vec{u} \times \vec{v}) = 0\text{.}\)</span> Hence, when <span class="process-math">\(\vec{n} = \vec{u} \times \vec{v} \neq \vec{0}\text{,}\)</span> the vector <span class="process-math">\(\vec{n}\)</span> is perpendicular to the entire plane <span class="process-math">\(\operatorname{Span}\{ \vec{u}, \vec{v} \}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-cross-orthogonal-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 6.31: The Cross Product is Perpendicular to Both Factors"><a tabindex="-1" href="#lem-cross-orthogonal" title="Copy heading and permalink for Lemma 6.31: The Cross Product is Perpendicular to Both Factors" aria-label="Copy heading and permalink for Lemma 6.31: The Cross Product is Perpendicular to Both Factors">🔗</a></div>
+</article>
+<details id="lem-cross-orthogonal-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="lem-cross-orthogonal-3-1">
+<div class="para">Direct computation:</div>
+<div class="displaymath process-math" id="lem-cross-orthogonal-3-1-1">
+\begin{equation*}
+\vec{u} \cdot (\vec{u} \times \vec{v})
+= u_1(u_2v_3 - u_3v_2) + u_2(u_3v_1 - u_1v_3) + u_3(u_1v_2 - u_2v_1) = 0
+\end{equation*}
+</div>
+<div class="para">after cancellation in pairs, and symmetrically for <span class="process-math">\(\vec{v}\text{.}\)</span> Any vector of the plane has the form <span class="process-math">\(s\vec{u} + t\vec{v}\text{,}\)</span> and <span class="process-math">\((s\vec{u} + t\vec{v}) \cdot \vec{n} = s(\vec{u} \cdot \vec{n}) + t(\vec{v} \cdot \vec{n}) = 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-cross-orthogonal-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.31.1"><a tabindex="-1" href="#lem-cross-orthogonal-3" title="Copy heading and permalink for Proof 6.31.1" aria-label="Copy heading and permalink for Proof 6.31.1">🔗</a></div>
+</article></details>
+<article class="lemma theorem-like" id="lem-triple-product"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Scalar Triple Product is a Determinant.</span>
+</h3>
+<div class="para logical" id="lem-triple-product-2-1">
+<div class="para">For <span class="process-math">\(\vec{u}, \vec{v}, \vec{w} \in \R^3\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="lem-triple-product-2-1-2">
+\begin{equation*}
+\vec{w} \cdot (\vec{u} \times \vec{v})
+= \det \begin{bmatrix}
+u_1 \amp v_1 \amp w_1 \\
+u_2 \amp v_2 \amp w_2 \\
+u_3 \amp v_3 \amp w_3
+\end{bmatrix}
+= \det \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right].
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-triple-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 6.32: The Scalar Triple Product is a Determinant"><a tabindex="-1" href="#lem-triple-product" title="Copy heading and permalink for Lemma 6.32: The Scalar Triple Product is a Determinant" aria-label="Copy heading and permalink for Lemma 6.32: The Scalar Triple Product is a Determinant">🔗</a></div>
+</article>
+<details id="lem-triple-product-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="lem-triple-product-3-1">
+<div class="para">Expanding the dot product,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-cofactor-expansion.html" id="lem-triple-product-3-1-1">
+\begin{equation*}
+\vec{w} \cdot (\vec{u} \times \vec{v})
+= w_1(u_2v_3 - u_3v_2) + w_2(u_3v_1 - u_1v_3) + w_3(u_1v_2 - u_2v_1),
+\end{equation*}
+</div>
+<div class="para">and comparing with the cofactor expansion of <span class="process-math">\(\det [\, \vec{u} \mid \vec{v} \mid \vec{w} \,]\)</span> along its third column (<a href="sec-cofactor-expansion.html#def-cofactor-expansion" class="xref" data-knowl="./knowl/xref/def-cofactor-expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.4: Cofactor Expansion Along Row i or Column j">Definition 6.4</a>): the three <span class="process-math">\(2 \times 2\)</span> minors of the columns <span class="process-math">\(\vec{u}, \vec{v}\)</span> are exactly the parenthesized factors, with matching signs. The two expressions agree term by term.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-triple-product-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.32.1"><a tabindex="-1" href="#lem-triple-product-3" title="Copy heading and permalink for Proof 6.32.1" aria-label="Copy heading and permalink for Proof 6.32.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.2: Two Tools: the Dot Product and the Cross Product"><a tabindex="-1" href="#subsec-dot-cross-tools" title="Copy heading and permalink for Subsection 6.4.2: Two Tools: the Dot Product and the Cross Product" aria-label="Copy heading and permalink for Subsection 6.4.2: Two Tools: the Dot Product and the Cross Product">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-parallelepiped-volume">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Volume of a Parallelepiped</span>
+</h2>
+<article class="definition definition-like" id="def-parallelepiped"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parallelepiped.</span>
+</h3>
+<div class="para logical" id="def-parallelepiped-2-1">
+<div class="para">Given <span class="process-math">\(\vec{u}, \vec{v}, \vec{w} \in \R^3\text{,}\)</span> the <dfn class="terminology">parallelepiped</dfn> they span is</div>
+<div class="displaymath process-math" id="def-parallelepiped-2-1-3">
+\begin{equation*}
+P(\vec{u}, \vec{v}, \vec{w})
+= \left\{ t_1\vec{u} + t_2\vec{v} + t_3\vec{w}
+\; : \; 0 \leq t_1, t_2, t_3 \leq 1 \right\}:
+\end{equation*}
+</div>
+<div class="para">the slanted box with one corner at the origin and edges <span class="process-math">\(\vec{u}\text{,}\)</span> <span class="process-math">\(\vec{v}\text{,}\)</span> <span class="process-math">\(\vec{w}\text{.}\)</span> Its volume is <em class="emphasis">base times height</em>: taking the parallelogram with edges <span class="process-math">\(\vec{u}, \vec{v}\)</span> as the base,</div>
+<div class="displaymath process-math" id="def-parallelepiped-2-1-9">
+\begin{equation*}
+\operatorname{vol} P(\vec{u}, \vec{v}, \vec{w})
+= (\text{area of base}) \times h,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(h\)</span> is the perpendicular distance from the tip of <span class="process-math">\(\vec{w}\)</span> to the plane of the base.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-parallelepiped-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 6.33: Parallelepiped"><a tabindex="-1" href="#def-parallelepiped" title="Copy heading and permalink for Definition 6.33: Parallelepiped" aria-label="Copy heading and permalink for Definition 6.33: Parallelepiped">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="thm-volume-det"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume Equals the Absolute Determinant.</span>
+</h3>
+<div class="para logical" id="thm-volume-det-2-1">
+<div class="displaymath process-math" id="thm-volume-det-2-1-1">
+\begin{equation*}
+\operatorname{vol} P(\vec{u}, \vec{v}, \vec{w})
+= \left| \det \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right] \right|.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-volume-det-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 6.34: Volume Equals the Absolute Determinant"><a tabindex="-1" href="#thm-volume-det" title="Copy heading and permalink for Theorem 6.34: Volume Equals the Absolute Determinant" aria-label="Copy heading and permalink for Theorem 6.34: Volume Equals the Absolute Determinant">🔗</a></div>
+</article>
+<details id="thm-volume-det-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="thm-volume-det-3-1">
+<div class="para">Assume first that the base is honest, so <span class="process-math">\(\vec{n} = \vec{u} \times \vec{v} \neq \vec{0}\text{.}\)</span> By <a href="sec-determinant-volume.html#lem-cross-orthogonal" class="xref" data-knowl="./knowl/xref/lem-cross-orthogonal.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.31: The Cross Product is Perpendicular to Both Factors">Lemma 6.31</a>, <span class="process-math">\(\vec{n}\)</span> points along the perpendicular to the base plane. If <span class="process-math">\(\varphi\)</span> is the angle between <span class="process-math">\(\vec{w}\)</span> and <span class="process-math">\(\vec{n}\text{,}\)</span> then the height of the box is the leg of a right triangle with hypotenuse <span class="process-math">\(\| \vec{w} \|\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-cross-orthogonal.html ./knowl/xref/lem-cross-area.html ./knowl/xref/lem-triple-product.html" id="thm-volume-det-3-1-8">
+\begin{equation*}
+h = \| \vec{w} \| \, | \cos\varphi |
+= \| \vec{w} \| \, \frac{| \vec{w} \cdot \vec{n} |}{\| \vec{w} \| \| \vec{n} \|}
+= \frac{| \vec{w} \cdot (\vec{u} \times \vec{v}) |}{\| \vec{u} \times \vec{v} \|}.
+\end{equation*}
+</div>
+<div class="para">Therefore, by <a href="sec-determinant-volume.html#lem-cross-area" class="xref" data-knowl="./knowl/xref/lem-cross-area.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.30: Length of the Cross Product is an Area">Lemma 6.30</a> and <a href="sec-determinant-volume.html#lem-triple-product" class="xref" data-knowl="./knowl/xref/lem-triple-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.32: The Scalar Triple Product is a Determinant">Lemma 6.32</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-cross-orthogonal.html ./knowl/xref/lem-cross-area.html ./knowl/xref/lem-triple-product.html" id="thm-volume-det-3-1-11">
+\begin{equation*}
+\operatorname{vol} = (\text{area of base}) \times h
+= \| \vec{u} \times \vec{v} \|
+\cdot \frac{| \vec{w} \cdot (\vec{u} \times \vec{v}) |}{\| \vec{u} \times \vec{v} \|}
+= | \vec{w} \cdot (\vec{u} \times \vec{v}) |
+= \left| \det \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right] \right|.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-volume-det-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-volume-det-3-2">If instead <span class="process-math">\(\vec{u} \times \vec{v} = \vec{0}\text{,}\)</span> then <span class="process-math">\(\sin\theta = 0\)</span> by <a href="sec-determinant-volume.html#lem-cross-area" class="xref" data-knowl="./knowl/xref/lem-cross-area.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.30: Length of the Cross Product is an Area">Lemma 6.30</a>, so <span class="process-math">\(\vec{u}\)</span> and <span class="process-math">\(\vec{v}\)</span> are parallel (or one is <span class="process-math">\(\vec{0}\)</span>), the box is flat, and <span class="process-math">\(\operatorname{vol} = 0\text{.}\)</span> Consistently, the matrix has linearly dependent columns and its determinant is <span class="process-math">\(0\text{.}\)</span> The theorem holds in all cases.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-volume-det-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.34.1"><a tabindex="-1" href="#thm-volume-det-3" title="Copy heading and permalink for Proof 6.34.1" aria-label="Copy heading and permalink for Proof 6.34.1">🔗</a></div>
+</article></details>
+<figure class="figure figure-like" id="fig-parallelepiped-volume"><div class="interactive-iframe-container"><iframe src="external/demos-manim/volume.html?u=2,0,0&amp;v=1,2,0&amp;w=0.5,0.5,1.5&amp;theme=dark" id="int-parallelepiped-volume" style="width:396px; height:495px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-parallelepiped-volume.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.35<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The theorem, live. The parallelepiped spanned by <span class="process-math">\(\vec{u}\)</span> (yellow), <span class="process-math">\(\vec{v}\)</span> (teal) and <span class="process-math">\(\vec{w}\)</span> (red), with the base parallelogram shaded, the normal <span class="process-math">\(\vec{n} = \vec{u} \times \vec{v}\)</span> in violet, and the dashed height drop from the tip of <span class="process-math">\(\vec{w}\)</span> to the base plane. The readout shows base area <span class="process-math">\(\| \vec{u} \times \vec{v} \|\text{,}\)</span> height <span class="process-math">\(h\text{,}\)</span> the determinant, and the volume. Drag the heads of the three vectors and watch <span class="process-math">\(\operatorname{vol} = |\det|\)</span> hold; slide <span class="process-math">\(\vec{w}\)</span> into the base plane and the volume dies to zero exactly as the determinant does. Drag the background to rotate.<div class="autopermalink" aria-hidden="true" data-description="Figure 6.35"><a tabindex="-1" href="#fig-parallelepiped-volume" title="Copy heading and permalink for Figure 6.35" aria-label="Copy heading and permalink for Figure 6.35">🔗</a></div></figcaption>
+</figure>
+<article class="remark remark-like" id="rem-why-det"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Why the Determinant Had to Appear.</span>
+</h3>
+<div class="para logical" id="rem-why-det-2">
+<div class="para">Consider the <em class="emphasis">signed</em> volume <span class="process-math">\(D(\vec{u}, \vec{v}, \vec{w}) = \vec{w} \cdot (\vec{u} \times \vec{v})\)</span> as a function of the three edges. It is:</div>
+<ol class="upper-roman ol-marker-1" id="rem-why-det-2-3">
+<li id="rem-why-det-2-3-1">
+<div class="para" id="rem-why-det-2-3-1-1">linear in each edge separately, by linearity of the dot and cross products in each argument;<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-why-det-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item I"><a tabindex="-1" href="#rem-why-det-2-3-1" title="Copy heading and permalink for Item I" aria-label="Copy heading and permalink for Item I">🔗</a></div>
+</li>
+<li id="rem-why-det-2-3-2">
+<div class="para" id="rem-why-det-2-3-2-1">alternating — if two edges coincide, the box is flat and <span class="process-math">\(D = 0\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-why-det-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item II"><a tabindex="-1" href="#rem-why-det-2-3-2" title="Copy heading and permalink for Item II" aria-label="Copy heading and permalink for Item II">🔗</a></div>
+</li>
+<li id="rem-why-det-2-3-3">
+<div class="para" id="rem-why-det-2-3-3-1">normalized — the unit cube <span class="process-math">\(P(\vec{e}_1, \vec{e}_2, \vec{e}_3)\)</span> gives <span class="process-math">\(D = 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-why-det-2-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item III"><a tabindex="-1" href="#rem-why-det-2-3-3" title="Copy heading and permalink for Item III" aria-label="Copy heading and permalink for Item III">🔗</a></div>
+</li>
+</ol>
+<div class="para">The determinant is the unique function of the columns with these three properties, so signed volume <em class="emphasis">is</em> the determinant, and unsigned volume is <span class="process-math">\(|\det|\text{.}\)</span> Property (II) also explains shear invariance: <span class="process-math">\(D(\vec{u}, \vec{v}, \vec{w} + c\vec{u}) = D(\vec{u}, \vec{v}, \vec{w})\text{,}\)</span> so sliding the top face parallel to the base changes neither the base nor the height. This is the geometric face of a fact we proved algebraically in <a href="sec-determinants-row-operations.html" class="internal" title="Section 6.2: Determinants and Row Operations">Section 6.2</a>: adding a multiple of one column to another does not change the determinant.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-why-det-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 6.36: Why the Determinant Had to Appear"><a tabindex="-1" href="#rem-why-det" title="Copy heading and permalink for Remark 6.36: Why the Determinant Had to Appear" aria-label="Copy heading and permalink for Remark 6.36: Why the Determinant Had to Appear">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.3: The Volume of a Parallelepiped"><a tabindex="-1" href="#subsec-parallelepiped-volume" title="Copy heading and permalink for Subsection 6.4.3: The Volume of a Parallelepiped" aria-label="Copy heading and permalink for Subsection 6.4.3: The Volume of a Parallelepiped">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-jacobian">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Jacobian Determinant of a Linear Map</span>
+</h2>
+<div class="para logical" id="subsec-jacobian-2">
+<div class="para">Let <span class="process-math">\(T : \R^3 \to \R^3\)</span> be the linear transformation <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> with <span class="process-math">\(A = \begin{bmatrix} a_{ij} \end{bmatrix}\text{.}\)</span> Its component functions are</div>
+<div class="displaymath process-math" id="subsec-jacobian-2-4">
+\begin{equation*}
+T_i(x_1, x_2, x_3) = a_{i1}x_1 + a_{i2}x_2 + a_{i3}x_3,
+\qquad \text{so} \qquad
+\frac{\partial T_i}{\partial x_j} = a_{ij}.
+\end{equation*}
+</div>
+<div class="para">In the language of multivariable calculus: the matrix of partial derivatives of <span class="process-math">\(T\)</span> — its <dfn class="terminology">Jacobian matrix</dfn> — is the constant matrix <span class="process-math">\(A\)</span> at every point, and the <dfn class="terminology">Jacobian determinant</dfn> of <span class="process-math">\(T\)</span> is the constant <span class="process-math">\(\det A\text{.}\)</span> A linear map is its own linear approximation everywhere. The next lemma says exactly what this number does.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-image-parallelepiped"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">How <span class="process-math">\(T\)</span> Transforms Parallelepipeds.</span>
+</h3>
+<div class="para logical" id="lem-image-parallelepiped-2-1">
+<div class="para">
+<span class="process-math">\(T\)</span> maps <span class="process-math">\(P(\vec{u}, \vec{v}, \vec{w})\)</span> onto <span class="process-math">\(P(A\vec{u}, A\vec{v}, A\vec{w})\text{,}\)</span> and</div>
+<div class="displaymath process-math" id="lem-image-parallelepiped-2-1-4">
+\begin{equation*}
+\operatorname{vol} T\big( P(\vec{u}, \vec{v}, \vec{w}) \big)
+= | \det A | \cdot \operatorname{vol} P(\vec{u}, \vec{v}, \vec{w}).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-image-parallelepiped-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 6.37: How T Transforms Parallelepipeds"><a tabindex="-1" href="#lem-image-parallelepiped" title="Copy heading and permalink for Lemma 6.37: How T Transforms Parallelepipeds" aria-label="Copy heading and permalink for Lemma 6.37: How T Transforms Parallelepipeds">🔗</a></div>
+</article>
+<details id="lem-image-parallelepiped-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="lem-image-parallelepiped-3-1">By linearity, <span class="process-math">\(T(t_1\vec{u} + t_2\vec{v} + t_3\vec{w}) = t_1A\vec{u} + t_2A\vec{v} + t_3A\vec{w}\)</span> with the same coefficients <span class="process-math">\(t_i \in [0, 1]\text{:}\)</span> the image of a parallelepiped under a linear map is again a parallelepiped, spanned by the images of its edges.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-image-parallelepiped-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-image-parallelepiped-3-2">
+<div class="para">Now let <span class="process-math">\(V = \left[ \, \vec{u} \; | \; \vec{v} \; | \; \vec{w} \, \right]\text{.}\)</span> The edge matrix of the image is <span class="process-math">\(\left[ \, A\vec{u} \; | \; A\vec{v} \; | \; A\vec{w} \, \right] = AV\text{.}\)</span> By <a href="sec-determinant-volume.html#thm-volume-det" class="xref" data-knowl="./knowl/xref/thm-volume-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.34: Volume Equals the Absolute Determinant">Theorem 6.34</a> and the product rule for determinants (<a href="sec-determinants-inverses-products.html#thm-det-product" class="xref" data-knowl="./knowl/xref/thm-det-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.19: Determinant of a Product">Theorem 6.19</a>),</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-volume-det.html ./knowl/xref/thm-det-product.html" id="lem-image-parallelepiped-3-2-5">
+\begin{equation*}
+\operatorname{vol} P(A\vec{u}, A\vec{v}, A\vec{w})
+= | \det (AV) |
+= | \det A | \, | \det V |
+= | \det A | \cdot \operatorname{vol} P(\vec{u}, \vec{v}, \vec{w}).
+\end{equation*}
+</div>
+<div class="para">The entire geometric content is carried by one algebraic identity: <span class="process-math">\(\det(AV) = \det A \, \det V\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-image-parallelepiped-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.37.1"><a tabindex="-1" href="#lem-image-parallelepiped-3" title="Copy heading and permalink for Proof 6.37.1" aria-label="Copy heading and permalink for Proof 6.37.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="subsec-jacobian-4">
+<div class="para">Notice what the lemma says: the factor <span class="process-math">\(|\det A|\)</span> does not depend on <span class="process-math">\(\vec{u}, \vec{v}, \vec{w}\text{.}\)</span> Whatever box we feed in — long, thin, tilted — its volume comes out multiplied by the same number. The absolute Jacobian determinant is the volume-magnification factor of <span class="process-math">\(T\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-jacobian-4-6">
+\begin{equation*}
+| \det A | = \frac{\operatorname{vol} T(P)}{\operatorname{vol} P}
+\qquad \text{for every parallelepiped } P \text{ of positive volume.}
+\end{equation*}
+</div>
+<div class="para">And if <span class="process-math">\(\det A = 0\text{,}\)</span> the columns of <span class="process-math">\(A\)</span> are dependent, every image box lies in a plane (or a line) through the origin, and every image volume is zero — the formula holds trivially.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-jacobian-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-jacobian-volume"><div class="interactive-iframe-container"><iframe src="external/demos-manim/jacobian.html?mat=2,1,0:0,3,0:0,0,1&amp;theme=dark" id="int-jacobian-volume" style="width:396px; height:495px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-jacobian-volume.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.38<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Watch <span class="process-math">\(|\det A|\)</span> act as a volume factor for <span class="process-math">\(A = \left[\begin{smallmatrix} 2 \amp 1 \amp 0 \\ 0 \amp 3 \amp 0 \\ 0 \amp 0 \amp 1 \end{smallmatrix}\right]\text{.}\)</span> The slider morphs the identity into <span class="process-math">\(A\)</span> through <span class="process-math">\(A_t = (1-t)I + tA\text{:}\)</span> the dashed unit cube is carried to the teal parallelepiped with edges <span class="process-math">\(A_t\vec{e}_1\text{,}\)</span> <span class="process-math">\(A_t\vec{e}_2\text{,}\)</span> <span class="process-math">\(A_t\vec{e}_3\text{,}\)</span> while the readout tracks <span class="process-math">\(\det A_t\)</span> — the volume of the image box — growing from <span class="process-math">\(1\)</span> to <span class="process-math">\(\det A = 6\text{.}\)</span> Drag the picture to rotate.<div class="autopermalink" aria-hidden="true" data-description="Figure 6.38"><a tabindex="-1" href="#fig-jacobian-volume" title="Copy heading and permalink for Figure 6.38" aria-label="Copy heading and permalink for Figure 6.38">🔗</a></div></figcaption>
+</figure>
+<article class="remark remark-like" id="rem-change-of-variables"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.39</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Connection to Change of Variables.</span>
+</h3>
+<div class="para logical" id="rem-change-of-variables-2">
+<div class="para">This is the linear heart of the change-of-variables formula for triple integrals. A differentiable map <span class="process-math">\(\Phi : \R^3 \to \R^3\)</span> is approximately linear near each point, <span class="process-math">\(\Phi(\vec{x}) \approx \Phi(\vec{x}_0) + D\Phi(\vec{x}_0)(\vec{x} - \vec{x}_0)\text{,}\)</span> so a tiny box of volume <span class="process-math">\(dV\)</span> at <span class="process-math">\(\vec{x}_0\)</span> is carried to (approximately) a tiny parallelepiped of volume <span class="process-math">\(| \det D\Phi(\vec{x}_0) | \, dV\text{.}\)</span> Summing over a fine grid and passing to the limit gives the formula from multivariable calculus,</div>
+<div class="displaymath process-math" id="rem-change-of-variables-2-6">
+\begin{equation*}
+\iiint_{\Phi(E)} f \; dV
+= \iiint_{E} (f \circ \Phi) \left| \det D\Phi \right| dV.
+\end{equation*}
+</div>
+<div class="para">The absolute Jacobian determinant is the local volume-magnification factor — constant, and equal to <span class="process-math">\(|\det A|\text{,}\)</span> when <span class="process-math">\(\Phi(\vec{x}) = A\vec{x}\)</span> is linear.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-change-of-variables-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 6.39: Connection to Change of Variables"><a tabindex="-1" href="#rem-change-of-variables" title="Copy heading and permalink for Remark 6.39: Connection to Change of Variables" aria-label="Copy heading and permalink for Remark 6.39: Connection to Change of Variables">🔗</a></div>
+</article>
+<details id="eg-volume-scaling" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.40</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Volume Factor of Six.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="eg-volume-scaling-2-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="eg-volume-scaling-2-1-1">
+\begin{equation*}
+A = \begin{bmatrix}
+2 \amp 1 \amp 0 \\
+0 \amp 3 \amp 0 \\
+0 \amp 0 \amp 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find the image of the unit cube under <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> and verify that its volume is <span class="process-math">\(|\det A|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-volume-scaling-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="eg-volume-scaling-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="eg-volume-scaling-3-1">Expanding along the third row (or the third column), <span class="process-math">\(\det A = 1 \cdot (2 \cdot 3 - 1 \cdot 0) = 6\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-volume-scaling-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="eg-volume-scaling-3-2">
+<div class="para">The unit cube is <span class="process-math">\(P(\vec{e}_1, \vec{e}_2, \vec{e}_3)\text{,}\)</span> so by <a href="sec-determinant-volume.html#lem-image-parallelepiped" class="xref" data-knowl="./knowl/xref/lem-image-parallelepiped.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.37: How T Transforms Parallelepipeds">Lemma 6.37</a> its image is the parallelepiped with edges</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-image-parallelepiped.html ./knowl/xref/fig-jacobian-volume.html" id="eg-volume-scaling-3-2-3">
+\begin{equation*}
+A\vec{e}_1 = \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix},
+\qquad
+A\vec{e}_2 = \begin{bmatrix} 1 \\ 3 \\ 0 \end{bmatrix},
+\qquad
+A\vec{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">— the columns of <span class="process-math">\(A\text{.}\)</span> Its volume is the absolute scalar triple product:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-image-parallelepiped.html ./knowl/xref/fig-jacobian-volume.html" id="eg-volume-scaling-3-2-6">
+\begin{equation*}
+A\vec{e}_1 \times A\vec{e}_2
+= \begin{bmatrix} 0 \\ 0 \\ 6 \end{bmatrix},
+\qquad
+A\vec{e}_3 \cdot \left( A\vec{e}_1 \times A\vec{e}_2 \right)
+= \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \cdot
+\begin{bmatrix} 0 \\ 0 \\ 6 \end{bmatrix} = 6.
+\end{equation*}
+</div>
+<div class="para">The unit cube has volume <span class="process-math">\(1\text{,}\)</span> and its image has volume <span class="process-math">\(6 = |\det A| \cdot 1\text{.}\)</span> <span class="process-math">\(\checkmark\)</span> This is the transformation animated in <a href="sec-determinant-volume.html#fig-jacobian-volume" class="xref" data-knowl="./knowl/xref/fig-jacobian-volume.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.38">Figure 6.38</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-volume-scaling-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.40.1"><a tabindex="-1" href="#eg-volume-scaling-3" title="Copy heading and permalink for Solution 6.40.1" aria-label="Copy heading and permalink for Solution 6.40.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.40: A Volume Factor of Six"><a tabindex="-1" href="#eg-volume-scaling" title="Copy heading and permalink for Example 6.40: A Volume Factor of Six" aria-label="Copy heading and permalink for Example 6.40: A Volume Factor of Six">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.4: The Jacobian Determinant of a Linear Map"><a tabindex="-1" href="#subsec-jacobian" title="Copy heading and permalink for Subsection 6.4.4: The Jacobian Determinant of a Linear Map" aria-label="Copy heading and permalink for Subsection 6.4.4: The Jacobian Determinant of a Linear Map">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 6.4: An Application: The Determinant as Volume"><a tabindex="-1" href="#sec-determinant-volume" title="Copy heading and permalink for Section 6.4: An Application: The Determinant as Volume" aria-label="Copy heading and permalink for Section 6.4: An Application: The Determinant as Volume">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-determinants-inverses-products.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-vector-spaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script><script src="external/custom.js"></script>
+</body>
+</html>

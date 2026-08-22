@@ -1,0 +1,88 @@
+<diagram>
+  <annotations>
+    <annotation id="pf-standard-grid-standard-grid" speech2="The vector x as the diagonal of a parallelogram built from the standard basis">
+      <grouped>pf-standard-grid-standard-grid</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-standard-grid-grid-axes</active>
+        <active>pf-standard-grid-arrow-e1</active>
+        <active>pf-standard-grid-arrow-e2</active>
+        <active>pf-standard-grid-arrow-2e2</active>
+        <active>pf-standard-grid-parallelogram</active>
+        <active>pf-standard-grid-vector-x</active>
+      </children>
+      <components>
+        <active>pf-standard-grid-grid-axes</active>
+        <active>pf-standard-grid-arrow-e1</active>
+        <active>pf-standard-grid-arrow-e2</active>
+        <active>pf-standard-grid-arrow-2e2</active>
+        <active>pf-standard-grid-parallelogram</active>
+        <active>pf-standard-grid-vector-x</active>
+      </components>
+    </annotation>
+    <annotation id="pf-standard-grid-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>pf-standard-grid-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-standard-grid-grid</active>
+        <active>pf-standard-grid-axes</active>
+      </children>
+      <components>
+        <active>pf-standard-grid-grid</active>
+        <active>pf-standard-grid-axes</active>
+      </components>
+      <parents>
+        <grouped>pf-standard-grid-standard-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-standard-grid-grid" speech2="The coordinate grid">
+      <active>pf-standard-grid-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-standard-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-standard-grid-axes" speech2="The coordinate axes">
+      <active>pf-standard-grid-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-standard-grid-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-standard-grid-arrow-e1" speech2="The standard basis vector e 1 points one unit along the x axis, and is the first component of x">
+      <active>pf-standard-grid-arrow-e1</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-standard-grid-standard-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-standard-grid-arrow-e2" speech2="The standard basis vector e 2 points one unit along the y axis">
+      <active>pf-standard-grid-arrow-e2</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-standard-grid-standard-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-standard-grid-arrow-2e2" speech2="Twice e 2 is laid tip to tail from the end of e 1, rising two units to reach the point 1 comma 2">
+      <active>pf-standard-grid-arrow-2e2</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-standard-grid-standard-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-standard-grid-parallelogram" speech2="Faint lines complete the parallelogram whose sides are e 1 and twice e 2">
+      <active>pf-standard-grid-parallelogram</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-standard-grid-standard-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-standard-grid-vector-x" speech2="The vector x is the diagonal of that parallelogram, so x equals e 1 plus 2 e 2 and its coordinates in this basis are 1 and 2">
+      <active>pf-standard-grid-vector-x</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-standard-grid-standard-grid</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

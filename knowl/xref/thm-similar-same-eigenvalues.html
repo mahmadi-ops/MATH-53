@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Similar Matrices Have the Same Eigenvalues.</span>
+</h2>
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be similar matrices such that <span class="process-math">\(A = P^{-1}BP\text{,}\)</span> where <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\)</span> are <span class="process-math">\(n \times n\)</span> matrices and <span class="process-math">\(P\)</span> is invertible. Then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-similar-same-eigenvalues-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.21: Similar Matrices Have the Same Eigenvalues"><a tabindex="-1" href="#thm-similar-same-eigenvalues" title="Copy heading and permalink for Theorem 8.21: Similar Matrices Have the Same Eigenvalues" aria-label="Copy heading and permalink for Theorem 8.21: Similar Matrices Have the Same Eigenvalues">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+\det(\lambda I - A)
+\amp = \det \left( \lambda I - P^{-1}BP \right)
+= \det \left( P^{-1}\lambda I P - P^{-1}BP \right)\\
+\amp = \det \left( P^{-1}(\lambda I - B)P \right)
+= \det(P^{-1}) \det(\lambda I - B) \det(P)\\
+\amp = \frac{1}{\det(P)} \det(\lambda I - B) \det(P)
+= \det(\lambda I - B),
+\end{align*}
+</div>
+<div class="para">using <span class="process-math">\(P^{-1}P = I\)</span> in the first line. Hence <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same characteristic polynomial and therefore the same eigenvalues.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-similar-same-eigenvalues-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">In particular, if <span class="process-math">\(A\)</span> is diagonalizable, then <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\text{,}\)</span> and hence the eigenvalues of <span class="process-math">\(A\)</span> and <span class="process-math">\(D\)</span> are the same, which means the diagonal entries of <span class="process-math">\(D\)</span> are the eigenvalues of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-similar-same-eigenvalues-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.21.1"><a tabindex="-1" href="#thm-similar-same-eigenvalues-3" title="Copy heading and permalink for Proof 8.21.1" aria-label="Copy heading and permalink for Proof 8.21.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-diagonalization.html#thm-similar-same-eigenvalues">In Context</a></span>
+</body>
+</html>
