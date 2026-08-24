@@ -97,6 +97,10 @@
           <cell>the discriminating direction, or weight picture</cell>
         </row>
         <row>
+          <cell><m>\widehat{W} = W / \| W \|</m></cell>
+          <cell>the weight picture scaled to length <m>1</m></cell>
+        </row>
+        <row>
           <cell><m>\tau = M \cdot W</m></cell>
           <cell>the threshold</cell>
         </row>
@@ -109,8 +113,16 @@
           <cell>a disturbance added to a picture</cell>
         </row>
         <row>
+          <cell><m>X_{\parallel}, \; X_{\perp}</m></cell>
+          <cell>the parts of <m>X</m> along <m>W</m> and perpendicular to <m>W</m></cell>
+        </row>
+        <row>
           <cell><m>J</m></cell>
           <cell>the all-ones picture</cell>
+        </row>
+        <row>
+          <cell><m>\theta</m></cell>
+          <cell>the angle between two pictures</cell>
         </row>
       </tabular>
     </table>
@@ -316,6 +328,23 @@
         </p>
       </answer>
     </question>
+
+    <remark xml:id="rem-recognition-transport">
+      <title>What Else Rides Across</title>
+      <p>
+        The dot product is not a special case. Any notion that
+        <xref ref="def-dot-product" text="type-global" /> settles by a formula in the
+        coordinates of a vector<mdash />not only the dot product, but perpendicularity
+        and angle as well<mdash />rides to pictures along the isomorphism of
+        <xref ref="rem-isomorphic-same" text="type-global" /> in exactly the way
+        <xref ref="def-picture-distance" text="type-global" /> has just carried it: read
+        the picture through its pixel entries and run the formula. This section will cash
+        that promise twice more, once for perpendicular pictures in
+        <xref ref="subsec-recognition-perpendicular" text="title" /> and once for the
+        angle between two pictures in
+        <xref ref="subsec-recognition-limits" text="title" />.
+      </p>
+    </remark>
   </subsection>
 
   <subsection xml:id="subsec-recognition-nearest">
@@ -398,6 +427,24 @@
       manufactures such photographs, with grain of a size you control, and scores the
       rule on two hundred of them.
     </p>
+
+    <remark xml:id="rem-recognition-probability-signpost">
+      <title>Where Probability Is Needed, and Where It Is Not</title>
+      <p>
+        This section uses probability at two different depths, and it is worth marking
+        which is which before the grain arrives. The shallow use is everywhere and asks
+        nothing: grain is modelled as an error at each pixel, independent of the others,
+        with mean <m>0</m> and standard deviation <m>\sigma</m>, and experiments are
+        scored by counting how many verdicts out of a few hundred came out right. Those
+        two phrases are the whole of what is needed to read the main line of the section.
+        The deep use<mdash />distributions, the normal curve, the law of large numbers,
+        the central limit theorem<mdash />is confined to the starred subsection
+        <xref ref="subsec-recognition-accuracy" text="title" /> and to two footnotes,
+        <xref ref="fn-recognition-root-k" /> and <xref ref="fn-recognition-clt" />, each
+        of which names the theorem doing the work rather than assuming it. Nothing later
+        in the book depends on any of it.
+      </p>
+    </remark>
 
     <sage>
       <input>
@@ -549,6 +596,45 @@
       <m>\lambda = \frac{1}{2}</m>.
     </p>
 
+    <theorem xml:id="thm-weight-picture">
+      <title>Every Linear Verdict Is a Weight Picture</title>
+      <statement>
+        <p>
+          Let <m>T \colon \mathbb{M}_{8,6} \to \R</m> be any linear transformation.
+          Then there is exactly one picture <m>W</m> with <m>T(X) = X \cdot W</m> for
+          every <m>X</m>, namely the picture whose <m>(i,j)</m> entry is
+          <m>T(E_{ij})</m>, where <m>\mathcal{E} = \{ E_{ij} \}</m> is the pixel basis.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Every picture is a linear combination of the pixel basis,
+          <m>X = \sum_{i,j} x_{ij} E_{ij}</m>, so linearity of <m>T</m> gives
+          <md>
+            T(X) = \sum_{i,j} x_{ij}\, T(E_{ij}).
+          </md>
+          Let <m>W</m> be the picture with entries <m>w_{ij} = T(E_{ij})</m>. The sum on
+          the right is then <m>\sum_{i,j} x_{ij} w_{ij}</m>, which is <m>X \cdot W</m>
+          by <xref ref="def-picture-distance" text="type-global" />. For uniqueness,
+          suppose <m>T(X) = X \cdot V</m> for every <m>X</m>. Feeding the machine a
+          single lit pixel, <m>X = E_{ij}</m>, gives
+          <m>v_{ij} = E_{ij} \cdot V = T(E_{ij}) = w_{ij}</m>, and this at every
+          <m>(i,j)</m> says <m>V = W</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      So the weight picture is not an accident of the <m>P - Q</m> construction. Every
+      one-neuron verdict that is linear in the incoming picture is a dot product against
+      some picture, however its weights were arrived at<mdash />by subtracting two
+      references, by training on a million examples, or by guessing<mdash />and the
+      theorem even says how to extract that picture from a machine that will not say what
+      is inside it: light up one pixel at a time and record what it reports. The
+      <m>1 \times 48</m> matrix of <m>T</m> in the pixel basis, written down in the next
+      paragraph, is exactly the entries of <m>W</m> laid out in a row.
+    </p>
+
     <p>
       As in <xref ref="sec-matrix-of-transformation" text="title" />, the transformation
       <m>T</m> has a matrix with respect to the pixel basis: the <m>1 \times 48</m> row
@@ -567,6 +653,23 @@
       detect, and recognition, for this machine, is one linear transformation followed by
       one comparison.
     </p>
+
+    <remark xml:id="rem-recognition-level-sets">
+      <title>The Boundary Comes in Parallel Copies</title>
+      <p>
+        The boundary is one member of a family. Fix a number <m>c</m> and a picture
+        <m>X_0</m> with <m>s(X_0) = c</m>. Then <m>s(X) = c</m> exactly when
+        <m>s(X) - s(X_0) = (X - X_0) \cdot W = 0</m>, that is, exactly when
+        <m>X - X_0</m> lies in <m>\ker(T)</m>. So each set
+        <m>\{ X : s(X) = c \}</m> is the translate <m>X_0 + \ker(T)</m><mdash />a
+        parallel copy of the boundary <m>\{ s = 0 \}</m>, one copy for every real
+        number, stacked through picture space like the pages of a book. The blend line
+        <m>S_{\lambda}</m> cuts through them at constant speed, and that is the whole
+        geometric content of <m>s(S_{\lambda}) = 7839\,(1 - 2\lambda)</m>. The picture
+        <m>W</m> stands perpendicular to every page, in the sense
+        <xref ref="subsec-recognition-perpendicular" text="title" /> makes precise.
+      </p>
+    </remark>
 
     <p>
       The weight picture itself is worth looking at, and it is an old friend: for these
@@ -687,7 +790,299 @@
         neuron pretending to be many. The scale is new; the arithmetic inside is the
         arithmetic of this section.
       </p>
+      <p>
+        The blindness scales too. A layer of <m>k</m> neurons is a linear transformation
+        <m>\mathbb{M}_{8,6} \to \R^k</m> followed by <m>k</m> thresholds, and applying
+        <xref ref="thm-weight-picture" text="type-global" /> to each of its <m>k</m>
+        outputs shows that its matrix in the pixel basis has the <m>k</m> weight pictures
+        as its rows. <xref ref="thm-rank-nullity" text="type-global" /> then forces the
+        kernel of that transformation to have dimension at least <m>48 - k</m>: no matter
+        how the weights are trained, at least <m>48 - k</m> dimensions of change stay
+        invisible to the entire layer, and
+        <xref ref="subsec-recognition-perpendicular" text="title" /> will identify them
+        as the pictures perpendicular to all <m>k</m> weight pictures at once.
+      </p>
     </remark>
+  </subsection>
+
+  <subsection xml:id="subsec-recognition-perpendicular">
+    <title>Perpendicular Pictures and What the Score Ignores</title>
+
+    <p>
+      Two facts from the last subsection were stated and left standing. The kernel of
+      <m>T</m> has dimension <m>47</m>, a number with no meaning attached to it yet. And
+      grain that moves a shot <m>173</m> units barely disturbs a score whose whole scale
+      is <m>7839</m>. One idea settles both, and it is the one promised in
+      <xref ref="rem-recognition-transport" text="type-global" />.
+    </p>
+
+    <p>
+      In <m>\R^3</m>, <xref ref="def-dot-product" text="type-global" /> fixes the angle
+      between two nonzero vectors by
+      <m>\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta</m>, so
+      <m>\vec{u} \cdot \vec{v} = 0</m> says <m>\cos\theta = 0</m>: the two vectors meet
+      at a right angle. That condition is a statement about a number computed from
+      coordinates, and nothing else, so it rides to pictures exactly as the dot product
+      itself did.
+    </p>
+
+    <definition xml:id="def-picture-perpendicular">
+      <title>Perpendicular Pictures</title>
+      <statement>
+        <p>
+          Two pictures <m>X</m> and <m>Y</m> in <m>\mathbb{M}_{mn}</m> are
+          <term>perpendicular</term> when
+          <md>
+            X \cdot Y = \sum_{i,j} x_{ij} \, y_{ij} = 0.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The zero picture is perpendicular to everything, and no nonzero picture is
+      perpendicular to itself, since <m>X \cdot X = \| X \|^2</m>. Two consequences
+      follow immediately, and both will be used.
+    </p>
+
+    <remark xml:id="rem-picture-pythagoras">
+      <title>Pythagoras for Pictures</title>
+      <p>
+        If <m>A \cdot B = 0</m>, then
+        <md>
+          \| A + B \|^2 = \| A \|^2 + \| B \|^2.
+        </md>
+        Read <xref ref="eq-expand-square" /> with <m>-B</m> in place of <m>Y</m>: it
+        becomes <m>\| A + B \|^2 = \| A \|^2 + 2\, A \cdot B + \| B \|^2</m>, and the
+        middle term is zero by assumption. The <m>3</m>-<m>4</m>-<m>5</m> triangle of
+        <xref ref="subsec-recognition-distance" text="title" /> was this identity in the
+        <m>2 \times 2</m> case.
+      </p>
+    </remark>
+
+    <lemma xml:id="lem-picture-dot-bound">
+      <title>The Dot Product Cannot Outrun the Lengths</title>
+      <statement>
+        <p>
+          For all pictures <m>X</m> and <m>Y</m> in <m>\mathbb{M}_{mn}</m>,
+          <md>
+            | X \cdot Y | \leq \| X \| \, \| Y \|,
+          </md>
+          with equality exactly when one of the two pictures is a scalar multiple of the
+          other.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If <m>Y</m> is the zero picture both sides are <m>0</m> and <m>Y = 0 \cdot X</m>,
+          so assume <m>Y \neq 0</m> and set
+          <m>Z = \| Y \|^2 X - (X \cdot Y) Y</m>. Expanding <m>\| Z \|^2 = Z \cdot Z</m>
+          by linearity in each argument,
+          <md>
+            \| Z \|^2
+            = \| Y \|^4 \| X \|^2 - 2 \| Y \|^2 (X \cdot Y)^2 + (X \cdot Y)^2 \| Y \|^2
+            = \| Y \|^2 \left( \| X \|^2 \| Y \|^2 - (X \cdot Y)^2 \right).
+          </md>
+          The left side is a sum of squares, hence <m>\geq 0</m>, and
+          <m>\| Y \|^2 \gt 0</m>, so <m>(X \cdot Y)^2 \leq \| X \|^2 \| Y \|^2</m>.
+          Taking square roots gives the inequality. Equality holds exactly when
+          <m>\| Z \|^2 = 0</m>, that is, when <m>Z</m> is the zero picture, which says
+          <m>X = \frac{X \cdot Y}{\| Y \|^2} \, Y</m>.
+        </p>
+      </proof>
+    </lemma>
+
+    <p>
+      The inequality is an old one<mdash />it carries the names of Cauchy and
+      Schwarz<mdash />and it is the statement that a dot product is largest, for given
+      lengths, when the two pictures point the same way, and shrinks to nothing when they
+      are perpendicular. Everything in the rest of this subsection is that sentence made
+      arithmetic.
+    </p>
+
+    <p>
+      Now specialize to the one direction the classifier watches. Since
+      <m>\| cX \| = |c| \, \| X \|</m>, the picture
+      <md>
+        \widehat{W} = \frac{W}{\| W \|}
+      </md>
+      is <m>W</m> scaled to length <m>1</m>: same direction, unit length,
+      <m>\widehat{W} \cdot \widehat{W} = 1</m>. For our references <m>\| W \| = \sqrt{15678} \approx 125.2</m>, so
+      <m>\widehat{W}</m> is the weight picture with every entry divided by that. Given
+      any picture <m>X</m>, put
+      <md>
+        X_{\parallel} = (X \cdot \widehat{W}) \, \widehat{W},
+        \qquad
+        X_{\perp} = X - X_{\parallel},
+      </md>
+      so that <m>X = X_{\parallel} + X_{\perp}</m> by construction. The two pieces are
+      perpendicular, by a computation with no idea in it:
+      <md>
+        X_{\parallel} \cdot X_{\perp}
+        = (X \cdot \widehat{W}) \, (\widehat{W} \cdot X)
+          - (X \cdot \widehat{W})^2 \, (\widehat{W} \cdot \widehat{W})
+        = (X \cdot \widehat{W})^2 - (X \cdot \widehat{W})^2
+        = 0.
+      </md>
+      So every picture splits into a piece pointing along <m>W</m> and a piece
+      perpendicular to <m>W</m>, and by
+      <xref ref="rem-picture-pythagoras" text="type-global" /> the split is a right
+      triangle:
+      <md>
+        \| X \|^2 = \| X_{\parallel} \|^2 + \| X_{\perp} \|^2,
+        \qquad \text{where} \quad
+        \| X_{\parallel} \| = | X \cdot \widehat{W} |.
+      </md>
+      The last equality is the scaling property again, applied to
+      <m>(X \cdot \widehat{W}) \widehat{W}</m>.
+    </p>
+
+    <p>
+      With that in hand the kernel stops being a dimension count and becomes a picture.
+      By <xref ref="thm-weight-picture" text="type-global" /> the classifier's
+      transformation is <m>T(G) = G \cdot W</m>, so
+      <md>
+        G \in \ker(T)
+        \quad \text{if and only if} \quad
+        G \cdot W = 0
+        \quad \text{if and only if} \quad
+        G \text{ is perpendicular to } W.
+      </md>
+      The <m>47</m>-dimensional kernel handed over by
+      <xref ref="thm-rank-nullity" text="type-global" /> is precisely the set of pictures
+      perpendicular to the weight picture. That is what <m>47</m> means here:
+      <m>47</m> perpendicular directions of change the score cannot see at all, against
+      <m>1</m> direction it sees perfectly. Rewriting the fundamental line with the split,
+      <md>
+        s(X + G) = s(X) + G \cdot W = s(X) + \| W \| \, (G \cdot \widehat{W}),
+      </md>
+      only <m>G_{\parallel}</m> ever reaches the verdict; <m>G_{\perp}</m>, however long,
+      is discarded before the comparison is made.
+    </p>
+
+    <p>
+      The same split measures how safe a verdict is.
+      <xref ref="lem-picture-dot-bound" text="type-global" /> says that any picture
+      <m>D</m> satisfies <m>| D \cdot \widehat{W} | \leq \| D \|</m>, so a picture
+      <m>X</m> and any point <m>Y</m> on the boundary <m>\{ s = 0 \}</m> obey
+      <md>
+        \| X - Y \| \geq | (X - Y) \cdot \widehat{W} | = \frac{|s(X) - s(Y)|}{\| W \|}
+        = \frac{|s(X)|}{\| W \|},
+      </md>
+      and the choice <m>Y = X - \frac{s(X)}{\| W \|} \widehat{W}</m>, which does lie on
+      the boundary, attains it. So
+      <md>
+        \operatorname{dist}\left( X, \{ s = 0 \} \right) = \frac{|s(X)|}{\| W \|},
+      </md>
+      and the score, divided by <m>\| W \|</m>, is literally the distance from the
+      picture to the decision boundary. The references sit at
+      <m>7839 / 125.2 \approx 62.6</m> units from it, half the <m>125.2</m> that separate
+      them<mdash /><xref ref="fig-decision-boundary" text="global" /> drawn to scale
+      rather than drawn as a suggestion.
+    </p>
+
+    <p>
+      Now the surprise of <xref ref="subsec-recognition-nearest" text="title" /> can be
+      answered by counting directions. Grain at <m>\sigma = 25</m> moves a shot about
+      <m>\sigma \sqrt{48} \approx 173</m> units, more than the <m>125.2</m> separating
+      the references, and the verdicts survive anyway. They survive because those
+      <m>173</m> units are spread over <m>48</m> perpendicular directions and only one of
+      them is wired to the verdict. A grain picture has no relationship to <m>W</m>, so
+      its length divides among the directions roughly evenly: of the <m>173</m> units,
+      typically some twenty end up in <m>G_{\parallel}</m> and the remaining <m>170</m>
+      or so in <m>G_{\perp}</m>, where the score never looks. The score moves by
+      <m>\| W \| \, (G \cdot \widehat{W})</m><mdash />typically a couple of thousand
+      against a scale of <m>7839</m><mdash />and the verdict holds.
+    </p>
+
+    <p>
+      <xref ref="lem-picture-dot-bound" text="type-global" /> says what the grain is
+      giving up. The largest score change a disturbance of length <m>\| G \|</m> could
+      possibly cause is <m>| G \cdot W | \leq \| G \| \, \| W \|</m>, and equality
+      requires <m>G</m> to be a scalar multiple of <m>W</m>. At <m>\| G \| = 173</m> that
+      ceiling is <m>173 \times 125.2 \approx 21{,}700</m>, nearly three times the
+      <m>7839</m> needed to flip a reference. A disturbance of exactly the size of the
+      grain, aimed squarely at <m>W</m>, would demolish the machine. Grain is not aimed;
+      it is scattered, and scattering is what saves the verdict.
+    </p>
+
+    <p>
+      That also says, in advance, what will destroy it: a disturbance that is aimed.
+      Take the all-ones picture <m>J</m> of a uniform brightening. Its length is
+      <m>\| J \| = \sqrt{48} \approx 6.93</m>, and
+      <md>
+        J \cdot \widehat{W} = \frac{J \cdot W}{\| W \|} = \frac{688}{125.2} \approx 5.49,
+      </md>
+      so <m>\| J_{\parallel} \| / \| J \| \approx 5.49 / 6.93 \approx 0.79</m>: nearly
+      four fifths of <m>J</m>'s length lies along <m>W</m>, where a grain picture puts
+      about a tenth of its own. Almost none of an exposure change hides in the kernel.
+      This is why, in <xref ref="subsec-recognition-limits" text="title" />, twelve gray
+      levels of darkening<mdash />a disturbance of length
+      <m>\| 12J \| \approx 83.1</m>, less than half of what the grain
+      inflicted<mdash />will flip a verdict that <m>173</m> units of grain could not.
+    </p>
+
+    <p>
+      The cell below dissects one grain sample and the darkening side by side. For each
+      it prints the total length, the single number <m>X \cdot \widehat{W}</m> that the
+      score responds to, the lengths of the two pieces, a numerical check that
+      <m>\| X \|^2 = \| X_{\parallel} \|^2 + \| X_{\perp} \|^2</m>, and the change
+      <m>X \cdot W</m> the disturbance would make to a score. Then it draws the grain and
+      its two pieces, each shifted to mid-gray for display exactly as <m>W</m> was.
+    </p>
+
+    <sage>
+      <input>
+        def dotp(X, Y):
+            return sum(a*b for a, b in zip(X.change_ring(RDF).list(),
+                                           Y.change_ring(RDF).list()))
+
+        normW = sqrt(dotp(W, W))
+        What  = W.change_ring(RDF)/normW      # W scaled to length 1
+
+        def split(X):
+            """Split X into its part along W and its part perpendicular to W."""
+            along = dotp(X, What)*What
+            return along, X.change_ring(RDF) - along
+
+        def report(name, X):
+            par, perp = split(X)
+            print(name)
+            print("   ||X||                      =", n(sqrt(dotp(X, X)), digits=5))
+            print("   X . What                   =", n(dotp(X, What), digits=5))
+            print("   ||X_par||                  =", n(sqrt(dotp(par, par)), digits=5))
+            print("   ||X_perp||                 =", n(sqrt(dotp(perp, perp)), digits=5))
+            print("   ||X_par||^2 + ||X_perp||^2 =",
+                  n(dotp(par, par) + dotp(perp, perp), digits=6),
+                  "  vs  ||X||^2 =", n(dotp(X, X), digits=6))
+            print("   change in score, X . W     =", n(dotp(X, W), digits=5))
+
+        sigma = 25    # change me: the size of the grain being dissected
+        G = matrix(RDF, 8, 6, [normalvariate(0, sigma) for _ in range(48)])
+
+        report("one grain sample G", G)
+        report("the darkening -12J", -12*J.change_ring(RDF))
+
+        Gpar, Gperp = split(G)
+        show_pictures(("grain G, mid-gray = 0", 128*J + G),
+                      ("its part along W", 128*J + Gpar),
+                      ("its part perpendicular to W", 128*J + Gperp))
+      </input>
+    </sage>
+
+    <p>
+      The printout for the grain shows a length of the order of <m>173</m><mdash />the
+      exact figure varies from sample to sample<mdash />with a couple of dozen units of
+      it along <m>\widehat{W}</m> and essentially all the rest perpendicular; the two
+      squared lengths add to the total, as they must. The printout for the darkening
+      shows the opposite habit: of its <m>83.1</m> units, <m>65.9</m> lie along
+      <m>\widehat{W}</m> and only <m>50.6</m> perpendicular, and the score change it
+      causes, <m>-8256</m>, already exceeds the <m>7839</m> that a reference has to
+      spare. The pictures make the same point without numbers. The perpendicular part of
+      the grain is indistinguishable from the grain itself; the part along <m>W</m> is a
+      faint ghost of the weight picture, nearly flat against the mid-gray, and it is the
+      only part of the disturbance the machine was ever able to see.
+    </p>
   </subsection>
 
   <subsection xml:id="subsec-recognition-average">
@@ -773,6 +1168,20 @@
       </proof>
     </theorem>
 
+    <remark xml:id="rem-recognition-residuals">
+      <title>Pythagoras, Collectively</title>
+      <p>
+        The proof is <xref ref="rem-picture-pythagoras" text="type-global" /> in
+        disguise, with one difference worth naming. There the cross term vanished because
+        the two pieces were perpendicular to each other. Here the residual pictures
+        <m>X_i - \overline{X}</m> need not be perpendicular to <m>\overline{X} - C</m>
+        at all<mdash />no single one of them has to be. What is true is that they sum to
+        the zero picture, so their cross terms cancel <em>collectively</em>, and the
+        squared lengths add exactly as they would for a right triangle. The average is
+        the picture at which the residuals cancel.
+      </p>
+    </remark>
+
     <p>
       The theorem settles one question and leaves another wide open.<fn>
         What it proves is that the average is the unique best single representative of
@@ -853,7 +1262,21 @@
               at every pixel the <m>k</m> errors largely cancel, and the average of
               <m>k</m> shots lands on the order of <m>\sqrt{k}</m> times closer to the
               true corner than any single shot does<mdash />the improvement the first
-              cell above prints. The prototype is the best reconstruction of <m>A_0</m>
+              cell above prints.<fn xml:id="fn-recognition-root-k">
+                The <m>\sqrt{k}</m> here is the additivity of variance, not the central
+                limit theorem. At each pixel the <m>k</m> errors are independent with
+                mean <m>0</m> and standard deviation <m>\sigma</m><mdash />the grain
+                model of <xref ref="subsec-recognition-nearest" text="title" />, one
+                error <m>g_{ij}</m> per pixel per shot<mdash />so their average
+                <m>\overline{g}_{ij}</m> has standard deviation
+                <m>\sigma/\sqrt{k}</m>, a two-line computation whose whole content is
+                <m>\operatorname{Var}(\overline{g}_{ij}) = \sigma^2/k</m>. The
+                <m>k \to \infty</m> version of the same fact is the law of large
+                numbers. It says nothing about the <em>shape</em> of the error
+                distribution; it is purely about its <em>size</em>. The central limit
+                theorem, which concerns shape, appears in
+                <xref ref="subsec-recognition-accuracy" text="title" />.
+              </fn> The prototype is the best reconstruction of <m>A_0</m>
               available from what the machine was actually handed.
             </p>
           </li>
@@ -1006,7 +1429,16 @@
         </md>
         where <m>\Phi</m> is the cumulative distribution function of a standard normal
         random variable<mdash />the probability that such a variable falls below the
-        given value. An empty-wall photograph gives the same probability, because the
+        given value.<fn xml:id="fn-recognition-clt">
+          The exactness of this formula leans on the assumption that the grain is
+          Gaussian: a sum of independent normal terms is exactly normal. Real sensor
+          grain is not Gaussian. But the score <m>G \cdot W</m> is a sum of <m>48</m>
+          independent contributions, and the central limit theorem<mdash />the statement
+          that such sums come out approximately normal whatever each contribution looks
+          like<mdash />is what makes the formula approximately right anyway. That
+          robustness, and not the Gaussian special case, is why the normal model here is
+          a mild assumption rather than a fragile one.
+        </fn> An empty-wall photograph gives the same probability, because the
         two classes sit symmetrically about the decision boundary.
         <xref ref="fig-recognition-score-distributions" text="global" /> draws the
         calculation: each class of shots piles its scores into a bell curve centered on
@@ -1133,9 +1565,102 @@
     </p>
 
     <p>
+      The first of those failures is worth a second look, because the repair it wants is
+      already within reach. Underexposure changed the <em>length</em> of the picture
+      without changing what was in it. Length is exactly what the third quantity of
+      <xref ref="def-dot-product" text="type-global" /> divides out: alongside the dot
+      product and the length, that definition fixes the angle between two nonzero vectors
+      of <m>\R^3</m> by <m>\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta</m>.
+      Once more the recipe is a formula in coordinates, so it rides to pictures.
+    </p>
+
+    <definition xml:id="def-picture-angle">
+      <title>The Angle Between Two Pictures</title>
+      <statement>
+        <p>
+          For nonzero pictures <m>X</m> and <m>Y</m> in <m>\mathbb{M}_{mn}</m>, the
+          <term>angle</term> between them is the unique
+          <m>\theta \in [0, \pi]</m> with
+          <md>
+            \cos\theta = \frac{X \cdot Y}{\| X \| \, \| Y \|}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      There is exactly one such <m>\theta</m> because the fraction lies between
+      <m>-1</m> and <m>1</m>, and it lies there because of
+      <xref ref="lem-picture-dot-bound" text="type-global" />: the lemma proved in
+      <xref ref="subsec-recognition-perpendicular" text="title" /> is precisely the
+      statement that this definition is legal. Perpendicular pictures are the case
+      <m>\theta = \pi/2</m>.
+    </p>
+
+    <p>
+      Now watch what the angle does to the exposure failures. For any <m>c \gt 0</m>,
+      <md>
+        \cos\theta(cA_0, A_0)
+        = \frac{(cA_0) \cdot A_0}{\| cA_0 \| \, \| A_0 \|}
+        = \frac{c \| A_0 \|^2}{c \| A_0 \| \, \| A_0 \|}
+        = 1,
+      </md>
+      so <m>\theta(cA_0, A_0) = 0</m>: turning the exposure up or down moves a picture
+      along a ray away from the origin, changing its length and not its direction, and
+      the angle never notices. The score, meanwhile, flips at <m>c \approx 0.88</m>.
+      Judging by angle rather than by distance is exactly the dividing out of brightness
+      that the failures have been asking for, and it needs nothing that is not already on
+      this page. The angle rule reads: call <m>X</m> a cat when
+      <m>\theta(X, A_0) \lt \theta(X, D_0)</m>. The cell below runs it against the
+      distance rule on all three failures.
+    </p>
+
+    <sage>
+      <input>
+        def angle(X, Y):
+            """The angle between two pictures, in degrees."""
+            c = dotp(X, Y)/(sqrt(dotp(X, X))*sqrt(dotp(Y, Y)))
+            c = min(1.0, max(-1.0, c))   # keep rounding out of arccos
+            return n(arccos(c)*180/pi, digits=4)
+
+        row = "%-10s %11s %11s  %-12s %11s %11s  %-12s"
+        print(row % ("", "dist to A0", "dist to D0", "distance rule",
+                     "angle to A0", "angle to D0", "angle rule"))
+        for name, X in [("darkened", darker), ("scaled", scaled), ("slid", slid)]:
+            dA, dD = dist(X, A0), dist(X, D0)
+            aA, aD = angle(X, A0), angle(X, D0)
+            print(row % (name,
+                         n(dA, digits=4), n(dD, digits=4),
+                         "cat" if dA &lt; dD else "empty wall",
+                         aA, aD,
+                         "cat" if aA &lt; aD else "empty wall"))
+        print("for comparison, the angle between the two references:", angle(A0, D0))
+      </input>
+    </sage>
+
+    <p>
+      The angle rule repairs both exposure failures outright. The darkened patch sits
+      <m>1.17</m> degrees from the cat corner against <m>8.286</m> degrees from the empty
+      one, and the rescaled patch sits at an angle of zero from the cat corner, printed
+      as zero up to rounding; both are pronounced <em>cat</em>, where the distance rule
+      called them empty wall. It does nothing whatever for the third. The one-pixel shift
+      was never a wrong verdict, and the angle rule returns the same right answer by the
+      same thin margin<mdash /><m>6.91</m> degrees to the cat corner against
+      <m>7.445</m> to the empty one. Set that beside the angle between the two references
+      themselves, <m>7.294</m> degrees: the eye photographed one pixel over sits
+      <m>6.91</m> degrees from the eye it actually is, while bare wall sits only
+      <m>7.294</m> degrees from it. Sliding a picture one column over costs nearly as
+      much angle as replacing the cat with a wall. Dividing out brightness does not teach
+      a machine where things are.
+    </p>
+
+    <p>
       Each failure names the repair it is waiting for, and each repair is a course that
-      exists. Dividing out brightness so that only pattern remains, and measuring
-      pictures along a few well-chosen directions instead of all <m>48</m> at once, are
+      exists. One of them has already started here:
+      <xref ref="def-picture-angle" text="type-global" /> divides out brightness so that
+      only pattern remains, and it cost nothing but the dot product. Carried through
+      properly, that repair and the practice of measuring pictures along a few
+      well-chosen directions instead of all <m>48</m> at once are
       the business of orthogonality, projections, and least squares<mdash />the linear
       algebra that usually follows this book. And the deepest question raised
       here<mdash />the verdict lived or died with one direction, <m>W</m>; which
