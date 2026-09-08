@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Chapter: Orthogonality and Its Applications
+  MATH 53, Linear Algebra (Mehdi Ahmadi)
+
+  Status: OUTLINE. Every section and subsection below carries a one-paragraph
+  description of what it will contain; the mathematics is to be written later.
+
+  Included in source/main.ptx as the final content chapter, after ch-applications.ptx
+  and before ch-problems.ptx. (It draws on Chapters 2, 4, 5 and the dot product of
+  Section 6.4, but it also refers forward to Section 7.7 and to Chapter 8, so it sits
+  after them.) When the sections are written they can be split into
+  source/orthogonality/sec-*.ptx and pulled in with xi:include, exactly as the other
+  chapters do.
+
+  Notation follows the rest of the book:
+    vectors \vec{u}, \vec{v}, \vec{w}, \vec{b};   spaces \R^n, \R^m;
+    \vec{u} \cdot \vec{v},  \| \vec{u} \|;        A^T;
+    \operatorname{Col} A, \operatorname{Nul} A, \operatorname{rank} A, \operatorname{Span}\{ \dots \};
+    \widehat{W} = W / \| W \| for a unit vector (as in Section 7.7);
+    \vec{b}_{\parallel}, \vec{b}_{\perp} for the components along and perpendicular
+    to a subspace (as in Section 7.7);  W^{\perp} for the orthogonal complement.
+-->
+<chapter xml:id="ch-orthogonality" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Orthogonality and Its Applications</title>
+
+  <introduction>
+    <p>
+      The dot product measures lengths and angles, and the most useful angle is a right
+      angle. This chapter builds the theory of perpendicularity in <m>\R^n</m>: the
+      orthogonal complement of a subspace, bases whose vectors are mutually perpendicular,
+      and the orthogonal projection of a vector onto a subspace <mdash /> the vector in the
+      subspace that is closest to it. Along the way the transpose <m>A^T</m> finally shows
+      its geometric face, the Gram<ndash />Schmidt algorithm produces orthogonal bases on
+      demand, and every matrix with independent columns acquires a factorization
+      <m>A = QR</m>. The payoff is the method of least squares, which extracts the best
+      possible answer from a system <m>A\vec{x} = \vec{b}</m> that has no solution at all,
+      and which is the engine behind fitting lines and curves to data.
+    </p>
+  </introduction>
+
+  <!-- ================================================================ -->
+  <section xml:id="sec-dot-product-rn">
+    <title>The Dot Product in <m>\R^n</m></title>
+
+    <introduction>
+      <p>
+        <xref ref="def-dot-product" text="type-global" /> introduced the dot product,
+        length, and angle in <m>\R^3</m> in order to measure volume. This short section
+        lifts those definitions to <m>\R^n</m>, where there is no picture to lean on but
+        every formula survives unchanged, and it records the handful of algebraic rules
+        that the rest of the chapter uses on every page.
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-dot-length-distance">
+      <title>Dot Product, Length, and Distance</title>
+      <p>
+        Defines <m>\vec{u} \cdot \vec{v} = u_1v_1 + \cdots + u_nv_n</m> for vectors in
+        <m>\R^n</m>, the length <m>\| \vec{u} \| = \sqrt{\vec{u} \cdot \vec{u}}</m>, and
+        the distance <m>\| \vec{u} - \vec{v} \|</m> between two vectors. Lists the
+        algebraic properties (symmetry, linearity in each slot, positivity) and the
+        scaling rule <m>\| c\vec{u} \| = |c| \, \| \vec{u} \|</m>, which makes
+        <m>\widehat{\vec{u}} = \vec{u} / \| \vec{u} \|</m> a unit vector. Worked examples
+        in <m>\R^4</m> and <m>\R^5</m> emphasize that the computation is identical in every
+        dimension.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-orthogonal-vectors">
+      <title>Orthogonal Vectors and the Pythagorean Theorem</title>
+      <p>
+        Declares <m>\vec{u}</m> and <m>\vec{v}</m> <term>orthogonal</term> when
+        <m>\vec{u} \cdot \vec{v} = 0</m>, explains why this is the right generalization of
+        <q>perpendicular</q> (the angle formula
+        <m>\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta</m> gives
+        <m>\theta = \pi/2</m>), and proves the Pythagorean theorem
+        <m>\| \vec{u} + \vec{v} \|^2 = \| \vec{u} \|^2 + \| \vec{v} \|^2</m> exactly when
+        <m>\vec{u} \cdot \vec{v} = 0</m>. Notes that <m>\vec{0}</m> is orthogonal to
+        everything, and that a vector orthogonal to a spanning set of a subspace is
+        orthogonal to the whole subspace.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-dot-as-matrix-product">
+      <title>The Dot Product as a Matrix Product</title>
+      <p>
+        Observes that <m>\vec{u} \cdot \vec{v} = \vec{u}^T \vec{v}</m> when vectors are
+        viewed as <m>n \times 1</m> matrices, and draws the immediate consequence that the
+        components of <m>A^T\vec{x}</m> are the dot products of <m>\vec{x}</m> with the
+        columns of <m>A</m>. This is the bridge between the geometric idea of
+        perpendicularity and the algebra of the transpose from
+        <xref ref="sec-transpose" text="type-global" />, and it is the reason <m>A^T</m>
+        appears everywhere in the sections that follow.
+      </p>
+    </subsection>
+  </section>
+
+  <!-- ================================================================ -->
+  <section xml:id="sec-orthogonal-complements">
+    <title>Orthogonal Complements and the Matrix Transpose</title>
+
+    <introduction>
+      <p>
+        A subspace <m>W</m> of <m>\R^m</m> has a natural partner: the set of all vectors
+        perpendicular to it. This section defines that partner, shows that it is a
+        subspace, and identifies it concretely when <m>W</m> is a column space <mdash />
+        the perpendicular vectors are precisely the null space of the transpose. The
+        dimensions of a subspace and its complement add up to the dimension of the
+        ambient space, a fact that rests on the rank<ndash />nullity relation of
+        <xref ref="thm-rank-nullity" text="type-global" />.
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-orthogonal-complement">
+      <title>The Orthogonal Complement of a Subspace</title>
+      <p>
+        Defines the <term>orthogonal complement</term>
+        <m>W^{\perp} = \{ \vec{v} \in \R^m : \vec{v} \cdot \vec{w} = 0 \text{ for every } \vec{w} \in W \}</m>,
+        proves that <m>W^{\perp}</m> is a subspace, and works the basic examples: the
+        complement of a line through the origin in <m>\R^3</m> is a plane, the complement
+        of a plane is a line, and <m>(\R^m)^{\perp} = \{ \vec{0} \}</m>. Shows that to test
+        membership in <m>W^{\perp}</m> it suffices to check a spanning set of <m>W</m>,
+        and that <m>W \cap W^{\perp} = \{ \vec{0} \}</m>. An interactive figure lets the
+        reader drag a plane in <m>\R^3</m> and watch its normal line follow.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-transpose-dot-product">
+      <title>The Transpose and the Dot Product</title>
+      <p>
+        Establishes the identity
+        <m>(A\vec{x}) \cdot \vec{y} = \vec{x} \cdot (A^T\vec{y})</m> for every
+        <m>m \times n</m> matrix <m>A</m>, <m>\vec{x} \in \R^n</m>, and
+        <m>\vec{y} \in \R^m</m>, by writing both sides as the matrix product
+        <m>\vec{x}^T A^T \vec{y}</m>. This single formula says that <m>A</m> and <m>A^T</m>
+        can be moved from one side of a dot product to the other, and it is the algebraic
+        engine behind every result in this section. Examples verify it numerically and
+        interpret it for symmetric matrices, where <m>A</m> may be moved freely.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-col-perp-nul-transpose">
+      <title>The Orthogonal Complement of a Column Space</title>
+      <p>
+        Proves the central theorem
+        <m>(\operatorname{Col} A)^{\perp} = \operatorname{Nul} A^T</m>: a vector
+        <m>\vec{y}</m> is orthogonal to every column of <m>A</m> exactly when each dot
+        product with a column vanishes, that is, exactly when <m>A^T\vec{y} = \vec{0}</m>.
+        Consequently, given a spanning set for a subspace <m>W</m>, one finds a basis for
+        <m>W^{\perp}</m> by placing the spanning vectors as columns of <m>A</m> and solving
+        <m>A^T\vec{y} = \vec{0}</m> by row reduction. Worked examples compute the
+        complement of a plane in <m>\R^3</m> and of a two-dimensional subspace of
+        <m>\R^4</m>. The companion statement
+        <m>(\operatorname{Nul} A)^{\perp} = \operatorname{Col} A^T</m> is recorded as well.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-dimension-complement">
+      <title>Dimension of the Orthogonal Complement</title>
+      <p>
+        Shows that <m>\operatorname{rank} A = \operatorname{rank} A^T</m> (the pivot
+        columns and the nonzero rows of the reduced form have the same count) and combines
+        this with <xref ref="thm-rank-nullity" text="type-global" /> applied to <m>A^T</m>
+        to prove <m>\dim W + \dim W^{\perp} = m</m> for every subspace <m>W</m> of
+        <m>\R^m</m>. Deduces that <m>(W^{\perp})^{\perp} = W</m>, so that a subspace and
+        its complement determine each other, and previews the decomposition
+        <m>\vec{b} = \vec{b}_{\parallel} + \vec{b}_{\perp}</m> that the next section makes
+        precise.
+      </p>
+    </subsection>
+  </section>
+
+  <!-- ================================================================ -->
+  <section xml:id="sec-orthogonal-bases-projections">
+    <title>Orthogonal Bases and Projections</title>
+
+    <introduction>
+      <p>
+        A basis whose vectors are mutually perpendicular is the best basis one can hope
+        for: coordinates are read off with dot products instead of row reduction, and the
+        closest point of a subspace to a given vector is written down by a formula. This
+        section develops orthogonal and orthonormal sets, the projection formula, the
+        projection matrix <m>P = QQ^T</m>, and the square matrices <m>Q</m> with
+        <m>Q^{-1} = Q^T</m> that preserve all lengths and angles.
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-orthogonal-sets">
+      <title>Orthogonal and Orthonormal Sets</title>
+      <p>
+        Defines an <term>orthogonal set</term> as a set of nonzero vectors, each
+        orthogonal to the others, and an <term>orthonormal set</term> as an orthogonal set
+        of unit vectors. Proves the two facts that make such sets valuable: an orthogonal
+        set is automatically linearly independent, and if
+        <m>\vec{b} = c_1\vec{w}_1 + \cdots + c_n\vec{w}_n</m> with
+        <m>\vec{w}_1, \ldots, \vec{w}_n</m> orthogonal, then the coefficients are
+        <m>c_i = \dfrac{\vec{b} \cdot \vec{w}_i}{\vec{w}_i \cdot \vec{w}_i}</m>, so that
+        <md>
+          \vec{b} = \frac{\vec{b} \cdot \vec{w}_1}{\vec{w}_1 \cdot \vec{w}_1}\vec{w}_1
+                  + \frac{\vec{b} \cdot \vec{w}_2}{\vec{w}_2 \cdot \vec{w}_2}\vec{w}_2
+                  + \cdots
+                  + \frac{\vec{b} \cdot \vec{w}_n}{\vec{w}_n \cdot \vec{w}_n}\vec{w}_n.
+        </md>
+        For an orthonormal set the denominators disappear. Examples contrast finding
+        coordinates by row reduction with finding them by dot products.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-orthonormal-columns">
+      <title>Matrices with Orthonormal Columns</title>
+      <p>
+        Packages an orthonormal set <m>\vec{u}_1, \ldots, \vec{u}_n</m> in <m>\R^m</m> as
+        the columns of an <m>m \times n</m> matrix <m>Q</m> and proves
+        <m>Q^TQ = I_n</m>: the <m>(i,j)</m>-entry of <m>Q^TQ</m> is
+        <m>\vec{u}_i \cdot \vec{u}_j</m>, which is <m>1</m> on the diagonal and <m>0</m>
+        elsewhere. Shows the consequences <m>\| Q\vec{x} \| = \| \vec{x} \|</m> and
+        <m>(Q\vec{x}) \cdot (Q\vec{y}) = \vec{x} \cdot \vec{y}</m>, so multiplication by
+        <m>Q</m> preserves lengths and angles, and points out that <m>QQ^T</m> is
+        generally <em>not</em> the identity when <m>Q</m> is not square.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-orthogonal-projection">
+      <title>Orthogonal Projection onto a Subspace</title>
+      <p>
+        Defines the <term>orthogonal projection</term> of <m>\vec{b}</m> onto a subspace
+        <m>W</m>, written <m>\vec{b}_{\parallel}</m> (or
+        <m>\operatorname{proj}_W \vec{b}</m>), as the vector in <m>W</m> closest to
+        <m>\vec{b}</m>, and shows it is characterized by
+        <m>\vec{b} - \vec{b}_{\parallel} \in W^{\perp}</m>. Proves the
+        <term>projection formula</term>: if <m>\vec{w}_1, \ldots, \vec{w}_n</m> is an
+        orthogonal basis for <m>W</m>, then
+        <md>
+          \vec{b}_{\parallel}
+          = \frac{\vec{b} \cdot \vec{w}_1}{\vec{w}_1 \cdot \vec{w}_1}\vec{w}_1
+          + \cdots
+          + \frac{\vec{b} \cdot \vec{w}_n}{\vec{w}_n \cdot \vec{w}_n}\vec{w}_n,
+        </md>
+        the same expression as the coordinate formula, now applied to a vector that need
+        not lie in <m>W</m>. Begins with projection onto a line, which recovers the
+        <m>X_{\parallel} = (X \cdot \widehat{W}) \, \widehat{W}</m> of
+        <xref ref="subsec-recognition-perpendicular" text="type-global" />, and includes
+        an interactive figure showing <m>\vec{b}</m>, a plane <m>W</m>, and the foot of the
+        perpendicular.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-projection-matrix">
+      <title>The Projection Matrix <m>P = QQ^T</m></title>
+      <p>
+        Shows that orthogonal projection onto <m>W</m> is a linear transformation of
+        <m>\R^m</m> and finds its matrix: if <m>\vec{u}_1, \ldots, \vec{u}_n</m> is an
+        orthonormal basis for <m>W</m> and
+        <m>Q = [\, \vec{u}_1 \mid \cdots \mid \vec{u}_n \,]</m>, then
+        <m>\vec{b}_{\parallel} = QQ^T\vec{b}</m>, so <m>P = QQ^T</m>. Verifies the
+        hallmarks of a projection, <m>P^2 = P</m> and <m>P^T = P</m>, identifies
+        <m>\operatorname{Col} P = W</m> and <m>\operatorname{Nul} P = W^{\perp}</m>, and
+        revisits the projections of <xref ref="subsec-shear-projection" text="type-global" />
+        as the special case of coordinate planes.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-orthogonal-decomposition">
+      <title>The Orthogonal Decomposition <m>\vec{b} = \vec{b}_{\parallel} + \vec{b}_{\perp}</m></title>
+      <p>
+        Proves that every <m>\vec{b} \in \R^m</m> can be written in exactly one way as
+        <m>\vec{b} = \vec{b}_{\parallel} + \vec{b}_{\perp}</m> with
+        <m>\vec{b}_{\parallel} \in W</m> and <m>\vec{b}_{\perp} \in W^{\perp}</m>, where
+        <m>\vec{b}_{\parallel}</m> is the projection onto <m>W</m> and
+        <m>\vec{b}_{\perp} = \vec{b} - \vec{b}_{\parallel}</m> is the projection onto
+        <m>W^{\perp}</m>. Derives the Pythagorean relation
+        <m>\| \vec{b} \|^2 = \| \vec{b}_{\parallel} \|^2 + \| \vec{b}_{\perp} \|^2</m>,
+        shows that the distance from <m>\vec{b}</m> to <m>W</m> is
+        <m>\| \vec{b}_{\perp} \|</m>, and gives the matrix version
+        <m>I = P + (I - P)</m>, where <m>I - P</m> projects onto <m>W^{\perp}</m>.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-orthogonal-matrices">
+      <title>Orthogonal Matrices</title>
+      <p>
+        Defines an <term>orthogonal matrix</term> as a square <m>m \times m</m> matrix
+        <m>Q</m> whose columns form an orthonormal basis for <m>\R^m</m>, and proves that
+        such a <m>Q</m> is invertible with <m>Q^{-1} = Q^T</m>, so that
+        <m>QQ^T = Q^TQ = I</m> and the rows of <m>Q</m> are orthonormal too. Shows that
+        <m>Q</m> preserves lengths, distances, and angles, and that
+        <m>\det Q = \pm 1</m>. Identifies the rotations and reflections of
+        <xref ref="sec-special-transformations" text="type-global" /> as exactly the
+        <m>2 \times 2</m> orthogonal matrices, and notes that products and inverses of
+        orthogonal matrices are orthogonal.
+      </p>
+    </subsection>
+  </section>
+
+  <!-- ================================================================ -->
+  <section xml:id="sec-gram-schmidt">
+    <title>Finding Orthogonal Bases</title>
+
+    <introduction>
+      <p>
+        The projection formula needs an orthogonal basis, and most bases are not
+        orthogonal. The Gram<ndash />Schmidt algorithm repairs this: starting from any
+        basis of a subspace it subtracts off projections one vector at a time and leaves
+        an orthogonal basis behind. Recording the algorithm in matrix form produces the
+        <m>QR</m> factorization, the orthogonal counterpart of the elementary-matrix
+        factorization of <xref ref="sec-elementary-matrices" text="type-global" />.
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-gram-schmidt-algorithm">
+      <title>The Gram<ndash />Schmidt Algorithm</title>
+      <p>
+        Starts with two vectors in the plane, replaces the second by its component
+        perpendicular to the first, and then states the general algorithm: given a basis
+        <m>\vec{v}_1, \ldots, \vec{v}_n</m> for a subspace <m>W</m> of <m>\R^m</m>, set
+        <md>
+          <mrow>\vec{w}_1 \amp = \vec{v}_1,</mrow>
+          <mrow>\vec{w}_2 \amp = \vec{v}_2
+            - \frac{\vec{v}_2 \cdot \vec{w}_1}{\vec{w}_1 \cdot \vec{w}_1}\vec{w}_1,</mrow>
+          <mrow>\vec{w}_3 \amp = \vec{v}_3
+            - \frac{\vec{v}_3 \cdot \vec{w}_1}{\vec{w}_1 \cdot \vec{w}_1}\vec{w}_1
+            - \frac{\vec{v}_3 \cdot \vec{w}_2}{\vec{w}_2 \cdot \vec{w}_2}\vec{w}_2,</mrow>
+          <mrow>\amp \;\; \vdots</mrow>
+          <mrow>\vec{w}_n \amp = \vec{v}_n
+            - \frac{\vec{v}_n \cdot \vec{w}_1}{\vec{w}_1 \cdot \vec{w}_1}\vec{w}_1
+            - \cdots
+            - \frac{\vec{v}_n \cdot \vec{w}_{n-1}}{\vec{w}_{n-1} \cdot \vec{w}_{n-1}}\vec{w}_{n-1}.</mrow>
+        </md>
+        Each <m>\vec{w}_k</m> is <m>\vec{v}_k</m> minus its projection onto
+        <m>\operatorname{Span}\{ \vec{w}_1, \ldots, \vec{w}_{k-1} \}</m>, so the
+        <m>\vec{w}_k</m> are orthogonal, nonzero, and span the same subspace as the
+        <m>\vec{v}_k</m>. Fully worked examples in <m>\R^3</m> and <m>\R^4</m>, plus an
+        animation that shows each subtraction geometrically.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-orthonormal-from-orthogonal">
+      <title>From Orthogonal to Orthonormal</title>
+      <p>
+        Normalizes the output of Gram<ndash />Schmidt by setting
+        <m>\vec{u}_j = \vec{w}_j / \| \vec{w}_j \|</m>, discusses when it is worth doing
+        (it costs square roots but simplifies every later formula, since
+        <m>\vec{w}_j \cdot \vec{w}_j</m> becomes <m>1</m>), and shows how to extend an
+        orthonormal basis of a subspace <m>W</m> to an orthonormal basis of all of
+        <m>\R^m</m> by running the algorithm on a basis of <m>W^{\perp}</m>. Includes a
+        short Sage cell that carries out Gram<ndash />Schmidt so that hand computations can
+        be checked.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-qr-factorization">
+      <title>The <m>QR</m> Factorization</title>
+      <p>
+        Rewrites the Gram<ndash />Schmidt equations to express each original vector in
+        terms of the orthonormal ones, <m>\vec{v}_k = r_{1k}\vec{u}_1 + \cdots + r_{kk}\vec{u}_k</m>
+        with <m>r_{jk} = \vec{v}_k \cdot \vec{u}_j</m>, and reads the result as a matrix
+        equation: if the columns of the <m>m \times n</m> matrix <m>A</m> are linearly
+        independent, then <m>A = QR</m>, where the columns of <m>Q</m> form an orthonormal
+        basis for <m>\operatorname{Col} A</m> and <m>R = Q^TA</m> is <m>n \times n</m>,
+        upper triangular, and invertible with positive diagonal entries. Worked examples
+        compute <m>Q</m> and <m>R</m> by hand for <m>3 \times 2</m> and <m>3 \times 3</m>
+        matrices, and a remark explains why numerical software prefers <m>QR</m> to
+        row reduction.
+      </p>
+    </subsection>
+  </section>
+
+  <!-- ================================================================ -->
+  <section xml:id="sec-least-squares">
+    <title>Orthogonal Least Squares</title>
+
+    <introduction>
+      <p>
+        A system <m>A\vec{x} = \vec{b}</m> with more equations than unknowns is usually
+        inconsistent: the measured <m>\vec{b}</m> does not lie in
+        <m>\operatorname{Col} A</m>. The method of least squares asks instead for the
+        <m>\vec{x}</m> that makes <m>A\vec{x}</m> as close to <m>\vec{b}</m> as possible,
+        and orthogonal projection answers the question completely. This section derives
+        the normal equations, solves them efficiently with the <m>QR</m> factorization,
+        and applies the method to the problem that motivates it in practice: fitting a
+        line or curve to data.
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-least-squares-problem">
+      <title>Inconsistent Systems and the Least-Squares Problem</title>
+      <p>
+        Introduces the setting with a small overdetermined system that has no solution,
+        and defines a <term>least-squares solution</term> as a vector <m>\hat{\vec{x}}</m>
+        minimizing <m>\| \vec{b} - A\vec{x} \|</m> over all <m>\vec{x} \in \R^n</m>.
+        Since <m>A\vec{x}</m> ranges over <m>\operatorname{Col} A</m>, the closest point is
+        the projection <m>\vec{b}_{\parallel}</m> of <m>\vec{b}</m> onto
+        <m>\operatorname{Col} A</m>, and a least-squares solution is any
+        <m>\hat{\vec{x}}</m> with <m>A\hat{\vec{x}} = \vec{b}_{\parallel}</m>. The
+        minimal error is <m>\| \vec{b}_{\perp} \|</m>. An interactive figure shows
+        <m>\vec{b}</m> hovering above the plane <m>\operatorname{Col} A</m> in <m>\R^3</m>.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-normal-equations">
+      <title>The Normal Equations</title>
+      <p>
+        Uses <m>(\operatorname{Col} A)^{\perp} = \operatorname{Nul} A^T</m> to convert
+        <m>\vec{b} - A\hat{\vec{x}} \in (\operatorname{Col} A)^{\perp}</m> into the
+        <term>normal equations</term> <m>A^TA\,\hat{\vec{x}} = A^T\vec{b}</m>, a square
+        system that is always consistent. Proves that <m>A^TA</m> is invertible exactly
+        when the columns of <m>A</m> are linearly independent, in which case the
+        least-squares solution is unique,
+        <m>\hat{\vec{x}} = (A^TA)^{-1}A^T\vec{b}</m>, and the projection matrix onto
+        <m>\operatorname{Col} A</m> is <m>P = A(A^TA)^{-1}A^T</m>. Worked examples solve
+        the normal equations by row reduction and check that the residual
+        <m>\vec{b} - A\hat{\vec{x}}</m> is orthogonal to every column of <m>A</m>.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-least-squares-qr">
+      <title>Least Squares via the <m>QR</m> Factorization</title>
+      <p>
+        Substitutes <m>A = QR</m> into the normal equations and uses <m>Q^TQ = I</m> to
+        reduce them to <m>R\hat{\vec{x}} = Q^T\vec{b}</m>, an upper triangular system
+        solved by back substitution with no matrix inverse in sight. Compares the two
+        routes on the same example, and notes that when the columns of <m>A</m> are
+        orthonormal already the answer is simply <m>\hat{\vec{x}} = A^T\vec{b}</m>,
+        which is the projection formula in disguise.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-fitting-lines">
+      <title>Fitting a Line to Data</title>
+      <p>
+        Given data points <m>(t_1, y_1), \ldots, (t_m, y_m)</m>, seeks the line
+        <m>y = c_0 + c_1 t</m> that best fits them and shows this is the least-squares
+        problem <m>A\vec{c} = \vec{y}</m> with
+        <m>A = \begin{bmatrix} 1 \amp t_1 \\ \vdots \amp \vdots \\ 1 \amp t_m \end{bmatrix}</m>.
+        Explains what <q>best</q> means (minimizing the sum of squared vertical
+        residuals), works a complete example by hand, and provides a Sage cell that fits
+        and plots a line through a real data set. Interprets the residual vector and the
+        quantity <m>\| \vec{y}_{\perp} \|</m> as a measure of how well the line explains
+        the data.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-fitting-curves">
+      <title>Beyond Lines: Fitting Curves and Surfaces</title>
+      <p>
+        Observes that nothing in the previous subsection used the fact that the model was
+        a line: any model that is linear in its unknown coefficients <mdash /> a
+        quadratic <m>y = c_0 + c_1 t + c_2 t^2</m>, a sum of sines and cosines, or a
+        function of several input variables <mdash /> leads to a least-squares problem
+        with a different design matrix <m>A</m>. Fits a parabola and a periodic model to
+        sample data, connects the polynomial case back to the interpolation problem of
+        <xref ref="sec-polynomial-interpolation" text="type-global" /> (exact fit when
+        there are as many parameters as data points, least squares when there are fewer),
+        and closes with a caution about overfitting.
+      </p>
+    </subsection>
+  </section>
+
+  <!-- ================================================================ -->
+  <section xml:id="sec-orthogonality-applications">
+    <title>Further Applications of Orthogonality</title>
+
+    <introduction>
+      <p>
+        The chapter ends with three short applications in the spirit of the image
+        chapters of the book. Each one takes a single idea from the chapter <mdash />
+        projection, orthonormal bases, or orthogonal matrices <mdash /> and shows it
+        doing real work.
+      </p>
+    </introduction>
+
+    <subsection xml:id="subsec-application-recognition">
+      <title>Projection and the Nearest Picture</title>
+      <p>
+        Returns to the image-recognition setting of
+        <xref ref="sec-recognition" text="type-global" />, where a picture was split into
+        <m>X_{\parallel}</m> and <m>X_{\perp}</m> relative to a single weight picture
+        <m>W</m>, and upgrades the single direction to a subspace spanned by several
+        reference pictures. The projection formula then produces the closest combination
+        of references to a new photograph, and <m>\| X_{\perp} \|</m> measures how far the
+        photograph is from anything the references can explain. Gram<ndash />Schmidt on
+        the references turns this into a computation with a handful of dot products.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-application-rigid-motions">
+      <title>Orthogonal Matrices as Rigid Motions</title>
+      <p>
+        Shows that the linear transformations of <m>\R^n</m> preserving all distances are
+        exactly those given by orthogonal matrices, so that rotations and reflections in
+        every dimension are described by the single equation <m>Q^TQ = I</m>. Works out
+        the rotation matrices of <m>\R^3</m> about the coordinate axes, uses
+        <m>\det Q = \pm 1</m> to separate rotations from reflections, and illustrates with
+        a short Sage animation of a rotating object whose shape never distorts.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-application-symmetric-preview">
+      <title>A Preview: Symmetric Matrices Have Orthogonal Eigenvectors</title>
+      <p>
+        Uses the identity <m>(A\vec{x}) \cdot \vec{y} = \vec{x} \cdot (A^T\vec{y})</m> to
+        prove that eigenvectors of a symmetric matrix belonging to distinct eigenvalues
+        are orthogonal, and states without proof that every symmetric matrix can be
+        written as <m>A = QDQ^T</m> with <m>Q</m> orthogonal and <m>D</m> diagonal. This
+        is the point where orthogonality meets the eigenvalue theory of
+        <xref ref="ch-eigenvalues" text="type-global" />, and it is the foundation of the
+        singular value decomposition and of principal component analysis, which are left
+        for a later course.
+      </p>
+    </subsection>
+  </section>
+
+</chapter>

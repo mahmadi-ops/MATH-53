@@ -31,6 +31,7 @@
     <xi:include href="ch-vector-spaces.ptx" />
     <xi:include href="ch-eigenvalues.ptx" />
     <xi:include href="ch-applications.ptx" />
+    <xi:include href="ch-orthogonality.ptx" />
     <xi:include href="ch-problems.ptx" />
 
   </book>
