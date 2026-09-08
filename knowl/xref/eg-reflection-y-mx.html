@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.50</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reflection in the Line <span class="process-math">\(y = mx\)</span>.</span>
+</h2>
+<div class="para">The reflection in the line <span class="process-math">\(y = mx\)</span> is a linear transformation. Find the matrix corresponding to this transformation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-reflection-y-mx-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para">Let us denote the reflection in the line <span class="process-math">\(y = mx\)</span> by <span class="process-math">\(Q_m : \R^2 \to \R^2\text{.}\)</span> We need to compute <span class="process-math">\(Q_m(\vec{e}_1)\)</span> and <span class="process-math">\(Q_m(\vec{e}_2)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-reflection-y-mx-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\theta\)</span> be the angle the line <span class="process-math">\(y = mx\)</span> makes with the positive <span class="process-math">\(x\)</span>-axis. The point <span class="process-math">\((1, m)\)</span> lies on the line and is at distance <span class="process-math">\(\sqrt{m^2+1}\)</span> from the origin, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos\theta = \frac{1}{\sqrt{m^2+1}}, \qquad
+\sin\theta = \frac{m}{\sqrt{m^2+1}}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-reflection-y-mx-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Reflecting <span class="process-math">\(\vec{e}_1\)</span> in that line rotates it through <span class="process-math">\(2\theta\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Q_m(\vec{e}_1)
+= \begin{bmatrix} \cos(2\theta) \\ \sin(2\theta) \end{bmatrix}
+= \begin{bmatrix} \cos^2\theta - \sin^2\theta \\ 2\sin\theta\cos\theta \end{bmatrix}
+= \frac{1}{m^2+1} \begin{bmatrix} 1 - m^2 \\ 2m \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-reflection-y-mx-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">Exercise.</dfn> Show that <span class="process-math">\(Q_m(\vec{e}_2) = \dfrac{1}{m^2+1} \begin{bmatrix} 2m \\ m^2-1 \end{bmatrix}\text{,}\)</span> and hence that the matrix corresponding to <span class="process-math">\(Q_m\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{m^2+1} \begin{bmatrix}
+1 - m^2 \amp 2m \\
+2m \amp m^2 - 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-reflection-y-mx-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.50.1"><a tabindex="-1" href="#eg-reflection-y-mx-3" title="Copy heading and permalink for Solution 3.50.1" aria-label="Copy heading and permalink for Solution 3.50.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.50: Reflection in the Line y = mx"><a tabindex="-1" href="#eg-reflection-y-mx" title="Copy heading and permalink for Example 3.50: Reflection in the Line y = mx" aria-label="Copy heading and permalink for Example 3.50: Reflection in the Line y = mx">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-special-transformations.html#eg-reflection-y-mx">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Jacobian determinant as a volume factor</title>
+<style>
+  body.dark {
+    --bg: #0c0f13; --pane: #101419; --line: #232b38; --grid: #22344a;
+    --axis: #c7d0df; --ink: #e8eaf0; --muted: #8b93a7; --tick: #5b6579;
+    --cube: #202a38; --u: #ffe45c; --v: #58c4dd; --w: #fc6255;
+    --img: #58c4dd; --orig: #8b93a7; --btnbord: #2a3341; --btnhov: #161c25;
+    --brk: #aeb8c9;
+  }
+  body.light {
+    --bg: #ffffff; --pane: #ffffff; --line: #d7dde6; --grid: #e4e9f0;
+    --axis: #1a1a1a; --ink: #111111; --muted: #5a6270; --tick: #8a94a6;
+    --cube: #d9dfe8; --u: #b8860b; --v: #1f8fb4; --w: #d55e00;
+    --img: #1f8fb4; --orig: #5a6270; --btnbord: #c9d1dc; --btnhov: #f0f3f7;
+    --brk: #444c5a;
+  }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #wrap { max-width: 620px; margin: 0 auto; padding: 8px 8px 12px; }
+
+  #titlebar { display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 4px 16px; padding: 2px 4px 6px; }
+  #title { font-size: 18px; }
+  #controls { display: flex; gap: 8px; }
+  #controls button {
+    background: transparent; color: var(--ink); border: 1px solid var(--btnbord);
+    border-radius: 6px; padding: 3px 12px; font: 13px Georgia, serif;
+    cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  #controls button:hover { background: var(--btnhov); }
+  #controls button.active { border-color: var(--u); color: var(--u); }
+
+  #eqbar { display: flex; justify-content: center; align-items: center;
+    gap: 14px; padding: 4px 0 6px; font-size: 15px; flex-wrap: wrap; }
+  .mtx { display: inline-grid; justify-items: end; column-gap: 10px;
+    padding: 3px 8px; border-left: 1.4px solid var(--brk); border-right: 1.4px solid var(--brk);
+    background:
+      linear-gradient(var(--brk),var(--brk)) top left    / 6px 1.4px no-repeat,
+      linear-gradient(var(--brk),var(--brk)) bottom left / 6px 1.4px no-repeat,
+      linear-gradient(var(--brk),var(--brk)) top right   / 6px 1.4px no-repeat,
+      linear-gradient(var(--brk),var(--brk)) bottom right/ 6px 1.4px no-repeat;
+    font-variant-numeric: tabular-nums; line-height: 1.4;
+  }
+  #readout { color: var(--muted); font-size: 14px;
+    font-variant-numeric: tabular-nums; }
+  #readout b { color: var(--ink); font-weight: normal; }
+
+  #sliderbar { display: flex; align-items: center; gap: 10px;
+    padding: 2px 4px 8px; font-size: 13px; color: var(--muted); }
+  #tval { min-width: 58px; font-variant-numeric: tabular-nums; }
+  input[type=range] { flex: 1; accent-color: var(--img); }
+
+  .pane-head { font-size: 12px; color: var(--muted); letter-spacing: .5px;
+    padding: 0 2px 4px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .chip { white-space: nowrap; }
+  svg { display: block; width: 100%; height: auto;
+    background: var(--pane); border: 1px solid var(--line); border-radius: 8px;
+    cursor: grab; }
+  svg.dragging { cursor: grabbing; }
+  #hint { text-align: center; color: var(--muted); font-size: 12px; padding-top: 8px; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="titlebar">
+    <div id="title"><i>T</i>(<i>x</i>) = <i>Ax</i> scales volume by |det <i>A</i>|</div>
+    <div id="controls">
+      <button id="btn-demo" type="button">&#9654;&#xFE0E; animate</button>
+      <button id="btn-view" type="button">&#10226; view</button>
+    </div>
+  </div>
+  <div id="eqbar">
+    <span class="mtx" id="matA"></span>
+    <span id="readout"></span>
+  </div>
+  <div id="sliderbar">
+    <span id="tval">t = 0.00</span>
+    <input id="tslider" type="range" min="0" max="1" step="0.01" value="0"
+      aria-label="interpolation parameter t from identity to A">
+  </div>
+  <div class="pane-head">
+    <span class="chip"><span style="color:var(--orig)">&#9633;</span> unit cube
+      (dashed)</span>
+    <span class="chip"><span style="color:var(--img)">&#9632;</span> its image,
+      edges <i>A<sub>t</sub></i><i>e</i>&#8321;, <i>A<sub>t</sub></i><i>e</i>&#8322;,
+      <i>A<sub>t</sub></i><i>e</i>&#8323;</span>
+  </div>
+  <svg id="svg" viewBox="0 0 520 520" role="img"
+    aria-label="Unit cube morphing into its image under the matrix A"></svg>
+  <div id="hint">slide <i>t</i> to morph the identity into <i>A</i>
+    &nbsp;&middot;&nbsp; drag the picture to rotate</div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var W = 520, C = W / 2;
+
+  var Q = {};
+  location.search.slice(1).split("&").forEach(function (kv) {
+    if (!kv) return; var p = kv.split("=");
+    Q[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || "");
+  });
+  document.body.className = Q.theme === "light" ? "light" : "dark";
+  var A = (Q.mat || "2,1,0:0,3,0:0,0,1").split(":").map(function (r) {
+    return r.split(",").map(Number); });
+  var RANGE = parseFloat(Q.range || "0");
+  if (!(RANGE > 0)) {
+    RANGE = 1.5;
+    for (var ii = 0; ii < 3; ii++) {
+      var s = 0;
+      for (var jj = 0; jj < 3; jj++) s += Math.abs(A[ii][jj]);
+      RANGE = Math.max(RANGE, s);
+    }
+    RANGE = Math.ceil(RANGE) + 1;
+  }
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function At(t) {
+    var M = [], i, j;
+    for (i = 0; i < 3; i++) { M.push([]);
+      for (j = 0; j < 3; j++)
+        M[i].push((1 - t) * (i === j ? 1 : 0) + t * A[i][j]); }
+    return M;
+  }
+  function det3(M) {
+    return M[0][0]*(M[1][1]*M[2][2] - M[1][2]*M[2][1])
+         - M[0][1]*(M[1][0]*M[2][2] - M[1][2]*M[2][0])
+         + M[0][2]*(M[1][0]*M[2][1] - M[1][1]*M[2][0]);
+  }
+  function applyM(M, p) {
+    return [M[0][0]*p[0] + M[0][1]*p[1] + M[0][2]*p[2],
+            M[1][0]*p[0] + M[1][1]*p[1] + M[1][2]*p[2],
+            M[2][0]*p[0] + M[2][1]*p[1] + M[2][2]*p[2]];
+  }
+
+  function el(parent, tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e); return e;
+  }
+  function ease(t) { t = Math.max(0, Math.min(1, t));
+    return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+  function fmt(t) { return (t < -0.005 ? "−" : "") + Math.abs(t).toFixed(2); }
+
+  var svg = document.getElementById("svg");
+  var yaw = -0.62, pitch = 0.40;
+  var S = W / (2 * RANGE) * 0.7;
+  function map(p) {
+    var ca = Math.cos(yaw), sa = Math.sin(yaw);
+    var cb = Math.cos(pitch), sb = Math.sin(pitch);
+    var X = p[0] * ca - p[1] * sa;
+    var Y = p[0] * sa + p[1] * ca;
+    return [C + X * S, C - (-Y * sb + p[2] * cb) * S];
+  }
+
+  var gGrid = el(svg, "g", {}), gAxes = el(svg, "g", {}),
+      gOrig = el(svg, "g", {}), gImg = el(svg, "g", {});
+  var i;
+
+  var cubeC = [], cubeL = [], cubeE =
+    [[0,1],[2,3],[4,5],[6,7],[0,2],[1,3],[4,6],[5,7],[0,4],[1,5],[2,6],[3,7]];
+  for (i = 0; i < 8; i++) cubeC.push(
+    [(i&1?RANGE:-RANGE),(i&2?RANGE:-RANGE),(i&4?RANGE:-RANGE)]);
+  cubeE.forEach(function () {
+    var l = el(gGrid, "line", { "stroke-width": 1 });
+    l.style.stroke = "var(--cube)"; cubeL.push(l);
+  });
+
+  var axes = [];
+  [[[-RANGE,0,0],[RANGE,0,0]], [[0,-RANGE,0],[0,RANGE,0]],
+   [[0,0,-RANGE],[0,0,RANGE]]].forEach(function (d, kk) {
+    var line = el(gAxes, "line", { "stroke-width": 1.5 });
+    line.style.stroke = "var(--axis)";
+    var tip = el(gAxes, "path", {}); tip.style.fill = "var(--axis)";
+    var txt = el(gAxes, "text", { "font-size": 15, "font-style": "italic",
+      "text-anchor": "middle" });
+    txt.style.fill = "var(--axis)"; txt.textContent = ["x₁", "x₂", "x₃"][kk];
+    axes.push({ p0: d[0], p1: d[1], line: line, tip: tip, txt: txt });
+  });
+
+  // unit-cube corners (t1,t2,t3 in {0,1}); same edge list as the frame cube
+  var boxC = [];
+  for (i = 0; i < 8; i++) boxC.push([i&1?1:0, i&2?1:0, i&4?1:0]);
+
+  var origL = [];
+  cubeE.forEach(function () {
+    var l = el(gOrig, "line", { "stroke-width": 1.2, "stroke-opacity": 0.75,
+      "stroke-dasharray": "4 4" });
+    l.style.stroke = "var(--orig)"; origL.push(l);
+  });
+
+  // image faces (light fill) + edges + three column arrows
+  var imgFaces = [];
+  var faceIdx = [[0,1,3,2],[4,5,7,6],[0,1,5,4],[2,3,7,6],[0,2,6,4],[1,3,7,5]];
+  faceIdx.forEach(function () {
+    var f = el(gImg, "path", { "fill-opacity": 0.06, stroke: "none" });
+    f.style.fill = "var(--img)"; imgFaces.push(f);
+  });
+  var imgL = [];
+  cubeE.forEach(function () {
+    var glow = el(gImg, "line", { "stroke-width": 5, "stroke-linecap": "round",
+      opacity: 0.16 });
+    glow.style.stroke = "var(--img)"; glow.style.filter = "blur(3px)";
+    var l = el(gImg, "line", { "stroke-width": 1.7, "stroke-opacity": 0.9 });
+    l.style.stroke = "var(--img)";
+    imgL.push({ core: l, glow: glow });
+  });
+  function makeArrow(colorVar) {
+    var g = el(gImg, "g", {});
+    var glow = el(g, "line", { "stroke-width": 7, "stroke-linecap": "round",
+      opacity: 0.28 });
+    glow.style.stroke = "var(" + colorVar + ")"; glow.style.filter = "blur(4px)";
+    var core = el(g, "line", { "stroke-width": 2.6, "stroke-linecap": "round" });
+    core.style.stroke = "var(" + colorVar + ")";
+    var tip = el(g, "path", {}); tip.style.fill = "var(" + colorVar + ")";
+    var label = el(g, "text", { "font-size": 18, "font-style": "italic",
+      "font-family": "Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif" });
+    label.style.fill = "var(" + colorVar + ")";
+    return { g: g, glow: glow, core: core, tip: tip, label: label };
+  }
+  function setArrow(a, x0, y0, x1, y1, txt, vis) {
+    var dx = x1 - x0, dy = y1 - y0, len = Math.hypot(dx, dy) || 1;
+    var hx = dx / len, hy = dy / len;
+    var hs = Math.min(14, 6 + len * 0.06);
+    var bx = x1 - hx * hs, by = y1 - hy * hs;
+    [a.glow, a.core].forEach(function (l) {
+      l.setAttribute("x1", x0); l.setAttribute("y1", y0);
+      l.setAttribute("x2", bx + hx); l.setAttribute("y2", by + hy);
+    });
+    a.tip.setAttribute("d", "M" + x1 + "," + y1 +
+      "L" + (bx - hy * hs * 0.38) + "," + (by + hx * hs * 0.38) +
+      "L" + (bx + hy * hs * 0.38) + "," + (by - hx * hs * 0.38) + "Z");
+    a.label.textContent = txt;
+    a.label.setAttribute("x", x1 + hx * 13 + (hx >= 0 ? 2 : -24));
+    a.label.setAttribute("y", y1 + hy * 13 + 6);
+    a.g.setAttribute("opacity", vis);
+  }
+  var colArr = [makeArrow("--u"), makeArrow("--v"), makeArrow("--w")];
+
+  // matrix display
+  var eA = document.getElementById("matA");
+  eA.style.gridTemplateColumns = "repeat(3, auto)";
+  eA.innerHTML = new Array(10).join("<span></span>");
+
+  var t = 0, sl = document.getElementById("tslider");
+
+  function render() {
+    cubeL.forEach(function (l, kk) {
+      var a = map(cubeC[cubeE[kk][0]]), c = map(cubeC[cubeE[kk][1]]);
+      l.setAttribute("x1", a[0]); l.setAttribute("y1", a[1]);
+      l.setAttribute("x2", c[0]); l.setAttribute("y2", c[1]);
+    });
+    axes.forEach(function (a) {
+      var p0 = map(a.p0), p1 = map(a.p1);
+      var dx = p1[0]-p0[0], dy = p1[1]-p0[1], len = Math.hypot(dx,dy) || 1;
+      var hx = dx/len, hy = dy/len, hs = 9;
+      a.line.setAttribute("x1", p0[0]); a.line.setAttribute("y1", p0[1]);
+      a.line.setAttribute("x2", p1[0]-hx*hs); a.line.setAttribute("y2", p1[1]-hy*hs);
+      a.tip.setAttribute("d", "M" + p1[0] + "," + p1[1] +
+        "L" + (p1[0]-hx*hs-hy*hs*0.35) + "," + (p1[1]-hy*hs+hx*hs*0.35) +
+        "L" + (p1[0]-hx*hs+hy*hs*0.35) + "," + (p1[1]-hy*hs-hx*hs*0.35) + "Z");
+      var tp = map([a.p1[0]*1.1, a.p1[1]*1.1, a.p1[2]*1.1]);
+      a.txt.setAttribute("x", tp[0]); a.txt.setAttribute("y", tp[1] + 5);
+    });
+
+    var M = At(t), d = det3(M);
+    var op = boxC.map(function (p) { return map(p); });
+    origL.forEach(function (l, kk) {
+      var a = op[cubeE[kk][0]], c = op[cubeE[kk][1]];
+      l.setAttribute("x1", a[0]); l.setAttribute("y1", a[1]);
+      l.setAttribute("x2", c[0]); l.setAttribute("y2", c[1]);
+    });
+    var ip = boxC.map(function (p) { return map(applyM(M, p)); });
+    imgFaces.forEach(function (f, kk) {
+      f.setAttribute("d", "M" + faceIdx[kk].map(function (q) {
+        return ip[q][0] + "," + ip[q][1]; }).join("L") + "Z");
+    });
+    imgL.forEach(function (l, kk) {
+      var a = ip[cubeE[kk][0]], c = ip[cubeE[kk][1]];
+      [l.core, l.glow].forEach(function (e) {
+        e.setAttribute("x1", a[0]); e.setAttribute("y1", a[1]);
+        e.setAttribute("x2", c[0]); e.setAttribute("y2", c[1]);
+      });
+    });
+    var o = map([0,0,0]);
+    ["e₁", "e₂", "e₃"].forEach(function (nm, kk) {
+      var col = [M[0][kk], M[1][kk], M[2][kk]];
+      var pc = map(col);
+      setArrow(colArr[kk], o[0], o[1], pc[0], pc[1], "Aₜ" + nm, 1);
+    });
+
+    for (var r = 0; r < 3; r++) for (var c2 = 0; c2 < 3; c2++)
+      eA.children[r * 3 + c2].textContent = fmt(M[r][c2]);
+    document.getElementById("readout").innerHTML =
+      "det <i>A<sub>t</sub></i> = <b>" + fmt(d) + "</b> &nbsp;&middot;&nbsp; " +
+      "vol of image = |det| = <b>" + fmt(Math.abs(d)) + "</b>";
+    document.getElementById("tval").textContent = "t = " + t.toFixed(2);
+    if (Math.abs(t - sl.value) > 0.005) sl.value = t;
+  }
+
+  // ---------------- animation ----------------
+  var lastT = performance.now();
+  var lastSpin = reduced ? Infinity : -1, spinning = false, lastP = null;
+  var demo = !reduced, demoT = -600, demoDir = 1;
+
+  function frame(now) {
+    var dt = Math.min(50, now - lastT); lastT = now;
+    if (demo) {
+      demoT += dt;
+      if (demoT > 0) {
+        var u = Math.min(1, demoT / 2600);
+        t = demoDir > 0 ? ease(u) : 1 - ease(u);
+        if (u >= 1) { demoT = -900; demoDir = -demoDir;
+          if (demoDir > 0) setDemo(false); }
+      }
+    }
+    if (!reduced && now - lastSpin > 4000 && !spinning)
+      yaw += dt * 0.00006;
+    render();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // ---------------- interaction ----------------
+  function ptrXY(ev) { var q = ev.touches ? ev.touches[0] : ev;
+    return [q.clientX, q.clientY]; }
+  svg.addEventListener("mousedown", spinDown);
+  svg.addEventListener("touchstart", spinDown, { passive: false });
+  function spinDown(ev) {
+    spinning = true; lastP = ptrXY(ev);
+    svg.classList.add("dragging"); ev.preventDefault();
+  }
+  window.addEventListener("mousemove", function (ev) {
+    if (!spinning) return;
+    var p2 = ptrXY(ev);
+    yaw += (p2[0] - lastP[0]) * 0.008;
+    pitch = Math.max(-1.45, Math.min(1.45,
+      pitch + (p2[1] - lastP[1]) * 0.008));
+    lastP = p2; lastSpin = performance.now(); ev.preventDefault();
+  });
+  window.addEventListener("touchmove", function (ev) {
+    if (!spinning) return;
+    var p2 = ptrXY(ev);
+    yaw += (p2[0] - lastP[0]) * 0.008;
+    pitch = Math.max(-1.45, Math.min(1.45,
+      pitch + (p2[1] - lastP[1]) * 0.008));
+    lastP = p2; lastSpin = performance.now(); ev.preventDefault();
+  }, { passive: false });
+  window.addEventListener("mouseup", function () {
+    if (spinning) { svg.classList.remove("dragging"); spinning = false; } });
+  window.addEventListener("touchend", function () {
+    if (spinning) { svg.classList.remove("dragging"); spinning = false; } });
+
+  sl.addEventListener("input", function () {
+    setDemo(false); t = parseFloat(sl.value);
+  });
+  function setDemo(on) {
+    demo = on;
+    if (on) { demoT = 0; demoDir = t > 0.5 ? -1 : 1; }
+    document.getElementById("btn-demo").classList.toggle("active", on);
+  }
+  document.getElementById("btn-demo").addEventListener("click", function () {
+    setDemo(!demo); });
+  document.getElementById("btn-view").addEventListener("click", function () {
+    yaw = -0.62; pitch = 0.40;
+    lastSpin = reduced ? Infinity : -1;
+  });
+})();
+</script>
+</body>
+</html>

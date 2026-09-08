@@ -1,0 +1,75 @@
+<diagram>
+  <annotations>
+    <annotation id="pf-skew-grid-skew-grid" speech2="The same vector x as the diagonal of a parallelogram built from the basis B 2">
+      <grouped>pf-skew-grid-skew-grid</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-skew-grid-lattice</active>
+        <active>pf-skew-grid-arrow-b1</active>
+        <active>pf-skew-grid-arrow-b2</active>
+        <active>pf-skew-grid-arrow-32b1</active>
+        <active>pf-skew-grid-arrow-2b2</active>
+        <active>pf-skew-grid-parallelogram</active>
+        <active>pf-skew-grid-vector-x</active>
+      </children>
+      <components>
+        <active>pf-skew-grid-lattice</active>
+        <active>pf-skew-grid-arrow-b1</active>
+        <active>pf-skew-grid-arrow-b2</active>
+        <active>pf-skew-grid-arrow-32b1</active>
+        <active>pf-skew-grid-arrow-2b2</active>
+        <active>pf-skew-grid-parallelogram</active>
+        <active>pf-skew-grid-vector-x</active>
+      </components>
+    </annotation>
+    <annotation id="pf-skew-grid-lattice" speech2="A grid of parallelograms spanned by b 1 and b 2, replacing the square grid">
+      <active>pf-skew-grid-lattice</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-skew-grid-skew-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-skew-grid-arrow-b1" speech2="The basis vector b 1 equals 2 e 1 and points two units along the x axis">
+      <active>pf-skew-grid-arrow-b1</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-skew-grid-skew-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-skew-grid-arrow-b2" speech2="The basis vector b 2 equals e 2 minus e 1 and points up and to the left">
+      <active>pf-skew-grid-arrow-b2</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-skew-grid-skew-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-skew-grid-arrow-32b1" speech2="Three halves of b 1 reaches the point 3 comma 0, and is the first component of x">
+      <active>pf-skew-grid-arrow-32b1</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-skew-grid-skew-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-skew-grid-arrow-2b2" speech2="Twice b 2 is laid tip to tail from the end of three halves b 1, running up and to the left to reach the point 1 comma 2">
+      <active>pf-skew-grid-arrow-2b2</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-skew-grid-skew-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-skew-grid-parallelogram" speech2="Faint lines complete the parallelogram whose sides are three halves b 1 and twice b 2">
+      <active>pf-skew-grid-parallelogram</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-skew-grid-skew-grid</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-skew-grid-vector-x" speech2="The vector x is the diagonal of that parallelogram, so x equals three halves b 1 plus 2 b 2 and its coordinates in this basis are three halves and 2">
+      <active>pf-skew-grid-vector-x</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-skew-grid-skew-grid</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

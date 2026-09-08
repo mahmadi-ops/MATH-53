@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-to-one transformation: GeoGebra (authored)</title>
+<style>
+  html, body { margin: 0; background: white; font-family: Georgia, serif; }
+  #wrap { width: 100%; max-width: 1000px; margin: 0 auto; }
+  #caption {
+    background: #eee; border: 1px solid #999; margin-bottom: 4px;
+    padding: 6px 10px; font-size: 15px; line-height: 1.4;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 4px 16px;
+  }
+  #eqrow { display: flex; align-items: center; gap: 6px; }
+  .mtx {
+    display: inline-grid; justify-items: end;
+    column-gap: 10px; row-gap: 0;
+    padding: 3px 8px; position: relative;
+    border-left: 1.6px solid #222; border-right: 1.6px solid #222;
+    background:
+      linear-gradient(#222,#222) top left    / 6px 1.6px no-repeat,
+      linear-gradient(#222,#222) bottom left / 6px 1.6px no-repeat,
+      linear-gradient(#222,#222) top right   / 6px 1.6px no-repeat,
+      linear-gradient(#222,#222) bottom right/ 6px 1.6px no-repeat;
+    font-family: Georgia, serif; font-variant-numeric: tabular-nums;
+  }
+  .mA { grid-template-columns: repeat(2, auto); }
+  .vx span { color: #2ca02c; }
+  .vb span { color: #d62728; }
+  .eq { margin: 0 4px; }
+  .side { text-align: right; }
+  .hint { color: #444; font-size: 12.5px; }
+  #note { color: #a00; font-size: 12px; }
+  #panes { display: flex; }
+  .pane { width: 50%; }
+</style>
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="caption">
+    <div id="eqrow">
+      <span class="mtx mA"><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span></span>
+      <span class="mtx vx"><span id="vx1">&minus;1.00</span><span id="vx2">2.00</span></span>
+      <span class="eq">=</span>
+      <span class="mtx vb"><span id="vb1">&minus;1.00</span><span id="vb2">1.00</span><span id="vb3">2.00</span></span>
+    </div>
+    <div class="side">
+      <div class="hint">[Drag the head of <b style="color:#2ca02c">x</b> in the left view
+        &middot; drag the right view to rotate]</div>
+      <div id="note">Loads the GeoGebra engine from geogebra.org &mdash; needs internet access.</div>
+    </div>
+  </div>
+  <div id="panes">
+    <div class="pane"><div id="ggb-2d"></div></div>
+    <div class="pane"><div id="ggb-3d"></div></div>
+  </div>
+</div>
+<script>
+var api2d = null, api3d = null;
+
+function fmtEntry(t) {
+  var s = Math.abs(t).toFixed(2);
+  return (t < -0.005 ? "−" : "") + s;
+}
+function sync() {
+  if (!api2d) return;
+  var x1 = api2d.getXcoord("X"), x2 = api2d.getYcoord("X");
+  document.getElementById("vx1").textContent = fmtEntry(x1);
+  document.getElementById("vx2").textContent = fmtEntry(x2);
+  document.getElementById("vb1").textContent = fmtEntry(x1);
+  document.getElementById("vb2").textContent = fmtEntry(x1 + x2);
+  document.getElementById("vb3").textContent = fmtEntry(x2);
+  if (api3d) {
+    api3d.setValue("x1s", x1);
+    api3d.setValue("x2s", x2);
+  }
+}
+window.onXUpdate = sync;
+
+function run(api, cmds) {
+  for (var i = 0; i < cmds.length; i++) api.evalCommand(cmds[i]);
+}
+
+// ---------- left applet: input R^2 (2D only, nothing 3D exists here) ----------
+new GGBApplet({
+  appName: "classic",
+  perspective: "G",
+  width: 498, height: 498,
+  showToolBar: false, showAlgebraInput: false, showMenuBar: false,
+  showResetIcon: true, enableRightClick: false,
+  appletOnLoad: function (api) {
+    api2d = api;
+    run(api, [
+      "X=(-1,2)",
+      'SetColor(X,"#2ca02c")', "SetPointSize(X,6)", 'SetCaption(X,"x")',
+      "SetLabelMode(X,3)",
+      "xv=Vector((0,0),X)",
+      'SetColor(xv,"#2ca02c")', "SetLineThickness(xv,6)", "ShowLabel(xv,false)",
+      "SetFixed(xv,true)"
+    ]);
+    api.setCoordSystem(-5, 5, -5, 5);
+    try { api.setGraphicsOptions(1, { axesColor: "#000000" }); } catch (e) {}
+    api.registerObjectUpdateListener("X", "onXUpdate");
+    sync();
+  }
+}, true).inject("ggb-2d");
+
+// ---------- right applet: output R^3 (3D only, x does not exist here) ----------
+new GGBApplet({
+  appName: "classic",
+  perspective: "T",
+  width: 498, height: 498,
+  showToolBar: false, showAlgebraInput: false, showMenuBar: false,
+  showResetIcon: true, enableRightClick: false,
+  appletOnLoad: function (api) {
+    api3d = api;
+    run(api, [
+      // input coordinates, driven from the 2D applet via setValue
+      "x1s=-1", "x2s=2",
+      // the range of T: bounded patch of the plane spanned by the
+      // columns (1,1,0) and (0,1,1)  --  points (s, s+t, t)
+      "rng=Surface(u,u+v,v,u,-2.5,2.5,v,-2.5,2.5)",
+      'SetColor(rng,"#9467bd")', "SetFilling(rng,0.35)", "ShowLabel(rng,false)",
+      "SetFixed(rng,true)",
+      "grd1=Sequence(Segment((i,i-2.5,-2.5),(i,i+2.5,2.5)),i,-2,2)",
+      "grd2=Sequence(Segment((-2.5,i-2.5,i),(2.5,i+2.5,i)),i,-2,2)",
+      'SetColor(grd1,"#c9b3de")', 'SetColor(grd2,"#c9b3de")',
+      "ShowLabel(grd1,false)", "ShowLabel(grd2,false)",
+      "SetFixed(grd1,true)", "SetFixed(grd2,true)",
+      // black coordinate axes drawn as fixed vectors with serif math labels
+      "axX=Vector((-5,0,0),(5,0,0))", "axY=Vector((0,-5,0),(0,5,0))",
+      "axZ=Vector((0,0,-5),(0,0,5))",
+      'SetColor(axX,"#000000")', 'SetColor(axY,"#000000")', 'SetColor(axZ,"#000000")',
+      "SetLineThickness(axX,3)", "SetLineThickness(axY,3)", "SetLineThickness(axZ,3)",
+      "ShowLabel(axX,false)", "ShowLabel(axY,false)", "ShowLabel(axZ,false)",
+      "SetFixed(axX,true)", "SetFixed(axY,true)", "SetFixed(axZ,true)",
+      'tX=Text("b_1",(5.7,0,0),true,true)',
+      'tY=Text("b_2",(0,5.7,0),true,true)',
+      'tZ=Text("b_3",(0,0,5.7),true,true)',
+      'SetColor(tX,"#000000")', 'SetColor(tY,"#000000")', 'SetColor(tZ,"#000000")',
+      "SetFixed(tX,true)", "SetFixed(tY,true)", "SetFixed(tZ,true)",
+      // bounding cube frame (clipping-box look, drawn explicitly)
+      "cb1=Sequence(Sequence(Segment((-5,j,k),(5,j,k)),j,-5,5,10),k,-5,5,10)",
+      "cb2=Sequence(Sequence(Segment((j,-5,k),(j,5,k)),j,-5,5,10),k,-5,5,10)",
+      "cb3=Sequence(Sequence(Segment((j,k,-5),(j,k,5)),j,-5,5,10),k,-5,5,10)",
+      'SetColor(cb1,"#bbbbbb")', 'SetColor(cb2,"#bbbbbb")', 'SetColor(cb3,"#bbbbbb")',
+      "SetLineThickness(cb1,1)", "SetLineThickness(cb2,1)", "SetLineThickness(cb3,1)",
+      "ShowLabel(cb1,false)", "ShowLabel(cb2,false)", "ShowLabel(cb3,false)",
+      "SetFixed(cb1,true)", "SetFixed(cb2,true)", "SetFixed(cb3,true)",
+      // b = A x  =  (x1, x1+x2, x2), driven by x1s/x2s (not draggable)
+      "B=(x1s,x1s+x2s,x2s)",
+      'SetColor(B,"#d62728")', 'SetCaption(B,"b")', "SetLabelMode(B,3)",
+      "SetFixed(B,true)",
+      "bv=Vector((0,0,0),B)",
+      'SetColor(bv,"#d62728")', "SetLineThickness(bv,6)", "ShowLabel(bv,false)",
+      "SetFixed(bv,true)"
+    ]);
+    // hide the native colored 3D axes, the grey xy-plane, and its grid
+    try { api.setAxesVisible(3, false, false, false); } catch (e) {}
+    try { api.setVisible("xOyPlane", false); } catch (e) {}
+    try { api.setGridVisible(false); } catch (e) {}
+    try { api.evalXML('<euclidianView3D><plate show="false"/><grid show="false"/></euclidianView3D>'); } catch (e) {}
+    try { api.setCoordSystem(-6.2, 6.2, -6.2, 6.2, -6.2, 6.2); } catch (e) {}
+    sync();
+  }
+}, true).inject("ggb-3d");
+</script>
+</body>
+</html>

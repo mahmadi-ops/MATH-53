@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volume of a parallelepiped</title>
+<style>
+  body.dark {
+    --bg: #0c0f13; --pane: #101419; --line: #232b38; --grid: #22344a;
+    --axis: #c7d0df; --ink: #e8eaf0; --muted: #8b93a7; --tick: #5b6579;
+    --cube: #202a38; --u: #ffe45c; --v: #58c4dd; --w: #fc6255;
+    --n: #b48ee0; --face: #58c4dd; --btnbord: #2a3341; --btnhov: #161c25;
+    --brk: #aeb8c9;
+  }
+  body.light {
+    --bg: #ffffff; --pane: #ffffff; --line: #d7dde6; --grid: #e4e9f0;
+    --axis: #1a1a1a; --ink: #111111; --muted: #5a6270; --tick: #8a94a6;
+    --cube: #d9dfe8; --u: #b8860b; --v: #1f8fb4; --w: #d55e00;
+    --n: #7d5bb5; --face: #1f8fb4; --btnbord: #c9d1dc; --btnhov: #f0f3f7;
+    --brk: #444c5a;
+  }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #wrap { max-width: 620px; margin: 0 auto; padding: 8px 8px 12px; }
+
+  #titlebar { display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 4px 16px; padding: 2px 4px 6px; }
+  #title { font-size: 18px; }
+  #title .cu { color: var(--u); } #title .cv { color: var(--v); }
+  #title .cw { color: var(--w); }
+  #controls { display: flex; gap: 8px; }
+  #controls button {
+    background: transparent; color: var(--ink); border: 1px solid var(--btnbord);
+    border-radius: 6px; padding: 3px 12px; font: 13px Georgia, serif;
+    cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  #controls button:hover { background: var(--btnhov); }
+  #controls button.active { border-color: var(--u); color: var(--u); }
+
+  #readout { display: flex; justify-content: center; align-items: center;
+    gap: 18px; padding: 4px 0 8px; font-size: 14.5px; flex-wrap: wrap;
+    font-variant-numeric: tabular-nums; }
+  #readout .lab { color: var(--muted); }
+  #readout b { font-weight: normal; }
+
+  .pane-head { font-size: 12px; color: var(--muted); letter-spacing: .5px;
+    padding: 0 2px 4px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .chip { white-space: nowrap; }
+  svg { display: block; width: 100%; height: auto;
+    background: var(--pane); border: 1px solid var(--line); border-radius: 8px;
+    cursor: grab; }
+  svg.dragging { cursor: grabbing; }
+  .handle { cursor: grab; outline: none; }
+  .handle:focus-visible .fring, .handle:hover .fring { opacity: 1; }
+  .fring { opacity: 0; transition: opacity .15s; }
+
+  #hint { text-align: center; color: var(--muted); font-size: 12px; padding-top: 8px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip-path: inset(50%); }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="titlebar">
+    <div id="title">vol <i>P</i>(<b class="cu"><i>u</i></b>, <b class="cv"><i>v</i></b>,
+      <b class="cw"><i>w</i></b>) = |det[<b class="cu"><i>u</i></b> |
+      <b class="cv"><i>v</i></b> | <b class="cw"><i>w</i></b>]|</div>
+    <div id="controls">
+      <button id="btn-demo" type="button">&#9654;&#xFE0E; animate</button>
+      <button id="btn-view" type="button">&#10226; view</button>
+    </div>
+  </div>
+  <div id="readout">
+    <span><span class="lab">base area &#8741;<i>u</i>&#215;<i>v</i>&#8741; = </span><b id="roArea"></b></span>
+    <span><span class="lab">height <i>h</i> = </span><b id="roH"></b></span>
+    <span><span class="lab">det = </span><b id="roDet"></b></span>
+    <span><span class="lab">vol = </span><b id="roVol"></b></span>
+  </div>
+  <div class="pane-head">
+    <span class="chip"><span style="color:var(--face)">&#9632;</span> base
+      parallelogram</span>
+    <span class="chip"><span style="color:var(--n)">&#9632;</span>
+      <i>n</i> = <i>u</i>&#215;<i>v</i></span>
+    <span class="chip"><span style="color:var(--w)">&#9632;</span> height drop from
+      the tip of <i>w</i></span>
+  </div>
+  <svg id="svg" viewBox="0 0 520 520" role="img"
+    aria-label="Parallelepiped spanned by draggable vectors u, v, w"></svg>
+  <div id="hint">drag the heads of
+    <b style="color:var(--u)"><i>u</i></b>, <b style="color:var(--v)"><i>v</i></b>,
+    <b style="color:var(--w)"><i>w</i></b> &nbsp;&middot;&nbsp; drag the background
+    to rotate</div>
+  <div class="sr" aria-live="polite" id="announce"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var W = 520, C = W / 2;
+
+  var Q = {};
+  location.search.slice(1).split("&").forEach(function (kv) {
+    if (!kv) return; var p = kv.split("=");
+    Q[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || "");
+  });
+  document.body.className = Q.theme === "light" ? "light" : "dark";
+  function vec(s, dflt) {
+    var v = (s || "").split(",").map(Number).filter(function (t) {
+      return !isNaN(t); });
+    return v.length === 3 ? v : dflt;
+  }
+  var u = vec(Q.u, [2, 0, 0]), v = vec(Q.v, [1, 2, 0]),
+      w = vec(Q.w, [0.5, 0.5, 1.5]);
+  var RANGE = parseFloat(Q.range || "4");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function dot(a, b) { return a[0]*b[0] + a[1]*b[1] + a[2]*b[2]; }
+  function cross(a, b) {
+    return [a[1]*b[2] - a[2]*b[1], a[2]*b[0] - a[0]*b[2], a[0]*b[1] - a[1]*b[0]];
+  }
+  function norm(a) { return Math.sqrt(dot(a, a)); }
+  function add() {
+    var r = [0, 0, 0];
+    for (var i = 0; i < arguments.length; i++)
+      for (var k = 0; k < 3; k++) r[k] += arguments[i][k];
+    return r;
+  }
+  function scale(a, s) { return [a[0]*s, a[1]*s, a[2]*s]; }
+
+  function el(parent, tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e); return e;
+  }
+  function ease(t) { t = Math.max(0, Math.min(1, t));
+    return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+  function fmt(t) { return (t < -0.005 ? "−" : "") + Math.abs(t).toFixed(2); }
+
+  var svg = document.getElementById("svg");
+  var yaw = -0.62, pitch = 0.40;
+  var S = W / (2 * RANGE) * 0.7;
+  function map(p) {
+    var ca = Math.cos(yaw), sa = Math.sin(yaw);
+    var cb = Math.cos(pitch), sb = Math.sin(pitch);
+    var X = p[0] * ca - p[1] * sa;
+    var Y = p[0] * sa + p[1] * ca;
+    return [C + X * S, C - (-Y * sb + p[2] * cb) * S];
+  }
+  function camBasis() {
+    var ca = Math.cos(yaw), sa = Math.sin(yaw);
+    var cb = Math.cos(pitch), sb = Math.sin(pitch);
+    return { r: [ca, -sa, 0], u: [-sa * sb, -ca * sb, cb] };
+  }
+
+  var gGrid = el(svg, "g", {}), gBox = el(svg, "g", {}), gAxes = el(svg, "g", {}),
+      gVecs = el(svg, "g", {});
+  var i, k;
+
+  var cubeC = [], cubeL = [], cubeE =
+    [[0,1],[2,3],[4,5],[6,7],[0,2],[1,3],[4,6],[5,7],[0,4],[1,5],[2,6],[3,7]];
+  for (i = 0; i < 8; i++) cubeC.push(
+    [(i&1?RANGE:-RANGE),(i&2?RANGE:-RANGE),(i&4?RANGE:-RANGE)]);
+  cubeE.forEach(function () {
+    var l = el(gGrid, "line", { "stroke-width": 1 });
+    l.style.stroke = "var(--cube)"; cubeL.push(l);
+  });
+
+  var axes = [];
+  [[[-RANGE,0,0],[RANGE,0,0]], [[0,-RANGE,0],[0,RANGE,0]],
+   [[0,0,-RANGE],[0,0,RANGE]]].forEach(function (d, kk) {
+    var line = el(gAxes, "line", { "stroke-width": 1.5 });
+    line.style.stroke = "var(--axis)";
+    var tip = el(gAxes, "path", {}); tip.style.fill = "var(--axis)";
+    var txt = el(gAxes, "text", { "font-size": 15, "font-style": "italic",
+      "text-anchor": "middle" });
+    txt.style.fill = "var(--axis)"; txt.textContent = ["x₁", "x₂", "x₃"][kk];
+    axes.push({ p0: d[0], p1: d[1], line: line, tip: tip, txt: txt });
+  });
+
+  // base face + lid, box edges
+  var baseFace = el(gBox, "path", { "fill-opacity": 0.20, "stroke-opacity": 0.75,
+    "stroke-width": 1.2 });
+  baseFace.style.fill = "var(--face)"; baseFace.style.stroke = "var(--face)";
+  var lidFace = el(gBox, "path", { "fill-opacity": 0.07, stroke: "none" });
+  lidFace.style.fill = "var(--face)";
+  var boxL = [];
+  for (i = 0; i < 12; i++) {
+    var l = el(gBox, "line", { "stroke-width": 1.2, "stroke-opacity": 0.55 });
+    l.style.stroke = "var(--ink)"; boxL.push(l);
+  }
+  // normal vector, height drop
+  var drop = el(gBox, "line", { "stroke-dasharray": "4 4", "stroke-width": 1.4,
+    "stroke-opacity": 0.8 });
+  drop.style.stroke = "var(--w)";
+  var foot = el(gBox, "circle", { r: 2.6, "fill-opacity": 0.6 });
+  foot.style.fill = "var(--w)";
+  var hLabel = el(gBox, "text", { "font-size": 15, "font-style": "italic" });
+  hLabel.style.fill = "var(--w)"; hLabel.textContent = "h";
+
+  function makeArrow(colorVar) {
+    var g = el(gVecs, "g", {});
+    var glow = el(g, "line", { "stroke-width": 7, "stroke-linecap": "round",
+      opacity: 0.28 });
+    glow.style.stroke = "var(" + colorVar + ")"; glow.style.filter = "blur(4px)";
+    var core = el(g, "line", { "stroke-width": 2.6, "stroke-linecap": "round" });
+    core.style.stroke = "var(" + colorVar + ")";
+    var tip = el(g, "path", {}); tip.style.fill = "var(" + colorVar + ")";
+    var label = el(g, "text", { "font-size": 20, "font-style": "italic",
+      "font-family": "Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif" });
+    label.style.fill = "var(" + colorVar + ")";
+    return { g: g, glow: glow, core: core, tip: tip, label: label };
+  }
+  function setArrow(a, x0, y0, x1, y1, txt, vis) {
+    var dx = x1 - x0, dy = y1 - y0, len = Math.hypot(dx, dy) || 1;
+    var hx = dx / len, hy = dy / len;
+    var hs = Math.min(15, 6 + len * 0.06);
+    var bx = x1 - hx * hs, by = y1 - hy * hs;
+    [a.glow, a.core].forEach(function (l) {
+      l.setAttribute("x1", x0); l.setAttribute("y1", y0);
+      l.setAttribute("x2", bx + hx); l.setAttribute("y2", by + hy);
+    });
+    a.tip.setAttribute("d", "M" + x1 + "," + y1 +
+      "L" + (bx - hy * hs * 0.38) + "," + (by + hx * hs * 0.38) +
+      "L" + (bx + hy * hs * 0.38) + "," + (by - hx * hs * 0.38) + "Z");
+    a.label.textContent = txt;
+    a.label.setAttribute("x", x1 + hx * 14 + (hx >= 0 ? 2 : -14));
+    a.label.setAttribute("y", y1 + hy * 14 + 6);
+    a.g.setAttribute("opacity", vis);
+  }
+
+  var arrU = makeArrow("--u"), arrV = makeArrow("--v"),
+      arrW = makeArrow("--w"), arrN = makeArrow("--n");
+
+  function makeHandle(colorVar, name) {
+    var h = el(svg, "g", { "class": "handle", tabindex: 0, role: "application",
+      "aria-label": "vector " + name + ". Drag to move." });
+    el(h, "circle", { "class": "fring", r: 12, fill: "none",
+      "stroke-width": 1.3 }).style.stroke = "var(--ink)";
+    el(h, "circle", { r: 5.5 }).style.fill = "var(" + colorVar + ")";
+    el(h, "circle", { r: 22, fill: "transparent" });
+    return h;
+  }
+  var hU = makeHandle("--u", "u"), hV = makeHandle("--v", "v"),
+      hW = makeHandle("--w", "w");
+
+  // ---------------- render ----------------
+  var grow = { axes: reduced?1:0, base: reduced?1:0, box: reduced?1:0,
+    vecs: reduced?1:0, n: reduced?1:0 };
+
+  function render() {
+    cubeL.forEach(function (l, kk) {
+      var a = map(cubeC[cubeE[kk][0]]), c = map(cubeC[cubeE[kk][1]]);
+      l.setAttribute("x1", a[0]); l.setAttribute("y1", a[1]);
+      l.setAttribute("x2", c[0]); l.setAttribute("y2", c[1]);
+      l.setAttribute("opacity", grow.axes);
+    });
+    axes.forEach(function (a) {
+      var p0 = map(a.p0), p1 = map(a.p1);
+      var dx = p1[0]-p0[0], dy = p1[1]-p0[1], len = Math.hypot(dx,dy) || 1;
+      var hx = dx/len, hy = dy/len, hs = 9;
+      a.line.setAttribute("x1", p0[0]); a.line.setAttribute("y1", p0[1]);
+      a.line.setAttribute("x2", p1[0]-hx*hs); a.line.setAttribute("y2", p1[1]-hy*hs);
+      a.tip.setAttribute("d", "M" + p1[0] + "," + p1[1] +
+        "L" + (p1[0]-hx*hs-hy*hs*0.35) + "," + (p1[1]-hy*hs+hx*hs*0.35) +
+        "L" + (p1[0]-hx*hs+hy*hs*0.35) + "," + (p1[1]-hy*hs-hx*hs*0.35) + "Z");
+      var tp = map([a.p1[0]*1.1, a.p1[1]*1.1, a.p1[2]*1.1]);
+      a.txt.setAttribute("x", tp[0]); a.txt.setAttribute("y", tp[1] + 5);
+      [a.line, a.tip, a.txt].forEach(function (e) {
+        e.setAttribute("opacity", grow.axes); });
+    });
+
+    var O = [0,0,0];
+    var verts = [O, u, v, add(u,v), w, add(u,w), add(v,w), add(u,v,w)];
+    var vp = verts.map(map);
+    // base and lid
+    baseFace.setAttribute("d", "M" + [vp[0],vp[1],vp[3],vp[2]].map(function (q) {
+      return q[0] + "," + q[1]; }).join("L") + "Z");
+    baseFace.setAttribute("opacity", grow.base);
+    lidFace.setAttribute("d", "M" + [vp[4],vp[5],vp[7],vp[6]].map(function (q) {
+      return q[0] + "," + q[1]; }).join("L") + "Z");
+    lidFace.setAttribute("opacity", grow.box);
+    // 12 edges: generator pairs
+    var E = [[0,1],[2,3],[4,5],[6,7], [0,2],[1,3],[4,6],[5,7],
+             [0,4],[1,5],[2,6],[3,7]];
+    E.forEach(function (e, kk) {
+      var a = vp[e[0]], c = vp[e[1]];
+      boxL[kk].setAttribute("x1", a[0]); boxL[kk].setAttribute("y1", a[1]);
+      boxL[kk].setAttribute("x2", c[0]); boxL[kk].setAttribute("y2", c[1]);
+      boxL[kk].setAttribute("opacity",
+        (kk < 4 || kk === 4 || kk === 8) ? grow.box * 0.55 : grow.box * 0.55);
+    });
+
+    // vectors
+    var o = map(O);
+    var pu = map(u), pv = map(v), pw = map(w);
+    setArrow(arrU, o[0], o[1], pu[0], pu[1], "u", grow.vecs);
+    setArrow(arrV, o[0], o[1], pv[0], pv[1], "v", grow.vecs);
+    setArrow(arrW, o[0], o[1], pw[0], pw[1], "w", grow.vecs);
+    hU.setAttribute("transform", "translate(" + pu[0] + "," + pu[1] + ")");
+    hV.setAttribute("transform", "translate(" + pv[0] + "," + pv[1] + ")");
+    hW.setAttribute("transform", "translate(" + pw[0] + "," + pw[1] + ")");
+    [hU, hV, hW].forEach(function (h) { h.setAttribute("opacity", grow.vecs); });
+
+    // normal (scaled to fit) and height drop
+    var n = cross(u, v), nn = norm(n);
+    if (nn > 1e-9) {
+      var nd = scale(n, Math.min(1, 2.2 / nn));
+      var pn = map(nd);
+      setArrow(arrN, o[0], o[1], pn[0], pn[1], "n", grow.n * 0.9);
+      var hgt = dot(w, n) / nn;
+      var ft = add(w, scale(n, -hgt / nn));   // foot of perpendicular in base plane
+      var pf = map(ft);
+      drop.setAttribute("x1", pw[0]); drop.setAttribute("y1", pw[1]);
+      drop.setAttribute("x2", pf[0]); drop.setAttribute("y2", pf[1]);
+      foot.setAttribute("cx", pf[0]); foot.setAttribute("cy", pf[1]);
+      drop.setAttribute("opacity", grow.n); foot.setAttribute("opacity", grow.n);
+      hLabel.setAttribute("x", (pw[0]+pf[0])/2 + 8);
+      hLabel.setAttribute("y", (pw[1]+pf[1])/2 + 4);
+      hLabel.setAttribute("opacity", grow.n);
+      document.getElementById("roH").textContent = fmt(Math.abs(hgt));
+    } else {
+      arrN.g.setAttribute("opacity", 0);
+      drop.setAttribute("opacity", 0); foot.setAttribute("opacity", 0);
+      hLabel.setAttribute("opacity", 0);
+      document.getElementById("roH").textContent = "—";
+    }
+    var det = dot(w, cross(u, v));
+    document.getElementById("roArea").textContent = fmt(nn);
+    document.getElementById("roDet").textContent = fmt(det);
+    document.getElementById("roVol").textContent = fmt(Math.abs(det));
+  }
+
+  // ---------------- animation ----------------
+  var t0 = performance.now(), lastT = t0;
+  var lastSpin = reduced ? Infinity : -1, spinning = false, lastP = null;
+  var mode = null, dragStart = null;
+  function stage(t, a, c) { return ease((t - a) / (c - a)); }
+  var replayT0 = 0;
+  function frame(now) {
+    var dt = Math.min(50, now - lastT); lastT = now;
+    var t = now - t0 - replayT0;
+    if (!reduced) {
+      grow.axes = Math.max(grow.axes * (replayT0 ? 0 : 1), stage(t, 0, 800));
+      grow.vecs = stage(t, 500, 1300);
+      grow.base = stage(t, 1100, 1900);
+      grow.n = stage(t, 1700, 2400);
+      grow.box = stage(t, 2100, 2900);
+      if (now - lastSpin > 4000 && !spinning && !mode)
+        yaw += dt * 0.00006;
+    }
+    render();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // ---------------- interaction ----------------
+  function ptrXY(ev) { var t = ev.touches ? ev.touches[0] : ev;
+    return [t.clientX, t.clientY]; }
+  function toWorld(ev, ref) {
+    var r = svg.getBoundingClientRect(), p = ptrXY(ev);
+    var q = [(p[0] - r.left) / r.width * W, (p[1] - r.top) / r.height * W];
+    var q0 = map(ref), cb = camBasis();
+    var du = (q[0] - q0[0]) / S, dv = -(q[1] - q0[1]) / S;
+    return [ref[0] + du*cb.r[0] + dv*cb.u[0],
+            ref[1] + du*cb.r[1] + dv*cb.u[1],
+            ref[2] + du*cb.r[2] + dv*cb.u[2]];
+  }
+  function clampV(p) {
+    for (var kk = 0; kk < 3; kk++)
+      p[kk] = Math.max(-RANGE, Math.min(RANGE, p[kk]));
+    return p;
+  }
+  function down(ev, which) { mode = which;
+    dragStart = (which === "u" ? u : which === "v" ? v : w).slice();
+    ev.preventDefault(); ev.stopPropagation(); }
+  [[hU, "u"], [hV, "v"], [hW, "w"]].forEach(function (hw) {
+    hw[0].addEventListener("mousedown", function (e) { down(e, hw[1]); });
+    hw[0].addEventListener("touchstart", function (e) { down(e, hw[1]); },
+      { passive: false });
+  });
+  svg.addEventListener("mousedown", function (e) { spinDown(e); });
+  svg.addEventListener("touchstart", function (e) { spinDown(e); },
+    { passive: false });
+  function spinDown(ev) {
+    if (mode) return;
+    spinning = true; lastP = ptrXY(ev);
+    svg.classList.add("dragging"); ev.preventDefault();
+  }
+  function move(ev) {
+    if (mode) {
+      var p = clampV(toWorld(ev, dragStart));
+      if (mode === "u") u = p; else if (mode === "v") v = p; else w = p;
+      ev.preventDefault();
+    } else if (spinning) {
+      var p2 = ptrXY(ev);
+      yaw += (p2[0] - lastP[0]) * 0.008;
+      pitch = Math.max(-1.45, Math.min(1.45,
+        pitch + (p2[1] - lastP[1]) * 0.008));
+      lastP = p2; lastSpin = performance.now(); ev.preventDefault();
+    }
+  }
+  window.addEventListener("mousemove", move);
+  window.addEventListener("touchmove", move, { passive: false });
+  function up() {
+    if (mode) document.getElementById("announce").textContent =
+      "vol = " + Math.abs(dot(w, cross(u, v))).toFixed(2);
+    mode = null;
+    if (spinning) { svg.classList.remove("dragging"); spinning = false; }
+  }
+  window.addEventListener("mouseup", up);
+  window.addEventListener("touchend", up);
+
+  document.getElementById("btn-demo").addEventListener("click", function () {
+    replayT0 = performance.now() - t0;
+    grow.vecs = grow.base = grow.n = grow.box = 0;
+  });
+  document.getElementById("btn-view").addEventListener("click", function () {
+    yaw = -0.62; pitch = 0.40;
+    lastSpin = reduced ? Infinity : -1;
+  });
+})();
+</script>
+</body>
+</html>

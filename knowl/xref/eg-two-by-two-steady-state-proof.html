@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Why the Steady State Is Reached.</span>
+</h2>
+<div class="para">Prove the following statement: if <span class="process-math">\(T\)</span> is a <span class="process-math">\(2 \times 2\)</span> regular transition matrix then <span class="process-math">\(T\)</span> has a steady state vector <span class="process-math">\(\vec{x}_*\)</span> and furthermore for any initial vector <span class="process-math">\(\vec{x}_0\)</span> we have <span class="process-math">\(\lim_{n \to \infty} T^n \vec{x}_0 = \vec{x}_*\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">A <span class="process-math">\(2 \times 2\)</span> stochastic matrix is of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T = \begin{bmatrix} a \amp 1 - b \\ 1 - a \amp b \end{bmatrix},
+\qquad \text{where } 0 \leq a \leq 1 \text{ and } 0 \leq b \leq 1.
+\end{equation*}
+</div>
+<div class="para">Note that if <span class="process-math">\(a = b = 0\text{,}\)</span> then <span class="process-math">\(T = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\)</span> and <span class="process-math">\(T^n\)</span> alternates between <span class="process-math">\(T\)</span> and <span class="process-math">\(I\text{,}\)</span> hence <span class="process-math">\(T\)</span> is not regular. Also, if <span class="process-math">\(a = b = 1\text{,}\)</span> then <span class="process-math">\(T = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}\text{,}\)</span> which is clearly not regular. Therefore, we can ignore these two cases.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">To compute <span class="process-math">\(T^n\text{,}\)</span> we first diagonalize <span class="process-math">\(T\text{.}\)</span> Computing the eigenvalues and the eigenvectors gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lambda_1 = 1, \quad \lambda_2 = a + b - 1,
+\qquad
+\vec{x}_1 = \begin{bmatrix} b - 1 \\ a - 1 \end{bmatrix},
+\quad \vec{x}_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T^n = PD^nP^{-1}
+= \begin{bmatrix} b-1 \amp -1 \\ a-1 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 0 \\ 0 \amp (a+b-1)^n \end{bmatrix}
+\frac{1}{a+b-2} \begin{bmatrix} 1 \amp 1 \\ 1-a \amp b-1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Now <span class="process-math">\(\lim_{n \to \infty} (a+b-1)^n = 0\text{,}\)</span> since <span class="process-math">\(0 \lt a + b \lt 2\)</span> and therefore <span class="process-math">\(-1 \lt a + b - 1 \lt 1\text{.}\)</span> Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n \to \infty} T^n
+= \frac{1}{a+b-2} \begin{bmatrix} b-1 \amp b-1 \\ a-1 \amp a-1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Now, if the initial probability vector is <span class="process-math">\(\vec{x}_0 = \begin{bmatrix} p \\ 1-p \end{bmatrix}\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n \to \infty} T^n \vec{x}_0
+= \frac{1}{a+b-2} \begin{bmatrix} b-1 \amp b-1 \\ a-1 \amp a-1 \end{bmatrix}
+\begin{bmatrix} p \\ 1-p \end{bmatrix}
+= \frac{1}{a+b-2} \begin{bmatrix} b-1 \\ a-1 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">which is the probability vector corresponding to eigenvector <span class="process-math">\(\vec{x}_1\)</span> with eigenvalue one, and is independent of <span class="process-math">\(p\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para"><dfn class="terminology">Summary.</dfn></div>
+<ol class="upper-roman ol-marker-1" id="eg-two-by-two-steady-state-proof-3-5-2">
+<li>
+<div class="para">
+<span class="process-math">\(T_{2 \times 2}\)</span> is a regular stochastic matrix.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item I"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-1" title="Copy heading and permalink for Item I" aria-label="Copy heading and permalink for Item I">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\vec{x}_0\)</span> is an initial probability vector.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item II"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-2" title="Copy heading and permalink for Item II" aria-label="Copy heading and permalink for Item II">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\vec{x}_*\)</span> is a probability eigenvector of <span class="process-math">\(T\)</span> corresponding to eigenvalue one.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item III"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-3" title="Copy heading and permalink for Item III" aria-label="Copy heading and permalink for Item III">🔗</a></div>
+</li>
+<li>
+<div class="para">The steady state vector is <span class="process-math">\(\vec{x}_*\text{:}\)</span> <span class="process-math">\(\lim_{n \to \infty} T^n \vec{x}_0 = \vec{x}_*\text{.}\)</span> This means that to find the steady state vector of <span class="process-math">\(T_{2 \times 2}\text{,}\)</span> we can find the eigenvector corresponding to eigenvalue one and normalize it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item IV"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5-2-4" title="Copy heading and permalink for Item IV" aria-label="Copy heading and permalink for Item IV">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 9.15.1"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof-3" title="Copy heading and permalink for Solution 9.15.1" aria-label="Copy heading and permalink for Solution 9.15.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.15: Why the Steady State Is Reached"><a tabindex="-1" href="#eg-two-by-two-steady-state-proof" title="Copy heading and permalink for Example 9.15: Why the Steady State Is Reached" aria-label="Copy heading and permalink for Example 9.15: Why the Steady State Is Reached">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-markov-chains.html#eg-two-by-two-steady-state-proof">In Context</a></span>
+</body>
+</html>

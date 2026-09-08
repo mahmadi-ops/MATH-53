@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The columns of A</title>
+<style>
+  body.dark {
+    --bg: #0c0f13; --pane: #101419; --line: #232b38; --grid: #22344a;
+    --axis: #c7d0df; --ink: #e8eaf0; --muted: #8b93a7; --tick: #5b6579;
+    --cube: #202a38; --x: #ffe45c; --oth: #9aa7bd; --range: #58c4dd;
+    --btnbord: #2a3341; --btnhov: #161c25; --brk: #aeb8c9;
+  }
+  body.light {
+    --bg: #ffffff; --pane: #ffffff; --line: #d7dde6; --grid: #e4e9f0;
+    --axis: #1a1a1a; --ink: #111111; --muted: #5a6270; --tick: #8a94a6;
+    --cube: #d9dfe8; --x: #b8860b; --oth: #6a7488; --range: #1f8fb4;
+    --btnbord: #c9d1dc; --btnhov: #f0f3f7; --brk: #444c5a;
+  }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #wrap { max-width: 620px; margin: 0 auto; padding: 8px 8px 12px; }
+
+  #titlebar { display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 4px 16px; padding: 2px 4px 6px; }
+  #title { font-size: 18px; }
+  #title .dim { color: var(--muted); font-size: 14px; margin-left: 8px; }
+  #controls { display: flex; gap: 8px; }
+  #controls button {
+    background: transparent; color: var(--ink); border: 1px solid var(--btnbord);
+    border-radius: 6px; padding: 3px 12px; font: 13px Georgia, serif;
+    cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  #controls button:hover { background: var(--btnhov); }
+  #controls button.active { border-color: var(--x); color: var(--x); }
+
+  #eqbar { display: flex; justify-content: center; align-items: center;
+    gap: 9px; padding: 4px 0 10px; font-size: 15px; flex-wrap: wrap; }
+  .mtx { display: inline-grid; justify-items: end; column-gap: 10px;
+    padding: 3px 8px; border-left: 1.4px solid var(--brk); border-right: 1.4px solid var(--brk);
+    background:
+      linear-gradient(var(--brk),var(--brk)) top left    / 6px 1.4px no-repeat,
+      linear-gradient(var(--brk),var(--brk)) bottom left / 6px 1.4px no-repeat,
+      linear-gradient(var(--brk),var(--brk)) top right   / 6px 1.4px no-repeat,
+      linear-gradient(var(--brk),var(--brk)) bottom right/ 6px 1.4px no-repeat;
+    font-variant-numeric: tabular-nums; line-height: 1.4;
+  }
+  .piv { color: var(--x); }
+  #eqinfo { color: var(--muted); font-size: 13.5px; }
+  #eqinfo b { color: var(--ink); font-weight: normal; }
+
+  .pane-head { font-size: 12px; color: var(--muted); letter-spacing: .5px;
+    padding: 0 2px 4px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .pane-head b { color: var(--ink); font-weight: normal; }
+  .chip { white-space: nowrap; }
+  svg { display: block; width: 100%; height: auto;
+    background: var(--pane); border: 1px solid var(--line); border-radius: 8px; }
+  svg.spin { cursor: grab; } svg.spin.dragging { cursor: grabbing; }
+
+  #hint { text-align: center; color: var(--muted); font-size: 12px; padding-top: 8px; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="titlebar">
+    <div id="title">the columns of <i>A</i><span class="dim" id="dims"></span></div>
+    <div id="controls">
+      <button id="btn-demo" type="button">&#9654;&#xFE0E; animate</button>
+      <button id="btn-view" type="button" style="display:none">&#10226; view</button>
+    </div>
+  </div>
+  <div id="eqbar">
+    <span class="mtx" id="matA"></span>
+    <span id="eqinfo"></span>
+  </div>
+  <div class="pane-head">
+    <span class="chip"><span style="color:var(--x)">&#9632;</span>
+      pivot columns</span>
+    <span class="chip"><span style="color:var(--oth)">&#9632;</span>
+      other columns</span>
+    <span class="chip"><span style="color:var(--range)">&#9632;</span>
+      <span id="chipCol"></span></span>
+  </div>
+  <svg id="svg" viewBox="0 0 520 520" role="img"
+    aria-label="The columns of the matrix drawn as vectors, with their span"></svg>
+  <div id="hint" style="display:none">drag the picture to rotate</div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var W = 520, C = W / 2;
+
+  // ---------------- URL parameters ----------------
+  var Q = {};
+  location.search.slice(1).split("&").forEach(function (kv) {
+    if (!kv) return; var p = kv.split("=");
+    Q[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || "");
+  });
+  document.body.className = Q.theme === "light" ? "light" : "dark";
+  var A = (Q.mat || "1,2,1:1,3,6:3,7,8").split(":").map(function (r) {
+    return r.split(",").map(Number); });
+  var m = A.length, n = A[0].length;
+  var RANGE = parseFloat(Q.range || "0");
+  if (!(RANGE > 0)) {           // auto range: largest entry, next integer up
+    RANGE = 1;
+    A.forEach(function (r) { r.forEach(function (v) {
+      RANGE = Math.max(RANGE, Math.abs(v)); }); });
+    RANGE = Math.ceil(RANGE) + 1;
+  }
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // ---------------- tiny linear algebra ----------------
+  function rref(M) {
+    M = M.map(function (r) { return r.slice(); });
+    var rows = M.length, cols = M[0].length, lead = 0, pivots = [], r, i, k, val;
+    for (r = 0; r < rows && lead < cols; r++) {
+      var piv = -1, best = 1e-9;
+      for (i = r; i < rows; i++) if (Math.abs(M[i][lead]) > best) { best = Math.abs(M[i][lead]); piv = i; }
+      if (piv < 0) { lead++; r--; continue; }
+      var t = M[r]; M[r] = M[piv]; M[piv] = t;
+      val = M[r][lead];
+      for (k = 0; k < cols; k++) M[r][k] /= val;
+      for (i = 0; i < rows; i++) if (i !== r) {
+        val = M[i][lead];
+        for (k = 0; k < cols; k++) M[i][k] -= val * M[r][k];
+      }
+      pivots.push(lead); lead++;
+    }
+    return { M: M, pivots: pivots };
+  }
+  var RA = rref(A), pivots = RA.pivots, rank = pivots.length;
+  function colV(j) {
+    var v = [0, 0, 0], i; for (i = 0; i < m; i++) v[i] = A[i][j]; return v; }
+  var cols = []; for (var j0 = 0; j0 < n; j0++) cols.push(colV(j0));
+  var colB = pivots.map(colV);
+  function dot(a, b) { return a[0]*b[0] + a[1]*b[1] + a[2]*b[2]; }
+  function orthonormal(basis) {
+    var out = [];
+    basis.forEach(function (v) {
+      var w = v.slice();
+      out.forEach(function (e) { var d = dot(w, e);
+        w = [w[0]-d*e[0], w[1]-d*e[1], w[2]-d*e[2]]; });
+      var len = Math.sqrt(dot(w, w));
+      if (len > 1e-9) out.push([w[0]/len, w[1]/len, w[2]/len]);
+    });
+    return out;
+  }
+  var colON = orthonormal(colB);
+
+  // ---------------- svg helpers ----------------
+  function el(parent, tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e); return e;
+  }
+  function ease(u) { u = Math.max(0, Math.min(1, u));
+    return u < 0.5 ? 4*u*u*u : 1 - Math.pow(-2*u + 2, 3) / 2; }
+
+  function makeArrow(svg, colorVar) {
+    var g = el(svg, "g", {});
+    var glow = el(g, "line", { "stroke-width": 7, "stroke-linecap": "round",
+      opacity: 0.28 });
+    glow.style.stroke = "var(" + colorVar + ")"; glow.style.filter = "blur(4px)";
+    var core = el(g, "line", { "stroke-width": 2.6, "stroke-linecap": "round" });
+    core.style.stroke = "var(" + colorVar + ")";
+    var tip = el(g, "path", {}); tip.style.fill = "var(" + colorVar + ")";
+    var label = el(g, "text", { "font-size": 19, "font-style": "italic",
+      "font-family": "Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif" });
+    label.style.fill = "var(" + colorVar + ")";
+    return { g: g, glow: glow, core: core, tip: tip, label: label };
+  }
+  function setArrow(a, x0, y0, x1, y1, txt, vis) {
+    var dx = x1 - x0, dy = y1 - y0, len = Math.hypot(dx, dy) || 1;
+    var hx = dx / len, hy = dy / len;
+    var hs = Math.min(15, 6 + len * 0.06);
+    var bx = x1 - hx * hs, by = y1 - hy * hs;
+    [a.glow, a.core].forEach(function (l) {
+      l.setAttribute("x1", x0); l.setAttribute("y1", y0);
+      l.setAttribute("x2", bx + hx); l.setAttribute("y2", by + hy);
+    });
+    a.tip.setAttribute("d", "M" + x1 + "," + y1 +
+      "L" + (bx - hy * hs * 0.38) + "," + (by + hx * hs * 0.38) +
+      "L" + (bx + hy * hs * 0.38) + "," + (by - hx * hs * 0.38) + "Z");
+    a.label.textContent = txt;
+    a.label.setAttribute("x", x1 + hx * 14 + (hx >= 0 ? 2 : -16));
+    a.label.setAttribute("y", y1 + hy * 14 + 6);
+    a.g.setAttribute("opacity", vis);
+  }
+
+  // ---------------- pane (single) ----------------
+  var svg = document.getElementById("svg");
+  var dim = m === 3 ? 3 : 2;
+  var yaw = -0.62, pitch = 0.40;
+  var S = dim === 2 ? W / (2 * RANGE) : W / (2 * RANGE) * 0.7;
+  function map(p) {
+    if (dim === 2) return [C + p[0] * S, C - p[1] * S];
+    var ca = Math.cos(yaw), sa = Math.sin(yaw);
+    var cb = Math.cos(pitch), sb = Math.sin(pitch);
+    var X = p[0] * ca - p[1] * sa;
+    var Y = p[0] * sa + p[1] * ca;
+    return [C + X * S, C - (-Y * sb + p[2] * cb) * S];
+  }
+
+  var gGrid = el(svg, "g", {}), gSub = el(svg, "g", {}), gAxes = el(svg, "g", {}),
+      gVecs = el(svg, "g", {});
+  var i, k;
+
+  var cubeC = [], cubeL = [], cubeE = [];
+  if (dim === 2) {
+    for (i = -RANGE; i <= RANGE; i++) {
+      if (i === 0) continue;
+      [[ [i,-RANGE,0], [i,RANGE,0] ], [ [-RANGE,i,0], [RANGE,i,0] ]]
+      .forEach(function (seg) {
+        var a = map(seg[0]), c = map(seg[1]);
+        el(gGrid, "line", { x1: a[0], y1: a[1], x2: c[0], y2: c[1],
+          "stroke-width": 1 }).style.stroke = "var(--grid)";
+      });
+    }
+  } else {
+    for (i = 0; i < 8; i++) cubeC.push(
+      [(i&1?RANGE:-RANGE),(i&2?RANGE:-RANGE),(i&4?RANGE:-RANGE)]);
+    cubeE = [[0,1],[2,3],[4,5],[6,7],[0,2],[1,3],[4,6],[5,7],[0,4],[1,5],[2,6],[3,7]];
+    cubeE.forEach(function () {
+      var l = el(gGrid, "line", { "stroke-width": 1 });
+      l.style.stroke = "var(--cube)"; cubeL.push(l);
+    });
+    svg.classList.add("spin");
+    document.getElementById("hint").style.display = "";
+  }
+
+  var axes = [];
+  var axdef = dim === 2
+    ? [[[-RANGE,0,0],[RANGE,0,0]], [[0,-RANGE,0],[0,RANGE,0]]]
+    : [[[-RANGE,0,0],[RANGE,0,0]], [[0,-RANGE,0],[0,RANGE,0]],
+       [[0,0,-RANGE],[0,0,RANGE]]];
+  var axlab = ["x₁", "x₂", "x₃"];
+  axdef.forEach(function (d, kk) {
+    var line = el(gAxes, "line", { "stroke-width": dim === 2 ? 1.8 : 1.5 });
+    line.style.stroke = "var(--axis)";
+    var tip = el(gAxes, "path", {}); tip.style.fill = "var(--axis)";
+    var txt = el(gAxes, "text", { "font-size": 15, "font-style": "italic",
+      "text-anchor": "middle" });
+    txt.style.fill = "var(--axis)"; txt.textContent = axlab[kk];
+    axes.push({ p0: d[0], p1: d[1], line: line, tip: tip, txt: txt });
+  });
+
+  // span visuals
+  var subFace = el(gSub, "path", { "fill-opacity": 0.20,
+    "stroke-opacity": 0.75, "stroke-width": 1.2 });
+  var subGrid = [];
+  for (i = 0; i < 10; i++)
+    subGrid.push(el(gSub, "line", { "stroke-opacity": 0.18, "stroke-width": 1 }));
+  var subLineGlow = el(gSub, "line", { "stroke-width": 6,
+    "stroke-linecap": "round", opacity: 0.25 });
+  subLineGlow.style.filter = "blur(3px)";
+  var subLine = el(gSub, "line", { "stroke-width": 2.2, "stroke-linecap": "round" });
+  var tint = el(gGrid, "rect", { x: 1, y: 1, width: W - 2, height: W - 2,
+    rx: 8, "fill-opacity": 0.05, stroke: "none" });
+
+  function renderSub(op) {
+    var d = colON.length, S1 = RANGE * 0.62;
+    subFace.setAttribute("opacity", 0);
+    subLine.setAttribute("opacity", 0); subLineGlow.setAttribute("opacity", 0);
+    subGrid.forEach(function (l) { l.setAttribute("opacity", 0); });
+    tint.setAttribute("opacity", 0);
+    if (op <= 0.01) return;
+    if (d === 1) {
+      var e1 = colON[0], tmin = -1e9, tmax = 1e9, ax;
+      for (ax = 0; ax < dim; ax++) {
+        if (Math.abs(e1[ax]) < 1e-9) continue;
+        var t1 = -RANGE / e1[ax], t2 = RANGE / e1[ax];
+        tmin = Math.max(tmin, Math.min(t1, t2));
+        tmax = Math.min(tmax, Math.max(t1, t2));
+      }
+      var pA = map([tmin*e1[0], tmin*e1[1], tmin*e1[2]]);
+      var pB = map([tmax*e1[0], tmax*e1[1], tmax*e1[2]]);
+      [subLine, subLineGlow].forEach(function (l) {
+        l.setAttribute("x1", pA[0]); l.setAttribute("y1", pA[1]);
+        l.setAttribute("x2", pB[0]); l.setAttribute("y2", pB[1]);
+        l.style.stroke = "var(--range)";
+      });
+      subLine.setAttribute("opacity", op);
+      subLineGlow.setAttribute("opacity", 0.25 * op);
+    } else if (d === 2 && dim === 3) {
+      var e1 = colON[0], e2 = colON[1];
+      function pt(s, t) { return map([
+        s*e1[0] + t*e2[0], s*e1[1] + t*e2[1], s*e1[2] + t*e2[2]]); }
+      var cs = [pt(-S1,-S1), pt(S1,-S1), pt(S1,S1), pt(-S1,S1)];
+      subFace.setAttribute("d", "M" + cs.map(function (q) {
+        return q[0] + "," + q[1]; }).join("L") + "Z");
+      subFace.style.fill = "var(--range)";
+      subFace.style.stroke = "var(--range)";
+      subFace.setAttribute("opacity", op);
+      for (k = 0; k < 5; k++) {
+        var f = (k - 2) / 2 * S1;
+        var l1 = subGrid[k], l2 = subGrid[k + 5];
+        var a1 = pt(f, -S1), c1 = pt(f, S1), a2 = pt(-S1, f), c2 = pt(S1, f);
+        l1.setAttribute("x1", a1[0]); l1.setAttribute("y1", a1[1]);
+        l1.setAttribute("x2", c1[0]); l1.setAttribute("y2", c1[1]);
+        l2.setAttribute("x1", a2[0]); l2.setAttribute("y1", a2[1]);
+        l2.setAttribute("x2", c2[0]); l2.setAttribute("y2", c2[1]);
+        [l1, l2].forEach(function (l) {
+          l.style.stroke = "var(--range)";
+          l.setAttribute("opacity", op); });
+      }
+    } else if (d >= dim) {
+      tint.style.fill = "var(--range)";
+      tint.setAttribute("opacity", op);
+    }
+  }
+
+  function renderFrame(op) {
+    if (dim === 3) cubeL.forEach(function (l, kk) {
+      var a = map(cubeC[cubeE[kk][0]]), c = map(cubeC[cubeE[kk][1]]);
+      l.setAttribute("x1", a[0]); l.setAttribute("y1", a[1]);
+      l.setAttribute("x2", c[0]); l.setAttribute("y2", c[1]);
+      l.setAttribute("opacity", op.axes);
+    });
+    gGrid.setAttribute("opacity", Math.max(op.grid, dim === 3 ? op.axes : 0));
+    axes.forEach(function (a) {
+      var p0 = map(a.p0), p1 = map(a.p1);
+      var dx = p1[0]-p0[0], dy = p1[1]-p0[1], len = Math.hypot(dx,dy) || 1;
+      var hx = dx/len, hy = dy/len, hs = 9;
+      a.line.setAttribute("x1", p0[0]); a.line.setAttribute("y1", p0[1]);
+      a.line.setAttribute("x2", p1[0]-hx*hs); a.line.setAttribute("y2", p1[1]-hy*hs);
+      a.tip.setAttribute("d", "M" + p1[0] + "," + p1[1] +
+        "L" + (p1[0]-hx*hs-hy*hs*0.35) + "," + (p1[1]-hy*hs+hx*hs*0.35) +
+        "L" + (p1[0]-hx*hs+hy*hs*0.35) + "," + (p1[1]-hy*hs-hx*hs*0.35) + "Z");
+      var tp = map([a.p1[0]*1.1, a.p1[1]*1.1, a.p1[2]*1.1]);
+      a.txt.setAttribute("x", tp[0]); a.txt.setAttribute("y", tp[1] + 5);
+      [a.line, a.tip, a.txt].forEach(function (e) {
+        e.setAttribute("opacity", op.axes); });
+    });
+  }
+
+  // column arrows: pivots bright, the rest muted
+  var sub = ["₁", "₂", "₃", "₄", "₅", "₆",
+             "₇", "₈", "₉"];
+  var arrows = [];
+  cols.forEach(function (v, jj) {
+    var piv = pivots.indexOf(jj) >= 0;
+    arrows.push({ a: makeArrow(gVecs, piv ? "--x" : "--oth"), v: v,
+      lab: "a" + (sub[jj] || jj + 1), piv: piv });
+  });
+
+  // ---------------- header ----------------
+  var subR = ["&#8477;", "&#8477;&sup2;", "&#8477;&sup3;"];
+  document.getElementById("dims").innerHTML =
+    n + " vectors in " + subR[m - 1];
+  var eA = document.getElementById("matA");
+  eA.style.gridTemplateColumns = "repeat(" + n + ", auto)";
+  eA.innerHTML = new Array(m * n + 1).join("<span></span>");
+  for (i = 0; i < m; i++) for (var jj2 = 0; jj2 < n; jj2++) {
+    var c2 = eA.children[i * n + jj2];
+    c2.textContent = A[i][jj2];
+    if (pivots.indexOf(jj2) >= 0) c2.className = "piv";
+  }
+  var pivNames = pivots.map(function (p) {
+    return "<i>a</i>" + (sub[p] || p + 1); }).join(", ");
+  document.getElementById("eqinfo").innerHTML =
+    "rank <i>A</i> = <b>" + rank + "</b>";
+  document.getElementById("chipCol").innerHTML =
+    "Col <i>A</i> = Span{" + pivNames + "}" +
+    (rank >= m ? " = all of " + subR[m - 1] : "");
+
+  // ---------------- animation ----------------
+  var grow = { grid: reduced?1:0, axes: reduced?1:0, plane: reduced?1:0 };
+  var vecOp = cols.map(function () { return reduced ? 1 : 0; });
+
+  function render() {
+    renderFrame(grow);
+    renderSub(grow.plane * 0.9);
+    var o = map([0, 0, 0]);
+    arrows.forEach(function (ar, jj) {
+      var h = map(ar.v);
+      setArrow(ar.a, o[0], o[1], h[0], h[1], ar.lab,
+        vecOp[jj] * (ar.piv ? 1 : 0.75));
+    });
+  }
+
+  var t0 = performance.now(), lastT = t0;
+  var demo = false, demoT = 0;
+  var lastSpin = reduced ? Infinity : -1, spinning = false, lastP = null;
+
+  function stage(t, a, c) { return ease((t - a) / (c - a)); }
+  function frame(now) {
+    var t = now - t0, dt = Math.min(50, now - lastT); lastT = now;
+    if (!reduced) {
+      grow.grid = stage(t, 0, 700); grow.axes = stage(t, 250, 1000);
+      cols.forEach(function (_, jj) {
+        vecOp[jj] = Math.max(vecOp[jj], stage(t, 800 + 420 * jj,
+          1500 + 420 * jj)); });
+      grow.plane = stage(t, 800 + 420 * n, 1700 + 420 * n);
+      if (now - lastSpin > 4000 && !spinning && dim === 3)
+        yaw += dt * 0.00006;
+    }
+    if (demo) {
+      demoT += dt;
+      cols.forEach(function (_, jj) {
+        vecOp[jj] = stage(demoT, 420 * jj, 700 + 420 * jj); });
+      grow.plane = stage(demoT, 420 * n, 900 + 420 * n);
+      if (demoT > 1200 + 420 * n) setDemo(false);
+    }
+    render();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // ---------------- interaction: drag to rotate ----------------
+  function ptrXY(ev) { var t = ev.touches ? ev.touches[0] : ev;
+    return [t.clientX, t.clientY]; }
+  if (dim === 3) {
+    var downH = function (ev) {
+      spinning = true; lastP = ptrXY(ev);
+      svg.classList.add("dragging"); ev.preventDefault();
+    };
+    svg.addEventListener("mousedown", downH);
+    svg.addEventListener("touchstart", downH, { passive: false });
+  }
+  window.addEventListener("mousemove", moveH);
+  window.addEventListener("touchmove", moveH, { passive: false });
+  function moveH(ev) {
+    if (!spinning) return;
+    var p2 = ptrXY(ev);
+    yaw += (p2[0] - lastP[0]) * 0.008;
+    pitch = Math.max(-1.45, Math.min(1.45, pitch + (p2[1] - lastP[1]) * 0.008));
+    lastP = p2; lastSpin = performance.now(); ev.preventDefault();
+  }
+  function upH() {
+    if (spinning) { svg.classList.remove("dragging"); spinning = false; }
+  }
+  window.addEventListener("mouseup", upH);
+  window.addEventListener("touchend", upH);
+
+  function setDemo(on) {
+    demo = on;
+    if (on) {
+      demoT = 0;
+      cols.forEach(function (_, jj) { vecOp[jj] = 0; });
+      grow.plane = 0;
+    }
+    document.getElementById("btn-demo").classList.toggle("active", on);
+  }
+  document.getElementById("btn-demo").addEventListener("click", function () {
+    setDemo(!demo); });
+  if (dim === 3) {
+    var bv = document.getElementById("btn-view");
+    bv.style.display = "";
+    bv.addEventListener("click", function () {
+      yaw = -0.62; pitch = 0.40;
+      lastSpin = reduced ? Infinity : -1;
+    });
+  }
+})();
+</script>
+</body>
+</html>

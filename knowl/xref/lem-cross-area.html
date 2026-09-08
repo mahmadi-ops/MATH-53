@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Length of the Cross Product is an Area.</span>
+</h2>
+<div class="para logical">
+<div class="para">For all <span class="process-math">\(\vec{u}, \vec{v} \in \R^3\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\| \vec{u} \times \vec{v} \|^2
+= \| \vec{u} \|^2 \| \vec{v} \|^2 - (\vec{u} \cdot \vec{v})^2,
+\end{equation*}
+</div>
+<div class="para">and consequently the parallelogram with edges <span class="process-math">\(\vec{u}\text{,}\)</span> <span class="process-math">\(\vec{v}\)</span> has area <span class="process-math">\(\| \vec{u} \| \| \vec{v} \| \sin\theta = \| \vec{u} \times \vec{v} \|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-cross-area-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 6.30: Length of the Cross Product is an Area"><a tabindex="-1" href="#lem-cross-area" title="Copy heading and permalink for Lemma 6.30: Length of the Cross Product is an Area" aria-label="Copy heading and permalink for Lemma 6.30: Length of the Cross Product is an Area">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">Expanding both sides in coordinates,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\| \vec{u} \times \vec{v} \|^2 = \sum_{i \lt j} (u_iv_j - u_jv_i)^2,
+\qquad
+\| \vec{u} \|^2 \| \vec{v} \|^2 - (\vec{u} \cdot \vec{v})^2
+= \Big( \sum_i u_i^2 \Big) \Big( \sum_j v_j^2 \Big)
+- \Big( \sum_i u_iv_i \Big)^2,
+\end{equation*}
+</div>
+<div class="para">and multiplying out the right-hand side, the terms <span class="process-math">\(u_i^2v_i^2\)</span> cancel and the cross terms regroup as <span class="process-math">\(\sum_{i \lt j}(u_iv_j - u_jv_i)^2\)</span> — an algebraic identity checked by direct expansion. Then, using <span class="process-math">\(\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\| \vec{u} \times \vec{v} \|^2
+= \| \vec{u} \|^2 \| \vec{v} \|^2 \left( 1 - \cos^2\theta \right)
+= \left( \| \vec{u} \| \| \vec{v} \| \sin\theta \right)^2,
+\end{equation*}
+</div>
+<div class="para">and both sides are nonnegative, so <span class="process-math">\(\| \vec{u} \times \vec{v} \| = \| \vec{u} \| \| \vec{v} \| \sin\theta\text{,}\)</span> which is base times height for the parallelogram.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-cross-area-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.30.1"><a tabindex="-1" href="#lem-cross-area-3" title="Copy heading and permalink for Proof 6.30.1" aria-label="Copy heading and permalink for Proof 6.30.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-determinant-volume.html#lem-cross-area">In Context</a></span>
+</body>
+</html>
