@@ -290,8 +290,10 @@
       </me>
     </p>
     <p>
-      Now comes the decisive step: change coordinates so that the eigenvectors become
-      the axes. Define <m>\vec{w}(t) = P^{-1}\vec{u}(t)</m>, so <m>\vec{w}</m> holds
+      Now use the change of coordinates from
+      <xref ref="subsec-eigenvector-geometry" text="type-global"/>: take the
+      eigenvectors as the coordinate directions. Define
+      <m>\vec{w}(t) = P^{-1}\vec{u}(t)</m>, so <m>\vec{w}</m> holds
       the coordinates of the displacement vector relative to the eigenvector basis.
       Substituting <m>\vec{u} = P\vec{w}</m> into the equation of motion and
       multiplying both sides by <m>P^{-1}</m>,

@@ -2,6 +2,96 @@
 <section xml:id="sec-eigenvalues" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Eigenvalues and Eigenvectors</title>
 
+  <subsection xml:id="subsec-eigenvector-geometry">
+    <title>Two Directions That Stay on Their Lines</title>
+
+    <p>
+      Before computing a large power, watch what one application of
+      <md>
+        A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp -4 \end{bmatrix}
+      </md>
+      does to two special vectors. The vector <m>\vec{v}_1 = (2,1)</m> doubles
+      along its line, while <m>\vec{v}_2 = (-1,3)</m> reverses direction and
+      becomes five times as long:
+      <md>
+        A\begin{bmatrix} 2 \\ 1 \end{bmatrix}
+        = \begin{bmatrix} 4 \\ 2 \end{bmatrix}
+        = 2\begin{bmatrix} 2 \\ 1 \end{bmatrix},
+        \qquad
+        A\begin{bmatrix} -1 \\ 3 \end{bmatrix}
+        = \begin{bmatrix} 5 \\ -15 \end{bmatrix}
+        = -5\begin{bmatrix} -1 \\ 3 \end{bmatrix}.
+      </md>
+    </p>
+
+    <figure xml:id="fig-eigenvector-geometry">
+      <caption>
+        Press Play to see one application of <m>A</m>, or use the slider to
+        inspect it. Each arrow stays on its own dashed line through the origin.
+        The positive factor <m>2</m> preserves direction; the negative factor
+        <m>-5</m> reverses it. The motion between the starting and ending arrows
+        is a visual transition, not repeated applications of <m>A</m>.
+      </caption>
+      <interactive xml:id="int-eigenvector-geometry" iframe="demos-manim/eigenvectors.html" width="100%" aspect="10:9">
+        <shortdescription>Two eigenvectors stay on their lines: (2,1) doubles, and (-1,3) reverses and grows fivefold.</shortdescription>
+      </interactive>
+    </figure>
+
+    <p>
+      These nonzero vectors are called <term>eigenvectors</term>, and their
+      scale factors <m>2</m> and <m>-5</m> are the corresponding
+      <term>eigenvalues</term>. Every nonzero vector on either of these two
+      lines has the same scale factor as the displayed vector on that line.
+    </p>
+    <p>
+      The two eigenvectors form a basis of <m>\R^2</m>. Put them in the columns
+      of <m>P</m>, with their scale factors in the same order on the diagonal
+      of <m>D</m>:
+      <md>
+        P = \begin{bmatrix} 2 \amp -1 \\ 1 \amp 3 \end{bmatrix},
+        \qquad
+        D = \begin{bmatrix} 2 \amp 0 \\ 0 \amp -5 \end{bmatrix}.
+      </md>
+      For any vector <m>\vec{x} = c_1\vec{v}_1 + c_2\vec{v}_2</m>, applying
+      <m>A</m> can now be read as three steps:
+    </p>
+    <ol>
+      <li>
+        <p>
+          <em>Change coordinates with <m>P^{-1}</m>.</em> Express the same vector
+          in the eigenvector basis: <m>P^{-1}\vec{x} = (c_1,c_2)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Scale with <m>D</m>.</em> The two eigenvector coordinates change
+          independently: <m>D(c_1,c_2) = (2c_1,-5c_2)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Return to standard coordinates with <m>P</m>.</em> Recombine the
+          scaled components to obtain <m>2c_1\vec{v}_1 - 5c_2\vec{v}_2 = A\vec{x}</m>.
+        </p>
+      </li>
+    </ol>
+    <p>
+      Thus <m>A\vec{x} = PDP^{-1}\vec{x}</m> for every <m>\vec{x}</m>, so
+      <m>A = PDP^{-1}</m>. Read the product from right to left: change
+      coordinates, scale, and return. This is why the columns of <m>P</m> in
+      the calculation below are the eigenvectors we just watched.
+    </p>
+    <p>
+      The same idea will explain the coupled oscillators in
+      <xref ref="subsec-oscillators-decoupling" text="type-global"/>. There,
+      the eigenvectors <m>(1,1)</m> and <m>(1,-1)</m> describe two normal modes
+      of the carts. Multiplication by <m>P^{-1}</m> converts cart displacements
+      into mode coordinates, the diagonal system gives an independent
+      oscillation equation for each mode, and <m>P</m> combines the modes back
+      into the motion of the carts.
+    </p>
+  </subsection>
+
   <subsection xml:id="subsec-eigenvalue-motivation">
     <title>Motivation: Powers of a Matrix</title>
 

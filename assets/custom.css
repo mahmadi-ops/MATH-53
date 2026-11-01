@@ -187,6 +187,12 @@ html:root:not(.dark-mode) details.hiddenproof[open] > summary.knowl__link {
     aspect-ratio: 5 / 4;
 }
 
+/* Keep the eigenvector controls and both plots visible on narrow screens. */
+#int-eigenvector-geometry {
+    aspect-ratio: 10 / 9;
+    min-height: 510px;
+}
+
 /* ------------------------------------------------------------------ *
  * Floating Socratic AI tutor (problems pages) — see custom.js.         *
  * ------------------------------------------------------------------ */

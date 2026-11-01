@@ -1,5 +1,22 @@
 # Manim-style interactive demos
 
+## eigenvectors.html
+
+`eigenvectors.html` introduces the geometry in Section 8.1 using the matrix
+`A = [[1, 2], [3, -4]]`. In a six-second, one-shot animation, `(2, 1)` doubles
+to `(4, 2)`, then `(-1, 3)` reverses and stretches to `(5, -15)`. Both vectors
+stay on their original lines. Each plot uses its own fixed, uniform coordinate
+scale; the intermediate frames illustrate the change, not matrix powers.
+
+Play/Pause, Replay, Start, Result, and a keyboard-operable progress slider let
+readers inspect the motion. With reduced motion enabled, the final result
+appears immediately and playback becomes a static “Show result” action. With
+JavaScript disabled, the final SVGs and explanations remain visible. The page
+has no external dependencies. A screenshot of the final plots is tracked at
+`generated-assets/preview/int-eigenvector-geometry-preview.png` for print output.
+
+## axb.html
+
 `axb.html` is a self-contained (zero-dependency, ~30 KB) interactive figure for
 matrix transformations `T(x) = Ax` with `m, n ≤ 3`, styled after
 3Blue1Brown/Manim: dark scene, glowing vectors, eased build-in animation,
