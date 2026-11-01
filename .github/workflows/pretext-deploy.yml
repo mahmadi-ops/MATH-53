@@ -42,11 +42,6 @@ jobs:
         with:
           node-version: '22'
 
-      - name: set up Python for figure rendering
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
       - name: add gh-cli
         run: |
           apt-get update
@@ -59,19 +54,14 @@ jobs:
           git config user.email "${{ github.actor }}@github_actions.no_reply"
 
       - name: install deps
-        run: pip install -r requirements.txt -r scripts/requirements-figures.txt --break-system-packages
-
-      - name: initialize prefigure
-        run: prefig init
+        run: pip install -r requirements.txt --break-system-packages
 
       - name: install local ptx files
         run: pretext --version
 
-      - name: render static figures with the book theme
-        run: python scripts/build-book-figures.py --skip-mindmap
-
       - name: build deploy targets
-        # Reuse committed browser-rendered assets; static figures were rebuilt above.
+        # Publish the reviewed SVGs and previews committed with their sources.
+        # Figure regeneration is an authoring step (see scripts/FIGURES.md).
         run: pretext build --deploys --no-generate
 
       - name: run deploy
