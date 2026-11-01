@@ -12,7 +12,10 @@ Play/Pause, Replay, Start, Result, and a keyboard-operable progress slider let
 readers inspect the motion. With reduced motion enabled, the final result
 appears immediately and playback becomes a static “Show result” action. With
 JavaScript disabled, the final SVGs and explanations remain visible. The page
-has no external dependencies. A screenshot of the final plots is tracked at
+reuses `../custom.css` for the book's self-hosted TeX Gyre Pagella font and
+olive/wine palette; it has no third-party runtime dependencies. Keep the
+stylesheet and `assets/fonts/` alongside the demo for offline use. A screenshot
+of the final plots is tracked at
 `generated-assets/preview/int-eigenvector-geometry-preview.png` for print output.
 
 ## axb.html

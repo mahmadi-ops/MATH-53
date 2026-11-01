@@ -4,28 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eigenvectors: two invariant lines</title>
+<link rel="stylesheet" href="../custom.css">
 <style>
   :root {
-    color-scheme: dark;
-    --bg: #0c0f13; --pane: #101419; --border: #303c4d;
-    --ink: #e8eaf0; --muted: #b0b9c9; --axis: #77859a;
-    --v1: #58c4dd; --v2: #ffac82;
+    color-scheme: light;
+    --bg: white; --pane: var(--example-like-body-background, #EDF0E6);
+    --v1: var(--link-text-color, #4A5D23);
+    --v2: var(--definition-like-border-color, #5E011C);
+    --border: var(--v1);
+    --ink: black; --muted: #404040; --axis: #808080;
+    --hover: var(--solution-like-body-background, #DDE2CF);
   }
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
   body { margin: 0; background: var(--bg); color: var(--ink);
-    font: 14px/1.4 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font: 16px/1.4 var(--font-body, Palatino, Georgia, serif); }
   main { max-width: 760px; margin: auto; padding: 12px; }
   header, #controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; }
   header { justify-content: space-between; margin-bottom: 12px; }
-  h1 { margin: 0; font-size: 18px; font-weight: 500; }
+  h1 { margin: 0; font-size: 20px; font-weight: 400; }
   .matrix { display: inline-grid; grid-template-columns: repeat(2, 1fr);
     gap: 0 12px; padding: 0 7px; margin-left: 6px; vertical-align: middle;
     border-inline: 1px solid var(--muted); text-align: right; }
   .matrix-label { white-space: nowrap; }
   button { background: transparent; border: 1px solid var(--border); border-radius: 6px;
     color: var(--ink); font: inherit; padding: 5px 12px; cursor: pointer; }
-  button:hover { background: #202b39; }
+  button:hover { background: var(--hover); }
   button:focus-visible, input:focus-visible { outline: 2px solid var(--v1); outline-offset: 3px; }
   #play { color: var(--v1); border-color: var(--v1); min-width: 83px; }
   #controls { margin-bottom: 10px; }
@@ -34,14 +38,15 @@
   #panes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .pane { min-width: 0; padding: 10px 8px; background: var(--pane);
     border: 1px solid var(--border); border-radius: 8px; }
-  h2 { font-size: 15px; font-weight: 500; margin: 0 0 4px; }
+  .pane-wine { --pane: var(--definition-like-body-background, #f9f3f4); --border: var(--v2); }
+  h2 { font-size: 16px; font-weight: 400; margin: 0 0 4px; }
   .positive { color: var(--v1); }
   .negative { color: var(--v2); }
   svg { display: block; width: 100%; height: auto; overflow: visible; }
-  svg text { fill: var(--muted); font-size: 12px; }
-  .tip-label { fill: var(--ink); font-size: 14px; }
-  .equation { margin: 4px 0; font-size: 14px; }
-  .note, #legend, #status { color: var(--muted); font-size: 13px; }
+  svg text { fill: var(--muted); font-size: 14px; }
+  .tip-label { fill: var(--ink); font-size: 16px; }
+  .equation { margin: 4px 0; font-size: 16px; }
+  .note, #legend, #status { color: var(--muted); font-size: 14px; }
   .note { margin: 0; }
   #legend { margin: 9px 0 4px; }
   #status { min-height: 2.8em; margin: 0; }
@@ -53,8 +58,8 @@
     #scrub { flex-basis: 100%; }
     .pane { padding: 8px 5px; }
     #panes { gap: 6px; }
-    h2, .equation { font-size: 12px; }
-    .note { font-size: 11px; }
+    h2, .equation { font-size: 13px; }
+    .note { font-size: 12px; }
     svg text { font-size: 22px; }
     .tip-label { font-size: 24px; }
   }
@@ -107,7 +112,7 @@
       <p class="equation positive"><i>A</i>v₁ = (4, 2) = 2v₁</p>
       <p class="note">Same direction. Twice as long.</p>
     </section>
-    <section class="pane">
+    <section class="pane pane-wine">
       <h2 class="negative">v₂ = (−1, 3) → −5v₂</h2>
       <svg id="negative" viewBox="0 0 300 280" role="img" aria-labelledby="negative-title negative-desc">
         <title id="negative-title">An eigenvalue of minus 5 reverses and stretches the vector</title>

@@ -190,7 +190,7 @@ html:root:not(.dark-mode) details.hiddenproof[open] > summary.knowl__link {
 /* Keep the eigenvector controls and both plots visible on narrow screens. */
 #int-eigenvector-geometry {
     aspect-ratio: 10 / 9;
-    min-height: 510px;
+    min-height: 560px;
 }
 
 /* ------------------------------------------------------------------ *
