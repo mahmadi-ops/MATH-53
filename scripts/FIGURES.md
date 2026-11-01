@@ -12,7 +12,10 @@ python scripts/build-book-figures.py
 pretext build web --no-generate
 ```
 
-Both GitHub workflows run the same figure builder before building the book.
+Both GitHub workflows run the figure builder with `--skip-mindmap` before
+building the book. They reuse the committed browser-rendered mind map and
+interactive previews, so publication does not require downloading a browser.
+The full command above remains the authoring workflow when changing the mind map.
 The builder first refreshes the interactive QR metadata required by PreTeXt's
 figure extraction; QR codes keep their normal black-and-white styling.
 The builder restores the original OTF fonts from the book's self-hosted WOFF2

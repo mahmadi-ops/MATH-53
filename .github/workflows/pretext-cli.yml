@@ -45,11 +45,8 @@ jobs:
             - name: install local ptx files
               run: pretext --version
 
-            - name: prepare browser for static mind map
-              run: python -m playwright install chromium
-
             - name: render static figures with the book theme
-              run: python scripts/build-book-figures.py
+              run: python scripts/build-book-figures.py --skip-mindmap
 
             - name: build deploy targets
               run: |
@@ -58,10 +55,10 @@ jobs:
                 minor="$(echo $version | cut -d '.' -f 2)"
                 if [ "$major" -ge 2 -a "$minor" -ge 5 ]; then
                     echo "PreTeXt version is 2.5 or greater; using new build command"
-                    pretext build --deploys
+                    pretext build --deploys --no-generate
                 else
                     echo "PreTeXt version is less than 2.5, using old build command"
-                    pretext build
+                    pretext build --no-generate
                 fi
             - name: stage deployment
               run: pretext deploy --stage-only

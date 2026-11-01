@@ -67,14 +67,12 @@ jobs:
       - name: install local ptx files
         run: pretext --version
 
-      - name: prepare browser for static mind map
-        run: python -m playwright install chromium
-
       - name: render static figures with the book theme
-        run: python scripts/build-book-figures.py
+        run: python scripts/build-book-figures.py --skip-mindmap
 
       - name: build deploy targets
-        run: pretext build --deploys
+        # Reuse committed browser-rendered assets; static figures were rebuilt above.
+        run: pretext build --deploys --no-generate
 
       - name: run deploy
         run: pretext deploy --no-push

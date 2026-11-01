@@ -42,7 +42,7 @@ CHART_COLORS = {
 }
 
 
-def prepare():
+def prepare(include_mindmap=True):
     CACHE.mkdir(parents=True, exist_ok=True)
     for source in FONTS.glob('*.woff2'):
         font = TTFont(source)
@@ -72,9 +72,10 @@ def prepare():
         subprocess.run([str(Path(sys.executable).parent / 'prefig'), 'init'], check=True)
     subprocess.run(['npm', 'install', '--prefix', str(mj), '--no-save',
                     '--package-lock=false', '@mathjax/mathjax-pagella-font@4.1.3'], check=True)
-    subprocess.run(['npm', 'install', '--prefix', str(CACHE), '--no-save', '--package-lock=false',
-                    'mathjax@4.1.3', '@mathjax/mathjax-pagella-font@4.1.3',
-                    'react@18.3.1', 'react-dom@18.3.1', '@babel/standalone@7.29.0'], check=True)
+    if include_mindmap:
+        subprocess.run(['npm', 'install', '--prefix', str(CACHE), '--no-save', '--package-lock=false',
+                        'mathjax@4.1.3', '@mathjax/mathjax-pagella-font@4.1.3',
+                        'react@18.3.1', 'react-dom@18.3.1', '@babel/standalone@7.29.0'], check=True)
     preload = ROOT / 'scripts' / 'figure-math-font.cjs'
     os.environ['NODE_OPTIONS'] = (os.environ.get('NODE_OPTIONS', '') +
                                   ' --require=' + str(preload)).strip()
@@ -139,15 +140,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--xmlid')
     parser.add_argument('--embed-only', action='store_true')
+    parser.add_argument('--skip-mindmap', action='store_true',
+                        help='Reuse the committed mind-map SVG, without requiring a browser')
     args = parser.parse_args()
     os.chdir(ROOT)
     if not args.embed_only:
-        prepare()
+        prepare(include_mindmap=not args.skip_mindmap and not args.xmlid)
         from pretext.cli import main as pretext
         extra = ['--xmlid', args.xmlid] if args.xmlid else []
         pretext(['generate', 'qrcode', '--force'], standalone_mode=False)
         pretext(['generate', 'prefigure', 'latex-image', '--force', *extra], standalone_mode=False)
-        if not args.xmlid:
+        if not args.xmlid and not args.skip_mindmap:
             subprocess.run([sys.executable, str(ROOT / 'scripts' / 'make-mindmap-figure.py')], check=True)
 
     # All source-defined PreFigure assets, including accessible SVG variants.
