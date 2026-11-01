@@ -62,14 +62,14 @@
             <coordinates bbox="(-1.5,-0.6,1.6,1.6)">
               <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
               <arc center="(0,0)" radius="1" range="(0,180)" stroke="gray" thickness="1"/>
-              <line endpoints="((0,0),(1,0))" stroke="blue" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(0,1))" stroke="blue" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(0.643,0.766))" stroke="red" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(-0.766,0.643))" stroke="green" thickness="2" arrows="1"/>
-              <label p="(1,0)" alignment="se" offset="(0,-10)" color="blue"><m>\vec{e}_1</m></label>
-              <label p="(0,1)" alignment="w" offset="(-12,0)" color="blue"><m>\vec{e}_2</m></label>
-              <label p="(0.643,0.766)" alignment="e" offset="(8,4)" color="red"><m>R_\theta(\vec{e}_1)</m></label>
-              <label p="(-0.766,0.643)" alignment="w" offset="(-8,6)" color="green"><m>R_\theta(\vec{e}_2)</m></label>
+              <line endpoints="((0,0),(1,0))" stroke="#4A5D23" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(0,1))" stroke="#4A5D23" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(0.643,0.766))" stroke="#5E011C" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(-0.766,0.643))" stroke="#876801" thickness="2" arrows="1"/>
+              <label p="(1,0)" alignment="se" offset="(0,-10)" color="#4A5D23"><m>\vec{e}_1</m></label>
+              <label p="(0,1)" alignment="w" offset="(-12,0)" color="#4A5D23"><m>\vec{e}_2</m></label>
+              <label p="(0.643,0.766)" alignment="e" offset="(8,4)" color="#5E011C"><m>R_\theta(\vec{e}_1)</m></label>
+              <label p="(-0.766,0.643)" alignment="w" offset="(-8,6)" color="#876801"><m>R_\theta(\vec{e}_2)</m></label>
               <label p="(0.42,0.16)" alignment="e"><m>\theta</m></label>
             </coordinates>
           </diagram>
@@ -134,10 +134,10 @@
           <diagram dimensions="(320,300)" margins="10">
             <coordinates bbox="(-2.4,-1.0,2.8,2.8)">
               <axes xlabel="x" ylabel="y" arrows="2" hticks="(-2,1,2)" vticks="(-1,1,2)"/>
-              <line endpoints="((0,0),(2,1))" stroke="blue" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(-1,2))" stroke="red" thickness="2" arrows="1"/>
-              <label p="(2,1)" alignment="e" offset="(6,4)" color="blue"><m>\vec{x}</m></label>
-              <label p="(-1,2)" alignment="nw" offset="(-6,6)" color="red"><m>R_{\pi/2}(\vec{x})</m></label>
+              <line endpoints="((0,0),(2,1))" stroke="#4A5D23" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(-1,2))" stroke="#5E011C" thickness="2" arrows="1"/>
+              <label p="(2,1)" alignment="e" offset="(6,4)" color="#4A5D23"><m>\vec{x}</m></label>
+              <label p="(-1,2)" alignment="nw" offset="(-6,6)" color="#5E011C"><m>R_{\pi/2}(\vec{x})</m></label>
             </coordinates>
           </diagram>
         </prefigure>
@@ -243,14 +243,14 @@
           <diagram dimensions="(330,300)" margins="10">
             <coordinates bbox="(-1.7,-1.0,1.9,2.0)">
               <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <line endpoints="((-1.1,-1.65),(1.2,1.8))" stroke="magenta" thickness="2"/>
-              <line endpoints="((0,0),(1,0))" stroke="blue" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(-0.28,0.96))" stroke="red" thickness="2" arrows="1"/>
+              <line endpoints="((-1.1,-1.65),(1.2,1.8))" stroke="#606060" thickness="2"/>
+              <line endpoints="((0,0),(1,0))" stroke="#4A5D23" thickness="2" arrows="1"/>
+              <line endpoints="((0,0),(-0.28,0.96))" stroke="#5E011C" thickness="2" arrows="1"/>
               <arc center="(0,0)" radius="0.42" range="(0,56)" stroke="black" thickness="1"/>
               <arc center="(0,0)" radius="0.62" range="(0,112)" stroke="gray" thickness="1"/>
-              <label p="(1,0)" alignment="se" offset="(0,-10)" color="blue"><m>\vec{e}_1</m></label>
-              <label p="(-0.28,0.96)" alignment="nw" offset="(-6,6)" color="red"><m>Q_m(\vec{e}_1)</m></label>
-              <label p="(1.15,1.75)" alignment="e" offset="(4,4)" color="magenta"><m>y=mx</m></label>
+              <label p="(1,0)" alignment="se" offset="(0,-10)" color="#4A5D23"><m>\vec{e}_1</m></label>
+              <label p="(-0.28,0.96)" alignment="nw" offset="(-6,6)" color="#5E011C"><m>Q_m(\vec{e}_1)</m></label>
+              <label p="(1.15,1.75)" alignment="e" offset="(4,4)" color="#606060"><m>y=mx</m></label>
               <label p="(0.44,0.14)" alignment="e" offset="(2,0)"><m>\theta</m></label>
               <label p="(0.30,0.60)" alignment="n" offset="(0,6)"><m>2\theta</m></label>
             </coordinates>
@@ -339,11 +339,11 @@
         <prefigure label="pf-vertical-shear" xmlns="https://prefigure.org">
           <diagram dimensions="(440,200)" margins="10">
             <coordinates bbox="(-1.2,-1.6,7.4,1.9)">
-              <polygon points="((0,0),(1,0),(1,1),(0,1))" fill="red" stroke="red" thickness="1"/>
+              <polygon points="((0,0),(1,0),(1,1),(0,1))" fill="#5E011C" stroke="#5E011C" thickness="1"/>
               <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <polygon points="((5,0),(6,-0.8),(6,0.2),(5,1))" fill="red" stroke="red" thickness="1"/>
-              <line endpoints="((5,0),(6,-0.8))" stroke="blue" thickness="2" arrows="1"/>
-              <label p="(5.9,-0.9)" alignment="se" offset="(4,-4)" color="blue"><m>T(\vec{e}_1)</m></label>
+              <polygon points="((5,0),(6,-0.8),(6,0.2),(5,1))" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+              <line endpoints="((5,0),(6,-0.8))" stroke="#4A5D23" thickness="2" arrows="1"/>
+              <label p="(5.9,-0.9)" alignment="se" offset="(4,-4)" color="#4A5D23"><m>T(\vec{e}_1)</m></label>
             </coordinates>
           </diagram>
         </prefigure>

@@ -29,8 +29,13 @@ jobs:
             - name: Checkout source
               uses: actions/checkout@v4
 
-            - name: install deps
-              run: pip install -r requirements.txt --break-system-packages
+            - name: set up Python for figure rendering
+              uses: actions/setup-python@v5
+              with:
+                  python-version: '3.12'
+
+            - name: install Python dependencies
+              run: pip install -r requirements.txt -r scripts/requirements-figures.txt --break-system-packages
 
             - name: set up node
               uses: actions/setup-node@v4
@@ -39,6 +44,12 @@ jobs:
 
             - name: install local ptx files
               run: pretext --version
+
+            - name: prepare browser for static mind map
+              run: python -m playwright install chromium
+
+            - name: render static figures with the book theme
+              run: python scripts/build-book-figures.py
 
             - name: build deploy targets
               run: |

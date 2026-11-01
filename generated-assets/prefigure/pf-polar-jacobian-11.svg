@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-polar-jacobian-figure" width="636" height="256" viewBox="0 0 636 256">
+  <defs>
+    <clipPath id="pf-polar-jacobian-__clipPath-0">
+      <rect x="8.0" y="8.0" width="620.0" height="240.0"/>
+    </clipPath>
+    <clipPath id="pf-polar-jacobian-__clipPath-1">
+      <rect x="8.0" y="8.0" width="620.0" height="240.0"/>
+    </clipPath>
+    <marker id="pf-polar-jacobian-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="pf-polar-jacobian-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-polar-jacobian-arrow-head-end-3_None_24_60-h4A5D23" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#4A5D23" stroke="none"/>
+    </marker>
+    <marker id="pf-polar-jacobian-arrow-head-end-3_None_24_60-h4A5D23-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-polar-jacobian-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
+      <g transform="rotate(180, 4.5, 4.0)">
+        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="pf-polar-jacobian-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
+      <g transform="rotate(180, 6.5, 6.0)">
+        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="pf-polar-jacobian-arrow-head-start-3_None_24_60-h4A5D23" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#4A5D23" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="pf-polar-jacobian-arrow-head-start-3_None_24_60-h4A5D23-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+  </defs>
+  <line id="pf-polar-jacobian-__line-0" x1="25.9" y1="210.1" x2="232.1" y2="210.1" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-polar-jacobian-arrow-head-end-2_None_24_60-black)"/>
+  <line id="pf-polar-jacobian-__line-1" x1="43.8" y1="229.1" x2="43.8" y2="29.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-polar-jacobian-arrow-head-end-2_None_24_60-black)"/>
+  <g id="pf-polar-jacobian-__label-0" transform="translate(244.5,210.1) translate(0.0,-4.1)">
+    <g id="pf-polar-jacobian-__g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.152px" width="6.456px" height="8.152px" role="img" focusable="false" viewBox="0 -482 389 491" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-2-GP-I-1D45F" d="M384 476C373 481 369 482 364 482C333 482 302 458 266 407C232 358 197 310 172 256L198 382C203 404 210 427 210 450C210 470 202 482 187 482C166 482 128 461 54 408L26 388L33 368L65 389C93 407 104 412 113 412C123 412 130 403 130 390C130 332 87 126 47-2L57-9C79-2 101 2 124 6L150 126C168 209 191 262 235 319C269 363 296 384 318 384C333 384 343 379 354 365L368 365C371 403 376 435 384 476Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:r" data-semantic-speech="r">
+              <use data-c="1D45F" xlink:href="#pf-polar-jacobian-MJX-2-GP-I-1D45F"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-polar-jacobian-__label-1" transform="translate(43.8,16.9) translate(-4.1,-12.0)">
+    <g id="pf-polar-jacobian-__g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.280px" height="11.984px" role="img" focusable="false" viewBox="0 -711 499 722" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-3-GP-I-1D703" d="M493 489C499 628 465 711 383 711C340 711 295 690 247 645C154 560 81 409 73 225C66 66 95-11 179-11C232-11 295 26 345 86C417 173 486 338 493 489M392 319C366 218 325 128 290 76C269 45 241 27 211 27C151 27 144 104 149 223C150 254 154 286 160 318C182 327 209 330 280 330C348 330 376 327 392 319M416 467C415 439 412 410 406 382C386 375 355 372 289 372C221 372 192 375 174 382C206 500 256 608 294 650C309 665 332 673 356 673C419 673 422 591 416 467Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\theta" data-semantic-speech="theta">
+              <use data-c="1D703" xlink:href="#pf-polar-jacobian-MJX-3-GP-I-1D703"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <path id="pf-polar-jacobian-__path-0" d="M 91.5 165.9 L 169.0 165.9 L 169.0 102.7 L 91.5 102.7 L 91.5 165.9" stroke="#4A5D23" stroke-width="2" fill="#EDF0E6" clip-path="url(#pf-polar-jacobian-__clipPath-1)"/>
+  <circle id="pf-polar-jacobian-__circle-0" cx="91.5" cy="165.9" r="5" stroke="black" stroke-width="2" fill="#4A5D23"/>
+  <g id="pf-polar-jacobian-__label-2" transform="translate(83.5,179.1) translate(-50.1,-0.0)">
+    <g id="pf-polar-jacobian-__g-2">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.728px" width="50.104px" height="14.528px" role="img" focusable="false" viewBox="0 -711 3018.8 875.1" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-4-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+          <path id="pf-polar-jacobian-MJX-4-GP-I-1D45F" d="M384 476C373 481 369 482 364 482C333 482 302 458 266 407C232 358 197 310 172 256L198 382C203 404 210 427 210 450C210 470 202 482 187 482C166 482 128 461 54 408L26 388L33 368L65 389C93 407 104 412 113 412C123 412 130 403 130 390C130 332 87 126 47-2L57-9C79-2 101 2 124 6L150 126C168 209 191 262 235 319C269 363 296 384 318 384C333 384 343 379 354 365L368 365C371 403 376 435 384 476Z"/>
+          <path id="pf-polar-jacobian-MJX-4-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+          <path id="pf-polar-jacobian-MJX-4-GP-N-2C" d="M218 109L204 123C177 114 159 108 106 93C99 17 74-48 16-144L30-155L71-136C152-31 190 32 218 109Z"/>
+          <path id="pf-polar-jacobian-MJX-4-GP-I-1D703" d="M493 489C499 628 465 711 383 711C340 711 295 690 247 645C154 560 81 409 73 225C66 66 95-11 179-11C232-11 295 26 345 86C417 173 486 338 493 489M392 319C366 218 325 128 290 76C269 45 241 27 211 27C151 27 144 104 149 223C150 254 154 286 160 318C182 327 209 330 280 330C348 330 376 327 392 319M416 467C415 439 412 410 406 382C386 375 355 372 289 372C221 372 192 375 174 382C206 500 256 608 294 650C309 665 332 673 356 673C419 673 422 591 416 467Z"/>
+          <path id="pf-polar-jacobian-MJX-4-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:1" data-semantic-id="10" data-semantic-children="9" data-semantic-content="0,8" data-semantic-attributes="latex:(r_0,\theta_0)" data-semantic-speech="left parenthesis r 0 comma theta 0 right parenthesis">
+            <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:2" data-semantic-id="0" data-semantic-parent="10" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+              <use data-c="28" xlink:href="#pf-polar-jacobian-MJX-4-GP-N-28"/>
+            </g>
+            <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-annotation="depth:2" data-semantic-id="9" data-semantic-children="3,4,7" data-semantic-content="4" data-semantic-parent="10" data-semantic-speech="r 0 comma theta 0" transform="translate(424,0)">
+              <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="9" data-semantic-attributes="latex:r_0" data-semantic-speech="r 0">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:r" data-semantic-speech="r" data-semantic-prefix="Base">
+                  <use data-c="1D45F" xlink:href="#pf-polar-jacobian-MJX-4-GP-I-1D45F"/>
+                </g>
+                <g data-mml-node="mn" transform="translate(422,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:0" data-semantic-speech="0" data-semantic-prefix="Subscript">
+                  <use data-c="30" xlink:href="#pf-polar-jacobian-MJX-4-GP-N-30"/>
+                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="depth:3" data-semantic-id="4" data-semantic-parent="9" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(825.6,0)">
+                <use data-c="2C" xlink:href="#pf-polar-jacobian-MJX-4-GP-N-2C"/>
+              </g>
+              <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="greekletter" data-semantic-annotation="depth:3" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="9" data-semantic-attributes="latex:\theta_0" data-semantic-speech="theta 0" transform="translate(1242.2,0)">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="5" data-semantic-parent="7" data-semantic-attributes="latex:\theta" data-semantic-speech="theta" data-semantic-prefix="Base">
+                  <use data-c="1D703" xlink:href="#pf-polar-jacobian-MJX-4-GP-I-1D703"/>
+                </g>
+                <g data-mml-node="mn" transform="translate(525,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="6" data-semantic-parent="7" data-semantic-attributes="latex:0" data-semantic-speech="0" data-semantic-prefix="Subscript">
+                  <use data-c="30" xlink:href="#pf-polar-jacobian-MJX-4-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:2" data-semantic-id="8" data-semantic-parent="10" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(2594.8,0)">
+              <use data-c="29" xlink:href="#pf-polar-jacobian-MJX-4-GP-N-29"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-polar-jacobian-__label-3" transform="translate(130.2,176.9) translate(-8.4,-0.0)">
+    <g id="pf-polar-jacobian-__g-3">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.152px" width="16.896px" height="11.768px" role="img" focusable="false" viewBox="0 -700 1018 709" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-5-GP-N-394" d="M617 32L617 41L333 700L295 680L6 22L8-3L261 0L555-3M503 60C503 49 487 43 462 41L130 41C97 44 85 51 85 67C85 80 107 132 120 162L292 567L483 115C492 94 503 72 503 60Z"/>
+          <path id="pf-polar-jacobian-MJX-5-GP-N-2062" d=""/>
+          <path id="pf-polar-jacobian-MJX-5-GP-I-1D45F" d="M384 476C373 481 369 482 364 482C333 482 302 458 266 407C232 358 197 310 172 256L198 382C203 404 210 427 210 450C210 470 202 482 187 482C166 482 128 461 54 408L26 388L33 368L65 389C93 407 104 412 113 412C123 412 130 403 130 390C130 332 87 126 47-2L57-9C79-2 101 2 124 6L150 126C168 209 191 262 235 319C269 363 296 384 318 384C333 384 343 379 354 365L368 365C371 403 376 435 384 476Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:simple;clearspeak:unit;depth:1" data-semantic-id="3" data-semantic-children="0,1" data-semantic-content="2" data-semantic-attributes="latex:\Delta r" data-semantic-speech="normal upper Delta r">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="3" data-semantic-attributes="latex:\Delta" data-semantic-speech="normal upper Delta">
+              <use data-c="394" xlink:href="#pf-polar-jacobian-MJX-5-GP-N-394"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="2" data-semantic-parent="3" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(629,0)">
+              <use data-c="2062" xlink:href="#pf-polar-jacobian-MJX-5-GP-N-2062"/>
+            </g>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:r" data-semantic-speech="r" transform="translate(629,0)">
+              <use data-c="1D45F" xlink:href="#pf-polar-jacobian-MJX-5-GP-I-1D45F"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-polar-jacobian-__label-4" transform="translate(80.5,134.3) translate(-18.7,-6.0)">
+    <g id="pf-polar-jacobian-__g-4">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="18.720px" height="11.984px" role="img" focusable="false" viewBox="0 -711 1128 722" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-6-GP-N-394" d="M617 32L617 41L333 700L295 680L6 22L8-3L261 0L555-3M503 60C503 49 487 43 462 41L130 41C97 44 85 51 85 67C85 80 107 132 120 162L292 567L483 115C492 94 503 72 503 60Z"/>
+          <path id="pf-polar-jacobian-MJX-6-GP-N-2062" d=""/>
+          <path id="pf-polar-jacobian-MJX-6-GP-I-1D703" d="M493 489C499 628 465 711 383 711C340 711 295 690 247 645C154 560 81 409 73 225C66 66 95-11 179-11C232-11 295 26 345 86C417 173 486 338 493 489M392 319C366 218 325 128 290 76C269 45 241 27 211 27C151 27 144 104 149 223C150 254 154 286 160 318C182 327 209 330 280 330C348 330 376 327 392 319M416 467C415 439 412 410 406 382C386 375 355 372 289 372C221 372 192 375 174 382C206 500 256 608 294 650C309 665 332 673 356 673C419 673 422 591 416 467Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:simple;clearspeak:unit;depth:1" data-semantic-id="3" data-semantic-children="0,1" data-semantic-content="2" data-semantic-attributes="latex:\Delta\theta" data-semantic-speech="normal upper Delta theta">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="3" data-semantic-attributes="latex:\Delta" data-semantic-speech="normal upper Delta">
+              <use data-c="394" xlink:href="#pf-polar-jacobian-MJX-6-GP-N-394"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="2" data-semantic-parent="3" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(629,0)">
+              <use data-c="2062" xlink:href="#pf-polar-jacobian-MJX-6-GP-N-2062"/>
+            </g>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:\theta" data-semantic-speech="theta" transform="translate(629,0)">
+              <use data-c="1D703" xlink:href="#pf-polar-jacobian-MJX-6-GP-I-1D703"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-polar-jacobian-__line-2" x1="258.4" y1="128.0" x2="327.5" y2="128.0" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-polar-jacobian-arrow-head-end-2_None_24_60-black)"/>
+  <g id="pf-polar-jacobian-__label-5" transform="translate(294.2,114.8) translate(-5.3,-11.5)">
+    <g id="pf-polar-jacobian-__g-5">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="10.536px" height="11.536px" role="img" focusable="false" viewBox="0 -692 635 695" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-7-GP-I-1D447" d="M635 692L353 689L71 692L53 528L82 528L97 588C102 610 109 626 115 633C121 640 159 646 196 646L308 646L222 125C207 34 204 30 164 28L113 25L109-3L251 0L384-3L387 25L328 28C302 29 292 37 292 58C292 68 292 72 296 93L390 646L463 646C541 646 577 641 580 629C583 621 585 602 584 592L580 528L608 528Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:T" data-semantic-speech="upper T">
+              <use data-c="1D447" xlink:href="#pf-polar-jacobian-MJX-7-GP-I-1D447"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-polar-jacobian-__line-3" x1="347.8" y1="210.1" x2="613.7" y2="210.1" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-polar-jacobian-arrow-head-end-2_None_24_60-black)"/>
+  <line id="pf-polar-jacobian-__line-4" x1="365.7" y1="229.1" x2="365.7" y2="29.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-polar-jacobian-arrow-head-end-2_None_24_60-black)"/>
+  <g id="pf-polar-jacobian-__label-6" transform="translate(626.1,210.1) translate(0.0,-4.1)">
+    <g id="pf-polar-jacobian-__g-6">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.296px" height="8.184px" role="img" focusable="false" viewBox="0 -482 500 493" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-8-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:x" data-semantic-speech="x">
+              <use data-c="1D465" xlink:href="#pf-polar-jacobian-MJX-8-GP-I-1D465"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-polar-jacobian-__label-7" transform="translate(365.7,16.9) translate(-4.1,-12.6)">
+    <g id="pf-polar-jacobian-__g-7">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.584px" width="8.296px" height="12.584px" role="img" focusable="false" viewBox="0 -482 500 758" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-9-GP-I-1D466" d="M490 473L479 482C450 471 427 465 405 463L370 331C358 284 323 211 290 162C255 111 206 67 184 67C162 67 164 115 165 128L180 322C182 353 184 391 184 419C184 464 177 482 160 482C147 482 133 475 85 442L3 386L14 368L64 398C69 402 82 410 89 410C115 410 111 359 110 343L93 100L92 60C91 18 110-11 135-11C172-11 256 74 331 187L282 16C231-161 181-234 111-234C76-234 49-207 49-172C49-167 50-159 51-150L41-146L-7-180C-8-187-8-193-8-198C-8-241 29-276 74-276C180-276 290-152 349 33Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:y" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#pf-polar-jacobian-MJX-9-GP-I-1D466"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <path id="pf-polar-jacobian-__path-1" d="M 468.8 146.9 L 505.2 124.8 L 471.8 63.6 L 435.4 85.7" stroke="none" stroke-width="2" fill="#f9f3f4" clip-path="url(#pf-polar-jacobian-__clipPath-1)"/>
+  <line id="pf-polar-jacobian-__line-5" x1="505.2" y1="124.8" x2="471.8" y2="63.6" stroke="#4A5D23" stroke-width="1" fill="none"/>
+  <line id="pf-polar-jacobian-__line-6" x1="435.4" y1="85.7" x2="471.8" y2="63.6" stroke="#4A5D23" stroke-width="1" fill="none"/>
+  <line id="pf-polar-jacobian-__line-7" x1="365.7" y1="210.1" x2="468.8" y2="146.9" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-polar-jacobian-__line-8" x1="365.7" y1="210.1" x2="421.7" y2="98.3" stroke="black" stroke-width="1" fill="none"/>
+  <path id="pf-polar-jacobian-__path-2" d="M 401.8 188.0 L 401.7 187.8 L 401.6 187.6 L 401.5 187.4 L 401.4 187.2 L 401.2 186.9 L 401.1 186.7 L 401.0 186.5 L 400.9 186.3 L 400.7 186.1 L 400.6 185.9 L 400.5 185.7 L 400.4 185.5 L 400.2 185.3 L 400.1 185.1 L 400.0 184.9 L 399.8 184.7 L 399.7 184.5 L 399.6 184.3 L 399.4 184.1 L 399.3 183.9 L 399.1 183.7 L 399.0 183.5 L 398.9 183.3 L 398.7 183.1 L 398.6 182.9 L 398.4 182.7 L 398.3 182.5 L 398.1 182.3 L 398.0 182.1 L 397.8 181.9 L 397.7 181.7 L 397.5 181.5 L 397.4 181.4 L 397.2 181.2 L 397.1 181.0 L 396.9 180.8 L 396.8 180.6 L 396.6 180.4 L 396.5 180.2 L 396.3 180.1 L 396.2 179.9 L 396.0 179.7 L 395.8 179.5 L 395.7 179.3 L 395.5 179.2 L 395.3 179.0 L 395.2 178.8 L 395.0 178.6 L 394.8 178.5 L 394.7 178.3 L 394.5 178.1 L 394.3 178.0 L 394.2 177.8 L 394.0 177.6 L 393.8 177.5 L 393.7 177.3 L 393.5 177.1 L 393.3 177.0 L 393.1 176.8 L 393.0 176.6 L 392.8 176.5 L 392.6 176.3 L 392.4 176.2 L 392.2 176.0 L 392.1 175.8 L 391.9 175.7 L 391.7 175.5 L 391.5 175.4 L 391.3 175.2 L 391.2 175.1 L 391.0 174.9 L 390.8 174.8 L 390.6 174.6 L 390.4 174.5 L 390.2 174.3 L 390.0 174.2 L 389.8 174.1 L 389.7 173.9 L 389.5 173.8 L 389.3 173.6 L 389.1 173.5 L 388.9 173.3 L 388.7 173.2 L 388.5 173.1 L 388.3 172.9 L 388.1 172.8 L 387.9 172.7 L 387.7 172.5 L 387.5 172.4 L 387.3 172.3 L 387.1 172.2 L 386.9 172.0 L 386.7 171.9 L 386.5 171.8 L 386.3 171.7 L 386.1 171.5 L 385.9 171.4 L 385.7 171.3 L 385.5 171.2 L 385.3 171.1" stroke="black" stroke-width="1" fill="none"/>
+  <g id="pf-polar-jacobian-__label-8" transform="translate(419.4,178.9) translate(0.0,-0.0)">
+    <g id="pf-polar-jacobian-__g-8">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.728px" width="13.704px" height="10.728px" role="img" focusable="false" viewBox="0 -482 825.6 646.1" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-10-GP-I-1D45F" d="M384 476C373 481 369 482 364 482C333 482 302 458 266 407C232 358 197 310 172 256L198 382C203 404 210 427 210 450C210 470 202 482 187 482C166 482 128 461 54 408L26 388L33 368L65 389C93 407 104 412 113 412C123 412 130 403 130 390C130 332 87 126 47-2L57-9C79-2 101 2 124 6L150 126C168 209 191 262 235 319C269 363 296 384 318 384C333 384 343 379 354 365L368 365C371 403 376 435 384 476Z"/>
+          <path id="pf-polar-jacobian-MJX-10-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:r_0" data-semantic-speech="r 0">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:r" data-semantic-speech="r" data-semantic-prefix="Base">
+                <use data-c="1D45F" xlink:href="#pf-polar-jacobian-MJX-10-GP-I-1D45F"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(422,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:0" data-semantic-speech="0" data-semantic-prefix="Subscript">
+                <use data-c="30" xlink:href="#pf-polar-jacobian-MJX-10-GP-N-30"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-polar-jacobian-__label-9" transform="translate(406.2,150.4) translate(-18.7,-12.0)">
+    <g id="pf-polar-jacobian-__g-9">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="18.720px" height="11.984px" role="img" focusable="false" viewBox="0 -711 1128 722" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-11-GP-N-394" d="M617 32L617 41L333 700L295 680L6 22L8-3L261 0L555-3M503 60C503 49 487 43 462 41L130 41C97 44 85 51 85 67C85 80 107 132 120 162L292 567L483 115C492 94 503 72 503 60Z"/>
+          <path id="pf-polar-jacobian-MJX-11-GP-N-2062" d=""/>
+          <path id="pf-polar-jacobian-MJX-11-GP-I-1D703" d="M493 489C499 628 465 711 383 711C340 711 295 690 247 645C154 560 81 409 73 225C66 66 95-11 179-11C232-11 295 26 345 86C417 173 486 338 493 489M392 319C366 218 325 128 290 76C269 45 241 27 211 27C151 27 144 104 149 223C150 254 154 286 160 318C182 327 209 330 280 330C348 330 376 327 392 319M416 467C415 439 412 410 406 382C386 375 355 372 289 372C221 372 192 375 174 382C206 500 256 608 294 650C309 665 332 673 356 673C419 673 422 591 416 467Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:simple;clearspeak:unit;depth:1" data-semantic-id="3" data-semantic-children="0,1" data-semantic-content="2" data-semantic-attributes="latex:\Delta\theta" data-semantic-speech="normal upper Delta theta">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="3" data-semantic-attributes="latex:\Delta" data-semantic-speech="normal upper Delta">
+              <use data-c="394" xlink:href="#pf-polar-jacobian-MJX-11-GP-N-394"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="2" data-semantic-parent="3" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(629,0)">
+              <use data-c="2062" xlink:href="#pf-polar-jacobian-MJX-11-GP-N-2062"/>
+            </g>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:\theta" data-semantic-speech="theta" transform="translate(629,0)">
+              <use data-c="1D703" xlink:href="#pf-polar-jacobian-MJX-11-GP-I-1D703"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <path id="pf-polar-jacobian-__path-3" d="M 468.9 146.9 L 468.6 146.3 L 468.3 145.7 L 467.9 145.1 L 467.6 144.5 L 467.2 143.9 L 466.9 143.3 L 466.5 142.7 L 466.2 142.1 L 465.8 141.5 L 465.5 140.9 L 465.1 140.4 L 464.7 139.8 L 464.4 139.2 L 464.0 138.6 L 463.6 138.0 L 463.2 137.4 L 462.8 136.9 L 462.4 136.3 L 462.1 135.7 L 461.7 135.1 L 461.3 134.6 L 460.9 134.0 L 460.5 133.5 L 460.1 132.9 L 459.6 132.3 L 459.2 131.8 L 458.8 131.2 L 458.4 130.7 L 458.0 130.1 L 457.6 129.6 L 457.1 129.0 L 456.7 128.5 L 456.3 128.0 L 455.8 127.4 L 455.4 126.9 L 455.0 126.4 L 454.5 125.8 L 454.1 125.3 L 453.6 124.8 L 453.2 124.3 L 452.7 123.8 L 452.3 123.3 L 451.8 122.7 L 451.3 122.2 L 450.9 121.7 L 450.4 121.2 L 449.9 120.7 L 449.5 120.2 L 449.0 119.7 L 448.5 119.2 L 448.0 118.8 L 447.6 118.3 L 447.1 117.8 L 446.6 117.3 L 446.1 116.8 L 445.6 116.4 L 445.1 115.9 L 444.6 115.4 L 444.1 114.9 L 443.6 114.5 L 443.1 114.0 L 442.6 113.6 L 442.1 113.1 L 441.6 112.7 L 441.0 112.2 L 440.5 111.8 L 440.0 111.3 L 439.5 110.9 L 439.0 110.5 L 438.4 110.0 L 437.9 109.6 L 437.4 109.2 L 436.8 108.7 L 436.3 108.3 L 435.8 107.9 L 435.2 107.5 L 434.7 107.1 L 434.1 106.7 L 433.6 106.3 L 433.1 105.9 L 432.5 105.5 L 432.0 105.1 L 431.4 104.7 L 430.8 104.3 L 430.3 103.9 L 429.7 103.5 L 429.2 103.2 L 428.6 102.8 L 428.0 102.4 L 427.5 102.1 L 426.9 101.7 L 426.3 101.3 L 425.7 101.0 L 425.2 100.6 L 424.6 100.3 L 424.0 99.9 L 423.4 99.6 L 422.8 99.2 L 422.3 98.9 L 421.7 98.6" stroke="#5E011C" stroke-width="2" fill="none"/>
+  <path id="pf-polar-jacobian-__path-4" d="M 505.1 124.8 L 504.6 124.0 L 504.2 123.2 L 503.7 122.4 L 503.3 121.6 L 502.8 120.8 L 502.3 119.9 L 501.8 119.1 L 501.4 118.3 L 500.9 117.5 L 500.4 116.7 L 499.9 115.9 L 499.4 115.1 L 498.9 114.4 L 498.4 113.6 L 497.9 112.8 L 497.4 112.0 L 496.8 111.2 L 496.3 110.5 L 495.8 109.7 L 495.2 108.9 L 494.7 108.1 L 494.2 107.4 L 493.6 106.6 L 493.1 105.9 L 492.5 105.1 L 492.0 104.4 L 491.4 103.6 L 490.9 102.9 L 490.3 102.1 L 489.7 101.4 L 489.1 100.7 L 488.6 99.9 L 488.0 99.2 L 487.4 98.5 L 486.8 97.8 L 486.2 97.1 L 485.6 96.4 L 485.0 95.6 L 484.4 94.9 L 483.8 94.2 L 483.2 93.5 L 482.6 92.9 L 481.9 92.2 L 481.3 91.5 L 480.7 90.8 L 480.1 90.1 L 479.4 89.4 L 478.8 88.8 L 478.2 88.1 L 477.5 87.4 L 476.9 86.8 L 476.2 86.1 L 475.5 85.5 L 474.9 84.8 L 474.2 84.2 L 473.6 83.5 L 472.9 82.9 L 472.2 82.3 L 471.5 81.6 L 470.9 81.0 L 470.2 80.4 L 469.5 79.8 L 468.8 79.2 L 468.1 78.6 L 467.4 78.0 L 466.7 77.4 L 466.0 76.8 L 465.3 76.2 L 464.6 75.6 L 463.9 75.0 L 463.2 74.4 L 462.5 73.8 L 461.8 73.3 L 461.0 72.7 L 460.3 72.1 L 459.6 71.6 L 458.8 71.0 L 458.1 70.5 L 457.4 69.9 L 456.6 69.4 L 455.9 68.9 L 455.1 68.3 L 454.4 67.8 L 453.6 67.3 L 452.9 66.8 L 452.1 66.3 L 451.4 65.7 L 450.6 65.2 L 449.8 64.7 L 449.1 64.2 L 448.3 63.8 L 447.5 63.3 L 446.8 62.8 L 446.0 62.3 L 445.2 61.8 L 444.4 61.4 L 443.6 60.9 L 442.8 60.4 L 442.1 60.0 L 441.3 59.5" stroke="#5E011C" stroke-width="2" fill="none"/>
+  <line id="pf-polar-jacobian-__line-9" x1="468.8" y1="146.9" x2="505.2" y2="124.8" stroke="#5E011C" stroke-width="2" fill="none"/>
+  <line id="pf-polar-jacobian-__line-10" x1="421.7" y1="98.3" x2="441.4" y2="59.8" stroke="#5E011C" stroke-width="2" fill="none"/>
+  <line id="pf-polar-jacobian-__line-11" x1="468.8" y1="146.9" x2="502.1" y2="126.7" stroke="#4A5D23" stroke-width="3" fill="none" marker-end="url(#pf-polar-jacobian-arrow-head-end-3_None_24_60-h4A5D23)"/>
+  <line id="pf-polar-jacobian-__line-12" x1="468.8" y1="146.9" x2="437.2" y2="88.9" stroke="#4A5D23" stroke-width="3" fill="none" marker-end="url(#pf-polar-jacobian-arrow-head-end-3_None_24_60-h4A5D23)"/>
+  <circle id="pf-polar-jacobian-__circle-1" cx="468.8" cy="146.9" r="5" stroke="black" stroke-width="2" fill="#4A5D23"/>
+  <g id="pf-polar-jacobian-__label-10" transform="translate(498.9,146.7) translate(0.0,-0.0)">
+    <g id="pf-polar-jacobian-__g-10">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px; color:#4A5D23" width="15.552px" height="15.568px" role="img" focusable="false" viewBox="0 -927 937 938" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-12-GP-I-1D44E" d="M406 85L399 106C392 100 391 99 386 95C354 68 339 59 324 59C314 59 309 67 309 83C309 87 309 90 310 93L402 472L392 481L359 463C320 478 301 482 274 482C246 482 226 477 199 464C136 433 104 403 79 354C35 265 4 146 4 66C4 23 19-11 38-11C59-11 96 10 133 42C176 79 216 126 271 204L242 77C238 59 236 42 236 26C236 3 245-11 260-11C283-11 324 17 406 85M319 414C297 307 278 255 245 204C190 120 127 59 94 59C82 59 76 72 76 99C76 163 102 274 137 357C161 415 185 433 234 433C257 433 276 429 319 414Z"/>
+          <path id="pf-polar-jacobian-MJX-12-GP-N-20D7" d="M-57 664C-102 700-142 740-177 784C-189 782-200 781-211 781C-223 781-234 782-245 784C-217 750-187 717-154 688L-443 688C-441 680-440 672-440 664C-440 656-441 648-443 640L-154 640C-187 611-217 578-245 544C-234 546-223 547-211 547C-200 547-189 546-177 544C-142 588-102 628-57 664Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\vec{a};texclass:ORD" data-semantic-speech="ModifyingAbove a With right arrow">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:a" data-semantic-speech="a" data-semantic-prefix="Base" transform="translate(383,0)">
+                  <use data-c="1D44E" xlink:href="#pf-polar-jacobian-MJX-12-GP-I-1D44E"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(937,43)">
+                  <use data-c="20D7" xlink:href="#pf-polar-jacobian-MJX-12-GP-N-20D7"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-polar-jacobian-__label-11" transform="translate(434.2,121.7) translate(-15.6,-9.9)">
+    <g id="pf-polar-jacobian-__g-11">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px; color:#4A5D23" width="15.552px" height="19.736px" role="img" focusable="false" viewBox="0 -1178 937 1189" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-polar-jacobian-MJX-13-GP-I-1D44F" d="M433 376C433 414 424 453 412 468C405 477 392 482 377 482C353 482 323 474 295 460C244 433 211 403 149 324L235 722L223 733C171 707 135 698 63 691L59 670L107 670C131 670 141 663 141 646C141 639 140 628 139 622L38 71C37 68 37 64 37 61C37 22 85-11 140-11C177-11 228 8 271 39C367 107 433 244 433 376M361 352C361 288 340 202 310 137C277 68 237 36 183 36C137 36 112 59 112 101C112 126 116 154 125 191C144 271 168 319 208 361C241 395 293 424 322 424C348 424 361 401 361 352Z"/>
+          <path id="pf-polar-jacobian-MJX-13-GP-N-20D7" d="M-57 664C-102 700-142 740-177 784C-189 782-200 781-211 781C-223 781-234 782-245 784C-217 750-187 717-154 688L-443 688C-441 680-440 672-440 664C-440 656-441 648-443 640L-154 640C-187 611-217 578-245 544C-234 546-223 547-211 547C-200 547-189 546-177 544C-142 588-102 628-57 664Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\vec{b};texclass:ORD" data-semantic-speech="ModifyingAbove b With right arrow">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:b" data-semantic-speech="b" data-semantic-prefix="Base" transform="translate(473.5,0)">
+                  <use data-c="1D44F" xlink:href="#pf-polar-jacobian-MJX-13-GP-I-1D44F"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(937,294)">
+                  <use data-c="20D7" xlink:href="#pf-polar-jacobian-MJX-13-GP-N-20D7"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+</svg>

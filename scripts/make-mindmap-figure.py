@@ -16,10 +16,9 @@ script drives the component in headless Chromium, reads the layout back once it
 has settled, and re-emits it as plain SVG -- rectangles, lines, <text>, and
 MathJax's own glyph outlines.
 
-The result carries no script, no <foreignObject>, and no external font, which
-is what an <img>-embedded SVG in the built book can actually display.  It needs
-network access on the first run: the design runtime pulls React from a CDN, and
-MathJax is loaded the same way.
+The result carries no script or <foreignObject>. The book figure builder embeds
+subset webfonts for <img> use. Browser dependencies are supplied from pinned
+local npm packages prepared by build-book-figures.py.
 
 Usage:
     python3 scripts/make-mindmap-figure.py [component.html] [out.svg]
@@ -28,8 +27,14 @@ Usage:
 import html
 import json
 import os
+from contextlib import contextmanager
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 import re
+import shutil
 import sys
+from threading import Thread
 import urllib.parse
 
 from playwright.sync_api import sync_playwright
@@ -37,24 +42,55 @@ from playwright.sync_api import sync_playwright
 MARGIN = 26          # breathing room around the drawn content
 FONT_STACK = ("'TeX Gyre Pagella','Palatino Linotype',Palatino,"
               "'URW Palladio L',Georgia,serif")
-PAGE_BG = "#fffefb"
+PAGE_BG = "#ffffff"
 
 
 def esc(t):
     return html.escape(t, quote=False)
 
 
+@contextmanager
+def component_url(component):
+    root = Path(__file__).resolve().parent.parent
+    handler = partial(SimpleHTTPRequestHandler, directory=str(root))
+    with ThreadingHTTPServer(('127.0.0.1', 0), handler) as server:
+        thread = Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            relative = Path(component).resolve().relative_to(root)
+            yield f'http://127.0.0.1:{server.server_port}/' + urllib.parse.quote(str(relative))
+        finally:
+            server.shutdown()
+
+
 def collect(component, extractor):
     """Drive the component in a browser and read its finished layout back."""
-    url = "file://" + urllib.parse.quote(os.path.abspath(component))
-    with sync_playwright() as pw:
-        browser = pw.chromium.launch()
+    with component_url(component) as url, sync_playwright() as pw:
+        browser = pw.chromium.launch(executable_path=shutil.which('chromium'), args=['--no-sandbox'])
         page = browser.new_page(viewport={"width": 1900, "height": 1250})
+        page.on('pageerror', lambda error: print('Mind-map browser error:', error, file=sys.stderr))
+        modules = Path(__file__).resolve().parent.parent / '.cache' / 'figure-theme' / 'node_modules'
+        allowed = {'react', 'react-dom', '@babel/standalone', 'mathjax', '@mathjax/mathjax-pagella-font'}
+        def dependency(route):
+            url = urllib.parse.urlsplit(route.request.url)
+            if url.scheme not in ('http', 'https') or url.hostname == '127.0.0.1':
+                route.continue_()
+                return
+            resource = url.path.removeprefix('/npm/') if url.netloc == 'cdn.jsdelivr.net' else url.path.lstrip('/')
+            match = re.fullmatch(r'(@[^/]+/[^/@]+|[^/@]+)(?:@[^/]+)?/(.+)', resource)
+            if url.netloc not in ('unpkg.com', 'cdn.jsdelivr.net') or not match or match[1] not in allowed:
+                raise RuntimeError('Unexpected external mind-map dependency: ' + route.request.url)
+            target = (modules / match[1] / match[2]).resolve()
+            if not target.is_relative_to((modules / match[1]).resolve()) or not target.is_file():
+                raise RuntimeError('Missing local mind-map dependency: ' + str(target))
+            route.fulfill(path=str(target), headers={'Access-Control-Allow-Origin': '*'})
+        page.route('**/*', dependency)
         page.goto(url)
-        # The runtime pulls React off a CDN and MathJax typesets afterwards.
         page.wait_for_function(
             "() => document.querySelectorAll('mjx-container svg').length >= 13",
             timeout=60000)
+        page.evaluate('document.fonts.ready')
+        assert page.evaluate('document.fonts.check(\'16px "TeX Gyre Pagella"\')'), 'Book font did not load'
         page.wait_for_timeout(1200)
         data = page.evaluate(open(extractor).read())
         browser.close()

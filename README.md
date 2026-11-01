@@ -8,6 +8,9 @@ To compile the paper as an accessible website, run `pretext build web` in a term
 
 To preview your output, run `pretext view web`.
 
+For the book's static graph fonts, palette, and regeneration commands, see
+[the figure authoring notes](scripts/FIGURES.md).
+
 To deploy your output to GitHub pages, run `pretext deploy`.
 
 To compile a pdf, run `pretext build print`.

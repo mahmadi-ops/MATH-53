@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../assets/custom.css">
+<script>window.MathJax = { output: { font: "mathjax-pagella" }, svg: { fontCache: "local", linebreaks: { inline: false } }, tex: { inlineMath: [['\\(', '\\)']] }, options: { enableMenu: false } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-svg.js" async></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -12,12 +15,10 @@
 <title>Figure 7.54 — From image to accuracy</title>
 <style>
 body { margin: 0; background: #ffffff; }
-a { color: #6d7c3f; } a:hover { color: #5e1224; }
+a { color: #4A5D23; } a:hover { color: #5E011C; }
 </style>
-<script>window.MathJax = { tex: { inlineMath: [['\\(', '\\)']] }, options: { enableMenu: false } };</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </helmet>
-<div style="position: relative; width: 1840px; height: 1170px; background: #fffefb; font-family: 'TeX Gyre Pagella', 'Palatino Linotype', Palatino, 'URW Palladio L', Georgia, serif; overflow: hidden;">
+<div style="position: relative; width: 1840px; height: 1170px; background: #ffffff; font-family: 'TeX Gyre Pagella', 'Palatino Linotype', Palatino, 'URW Palladio L', Georgia, serif; overflow: hidden;">
   <svg width="1840" height="1170" style="position: absolute; left: 0; top: 0;">
     <sc-for list="{{ edges }}" as="e" hint-placeholder-count="3">
       <line x1="{{ e.x1 }}" y1="{{ e.y1 }}" x2="{{ e.x2 }}" y2="{{ e.y2 }}" stroke="{{ e.c }}" stroke-width="{{ e.w }}" stroke-opacity="0.45" stroke-linecap="round"></line>
@@ -26,8 +27,8 @@ a { color: #6d7c3f; } a:hover { color: #5e1224; }
   <sc-for list="{{ nodes }}" as="n" hint-placeholder-count="6">
     <div style="position: absolute; left: {{ n.x }}px; top: {{ n.y }}px; width: {{ n.w }}px; transform: translate(-50%, -50%); box-sizing: border-box; padding: {{ n.pad }}; background: {{ n.bg }}; border: 1.5px solid {{ n.bc }}; border-radius: {{ radius }}px; color: {{ n.fg }}; font-weight: {{ n.fw }}; font-size: {{ n.fs }}px; line-height: 1.35; text-align: center; text-wrap: pretty;">{{ n.label }}</div>
   </sc-for>
-  <div style="position: absolute; left: 1500px; top: 1000px; width: 320px; transform: translate(-50%, -50%); color: #5a4813; font-size: 15px; font-style: italic; text-align: center;">* optional — leans on a few ideas from probability that the book does not develop</div>
-  <div style="position: absolute; left: 885px; top: 625px; width: 240px; height: 240px; transform: translate(-50%, -50%); border-radius: 50%; background: #5e1224; border: 3px solid #4a0e1c; color: #fdf6ee; display: flex; align-items: center; justify-content: center; text-align: center; font-size: {{ centerFs }}px; font-weight: 700; padding: 24px; box-sizing: border-box; line-height: 1.3; flex-direction: column; gap: 8px;"><span>From image to accuracy</span><span style="font-size: {{ centerSubFs }}px; font-weight: 400; font-style: italic; line-height: 1.35;">image recognition, decision protocol, and accuracy testing</span></div>
+  <div style="position: absolute; left: 1500px; top: 1000px; width: 320px; transform: translate(-50%, -50%); color: #876801; font-size: 15px; font-style: italic; text-align: center;">* optional — leans on a few ideas from probability that the book does not develop</div>
+  <div style="position: absolute; left: 885px; top: 625px; width: 240px; height: 240px; transform: translate(-50%, -50%); border-radius: 50%; background: #5E011C; border: 3px solid #5E011C; color: #ffffff; display: flex; align-items: center; justify-content: center; text-align: center; font-size: {{ centerFs }}px; font-weight: 700; padding: 24px; box-sizing: border-box; line-height: 1.3; flex-direction: column; gap: 8px;"><span>From image to accuracy</span><span style="font-size: {{ centerSubFs }}px; font-weight: 400; font-style: italic; line-height: 1.35;">image recognition, decision protocol, and accuracy testing</span></div>
 </div>
 
 </x-dc>
@@ -49,9 +50,9 @@ class Component extends DCLogic {
     const numbers = this.props.showNumbers ?? true;
     // Book palette: olive links, goldenrod remarks, maroon definitions
     const P = {
-      A: { main: '#5f6f3a', tint: '#eef0df', ink: '#3c4823' },
-      B: { main: '#8a6d1f', tint: '#faf3d8', ink: '#5a4813' },
-      C: { main: '#5e1224', tint: '#f7e8e9', ink: '#5e1224' },
+      A: { main: '#4A5D23', tint: '#EDF0E6', ink: '#3A4A1C' },
+      B: { main: '#876801', tint: '#fbf7e8', ink: '#876801' },
+      C: { main: '#5E011C', tint: '#f9f3f4', ink: '#5E011C' },
     };
     const CX = 885, CY = 625;
     // [id, branch, level, x, y, w, label, parentId]
@@ -95,7 +96,7 @@ class Component extends DCLogic {
         label: text,
         bg: lv === 1 ? p.main : p.tint,
         bc: lv === 1 ? p.main : (lv === 2 ? p.main : p.main + '99'),
-        fg: lv === 1 ? '#fdf6ee' : p.ink,
+        fg: lv === 1 ? '#ffffff' : p.ink,
         fw: lv === 1 ? 700 : 400,
         fs: Math.round((lv === 1 ? 19 : lv === 2 ? 16 : 15) * scale),
         pad: lv === 1 ? '12px 16px' : '9px 13px',

@@ -433,9 +433,9 @@
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
-                  <point p="(1,0)" fill="blue" size="4"/>
-                  <point p="(0,1)" fill="blue" size="4"/>
+                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                  <point p="(1,0)" fill="#4A5D23" size="4"/>
+                  <point p="(0,1)" fill="#4A5D23" size="4"/>
                   <label p="(1,0)" alignment="s" offset="(6,-8)"><m>[A]_\mathcal{B}</m></label>
                   <label p="(0,1)" alignment="w" offset="(-10,6)"><m>[D]_\mathcal{B}</m></label>
                   <label p="(0.5,0.5)" alignment="ne" offset="(14,14)">blends</label>
@@ -453,10 +453,10 @@
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="red" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
-                  <point p="(1,0)" fill="blue" size="4"/>
-                  <point p="(0,1)" fill="blue" size="4"/>
+                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="#5E011C" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                  <point p="(1,0)" fill="#4A5D23" size="4"/>
+                  <point p="(0,1)" fill="#4A5D23" size="4"/>
                   <label p="(1.4,1.6)" alignment="c"><m>x+y=1</m></label>
                   <label p="(-1.5,1.3)" alignment="c">x negative</label>
                   <label p="(1.5,-1.3)" alignment="c">y negative</label>
@@ -473,13 +473,13 @@
             <prefigure label="pf-cats-plane" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
-                  <polygon points="((-2.4,-2.4),(2.6,-2.4),(2.6,2.6),(-2.4,2.6))" fill="#dbe7f5" stroke="none"/>
+                  <polygon points="((-2.4,-2.4),(2.6,-2.4),(2.6,2.6),(-2.4,2.6))" fill="#EDF0E6" stroke="none"/>
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="red" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
-                  <point p="(1,0)" fill="blue" size="4"/>
-                  <point p="(0,1)" fill="blue" size="4"/>
-                  <point p="(1.5,1.3)" fill="purple" size="4"/>
+                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="#5E011C" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                  <point p="(1,0)" fill="#4A5D23" size="4"/>
+                  <point p="(0,1)" fill="#4A5D23" size="4"/>
+                  <point p="(1.5,1.3)" fill="#606060" size="4"/>
                   <label p="(1.5,1.3)" alignment="e" offset="(8,4)"><m>[X]_\mathcal{B}</m></label>
                   <label p="(-1.5,-1.5)" alignment="c"><m>W \cong \mathbb{R}^2</m></label>
                 </coordinates>
@@ -613,10 +613,10 @@
               <diagram dimensions="(240,240)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
-                  <line endpoints="((0,0),(1,0))" stroke="green" thickness="4" arrows="1"/>
-                  <line endpoints="((0,0),(0,1))" stroke="green" thickness="4" arrows="1"/>
+                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="#5E011C" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                  <line endpoints="((0,0),(1,0))" stroke="#876801" thickness="4" arrows="1"/>
+                  <line endpoints="((0,0),(0,1))" stroke="#876801" thickness="4" arrows="1"/>
                   <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
                   <label p="(0,1)" alignment="w" offset="(-6,0)"><m>D</m></label>
                 </coordinates>
@@ -634,12 +634,12 @@
               <diagram dimensions="(240,240)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
                   <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="red" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="blue" thickness="3"/>
-                  <line at="vector-M" endpoints="((0,0),(0.5,0.5))" stroke="purple" thickness="4" arrows="1"/>
-                  <line at="vector-Delta" endpoints="((0,0),(0.5,-0.5))" stroke="orange" thickness="4" arrows="1"/>
-                  <point at="point-A" p="(1,0)" fill="blue" size="4"/>
-                  <point at="point-D" p="(0,1)" fill="blue" size="4"/>
+                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="#5E011C" thickness="2"/>
+                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                  <line at="vector-M" endpoints="((0,0),(0.5,0.5))" stroke="#606060" thickness="4" arrows="1"/>
+                  <line at="vector-Delta" endpoints="((0,0),(0.5,-0.5))" stroke="#876801" thickness="4" arrows="1"/>
+                  <point at="point-A" p="(1,0)" fill="#4A5D23" size="4"/>
+                  <point at="point-D" p="(0,1)" fill="#4A5D23" size="4"/>
                   <label p="(0.5,0.5)" alignment="ne"><m>M</m></label>
                   <label p="(0.5,-0.5)" alignment="se"><m>\Delta</m></label>
                   <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>

@@ -38,11 +38,11 @@
                   <circle center="(4.5,1.35)" radius="0.55" stroke="black" thickness="2"/>
                   <label p="(1.3,1.35)" alignment="c"><m>A</m></label>
                   <label p="(4.5,1.35)" alignment="c"><m>B</m></label>
-                  <line endpoints="((1.85,1.1),(3.95,1.1))" stroke="blue" thickness="2" arrows="1"/>
-                  <line endpoints="((3.95,1.62),(1.85,1.62))" stroke="blue" thickness="2" arrows="1"/>
+                  <line endpoints="((1.85,1.1),(3.95,1.1))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <line endpoints="((3.95,1.62),(1.85,1.62))" stroke="#4A5D23" thickness="2" arrows="1"/>
                   <label p="(2.9,0.95)" alignment="s" offset="(0,-6)"><m>1</m></label>
                   <label p="(2.9,1.78)" alignment="n" offset="(0,6)"><m>\tfrac{1}{4}</m></label>
-                  <arc center="(5.45,1.35)" radius="0.42" range="(150,-150)" stroke="blue" thickness="2" arrows="1"/>
+                  <arc center="(5.45,1.35)" radius="0.42" range="(150,-150)" stroke="#4A5D23" thickness="2" arrows="1"/>
                   <label p="(6.0,1.35)" alignment="e" offset="(8,0)"><m>\tfrac{3}{4}</m></label>
                 </coordinates>
               </diagram>

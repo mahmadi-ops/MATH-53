@@ -26,14 +26,14 @@
         <prefigure label="pf-det-area" xmlns="https://prefigure.org">
           <diagram dimensions="(400,300)" margins="10">
             <coordinates bbox="(-0.7,-0.6,4.8,3.6)">
-              <polygon points="((0,0),(3,1),(4,3),(1,2))" fill="#f6c9c1" stroke="none"/>
+              <polygon points="((0,0),(3,1),(4,3),(1,2))" fill="#f9f3f4" stroke="none"/>
               <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <line endpoints="((0,0),(3,1))" stroke="blue" thickness="3" arrows="1"/>
-              <line endpoints="((0,0),(1,2))" stroke="blue" thickness="3" arrows="1"/>
-              <line endpoints="((3,1),(4,3))" stroke="blue" thickness="1"/>
-              <line endpoints="((1,2),(4,3))" stroke="blue" thickness="1"/>
-              <label p="(2.6,0.85)" alignment="s" offset="(0,-8)" color="blue"><m>\vec{u}</m></label>
-              <label p="(0.75,1.75)" alignment="w" offset="(-8,0)" color="blue"><m>\vec{v}</m></label>
+              <line endpoints="((0,0),(3,1))" stroke="#4A5D23" thickness="3" arrows="1"/>
+              <line endpoints="((0,0),(1,2))" stroke="#4A5D23" thickness="3" arrows="1"/>
+              <line endpoints="((3,1),(4,3))" stroke="#4A5D23" thickness="1"/>
+              <line endpoints="((1,2),(4,3))" stroke="#4A5D23" thickness="1"/>
+              <label p="(2.6,0.85)" alignment="s" offset="(0,-8)" color="#4A5D23"><m>\vec{u}</m></label>
+              <label p="(0.75,1.75)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{v}</m></label>
               <label p="(2.0,1.5)" alignment="c"><m>|\det A| = 5</m></label>
             </coordinates>
           </diagram>

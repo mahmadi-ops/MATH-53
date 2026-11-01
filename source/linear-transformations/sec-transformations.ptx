@@ -135,16 +135,16 @@
               \draw[-{Stealth[length=2mm]}] (0,0,0) -- (2.6,0,0) node[below left] {$x$};
               \draw[-{Stealth[length=2mm]}] (0,0,0) -- (0,2.8,0) node[right] {$y$};
               \draw[-{Stealth[length=2mm]}] (0,0,0) -- (0,0,2.6) node[above] {$z$};
-              \draw[red, very thick, -{Stealth[length=2.2mm]}] (0,0,0) -- (1.6,1.0,1.7)
+              \draw[bookwine, very thick, -{Stealth[length=2.2mm]}] (0,0,0) -- (1.6,1.0,1.7)
                 node[above right, black] {$\vec{x}$};
             \end{scope}
             \begin{scope}[xshift=6.4cm]
               \draw[-{Stealth[length=2mm]}] (-0.4,0) -- (2.8,0) node[right] {$x$};
               \draw[-{Stealth[length=2mm]}] (0,-0.9) -- (0,2.6) node[above] {$y$};
-              \draw[teal, very thick, -{Stealth[length=2.2mm]}] (0,0) -- (1.7,1.5)
+              \draw[bookolive, very thick, -{Stealth[length=2.2mm]}] (0,0) -- (1.7,1.5)
                 node[above right, black] {$A\vec{x}$};
             \end{scope}
-            \draw[blue, dashed, -{Stealth[length=2.4mm]}] (1.6,2.6)
+            \draw[bookolive, dashed, -{Stealth[length=2.4mm]}] (1.6,2.6)
               to[out=35, in=145] node[midway, above] {$T:\R^3 \to \R^2$} (6.0,2.2);
           \end{tikzpicture}
         </latex-image>

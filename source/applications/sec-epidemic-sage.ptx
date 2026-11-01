@@ -215,13 +215,16 @@
         for k in range(N):
             history.append(T * history[-1])
 
+        from matplotlib import rcParams
+        rcParams['font.family'] = 'serif'
+        rcParams['font.serif'] = ['TeX Gyre Pagella', 'Palatino', 'DejaVu Serif']
         labels = ["susceptible", "infected", "recovered", "deceased"]
-        colors = ["blue", "red", "green", "black"]
+        colors = ["#4A5D23", "#5E011C", "#876801", "#404040"]
         p = sum(line([(k, history[k][j]) for k in range(N + 1)],
                      color=colors[j], legend_label=labels[j], thickness=2)
                 for j in range(4))
         p.axes_labels(["day $k$", "fraction of population"])
-        p.show(ymin=0, ymax=1)
+        p.show(ymin=0, ymax=1, legend_options={'font_family': 'serif'})
       </input>
     </sage>
 

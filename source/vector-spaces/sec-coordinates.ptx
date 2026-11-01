@@ -92,14 +92,14 @@
                         <line endpoints="((0,0),(0,2))" stroke="#777" thickness="1"/>
                         <line endpoints="((0,2),(1,2))" stroke="#777" thickness="1"/>
                       </group>
-                      <line at="arrow-e1" endpoints="((0,0),(1,0))" stroke="orange" thickness="3" arrows="1"/>
-                      <line at="arrow-e2" endpoints="((0,0),(0,1))" stroke="orange" thickness="3" arrows="1"/>
-                      <line at="arrow-2e2" endpoints="((1,0),(1,2))" stroke="blue" thickness="3" arrows="1"/>
-                      <line at="vector-x" endpoints="((0,0),(1,2))" stroke="red" thickness="3" arrows="1"/>
-                      <label anchor="(0.5,0)" alignment="s" offset="(0,-10)" scale="1.2" color="orange"><m>\vec{e}_1</m></label>
-                      <label anchor="(0,0.5)" alignment="w" offset="(-10,0)" scale="1.2" color="orange"><m>\vec{e}_2</m></label>
-                      <label anchor="(1,1)" alignment="e" offset="(10,0)" scale="1.2" color="blue"><m>2\vec{e}_2</m></label>
-                      <label anchor="(1,2)" alignment="nw" offset="(-6,10)" scale="1.2" color="red"><m>\vec{x}</m></label>
+                      <line at="arrow-e1" endpoints="((0,0),(1,0))" stroke="#876801" thickness="3" arrows="1"/>
+                      <line at="arrow-e2" endpoints="((0,0),(0,1))" stroke="#876801" thickness="3" arrows="1"/>
+                      <line at="arrow-2e2" endpoints="((1,0),(1,2))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                      <line at="vector-x" endpoints="((0,0),(1,2))" stroke="#5E011C" thickness="3" arrows="1"/>
+                      <label anchor="(0.5,0)" alignment="s" offset="(0,-10)" scale="1.2" color="#876801"><m>\vec{e}_1</m></label>
+                      <label anchor="(0,0.5)" alignment="w" offset="(-10,0)" scale="1.2" color="#876801"><m>\vec{e}_2</m></label>
+                      <label anchor="(1,1)" alignment="e" offset="(10,0)" scale="1.2" color="#4A5D23"><m>2\vec{e}_2</m></label>
+                      <label anchor="(1,2)" alignment="nw" offset="(-6,10)" scale="1.2" color="#5E011C"><m>\vec{x}</m></label>
                     </group>
                   </coordinates>
                   <annotations>
@@ -126,31 +126,31 @@
                   <coordinates bbox="(-2.6,-1.7,3.6,3.6)">
                     <group at="skew-grid">
                       <group at="lattice">
-                        <line endpoints="((-3,-1),(4,-1))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((-3,1),(4,1))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((-3,2),(4,2))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((-3,3),(4,3))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((-2,-2),(-8,4))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((0,-2),(-6,4))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((2,-2),(-4,4))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((4,-2),(-2,4))" stroke="#8cc" thickness="1"/>
-                        <line endpoints="((6,-2),(0,4))" stroke="#8cc" thickness="1"/>
+                        <line endpoints="((-3,-1),(4,-1))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((-3,1),(4,1))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((-3,2),(4,2))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((-3,3),(4,3))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((-2,-2),(-8,4))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((0,-2),(-6,4))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((2,-2),(-4,4))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((4,-2),(-2,4))" stroke="#c4cdb1" thickness="1"/>
+                        <line endpoints="((6,-2),(0,4))" stroke="#c4cdb1" thickness="1"/>
                       </group>
                       <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
                       <group at="parallelogram">
                         <line endpoints="((0,0),(-2,2))" stroke="#777" thickness="1"/>
                         <line endpoints="((-2,2),(1,2))" stroke="#777" thickness="1"/>
                       </group>
-                      <line at="arrow-32b1" endpoints="((0,0),(3,0))" stroke="blue" thickness="3" arrows="1"/>
-                      <line at="arrow-b1" endpoints="((0,0),(2,0))" stroke="green" thickness="3" arrows="1"/>
-                      <line at="arrow-b2" endpoints="((0,0),(-1,1))" stroke="green" thickness="3" arrows="1"/>
-                      <line at="arrow-2b2" endpoints="((3,0),(1,2))" stroke="blue" thickness="3" arrows="1"/>
-                      <line at="vector-x" endpoints="((0,0),(1,2))" stroke="red" thickness="3" arrows="1"/>
-                      <label anchor="(1,0)" alignment="s" offset="(0,-10)" scale="1.2" color="green"><m>\vec{b}_1</m></label>
-                      <label anchor="(-0.7,0.7)" alignment="sw" offset="(-6,-8)" scale="1.2" color="green"><m>\vec{b}_2</m></label>
-                      <label anchor="(2.7,0)" alignment="s" offset="(0,-10)" scale="1.2" color="blue"><m>\tfrac{3}{2}\vec{b}_1</m></label>
-                      <label anchor="(2,1)" alignment="e" offset="(10,0)" scale="1.2" color="blue"><m>2\vec{b}_2</m></label>
-                      <label anchor="(1,2)" alignment="nw" offset="(-6,10)" scale="1.2" color="red"><m>\vec{x}</m></label>
+                      <line at="arrow-32b1" endpoints="((0,0),(3,0))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                      <line at="arrow-b1" endpoints="((0,0),(2,0))" stroke="#876801" thickness="3" arrows="1"/>
+                      <line at="arrow-b2" endpoints="((0,0),(-1,1))" stroke="#876801" thickness="3" arrows="1"/>
+                      <line at="arrow-2b2" endpoints="((3,0),(1,2))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                      <line at="vector-x" endpoints="((0,0),(1,2))" stroke="#5E011C" thickness="3" arrows="1"/>
+                      <label anchor="(1,0)" alignment="s" offset="(0,-10)" scale="1.2" color="#876801"><m>\vec{b}_1</m></label>
+                      <label anchor="(-0.7,0.7)" alignment="sw" offset="(-6,-8)" scale="1.2" color="#876801"><m>\vec{b}_2</m></label>
+                      <label anchor="(2.7,0)" alignment="s" offset="(0,-10)" scale="1.2" color="#4A5D23"><m>\tfrac{3}{2}\vec{b}_1</m></label>
+                      <label anchor="(2,1)" alignment="e" offset="(10,0)" scale="1.2" color="#4A5D23"><m>2\vec{b}_2</m></label>
+                      <label anchor="(1,2)" alignment="nw" offset="(-6,10)" scale="1.2" color="#5E011C"><m>\vec{x}</m></label>
                     </group>
                   </coordinates>
                   <annotations>

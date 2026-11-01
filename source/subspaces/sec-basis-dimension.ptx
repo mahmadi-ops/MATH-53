@@ -76,16 +76,16 @@
             }
             \begin{scope}
               \coordinate (O) at (1.35,0.2);
-              \draw[magenta, very thick, -{Stealth[length=2mm]}] (O) -- ++(-0.55,-0.48)
+              \draw[bookgray, very thick, -{Stealth[length=2mm]}] (O) -- ++(-0.55,-0.48)
                 node[below left, black] {$\vec{e}_1$};
-              \draw[magenta, very thick, -{Stealth[length=2mm]}] (O) -- ++(0.95,0)
+              \draw[bookgray, very thick, -{Stealth[length=2mm]}] (O) -- ++(0.95,0)
                 node[above, black] {$\vec{e}_2$};
             \end{scope}
             \begin{scope}[xshift=7.2cm]
               \coordinate (O) at (1.35,0.2);
-              \draw[blue, very thick, -{Stealth[length=2mm]}] (O) -- ++(-0.55,-0.48)
+              \draw[bookolive, very thick, -{Stealth[length=2mm]}] (O) -- ++(-0.55,-0.48)
                 node[below left, black] {$\vec{e}_1$};
-              \draw[blue, very thick, -{Stealth[length=2mm]}] (O) -- ++(0.40,-0.48)
+              \draw[bookolive, very thick, -{Stealth[length=2mm]}] (O) -- ++(0.40,-0.48)
                 node[below right, black] {$\vec{e}_1+\vec{e}_2$};
             \end{scope}
           \end{tikzpicture}

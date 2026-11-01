@@ -10,7 +10,19 @@
       \newcommand{\R}{\mathbb{R}}
     </macros>
 
+    <prefigure-preamble xmlns="https://prefigure.org">
+      <label font="serif"/>
+    </prefigure-preamble>
+
     <latex-image-preamble>
+      \usepackage{mathpazo}
+      \usepackage{fontspec}
+      \setmainfont{TeX Gyre Pagella}
+      \usepackage{xcolor}
+      \definecolor{bookolive}{HTML}{4A5D23}
+      \definecolor{bookwine}{HTML}{5E011C}
+      \definecolor{bookmustard}{HTML}{876801}
+      \definecolor{bookgray}{HTML}{606060}
       \usepackage{tikz}
       \usepackage{amsmath}
       \usetikzlibrary{decorations.pathmorphing, arrows.meta}

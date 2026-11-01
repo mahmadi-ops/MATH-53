@@ -1,0 +1,4 @@
+prefig==0.7.9
+lxml==6.0.2
+fonttools[woff]==4.68.0
+cairosvg==2.9.1

@@ -1,9 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="pf-cats-plane-figure" width="242" height="242" viewBox="0 0 242 242">
   <defs>
-    <clipPath id="pf-cats-plane-clipPath-0">
+    <clipPath id="pf-cats-plane-__clipPath-0">
       <rect x="6.0" y="6.0" width="230.0" height="230.0"/>
     </clipPath>
-    <clipPath id="pf-cats-plane-clipPath-1">
+    <clipPath id="pf-cats-plane-__clipPath-1">
       <rect x="6.0" y="6.0" width="230.0" height="230.0"/>
     </clipPath>
     <marker id="pf-cats-plane-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
@@ -13,74 +14,74 @@
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <path id="pf-cats-plane-path-0" d="M 6.0 236.0 L 236.0 236.0 L 236.0 6.0 L 6.0 6.0" stroke="none" stroke-width="2" fill="#dbe7f5" clip-path="url(#pf-cats-plane-clipPath-1)"/>
+  <path id="pf-cats-plane-__path-0" d="M 6.0 236.0 L 236.0 236.0 L 236.0 6.0 L 6.0 6.0" stroke="none" stroke-width="2" fill="#EDF0E6" clip-path="url(#pf-cats-plane-__clipPath-1)"/>
   <g id="pf-cats-plane-axes" stroke="black" stroke-width="2">
-    <line id="pf-cats-plane-line-0" x1="6.0" y1="125.6" x2="236.0" y2="125.6" stroke="black" stroke-width="2" marker-end="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)"/>
-    <line id="pf-cats-plane-line-1" x1="116.4" y1="236.0" x2="116.4" y2="6.0" stroke="black" stroke-width="2" marker-end="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)"/>
+    <line id="pf-cats-plane-__line-0" x1="6.0" y1="125.6" x2="236.0" y2="125.6" stroke="black" stroke-width="2" marker-end="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)"/>
+    <line id="pf-cats-plane-__line-1" x1="116.4" y1="236.0" x2="116.4" y2="6.0" stroke="black" stroke-width="2" marker-end="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-plane-arrow-head-end-2_None_24_60-black)"/>
   </g>
-  <g id="pf-cats-plane-label-0" transform="translate(230.0,119.6) translate(-10.4,-8.2)">
-    <g id="pf-cats-plane-g-0">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
+  <g id="pf-cats-plane-__label-0" transform="translate(230.0,119.6) translate(-8.3,-8.2)">
+    <g id="pf-cats-plane-__g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.296px" height="8.184px" role="img" focusable="false" viewBox="0 -482 500 493" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-plane-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+          <path id="pf-cats-plane-MJX-2-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="x">
-              <use data-c="1D465" xlink:href="#pf-cats-plane-MJX-2-TEX-I-1D465"/>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:x" data-semantic-speech="x">
+              <use data-c="1D465" xlink:href="#pf-cats-plane-MJX-2-GP-I-1D465"/>
             </g>
           </g>
         </g>
       </svg>
     </g>
   </g>
-  <g id="pf-cats-plane-label-1" transform="translate(122.4,12.0) translate(0.0,-0.0)">
-    <g id="pf-cats-plane-g-1">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
+  <g id="pf-cats-plane-__label-1" transform="translate(122.4,12.0) translate(0.0,-0.0)">
+    <g id="pf-cats-plane-__g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.584px" width="8.296px" height="12.584px" role="img" focusable="false" viewBox="0 -482 500 758" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-plane-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-cats-plane-MJX-3-GP-I-1D466" d="M490 473L479 482C450 471 427 465 405 463L370 331C358 284 323 211 290 162C255 111 206 67 184 67C162 67 164 115 165 128L180 322C182 353 184 391 184 419C184 464 177 482 160 482C147 482 133 475 85 442L3 386L14 368L64 398C69 402 82 410 89 410C115 410 111 359 110 343L93 100L92 60C91 18 110-11 135-11C172-11 256 74 331 187L282 16C231-161 181-234 111-234C76-234 49-207 49-172C49-167 50-159 51-150L41-146L-7-180C-8-187-8-193-8-198C-8-241 29-276 74-276C180-276 290-152 349 33Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="y">
-              <use data-c="1D466" xlink:href="#pf-cats-plane-MJX-3-TEX-I-1D466"/>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:y" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#pf-cats-plane-MJX-3-GP-I-1D466"/>
             </g>
           </g>
         </g>
       </svg>
     </g>
   </g>
-  <line id="pf-cats-plane-line-2" x1="42.8" y1="6.0" x2="236.0" y2="199.2" stroke="red" stroke-width="2" fill="none"/>
-  <line id="pf-cats-plane-line-3" x1="162.4" y1="125.6" x2="116.4" y2="79.6" stroke="blue" stroke-width="3" fill="none"/>
-  <circle id="pf-cats-plane-circle-0" cx="162.4" cy="125.6" r="4" stroke="black" stroke-width="2" fill="blue"/>
-  <circle id="pf-cats-plane-circle-1" cx="116.4" cy="79.6" r="4" stroke="black" stroke-width="2" fill="blue"/>
-  <circle id="pf-cats-plane-circle-2" cx="185.4" cy="65.8" r="4" stroke="black" stroke-width="2" fill="purple"/>
-  <g id="pf-cats-plane-label-2" transform="translate(197.4,61.8) translate(0.0,-9.0)">
-    <g id="pf-cats-plane-g-2">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="35.392px" height="18.096px" role="img" focusable="false" viewBox="0 -750 1955.6 1000" x="0.0" y="0.0">
+  <line id="pf-cats-plane-__line-2" x1="42.8" y1="6.0" x2="236.0" y2="199.2" stroke="#5E011C" stroke-width="2" fill="none"/>
+  <line id="pf-cats-plane-__line-3" x1="162.4" y1="125.6" x2="116.4" y2="79.6" stroke="#4A5D23" stroke-width="3" fill="none"/>
+  <circle id="pf-cats-plane-__circle-0" cx="162.4" cy="125.6" r="4" stroke="black" stroke-width="2" fill="#4A5D23"/>
+  <circle id="pf-cats-plane-__circle-1" cx="116.4" cy="79.6" r="4" stroke="black" stroke-width="2" fill="#4A5D23"/>
+  <circle id="pf-cats-plane-__circle-2" cx="185.4" cy="65.8" r="4" stroke="black" stroke-width="2" fill="#606060"/>
+  <g id="pf-cats-plane-__label-2" transform="translate(197.4,61.8) translate(0.0,-7.2)">
+    <g id="pf-cats-plane-__g-2">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.824px" width="34.976px" height="14.304px" role="img" focusable="false" viewBox="0 -692 2107.2 862" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-plane-MJX-4-TEX-N-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"/>
-          <path id="pf-cats-plane-MJX-4-TEX-I-1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"/>
-          <path id="pf-cats-plane-MJX-4-TEX-N-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"/>
-          <path id="pf-cats-plane-MJX-4-TEX-C-42" d="M304 342Q292 342 292 353Q292 372 323 391Q331 396 417 428T533 487Q563 512 563 555V562Q563 575 557 589T530 618T475 636Q429 636 396 613T330 539Q263 446 210 238Q196 183 173 120Q135 31 121 16Q108 1 85 -10T47 -22T32 -10Q32 -5 44 18T77 93T112 206Q135 296 154 395T182 550T191 615Q191 616 190 616Q188 616 179 611T157 601T131 594Q113 594 113 605Q113 623 144 644Q154 650 205 676T267 703Q277 705 279 705Q295 705 295 693Q295 686 288 635T278 575Q278 572 287 582Q336 635 402 669T540 704Q603 704 633 673T664 599Q664 559 638 523T580 462Q553 440 504 413L491 407L504 402Q566 381 596 338T627 244Q627 172 575 110T444 13T284 -22Q208 -22 158 28Q144 42 146 50Q150 67 178 85T230 103Q236 103 246 95T267 75T302 56T357 47Q436 47 486 93Q526 136 526 198V210Q526 228 518 249T491 292T436 330T350 345Q335 345 321 344T304 342Z"/>
+          <path id="pf-cats-plane-MJX-4-GP-N-5B" d="M330-130L180-130L180 630L330 630C328 636 327 643 327 650C327 657 328 664 330 670L120 670L120-170L330-170C328-164 327-157 327-150C327-143 328-136 330-130Z"/>
+          <path id="pf-cats-plane-MJX-4-GP-I-1D44B" d="M734 664L734 692L620 689L505 692L505 664L538 662C570 660 583 655 583 643C583 632 578 623 560 601L399 405L295 604C286 622 281 634 281 642C281 654 294 660 324 662L361 664L361 692L228 689L95 692L95 664L121 662C170 658 182 650 202 613L348 343L110 61C95 43 72 31 48 28L20 25L20-3L145 0L264-3L264 25L232 28C194 32 177 38 177 50C177 58 181 67 187 75L369 306L488 80C497 62 502 49 502 40C502 32 495 31 470 29C451 28 461 29 416 25L416-3L551 0L684-3L684 25L659 27C618 30 605 37 591 61L420 368L641 620C670 654 680 660 706 662Z"/>
+          <path id="pf-cats-plane-MJX-4-GP-N-5D" d="M290-170L290 670L80 670C82 664 83 657 83 650C83 643 82 636 80 630L230 630L230-130L80-130C82-136 83-143 83-150C83-157 82-164 80-170Z"/>
+          <path id="pf-cats-plane-MJX-4-GP-C-42" d="M280 679C282 690 282 692 282 695C282 702 280 705 271 705C260 705 230 690 210 680C164 657 126 638 126 620C126 614 133 614 137 614C149 614 175 628 194 637C182 539 158 411 140 325C103 155 84 94 35-3C30-12 30-14 30-15C30-22 38-22 40-22C56-22 98-4 114 24C127 47 165 120 195 236C217 322 255 453 326 556C372 621 414 651 477 651C531 651 580 616 580 563C580 475 485 443 381 408C369 404 300 380 300 355C300 349 307 348 310 348C314 348 337 352 358 352C459 352 541 292 541 197C541 73 435 33 344 33C267 33 230 75 217 89C213 94 212 96 204 96C182 96 131 65 131 47C131 44 170-22 278-22C419-22 626 78 626 239C626 323 570 386 468 405C548 439 665 511 665 605C665 663 617 706 543 706C509 706 381 697 260 547Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="leftright" data-semantic-fencepointer="2" data-semantic-id="4" data-semantic-children="5,3" data-semantic-speech="left bracket upper X right bracket Subscript script upper B">
-              <g data-mml-node="mrow" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-id="5" data-semantic-children="1" data-semantic-content="0,2" data-semantic-parent="4" data-semantic-speech="left bracket upper X right bracket" data-semantic-prefix="Base">
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="5" data-semantic-speech="left bracket">
-                  <use data-c="5B" xlink:href="#pf-cats-plane-MJX-4-TEX-N-5B"/>
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="leftright" data-semantic-annotation="depth:1" data-semantic-fencepointer="2" data-semantic-id="4" data-semantic-children="5,3" data-semantic-attributes="latex:[X]_\mathcal{B}" data-semantic-speech="left bracket upper X right bracket Subscript script upper B">
+              <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:bracket;depth:2" data-semantic-id="5" data-semantic-children="1" data-semantic-content="0,2" data-semantic-parent="4" data-semantic-speech="left bracket upper X right bracket" data-semantic-prefix="Base">
+                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:[" data-semantic-speech="left bracket">
+                  <use data-c="5B" xlink:href="#pf-cats-plane-MJX-4-GP-N-5B"/>
                 </g>
-                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="5" data-semantic-speech="upper X" transform="translate(278,0)">
-                  <use data-c="1D44B" xlink:href="#pf-cats-plane-MJX-4-TEX-I-1D44B"/>
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="5" data-semantic-attributes="latex:X" data-semantic-speech="upper X" transform="translate(410,0)">
+                  <use data-c="1D44B" xlink:href="#pf-cats-plane-MJX-4-GP-I-1D44B"/>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="2" data-semantic-parent="5" data-semantic-speech="right bracket" transform="translate(1130,0)">
-                  <use data-c="5D" xlink:href="#pf-cats-plane-MJX-4-TEX-N-5D"/>
+                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="5" data-semantic-attributes="latex:]" data-semantic-speech="right bracket" transform="translate(1144,0)">
+                  <use data-c="5D" xlink:href="#pf-cats-plane-MJX-4-GP-N-5D"/>
                 </g>
               </g>
-              <g data-mml-node="TeXAtom" transform="translate(1441,-150) scale(0.707)" data-mjx-texclass="ORD">
-                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="script" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="texclass:ORD" data-semantic-speech="script upper B" data-semantic-prefix="Subscript">
-                  <use data-c="42" xlink:href="#pf-cats-plane-MJX-4-TEX-C-42"/>
+              <g data-mml-node="TeXAtom" transform="translate(1587,-150) scale(0.707)" data-mjx-texclass="ORD">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="script" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="latex:\mathcal{B};texclass:ORD" data-semantic-speech="script upper B" data-semantic-prefix="Subscript">
+                  <use data-c="42" xlink:href="#pf-cats-plane-MJX-4-GP-C-42"/>
                 </g>
               </g>
             </g>
@@ -89,31 +90,31 @@
       </svg>
     </g>
   </g>
-  <g id="pf-cats-plane-label-3" transform="translate(47.4,194.6) translate(-32.0,-7.7)">
-    <g id="pf-cats-plane-g-3">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="64.072px" height="15.496px" role="img" focusable="false" viewBox="0 -833.9 3540.1 855.9" x="0.0" y="0.0">
+  <g id="pf-cats-plane-__label-3" transform="translate(47.4,194.6) translate(-30.2,-7.1)">
+    <g id="pf-cats-plane-__g-3">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.136px" width="60.400px" height="14.240px" role="img" focusable="false" viewBox="0 -850.2 3639.1 858.2" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-plane-MJX-5-TEX-I-1D44A" d="M436 683Q450 683 486 682T553 680Q604 680 638 681T677 682Q695 682 695 674Q695 670 692 659Q687 641 683 639T661 637Q636 636 621 632T600 624T597 615Q597 603 613 377T629 138L631 141Q633 144 637 151T649 170T666 200T690 241T720 295T759 362Q863 546 877 572T892 604Q892 619 873 628T831 637Q817 637 817 647Q817 650 819 660Q823 676 825 679T839 682Q842 682 856 682T895 682T949 681Q1015 681 1034 683Q1048 683 1048 672Q1048 666 1045 655T1038 640T1028 637Q1006 637 988 631T958 617T939 600T927 584L923 578L754 282Q586 -14 585 -15Q579 -22 561 -22Q546 -22 542 -17Q539 -14 523 229T506 480L494 462Q472 425 366 239Q222 -13 220 -15T215 -19Q210 -22 197 -22Q178 -22 176 -15Q176 -12 154 304T131 622Q129 631 121 633T82 637H58Q51 644 51 648Q52 671 64 683H76Q118 680 176 680Q301 680 313 683H323Q329 677 329 674T327 656Q322 641 318 637H297Q236 634 232 620Q262 160 266 136L501 550L499 587Q496 629 489 632Q483 636 447 637Q428 637 422 639T416 648Q416 650 418 660Q419 664 420 669T421 676T424 680T428 682T436 683Z"/>
-          <path id="pf-cats-plane-MJX-5-TEX-N-2245" d="M55 388Q55 463 101 526T222 589Q260 589 296 571T362 526T421 474T484 430T554 411Q616 411 655 458T694 560Q694 572 698 580T708 589Q722 589 722 556Q722 482 677 419T562 356H554Q517 356 481 374T414 418T355 471T292 515T223 533Q179 533 145 508Q109 479 96 440T80 378T69 355Q55 355 55 388ZM56 236Q56 249 70 256H707Q722 248 722 236Q722 225 708 217L390 216H72Q56 221 56 236ZM56 42Q56 57 72 62H708Q722 52 722 42Q722 30 707 22H70Q56 29 56 42Z"/>
-          <path id="pf-cats-plane-MJX-5-TEX-D-211D" d="M17 665Q17 672 28 683H221Q415 681 439 677Q461 673 481 667T516 654T544 639T566 623T584 607T597 592T607 578T614 565T618 554L621 548Q626 530 626 497Q626 447 613 419Q578 348 473 326L455 321Q462 310 473 292T517 226T578 141T637 72T686 35Q705 30 705 16Q705 7 693 -1H510Q503 6 404 159L306 310H268V183Q270 67 271 59Q274 42 291 38Q295 37 319 35Q344 35 353 28Q362 17 353 3L346 -1H28Q16 5 16 16Q16 35 55 35Q96 38 101 52Q106 60 106 341T101 632Q95 645 55 648Q17 648 17 665ZM241 35Q238 42 237 45T235 78T233 163T233 337V621L237 635L244 648H133Q136 641 137 638T139 603T141 517T141 341Q141 131 140 89T134 37Q133 36 133 35H241ZM457 496Q457 540 449 570T425 615T400 634T377 643Q374 643 339 648Q300 648 281 635Q271 628 270 610T268 481V346H284Q327 346 375 352Q421 364 439 392T457 496ZM492 537T492 496T488 427T478 389T469 371T464 361Q464 360 465 360Q469 360 497 370Q593 400 593 495Q593 592 477 630L457 637L461 626Q474 611 488 561Q492 537 492 496ZM464 243Q411 317 410 317Q404 317 401 315Q384 315 370 312H346L526 35H619L606 50Q553 109 464 243Z"/>
-          <path id="pf-cats-plane-MJX-5-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+          <path id="pf-cats-plane-MJX-5-GP-I-1D44A" d="M980 664L980 692C948 690 915 689 883 689C850 689 817 690 785 692L780 664L819 662C848 661 860 653 860 639C860 626 857 608 851 590L704 128L546 700L528 700L476 588L252 132L221 616C219 646 234 660 266 662L303 664L303 692L182 689L71 692L71 664L89 662C130 657 138 645 142 588L174 158C179 92 181 44 182-8L232-8C246 27 264 66 282 102L506 546L618 154C633 102 644 53 657-8L708-8L715 18C726 58 733 85 746 124L917 631C923 648 938 660 960 662Z"/>
+          <path id="pf-cats-plane-MJX-5-GP-N-2245" d="M679 504C672 504 666 505 659 507C653 509 647 512 641 516C619 449 585 419 538 406C530 403 522 402 514 402C472 402 433 430 397 455C350 487 297 517 243 517C231 517 218 516 205 512C143 495 110 445 81 356C88 356 94 355 101 353C107 351 113 348 119 344C141 411 175 441 222 454C230 457 238 458 246 458C288 458 327 430 363 405C410 373 463 343 517 343C529 343 542 344 555 348C617 365 650 415 679 504M680 220C678 230 677 240 677 250C677 260 678 270 680 280L80 280C82 270 83 260 83 250C83 240 82 230 80 220M680 40C678 50 677 60 677 70C677 80 678 90 680 100L80 100C82 90 83 80 83 70C83 60 82 50 80 40Z"/>
+          <path id="pf-cats-plane-MJX-5-GP-DS-211D" d="M827 44C806 48 769 75 758 89L556 330C668 361 717 418 717 514C717 622 622 686 490 686L86 686L86 642L127 639C156 637 158 627 158 571L158 115C158 58 156 49 128 47L80 44L80 0L405 0L405 44L357 47C329 49 327 58 327 115L327 642L423 642C514 642 543 566 543 493C543 414 475 357 406 355L368 355L356 301L611 0L817 0M673 514C673 444 638 404 542 375C569 406 587 447 587 493C587 547 574 601 540 638C618 626 673 584 673 514M742 44L633 44L408 311C440 312 474 318 503 324L725 61C729 56 735 50 742 44M288 44L197 44C201 60 202 83 202 115L202 571C202 603 201 626 197 642L283 642L283 115C283 83 284 60 288 44Z"/>
+          <path id="pf-cats-plane-MJX-5-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-          <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="5" data-semantic-children="0,4" data-semantic-content="1" data-semantic-speech="upper W approximately equals double struck upper R squared">
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="5" data-semantic-speech="upper W">
-              <use data-c="1D44A" xlink:href="#pf-cats-plane-MJX-5-TEX-I-1D44A"/>
+          <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-annotation="depth:1" data-semantic-id="5" data-semantic-children="0,4" data-semantic-content="1" data-semantic-attributes="latex:W \cong \mathbb{R}^2" data-semantic-speech="upper W approximately equals double struck upper R squared">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:W" data-semantic-speech="upper W">
+              <use data-c="1D44A" xlink:href="#pf-cats-plane-MJX-5-GP-I-1D44A"/>
             </g>
-            <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="1" data-semantic-parent="5" data-semantic-operator="relseq,≅" data-semantic-speech="approximately equals" transform="translate(1325.8,0)">
-              <use data-c="2245" xlink:href="#pf-cats-plane-MJX-5-TEX-N-2245"/>
+            <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="1" data-semantic-parent="5" data-semantic-attributes="latex:\cong" data-semantic-operator="relseq,≅" data-semantic-speech="approximately equals" transform="translate(1257.8,0)">
+              <use data-c="2245" xlink:href="#pf-cats-plane-MJX-5-GP-N-2245"/>
             </g>
-            <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="numbersetletter" data-semantic-id="4" data-semantic-children="2,3" data-semantic-parent="5" data-semantic-speech="double struck upper R squared" transform="translate(2381.6,0)">
+            <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="numbersetletter" data-semantic-annotation="depth:2" data-semantic-id="4" data-semantic-children="2,3" data-semantic-parent="5" data-semantic-attributes="latex:\mathbb{R}^2" data-semantic-speech="double struck upper R squared" transform="translate(2295.6,0)">
               <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="numbersetletter" data-semantic-font="double-struck" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="texclass:ORD" data-semantic-speech="double struck upper R" data-semantic-prefix="Base">
-                  <use data-c="211D" xlink:href="#pf-cats-plane-MJX-5-TEX-D-211D"/>
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="numbersetletter" data-semantic-font="double-struck" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:\mathbb{R};texclass:ORD" data-semantic-speech="double struck upper R" data-semantic-prefix="Base">
+                  <use data-c="211D" xlink:href="#pf-cats-plane-MJX-5-GP-DS-211D"/>
                 </g>
               </g>
-              <g data-mml-node="mn" transform="translate(755,363) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="4" data-semantic-speech="2" data-semantic-prefix="Exponent">
-                <use data-c="32" xlink:href="#pf-cats-plane-MJX-5-TEX-N-32"/>
+              <g data-mml-node="mn" transform="translate(940,363) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Exponent">
+                <use data-c="32" xlink:href="#pf-cats-plane-MJX-5-GP-N-32"/>
               </g>
             </g>
           </g>

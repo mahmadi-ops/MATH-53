@@ -745,8 +745,8 @@
         <shortdescription>A two-dimensional schematic: a vertical decision boundary line with the empty-wall region on the left and the cat region on the right; the references Q and P sit symmetrically on either side with their midpoint M on the line; an arrow labelled W runs from Q to P perpendicular to the line; a long arrow from P runs nearly parallel to the boundary and stays on the cat side; a shorter arrow from P aimed back along W crosses the boundary into the empty-wall side</shortdescription>
         <latex-image>
           \begin{tikzpicture}[scale=1.1, every node/.style={font=\small}]
-            \fill[red!7]  (-4.2,-1.8) rectangle (0,3.2);
-            \fill[blue!7] (0,-1.8) rectangle (5.4,3.2);
+            \fill[bookwine!7]  (-4.2,-1.8) rectangle (0,3.2);
+            \fill[bookolive!7] (0,-1.8) rectangle (5.4,3.2);
             \draw[very thick, black!70] (0,-1.8) -- (0,3.2);
             \node[black!70, anchor=west] at (0.12,1.5) {$s(X)=0$};
             \node[anchor=north east, align=right] at (-0.2,3.15)
@@ -757,12 +757,12 @@
             \fill (1.2,0) circle (1.7pt) node[below right=-1pt] {$P$};
             \fill (-1.2,0) circle (1.7pt) node[above left=-2pt] {$Q$};
             \fill (0,0) circle (1.7pt) node[above left=-2pt] {$M$};
-            \draw[violet, very thick, -{Stealth[length=2.2mm]}] (-1.2,-1.15) -- (1.2,-1.15);
+            \draw[bookgray, very thick, -{Stealth[length=2.2mm]}] (-1.2,-1.15) -- (1.2,-1.15);
             \node[anchor=east] at (-1.32,-1.15) {$W = P - Q$};
-            \draw[green!50!black, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (1.85,2.5);
+            \draw[bookmustard, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (1.85,2.5);
             \node[anchor=west, align=left] at (1.98,2.3)
               {grain $G$: long,\\ but $G \cdot W$ small};
-            \draw[red!80!black, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (-0.62,-0.45);
+            \draw[bookwine, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (-0.62,-0.45);
             \node[anchor=east, align=right] at (-0.74,-0.45)
               {dimming: short,\\ but aimed along $W$};
           \end{tikzpicture}
@@ -1457,7 +1457,7 @@
           tenth of all shots.
         </caption>
         <image source="images/recognition-score-distributions.svg" width="100%">
-          <shortdescription>Two panels, each showing two bell curves over the score axis: a red curve for wall shots centered at minus 7839 and a blue curve for cat shots centered at plus 7839, with a dashed vertical decision boundary at score zero. In the left panel, labeled sigma equals 25, the curves are narrow and barely overlap, and each shaded tail crossing the boundary is 0.6 percent of its curve. In the right panel, labeled sigma equals 50, the curves are twice as wide and overlap visibly, and each shaded tail is 10.5 percent of its curve</shortdescription>
+          <shortdescription>Two panels, each showing two bell curves over the score axis: a deep wine curve for wall shots centered at minus 7839 and an olive green curve for cat shots centered at plus 7839, with a dashed vertical decision boundary at score zero. In the left panel, labeled sigma equals 25, the curves are narrow and barely overlap, and each shaded tail crossing the boundary is 0.6 percent of its curve. In the right panel, labeled sigma equals 50, the curves are twice as wide and overlap visibly, and each shaded tail is 10.5 percent of its curve</shortdescription>
         </image>
       </figure>
       <p>
@@ -1490,7 +1490,7 @@
           guessing.
         </caption>
         <image source="images/recognition-accuracy-curve.svg" width="82%">
-          <shortdescription>A graph of the probability of a correct verdict, from 0.5 to 1, against grain size sigma from 5 to 100. A smooth blue curve, labeled exact formula Phi of norm of W over two sigma, starts at 1 for small sigma and descends to about 0.73 at sigma equals 100. Orange dots, labeled simulation of 4000 shots each, follow the curve closely until about sigma equals 60 and then drift slightly below it, with an annotation explaining that clipping at 0 and 255 drags real shots below the unclipped formula. A dashed horizontal line at 0.5 is labeled guessing, and an annotation marks the section's cell at sigma equals 25 with accuracy approximately 0.994</shortdescription>
+          <shortdescription>A graph of the probability of a correct verdict, from 0.5 to 1, against grain size sigma from 5 to 100. A smooth olive green curve, labeled exact formula Phi of norm of W over two sigma, starts at 1 for small sigma and descends to about 0.73 at sigma equals 100. Deep wine dots, labeled simulation of 4000 shots each, follow the curve closely until about sigma equals 60 and then drift slightly below it, with an annotation explaining that clipping at 0 and 255 drags real shots below the unclipped formula. A dashed horizontal line at 0.5 is labeled guessing, and an annotation marks the section's cell at sigma equals 25 with accuracy approximately 0.994</shortdescription>
         </image>
       </figure>
     </paragraphs>

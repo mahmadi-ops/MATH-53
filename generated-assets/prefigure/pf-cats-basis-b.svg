@@ -1,9 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="pf-cats-basis-b-figure" width="256" height="256" viewBox="0 0 256 256">
   <defs>
-    <clipPath id="pf-cats-basis-b-clipPath-0">
+    <clipPath id="pf-cats-basis-b-__clipPath-0">
       <rect x="8.0" y="8.0" width="240.0" height="240.0"/>
     </clipPath>
-    <clipPath id="pf-cats-basis-b-clipPath-1">
+    <clipPath id="pf-cats-basis-b-__clipPath-1">
       <rect x="8.0" y="8.0" width="240.0" height="240.0"/>
     </clipPath>
     <marker id="pf-cats-basis-b-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
@@ -12,79 +13,79 @@
     <marker id="pf-cats-basis-b-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="pf-cats-basis-b-arrow-head-end-4_None_24_60-green" markerWidth="18.0" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="13.1" refY="8.0">
-      <path d="M 18.0 8.0L 0.0 16.0L 3.5 10.0L 3.5 6.0L 0.0 0.0Z" fill="green" stroke="none"/>
+    <marker id="pf-cats-basis-b-arrow-head-end-4_None_24_60-h876801" markerWidth="18.0" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="13.1" refY="8.0">
+      <path d="M 18.0 8.0L 0.0 16.0L 3.5 10.0L 3.5 6.0L 0.0 0.0Z" fill="#876801" stroke="none"/>
     </marker>
-    <marker id="pf-cats-basis-b-arrow-head-end-4_None_24_60-green-outline" markerWidth="22.0" markerHeight="20.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="15.1" refY="10.0">
+    <marker id="pf-cats-basis-b-arrow-head-end-4_None_24_60-h876801-outline" markerWidth="22.0" markerHeight="20.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="15.1" refY="10.0">
       <path d="M 20.8 11.8 L 2.8 19.8 A 2 2 0 0 1 0.0 18.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 20.8 8.2 A 2 2 0 0 1 20.8 11.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
   <g id="pf-cats-basis-b-axes" stroke="black" stroke-width="2">
-    <line id="pf-cats-basis-b-line-0" x1="8.0" y1="148.0" x2="248.0" y2="148.0" stroke="black" stroke-width="2" marker-end="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)"/>
-    <line id="pf-cats-basis-b-line-1" x1="102.7" y1="248.0" x2="102.7" y2="8.0" stroke="black" stroke-width="2" marker-end="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)"/>
+    <line id="pf-cats-basis-b-__line-0" x1="8.0" y1="148.0" x2="248.0" y2="148.0" stroke="black" stroke-width="2" marker-end="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)"/>
+    <line id="pf-cats-basis-b-__line-1" x1="102.7" y1="248.0" x2="102.7" y2="8.0" stroke="black" stroke-width="2" marker-end="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-cats-basis-b-arrow-head-end-2_None_24_60-black)"/>
   </g>
-  <g id="pf-cats-basis-b-label-0" transform="translate(242.0,142.0) translate(-10.4,-8.2)">
-    <g id="pf-cats-basis-b-g-0">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
+  <g id="pf-cats-basis-b-__label-0" transform="translate(242.0,142.0) translate(-8.3,-8.2)">
+    <g id="pf-cats-basis-b-__g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.296px" height="8.184px" role="img" focusable="false" viewBox="0 -482 500 493" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-basis-b-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+          <path id="pf-cats-basis-b-MJX-2-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="x">
-              <use data-c="1D465" xlink:href="#pf-cats-basis-b-MJX-2-TEX-I-1D465"/>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:x" data-semantic-speech="x">
+              <use data-c="1D465" xlink:href="#pf-cats-basis-b-MJX-2-GP-I-1D465"/>
             </g>
           </g>
         </g>
       </svg>
     </g>
   </g>
-  <g id="pf-cats-basis-b-label-1" transform="translate(108.7,14.0) translate(0.0,-0.0)">
-    <g id="pf-cats-basis-b-g-1">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
+  <g id="pf-cats-basis-b-__label-1" transform="translate(108.7,14.0) translate(0.0,-0.0)">
+    <g id="pf-cats-basis-b-__g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.584px" width="8.296px" height="12.584px" role="img" focusable="false" viewBox="0 -482 500 758" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-basis-b-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="pf-cats-basis-b-MJX-3-GP-I-1D466" d="M490 473L479 482C450 471 427 465 405 463L370 331C358 284 323 211 290 162C255 111 206 67 184 67C162 67 164 115 165 128L180 322C182 353 184 391 184 419C184 464 177 482 160 482C147 482 133 475 85 442L3 386L14 368L64 398C69 402 82 410 89 410C115 410 111 359 110 343L93 100L92 60C91 18 110-11 135-11C172-11 256 74 331 187L282 16C231-161 181-234 111-234C76-234 49-207 49-172C49-167 50-159 51-150L41-146L-7-180C-8-187-8-193-8-198C-8-241 29-276 74-276C180-276 290-152 349 33Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="y">
-              <use data-c="1D466" xlink:href="#pf-cats-basis-b-MJX-3-TEX-I-1D466"/>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:y" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#pf-cats-basis-b-MJX-3-GP-I-1D466"/>
             </g>
           </g>
         </g>
       </svg>
     </g>
   </g>
-  <line id="pf-cats-basis-b-line-2" x1="71.2" y1="48.0" x2="197.5" y2="181.3" stroke="red" stroke-width="2" fill="none"/>
-  <line id="pf-cats-basis-b-line-3" x1="165.9" y1="148.0" x2="102.7" y2="81.3" stroke="blue" stroke-width="3" fill="none"/>
-  <line id="pf-cats-basis-b-line-4" x1="102.7" y1="148.0" x2="165.9" y2="148.0" stroke="green" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-green)"/>
-  <line id="pf-cats-basis-b-line-5" x1="102.7" y1="148.0" x2="102.7" y2="81.3" stroke="green" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-green)"/>
-  <g id="pf-cats-basis-b-label-2" transform="translate(165.9,158.0) translate(-6.8,-0.0)">
-    <g id="pf-cats-basis-b-g-2">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="13.576px" height="12.960px" role="img" focusable="false" viewBox="0 -716 750 716" x="0.0" y="0.0">
+  <line id="pf-cats-basis-b-__line-2" x1="71.2" y1="48.0" x2="197.5" y2="181.3" stroke="#5E011C" stroke-width="2" fill="none"/>
+  <line id="pf-cats-basis-b-__line-3" x1="165.9" y1="148.0" x2="102.7" y2="81.3" stroke="#4A5D23" stroke-width="3" fill="none"/>
+  <line id="pf-cats-basis-b-__line-4" x1="102.7" y1="148.0" x2="161.0" y2="148.0" stroke="#876801" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-h876801)"/>
+  <line id="pf-cats-basis-b-__line-5" x1="102.7" y1="148.0" x2="102.7" y2="86.2" stroke="#876801" stroke-width="4" fill="none" marker-end="url(#pf-cats-basis-b-arrow-head-end-4_None_24_60-h876801)"/>
+  <g id="pf-cats-basis-b-__label-2" transform="translate(165.9,158.0) translate(-6.0,-0.0)">
+    <g id="pf-cats-basis-b-__g-2">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="11.984px" height="11.752px" role="img" focusable="false" viewBox="0 -705 722 708" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-basis-b-MJX-4-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
+          <path id="pf-cats-basis-b-MJX-4-GP-I-1D434" d="M677-3L677 25L651 28C604 33 601 35 595 80L508 705L462 705L89 112C54 56 35 40 1 32L-19 27L-19-3L93 0C129 0 165-1 200-3L200 25L148 28C131 29 117 38 117 47C117 55 123 68 143 102L245 277L491 277L518 77C519 68 520 60 520 55C520 39 505 30 477 28L433 25L433-3L555 0M486 313L270 313L449 601Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="upper A">
-              <use data-c="1D434" xlink:href="#pf-cats-basis-b-MJX-4-TEX-I-1D434"/>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:A" data-semantic-speech="upper A">
+              <use data-c="1D434" xlink:href="#pf-cats-basis-b-MJX-4-GP-I-1D434"/>
             </g>
           </g>
         </g>
       </svg>
     </g>
   </g>
-  <g id="pf-cats-basis-b-label-3" transform="translate(92.7,81.3) translate(-15.0,-6.2)">
-    <g id="pf-cats-basis-b-g-3">
-      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="14.984px" height="12.360px" role="img" focusable="false" viewBox="0 -683 828 683" x="0.0" y="0.0">
+  <g id="pf-cats-basis-b-__label-3" transform="translate(92.7,81.3) translate(-12.9,-5.8)">
+    <g id="pf-cats-basis-b-__g-3">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="12.912px" height="11.536px" role="img" focusable="false" viewBox="0 -692 778 695" x="0.0" y="0.0">
         <defs>
-          <path id="pf-cats-basis-b-MJX-5-TEX-I-1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"/>
+          <path id="pf-cats-basis-b-MJX-5-GP-I-1D437" d="M741 431C741 529 711 599 650 642C604 675 508 692 424 692L220 689L97 692L94 664L147 662C171 661 182 653 182 635C182 621 178 589 173 559L86 55C82 32 52 28 33 23L28-3C59-1 90 0 121 0L316-3C388-3 437 8 489 34C645 114 741 265 741 431M649 415C649 298 611 193 543 124C489 69 416 41 329 41C285 41 236 46 168 56C168 68 169 75 172 93L268 650C307 650 345 655 384 655C566 655 649 579 649 415Z"/>
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="upper D">
-              <use data-c="1D437" xlink:href="#pf-cats-basis-b-MJX-5-TEX-I-1D437"/>
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:D" data-semantic-speech="upper D">
+              <use data-c="1D437" xlink:href="#pf-cats-basis-b-MJX-5-GP-I-1D437"/>
             </g>
           </g>
         </g>

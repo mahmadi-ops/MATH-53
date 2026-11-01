@@ -297,14 +297,17 @@
     <input>
       p(x) = 3 - 2*x + x^3
       data = [(-1, 4), (0, 3), (1, 2), (2, 7)]
-      graph = plot(p, (x, -1.5, 2.5), thickness=2)
-      graph = graph + points(data, color='red', size=50)
+      from matplotlib import rcParams
+      rcParams['font.family'] = 'serif'
+      rcParams['font.serif'] = ['TeX Gyre Pagella', 'Palatino', 'DejaVu Serif']
+      graph = plot(p, (x, -1.5, 2.5), thickness=2, color='#4A5D23')
+      graph = graph + points(data, color='#5E011C', size=50)
       show(graph)
     </input>
   </sage>
 
   <p>
-    The curve passes exactly through every red point, which is precisely what
+    The curve passes exactly through every deep wine point, which is precisely what
     <m>p(x_i) = y_i</m> means.
   </p>
 
@@ -350,8 +353,11 @@
       coeffs = M.rref().column(n)
       p(x) = sum(coeffs[j] * x^j for j in range(n))
       show(p(x))
-      graph = plot(p, (x, 0, 9), thickness=2)
-      graph = graph + points(data, color='red', size=50)
+      from matplotlib import rcParams
+      rcParams['font.family'] = 'serif'
+      rcParams['font.serif'] = ['TeX Gyre Pagella', 'Palatino', 'DejaVu Serif']
+      graph = plot(p, (x, 0, 9), thickness=2, color='#4A5D23')
+      graph = graph + points(data, color='#5E011C', size=50)
       show(graph)
     </input>
   </sage>

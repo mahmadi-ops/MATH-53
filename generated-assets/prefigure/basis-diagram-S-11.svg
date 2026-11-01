@@ -24,290 +24,290 @@
     </marker>
   </defs>
   <g id="basis-diagram-S-basis-square">
-    <g id="basis-diagram-S-node-B" transform="translate(133.8,58.1) scale(1.4,1.4) translate(-35.9,-9.8)">
+    <g id="basis-diagram-S-node-B" transform="translate(133.8,58.1) scale(1.4,1.4) translate(-29.9,-8.5)">
       <g id="basis-diagram-S-__g-0">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="71.856px" height="19.616px" role="img" focusable="false" viewBox="0 -833.9 3969.9 1083.9" x="0.0" y="0.0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.808px" width="59.752px" height="16.920px" role="img" focusable="false" viewBox="0 -850.2 3599.9 1019.2" x="0.0" y="0.0">
           <defs>
-            <path id="basis-diagram-S-MJX-2-TEX-N-7B" d="M434 -231Q434 -244 428 -250H410Q281 -250 230 -184Q225 -177 222 -172T217 -161T213 -148T211 -133T210 -111T209 -84T209 -47T209 0Q209 21 209 53Q208 142 204 153Q203 154 203 155Q189 191 153 211T82 231Q71 231 68 234T65 250T68 266T82 269Q116 269 152 289T203 345Q208 356 208 377T209 529V579Q209 634 215 656T244 698Q270 724 324 740Q361 748 377 749Q379 749 390 749T408 750H428Q434 744 434 732Q434 719 431 716Q429 713 415 713Q362 710 332 689T296 647Q291 634 291 499V417Q291 370 288 353T271 314Q240 271 184 255L170 250L184 245Q202 239 220 230T262 196T290 137Q291 131 291 1Q291 -134 296 -147Q306 -174 339 -192T415 -213Q429 -213 431 -216Q434 -219 434 -231Z"/>
-            <path id="basis-diagram-S-MJX-2-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
-            <path id="basis-diagram-S-MJX-2-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
-            <path id="basis-diagram-S-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
-            <path id="basis-diagram-S-MJX-2-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
-            <path id="basis-diagram-S-MJX-2-TEX-N-7D" d="M65 731Q65 745 68 747T88 750Q171 750 216 725T279 670Q288 649 289 635T291 501Q292 362 293 357Q306 312 345 291T417 269Q428 269 431 266T434 250T431 234T417 231Q380 231 345 210T298 157Q293 143 292 121T291 -28V-79Q291 -134 285 -156T256 -198Q202 -250 89 -250Q71 -250 68 -247T65 -230Q65 -224 65 -223T66 -218T69 -214T77 -213Q91 -213 108 -210T146 -200T183 -177T207 -139Q208 -134 209 3L210 139Q223 196 280 230Q315 247 330 250Q305 257 280 270Q225 304 212 352L210 362L209 498Q208 635 207 640Q195 680 154 696T77 713Q68 713 67 716T65 731Z"/>
+            <path id="basis-diagram-S-MJX-2-GP-N-7B" d="M335-131C268-113 235-71 235-17L235 117C235 183 212 227 170 250C212 273 235 317 235 383L235 517C235 571 268 613 335 631C332 636 329 643 327 649C325 656 325 663 325 669C230 644 175 593 175 517L175 383C175 313 146 270 80 270C82 264 83 257 83 250C83 243 82 236 80 230C146 230 175 187 175 117L175-17C175-93 230-144 325-169C325-163 325-156 327-149C329-143 332-136 335-131Z"/>
+            <path id="basis-diagram-S-MJX-2-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            <path id="basis-diagram-S-MJX-2-GP-N-2C" d="M218 109L204 123C177 114 159 108 106 93C99 17 74-48 16-144L30-155L71-136C152-31 190 32 218 109Z"/>
+            <path id="basis-diagram-S-MJX-2-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+            <path id="basis-diagram-S-MJX-2-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+            <path id="basis-diagram-S-MJX-2-GP-N-7D" d="M335 230C333 236 332 243 332 250C332 257 333 264 335 270C269 270 240 313 240 383L240 517C240 593 185 644 90 669C91 663 90 656 88 649C86 643 84 636 80 631C147 613 180 571 180 517L180 383C180 317 204 273 246 250C204 227 180 183 180 117L180-17C180-71 147-113 80-131C84-136 86-143 88-149C90-156 91-163 90-169C185-144 240-93 240-17L240 117C240 187 269 230 335 230Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-            <g data-mml-node="math" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-id="10" data-semantic-children="9" data-semantic-content="0,8" data-semantic-speech="StartSet 1 comma x comma x squared EndSet">
-              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="10" data-semantic-operator="fenced" data-semantic-speech="left brace">
-                <use data-c="7B" xlink:href="#basis-diagram-S-MJX-2-TEX-N-7B"/>
+            <g data-mml-node="math" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-annotation="fences:curly;depth:1" data-semantic-id="10" data-semantic-children="9" data-semantic-content="0,8" data-semantic-attributes="latex:\{1, x, x^2\}" data-semantic-speech="StartSet 1 comma x comma x squared EndSet">
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:2" data-semantic-id="0" data-semantic-parent="10" data-semantic-attributes="latex:\{" data-semantic-operator="fenced" data-semantic-speech="left brace">
+                <use data-c="7B" xlink:href="#basis-diagram-S-MJX-2-GP-N-7B"/>
               </g>
-              <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="9" data-semantic-children="1,2,3,4,7" data-semantic-content="2,4" data-semantic-parent="10" data-semantic-speech="1 comma x comma x squared" transform="translate(500,0)">
-                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="9" data-semantic-speech="1">
-                  <use data-c="31" xlink:href="#basis-diagram-S-MJX-2-TEX-N-31"/>
+              <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-annotation="depth:2" data-semantic-id="9" data-semantic-children="1,2,3,4,7" data-semantic-content="2,4" data-semantic-parent="10" data-semantic-speech="1 comma x comma x squared" transform="translate(415,0)">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="9" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#basis-diagram-S-MJX-2-GP-N-31"/>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="2" data-semantic-parent="9" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(500,0)">
-                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-2-TEX-N-2C"/>
+                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="9" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(500,0)">
+                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-2-GP-N-2C"/>
                 </g>
-                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="9" data-semantic-speech="x" transform="translate(944.7,0)">
-                  <use data-c="1D465" xlink:href="#basis-diagram-S-MJX-2-TEX-I-1D465"/>
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="3" data-semantic-parent="9" data-semantic-attributes="latex:x" data-semantic-speech="x" transform="translate(916.7,0)">
+                  <use data-c="1D465" xlink:href="#basis-diagram-S-MJX-2-GP-I-1D465"/>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="4" data-semantic-parent="9" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1516.7,0)">
-                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-2-TEX-N-2C"/>
+                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="depth:3" data-semantic-id="4" data-semantic-parent="9" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1416.7,0)">
+                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-2-GP-N-2C"/>
                 </g>
-                <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="latinletter" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="9" data-semantic-speech="x squared" transform="translate(1961.3,0)">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="x" data-semantic-prefix="Base">
-                    <use data-c="1D465" xlink:href="#basis-diagram-S-MJX-2-TEX-I-1D465"/>
+                <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="9" data-semantic-attributes="latex:x^2" data-semantic-speech="x squared" transform="translate(1833.3,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="5" data-semantic-parent="7" data-semantic-attributes="latex:x" data-semantic-speech="x" data-semantic-prefix="Base">
+                    <use data-c="1D465" xlink:href="#basis-diagram-S-MJX-2-GP-I-1D465"/>
                   </g>
-                  <g data-mml-node="mn" transform="translate(605,363) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="7" data-semantic-speech="2" data-semantic-prefix="Exponent">
-                    <use data-c="32" xlink:href="#basis-diagram-S-MJX-2-TEX-N-32"/>
+                  <g data-mml-node="mn" transform="translate(533,363) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="6" data-semantic-parent="7" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Exponent">
+                    <use data-c="32" xlink:href="#basis-diagram-S-MJX-2-GP-N-32"/>
                   </g>
                 </g>
               </g>
-              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="8" data-semantic-parent="10" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(3469.9,0)">
-                <use data-c="7D" xlink:href="#basis-diagram-S-MJX-2-TEX-N-7D"/>
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:2" data-semantic-id="8" data-semantic-parent="10" data-semantic-attributes="latex:\}" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(3184.9,0)">
+                <use data-c="7D" xlink:href="#basis-diagram-S-MJX-2-GP-N-7D"/>
               </g>
             </g>
           </g>
         </svg>
       </g>
     </g>
-    <g id="basis-diagram-S-node-B1" transform="translate(544.9,58.1) scale(1.4,1.4) translate(-72.0,-9.0)">
+    <g id="basis-diagram-S-node-B1" transform="translate(544.9,58.1) scale(1.4,1.4) translate(-63.1,-7.1)">
       <g id="basis-diagram-S-__g-1">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="144.080px" height="18.096px" role="img" focusable="false" viewBox="0 -750 7960.2 1000" x="0.0" y="0.0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.808px" width="126.176px" height="14.288px" role="img" focusable="false" viewBox="0 -692 7602.2 861" x="0.0" y="0.0">
           <defs>
-            <path id="basis-diagram-S-MJX-3-TEX-N-7B" d="M434 -231Q434 -244 428 -250H410Q281 -250 230 -184Q225 -177 222 -172T217 -161T213 -148T211 -133T210 -111T209 -84T209 -47T209 0Q209 21 209 53Q208 142 204 153Q203 154 203 155Q189 191 153 211T82 231Q71 231 68 234T65 250T68 266T82 269Q116 269 152 289T203 345Q208 356 208 377T209 529V579Q209 634 215 656T244 698Q270 724 324 740Q361 748 377 749Q379 749 390 749T408 750H428Q434 744 434 732Q434 719 431 716Q429 713 415 713Q362 710 332 689T296 647Q291 634 291 499V417Q291 370 288 353T271 314Q240 271 184 255L170 250L184 245Q202 239 220 230T262 196T290 137Q291 131 291 1Q291 -134 296 -147Q306 -174 339 -192T415 -213Q429 -213 431 -216Q434 -219 434 -231Z"/>
-            <path id="basis-diagram-S-MJX-3-TEX-I-1D440" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"/>
-            <path id="basis-diagram-S-MJX-3-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
-            <path id="basis-diagram-S-MJX-3-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
-            <path id="basis-diagram-S-MJX-3-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
-            <path id="basis-diagram-S-MJX-3-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
-            <path id="basis-diagram-S-MJX-3-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"/>
-            <path id="basis-diagram-S-MJX-3-TEX-N-7D" d="M65 731Q65 745 68 747T88 750Q171 750 216 725T279 670Q288 649 289 635T291 501Q292 362 293 357Q306 312 345 291T417 269Q428 269 431 266T434 250T431 234T417 231Q380 231 345 210T298 157Q293 143 292 121T291 -28V-79Q291 -134 285 -156T256 -198Q202 -250 89 -250Q71 -250 68 -247T65 -230Q65 -224 65 -223T66 -218T69 -214T77 -213Q91 -213 108 -210T146 -200T183 -177T207 -139Q208 -134 209 3L210 139Q223 196 280 230Q315 247 330 250Q305 257 280 270Q225 304 212 352L210 362L209 498Q208 635 207 640Q195 680 154 696T77 713Q68 713 67 716T65 731Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-N-7B" d="M335-131C268-113 235-71 235-17L235 117C235 183 212 227 170 250C212 273 235 317 235 383L235 517C235 571 268 613 335 631C332 636 329 643 327 649C325 656 325 663 325 669C230 644 175 593 175 517L175 383C175 313 146 270 80 270C82 264 83 257 83 250C83 243 82 236 80 230C146 230 175 187 175 117L175-17C175-93 230-144 325-169C325-163 325-156 327-149C329-143 332-136 335-131Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-I-1D440" d="M940 692C912 690 884 689 856 689C828 689 800 690 773 692C754 655 773 682 688 536L442 114L292 692C264 690 236 689 208 689C180 689 152 690 125 692L122 664L148 662C200 658 218 648 218 622C218 616 217 609 215 602L70 93C55 41 39 28-16 23L-19-3L93 0C130 0 167-1 203-3L206 25L168 28C136 31 119 40 119 55C119 65 121 78 126 96L250 560L399-18L422-18L479 86L718 500L770 587L733 67C731 39 717 33 666 28L635 25L632-3L766 0L899-3L902 25L865 28C829 31 810 42 811 63L812 100L853 631C854 650 870 660 899 662L937 664Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-N-2C" d="M218 109L204 123C177 114 159 108 106 93C99 17 74-48 16-144L30-155L71-136C152-31 190 32 218 109Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+            <path id="basis-diagram-S-MJX-3-GP-N-7D" d="M335 230C333 236 332 243 332 250C332 257 333 264 335 270C269 270 240 313 240 383L240 517C240 593 185 644 90 669C91 663 90 656 88 649C86 643 84 636 80 631C147 613 180 571 180 517L180 383C180 317 204 273 246 250C204 227 180 183 180 117L180-17C180-71 147-113 80-131C84-136 86-143 88-149C90-156 91-163 90-169C185-144 240-93 240-17L240 117C240 187 269 230 335 230Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-            <g data-mml-node="math" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-id="18" data-semantic-children="17" data-semantic-content="0,16" data-semantic-speech="StartSet upper M 0 comma upper M 1 comma upper M 2 comma upper M 3 EndSet">
-              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="18" data-semantic-operator="fenced" data-semantic-speech="left brace">
-                <use data-c="7B" xlink:href="#basis-diagram-S-MJX-3-TEX-N-7B"/>
+            <g data-mml-node="math" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-annotation="fences:curly;depth:1" data-semantic-id="18" data-semantic-children="17" data-semantic-content="0,16" data-semantic-attributes="latex:\{M_0, M_1, M_2, M_3\}" data-semantic-speech="StartSet upper M 0 comma upper M 1 comma upper M 2 comma upper M 3 EndSet">
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:2" data-semantic-id="0" data-semantic-parent="18" data-semantic-attributes="latex:\{" data-semantic-operator="fenced" data-semantic-speech="left brace">
+                <use data-c="7B" xlink:href="#basis-diagram-S-MJX-3-GP-N-7B"/>
               </g>
-              <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="17" data-semantic-children="3,4,7,8,11,12,15" data-semantic-content="4,8,12" data-semantic-parent="18" data-semantic-speech="upper M 0 comma upper M 1 comma upper M 2 comma upper M 3" transform="translate(500,0)">
-                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="17" data-semantic-speech="upper M 0">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-speech="upper M" data-semantic-prefix="Base">
-                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-TEX-I-1D440"/>
+              <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-annotation="depth:2" data-semantic-id="17" data-semantic-children="3,4,7,8,11,12,15" data-semantic-content="4,8,12" data-semantic-parent="18" data-semantic-speech="upper M 0 comma upper M 1 comma upper M 2 comma upper M 3" transform="translate(415,0)">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="17" data-semantic-attributes="latex:M_0" data-semantic-speech="upper M 0">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-GP-I-1D440"/>
                   </g>
-                  <g data-mml-node="mn" transform="translate(1003,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="0" data-semantic-prefix="Subscript">
-                    <use data-c="30" xlink:href="#basis-diagram-S-MJX-3-TEX-N-30"/>
-                  </g>
-                </g>
-                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="4" data-semantic-parent="17" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1406.6,0)">
-                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-3-TEX-N-2C"/>
-                </g>
-                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="17" data-semantic-speech="upper M 1" transform="translate(1851.2,0)">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="upper M" data-semantic-prefix="Base">
-                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-TEX-I-1D440"/>
-                  </g>
-                  <g data-mml-node="mn" transform="translate(1003,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="7" data-semantic-speech="1" data-semantic-prefix="Subscript">
-                    <use data-c="31" xlink:href="#basis-diagram-S-MJX-3-TEX-N-31"/>
+                  <g data-mml-node="mn" transform="translate(977,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:0" data-semantic-speech="0" data-semantic-prefix="Subscript">
+                    <use data-c="30" xlink:href="#basis-diagram-S-MJX-3-GP-N-30"/>
                   </g>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="8" data-semantic-parent="17" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(3257.8,0)">
-                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-3-TEX-N-2C"/>
+                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="depth:3" data-semantic-id="4" data-semantic-parent="17" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1380.6,0)">
+                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-3-GP-N-2C"/>
                 </g>
-                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="11" data-semantic-children="9,10" data-semantic-parent="17" data-semantic-speech="upper M 2" transform="translate(3702.4,0)">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="9" data-semantic-parent="11" data-semantic-speech="upper M" data-semantic-prefix="Base">
-                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-TEX-I-1D440"/>
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="17" data-semantic-attributes="latex:M_1" data-semantic-speech="upper M 1" transform="translate(1797.2,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="5" data-semantic-parent="7" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-GP-I-1D440"/>
                   </g>
-                  <g data-mml-node="mn" transform="translate(1003,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="10" data-semantic-parent="11" data-semantic-speech="2" data-semantic-prefix="Subscript">
-                    <use data-c="32" xlink:href="#basis-diagram-S-MJX-3-TEX-N-32"/>
+                  <g data-mml-node="mn" transform="translate(977,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="6" data-semantic-parent="7" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                    <use data-c="31" xlink:href="#basis-diagram-S-MJX-3-GP-N-31"/>
                   </g>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="12" data-semantic-parent="17" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(5109,0)">
-                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-3-TEX-N-2C"/>
+                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="depth:3" data-semantic-id="8" data-semantic-parent="17" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(3177.8,0)">
+                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-3-GP-N-2C"/>
                 </g>
-                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-id="15" data-semantic-children="13,14" data-semantic-parent="17" data-semantic-speech="upper M 3" transform="translate(5553.7,0)">
-                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="13" data-semantic-parent="15" data-semantic-speech="upper M" data-semantic-prefix="Base">
-                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-TEX-I-1D440"/>
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="11" data-semantic-children="9,10" data-semantic-parent="17" data-semantic-attributes="latex:M_2" data-semantic-speech="upper M 2" transform="translate(3594.4,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="9" data-semantic-parent="11" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-GP-I-1D440"/>
                   </g>
-                  <g data-mml-node="mn" transform="translate(1003,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="14" data-semantic-parent="15" data-semantic-speech="3" data-semantic-prefix="Subscript">
-                    <use data-c="33" xlink:href="#basis-diagram-S-MJX-3-TEX-N-33"/>
+                  <g data-mml-node="mn" transform="translate(977,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="10" data-semantic-parent="11" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                    <use data-c="32" xlink:href="#basis-diagram-S-MJX-3-GP-N-32"/>
+                  </g>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="depth:3" data-semantic-id="12" data-semantic-parent="17" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(4975,0)">
+                  <use data-c="2C" xlink:href="#basis-diagram-S-MJX-3-GP-N-2C"/>
+                </g>
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="15" data-semantic-children="13,14" data-semantic-parent="17" data-semantic-attributes="latex:M_3" data-semantic-speech="upper M 3" transform="translate(5391.7,0)">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="13" data-semantic-parent="15" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#basis-diagram-S-MJX-3-GP-I-1D440"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(977,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="14" data-semantic-parent="15" data-semantic-attributes="latex:3" data-semantic-speech="3" data-semantic-prefix="Subscript">
+                    <use data-c="33" xlink:href="#basis-diagram-S-MJX-3-GP-N-33"/>
                   </g>
                 </g>
               </g>
-              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="16" data-semantic-parent="18" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(7460.2,0)">
-                <use data-c="7D" xlink:href="#basis-diagram-S-MJX-3-TEX-N-7D"/>
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:2" data-semantic-id="16" data-semantic-parent="18" data-semantic-attributes="latex:\}" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(7187.2,0)">
+                <use data-c="7D" xlink:href="#basis-diagram-S-MJX-3-GP-N-7D"/>
               </g>
             </g>
           </g>
         </svg>
       </g>
     </g>
-    <g id="basis-diagram-S-node-R3" transform="translate(133.8,294.9) scale(1.4,1.4) translate(-76.9,-34.4)">
+    <g id="basis-diagram-S-node-R3" transform="translate(133.8,294.9) scale(1.4,1.4) translate(-57.8,-31.5)">
       <g id="basis-diagram-S-__g-2">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -29.864px" width="153.896px" height="68.776px" role="img" focusable="false" viewBox="0 -2150 8502.7 3800" x="0.0" y="0.0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -27.384px" width="115.696px" height="63.072px" role="img" focusable="false" viewBox="0 -2150 6970.7 3800" x="0.0" y="0.0">
           <defs>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A7" d="M712 899L718 893V876V865Q718 854 704 846Q627 793 577 710T510 525Q510 524 509 521Q505 493 504 349Q504 345 504 334Q504 277 504 240Q504 -2 503 -4Q502 -8 494 -9T444 -10Q392 -10 390 -9Q387 -8 386 -5Q384 5 384 230Q384 262 384 312T383 382Q383 481 392 535T434 656Q510 806 664 892L677 899H712Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A9" d="M718 -893L712 -899H677L666 -893Q542 -825 468 -714T385 -476Q384 -466 384 -282Q384 3 385 5L389 9Q392 10 444 10Q486 10 494 9T503 4Q504 2 504 -239V-310V-366Q504 -470 508 -513T530 -609Q546 -657 569 -698T617 -767T661 -812T699 -843T717 -856T718 -876V-893Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A8" d="M389 1159Q391 1160 455 1160Q496 1160 498 1159Q501 1158 502 1155Q504 1145 504 924Q504 691 503 682Q494 549 425 439T243 259L229 250L243 241Q349 175 421 66T503 -182Q504 -191 504 -424Q504 -600 504 -629T499 -659H498Q496 -660 444 -660T390 -659Q387 -658 386 -655Q384 -645 384 -425V-282Q384 -176 377 -116T342 10Q325 54 301 92T255 155T214 196T183 222T171 232Q170 233 170 250T171 268Q171 269 191 284T240 331T300 407T354 524T383 679Q384 691 384 925Q384 1152 385 1155L389 1159Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23AA" d="M384 150V266Q384 304 389 309Q391 310 455 310Q496 310 498 309Q502 308 503 298Q504 283 504 150Q504 32 504 12T499 -9H498Q496 -10 444 -10T390 -9Q386 -8 385 2Q384 17 384 150Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A1" d="M319 -645V1154H666V1070H403V-645H319Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A3" d="M319 -644V1155H403V-560H666V-644H319Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A2" d="M319 0V602H403V0H319Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A4" d="M0 1070V1154H347V-645H263V1070H0Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A6" d="M263 -560V1155H347V-644H0V-560H263Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23A5" d="M263 0V602H347V0H263Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23AB" d="M170 875Q170 892 172 895T189 899H194H211L222 893Q345 826 420 715T503 476Q504 467 504 230Q504 51 504 21T499 -9H498Q496 -10 444 -10Q402 -10 394 -9T385 -4Q384 -2 384 240V311V366Q384 469 380 513T358 609Q342 657 319 698T271 767T227 812T189 843T171 856T170 875Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23AD" d="M384 -239V-57Q384 4 389 9Q391 10 455 10Q496 10 498 9Q501 8 502 5Q504 -5 504 -230Q504 -261 504 -311T505 -381Q505 -486 492 -551T435 -691Q357 -820 222 -893L211 -899H195Q176 -899 173 -896T170 -874Q170 -858 171 -855T184 -846Q262 -793 312 -709T378 -525Q378 -524 379 -522Q383 -493 384 -351Q384 -345 384 -334Q384 -276 384 -239Z"/>
-            <path id="basis-diagram-S-MJX-4-TEX-S4-23AC" d="M389 1159Q391 1160 455 1160Q496 1160 498 1159Q501 1158 502 1155Q504 1145 504 925V782Q504 676 511 616T546 490Q563 446 587 408T633 345T674 304T705 278T717 268Q718 267 718 250T717 232Q717 231 697 216T648 169T588 93T534 -24T505 -179Q504 -191 504 -425Q504 -600 504 -629T499 -659H498Q496 -660 444 -660T390 -659Q387 -658 386 -655Q384 -645 384 -424Q384 -191 385 -182Q394 -49 463 61T645 241L659 250L645 259Q539 325 467 434T385 682Q384 692 384 873Q384 1153 385 1155L389 1159Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A7" d="M493 578C490 583 487 590 485 596C483 603 483 610 483 616C343 579 252 475 252 299L252 0L332 0L332 299C332 443 378 547 493 578Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A9" d="M493 39C378 69 332 173 332 317L332 616L252 616L252 317C252 142 343 38 483 0C483 7 483 14 485 20C487 27 490 33 493 39Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A8" d="M332 0L332 299C332 460 279 558 194 597C279 636 332 734 332 895L332 1194L252 1194L252 895C252 722 210 617 96 617C98 611 99 604 99 597C99 590 98 583 96 577C210 577 252 472 252 299L252 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-EM-7B" d="M332 0L332 596L252 596L252 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A1" d="M425 1214L143 1214L143 0L223 0L223 1174L425 1174C423 1180 422 1187 422 1194C422 1201 423 1208 425 1214Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A3" d="M425 0C423 6 422 13 422 20C422 27 423 34 425 40L223 40L223 1214L143 1214L143 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A2" d="M223 810L143 810L143 0L223 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A4" d="M378 0L378 1214L96 1214C98 1208 99 1201 99 1194C99 1187 98 1180 96 1174L298 1174L298 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A6" d="M378 0L378 1214L298 1214L298 40L96 40C98 34 99 27 99 20C99 13 98 6 96 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23A5" d="M378 0L378 810L298 810L298 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-2C" d="M218 109L204 123C177 114 159 108 106 93C99 17 74-48 16-144L30-155L71-136C152-31 190 32 218 109Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23AB" d="M337 0L337 299C337 475 247 579 106 616C107 610 106 603 104 596C102 590 100 583 96 578C211 547 257 443 257 299L257 0Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23AD" d="M337 317L337 616L257 616L257 317C257 173 211 69 96 39C100 33 102 27 104 20C106 14 107 7 106 0C247 38 337 142 337 317Z"/>
+            <path id="basis-diagram-S-MJX-4-GP-N-23AC" d="M493 577C491 583 490 590 490 597C490 604 491 611 493 617C379 617 337 722 337 895L337 1194L257 1194L257 895C257 734 310 636 395 597C310 558 257 460 257 299L257 0L337 0L337 299C337 472 379 577 493 577Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="TeXAtom" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-id="44" data-semantic-children="43" data-semantic-content="0,42" data-semantic-attributes="texclass:INNER" data-semantic-speech="StartSet Start 3 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 EndMatrix EndSet" data-mjx-texclass="INNER">
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="44" data-semantic-attributes="texclass:OPEN" data-semantic-operator="fenced" data-semantic-speech="left brace">
-                  <use data-c="23A7" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A7" transform="translate(0,1251)"/>
-                  <use data-c="23A9" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A9" transform="translate(0,-751)"/>
-                  <use data-c="23A8" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A8" transform="translate(0,0)"/>
-                  <svg width="889" height="281" y="1060" x="0" viewBox="0 49.5 889 281">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23AA" transform="scale(1,1.382)"/>
+              <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-annotation="fences:curly;depth:1" data-semantic-id="44" data-semantic-children="43" data-semantic-content="0,42" data-semantic-attributes="latex:\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\};texclass:INNER" data-semantic-speech="StartSet Start 3 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 EndMatrix EndSet">
+                <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:2" data-semantic-id="0" data-semantic-parent="44" data-semantic-attributes="latex:\left\{;texclass:OPEN" data-semantic-operator="fenced" data-semantic-speech="left brace">
+                  <use data-c="23A7" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A7" transform="translate(0,1534)"/>
+                  <use data-c="23A9" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A9" transform="translate(0,-1650)"/>
+                  <use data-c="23A8" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A8" transform="translate(0,-347)"/>
+                  <svg width="589" height="757" y="847" x="0" viewBox="0 189.3 589 757">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-4-GP-EM-7B" transform="scale(1,1.905)"/>
                   </svg>
-                  <svg width="889" height="281" y="-841" x="0" viewBox="0 49.5 889 281">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23AA" transform="scale(1,1.382)"/>
+                  <svg width="589" height="757" y="-1104" x="0" viewBox="0 189.3 589 757">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-4-GP-EM-7B" transform="scale(1,1.905)"/>
                   </svg>
                 </g>
-                <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="43" data-semantic-children="11,14,25,28,39" data-semantic-content="14,28" data-semantic-parent="44" data-semantic-speech="Start 3 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 EndMatrix" transform="translate(889,0)">
-                  <g data-mml-node="TeXAtom" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-id="11" data-semantic-children="4,7,10" data-semantic-content="1,12" data-semantic-parent="43" data-semantic-attributes="texclass:INNER" data-semantic-speech="Start 3 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 EndMatrix" data-mjx-texclass="INNER">
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="1" data-semantic-parent="11" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
-                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A1" transform="translate(0,996)"/>
-                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A3" transform="translate(0,-1006)"/>
-                      <svg width="667" height="402" y="49" x="0" viewBox="0 100.5 667 402">
-                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A2" transform="scale(1,1.002)"/>
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-annotation="depth:2" data-semantic-id="43" data-semantic-children="11,14,25,28,39" data-semantic-content="14,28" data-semantic-parent="44" data-semantic-speech="Start 3 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 EndMatrix comma Start 3 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 EndMatrix" transform="translate(589,0)">
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-annotation="depth:3" data-semantic-id="11" data-semantic-children="4,7,10" data-semantic-content="1,12" data-semantic-parent="43" data-semantic-attributes="latex:{bmatrix};texclass:INNER" data-semantic-speech="Start 3 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 EndMatrix">
+                    <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="1" data-semantic-parent="11" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
+                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A1" transform="translate(0,936)"/>
+                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A3" transform="translate(0,-1650)"/>
+                      <svg width="521" height="1512" y="-506" x="0" viewBox="0 378 521 1512">
+                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A2" transform="scale(1,2.8)"/>
                       </svg>
                     </g>
-                    <g data-mml-node="mtable" transform="translate(667,0)">
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="4" data-semantic-children="2" data-semantic-parent="11" data-semantic-speech="1" data-semantic-prefix="1st Row" transform="translate(0,1400)">
+                    <g data-mml-node="mtable" transform="translate(521,0)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="4" data-semantic-children="2" data-semantic-parent="11" data-semantic-speech="1" data-semantic-prefix="1st Row" transform="translate(0,1400)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="4" data-semantic-speech="1">
-                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-4-TEX-N-31"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-4-GP-N-31"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="7" data-semantic-children="5" data-semantic-parent="11" data-semantic-speech="0" data-semantic-prefix="2nd Row">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="7" data-semantic-children="5" data-semantic-parent="11" data-semantic-speech="0" data-semantic-prefix="2nd Row">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="5" data-semantic-parent="7" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="10" data-semantic-children="8" data-semantic-parent="11" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-1400)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="10" data-semantic-children="8" data-semantic-parent="11" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-1400)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="8" data-semantic-parent="10" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-TEX-N-30"/>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="12" data-semantic-parent="11" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1167,0)">
-                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A4" transform="translate(0,996)"/>
-                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A6" transform="translate(0,-1006)"/>
-                      <svg width="667" height="402" y="49" x="0" viewBox="0 100.5 667 402">
-                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A5" transform="scale(1,1.002)"/>
-                      </svg>
-                    </g>
-                  </g>
-                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="14" data-semantic-parent="43" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(2000.7,0)">
-                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-4-TEX-N-2C"/>
-                  </g>
-                  <g data-mml-node="TeXAtom" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-id="25" data-semantic-children="18,21,24" data-semantic-content="15,26" data-semantic-parent="43" data-semantic-attributes="texclass:INNER" data-semantic-speech="Start 3 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 EndMatrix" data-mjx-texclass="INNER" transform="translate(2445.3,0)">
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="15" data-semantic-parent="25" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
-                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A1" transform="translate(0,996)"/>
-                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A3" transform="translate(0,-1006)"/>
-                      <svg width="667" height="402" y="49" x="0" viewBox="0 100.5 667 402">
-                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A2" transform="scale(1,1.002)"/>
-                      </svg>
-                    </g>
-                    <g data-mml-node="mtable" transform="translate(667,0)">
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="18" data-semantic-children="16" data-semantic-parent="25" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,1400)">
-                        <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="16" data-semantic-parent="18" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-TEX-N-30"/>
-                          </g>
-                        </g>
-                      </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="21" data-semantic-children="19" data-semantic-parent="25" data-semantic-speech="1" data-semantic-prefix="2nd Row">
-                        <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="19" data-semantic-parent="21" data-semantic-speech="1">
-                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-4-TEX-N-31"/>
-                          </g>
-                        </g>
-                      </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="24" data-semantic-children="22" data-semantic-parent="25" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-1400)">
-                        <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="22" data-semantic-parent="24" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="8" data-semantic-parent="10" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-GP-N-30"/>
                           </g>
                         </g>
                       </g>
                     </g>
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="26" data-semantic-parent="25" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1167,0)">
-                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A4" transform="translate(0,996)"/>
-                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A6" transform="translate(0,-1006)"/>
-                      <svg width="667" height="402" y="49" x="0" viewBox="0 100.5 667 402">
-                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A5" transform="scale(1,1.002)"/>
+                    <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="12" data-semantic-parent="11" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1021,0)">
+                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A4" transform="translate(0,936)"/>
+                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A6" transform="translate(0,-1650)"/>
+                      <svg width="521" height="1512" y="-506" x="0" viewBox="0 378 521 1512">
+                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A5" transform="scale(1,2.8)"/>
                       </svg>
                     </g>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="28" data-semantic-parent="43" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(4446,0)">
-                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-4-TEX-N-2C"/>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="14" data-semantic-parent="43" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1708.7,0)">
+                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-4-GP-N-2C"/>
                   </g>
-                  <g data-mml-node="TeXAtom" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-id="39" data-semantic-children="32,35,38" data-semantic-content="29,40" data-semantic-parent="43" data-semantic-attributes="texclass:INNER" data-semantic-speech="Start 3 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 EndMatrix" data-mjx-texclass="INNER" transform="translate(4890.7,0)">
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="29" data-semantic-parent="39" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
-                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A1" transform="translate(0,996)"/>
-                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A3" transform="translate(0,-1006)"/>
-                      <svg width="667" height="402" y="49" x="0" viewBox="0 100.5 667 402">
-                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A2" transform="scale(1,1.002)"/>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-annotation="depth:3" data-semantic-id="25" data-semantic-children="18,21,24" data-semantic-content="15,26" data-semantic-parent="43" data-semantic-attributes="latex:{bmatrix};texclass:INNER" data-semantic-speech="Start 3 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 EndMatrix" transform="translate(2125.3,0)">
+                    <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="15" data-semantic-parent="25" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
+                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A1" transform="translate(0,936)"/>
+                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A3" transform="translate(0,-1650)"/>
+                      <svg width="521" height="1512" y="-506" x="0" viewBox="0 378 521 1512">
+                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A2" transform="scale(1,2.8)"/>
                       </svg>
                     </g>
-                    <g data-mml-node="mtable" transform="translate(667,0)">
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="32" data-semantic-children="30" data-semantic-parent="39" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,1400)">
+                    <g data-mml-node="mtable" transform="translate(521,0)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="18" data-semantic-children="16" data-semantic-parent="25" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,1400)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="30" data-semantic-parent="32" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="16" data-semantic-parent="18" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="35" data-semantic-children="33" data-semantic-parent="39" data-semantic-speech="0" data-semantic-prefix="2nd Row">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="21" data-semantic-children="19" data-semantic-parent="25" data-semantic-speech="1" data-semantic-prefix="2nd Row">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="33" data-semantic-parent="35" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="19" data-semantic-parent="21" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-4-GP-N-31"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="38" data-semantic-children="36" data-semantic-parent="39" data-semantic-speech="1" data-semantic-prefix="3rd Row" transform="translate(0,-1400)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="24" data-semantic-children="22" data-semantic-parent="25" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-1400)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="36" data-semantic-parent="38" data-semantic-speech="1">
-                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-4-TEX-N-31"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="22" data-semantic-parent="24" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-GP-N-30"/>
                           </g>
                         </g>
                       </g>
                     </g>
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="40" data-semantic-parent="39" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1167,0)">
-                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A4" transform="translate(0,996)"/>
-                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A6" transform="translate(0,-1006)"/>
-                      <svg width="667" height="402" y="49" x="0" viewBox="0 100.5 667 402">
-                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23A5" transform="scale(1,1.002)"/>
+                    <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="26" data-semantic-parent="25" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1021,0)">
+                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A4" transform="translate(0,936)"/>
+                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A6" transform="translate(0,-1650)"/>
+                      <svg width="521" height="1512" y="-506" x="0" viewBox="0 378 521 1512">
+                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A5" transform="scale(1,2.8)"/>
+                      </svg>
+                    </g>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="28" data-semantic-parent="43" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(3834,0)">
+                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-4-GP-N-2C"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-annotation="depth:3" data-semantic-id="39" data-semantic-children="32,35,38" data-semantic-content="29,40" data-semantic-parent="43" data-semantic-attributes="latex:{bmatrix};texclass:INNER" data-semantic-speech="Start 3 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 EndMatrix" transform="translate(4250.7,0)">
+                    <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="29" data-semantic-parent="39" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
+                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A1" transform="translate(0,936)"/>
+                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A3" transform="translate(0,-1650)"/>
+                      <svg width="521" height="1512" y="-506" x="0" viewBox="0 378 521 1512">
+                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A2" transform="scale(1,2.8)"/>
+                      </svg>
+                    </g>
+                    <g data-mml-node="mtable" transform="translate(521,0)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="32" data-semantic-children="30" data-semantic-parent="39" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,1400)">
+                        <g data-mml-node="mtd">
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="30" data-semantic-parent="32" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-GP-N-30"/>
+                          </g>
+                        </g>
+                      </g>
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="35" data-semantic-children="33" data-semantic-parent="39" data-semantic-speech="0" data-semantic-prefix="2nd Row">
+                        <g data-mml-node="mtd">
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="33" data-semantic-parent="35" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-4-GP-N-30"/>
+                          </g>
+                        </g>
+                      </g>
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="38" data-semantic-children="36" data-semantic-parent="39" data-semantic-speech="1" data-semantic-prefix="3rd Row" transform="translate(0,-1400)">
+                        <g data-mml-node="mtd">
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="36" data-semantic-parent="38" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-4-GP-N-31"/>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="40" data-semantic-parent="39" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1021,0)">
+                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A4" transform="translate(0,936)"/>
+                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A6" transform="translate(0,-1650)"/>
+                      <svg width="521" height="1512" y="-506" x="0" viewBox="0 378 521 1512">
+                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-4-GP-N-23A5" transform="scale(1,2.8)"/>
                       </svg>
                     </g>
                   </g>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="42" data-semantic-parent="44" data-semantic-attributes="texclass:CLOSE" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(7613.7,0)">
-                  <use data-c="23AB" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23AB" transform="translate(0,1251)"/>
-                  <use data-c="23AD" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23AD" transform="translate(0,-751)"/>
-                  <use data-c="23AC" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23AC" transform="translate(0,0)"/>
-                  <svg width="889" height="281" y="1060" x="0" viewBox="0 49.5 889 281">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23AA" transform="scale(1,1.382)"/>
+                <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:2" data-semantic-id="42" data-semantic-parent="44" data-semantic-attributes="latex:\right\};texclass:CLOSE" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(6381.7,0)">
+                  <use data-c="23AB" xlink:href="#basis-diagram-S-MJX-4-GP-N-23AB" transform="translate(0,1534)"/>
+                  <use data-c="23AD" xlink:href="#basis-diagram-S-MJX-4-GP-N-23AD" transform="translate(0,-1650)"/>
+                  <use data-c="23AC" xlink:href="#basis-diagram-S-MJX-4-GP-N-23AC" transform="translate(0,-347)"/>
+                  <svg width="589" height="757" y="847" x="0" viewBox="0 189.3 589 757">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-4-GP-EM-7B" transform="scale(1,1.905)"/>
                   </svg>
-                  <svg width="889" height="281" y="-841" x="0" viewBox="0 49.5 889 281">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-4-TEX-S4-23AA" transform="scale(1,1.382)"/>
+                  <svg width="589" height="757" y="-1104" x="0" viewBox="0 189.3 589 757">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-4-GP-EM-7B" transform="scale(1,1.905)"/>
                   </svg>
                 </g>
               </g>
@@ -316,245 +316,245 @@
         </svg>
       </g>
     </g>
-    <g id="basis-diagram-S-node-R4" transform="translate(544.9,294.9) scale(1.4,1.4) translate(-99.1,-47.1)">
+    <g id="basis-diagram-S-node-R4" transform="translate(544.9,294.9) scale(1.4,1.4) translate(-75.5,-43.2)">
       <g id="basis-diagram-S-__g-3">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -42.536px" width="198.152px" height="94.120px" role="img" focusable="false" viewBox="0 -2850 10948 5200" x="0.0" y="0.0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -39.008px" width="150.968px" height="86.304px" role="img" focusable="false" viewBox="0 -2850 9096 5200" x="0.0" y="0.0">
           <defs>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A7" d="M712 899L718 893V876V865Q718 854 704 846Q627 793 577 710T510 525Q510 524 509 521Q505 493 504 349Q504 345 504 334Q504 277 504 240Q504 -2 503 -4Q502 -8 494 -9T444 -10Q392 -10 390 -9Q387 -8 386 -5Q384 5 384 230Q384 262 384 312T383 382Q383 481 392 535T434 656Q510 806 664 892L677 899H712Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A9" d="M718 -893L712 -899H677L666 -893Q542 -825 468 -714T385 -476Q384 -466 384 -282Q384 3 385 5L389 9Q392 10 444 10Q486 10 494 9T503 4Q504 2 504 -239V-310V-366Q504 -470 508 -513T530 -609Q546 -657 569 -698T617 -767T661 -812T699 -843T717 -856T718 -876V-893Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A8" d="M389 1159Q391 1160 455 1160Q496 1160 498 1159Q501 1158 502 1155Q504 1145 504 924Q504 691 503 682Q494 549 425 439T243 259L229 250L243 241Q349 175 421 66T503 -182Q504 -191 504 -424Q504 -600 504 -629T499 -659H498Q496 -660 444 -660T390 -659Q387 -658 386 -655Q384 -645 384 -425V-282Q384 -176 377 -116T342 10Q325 54 301 92T255 155T214 196T183 222T171 232Q170 233 170 250T171 268Q171 269 191 284T240 331T300 407T354 524T383 679Q384 691 384 925Q384 1152 385 1155L389 1159Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23AA" d="M384 150V266Q384 304 389 309Q391 310 455 310Q496 310 498 309Q502 308 503 298Q504 283 504 150Q504 32 504 12T499 -9H498Q496 -10 444 -10T390 -9Q386 -8 385 2Q384 17 384 150Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A1" d="M319 -645V1154H666V1070H403V-645H319Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A3" d="M319 -644V1155H403V-560H666V-644H319Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A2" d="M319 0V602H403V0H319Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A4" d="M0 1070V1154H347V-645H263V1070H0Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A6" d="M263 -560V1155H347V-644H0V-560H263Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23A5" d="M263 0V602H347V0H263Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23AB" d="M170 875Q170 892 172 895T189 899H194H211L222 893Q345 826 420 715T503 476Q504 467 504 230Q504 51 504 21T499 -9H498Q496 -10 444 -10Q402 -10 394 -9T385 -4Q384 -2 384 240V311V366Q384 469 380 513T358 609Q342 657 319 698T271 767T227 812T189 843T171 856T170 875Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23AD" d="M384 -239V-57Q384 4 389 9Q391 10 455 10Q496 10 498 9Q501 8 502 5Q504 -5 504 -230Q504 -261 504 -311T505 -381Q505 -486 492 -551T435 -691Q357 -820 222 -893L211 -899H195Q176 -899 173 -896T170 -874Q170 -858 171 -855T184 -846Q262 -793 312 -709T378 -525Q378 -524 379 -522Q383 -493 384 -351Q384 -345 384 -334Q384 -276 384 -239Z"/>
-            <path id="basis-diagram-S-MJX-5-TEX-S4-23AC" d="M389 1159Q391 1160 455 1160Q496 1160 498 1159Q501 1158 502 1155Q504 1145 504 925V782Q504 676 511 616T546 490Q563 446 587 408T633 345T674 304T705 278T717 268Q718 267 718 250T717 232Q717 231 697 216T648 169T588 93T534 -24T505 -179Q504 -191 504 -425Q504 -600 504 -629T499 -659H498Q496 -660 444 -660T390 -659Q387 -658 386 -655Q384 -645 384 -424Q384 -191 385 -182Q394 -49 463 61T645 241L659 250L645 259Q539 325 467 434T385 682Q384 692 384 873Q384 1153 385 1155L389 1159Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A7" d="M493 578C490 583 487 590 485 596C483 603 483 610 483 616C343 579 252 475 252 299L252 0L332 0L332 299C332 443 378 547 493 578Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A9" d="M493 39C378 69 332 173 332 317L332 616L252 616L252 317C252 142 343 38 483 0C483 7 483 14 485 20C487 27 490 33 493 39Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A8" d="M332 0L332 299C332 460 279 558 194 597C279 636 332 734 332 895L332 1194L252 1194L252 895C252 722 210 617 96 617C98 611 99 604 99 597C99 590 98 583 96 577C210 577 252 472 252 299L252 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-EM-7B" d="M332 0L332 596L252 596L252 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A1" d="M425 1214L143 1214L143 0L223 0L223 1174L425 1174C423 1180 422 1187 422 1194C422 1201 423 1208 425 1214Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A3" d="M425 0C423 6 422 13 422 20C422 27 423 34 425 40L223 40L223 1214L143 1214L143 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A2" d="M223 810L143 810L143 0L223 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A4" d="M378 0L378 1214L96 1214C98 1208 99 1201 99 1194C99 1187 98 1180 96 1174L298 1174L298 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A6" d="M378 0L378 1214L298 1214L298 40L96 40C98 34 99 27 99 20C99 13 98 6 96 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23A5" d="M378 0L378 810L298 810L298 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-2C" d="M218 109L204 123C177 114 159 108 106 93C99 17 74-48 16-144L30-155L71-136C152-31 190 32 218 109Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23AB" d="M337 0L337 299C337 475 247 579 106 616C107 610 106 603 104 596C102 590 100 583 96 578C211 547 257 443 257 299L257 0Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23AD" d="M337 317L337 616L257 616L257 317C257 173 211 69 96 39C100 33 102 27 104 20C106 14 107 7 106 0C247 38 337 142 337 317Z"/>
+            <path id="basis-diagram-S-MJX-5-GP-N-23AC" d="M493 577C491 583 490 590 490 597C490 604 491 611 493 617C379 617 337 722 337 895L337 1194L257 1194L257 895C257 734 310 636 395 597C310 558 257 460 257 299L257 0L337 0L337 299C337 472 379 577 493 577Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="TeXAtom" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-id="70" data-semantic-children="69" data-semantic-content="0,68" data-semantic-attributes="texclass:INNER" data-semantic-speech="StartSet Start 4 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  0 4th Row  1 EndMatrix EndSet" data-mjx-texclass="INNER">
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="70" data-semantic-attributes="texclass:OPEN" data-semantic-operator="fenced" data-semantic-speech="left brace">
-                  <use data-c="23A7" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A7" transform="translate(0,1951)"/>
-                  <use data-c="23A9" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A9" transform="translate(0,-1451)"/>
-                  <use data-c="23A8" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A8" transform="translate(0,0)"/>
-                  <svg width="889" height="981" y="1060" x="0" viewBox="0 172.9 889 981">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23AA" transform="scale(1,4.825)"/>
+              <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="fenced" data-semantic-role="set collection" data-semantic-annotation="fences:curly;depth:1" data-semantic-id="70" data-semantic-children="69" data-semantic-content="0,68" data-semantic-attributes="latex:\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\};texclass:INNER" data-semantic-speech="StartSet Start 4 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  0 4th Row  1 EndMatrix EndSet">
+                <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:2" data-semantic-id="0" data-semantic-parent="70" data-semantic-attributes="latex:\left\{;texclass:OPEN" data-semantic-operator="fenced" data-semantic-speech="left brace">
+                  <use data-c="23A7" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A7" transform="translate(0,2234)"/>
+                  <use data-c="23A9" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A9" transform="translate(0,-2350)"/>
+                  <use data-c="23A8" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A8" transform="translate(0,-347)"/>
+                  <svg width="589" height="1457" y="847" x="0" viewBox="0 364.3 589 1457">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-5-GP-EM-7B" transform="scale(1,3.667)"/>
                   </svg>
-                  <svg width="889" height="981" y="-1541" x="0" viewBox="0 172.9 889 981">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23AA" transform="scale(1,4.825)"/>
+                  <svg width="589" height="1457" y="-1804" x="0" viewBox="0 364.3 589 1457">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-5-GP-EM-7B" transform="scale(1,3.667)"/>
                   </svg>
                 </g>
-                <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="69" data-semantic-children="14,17,31,34,48,51,65" data-semantic-content="17,34,51" data-semantic-parent="70" data-semantic-speech="Start 4 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  0 4th Row  1 EndMatrix" transform="translate(889,0)">
-                  <g data-mml-node="TeXAtom" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-id="14" data-semantic-children="4,7,10,13" data-semantic-content="1,15" data-semantic-parent="69" data-semantic-attributes="texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 4th Row  0 EndMatrix" data-mjx-texclass="INNER">
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="1" data-semantic-parent="14" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
-                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A1" transform="translate(0,1696)"/>
-                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A3" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A2" transform="scale(1,4.49)"/>
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-annotation="depth:2" data-semantic-id="69" data-semantic-children="14,17,31,34,48,51,65" data-semantic-content="17,34,51" data-semantic-parent="70" data-semantic-speech="Start 4 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 4th Row  0 EndMatrix comma Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  0 4th Row  1 EndMatrix" transform="translate(589,0)">
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-annotation="depth:3" data-semantic-id="14" data-semantic-children="4,7,10,13" data-semantic-content="1,15" data-semantic-parent="69" data-semantic-attributes="latex:{bmatrix};texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  1 2nd Row  0 3rd Row  0 4th Row  0 EndMatrix">
+                    <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="1" data-semantic-parent="14" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
+                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A1" transform="translate(0,1636)"/>
+                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A3" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A2" transform="scale(1,5.393)"/>
                       </svg>
                     </g>
-                    <g data-mml-node="mtable" transform="translate(667,0)">
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="4" data-semantic-children="2" data-semantic-parent="14" data-semantic-speech="1" data-semantic-prefix="1st Row" transform="translate(0,2100)">
+                    <g data-mml-node="mtable" transform="translate(521,0)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="4" data-semantic-children="2" data-semantic-parent="14" data-semantic-speech="1" data-semantic-prefix="1st Row" transform="translate(0,2100)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="4" data-semantic-speech="1">
-                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-TEX-N-31"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-GP-N-31"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="7" data-semantic-children="5" data-semantic-parent="14" data-semantic-speech="0" data-semantic-prefix="2nd Row" transform="translate(0,700)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="7" data-semantic-children="5" data-semantic-parent="14" data-semantic-speech="0" data-semantic-prefix="2nd Row" transform="translate(0,700)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="5" data-semantic-parent="7" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="10" data-semantic-children="8" data-semantic-parent="14" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="10" data-semantic-children="8" data-semantic-parent="14" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="8" data-semantic-parent="10" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="8" data-semantic-parent="10" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="13" data-semantic-children="11" data-semantic-parent="14" data-semantic-speech="0" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="13" data-semantic-children="11" data-semantic-parent="14" data-semantic-speech="0" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="11" data-semantic-parent="13" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="15" data-semantic-parent="14" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1167,0)">
-                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A4" transform="translate(0,1696)"/>
-                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A6" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A5" transform="scale(1,4.49)"/>
-                      </svg>
-                    </g>
-                  </g>
-                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="17" data-semantic-parent="69" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(2000.7,0)">
-                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-5-TEX-N-2C"/>
-                  </g>
-                  <g data-mml-node="TeXAtom" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-id="31" data-semantic-children="21,24,27,30" data-semantic-content="18,32" data-semantic-parent="69" data-semantic-attributes="texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 4th Row  0 EndMatrix" data-mjx-texclass="INNER" transform="translate(2445.3,0)">
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="18" data-semantic-parent="31" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
-                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A1" transform="translate(0,1696)"/>
-                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A3" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A2" transform="scale(1,4.49)"/>
-                      </svg>
-                    </g>
-                    <g data-mml-node="mtable" transform="translate(667,0)">
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="21" data-semantic-children="19" data-semantic-parent="31" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,2100)">
-                        <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="19" data-semantic-parent="21" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
-                          </g>
-                        </g>
-                      </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="24" data-semantic-children="22" data-semantic-parent="31" data-semantic-speech="1" data-semantic-prefix="2nd Row" transform="translate(0,700)">
-                        <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="22" data-semantic-parent="24" data-semantic-speech="1">
-                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-TEX-N-31"/>
-                          </g>
-                        </g>
-                      </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="27" data-semantic-children="25" data-semantic-parent="31" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
-                        <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="25" data-semantic-parent="27" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
-                          </g>
-                        </g>
-                      </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="30" data-semantic-children="28" data-semantic-parent="31" data-semantic-speech="0" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
-                        <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="28" data-semantic-parent="30" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="11" data-semantic-parent="13" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
                     </g>
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="32" data-semantic-parent="31" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1167,0)">
-                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A4" transform="translate(0,1696)"/>
-                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A6" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A5" transform="scale(1,4.49)"/>
+                    <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="15" data-semantic-parent="14" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1021,0)">
+                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A4" transform="translate(0,1636)"/>
+                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A6" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A5" transform="scale(1,5.393)"/>
                       </svg>
                     </g>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="34" data-semantic-parent="69" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(4446,0)">
-                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-5-TEX-N-2C"/>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="17" data-semantic-parent="69" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1708.7,0)">
+                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-5-GP-N-2C"/>
                   </g>
-                  <g data-mml-node="TeXAtom" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-id="48" data-semantic-children="38,41,44,47" data-semantic-content="35,49" data-semantic-parent="69" data-semantic-attributes="texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 4th Row  0 EndMatrix" data-mjx-texclass="INNER" transform="translate(4890.7,0)">
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="35" data-semantic-parent="48" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
-                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A1" transform="translate(0,1696)"/>
-                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A3" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A2" transform="scale(1,4.49)"/>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-annotation="depth:3" data-semantic-id="31" data-semantic-children="21,24,27,30" data-semantic-content="18,32" data-semantic-parent="69" data-semantic-attributes="latex:{bmatrix};texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  0 2nd Row  1 3rd Row  0 4th Row  0 EndMatrix" transform="translate(2125.3,0)">
+                    <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="18" data-semantic-parent="31" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
+                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A1" transform="translate(0,1636)"/>
+                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A3" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A2" transform="scale(1,5.393)"/>
                       </svg>
                     </g>
-                    <g data-mml-node="mtable" transform="translate(667,0)">
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="38" data-semantic-children="36" data-semantic-parent="48" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,2100)">
+                    <g data-mml-node="mtable" transform="translate(521,0)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="21" data-semantic-children="19" data-semantic-parent="31" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,2100)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="36" data-semantic-parent="38" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="19" data-semantic-parent="21" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="41" data-semantic-children="39" data-semantic-parent="48" data-semantic-speech="0" data-semantic-prefix="2nd Row" transform="translate(0,700)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="24" data-semantic-children="22" data-semantic-parent="31" data-semantic-speech="1" data-semantic-prefix="2nd Row" transform="translate(0,700)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="39" data-semantic-parent="41" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="22" data-semantic-parent="24" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-GP-N-31"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="44" data-semantic-children="42" data-semantic-parent="48" data-semantic-speech="1" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="27" data-semantic-children="25" data-semantic-parent="31" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="42" data-semantic-parent="44" data-semantic-speech="1">
-                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-TEX-N-31"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="25" data-semantic-parent="27" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="47" data-semantic-children="45" data-semantic-parent="48" data-semantic-speech="0" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="30" data-semantic-children="28" data-semantic-parent="31" data-semantic-speech="0" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="45" data-semantic-parent="47" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="28" data-semantic-parent="30" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
                     </g>
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="49" data-semantic-parent="48" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1167,0)">
-                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A4" transform="translate(0,1696)"/>
-                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A6" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A5" transform="scale(1,4.49)"/>
+                    <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="32" data-semantic-parent="31" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1021,0)">
+                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A4" transform="translate(0,1636)"/>
+                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A6" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A5" transform="scale(1,5.393)"/>
                       </svg>
                     </g>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="51" data-semantic-parent="69" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(6891.3,0)">
-                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-5-TEX-N-2C"/>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="34" data-semantic-parent="69" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(3834,0)">
+                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-5-GP-N-2C"/>
                   </g>
-                  <g data-mml-node="TeXAtom" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-id="65" data-semantic-children="55,58,61,64" data-semantic-content="52,66" data-semantic-parent="69" data-semantic-attributes="texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  0 4th Row  1 EndMatrix" data-mjx-texclass="INNER" transform="translate(7336,0)">
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="52" data-semantic-parent="65" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
-                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A1" transform="translate(0,1696)"/>
-                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A3" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A2" transform="scale(1,4.49)"/>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-annotation="depth:3" data-semantic-id="48" data-semantic-children="38,41,44,47" data-semantic-content="35,49" data-semantic-parent="69" data-semantic-attributes="latex:{bmatrix};texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  1 4th Row  0 EndMatrix" transform="translate(4250.7,0)">
+                    <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="35" data-semantic-parent="48" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
+                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A1" transform="translate(0,1636)"/>
+                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A3" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A2" transform="scale(1,5.393)"/>
                       </svg>
                     </g>
-                    <g data-mml-node="mtable" transform="translate(667,0)">
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="55" data-semantic-children="53" data-semantic-parent="65" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,2100)">
+                    <g data-mml-node="mtable" transform="translate(521,0)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="38" data-semantic-children="36" data-semantic-parent="48" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,2100)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="53" data-semantic-parent="55" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="36" data-semantic-parent="38" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="58" data-semantic-children="56" data-semantic-parent="65" data-semantic-speech="0" data-semantic-prefix="2nd Row" transform="translate(0,700)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="41" data-semantic-children="39" data-semantic-parent="48" data-semantic-speech="0" data-semantic-prefix="2nd Row" transform="translate(0,700)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="56" data-semantic-parent="58" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="39" data-semantic-parent="41" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="61" data-semantic-children="59" data-semantic-parent="65" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="44" data-semantic-children="42" data-semantic-parent="48" data-semantic-speech="1" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="59" data-semantic-parent="61" data-semantic-speech="0">
-                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-TEX-N-30"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="42" data-semantic-parent="44" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-GP-N-31"/>
                           </g>
                         </g>
                       </g>
-                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-id="64" data-semantic-children="62" data-semantic-parent="65" data-semantic-speech="1" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="47" data-semantic-children="45" data-semantic-parent="48" data-semantic-speech="0" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
                         <g data-mml-node="mtd">
-                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="62" data-semantic-parent="64" data-semantic-speech="1">
-                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-TEX-N-31"/>
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="45" data-semantic-parent="47" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
                           </g>
                         </g>
                       </g>
                     </g>
-                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="66" data-semantic-parent="65" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1167,0)">
-                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A4" transform="translate(0,1696)"/>
-                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A6" transform="translate(0,-1706)"/>
-                      <svg width="667" height="1802" y="-651" x="0" viewBox="0 450.5 667 1802">
-                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23A5" transform="scale(1,4.49)"/>
+                    <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="49" data-semantic-parent="48" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1021,0)">
+                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A4" transform="translate(0,1636)"/>
+                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A6" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A5" transform="scale(1,5.393)"/>
+                      </svg>
+                    </g>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="51" data-semantic-parent="69" data-semantic-attributes="latex:," data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(5959.3,0)">
+                    <use data-c="2C" xlink:href="#basis-diagram-S-MJX-5-GP-N-2C"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="INNER" data-semantic-type="vector" data-semantic-role="unknown" data-semantic-annotation="depth:3" data-semantic-id="65" data-semantic-children="55,58,61,64" data-semantic-content="52,66" data-semantic-parent="69" data-semantic-attributes="latex:{bmatrix};texclass:INNER" data-semantic-speech="Start 4 By 1 Matrix 1st Row  0 2nd Row  0 3rd Row  0 4th Row  1 EndMatrix" transform="translate(6376,0)">
+                    <g data-mml-node="mo" data-mjx-texclass="OPEN" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="52" data-semantic-parent="65" data-semantic-attributes="texclass:OPEN" data-semantic-speech="left bracket">
+                      <use data-c="23A1" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A1" transform="translate(0,1636)"/>
+                      <use data-c="23A3" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A3" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A2" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A2" transform="scale(1,5.393)"/>
+                      </svg>
+                    </g>
+                    <g data-mml-node="mtable" transform="translate(521,0)">
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="55" data-semantic-children="53" data-semantic-parent="65" data-semantic-speech="0" data-semantic-prefix="1st Row" transform="translate(0,2100)">
+                        <g data-mml-node="mtd">
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="53" data-semantic-parent="55" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
+                          </g>
+                        </g>
+                      </g>
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="58" data-semantic-children="56" data-semantic-parent="65" data-semantic-speech="0" data-semantic-prefix="2nd Row" transform="translate(0,700)">
+                        <g data-mml-node="mtd">
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="56" data-semantic-parent="58" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
+                          </g>
+                        </g>
+                      </g>
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="61" data-semantic-children="59" data-semantic-parent="65" data-semantic-speech="0" data-semantic-prefix="3rd Row" transform="translate(0,-700)">
+                        <g data-mml-node="mtd">
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="59" data-semantic-parent="61" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                            <use data-c="30" xlink:href="#basis-diagram-S-MJX-5-GP-N-30"/>
+                          </g>
+                        </g>
+                      </g>
+                      <g data-mml-node="mtr" data-semantic-type="line" data-semantic-role="vector" data-semantic-annotation="depth:4" data-semantic-id="64" data-semantic-children="62" data-semantic-parent="65" data-semantic-speech="1" data-semantic-prefix="4th Row" transform="translate(0,-2100)">
+                        <g data-mml-node="mtd">
+                          <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:5" data-semantic-id="62" data-semantic-parent="64" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                            <use data-c="31" xlink:href="#basis-diagram-S-MJX-5-GP-N-31"/>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="66" data-semantic-parent="65" data-semantic-attributes="texclass:CLOSE" data-semantic-speech="right bracket" transform="translate(1021,0)">
+                      <use data-c="23A4" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A4" transform="translate(0,1636)"/>
+                      <use data-c="23A6" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A6" transform="translate(0,-2350)"/>
+                      <svg width="521" height="2912" y="-1206" x="0" viewBox="0 728 521 2912">
+                        <use data-c="23A5" xlink:href="#basis-diagram-S-MJX-5-GP-N-23A5" transform="scale(1,5.393)"/>
                       </svg>
                     </g>
                   </g>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="68" data-semantic-parent="70" data-semantic-attributes="texclass:CLOSE" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(10059,0)">
-                  <use data-c="23AB" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23AB" transform="translate(0,1951)"/>
-                  <use data-c="23AD" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23AD" transform="translate(0,-1451)"/>
-                  <use data-c="23AC" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23AC" transform="translate(0,0)"/>
-                  <svg width="889" height="981" y="1060" x="0" viewBox="0 172.9 889 981">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23AA" transform="scale(1,4.825)"/>
+                <g data-mml-node="mo" data-mjx-texclass="CLOSE" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:2" data-semantic-id="68" data-semantic-parent="70" data-semantic-attributes="latex:\right\};texclass:CLOSE" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(8507,0)">
+                  <use data-c="23AB" xlink:href="#basis-diagram-S-MJX-5-GP-N-23AB" transform="translate(0,2234)"/>
+                  <use data-c="23AD" xlink:href="#basis-diagram-S-MJX-5-GP-N-23AD" transform="translate(0,-2350)"/>
+                  <use data-c="23AC" xlink:href="#basis-diagram-S-MJX-5-GP-N-23AC" transform="translate(0,-347)"/>
+                  <svg width="589" height="1457" y="847" x="0" viewBox="0 364.3 589 1457">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-5-GP-EM-7B" transform="scale(1,3.667)"/>
                   </svg>
-                  <svg width="889" height="981" y="-1541" x="0" viewBox="0 172.9 889 981">
-                    <use data-c="23AA" xlink:href="#basis-diagram-S-MJX-5-TEX-S4-23AA" transform="scale(1,4.825)"/>
+                  <svg width="589" height="1457" y="-1804" x="0" viewBox="0 364.3 589 1457">
+                    <use data-c="7B" xlink:href="#basis-diagram-S-MJX-5-GP-EM-7B" transform="scale(1,3.667)"/>
                   </svg>
                 </g>
               </g>
@@ -564,16 +564,16 @@
       </g>
     </g>
     <line id="basis-diagram-S-arrow-S" x1="206.0" y1="58.1" x2="414.7" y2="58.1" stroke="black" stroke-width="2" fill="none" marker-end="url(#basis-diagram-S-arrow-head-end-2_None_24_60-black)"/>
-    <g id="basis-diagram-S-label-S" transform="translate(311.6,37.5) scale(1.4,1.4) translate(-5.8,-13.2)">
+    <g id="basis-diagram-S-label-S" transform="translate(311.6,37.5) scale(1.4,1.4) translate(-4.6,-12.0)">
       <g id="basis-diagram-S-__g-4">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="11.672px" height="13.160px" role="img" focusable="false" viewBox="0 -705 645 727" x="0.0" y="0.0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.296px" width="9.232px" height="12.016px" role="img" focusable="false" viewBox="0 -706 556 724" x="0.0" y="0.0">
           <defs>
-            <path id="basis-diagram-S-MJX-6-TEX-I-1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"/>
+            <path id="basis-diagram-S-MJX-6-GP-I-1D446" d="M506 672C460 696 422 706 374 706C300 706 225 675 171 622C129 580 108 530 108 471C108 386 146 339 230 319L325 296C380 283 406 249 406 191C406 95 335 30 232 30C178 30 140 42 96 73L96 172L66 172C60 117 53 72 42 20C92-5 144-18 197-18C352-18 485 98 485 234C485 313 442 355 341 377L276 391C210 405 180 442 180 508C180 595 247 658 339 658C388 658 421 645 451 613L451 537L481 537C485 591 492 629 506 672Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="upper S">
-                <use data-c="1D446" xlink:href="#basis-diagram-S-MJX-6-TEX-I-1D446"/>
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:S" data-semantic-speech="upper S">
+                <use data-c="1D446" xlink:href="#basis-diagram-S-MJX-6-GP-I-1D446"/>
               </g>
             </g>
           </g>
@@ -583,16 +583,16 @@
     <line id="basis-diagram-S-arrow-left" x1="133.8" y1="93.7" x2="133.8" y2="219.1" stroke="black" stroke-width="2" fill="none" marker-end="url(#basis-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#basis-diagram-S-arrow-head-start-2_None_24_60-black)"/>
     <line id="basis-diagram-S-arrow-right" x1="544.9" y1="93.7" x2="544.9" y2="212.0" stroke="black" stroke-width="2" fill="none" marker-end="url(#basis-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#basis-diagram-S-arrow-head-start-2_None_24_60-black)"/>
     <line id="basis-diagram-S-arrow-A" x1="256.0" y1="294.9" x2="392.5" y2="294.9" stroke="black" stroke-width="2" fill="none" marker-end="url(#basis-diagram-S-arrow-head-end-2_None_24_60-black)"/>
-    <g id="basis-diagram-S-label-A" transform="translate(325.4,274.4) scale(1.4,1.4) translate(-6.8,-13.0)">
+    <g id="basis-diagram-S-label-A" transform="translate(325.4,274.4) scale(1.4,1.4) translate(-6.0,-11.8)">
       <g id="basis-diagram-S-__g-5">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="13.576px" height="12.960px" role="img" focusable="false" viewBox="0 -716 750 716" x="0.0" y="0.0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="11.984px" height="11.752px" role="img" focusable="false" viewBox="0 -705 722 708" x="0.0" y="0.0">
           <defs>
-            <path id="basis-diagram-S-MJX-7-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
+            <path id="basis-diagram-S-MJX-7-GP-I-1D434" d="M677-3L677 25L651 28C604 33 601 35 595 80L508 705L462 705L89 112C54 56 35 40 1 32L-19 27L-19-3L93 0C129 0 165-1 200-3L200 25L148 28C131 29 117 38 117 47C117 55 123 68 143 102L245 277L491 277L518 77C519 68 520 60 520 55C520 39 505 30 477 28L433 25L433-3L555 0M486 313L270 313L449 601Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="upper A">
-                <use data-c="1D434" xlink:href="#basis-diagram-S-MJX-7-TEX-I-1D434"/>
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:A" data-semantic-speech="upper A">
+                <use data-c="1D434" xlink:href="#basis-diagram-S-MJX-7-GP-I-1D434"/>
               </g>
             </g>
           </g>
