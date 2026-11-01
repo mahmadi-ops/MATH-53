@@ -1,6 +1,6 @@
 # Interactive figures
 
-All six figures share `book-theme.css`, which imports `../custom.css` for the
+All nine figures share `book-theme.css`, which imports `../custom.css` for the
 book's self-hosted TeX Gyre Pagella font, olive and wine accents, and pale
 backgrounds. A darker shade of the book's mustard distinguishes the third
 vector in the volume diagrams and the middle spring in the oscillator.
@@ -10,6 +10,24 @@ and `assets/fonts/` in their relative locations for offline use.
 
 Older links with `theme=dark` or `theme=light` still work and now use the shared
 book styling. Mathematical URL parameters and controls are unchanged.
+
+## Course geometry explorers
+
+| Page | Book placement | Main idea |
+|------|----------------|-----------|
+| `solution-set.html` | Section 1.1, after the parametric solution example | Two planes, a moving solution, and a third equation leaving a point, a line, or the empty set |
+| `transformation-geometry.html` | Section 3.1, before the first example | `T(x,y,z) = (x+2y, 2x+y)` sends the basis vectors to matrix columns and loses the z-coordinate |
+| `change-of-basis.html` | Section 7.4, in the same-vector/two-bases example | The grid and coordinates change while `(1,2)` stays fixed |
+
+These three figures also share `geometry-explorers.css` and `geometry-core.js`.
+Each has labeled native controls, a prediction prompt, a silent captioned guide,
+readable guided steps, keyboard camera rotation where applicable, reduced-motion
+steps, and an SVG/text fallback when JavaScript is disabled. They use no external
+runtime libraries. Static SVGs in `assets/images/` embed the book font and are
+also supplied through the PreTeXt `<static>` element for print output.
+
+See [authoring and checking these explorers](../../scripts/GEOMETRY-EXPLORERS.md)
+for the mathematical invariants, preview commands, and asset refresh procedure.
 
 ## eigenvectors.html
 

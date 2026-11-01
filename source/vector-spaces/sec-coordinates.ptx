@@ -170,6 +170,47 @@
           </figure>
         </sidebyside>
       </figure>
+      <p>
+        <em>Predict before playing.</em> If the grid changes while the tip of
+        <m>\vec{x}=(1,2)</m> stays fixed, must its coordinate pair stay the same?
+      </p>
+      <p xml:id="intro-change-of-basis-animation">
+        <em>Animate the two coordinate systems.</em>
+        The wine vector stays fixed while the standard grid changes into the
+        grid for <m>\vec{b}_1=(2,0)</m> and <m>\vec{b}_2=(-1,1)</m>.
+        The olive and mustard contributions add head to tail to the same
+        vector at every stage. Use Play, the endpoint buttons, or the slider
+        to compare the two coordinate descriptions.
+      </p>
+      <interactive xml:id="int-change-of-basis" iframe="demos-manim/change-of-basis.html" width="100%" aspect="5:6">
+        <shortdescription>A two-dimensional basis grid changes smoothly while x = (1,2) remains fixed. Its coordinates change from (1,2) to (3/2,2).</shortdescription>
+        <static>
+          <image source="images/change-of-basis-static.svg" width="95%">
+            <shortdescription>The fixed vector (1,2) is reached by (3/2)b1 = (3,0), followed by 2b2 = (-2,2), with the arrows placed head to tail.</shortdescription>
+          </image>
+        </static>
+      </interactive>
+      <p>
+        To keep a valid basis throughout the motion, at progress <m>t</m> we use
+        <md>
+          \vec{b}_1(t)=(1+t,0),\qquad \vec{b}_2(t)=(-t,1),\qquad 0\le t\le1.
+        </md>
+        The determinant of these two columns is <m>1+t&gt;0</m>, so they are
+        always independent. The changing coordinates are
+        <md>
+          [\vec{x}]_{\mathcal{B}(t)}=
+          \begin{bmatrix}(1+2t)/(1+t) \\ 2\end{bmatrix}.
+        </md>
+        Indeed, their scaled arrows sum to
+        <md>
+          \frac{1+2t}{1+t}\vec{b}_1(t)+2\vec{b}_2(t)
+          =(1+2t,0)+(-2t,2)=(1,2).
+        </md>
+        At the end this reads <m>\vec{x}=\tfrac32\vec{b}_1+2\vec{b}_2</m>:
+        the new coordinates are <m>(3/2,2)</m>, and the geometric vector has
+        stayed in place.
+      </p>
+      <p><em>What changed—the vector, its coordinates, or both?</em></p>
     </example>
 
     <example xml:id="eg-cartesian-polar">

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A transformation from three dimensions to two</title>
+  <link rel="stylesheet" href="book-theme.css">
+  <link rel="stylesheet" href="geometry-explorers.css">
+  <script src="book-theme.js" defer></script>
+  <script src="geometry-core.js" defer></script>
+  <script src="transformation-geometry.js" defer></script>
+</head>
+<body><main>
+  <h1>From a 3D input to a 2D image</h1>
+  <p class="prediction"><strong>Predict:</strong> If only the z-coordinate changes, will the output move? What should the third matrix column tell us?</p>
+  <p class="equation">T: ℝ³ → ℝ², &nbsp; T(x, y, z) = (x + 2y, 2x + y)</p>
+  <p aria-label="A has columns (1, 2), (2, 1), and (0, 0)">A =
+    <span class="matrix" aria-hidden="true"><span class="olive">1</span><span class="mustard">2</span><span class="gray">0</span><span class="olive">2</span><span class="mustard">1</span><span class="gray">0</span></span>
+    <span class="hint">columns = images of e₁, e₂, e₃</span>
+  </p>
+  <div class="live-explorer" hidden>
+    <div class="controls"><button id="play" type="button" aria-pressed="false">Play guide</button><button id="reset" type="button">Reset</button></div>
+    <div class="stages" role="group" aria-label="Guided stages">
+      <button id="stage-basis" type="button" aria-pressed="true">1. Basis images</button>
+      <button id="stage-vector" type="button" aria-pressed="false">2. A sample vector</button>
+      <button id="stage-fibers" type="button" aria-pressed="false">3. The same image</button>
+    </div>
+    <div class="panels">
+      <section class="panel">
+        <h2>Domain: ℝ³ — input (x, y, z)</h2>
+        <svg id="domain-scene" class="scene rotatable" viewBox="0 0 480 360" role="img" tabindex="0" aria-labelledby="domain-title domain-description" aria-describedby="camera-hint">
+          <title id="domain-title">A transparent unit cube in the three-dimensional domain</title>
+          <desc id="domain-description">The labeled basis arrows match the colored matrix columns. In the last stage, three points with the same x and y but different z lie on a vertical line.</desc>
+        </svg>
+        <p class="hint">Transparent cube: 0 ≤ x, y, z ≤ 1.</p>
+      </section>
+      <section class="panel output">
+        <h2>Codomain: ℝ² — output (u, v)</h2>
+        <svg id="codomain-scene" class="scene" viewBox="0 0 480 360" role="img" aria-labelledby="codomain-title codomain-description">
+          <title id="codomain-title">The cube maps to a parallelogram in the two-dimensional codomain</title>
+          <desc id="codomain-description">The basis images are (1, 2), (2, 1), and (0, 0). Opposite cube vertices that differ only in z have the same image.</desc>
+        </svg>
+        <p class="hint">Cube image: corners (0, 0), (1, 2), (3, 3), (2, 1).</p>
+      </section>
+    </div>
+    <div class="legend">
+      <span class="olive column-key">e₁ ↦ (1, 2): column 1</span>
+      <span class="mustard column-key">e₂ ↦ (2, 1): column 2</span>
+      <span class="gray column-key">e₃ ↦ (0, 0): column 3</span>
+    </div>
+    <div class="sliders" role="group" aria-label="Input coordinates">
+      <label class="slider" for="input-x">x<input id="input-x" type="range" min="-2" max="2" step="0.25" value="1"><output aria-live="off" id="value-x" for="input-x">1</output></label>
+      <label class="slider" for="input-y">y<input id="input-y" type="range" min="-2" max="2" step="0.25" value="-1"><output aria-live="off" id="value-y" for="input-y">−1</output></label>
+      <label class="slider" for="input-z">z<input id="input-z" type="range" min="-2" max="2" step="0.25" value="2"><output aria-live="off" id="value-z" for="input-z">2</output></label>
+    </div>
+    <div class="readout">
+      <p id="image-equation" class="equation">T(1, −1, 2) = (−1, 1)</p>
+      <p id="combination"></p>
+      <p id="same-image" hidden></p>
+    </div>
+    <p id="guide-caption" class="guide" role="status">The three basis arrows are sent to the three columns of A. Press Play to follow each image.</p>
+    <details>
+      <summary>Rotate the input view</summary>
+      <p id="camera-hint" class="hint">Drag the 3D input plot, focus it and use the arrow keys, or use these sliders. The output remains a 2D coordinate plane.</p>
+      <label class="slider" for="yaw">Rotation<input id="yaw" type="range" min="-180" max="180" step="1" value="-35"><output aria-live="off" id="yaw-value" for="yaw">−35°</output></label>
+      <label class="slider" for="pitch">Elevation<input id="pitch" type="range" min="10" max="75" step="1" value="28"><output aria-live="off" id="pitch-value" for="pitch">28°</output></label>
+    </details>
+  </div>
+  <figure class="fallback">
+    <img src="../images/transformation-geometry-static.svg" alt="The basis arrows and unit cube in ℝ³ map to (1, 2), (2, 1), (0, 0) and a parallelogram in ℝ².">
+    <figcaption>The input (1, −1, 2) maps to (−1, 1). Every input (1, −1, z) has that same image. JavaScript enables the synchronized controls.</figcaption>
+  </figure>
+  <details>
+    <summary>Read the guided explanation</summary>
+    <ol>
+      <li>T(e₁) = (1, 2), T(e₂) = (2, 1), and T(e₃) = (0, 0). These are the columns of A, matched by label and color.</li>
+      <li>For any input, T(x, y, z) = x(1, 2) + y(2, 1) + z(0, 0). In particular, T(1, −1, 2) = (−1, 1).</li>
+      <li>The inputs (x, y, −2), (x, y, 0), and (x, y, 2) all map to (x + 2y, 2x + y). Varying z moves along a vertical line in the domain and leaves the output fixed.</li>
+    </ol>
+  </details>
+  <p class="question">Which different inputs produce the same output? What information does this transformation lose?</p>
+</main></body>
+</html>

@@ -338,6 +338,43 @@
     </remark>
 
     <p>
+      <em>Predict before exploring.</em> As <m>s</m> changes, can the point
+      <m>(-3+9s,-1+s,s)</m> leave either of these two planes? Which of the third
+      equations below will keep the entire line of solutions?
+    </p>
+    <p xml:id="intro-solution-set-explorer">
+      <em>Explore the solution set.</em>
+      The moving point lies on the intersection of the two planes in
+      <xref ref="eg-parametric-solution" text="type-global"/>. The wine highlight
+      always represents the common solutions of <em>all</em> active equations.
+      Use the parameter slider, third-plane menu, and camera controls, or play
+      the captioned guide. The window shows only part of the infinite planes
+      and line.
+    </p>
+    <interactive xml:id="int-solution-set-explorer" iframe="demos-manim/solution-set.html" width="100%" aspect="4:5">
+      <shortdescription>Two planes intersect in the line (-3,-1,0) + s(9,1,1). A third plane leaves one point, the whole line, or no common solution.</shortdescription>
+      <static>
+        <image source="images/solution-set-static.svg" width="95%">
+          <shortdescription>The two original planes share a wine line through (-3,-1,0) with direction (9,1,1).</shortdescription>
+        </image>
+      </static>
+    </interactive>
+    <p>
+      Along this line, substitution gives
+      <md>
+        <mrow>(-3+9s)-2(-1+s)-7s \amp = -1,</mrow>
+        <mrow>-(-3+9s)+3(-1+s)+6s \amp = 0.</mrow>
+      </md>
+      Adding <m>x_3=0</m> forces <m>s=0</m>, leaving just <m>(-3,-1,0)</m>.
+      Adding <m>x_2-x_3=-1</m> keeps the whole line because
+      <m>(-1+s)-s=-1</m> for every <m>s</m>. Adding <m>x_2-x_3=0</m>
+      leaves no common solution because it would require <m>-1=0</m>.
+    </p>
+    <p>
+      <em>Why does one free parameter describe a line? What changes when the third equation is added?</em>
+    </p>
+
+    <p>
       This raises the central computational problem of the chapter.
     </p>
 

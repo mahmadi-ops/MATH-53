@@ -29,6 +29,51 @@
       </p>
     </remark>
 
+    <p>
+      Before an example whose output has four coordinates, picture the
+      transformation <m>T:\R^3\to\R^2</m> given by
+      <md>
+        T(x,y,z)=(x+2y,2x+y),\qquad
+        A=\begin{bmatrix}1 \amp 2 \amp 0 \\ 2 \amp 1 \amp 0\end{bmatrix}.
+      </md>
+      We will compute with this same matrix in
+      <xref ref="eg-transformation-by-multiplication" text="type-global"/>.
+      <em>Predict:</em> if only the <m>z</m>-coordinate of the input changes,
+      should the output move? What does the third column suggest?
+    </p>
+    <p xml:id="intro-transformation-geometry">
+      <em>Explore the geometry.</em>
+      The domain is three-dimensional and the codomain is two-dimensional.
+      The standard basis arrows, their images, and the columns of <m>A</m>
+      share labels and colors. A transparent unit cube maps to a parallelogram;
+      its <m>z</m>-edges collapse to points. The captioned guide follows the
+      basis images, a sample vector, and several inputs with one common image.
+    </p>
+    <interactive xml:id="int-transformation-geometry" iframe="demos-manim/transformation-geometry.html" width="100%" aspect="6:5">
+      <shortdescription>Synchronized 3D input and 2D output views for T(x,y,z) = (x+2y,2x+y), with basis images, coordinate controls, and inputs differing only in z.</shortdescription>
+      <static>
+        <image source="images/transformation-geometry-static.svg" width="100%">
+          <shortdescription>The three basis vectors map to (1,2), (2,1), and (0,0). The unit cube maps to the parallelogram with corners (0,0), (1,2), (3,3), and (2,1).</shortdescription>
+        </image>
+      </static>
+    </interactive>
+    <p>
+      The basis images are <m>T(\vec{e}_1)=(1,2)</m>,
+      <m>T(\vec{e}_2)=(2,1)</m>, and <m>T(\vec{e}_3)=(0,0)</m>.
+      Consequently,
+      <md>
+        T(x,y,z)=x(1,2)+y(2,1)+z(0,0).
+      </md>
+      In particular, <m>T(1,-1,2)=(-1,1)</m>. Every vector of the form
+      <m>(1,-1,z)</m> has this same image: the transformation discards the
+      <m>z</m>-coordinate. The first two columns are independent, so inputs
+      have the same output precisely when their <m>x</m>- and
+      <m>y</m>-coordinates agree.
+    </p>
+    <p>
+      <em>Which different inputs produce the same output? What information does this transformation lose?</em>
+    </p>
+
     <example xml:id="eg-transformation">
       <title>A Transformation from <m>\R^3</m> to <m>\R^4</m></title>
       <p>

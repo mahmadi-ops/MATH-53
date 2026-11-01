@@ -11,6 +11,9 @@ To preview your output, run `pretext view web`.
 For the book's static graph fonts, palette, and regeneration commands, see
 [the figure authoring notes](scripts/FIGURES.md).
 
+For the interactive solution-set, transformation, and change-of-basis additions,
+see [geometry explorer previews and checks](scripts/GEOMETRY-EXPLORERS.md).
+
 To deploy your output to GitHub pages, run `pretext deploy`.
 
 To compile a pdf, run `pretext build print`.

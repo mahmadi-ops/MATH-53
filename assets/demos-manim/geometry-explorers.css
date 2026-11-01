@@ -1,0 +1,61 @@
+/* Course geometry explorers: book fonts and accents come from book-theme.css. */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: white; color: #111; font: 16px/1.45 var(--font-body); }
+main { max-width: 1040px; margin: auto; padding: 12px; }
+h1 { font-size: 1.3rem; font-weight: 400; margin: 0 0 8px; }
+h2 { font-size: 1.05rem; margin: 0 0 8px; }
+p { margin: 8px 0; }
+.prediction { border-left: 3px solid var(--olive); padding: 7px 10px; background: #EDF0E6; }
+.question { border-top: 1px solid #c4cdb1; margin-top: 14px; padding-top: 10px; font-weight: bold; }
+.controls, .stages, .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 10px 0; }
+button, select { font: inherit; color: inherit; background: white; border: 1px solid var(--olive); border-radius: 5px; min-height: 44px; padding: 7px 12px; }
+button { cursor: pointer; }
+button:hover, button[aria-pressed="true"] { background: #EDF0E6; }
+button:disabled { opacity: .65; cursor: default; }
+button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, svg:focus-visible { outline: 3px solid var(--olive); outline-offset: 3px; }
+label { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+input[type="range"] { accent-color: var(--olive); width: 100%; min-width: 0; min-height: 32px; }
+.slider { display: grid; grid-template-columns: minmax(88px, auto) minmax(100px, 1fr) 55px; gap: 9px; align-items: center; margin: 7px 0; white-space: nowrap; }
+.sliders { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px 18px; }
+.sliders .slider { grid-template-columns: 20px minmax(65px, 1fr) 44px; }
+output { font-variant-numeric: tabular-nums; }
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.panel { min-width: 0; border: 1px solid #c4cdb1; background: #fcfcfa; padding: 10px; border-radius: 6px; }
+.panel.output { border-color: #ceb3ba; background: #fdfafb; }
+.scene { display: block; width: 100%; height: auto; background: white; border: 1px solid #DDE2CF; border-radius: 4px; }
+.scene.rotatable { cursor: grab; touch-action: none; }
+.scene.rotatable:active { cursor: grabbing; }
+.scene text { font: 17px var(--font-body); fill: #222; paint-order: stroke; stroke: white; stroke-width: 4px; stroke-linejoin: round; }
+.readout { background: #EDF0E6; padding: 9px 12px; border-radius: 5px; overflow-wrap: anywhere; }
+.readout p:first-child { margin-top: 0; }
+.readout p:last-child { margin-bottom: 0; }
+.equation { font-size: 1.1rem; }
+.olive { color: #4A5D23; }
+.wine { color: #5E011C; }
+.mustard { color: #876801; }
+.gray, .hint { color: #505050; }
+.hint { font-size: .9rem; }
+.swatch { display: inline-block; width: 20px; height: 4px; vertical-align: middle; margin-right: 5px; background: currentColor; }
+.guide { border-left: 3px solid var(--wine); padding: 7px 10px; min-height: 3em; }
+details { margin: 10px 0; }
+summary { cursor: pointer; min-height: 36px; }
+li { margin: 6px 0; }
+.matrix { display: inline-grid; grid-template-columns: repeat(3, 2em); text-align: center; border-inline: 1px solid #505050; padding: 2px 5px; vertical-align: middle; margin: 0 5px; }
+.column-key { border-bottom: 2px solid currentColor; padding-bottom: 2px; }
+.fallback { margin: 10px 0; }
+.fallback img { max-width: 100%; height: auto; }
+.js-ready .fallback { display: none; }
+@media (max-width: 620px) {
+  main { padding: 8px; }
+  .panels, .sliders { grid-template-columns: 1fr; }
+  .sliders { gap: 0; }
+  .slider { grid-template-columns: 88px minmax(70px, 1fr) 48px; }
+  .stages button { flex: 1 1 125px; }
+  .controls select { max-width: 100%; width: 100%; }
+  .panel { padding: 8px; }
+}
+@media print {
+  .controls, .sliders, .stages, .live-explorer, .guide, details { display: none; }
+  .js-ready .fallback { display: block; }
+}

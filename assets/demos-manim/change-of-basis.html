@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One fixed vector, a changing basis</title>
+  <link rel="stylesheet" href="book-theme.css">
+  <link rel="stylesheet" href="geometry-explorers.css">
+  <script src="book-theme.js" defer></script>
+  <script src="geometry-core.js" defer></script>
+  <script src="change-of-basis.js" defer></script>
+</head>
+<body><main>
+  <h1>Keep the vector fixed. Change its coordinates.</h1>
+  <p class="prediction"><strong>Predict:</strong> The wine arrow ends at (1, 2). If the basis grid changes, must this arrow move?</p>
+  <div class="live-explorer" hidden>
+    <div class="controls">
+      <button id="play" type="button" aria-pressed="false">Play guide</button>
+      <button id="standard" type="button">Standard basis</button>
+      <button id="new-basis" type="button">New basis</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <label class="slider" for="basis-progress">Grid change
+      <input id="basis-progress" type="range" min="0" max="100" step="1" value="0" aria-describedby="independence">
+      <output aria-live="off" id="basis-progress-value" for="basis-progress">0%</output>
+    </label>
+    <svg id="basis-scene" class="scene" viewBox="0 0 600 410" role="img" aria-labelledby="basis-title basis-description">
+      <title id="basis-title">A fixed vector and a smoothly changing two-dimensional basis grid</title>
+      <desc id="basis-description">The vector x stays at (1, 2). The olive and mustard scaled basis arrows are arranged head to tail, always ending at the tip of x.</desc>
+    </svg>
+    <div class="legend"><span class="wine"><span class="swatch"></span>Fixed vector x = (1, 2)</span><span class="olive"><span class="swatch"></span>First basis contribution</span><span class="mustard"><span class="swatch"></span>Second basis contribution</span></div>
+    <div class="readout">
+      <p id="basis-vectors"></p>
+      <p class="equation">Coordinates in the displayed basis: <output aria-live="off" id="coordinate-pair" for="basis-progress">(1, 2)</output></p>
+      <p id="basis-combination" class="equation"></p>
+      <p id="independence"></p>
+    </div>
+    <p id="guide-caption" class="guide" role="status">Start: x = e₁ + 2e₂. Watch the arrow stay fixed as its grid changes.</p>
+  </div>
+  <figure class="fallback">
+    <img src="../images/change-of-basis-static.svg" alt="The vector (1, 2) is the sum of (3, 0) and (−2, 2), that is, three halves of b₁ plus twice b₂.">
+    <figcaption>In the standard basis the coordinates are (1, 2). With b₁ = (2, 0) and b₂ = (−1, 1), they are (3/2, 2). The vector itself stays fixed. JavaScript enables the grid animation.</figcaption>
+  </figure>
+  <details>
+    <summary>Read the guided explanation</summary>
+    <ol>
+      <li>Start with the standard basis (1, 0), (0, 1). The coordinates of x are (1, 2).</li>
+      <li>At progress t, use b₁(t) = (1 + t, 0) and b₂(t) = (−t, 1). Their determinant is 1 + t, which stays positive for 0 ≤ t ≤ 1, so they always form a basis.</li>
+      <li>The coordinates are ((1 + 2t)/(1 + t), 2). The first scaled arrow ends at (1 + 2t, 0); adding the second, (−2t, 2), always reaches the same point (1, 2).</li>
+      <li>At t = 1, b₁ = (2, 0), b₂ = (−1, 1), and x = (3/2)b₁ + 2b₂. The coordinates are now (3/2, 2).</li>
+    </ol>
+  </details>
+  <p class="question">What changed—the vector, its coordinates, or both?</p>
+</main></body>
+</html>
