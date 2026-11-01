@@ -4,14 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coupled oscillators</title>
+<link rel="stylesheet" href="book-theme.css">
+<script src="book-theme.js" defer></script>
 <style>
-  :root {
-    --bg: #0c0f13; --pane: #101419; --line: #232b38;
-    --ink: #e8eaf0; --muted: #8b93a7; --wall: #3a465c;
-    --m1: #ffe45c; --m2: #fc6255; --spring: #58c4dd; --mid: #b48ee0;
-  }
   html, body { margin: 0; background: var(--bg); color: var(--ink);
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: var(--font-body, Palatino, Georgia, serif); }
   #wrap { max-width: 900px; margin: 0 auto; padding: 8px 8px 12px; }
   #titlebar { display: flex; justify-content: space-between; align-items: center;
     flex-wrap: wrap; gap: 6px 16px; padding: 2px 4px 8px; }
@@ -19,17 +16,17 @@
   #title .dim { color: var(--muted); font-size: 13.5px; margin-left: 8px; }
   #controls { display: flex; gap: 6px; flex-wrap: wrap; }
   #controls button {
-    background: transparent; color: var(--ink); border: 1px solid #2a3341;
+    background: transparent; color: var(--ink); border: 1px solid var(--btnbord);
     border-radius: 6px; padding: 3px 11px; font-size: 13px;
     cursor: pointer; transition: border-color .15s, background .15s;
   }
-  #controls button:hover { background: #161c25; }
+  #controls button:hover { background: var(--btnhov); }
   #controls button.active { border-color: var(--m1); color: var(--m1); }
   #stage { background: var(--pane); border: 1px solid var(--line);
     border-radius: 8px; display: block; width: 100%; height: auto; }
   #caption { min-height: 3.2em; padding: 10px 6px 0; text-align: center;
     font-size: 16px; line-height: 1.45; color: var(--ink); transition: opacity .4s; }
-  #progress { height: 3px; background: #1a2230; border-radius: 2px;
+  #progress { height: 3px; background: var(--grid); border-radius: 2px;
     margin-top: 10px; overflow: hidden; }
   #bar { height: 100%; width: 0%; background: var(--spring); }
   /* Compact layout inside narrow iframes */
@@ -97,11 +94,11 @@
     for (var i = 0; i < 6; i++)
       el(gApp, "line", { x1: w[0] + (w[1] < 0 ? 0 : 14), y1: Y - 88 + i * 24,
         x2: w[0] + (w[1] < 0 ? 14 : 0), y2: Y - 72 + i * 24,
-        stroke: "#57657f", "stroke-width": 2 });
+        stroke: css("--axis"), "stroke-width": 2 });
   });
   // track
   el(gApp, "line", { x1: XL - 14, y1: Y + 56, x2: XR + 14, y2: Y + 56,
-    stroke: "#2a3341", "stroke-width": 3 });
+    stroke: css("--axis"), "stroke-width": 3 });
 
   function springPath(x0, x1, color, id) {
     return el(gApp, "path", { fill: "none", stroke: color,
@@ -120,11 +117,11 @@
       x: 7, y: 7 });
     [0.28, 0.72].forEach(function (f) {
       el(g, "circle", { cx: 7 + CW * f, cy: 7 + CH + 6, r: 8,
-        fill: "#1c2330", stroke: color, "stroke-width": 2.5 });
+        fill: css("--cart-wheel"), stroke: color, "stroke-width": 2.5 });
     });
     var t = el(g, "text", { x: 7 + CW / 2, y: 7 + CH / 2 + 6,
       "text-anchor": "middle", "font-size": 19, "font-style": "italic",
-      fill: "#10141a", "font-family": "Georgia, serif" });
+      fill: css("--cart-label") });
     t.textContent = label;
     return g;
   }
@@ -133,9 +130,9 @@
   // displacement traces (position vs time, scrolling)
   var TRY1 = 275, TRY2 = 360, TRH = 34;
   var gTr = el(svg, "g", {});
-  el(gTr, "line", { x1: 70, y1: TRY1, x2: 830, y2: TRY1, stroke: "#222c3c",
+  el(gTr, "line", { x1: 70, y1: TRY1, x2: 830, y2: TRY1, stroke: css("--trace-axis"),
     "stroke-width": 1 });
-  el(gTr, "line", { x1: 70, y1: TRY2, x2: 830, y2: TRY2, stroke: "#222c3c",
+  el(gTr, "line", { x1: 70, y1: TRY2, x2: 830, y2: TRY2, stroke: css("--trace-axis"),
     "stroke-width": 1 });
   var lbl1 = el(gTr, "text", { x: 62, y: TRY1 + 5, "text-anchor": "end",
     "font-size": 13, fill: css("--m1") });
@@ -171,7 +168,7 @@
     sp1.setAttribute("d", zig(XL, c1 - CW / 2));
     spM.setAttribute("d", zig(c1 + CW / 2, c2 - CW / 2));
     sp2.setAttribute("d", zig(c2 + CW / 2, XR));
-    spM.setAttribute("stroke", opts.midQuiet ? "#3d4a63" : css("--mid"));
+    spM.setAttribute("stroke", opts.midQuiet ? css("--mid-quiet") : css("--mid"));
     spM.setAttribute("stroke-width", opts.midBusy ? 4.5 : 3);
     if (opts.trace) {
       hist1.push(u1); hist2.push(u2);

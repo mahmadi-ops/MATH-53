@@ -1,4 +1,15 @@
-# Manim-style interactive demos
+# Interactive figures
+
+All six figures share `book-theme.css`, which imports `../custom.css` for the
+book's self-hosted TeX Gyre Pagella font, olive and wine accents, and pale
+backgrounds. A darker shade of the book's mustard distinguishes the third
+vector in the volume diagrams and the middle spring in the oscillator.
+`book-theme.js` fits same-origin book iframes to their content, including controls
+and captions that wrap on small screens. Keep these files, `assets/custom.css`,
+and `assets/fonts/` in their relative locations for offline use.
+
+Older links with `theme=dark` or `theme=light` still work and now use the shared
+book styling. Mathematical URL parameters and controls are unchanged.
 
 ## eigenvectors.html
 
@@ -12,17 +23,15 @@ Play/Pause, Replay, Start, Result, and a keyboard-operable progress slider let
 readers inspect the motion. With reduced motion enabled, the final result
 appears immediately and playback becomes a static “Show result” action. With
 JavaScript disabled, the final SVGs and explanations remain visible. The page
-reuses `../custom.css` for the book's self-hosted TeX Gyre Pagella font and
-olive/wine palette; it has no third-party runtime dependencies. Keep the
-stylesheet and `assets/fonts/` alongside the demo for offline use. A screenshot
-of the final plots is tracked at
+uses the shared book theme and has no third-party runtime dependencies. A
+screenshot of the final plots is tracked at
 `generated-assets/preview/int-eigenvector-geometry-preview.png` for print output.
 
 ## axb.html
 
-`axb.html` is a self-contained (zero-dependency, ~30 KB) interactive figure for
+`axb.html` is an interactive figure with no third-party runtime dependencies for
 matrix transformations `T(x) = Ax` with `m, n ≤ 3`, styled after
-3Blue1Brown/Manim: dark scene, glowing vectors, eased build-in animation,
+3Blue1Brown/Manim, with the book's light palette: glowing vectors, eased build-in animation,
 ambient 3D rotation, and a playable demonstration loop.
 
 Both the input vector `x` and the output vector `b` are draggable (`b` snaps to
@@ -38,24 +47,23 @@ region. Honors `prefers-reduced-motion`.
 | `mat`  | matrix rows separated by `:`, entries by `,` (e.g. `1,0:1,1:0,1`) |
 | `x`    | initial input vector (e.g. `-1,2`)                             |
 | `range`| axis range of both views (default `5`)                         |
-| `show` | `true` shows the solution set of `T(x)=b` in the input pane (violet) |
+| `show` | `true` shows the solution set of `T(x)=b` in the input pane (deep wine) |
 | `lock` | `true` constrains dragging of `x` to the solution set          |
-| `theme`| `dark` (default) or `light`                                    |
 
-The range of `T` is always drawn in the output pane (teal): a line, a plane
+The range of `T` is always drawn in the output pane (olive green): a line, a plane
 patch, or a full-pane tint when the map is onto. Null space, column space,
 rank, and the particular solution are computed in-page by row reduction, so
 any small matrix works unmodified, e.g.
 
-    axb.html?mat=1,2,-1:2,4,-2&x=1,1,1&show=true&theme=light
+    axb.html?mat=1,2,-1:2,4,-2&x=1,1,1&show=true
 
 ## columns.html
 
 `columns.html` is a companion single-pane figure for column space and rank:
 it draws every column of an `m x n` matrix (`m ≤ 3`, any `n`) as a vector in
 `R^m`, computes the pivot columns in-page by row reduction, highlights them
-(yellow) against the non-pivot columns (grey), and shades their span — the
-column space — in teal (a line, a plane patch, or a full-pane tint when
+(olive green) against the non-pivot columns (grey), and shades their span — the
+column space — in olive green (a line, a plane patch, or a full-pane tint when
 `Col A` is all of `R^m`). Same manim styling and behaviors as `axb.html`:
 eased build-in (columns appear one at a time, then the span), replayable via
 the animate button, ambient rotation and drag-to-rotate for 3D, and
@@ -65,9 +73,8 @@ the animate button, ambient rotation and drag-to-rotate for 3D, and
 |--------|----------------------------------------------------------------|
 | `mat`  | matrix rows separated by `:`, entries by `,`                   |
 | `range`| axis range (default: auto from the largest entry)              |
-| `theme`| `dark` (default) or `light`                                    |
 
-    columns.html?mat=1,2,1,3,2:1,3,6,0,2:3,7,8,6,6&range=9&theme=dark
+    columns.html?mat=1,2,1,3,2:1,3,6,0,2:3,7,8,6,6&range=9
 
 ## volume.html
 
@@ -75,11 +82,11 @@ the animate button, ambient rotation and drag-to-rotate for 3D, and
 spanned by three draggable vectors in `R^3`, with the base parallelogram
 shaded, the normal `n = u x v` drawn, the dashed height drop from the tip of
 `w`, and a live readout of base area, height, determinant, and volume.
-Params: `u`, `v`, `w` (comma-separated vectors), `range` (default 5),
-`theme`. Same manim styling and behaviors (build-in, replay, drag-rotate,
-reduced motion) as the other demos.
+Params: `u`, `v`, `w` (comma-separated vectors), `range` (default 5).
+It shares the book styling and behaviors (build-in, replay, drag-rotate,
+reduced motion) of the other demos.
 
-    volume.html?u=2,0,0&v=1,2,0&w=0.5,0.5,1.5&theme=dark
+    volume.html?u=2,0,0&v=1,2,0&w=0.5,0.5,1.5
 
 ## jacobian.html
 
@@ -88,6 +95,16 @@ factor: a slider (and looping animate button) morphs the identity into `A`
 through `A_t = (1-t)I + tA`, carrying the dashed unit cube to the
 parallelepiped with edges `A_t e_1, A_t e_2, A_t e_3`, while a readout
 tracks `det A_t` = volume of the image box. Params: `mat` (3 rows), `range`
-(default: auto), `theme`.
+(default: auto).
 
-    jacobian.html?mat=2,1,0:0,3,0:0,0,1&theme=dark
+    jacobian.html?mat=2,1,0:0,3,0:0,0,1
+
+## springs.html
+
+`springs.html` shows two carts joined by three springs, with buttons for general
+motion, each normal mode, and their sum. The carts and their displacement traces
+use olive green and deep wine; the middle spring uses mustard when active and
+grey when its length stays fixed. Play/Pause and the reduced-motion preference
+retain their existing behavior.
+
+Static previews in `generated-assets/preview/` use the same typography and colors.

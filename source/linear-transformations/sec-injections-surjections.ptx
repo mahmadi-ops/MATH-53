@@ -15,8 +15,8 @@
       transformation; drag inside a three-dimensional pane to rotate it. The
       <m>\vec{x}</m> handle can also be moved with the keyboard (press
       <c>Tab</c> to reach it, then the arrow keys), and the
-      <q>animate</q> button plays a short demonstration. The violet objects always
-      show the solution set of <m>T(\vec{x}) = \vec{b}</m>, and the teal objects show
+      <q>animate</q> button plays a short demonstration. The deep wine objects always
+      show the solution set of <m>T(\vec{x}) = \vec{b}</m>, and the olive green objects show
       the range of <m>T</m>.
     </p>
   </introduction>
@@ -243,18 +243,18 @@
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{smallmatrix}\right]</m>.
             Click and drag the head of the input vector <m>\vec{x}</m> on the left: different inputs always
             produce different outputs <m>\vec{b} = T(\vec{x})</m> on the right, so
-            <m>T</m> is one-to-one. The violet dot on the left is the solution set of
-            <m>T(\vec{x}) = \vec{b}</m>: it is a single point. The teal plane on the
+            <m>T</m> is one-to-one. The deep wine dot on the left is the solution set of
+            <m>T(\vec{x}) = \vec{b}</m>: it is a single point. The olive green plane on the
             right is the range of <m>T</m>.
           </caption>
-          <interactive xml:id="int-injective-geometric" iframe="demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=-1,2&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-injective-geometric" iframe="demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=-1,2&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
         <figure xml:id="fig-injective-geometric-light">
           <caption>
-            The same transformation on a white background: drag either vector, or use
-            the arrow keys after focusing the head of <m>\vec{x}</m>.
+            Explore the same transformation with the keyboard: focus the head of
+            <m>\vec{x}</m> and use the arrow keys, or drag either vector.
           </caption>
-          <interactive xml:id="int-injective-geometric-light" iframe="demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=-1,2&amp;show=true&amp;theme=light" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-injective-geometric-light" iframe="demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=-1,2&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -293,12 +293,12 @@
           <caption>
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{smallmatrix}\right]</m>.
-            The violet line on the left is the solution set of <m>T(\vec{x}) = \vec{0}</m>,
+            The deep wine line on the left is the solution set of <m>T(\vec{x}) = \vec{0}</m>,
             namely all multiples of <m>(-1,-1,1)</m>. Click and drag the head of <m>\vec{x}</m> along this
             line: the output <m>T(\vec{x})</m> stays at <m>\vec{0}</m>, so <m>T</m>
             sends infinitely many inputs to the same output.
           </caption>
-          <interactive xml:id="int-not-injective-geometric" iframe="demos-manim/axb.html?mat=1,0,1:0,1,1&amp;x=0,0,0&amp;show=true&amp;lock=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-not-injective-geometric" iframe="demos-manim/axb.html?mat=1,0,1:0,1,1&amp;x=0,0,0&amp;show=true&amp;lock=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -467,7 +467,7 @@
             always finds an input <m>\vec{x}</m> with <m>T(\vec{x}) = \vec{b}</m>,
             because every vector in <m>\R^2</m> is an output of <m>T</m>.
           </caption>
-          <interactive xml:id="int-surjective-geometric" iframe="demos-manim/axb.html?mat=1,0,1:0,1,1&amp;x=1,1,.5&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-surjective-geometric" iframe="demos-manim/axb.html?mat=1,0,1:0,1,1&amp;x=1,1,.5" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -504,12 +504,12 @@
           <caption>
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{smallmatrix}\right]</m>.
-            The range of <m>T</m> is the teal plane on the right, which is smaller
-            than the codomain <m>\R^3</m>. Click and drag the head of <m>\vec{b}</m> off the teal plane:
+            The range of <m>T</m> is the olive green plane on the right, which is smaller
+            than the codomain <m>\R^3</m>. Click and drag the head of <m>\vec{b}</m> off the olive green plane:
             the equation <m>T(\vec{x}) = \vec{b}</m> becomes inconsistent, so such a
             <m>\vec{b}</m> is not an output of <m>T</m>.
           </caption>
-          <interactive xml:id="int-not-surjective-geometric" iframe="demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=1,1&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-not-surjective-geometric" iframe="demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=1,1" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -590,14 +590,14 @@
           <caption>
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 1 \amp 2 \amp -1 \\ 2 \amp 4 \amp -2 \end{smallmatrix}\right]</m>.
-            The violet plane on the left is the solution set of
+            The deep wine plane on the left is the solution set of
             <m>T(\vec{x}) = \vec{b}</m> for the current <m>\vec{b}</m>; since it
-            contains more than one point, <m>T</m> is not one-to-one. The teal line
+            contains more than one point, <m>T</m> is not one-to-one. The olive green line
             on the right is the range of <m>T</m>; since it is smaller than
             <m>\R^2</m>, <m>T</m> is not onto. Click and drag the head of <m>\vec{b}</m> off the line to
             make the equation inconsistent.
           </caption>
-          <interactive xml:id="int-neither-geometric" iframe="demos-manim/axb.html?mat=1,2,-1:2,4,-2&amp;x=1,1,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-neither-geometric" iframe="demos-manim/axb.html?mat=1,2,-1:2,4,-2&amp;x=1,1,1&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -664,14 +664,14 @@
           <caption>
             Projection into the <m>xy</m>-plane, <m>P(\vec{x}) = A\vec{x}</m> with
             <m>A = \left[\begin{smallmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \end{smallmatrix}\right]</m>.
-            The violet vertical line on the left is the solution set of
+            The deep wine vertical line on the left is the solution set of
             <m>P(\vec{x}) = \vec{b}</m>: an entire line of inputs shares one image, so
-            <m>P</m> is not one-to-one. The teal horizontal plane on the right is the
+            <m>P</m> is not one-to-one. The olive green horizontal plane on the right is the
             range of <m>P</m>, which is smaller than <m>\R^3</m>. Click and drag the head
             of <m>\vec{b}</m> off that plane and the equation becomes inconsistent, so
             <m>P</m> is not onto either.
           </caption>
-          <interactive xml:id="int-projection-xy-geometric" iframe="demos-manim/axb.html?mat=1,0,0:0,1,0:0,0,0&amp;x=1,1,2&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-projection-xy-geometric" iframe="demos-manim/axb.html?mat=1,0,0:0,1,0:0,0,0&amp;x=1,1,2&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -712,10 +712,10 @@
             The transformation <m>T(\vec{x}) = A\vec{x}</m> for
             <m>A = \left[\begin{smallmatrix} 2 \amp 1 \\ 1 \amp 1 \end{smallmatrix}\right]</m>.
             Click and drag the head of either vector: every output <m>\vec{b}</m> comes from exactly one
-            input <m>\vec{x}</m>, so <m>T</m> is one-to-one and onto. The teal
+            input <m>\vec{x}</m>, so <m>T</m> is one-to-one and onto. The olive green
             region on the right is the range of <m>T</m>, which is all of <m>\R^2</m>.
           </caption>
-          <interactive xml:id="int-both-geometric" iframe="demos-manim/axb.html?mat=2,1:1,1&amp;x=1,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-both-geometric" iframe="demos-manim/axb.html?mat=2,1:1,1&amp;x=1,1&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -771,12 +771,12 @@
           <caption>
             The quarter turn <m>R_{\pi/2}</m>, with matrix
             <m>\left[\begin{smallmatrix} 0 \amp -1 \\ 1 \amp 0 \end{smallmatrix}\right]</m>.
-            Click and drag the head of either vector: the violet solution set on the left
+            Click and drag the head of either vector: the deep wine solution set on the left
             is always a single point, so each output comes from exactly one input, and the
-            teal region on the right fills all of <m>\R^2</m>, so every output is
+            olive green region on the right fills all of <m>\R^2</m>, so every output is
             achieved. Rotation loses nothing and misses nothing.
           </caption>
-          <interactive xml:id="int-rotation-geometric" iframe="demos-manim/axb.html?mat=0,-1:1,0&amp;x=2,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-rotation-geometric" iframe="demos-manim/axb.html?mat=0,-1:1,0&amp;x=2,1&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>

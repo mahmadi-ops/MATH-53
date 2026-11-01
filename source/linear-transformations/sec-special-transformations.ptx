@@ -305,11 +305,11 @@
       <caption>
         Projection into the <m>x</m>-axis,
         <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 0 \amp 0 \end{smallmatrix}\right]</m>.
-        The violet vertical line on the left is the set of all inputs with the same image
-        as <m>\vec{x}</m>; the teal line on the right is the range, just the
+        The deep wine vertical line on the left is the set of all inputs with the same image
+        as <m>\vec{x}</m>; the olive green line on the right is the range, just the
         <m>b_1</m>-axis. Click and drag either vector.
       </caption>
-      <interactive xml:id="int-projection-x-interactive" iframe="demos-manim/axb.html?mat=1,0:0,0&amp;x=2,1.5&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+      <interactive xml:id="int-projection-x-interactive" iframe="demos-manim/axb.html?mat=1,0:0,0&amp;x=2,1.5&amp;show=true" width="100%" aspect="5:4"/>
     </figure>
 
     <example xml:id="eg-vertical-shear">
@@ -355,10 +355,10 @@
         A vertical shear with <m>k = 1</m>, so
         <m>A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \end{smallmatrix}\right]</m>.
         Drag <m>\vec{x}</m>: vertical vectors are fixed, everything else slides
-        vertically. The solution set (violet) is always a single point and the range
-        (teal) is all of <m>\R^2</m>, so a shear is one-to-one and onto.
+        vertically. The solution set (deep wine) is always a single point and the range
+        (olive green) is all of <m>\R^2</m>, so a shear is one-to-one and onto.
       </caption>
-      <interactive xml:id="int-shear-interactive" iframe="demos-manim/axb.html?mat=1,0:1,1&amp;x=2,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+      <interactive xml:id="int-shear-interactive" iframe="demos-manim/axb.html?mat=1,0:1,1&amp;x=2,1&amp;show=true" width="100%" aspect="5:4"/>
     </figure>
   </subsection>
 </section>

@@ -592,9 +592,9 @@
 
     <figure xml:id="fig-parallelepiped-volume">
       <caption>
-        The theorem, live. The parallelepiped spanned by <m>\vec{u}</m> (yellow),
-        <m>\vec{v}</m> (teal) and <m>\vec{w}</m> (red), with the base parallelogram
-        shaded, the normal <m>\vec{n} = \vec{u} \times \vec{v}</m> in violet, and the
+        The theorem, live. The parallelepiped spanned by <m>\vec{u}</m> (olive green),
+        <m>\vec{v}</m> (deep wine) and <m>\vec{w}</m> (mustard), with the base parallelogram
+        shaded, the normal <m>\vec{n} = \vec{u} \times \vec{v}</m> in grey, and the
         dashed height drop from the tip of <m>\vec{w}</m> to the base plane. The
         readout shows base area <m>\| \vec{u} \times \vec{v} \|</m>, height <m>h</m>,
         the determinant, and the volume. Drag the heads of the three vectors and watch
@@ -602,7 +602,7 @@
         plane and the volume dies to zero exactly as the determinant does. Drag the
         background to rotate.
       </caption>
-      <interactive xml:id="int-parallelepiped-volume" iframe="demos-manim/volume.html?u=2,0,0&amp;v=1,2,0&amp;w=0.5,0.5,1.5&amp;theme=dark" width="66%" aspect="4:5"/>
+      <interactive xml:id="int-parallelepiped-volume" iframe="demos-manim/volume.html?u=2,0,0&amp;v=1,2,0&amp;w=0.5,0.5,1.5" width="66%" aspect="4:5"/>
     </figure>
 
     <remark xml:id="rem-why-det">
@@ -720,13 +720,13 @@
         Watch <m>|\det A|</m> act as a volume factor for
         <m>A = \left[\begin{smallmatrix} 2 \amp 1 \amp 0 \\ 0 \amp 3 \amp 0 \\ 0 \amp 0 \amp 1 \end{smallmatrix}\right]</m>.
         The slider morphs the identity into <m>A</m> through
-        <m>A_t = (1-t)I + tA</m>: the dashed unit cube is carried to the teal
+        <m>A_t = (1-t)I + tA</m>: the dashed unit cube is carried to the olive green
         parallelepiped with edges <m>A_t\vec{e}_1</m>, <m>A_t\vec{e}_2</m>,
         <m>A_t\vec{e}_3</m>, while the readout tracks <m>\det A_t</m> <mdash/> the
         volume of the image box <mdash/> growing from <m>1</m> to
         <m>\det A = 6</m>. Drag the picture to rotate.
       </caption>
-      <interactive xml:id="int-jacobian-volume" iframe="demos-manim/jacobian.html?mat=2,1,0:0,3,0:0,0,1&amp;theme=dark" width="66%" aspect="4:5"/>
+      <interactive xml:id="int-jacobian-volume" iframe="demos-manim/jacobian.html?mat=2,1,0:0,3,0:0,0,1" width="66%" aspect="4:5"/>
     </figure>
 
     <remark xml:id="rem-change-of-variables">

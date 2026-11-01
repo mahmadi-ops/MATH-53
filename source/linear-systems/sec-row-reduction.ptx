@@ -172,13 +172,13 @@
         <figure xml:id="fig-unique-interactive">
           <caption>
             The same system as a matrix transformation
-            <m>T(\vec{x}) = A\vec{x}</m>. The violet solution set of
+            <m>T(\vec{x}) = A\vec{x}</m>. The deep wine solution set of
             <m>T(\vec{x}) = \vec{b}</m> in the left pane is a single <em>point</em>:
             exactly one input produces this output. Click and drag the head of
             <m>\vec{b}</m> in the right pane <mdash /> the solution point moves, but it
             stays a single point, because every column of <m>A</m> is a pivot column.
           </caption>
-          <interactive xml:id="int-unique-solution" iframe="demos-manim/axb.html?mat=1,1,2:2,1,3:0,-2,1&amp;x=1.667,-1.333,-0.667&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-unique-solution" iframe="demos-manim/axb.html?mat=1,1,2:2,1,3:0,-2,1&amp;x=1.667,-1.333,-0.667&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -246,13 +246,13 @@
         <figure xml:id="fig-no-solution-interactive">
           <caption>
             Here the first two columns of <m>A</m> are multiples of one another, so the
-            range of <m>T</m> (teal, right pane) is only a <em>plane</em> inside
+            range of <m>T</m> (olive green, right pane) is only a <em>plane</em> inside
             <m>\R^3</m>. Click and drag the head of <m>\vec{b}</m> off that plane: the
             equation is marked inconsistent and the solution set vanishes, which is what
             the row <m>\begin{bmatrix} 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}</m>
             records above.
           </caption>
-          <interactive xml:id="int-no-solution" iframe="demos-manim/axb.html?mat=-3,-9,1:2,6,-1:1,3,-1&amp;x=1,0,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-no-solution" iframe="demos-manim/axb.html?mat=-3,-9,1:2,6,-1:1,3,-1&amp;x=1,0,1&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -365,13 +365,13 @@
 
         <figure xml:id="fig-infinitely-many-interactive">
           <caption>
-            With one free variable, the violet solution set in the left pane is a
+            With one free variable, the deep wine solution set in the left pane is a
             <em>line</em> rather than a point: every input on that line has the same
             image. Click and drag the head of <m>\vec{x}</m> along the line and watch
             <m>\vec{b}</m> stay put; drag <m>\vec{b}</m> instead and the whole solution
             line moves with it.
           </caption>
-          <interactive xml:id="int-infinitely-many" iframe="demos-manim/axb.html?mat=2,1,3:1,2,-1:0,-6,10&amp;x=0.667,-0.333,0&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-infinitely-many" iframe="demos-manim/axb.html?mat=2,1,3:1,2,-1:0,-6,10&amp;x=0.667,-0.333,0&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>

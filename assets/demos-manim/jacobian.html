@@ -4,23 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Jacobian determinant as a volume factor</title>
+<link rel="stylesheet" href="book-theme.css">
+<script src="book-theme.js" defer></script>
 <style>
-  body.dark {
-    --bg: #0c0f13; --pane: #101419; --line: #232b38; --grid: #22344a;
-    --axis: #c7d0df; --ink: #e8eaf0; --muted: #8b93a7; --tick: #5b6579;
-    --cube: #202a38; --u: #ffe45c; --v: #58c4dd; --w: #fc6255;
-    --img: #58c4dd; --orig: #8b93a7; --btnbord: #2a3341; --btnhov: #161c25;
-    --brk: #aeb8c9;
-  }
-  body.light {
-    --bg: #ffffff; --pane: #ffffff; --line: #d7dde6; --grid: #e4e9f0;
-    --axis: #1a1a1a; --ink: #111111; --muted: #5a6270; --tick: #8a94a6;
-    --cube: #d9dfe8; --u: #b8860b; --v: #1f8fb4; --w: #d55e00;
-    --img: #1f8fb4; --orig: #5a6270; --btnbord: #c9d1dc; --btnhov: #f0f3f7;
-    --brk: #444c5a;
-  }
   html, body { margin: 0; background: var(--bg); color: var(--ink);
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: var(--font-body, Palatino, Georgia, serif); }
   #wrap { max-width: 620px; margin: 0 auto; padding: 8px 8px 12px; }
 
   #titlebar { display: flex; align-items: baseline; justify-content: space-between;
@@ -29,7 +17,7 @@
   #controls { display: flex; gap: 8px; }
   #controls button {
     background: transparent; color: var(--ink); border: 1px solid var(--btnbord);
-    border-radius: 6px; padding: 3px 12px; font: 13px Georgia, serif;
+    border-radius: 6px; padding: 3px 12px; font: 13px var(--font-body, Palatino, Georgia, serif);
     cursor: pointer; transition: border-color .15s, background .15s;
   }
   #controls button:hover { background: var(--btnhov); }
@@ -107,7 +95,6 @@
     if (!kv) return; var p = kv.split("=");
     Q[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || "");
   });
-  document.body.className = Q.theme === "light" ? "light" : "dark";
   var A = (Q.mat || "2,1,0:0,3,0:0,0,1").split(":").map(function (r) {
     return r.split(",").map(Number); });
   var RANGE = parseFloat(Q.range || "0");
@@ -220,8 +207,7 @@
     var core = el(g, "line", { "stroke-width": 2.6, "stroke-linecap": "round" });
     core.style.stroke = "var(" + colorVar + ")";
     var tip = el(g, "path", {}); tip.style.fill = "var(" + colorVar + ")";
-    var label = el(g, "text", { "font-size": 18, "font-style": "italic",
-      "font-family": "Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif" });
+    var label = el(g, "text", { "font-size": 18, "font-style": "italic" });
     label.style.fill = "var(" + colorVar + ")";
     return { g: g, glow: glow, core: core, tip: tip, label: label };
   }

@@ -251,23 +251,23 @@
 
     <figure xml:id="fig-indep-two-plane">
       <caption>
-        <m>\vec{v}_1 = (2,1,0)</m> and <m>\vec{v}_2 = (0,1,3)</m> as the columns of <m>A</m>. They are linearly independent, and the violet solution set in the left pane is a single <em>point</em>: the only way to write <m>\vec{0}</m> as a combination of them is the trivial one. Click and drag the head of <m>\vec{b}</m> along the teal plane and the solution point follows, always alone.
+        <m>\vec{v}_1 = (2,1,0)</m> and <m>\vec{v}_2 = (0,1,3)</m> as the columns of <m>A</m>. They are linearly independent, and the deep wine solution set in the left pane is a single <em>point</em>: the only way to write <m>\vec{0}</m> as a combination of them is the trivial one. Click and drag the head of <m>\vec{b}</m> along the olive green plane and the solution point follows, always alone.
       </caption>
-      <interactive xml:id="int-indep-two-plane" iframe="demos-manim/axb.html?mat=2,0:1,1:0,3&amp;x=2,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+      <interactive xml:id="int-indep-two-plane" iframe="demos-manim/axb.html?mat=2,0:1,1:0,3&amp;x=2,1&amp;show=true" width="100%" aspect="5:4"/>
     </figure>
 
     <figure xml:id="fig-dep-two-line">
       <caption>
-        Now <m>\vec{v}_2 = (-2,2,-4) = -2\vec{v}_1</m>. The set is linearly dependent, and two things collapse at once: the teal range drops from a plane to a <em>line</em>, and the violet solution set grows from a point to a <em>line</em>. Click and drag the head of <m>\vec{x}</m> along that violet line <mdash /> the output never moves, which is precisely a nontrivial dependence relation.
+        Now <m>\vec{v}_2 = (-2,2,-4) = -2\vec{v}_1</m>. The set is linearly dependent, and two things collapse at once: the olive green range drops from a plane to a <em>line</em>, and the deep wine solution set grows from a point to a <em>line</em>. Click and drag the head of <m>\vec{x}</m> along that deep wine line <mdash /> the output never moves, which is precisely a nontrivial dependence relation.
       </caption>
-      <interactive xml:id="int-dep-two-line" iframe="demos-manim/axb.html?mat=1,-2:-1,2:2,-4&amp;x=3,0&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+      <interactive xml:id="int-dep-two-line" iframe="demos-manim/axb.html?mat=1,-2:-1,2:2,-4&amp;x=3,0&amp;show=true" width="100%" aspect="5:4"/>
     </figure>
 
     <figure xml:id="fig-dep-three-plane">
       <caption>
-        Three vectors <m>\vec{v}_1 = (1,0,1)</m>, <m>\vec{v}_2 = (0,1,1)</m>, <m>\vec{v}_3 = (1,1,2)</m> with <m>\vec{v}_3 = \vec{v}_1 + \vec{v}_2</m>. The teal range is a plane rather than <m>\R^3</m>, and the violet solution set is a line: dragging the head of <m>\vec{x}</m> along it leaves <m>\vec{b}</m> fixed, exhibiting the relation <m>\vec{v}_1 + \vec{v}_2 - \vec{v}_3 = \vec{0}</m>.
+        Three vectors <m>\vec{v}_1 = (1,0,1)</m>, <m>\vec{v}_2 = (0,1,1)</m>, <m>\vec{v}_3 = (1,1,2)</m> with <m>\vec{v}_3 = \vec{v}_1 + \vec{v}_2</m>. The olive green range is a plane rather than <m>\R^3</m>, and the deep wine solution set is a line: dragging the head of <m>\vec{x}</m> along it leaves <m>\vec{b}</m> fixed, exhibiting the relation <m>\vec{v}_1 + \vec{v}_2 - \vec{v}_3 = \vec{0}</m>.
       </caption>
-      <interactive xml:id="int-dep-three-plane" iframe="demos-manim/axb.html?mat=1,0,1:0,1,1:1,1,2&amp;x=1,1,0&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+      <interactive xml:id="int-dep-three-plane" iframe="demos-manim/axb.html?mat=1,0,1:0,1,1:1,1,2&amp;x=1,1,0&amp;show=true" width="100%" aspect="5:4"/>
     </figure>
 
     <remark xml:id="rem-collapse">

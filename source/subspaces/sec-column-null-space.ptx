@@ -113,15 +113,15 @@
           <caption>
             All five columns of <m>A</m> drawn as vectors in <m>\R^3</m>, labelled
             <m>a_1, \ldots, a_5</m>. The pivot columns <m>\vec{A}_1 = (1,1,3)</m> and
-            <m>\vec{A}_2 = (2,3,7)</m> are highlighted in yellow; the other three
-            columns are grey, and every one of them lies in the teal plane
+            <m>\vec{A}_2 = (2,3,7)</m> are highlighted in olive green; the other three
+            columns are grey, and every one of them lies in the olive green plane
             <m>\operatorname{Span}\{\vec{A}_1, \vec{A}_2\} = \operatorname{Col} A</m>.
             Five columns, but only two independent directions:
             <m>\operatorname{rank} A = 2</m>. Press <em>animate</em> to watch the
             columns appear one at a time, and drag to rotate <mdash /> viewed edge-on,
             the plane is razor thin.
           </caption>
-          <interactive xml:id="int-columns" iframe="demos-manim/columns.html?mat=1,2,1,3,2:1,3,6,0,2:3,7,8,6,6&amp;range=9&amp;theme=dark" width="66%" aspect="5:6"/>
+          <interactive xml:id="int-columns" iframe="demos-manim/columns.html?mat=1,2,1,3,2:1,3,6,0,2:3,7,8,6,6&amp;range=9" width="66%" aspect="5:6"/>
         </figure>
       </solution>
     </example>
@@ -211,15 +211,15 @@
           <caption>
             Both subspaces of this matrix at once, for <m>T(\vec{x}) = A\vec{x}</m> with
             <m>A = \left[\begin{smallmatrix} 1 \amp 2 \amp 1 \\ 0 \amp -1 \amp 1 \\ 2 \amp 3 \amp 3 \end{smallmatrix}\right]</m>.
-            The violet line on the left is
+            The deep wine line on the left is
             <m>\operatorname{Nul} A = \operatorname{Span}\{(-3,1,1)\}</m>: drag
-            <m>\vec{x}</m> along it and the output never leaves <m>\vec{0}</m>. The teal
+            <m>\vec{x}</m> along it and the output never leaves <m>\vec{0}</m>. The olive green
             plane on the right is <m>\operatorname{Col} A</m>: drag <m>\vec{b}</m> and
             only outputs on that plane are reachable. A line plus a plane makes
             <m>1 + 2 = 3</m> dimensions <mdash /> the rank<ndash />nullity relation of
             the next subsection. (Drag inside a pane to rotate it.)
           </caption>
-          <interactive xml:id="int-null-column" iframe="demos-manim/axb.html?mat=1,2,1:0,-1,1:2,3,3&amp;x=0,0,0&amp;show=true&amp;lock=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-null-column" iframe="demos-manim/axb.html?mat=1,2,1:0,-1,1:2,3,3&amp;x=0,0,0&amp;show=true&amp;lock=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
@@ -269,15 +269,15 @@
         <figure xml:id="fig-rank-nullity-interactive">
           <caption>
             The rank<ndash />nullity relation seen for <m>T(\vec{x}) = A\vec{x}</m>. In
-            the input pane, the violet line is <m>\operatorname{Nul} A</m>
-            (dimension <m>1</m>): the yellow <m>\vec{x}</m> starts at the null-space
+            the input pane, the deep wine line is <m>\operatorname{Nul} A</m>
+            (dimension <m>1</m>): the olive green <m>\vec{x}</m> starts at the null-space
             vector <m>(-3,1,1)</m>, and the entire line is sent to <m>\vec{0}</m>. In
-            the output pane, the teal plane is <m>\operatorname{Col} A</m> (dimension
+            the output pane, the olive green plane is <m>\operatorname{Col} A</m> (dimension
             <m>2</m>). Of the three input dimensions, one is crushed to zero and two
             survive as the column space: <m>1 + 2 = 3 = n</m>. Drag <m>\vec{x}</m> or
             <m>\vec{b}</m>, or drag inside a pane to rotate it.
           </caption>
-          <interactive xml:id="int-rank-nullity" iframe="demos-manim/axb.html?mat=1,2,1:0,-1,1:2,3,3&amp;x=-3,1,1&amp;show=true&amp;theme=dark" width="100%" aspect="5:4"/>
+          <interactive xml:id="int-rank-nullity" iframe="demos-manim/axb.html?mat=1,2,1:0,-1,1:2,3,3&amp;x=-3,1,1&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>
