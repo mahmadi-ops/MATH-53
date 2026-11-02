@@ -17,20 +17,26 @@ function rank(rows) {
   }
   return row;
 }
-const system=[[1,-2,-7],[-1,3,6]];
+const original=[[1,-2,-7],[-1,3,6]],system=[[1,-2,-7],[1,-9,0]];
 for(const s of [-20,-1,-.75,0,.25,1,15]) {
   const p=G.solutionPoint(s);
-  equal(multiply(system,p),[-1,0]);equal(G.systemValues(p),[-1,0]);
+  equal(multiply(original,p),[-1,0]);
+  equal(multiply(system,p),[-1,6]);equal(G.systemValues(p),[-1,6]);
   near(p[2],s);near(G.thirdValue("infinite",p),-1);near(G.thirdValue("empty",p),-1);
 }
 equal(G.solutionPoint(0),[-3,-1,0]);equal(G.solutionPoint(1),[6,0,1]);
 for(const [mode,row,target,expectedRank,augRank] of [
   ["unique",[0,0,1],0,3,3],["infinite",[0,1,-1],-1,2,2],["empty",[0,1,-1],0,2,3]
 ]) {
-  const A=[...system,row];const b=[-1,0,target];
+  const A=[...system,row];const b=[-1,6,target];
   assert.equal(rank(A),expectedRank);assert.equal(rank(A.map((r,i)=>[...r,b[i]])),augRank);
   assert.equal(G.thirdTarget(mode),target);
 }
+// The replacement is -6 times the first old row minus 7 times the second.
+equal(original[0].map((x,i)=>-6*x-7*original[1][i]),system[1]);
+near(-6*(-1)-7*0,6);
+const cosine=Math.abs(G.dot(system[0],system[1]))/(Math.hypot(...system[0])*Math.hypot(...system[1]));
+assert.ok(cosine<.3,'The displayed planes should meet at a wide angle.');
 const A=[[1,2,0],[2,1,0]];
 [[1,0,0],[0,1,0],[0,0,1],[1,-1,2],[-2,1,-.5],[2,2,2]].forEach(x=>equal(G.transform(x),multiply(A,x)));
 equal(G.transform([1,-1,2]),[-1,1]);
@@ -48,4 +54,16 @@ for(const [normal,value] of [[[1,-2,-7],-1],[[-1,3,6],0],[[0,0,1],0],[[0,1,-1],-
   const polygon=G.planeBox(normal,value,bounds);assert.ok(polygon.length>=3);
   polygon.forEach(p=>{near(multiply([normal],p)[0],value);p.forEach((x,i)=>assert.ok(x>=bounds[i][0]-1e-9&&x<=bounds[i][1]+1e-9));});
 }
-console.log("PASS: solution sets and augmented ranks; basis images and lost z; 101 independent bases and fixed-vector sums; true plane/box intersections.");
+const points=[];
+for(const [normal,value] of [[[1,-2,-7],-1],[[1,-9,0],6],[[0,0,1],0],[[0,1,-1],-1],[[0,1,-1],0]]) {
+  const patch=G.planePatch(normal,value,[-3,-1,0],[9,1,1],11,4.2);
+  patch.forEach(p=>near(multiply([normal],p)[0],value));
+  const a=patch[1].map((x,k)=>x-patch[0][k]),b=patch[2].map((x,k)=>x-patch[1][k]);
+  near(G.dot(a,b),0);near(Math.hypot(...a),22);near(Math.hypot(...b),8.4);
+  points.push(...patch);
+}
+for(let yaw=-180;yaw<=180;yaw+=30)for(const pitch of [10,30,75]) {
+  const project=G.fittedProjector({yaw,pitch},points,[560,420]);
+  points.forEach(p=>{const q=project(p);assert.ok(q[0]>=44-1e-8&&q[0]<=516+1e-8&&q[1]>=44-1e-8&&q[1]<=376+1e-8);});
+}
+console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums.");

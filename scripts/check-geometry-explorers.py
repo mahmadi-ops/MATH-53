@@ -79,6 +79,7 @@ def snapshot(page, name):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write-previews',action='store_true')
+    parser.add_argument('--preview',choices=list(DEMOS),help='Limit preview export to this demo; all checks still run')
     args=parser.parse_args()
     subprocess.run(['node',str(ROOT/'scripts/check-geometry-math.cjs')],check=True)
     server=ThreadingHTTPServer(('127.0.0.1',0),partial(QuietHandler,directory=str(ROOT)))
@@ -92,12 +93,12 @@ def main():
             for name in DEMOS:
                 page.goto(f'{base}/assets/demos-manim/{name}.html',wait_until='networkidle')
                 page.wait_for_selector('html.js-ready')
-                if args.write_previews:snapshot(page,name)
+                if args.write_previews and (args.preview is None or args.preview==name):snapshot(page,name)
             page.goto(f'{base}/assets/demos-manim/solution-set.html')
             slider(page,'#parameter',1)
             assert page.locator('#point-coordinates').text_content()=='(6, 0, 1)'
             assert '= −1 ✓' in page.locator('#check-first').inner_text()
-            assert '= 0 ✓' in page.locator('#check-second').inner_text()
+            assert '= 6 ✓' in page.locator('#check-second').inner_text()
             page.select_option('#third-plane','unique')
             assert 'does not satisfy' in page.locator('#check-third').inner_text()
             assert page.locator('[data-common-solution="point"]').count()==1
@@ -107,8 +108,27 @@ def main():
                 page.select_option('#third-plane',value)
                 assert ('satisfies' if value=='infinite' else 'does not satisfy') in page.locator('#check-third').inner_text()
             assert '∅' in page.locator('#common-set').inner_text()
+            # Inspect actual rendered geometry and labels at extreme camera
+            # angles and both slider endpoints, for every third-plane preset.
+            page.evaluate('''() => {
+                const set=(id,value)=>{const e=document.getElementById(id);e.value=value;e.dispatchEvent(new Event(id==='third-plane'?'change':'input',{bubbles:true}));};
+                const svg=document.getElementById('solution-scene'),v=svg.viewBox.baseVal;
+                for(const yaw of [-180,-90,0,55,90,180])for(const pitch of [10,25,75]) {
+                    set('yaw',yaw);set('pitch',pitch);
+                    for(const mode of ['none','unique','infinite','empty'])for(const s of [-1,1]) {
+                        set('third-plane',mode);set('parameter',s);
+                        for(const e of svg.querySelectorAll('[data-drawing] > *')) {
+                            const b=e.getBBox();
+                            if(b.x<4||b.y<4||b.x+b.width>v.width-4||b.y+b.height>v.height-4)
+                                throw new Error(`Clipped ${e.tagName}: yaw=${yaw}, pitch=${pitch}, mode=${mode}, s=${s}`);
+                        }
+                    }
+                }
+            }''')
+            page.locator('#reset').click()
+            print('PASS: all plane corners and labels stay inside the frame through 144 camera/preset/endpoint cases',flush=True)
             page.locator('#solution-scene').focus();page.keyboard.press('ArrowRight')
-            assert page.locator('#yaw').input_value()=='-30'
+            assert page.locator('#yaw').input_value()=='60'
             page.locator('#reset').click();page.locator('#parameter').focus();page.keyboard.press('ArrowRight')
             assert page.locator('#parameter').input_value()=='0.01'
             page.locator('#play').click();page.wait_for_timeout(150);page.locator('#play').click()

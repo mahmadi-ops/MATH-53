@@ -9,7 +9,7 @@
   const fmt = x => (Math.abs(x) < .0005 ? "0" : Number(x.toFixed(3)).toString()).replace(/-/g, "−");
   const tuple = p => "(" + p.map(fmt).join(", ") + ")";
   const solutionPoint = s => [-3 + 9*s, -1 + s, s];
-  const systemValues = p => [dot([1,-2,-7], p), dot([-1,3,6], p)];
+  const systemValues = p => [dot([1,-2,-7], p), dot([1,-9,0], p)];
   const thirdValue = (mode, p) => mode === "unique" ? p[2] : p[1] - p[2];
   const thirdTarget = mode => mode === "infinite" ? -1 : 0;
   const transform = p => [p[0] + 2*p[1], 2*p[0] + p[1]];
@@ -39,6 +39,17 @@
     const v=cross(n,u);
     return points.sort((p,q)=>Math.atan2(dot(p.map((x,k)=>x-center[k]),v),dot(p.map((x,k)=>x-center[k]),u))-
       Math.atan2(dot(q.map((x,k)=>x-center[k]),v),dot(q.map((x,k)=>x-center[k]),u)));
+  }
+
+  // A rectangular patch on the actual plane, centered near the solution line.
+  function planePatch(normal, constant, center, direction, halfLength, halfWidth) {
+    const n2=dot(normal,normal);
+    const c=add(center,scale(normal,(constant-dot(normal,center))/n2));
+    let u=add(direction,scale(normal,-dot(normal,direction)/n2));
+    if(Math.hypot(...u)<1e-9) u=cross(normal,Math.abs(normal[0])<.9?[1,0,0]:[0,1,0]);
+    u=scale(u,1/Math.hypot(...u));
+    let v=cross(normal,u);v=scale(v,1/Math.hypot(...v));
+    return [[-1,-1],[1,-1],[1,1],[-1,1]].map(([a,b])=>add(c,add(scale(u,a*halfLength),scale(v,b*halfWidth))));
   }
 
   function node(tag, attrs={}, text="") {
@@ -88,6 +99,16 @@
       return [origin[0]+x*unit,origin[1]-(-y*Math.sin(b)+q[2]*Math.cos(b))*unit,y*Math.cos(b)+q[2]*Math.sin(b)];
     };
   }
+  // Fit all potential plane patches and axis ends, so adding a preset does not
+  // change the scale and camera rotation cannot crop a corner of a plane.
+  function fittedProjector(camera, points, size, padding=[44,44]) {
+    const projected=points.map(projector(camera,[0,0,0],1,[0,0]));
+    const min=[0,1].map(k=>Math.min(...projected.map(p=>p[k])));
+    const max=[0,1].map(k=>Math.max(...projected.map(p=>p[k])));
+    const unit=Math.min(...[0,1].map(k=>(size[k]-2*padding[k])/Math.max(1e-9,max[k]-min[k])));
+    const origin=[0,1].map(k=>size[k]/2-unit*(min[k]+max[k])/2);
+    return projector(camera,[0,0,0],unit,origin);
+  }
   function cameraControls(svg, camera, render, prefix="") {
     const yaw=document.getElementById(prefix+"yaw"),pitch=document.getElementById(prefix+"pitch");
     function update() {
@@ -135,7 +156,7 @@
     document.addEventListener("visibilitychange",()=>{if(document.hidden)stop();});
     stop();return {stop,set,reset(){stop();set(0);}};
   }
-  const api={colors,add,scale,dot,cross,fmt,tuple,solutionPoint,systemValues,thirdValue,thirdTarget,transform,basisAt,basisCoordinates,planeBox,node,Scene,projector,cameraControls,player};
+  const api={colors,add,scale,dot,cross,fmt,tuple,solutionPoint,systemValues,thirdValue,thirdTarget,transform,basisAt,basisCoordinates,planeBox,planePatch,node,Scene,projector,fittedProjector,cameraControls,player};
   if(typeof module!=="undefined" && module.exports) module.exports=api;
   else root.BookGeometry=api;
 }(typeof window!=="undefined" ? window : globalThis));

@@ -15,7 +15,7 @@
   <p class="prediction"><strong>Predict:</strong> As s changes, will the point leave either plane? Which third equation will keep the whole line?</p>
   <div class="legend" aria-label="Plane and solution colors">
     <span class="olive"><span class="swatch"></span>P₁: x₁ − 2x₂ − 7x₃ = −1</span>
-    <span class="mustard"><span class="swatch"></span>P₂: −x₁ + 3x₂ + 6x₃ = 0</span>
+    <span class="mustard"><span class="swatch"></span>P₂: x₁ − 9x₂ = 6</span>
     <span class="wine"><span class="swatch"></span>Common solutions</span>
   </div>
   <div class="live-explorer" hidden>
@@ -24,7 +24,7 @@
       <button id="reset" type="button">Reset</button>
       <label for="third-plane">Third plane
         <select id="third-plane">
-          <option value="none">Off — original two equations</option>
+          <option value="none">Off — two-plane system</option>
           <option value="unique">x₃ = 0 — exactly one solution</option>
           <option value="infinite">x₂ − x₃ = −1 — infinitely many</option>
           <option value="empty">x₂ − x₃ = 0 — no solution</option>
@@ -36,11 +36,11 @@
       <output aria-live="off" id="parameter-value" for="parameter">0</output>
     </label>
     <p id="line-formula" class="equation">p(s) = (−3, −1, 0) + s(9, 1, 1)</p>
-    <svg id="solution-scene" class="scene rotatable" viewBox="0 0 560 400" role="img" tabindex="0" aria-labelledby="scene-title scene-description" aria-describedby="camera-hint">
+    <svg id="solution-scene" class="scene rotatable" viewBox="0 0 560 420" role="img" tabindex="0" aria-labelledby="scene-title scene-description" aria-describedby="camera-hint">
       <title id="scene-title">Planes and their common solution set in ℝ³</title>
       <desc id="scene-description">Two translucent planes intersect in a line. The wine highlight marks solutions of every active equation. Use the parameter slider for the candidate point and the camera controls to rotate.</desc>
     </svg>
-    <p id="window-note" class="hint">The window shows a finite part of the infinite planes and line. Every axis uses the same unit scale.</p>
+    <p id="window-note" class="hint">The rectangles show finite parts of the infinite planes. Every axis uses the same unit scale, and the view fits all plane corners as you rotate.</p>
     <div class="readout">
       <p class="equation">Candidate p(s) = <output aria-live="off" id="point-coordinates" for="parameter">(−3, −1, 0)</output></p>
       <p id="check-first"></p>
@@ -52,18 +52,18 @@
     <details>
       <summary>Camera controls</summary>
       <p id="camera-hint" class="hint">Drag the plot, focus it and use the arrow keys, or use these sliders. Reset restores the starting view.</p>
-      <label class="slider" for="yaw">Rotation<input id="yaw" type="range" min="-180" max="180" step="1" value="-35"><output aria-live="off" id="yaw-value" for="yaw">−35°</output></label>
-      <label class="slider" for="pitch">Elevation<input id="pitch" type="range" min="10" max="75" step="1" value="30"><output aria-live="off" id="pitch-value" for="pitch">30°</output></label>
+      <label class="slider" for="yaw">Rotation<input id="yaw" type="range" min="-180" max="180" step="1" value="55"><output aria-live="off" id="yaw-value" for="yaw">55°</output></label>
+      <label class="slider" for="pitch">Elevation<input id="pitch" type="range" min="10" max="75" step="1" value="25"><output aria-live="off" id="pitch-value" for="pitch">25°</output></label>
     </details>
   </div>
   <figure class="fallback">
     <img src="../images/solution-set-static.svg" alt="Two planes intersect in the line through (−3, −1, 0) in direction (9, 1, 1).">
-    <figcaption>Every p(s) satisfies both original equations. JavaScript enables the moving point, third-plane presets, and camera controls.</figcaption>
+    <figcaption>Every p(s) satisfies x₁ − 2x₂ − 7x₃ = −1 and x₁ − 9x₂ = 6. This pair has the same solution line as the book's original system. JavaScript enables the controls.</figcaption>
   </figure>
   <details>
     <summary>Read the guided explanation</summary>
     <ol>
-      <li>For every real s, p(s) = (−3 + 9s, −1 + s, s) lies on both planes. The displayed slider covers −1 ≤ s ≤ 1.</li>
+      <li>For every real s, p(s) = (−3 + 9s, −1 + s, s) lies on both displayed planes. The second equation x₁ − 9x₂ = 6 replaces the original second equation to separate the planes visually; the solution line is unchanged. The slider covers −1 ≤ s ≤ 1.</li>
       <li>Adding x₃ = 0 forces s = 0. Only (−3, −1, 0) is a common solution; the rest of the original line becomes a dashed reference.</li>
       <li>Adding x₂ − x₃ = −1 keeps every p(s), because (−1 + s) − s = −1. The common solution set is the entire line.</li>
       <li>Adding x₂ − x₃ = 0 keeps no p(s): the left side is always −1. There is no wine solution highlight because the common solution set is empty.</li>

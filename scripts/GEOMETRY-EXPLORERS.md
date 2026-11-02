@@ -38,8 +38,15 @@ python scripts/check-geometry-explorers.py
 The math checks independently substitute points into the equations and compare
 coefficient/augmented ranks for the three third-plane cases. They verify the
 basis images, lost z-direction, and the fixed-vector sum through 101 intermediate
-bases. Plane faces are exact intersections with the plotting box; all axes keep
-equal unit scales. Browser checks cover the equation readouts, preset changes,
+bases. The plane explorer uses the equivalent pair
+`x1 - 2x2 - 7x3 = -1`, `x1 - 9x2 = 6` to separate the planes visually while
+preserving the original solution line. The new second equation is -6 times the
+original first equation minus 7 times the original second equation. Its plane
+meets the first at about 73 degrees. Rectangular patches lie exactly on their
+planes, and the camera fits all patch corners with margins at every rotation.
+The fit includes every preset so switching equations keeps the same scale.
+Axes within each view keep equal unit scales. Browser checks cover clipping
+through 144 camera/preset/slider cases, equation readouts, preset changes,
 head-to-tail arrows, fixed endpoint, keyboard controls, complete playback and
 reset, 375-pixel layouts, reduced motion, no-JavaScript fallbacks, and the three
 rebuilt book embeds. Book embeds are tested with unrelated external services
@@ -52,6 +59,9 @@ python scripts/check-geometry-explorers.py --write-previews
 pretext build web --no-generate
 python scripts/check-geometry-explorers.py
 ```
+
+To refresh only the plane explorer's assets, add `--preview solution-set` to the
+export command. All mathematical and browser checks still run.
 
 The export option additionally uses `scripts/requirements-figures.txt`. It
 writes the three `assets/images/*-static.svg` files with embedded Pagella subsets
