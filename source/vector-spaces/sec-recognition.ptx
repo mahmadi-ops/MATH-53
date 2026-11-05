@@ -457,12 +457,21 @@
             # gray levels live in [0, 255]: clip whatever the grain pushed outside
             return matrix(RDF, 8, 6, [min(255.0, max(0.0, v)) for v in shot.list()])
 
+        def verdict(d_cat, d_wall):
+            """The nearest-reference rule, given how far a picture is from each reference."""
+            if d_cat &lt; d_wall:
+                return "cat"
+            if d_wall &lt; d_cat:
+                return "empty wall"
+            return "undecided"    # equal: the rule declines to answer
+
         trials, correct = 200, 0
         for k in range(trials):
             corner = A0 if k % 2 == 0 else D0
-            shot = grainy(corner, sigma)
-            verdict = A0 if dist(shot, A0) &lt; dist(shot, D0) else D0
-            correct += (verdict is corner)
+            truth  = "cat" if corner is A0 else "empty wall"
+            shot   = grainy(corner, sigma)
+            # a verdict of "undecided" counts as incorrect
+            correct += (verdict(dist(shot, A0), dist(shot, D0)) == truth)
         print(correct, "correct out of", trials)
         print("typical distance the grain moves a shot:",
               n(sigma*sqrt(48), digits=4))
@@ -500,9 +509,11 @@
         \| X \|^2 - 2\, X \cdot P + \| P \|^2
         \lt \| X \|^2 - 2\, X \cdot Q + \| Q \|^2.
       </md>
-      The term <m>\| X \|^2</m> cancels from both sides<mdash />the length of the
-      incoming picture never mattered at all<mdash />and what remains is
-      <m>2\, X \cdot (P - Q) \gt \| P \|^2 - \| Q \|^2</m>.
+      The common term <m>\| X \|^2</m> cancels from both sides, leaving the weighted
+      comparison <m>2\, X \cdot (P - Q) \gt \| P \|^2 - \| Q \|^2</m>. The length of
+      <m>X</m> has not dropped out of the verdict, though: scaling <m>X</m> scales
+      <m>X \cdot (P - Q)</m> as well, and <xref ref="subsec-recognition-limits"
+      text="title" /> will watch exactly that change a verdict.
     </p>
 
     <p>
@@ -974,8 +985,10 @@
       <md>
         \operatorname{dist}\left( X, \{ s = 0 \} \right) = \frac{|s(X)|}{\| W \|},
       </md>
-      and the score, divided by <m>\| W \|</m>, is literally the distance from the
-      picture to the decision boundary. The references sit at
+      and the score, divided by <m>\| W \|</m>, is literally the <em>signed</em>
+      distance from the picture to the decision boundary: <m>s(X) / \| W \|</m> carries
+      the side in its sign, and its absolute value <m>|s(X)| / \| W \|</m> is the
+      distance itself. The references sit at
       <m>7839 / 125.2 \approx 62.6</m> units from it, half the <m>125.2</m> that separate
       them<mdash /><xref ref="fig-decision-boundary" text="global" /> drawn to scale
       rather than drawn as a suggestion.
@@ -1013,10 +1026,12 @@
       <md>
         J \cdot \widehat{W} = \frac{J \cdot W}{\| W \|} = \frac{688}{125.2} \approx 5.49,
       </md>
-      so <m>\| J_{\parallel} \| / \| J \| \approx 5.49 / 6.93 \approx 0.79</m>: nearly
-      four fifths of <m>J</m>'s length lies along <m>W</m>, where a grain picture puts
-      about a tenth of its own. Almost none of an exposure change hides in the kernel.
-      This is why, in <xref ref="subsec-recognition-limits" text="title" />, twelve gray
+      so <m>\| J_{\parallel} \|^2 / \| J \|^2 \approx 5.49^2 / 48 \approx 0.63</m>: about
+      <m>63</m> percent of <m>J</m>'s squared length lies along <m>W</m>, where a grain
+      picture puts on average only <m>1/48</m>, about <m>2</m> percent, of its own. Only
+      the remaining <m>37</m> percent of an exposure change hides in the kernel, against
+      some <m>98</m> percent of the grain. This is why, in
+      <xref ref="subsec-recognition-limits" text="title" />, twelve gray
       levels of darkening<mdash />a disturbance of length
       <m>\| 12J \| \approx 83.1</m>, less than half of what the grain
       inflicted<mdash />will flip a verdict that <m>173</m> units of grain could not.
@@ -1120,7 +1135,8 @@
     <p>
       The three photographs are a mess and no two are the same mess. Their average is
       visibly calmer, and the printed distances say so numerically: the average of six
-      sits several times closer to the true corner than any single shot does. Grain
+      typically sits about <m>\sqrt{6} \approx 2.5</m> times closer to the true corner
+      than a single shot does. Grain
       pushes each pixel up or down at random, so at any given pixel the six errors
       largely cancel. A reference built this way is called a <term>prototype</term>. It
       is a picture no camera ever took<mdash />it was computed, not photographed.
@@ -1215,9 +1231,9 @@
             correct = 0
             for k in range(trials):
                 corner = A0 if k % 2 == 0 else D0
-                shot = grainy(corner, 35)
-                says_cat = dist(shot, refC) &lt; dist(shot, refW)
-                correct += (says_cat == (corner is A0))
+                truth  = "cat" if corner is A0 else "empty wall"
+                shot   = grainy(corner, 35)
+                correct += (verdict(dist(shot, refC), dist(shot, refW)) == truth)
             return correct/trials
 
         print("one grainy photograph as each reference:",
@@ -1259,10 +1275,11 @@
             <p>
               <em>It is a denoiser<mdash />an estimate of the clean corner the machine
               was never given.</em> Grain pushes each pixel up or down with mean zero, so
-              at every pixel the <m>k</m> errors largely cancel, and the average of
-              <m>k</m> shots lands on the order of <m>\sqrt{k}</m> times closer to the
-              true corner than any single shot does<mdash />the improvement the first
-              cell above prints.<fn xml:id="fn-recognition-root-k">
+              at every pixel the <m>k</m> errors largely cancel: the root-mean-square
+              error of the average of <m>k</m> shots is <m>\sqrt{k}</m> times smaller
+              than that of a single shot, so the average typically lands about
+              <m>\sqrt{k}</m> times closer to the true corner<mdash />the improvement
+              the first cell above prints.<fn xml:id="fn-recognition-root-k">
                 The <m>\sqrt{k}</m> here is the additivity of variance, not the central
                 limit theorem. At each pixel the <m>k</m> errors are independent with
                 mean <m>0</m> and standard deviation <m>\sigma</m><mdash />the grain
@@ -1270,14 +1287,20 @@
                 error <m>g_{ij}</m> per pixel per shot<mdash />so their average
                 <m>\overline{g}_{ij}</m> has standard deviation
                 <m>\sigma/\sqrt{k}</m>, a two-line computation whose whole content is
-                <m>\operatorname{Var}(\overline{g}_{ij}) = \sigma^2/k</m>. The
-                <m>k \to \infty</m> version of the same fact is the law of large
-                numbers. It says nothing about the <em>shape</em> of the error
+                <m>\operatorname{Var}(\overline{g}_{ij}) = \sigma^2/k</m>. That exact
+                <m>\sigma/\sqrt{k}</m> assumes independent, zero-mean, unclipped errors;
+                <c>grainy()</c> clips to <m>[0, 255]</m>, which biases the average
+                slightly<mdash />negligibly at <m>\sigma = 35</m>, about half a gray
+                level at the darkest pixel, and visibly only for the large
+                <m>\sigma</m> of <xref ref="fig-recognition-accuracy-curve"
+                text="global" />. The <m>k \to \infty</m> version of the same fact is
+                the law of large numbers. It says nothing about the <em>shape</em> of the error
                 distribution; it is purely about its <em>size</em>. The central limit
                 theorem, which concerns shape, appears in
                 <xref ref="subsec-recognition-accuracy" text="title" />.
-              </fn> The prototype is the best reconstruction of <m>A_0</m>
-              available from what the machine was actually handed.
+              </fn> The prototype is a good estimate of <m>A_0</m>, not a provably
+              best one: the theorem is about fitting the photographs the machine was
+              handed, not about recovering the clean picture behind them.
             </p>
           </li>
           <li>
@@ -1385,8 +1408,8 @@
         def test_accuracy(ref_cat, ref_wall, data):
             correct = 0
             for shot, true_cat in data:
-                says_cat = dist(shot, ref_cat) &lt; dist(shot, ref_wall)
-                correct += (says_cat == true_cat)
+                truth = "cat" if true_cat else "empty wall"
+                correct += (verdict(dist(shot, ref_cat), dist(shot, ref_wall)) == truth)
             return correct / len(data)
 
         print("single-reference test accuracy:",
@@ -1435,9 +1458,14 @@
           grain is not Gaussian. But the score <m>G \cdot W</m> is a sum of <m>48</m>
           independent contributions, and the central limit theorem<mdash />the statement
           that such sums come out approximately normal whatever each contribution looks
-          like<mdash />is what makes the formula approximately right anyway. That
+          like, provided each has finite variance and no few of them dominate the
+          total<mdash />is what makes the formula approximately right anyway. The
+          proviso is met here: the largest weight carries only <m>6</m> percent of
+          <m>\| W \|^2</m>, the five largest together <m>28</m> percent. That
           robustness, and not the Gaussian special case, is why the normal model here is
-          a mild assumption rather than a fragile one.
+          a mild assumption rather than a fragile one<mdash />though the approximation
+          is weakest in the tails, which is exactly where the value
+          <m>\Phi(\| W \| / 2\sigma) \approx 0.994</m> at <m>\sigma = 25</m> lives.
         </fn> An empty-wall photograph gives the same probability, because the
         two classes sit symmetrically about the decision boundary.
         <xref ref="fig-recognition-score-distributions" text="global" /> draws the
@@ -1452,7 +1480,7 @@
           around <m>s = -7839</m> and cat shots around <m>s = +7839</m>, each in a bell
           curve of width <m>\sigma \| W \|</m>; a shot is misjudged exactly when its
           score lands on the wrong side of the boundary, so each shaded tail
-          <em>is</em> the error probability. Quadrupling the spread from
+          <em>is</em> the error probability. Doubling the spread from
           <m>\sigma = 25</m> to <m>\sigma = 50</m> turns a negligible tail into a
           tenth of all shots.
         </caption>
@@ -1516,7 +1544,9 @@
         J \cdot W = 4210 - 3522 = 688,
       </md>
       positive because the cat corner is on the whole brighter than the bare wall.
-      Nothing cancels; all <m>48</m> terms push together. The score of a darkened eye
+      Little cancels: <m>40</m> of the <m>48</m> weights are positive, and the
+      <m>8</m> negative ones take back only <m>39</m> of the <m>727</m> the positive ones
+      contribute, so nearly all the terms push the same way. The score of a darkened eye
       patch is <m>s(A_0) - 688\,t = 7839 - 688\,t</m>, which turns negative as soon as
       <m>t \gt \frac{7839}{688} \approx 11.4</m>. Darken every pixel by twelve gray
       levels out of <m>255</m><mdash />a displacement of only
@@ -1530,12 +1560,17 @@
 
     <p>
       A second blindness costs nothing to state and everything in practice. Photograph
-      the eye one pixel to the right, so that the identical content lands one column
-      over, and the patch moves <m>74</m> units away from <m>A_0</m><mdash />more than
+      the eye one column of the patch to the right<mdash />ten pixels of the
+      photograph, since each entry is the average of a <m>10 \times 10</m>
+      block<mdash />so that the identical content lands one column over, and the patch
+      moves <m>74</m> units away from <m>A_0</m><mdash />more than
       half the distance separating a cat from no cat at all. The verdict happens to
       survive this once, but the lesson does not improve with luck: the distance
       compares pixel against pixel by position, and has no way of knowing that two
-      pictures contain the same thing in different places. Try all three failures below.
+      pictures contain the same thing in different places. Try all three failures below;
+      the cell imitates the shift by repeating the left-hand column and dropping the
+      right-hand one, a shift with edge replication rather than new content entering
+      from the left.
     </p>
 
     <sage>
@@ -1544,30 +1579,37 @@
         c = 0.85      # change me: exposure scale
         darker = A0 - t*J
         scaled = c*A0.change_ring(RDF)
-        slid   = A0.matrix_from_columns([0, 0, 1, 2, 3, 4])  # the eye, one pixel right
+        # the eye one column right: column 0 is repeated and column 5 dropped
+        slid   = A0.matrix_from_columns([0, 0, 1, 2, 3, 4])
 
         for name, X in [("darkened", darker), ("scaled", scaled), ("slid", slid)]:
-            verdict = "cat" if dist(X, A0) &lt; dist(X, D0) else "empty wall"
             print(name, "  distance moved:", n(dist(X, A0), digits=4),
                   "  score:", n(score(X), digits=5),
-                  "  verdict:", verdict)
+                  "  verdict:", verdict(dist(X, A0), dist(X, D0)))
         show_pictures(("darkened image", darker), ("scaled image", scaled),
-                      ("one-pixel-shifted image", slid), ("clean reference", A0))
+                      ("one-column-shifted image", slid), ("clean reference", A0))
       </input>
     </sage>
 
     <p>
       The printed table makes the point without the pictures: darkening moves the patch
       about <m>83</m> units and flips the verdict to <em>empty wall</em>; scaling moves
-      it farther still and flips it too; the one-pixel shift moves it <m>74</m> units,
-      more than either, and the verdict nevertheless holds at <em>cat</em>. Distance
-      moved is not what decides. Only the score is.
+      it farther still, about <m>92</m>, and flips it too; the one-column shift moves it
+      <m>74</m> units, the least of the three, and the verdict holds at <em>cat</em>.
+      Set the darkening beside the grain of
+      <xref ref="subsec-recognition-nearest" text="title" />: grain moved a shot some
+      <m>173</m> units and the verdict survived, while darkening moves it <m>83</m> and
+      the verdict falls. Distance moved is not what decides. Only the score is. The
+      shift's lesson is a different one, about position rather than length: the same
+      eye, one column over, is already <m>74</m> units from <m>A_0</m>.
     </p>
 
     <p>
-      The first of those failures is worth a second look, because the repair it wants is
-      already within reach. Underexposure changed the <em>length</em> of the picture
-      without changing what was in it. Length is exactly what the third quantity of
+      The exposure failures are worth a second look, because a repair for one of them is
+      already within reach. Underexposure by scaling, <m>cA_0</m>, changed the
+      <em>length</em> of the picture without changing its direction; underexposure by
+      subtraction, <m>A_0 - tJ</m>, is not a scaling, and turns the picture as well.
+      Length is exactly what the third quantity of
       <xref ref="def-dot-product" text="type-global" /> divides out: alongside the dot
       product and the length, that definition fixes the angle between two nonzero vectors
       of <m>\R^3</m> by <m>\vec{u} \cdot \vec{v} = \| \vec{u} \| \| \vec{v} \| \cos\theta</m>.
@@ -1608,9 +1650,12 @@
       so <m>\theta(cA_0, A_0) = 0</m>: turning the exposure up or down moves a picture
       along a ray away from the origin, changing its length and not its direction, and
       the angle never notices. The score, meanwhile, flips at <m>c \approx 0.88</m>.
-      Judging by angle rather than by distance is exactly the dividing out of brightness
-      that the failures have been asking for, and it needs nothing that is not already on
-      this page. The angle rule reads: call <m>X</m> a cat when
+      The same cancellation gives <m>\theta(cX, Y) = \theta(X, Y)</m> for every
+      <m>c \gt 0</m>, so judging by angle rather than by distance divides out any
+      positive rescaling of the incoming picture<mdash />exactly what the scaling
+      failure was asking for<mdash />and it needs nothing that is not already on this
+      page. It makes no such promise for an additive change <m>X + bJ</m>, which turns a
+      picture as well as stretching it. The angle rule reads: call <m>X</m> a cat when
       <m>\theta(X, A_0) \lt \theta(X, D_0)</m>. The cell below runs it against the
       distance rule on all three failures.
     </p>
@@ -1630,36 +1675,41 @@
             dA, dD = dist(X, A0), dist(X, D0)
             aA, aD = angle(X, A0), angle(X, D0)
             print(row % (name,
-                         n(dA, digits=4), n(dD, digits=4),
-                         "cat" if dA &lt; dD else "empty wall",
-                         aA, aD,
-                         "cat" if aA &lt; aD else "empty wall"))
+                         n(dA, digits=4), n(dD, digits=4), verdict(dA, dD),
+                         aA, aD, verdict(aA, aD)))
         print("for comparison, the angle between the two references:", angle(A0, D0))
       </input>
     </sage>
 
     <p>
-      The angle rule repairs both exposure failures outright. The darkened patch sits
-      <m>1.17</m> degrees from the cat corner against <m>8.286</m> degrees from the empty
-      one, and the rescaled patch sits at an angle of zero from the cat corner, printed
-      as zero up to rounding; both are pronounced <em>cat</em>, where the distance rule
-      called them empty wall. It does nothing whatever for the third. The one-pixel shift
-      was never a wrong verdict, and the angle rule returns the same right answer by the
-      same thin margin<mdash /><m>6.91</m> degrees to the cat corner against
+      The angle rule repairs both exposure failures in the table. The rescaled patch sits
+      at an angle of zero from the cat corner, printed as zero up to rounding, as it must
+      for every <m>c \gt 0</m>. The darkened patch sits <m>1.17</m> degrees from the cat
+      corner against <m>8.286</m> degrees from the empty one, so it too is pronounced
+      <em>cat</em>, where the distance rule called both empty wall. That second success
+      is a fact about this darkening, not a guarantee for additive changes: as <m>b</m>
+      grows, <m>X + bJ</m> turns toward <m>J</m>, which sits <m>4.36</m> degrees from
+      <m>D_0</m> but <m>7.49</m> from <m>A_0</m>, so a sufficiently brightened cat patch
+      is called empty wall. Already <m>A_0 + 128J</m>, whose gray levels are all still
+      valid, is called empty wall by a hair, <m>4.429</m> degrees against
+      <m>4.412</m> (set <c>t = -128</c> in the failures cell and rerun this one to see
+      it). The angle rule does nothing whatever for the third failure. The one-column
+      shift was never a wrong verdict, and the angle rule returns the same right answer
+      by the same thin margin<mdash /><m>6.91</m> degrees to the cat corner against
       <m>7.445</m> to the empty one. Set that beside the angle between the two references
-      themselves, <m>7.294</m> degrees: the eye photographed one pixel over sits
+      themselves, <m>7.294</m> degrees: the eye photographed one column over sits
       <m>6.91</m> degrees from the eye it actually is, while bare wall sits only
       <m>7.294</m> degrees from it. Sliding a picture one column over costs nearly as
-      much angle as replacing the cat with a wall. Dividing out brightness does not teach
-      a machine where things are.
+      much angle as replacing the cat with a wall. Dividing out scale does not teach a
+      machine where things are.
     </p>
 
     <p>
       Each failure names the repair it is waiting for, and each repair is a course that
       exists. One of them has already started here:
-      <xref ref="def-picture-angle" text="type-global" /> divides out brightness so that
-      only pattern remains, and it cost nothing but the dot product. Carried through
-      properly, that repair and the practice of measuring pictures along a few
+      <xref ref="def-picture-angle" text="type-global" /> divides out the overall scale
+      of a picture so that only pattern remains, and it cost nothing but the dot
+      product. Carried through properly, that repair and the practice of measuring pictures along a few
       well-chosen directions instead of all <m>48</m> at once are
       the business of orthogonality, projections, and least squares<mdash />the linear
       algebra that usually follows this book. And the deepest question raised
