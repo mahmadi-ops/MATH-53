@@ -1,2 +1,2 @@
-# This file was automatically generated with PreTeXt 2.44.0.
-pretext == 2.44.0
+# PreTeXt 2.56.2 handles encoding declarations in downloaded Runestone XML.
+pretext == 2.56.2
