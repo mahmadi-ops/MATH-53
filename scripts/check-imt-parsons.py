@@ -64,9 +64,24 @@ def main():
                     return ids.every(id=>{
                         const p=window.componentMap?.[id];
                         return parseFloat(p?.answerArea?.style.height)>50 &&
-                            p.blocks?.length && p.blocks.every(block=>block.hammer);
+                            p.blocks?.length && p.blocks.every(block=>block.hammer) &&
+                            [p.sourceArea,p.answerArea].every(area=>
+                                area.dataset.parsonsFitMode==='fit' &&
+                                Math.abs(area.getBoundingClientRect().height-Number(area.dataset.parsonsFittedHeight))<1);
                     });
                 }''',timeout=20000)
+            def compact(id):
+                result=page.locator('#'+id[3:]).evaluate('''exercise=>{
+                    return [...exercise.querySelectorAll('.source,.answer')].map(area=>{
+                        const r=area.getBoundingClientRect();
+                        const cards=[...area.children].filter(e=>e.classList.contains('block'));
+                        const bottom=Math.max(0,...cards.map(e=>e.getBoundingClientRect().bottom-r.top));
+                        return {height:r.height,bottom,count:cards.length};
+                    });
+                }''')
+                for area in result:
+                    assert abs(area['height']-max(64,area['bottom']+12))<2,(id,area)
+                return result
             def fill(id,kind):
                 page.evaluate('''({id,kind})=>{
                     const p=window.componentMap[id];
@@ -75,8 +90,12 @@ def main():
                     let selected=blocks.slice(0,-1);
                     if(kind==='reverse')selected.reverse();
                     if(kind==='distractor')selected[selected.length-1]=blocks.at(-1);
+                    if(kind==='all')selected=blocks;
+                    if(kind==='partial')selected=selected.slice(0,2);
+                    p.state=undefined;
                     selected.forEach(b=>p.answerArea.appendChild(b.view));
                     p.updateView();
+                    p.initializeTabIndex();
                 }''',{'id':id,'kind':kind})
             page.goto(base,wait_until='networkidle');ready()
             line=page.locator('#intro-imt-parsons').bounding_box()
@@ -92,6 +111,7 @@ def main():
                 span=answer_box['x']+answer_box['width']-source_box['x']
                 assert exercise.bounding_box()['width']*.8<=span<=exercise.bounding_box()['width']
                 assert exercise.locator('.source .block').first.bounding_box()['width']>=source_box['width']*.9
+                assert compact(id)[1]['height']==64
             print('PASS: full text-width exercises with two side-by-side work boxes',flush=True)
             for id,count in PROOFS.items():
                 exercise=page.locator('#'+id[3:])
@@ -99,12 +119,13 @@ def main():
                 reset=exercise.get_by_role('button',name='Reset',exact=True)
                 check.click()
                 assert page.evaluate('id=>window.componentMap[id].grade',id)!='correct'
-                for kind in ['reverse','distractor','correct']:
-                    reset.click();ready();fill(id,kind)
+                for kind in ['reverse','distractor','all','correct']:
+                    reset.click();ready();fill(id,kind);ready();compact(id)
                     check.click()
                     state=page.evaluate('id=>window.componentMap[id].grade',id)
                     assert (state=='correct')==(kind=='correct'),(id,kind,state)
                 reset.click();ready()
+                assert compact(id)[1]['height']==64
                 assert exercise.locator('.answer .block').count()==0
                 assert exercise.locator('.source .block').count()==count+1
             print('PASS: correct proofs accepted; incomplete, reordered, and distractor answers rejected; reset works',flush=True)
@@ -116,25 +137,46 @@ def main():
             else:
                 exercise.locator('.source .block[tabindex="0"]').focus()
             page.keyboard.press('Space');page.keyboard.press('ArrowRight');page.keyboard.press('Space')
+            ready();compact(id)
             assert exercise.locator('.answer .block').count()==1
             assert page.locator('#ex-imt-1-9-parsons .answer .block').count()==0
             exercise.get_by_role('button',name='Reset',exact=True).click();ready()
             top=page.locator('#imt-parsons-proofs').evaluate('e=>e.getBoundingClientRect().top+scrollY')
             page.evaluate('y=>scrollTo(0,y-100)',top)
-            a=exercise.locator('.source .block').first.bounding_box()
-            b=exercise.locator('.answer').bounding_box()
+            a=exercise.locator('.source .block').last.bounding_box()
             page.mouse.move(a['x']+8,a['y']+8);page.mouse.down();page.wait_for_timeout(100)
-            page.mouse.move(b['x']+b['width']/2,b['y']+30,steps=20)
+            page.mouse.move(a['x']+28,a['y']+8,steps=4)
+            page.wait_for_function('''id=>window.componentMap[id].answerArea.dataset.parsonsFitMode==='drag' ''',arg=id)
+            b=exercise.locator('.answer').bounding_box()
+            assert b['height']>64 and b['y']<=a['y']+8<b['y']+b['height']
+            page.mouse.move(b['x']+b['width']/2,a['y']+8,steps=20)
             page.wait_for_timeout(100);page.mouse.up()
+            ready();compact(id)
             assert exercise.locator('.answer .block').count()==1
-            exercise.get_by_role('button',name='Reset',exact=True).click();ready()
+            exercise.get_by_role('button',name='Reset',exact=True).click();ready();compact(id)
+            fill(id,'partial');ready();compact(id)
+            if entry.count():
+                entry.focus();page.keyboard.press('Enter')
+            else:
+                exercise.locator('.source .block[tabindex="0"]').focus()
+            page.keyboard.press('ArrowRight');page.keyboard.press('Space')
+            page.keyboard.press('ArrowDown');page.keyboard.press('Space')
+            ready();compact(id)
+            order=page.evaluate('id=>window.componentMap[id].answerBlocks().map(b=>b.lines[0].index)',id)
+            assert len(order)==2 and order[0]>order[1],order
+            page.keyboard.press('Space');page.keyboard.press('ArrowLeft');page.keyboard.press('Space')
+            ready();compact(id)
+            assert exercise.locator('.answer .block').count()==1
+            exercise.get_by_role('button',name='Reset',exact=True).click();ready();compact(id)
             assert page.locator('#imt-parsons-proofs mjx-container').count()>30
             assert not page.locator('#imt-parsons-proofs [data-mml-node="merror"]').count()
             page.locator('#imt-parsons-proofs').screenshot(path='/tmp/math53-imt-parsons-desktop.png')
             print('PASS: keyboard and drag movement, independent boards, rendered math, side-by-side work areas',flush=True)
+            print('PASS: compact empty/partial/full boxes, expanded pointer targets, and compact Reset',flush=True)
             for width in [375,820]:
                 page.set_viewport_size({'width':width,'height':1000})
                 page.goto(base,wait_until='networkidle');ready()
+                for id in PROOFS:compact(id)
                 boxes=[page.locator('#'+id[3:]).bounding_box() for id in PROOFS]
                 assert abs(boxes[0]['x']-boxes[1]['x'])<2 and boxes[1]['y']>boxes[0]['y']
                 assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')

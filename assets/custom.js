@@ -40,9 +40,76 @@
 
 /* Open the paired IMT proof puzzles before Runestone measures their blocks. */
 (function () {
-    document.querySelectorAll("#imt-parsons-proofs > details.exercise").forEach(function (exercise) {
+    var pair = document.getElementById("imt-parsons-proofs");
+    if (!pair) return;
+    var exercises = pair.querySelectorAll("details.exercise");
+    exercises.forEach(function (exercise) {
         exercise.open = true;
     });
+
+    // Runestone reserves a full problem's height in both columns. Fit the
+    // positioned cards instead, without changing its sorter or grader.
+    var frame = null;
+    var dragSizes = new WeakMap();
+    var options = { subtree: true, childList: true, attributes: true,
+        attributeFilter: ["style", "class", "tabindex"] };
+    var observer = new MutationObserver(schedule);
+
+    function occupiedHeight(area, moving) {
+        var top = area.getBoundingClientRect().top;
+        var bottom = 0;
+        Array.from(area.children).forEach(function (card) {
+            if (card.classList.contains("block") && (!moving || card !== moving.view)) {
+                bottom = Math.max(bottom, card.getBoundingClientRect().bottom - top);
+            }
+        });
+        return Math.max(64, Math.ceil(bottom + 12));
+    }
+    function fit() {
+        frame = null;
+        observer.disconnect();
+        exercises.forEach(function (exercise) {
+            var problem = window.componentMap && window.componentMap["rs-" + exercise.id];
+            if (!problem || !problem.blocks || !problem.blocks.length ||
+                !problem.blocks.every(function (block) { return !!block.hammer; })) return;
+            var areas = [problem.sourceArea, problem.answerArea];
+            if (!areas.every(function (area) { return area && area.isConnected; })) return;
+            var heights = areas.map(function (area) { return occupiedHeight(area, problem.moving); });
+            if (problem.moving) {
+                // Keep stable, generous drop targets while a pointer drag is
+                // active; compact each column independently after the drop.
+                var drag = dragSizes.get(problem);
+                if (!drag || drag.card !== problem.moving) {
+                    drag = { card: problem.moving, height: Math.ceil(Math.max.apply(null, heights) +
+                        problem.moving.view.getBoundingClientRect().height + 12) };
+                    dragSizes.set(problem, drag);
+                }
+                heights = [drag.height, drag.height];
+            } else {
+                dragSizes.delete(problem);
+            }
+            areas.forEach(function (area, index) {
+                var height = heights[index] + "px";
+                if (area.style.height !== height || area.style.getPropertyPriority("height") !== "important") {
+                    area.style.setProperty("height", height, "important");
+                }
+                area.dataset.parsonsFittedHeight = String(heights[index]);
+                area.dataset.parsonsFitMode = problem.moving ? "drag" : "fit";
+            });
+        });
+        observer.observe(pair, options);
+    }
+    function schedule() {
+        if (frame === null) frame = requestAnimationFrame(fit);
+    }
+    observer.observe(pair, options);
+    new ResizeObserver(schedule).observe(pair);
+    window.addEventListener("resize", schedule);
+    pair.addEventListener("pointerup", schedule, true);
+    pair.addEventListener("pointercancel", schedule, true);
+    document.fonts.ready.then(schedule);
+    document.fonts.addEventListener("loadingdone", schedule);
+    schedule();
 })();
 
 /* ------------------------------------------------------------------ *
