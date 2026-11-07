@@ -89,6 +89,7 @@
         </p>
       </statement>
       <solution>
+        <p>Each display below starts from the original augmented matrix independently.</p>
         <p>
           <term>Interchange the first two equations (two rows),</term> <m>r_1 \leftrightarrow r_2</m>:
           <md>
@@ -97,6 +98,16 @@
               3 \amp -2 \amp -7 \amp -1 \\
               2 \amp 0 \amp -1 \amp 3
             \end{array} \right].
+          </md>
+        </p>
+        <p>
+          <term>Multiply the first row by <m>-2</m>,</term> <m>-2r_1</m>:
+          <md>
+            \left[\begin{array}{ccc|c}
+              -6 \amp 4 \amp 14 \amp 2 \\
+              -1 \amp 3 \amp 6 \amp 1 \\
+              2 \amp 0 \amp -1 \amp 3
+            \end{array}\right].
           </md>
         </p>
         <p>
@@ -121,18 +132,14 @@
       <title>Row-Echelon Matrix</title>
       <statement>
         <p>
+          The first nonzero entry in a nonzero row is its <term>leading entry</term>.
           A matrix is a <term>row-echelon matrix</term> (REM) if
           <ol>
             <li><p>All rows consisting entirely of zeros are at the bottom.</p></li>
             <li>
-              <p>
-                The first nonzero entry in each nonzero row is called a
-                <term>leading entry</term>.
-              </p>
-            </li>
-            <li>
               <p>Each leading entry is to the right of all leading entries in rows above it.</p>
             </li>
+            <li><p>All entries below each leading entry are zero.</p></li>
           </ol>
         </p>
       </statement>
@@ -196,19 +203,23 @@
           <ul>
             <li>
               <p>
-                A <term>pivot position</term> is a location corresponding to a leading
-                <m>1</m>, and a <term>pivot column</term> is the column containing the
-                pivot position.
+                A <term>pivot position</term> in a matrix is a location corresponding to a
+                leading entry in an echelon form obtained by row operations. A
+                <term>pivot column</term> is a column containing a pivot position.
+                A leading entry need not equal <m>1</m> in row-echelon form;
+                in reduced row-echelon form, every leading entry is <m>1</m>.
               </p>
             </li>
             <li>
               <p>
-                The <term>basic variables</term> are the variables that correspond to
-                columns containing leading ones.
+                For an augmented matrix, the <term>basic variables</term> correspond to
+                pivot columns of the coefficient matrix. The augmented column represents
+                constants, not a variable, and is excluded when identifying basic or free variables.
               </p>
             </li>
             <li>
-              <p>The remaining variables are called <term>free variables</term>.</p>
+              <p>The variables corresponding to nonpivot columns of the coefficient matrix
+              are called <term>free variables</term>.</p>
             </li>
           </ul>
         </p>
@@ -252,4 +263,24 @@
       reduced row-echelon form. The next section gives the algorithm that does it.
     </p>
   </subsection>
+
+  <exercises xml:id="exercises-ch1-matrices">
+    <title>Practice: Reading and Writing Matrices</title>
+    <exercise xml:id="ex-ch1-missing-coefficients">
+      <statement><p>Form the augmented matrix for <m>x+3z=4</m>, <m>2y-z=5</m>,
+      using variable order <m>x,y,z</m>. Then translate it back into equations.
+      Why must the missing coefficients be recorded?</p></statement>
+      <answer><p><m>\left[\begin{array}{ccc|c}1\amp0\amp3\amp4\\0\amp2\amp-1\amp5\end{array}\right]</m>.
+      Reading the rows returns the stated equations. Zeros keep each variable in its
+      designated column.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-echelon-pivots">
+      <statement><p>Is
+      <m>\left[\begin{array}{ccc|c}2\amp1\amp0\amp4\\0\amp0\amp-3\amp6\end{array}\right]</m>
+      in row-echelon form? Is it reduced? Identify the basic and free variables.</p></statement>
+      <answer><p>It is in row-echelon form, but not reduced because the leading entries
+      are not <m>1</m>. The basic variables are <m>x_1,x_3</m>; <m>x_2</m> is free.
+      The last column is the constant column and has no associated variable.</p></answer>
+    </exercise>
+  </exercises>
 </section>

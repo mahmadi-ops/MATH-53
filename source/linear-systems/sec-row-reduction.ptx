@@ -19,27 +19,19 @@
       <statement>
         <p>
           <ol>
-            <li><p>Identify the pivot column.</p></li>
-            <li>
-              <p>
-                Choose a nonzero entry in the pivot column and (if necessary) move it to
-                the pivot position.
-              </p>
-            </li>
-            <li><p>Create zeros below the pivot using elementary row operations.</p></li>
-            <li>
-              <p>
-                Repeat steps 1<ndash />3 for the sub-matrices obtained by ignoring the
-                column corresponding to the previous pivot position and all the rows above
-                it (if any).
-              </p>
-            </li>
-            <li>
-              <p>
-                Beginning with the rightmost pivot, create zeros above the pivots and make
-                the pivot <m>1</m> (if necessary).
-              </p>
-            </li>
+            <li><p>Starting with the whole matrix, choose the leftmost column containing
+            a nonzero entry among the remaining rows. If all remaining rows are zero,
+            the forward phase is finished.</p></li>
+            <li><p>Interchange rows if necessary to put a nonzero entry of that column
+            in the top remaining row. This entry is the next pivot.</p></li>
+            <li><p>Use row replacements to create zeros below the pivot.</p></li>
+            <li><p>Continue with the rows strictly below the pivot row and the columns
+            strictly to the right of the pivot column. Repeat steps 1<ndash/>3 until
+            no rows or columns remain, or the remaining rows are zero. The matrix
+            is now in row-echelon form.</p></li>
+            <li><p>Beginning with the rightmost pivot and working left, divide each
+            pivot row by its pivot to make it <m>1</m>, then use row replacements to
+            create zeros above it. The result is reduced row-echelon form.</p></li>
           </ol>
         </p>
       </statement>
@@ -169,16 +161,12 @@
           there are no free variables.
         </p>
 
-        <figure xml:id="fig-unique-interactive">
-          <caption>
-            The same system as a matrix transformation
-            <m>T(\vec{x}) = A\vec{x}</m>. The deep wine solution set of
-            <m>T(\vec{x}) = \vec{b}</m> in the left pane is a single <em>point</em>:
-            exactly one input produces this output. Click and drag the head of
-            <m>\vec{b}</m> in the right pane <mdash /> the solution point moves, but it
-            stays a single point, because every column of <m>A</m> is a pivot column.
-          </caption>
-          <interactive xml:id="int-unique-solution" iframe="demos-manim/axb.html?mat=1,1,2:2,1,3:0,-2,1&amp;x=1.667,-1.333,-0.667&amp;show=true" width="100%" aspect="5:4"/>
+        <figure xml:id="fig-unique-planes">
+          <caption>The three planes meet at exactly one point, <m>(5/3,-4/3,-2/3)</m>, the unique solution. The drawing shows finite portions of infinite planes;
+          the labels identify the equations in their original order.</caption>
+          <image source="images/ch1-unique-planes.svg" width="90%">
+            <shortdescription>Three planes have one common point at (5/3,-4/3,-2/3).</shortdescription>
+          </image>
         </figure>
       </solution>
     </example>
@@ -243,16 +231,17 @@
           which is impossible, and hence the system is inconsistent (no solution).
         </p>
 
-        <figure xml:id="fig-no-solution-interactive">
+        <figure xml:id="fig-no-solution-planes">
           <caption>
-            Here the first two columns of <m>A</m> are multiples of one another, so the
-            range of <m>T</m> (olive green, right pane) is only a <em>plane</em> inside
-            <m>\R^3</m>. Click and drag the head of <m>\vec{b}</m> off that plane: the
-            equation is marked inconsistent and the solution set vanishes, which is what
-            the row <m>\begin{bmatrix} 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}</m>
-            records above.
+            Each pair of planes intersects in a line, but the three planes have no
+            common point. A solution must satisfy all three equations at once.
+            The left panel shows finite portions of the infinite planes. The right
+            panel fixes <m>x_1=0</m> to show three lines with three distinct pairwise
+            crossings. The labels identify the equations in their original order.
           </caption>
-          <interactive xml:id="int-no-solution" iframe="demos-manim/axb.html?mat=-3,-9,1:2,6,-1:1,3,-1&amp;x=1,0,1&amp;show=true" width="100%" aspect="5:4"/>
+          <image source="images/ch1-no-solution-planes.svg" width="90%">
+            <shortdescription>Three planes intersect pairwise in parallel lines and have no common point. A two-dimensional slice at x1=0 shows three separate pairwise crossings.</shortdescription>
+          </image>
         </figure>
       </solution>
     </example>
@@ -363,15 +352,12 @@
           </md>
         </p>
 
-        <figure xml:id="fig-infinitely-many-interactive">
-          <caption>
-            With one free variable, the deep wine solution set in the left pane is a
-            <em>line</em> rather than a point: every input on that line has the same
-            image. Click and drag the head of <m>\vec{x}</m> along the line and watch
-            <m>\vec{b}</m> stay put; drag <m>\vec{b}</m> instead and the whole solution
-            line moves with it.
-          </caption>
-          <interactive xml:id="int-infinitely-many" iframe="demos-manim/axb.html?mat=2,1,3:1,2,-1:0,-6,10&amp;x=0.667,-0.333,0&amp;show=true" width="100%" aspect="5:4"/>
+        <figure xml:id="fig-infinitely-many-planes">
+          <caption>All three planes contain the line <m>x=2/3-7s/3</m>, <m>y=-1/3+5s/3</m>, <m>z=s</m>. Every point on this line solves all three equations. The drawing shows finite portions of infinite planes;
+          the labels identify the equations in their original order.</caption>
+          <image source="images/ch1-infinitely-many-planes.svg" width="90%">
+            <shortdescription>Three planes share the entire line x=2/3-7s/3, y=-1/3+5s/3, z=s.</shortdescription>
+          </image>
         </figure>
       </solution>
     </example>
@@ -387,6 +373,14 @@
 
   <subsection xml:id="subsec-systems-with-parameters">
     <title>Systems Depending on Parameters</title>
+
+    <p>
+      A parameter can play two different roles. In a solution formula such as
+      <m>z=s</m>, it describes the different solutions of one fixed system. Here,
+      <m>a,b,c</m> instead specify the equations themselves: choosing their values
+      selects a particular system. Treat them as fixed constants while solving,
+      and check when an expression is zero before dividing by it.
+    </p>
 
     <example xml:id="eg-parameters-abc">
       <title>Conditions on the Coefficients</title>
@@ -460,7 +454,15 @@
               \end{array} \right]
             </mrow>
             <mrow>
-              \amp \xrightarrow[r_2 + 2r_3]{-r_2}
+              \amp \xrightarrow{-r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 3 \amp -2 \amp 1 \\
+                0 \amp 1 \amp -2 \amp -c \\
+                0 \amp 0 \amp 1 \amp K
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{2r_3+r_2}
               \left[ \begin{array}{ccc|c}
                 1 \amp 3 \amp -2 \amp 1 \\
                 0 \amp 1 \amp 0 \amp -c + 2K \\
@@ -533,4 +535,49 @@
       </solution>
     </example>
   </subsection>
+
+  <exercises xml:id="exercises-ch1-reduction">
+    <title>Practice: Interpreting Row Reduction</title>
+    <exercise xml:id="ex-ch1-zero-versus-contradiction">
+      <statement><p>Translate the augmented rows
+      <m>[\,0\;0\;0\mid0\,]</m> and <m>[\,0\;0\;0\mid5\,]</m> into equations.
+      Which row proves inconsistency, and why?</p></statement>
+      <answer><p>They assert <m>0=0</m> and <m>0=5</m>, respectively.
+      The first imposes no restriction; the second is impossible and proves inconsistency.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-two-free-variables">
+      <statement><p>Solve <m>x_1+2x_2-x_3+x_4=3</m>, <m>x_2+x_4=1</m>.
+      Identify the basic and free variables, use one parameter for each free variable,
+      and verify your answer in both equations.</p></statement>
+      <answer><p>The reduced augmented matrix is
+      <m>\left[\begin{array}{cccc|c}1\amp0\amp-1\amp-1\amp1\\0\amp1\amp0\amp1\amp1\end{array}\right]</m>.
+      Basic variables: <m>x_1,x_2</m>; free variables: <m>x_3,x_4</m>.
+      All solutions are <m>x_1=1+s+t</m>, <m>x_2=1-t</m>, <m>x_3=s</m>, <m>x_4=t</m>,
+      for arbitrary real <m>s,t</m>. Substitution gives
+      <m>(1+s+t)+2(1-t)-s+t=3</m> and <m>(1-t)+t=1</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-zero-row-outcomes">
+      <statement><p>A student says, <q>A zero row means infinitely many solutions.</q>
+      Explain the error using these echelon augmented matrices:
+      <md>
+      \left[\begin{array}{cc|c}1\amp0\amp2\\0\amp1\amp3\\0\amp0\amp0\end{array}\right],
+      \qquad
+      \left[\begin{array}{cc|c}1\amp1\amp2\\0\amp0\amp0\end{array}\right],
+      \qquad
+      \left[\begin{array}{cc|c}1\amp1\amp2\\0\amp0\amp1\\0\amp0\amp0\end{array}\right].
+      </md>Classify each system.</p></statement>
+      <answer><p>The first has the unique solution <m>x_1=2,x_2=3</m>.
+      The second has infinitely many solutions <m>x_1=2-s,x_2=s</m>.
+      The third has no solution because of its contradictory second row.
+      Check consistency first, then whether any variables are free.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-parameter-division">
+      <statement><p>A row reduces to <m>[\,0\;a-2\mid b\,]</m> in a two-variable
+      system whose first row has a pivot in the first column. What cases must be
+      considered before dividing by <m>a-2</m>?</p></statement>
+      <answer><p>If <m>a\ne2</m>, division is allowed and the system has a unique solution.
+      If <m>a=2,b\ne0</m>, it is inconsistent. If <m>a=2,b=0</m>, the second variable
+      is free and there are infinitely many solutions.</p></answer>
+    </exercise>
+  </exercises>
 </section>

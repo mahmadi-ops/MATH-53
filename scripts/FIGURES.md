@@ -39,3 +39,11 @@ its generated `support.js` remains unchanged.
 Commit the source and generated SVG/PDF assets together. The three live Sage
 plots use the same accents and a serif stack headed by Pagella; remote Sage
 servers fall back to Palatino or DejaVu Serif when Pagella is unavailable.
+
+The three chapter-one plane diagrams use the actual equations from the row-reduction
+examples, with scalar equations and their common points or lines. Regenerate them with
+`python scripts/make-chapter-one-planes.py`, then use `--embed-only` as above to
+embed the book fonts. Direct plane labels and highlighted common solutions identify
+what each drawing represents; the inconsistent example includes a slice at x1=0
+to separate the pairwise intersections. The script checks that its plane vertices and highlighted
+solutions satisfy the corresponding equations.

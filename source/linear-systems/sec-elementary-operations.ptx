@@ -86,6 +86,10 @@
     </statement>
     <solution>
       <p>
+        Each demonstration below starts from the <em>original</em> system and applies
+        one operation independently.
+      </p>
+      <p>
         <term>Interchange the first two equations.</term>
         <md>
           <mrow>
@@ -131,10 +135,24 @@
         <m>0x_1 + 7x_2 + 11x_3 = 2</m>. Notice that <m>x_1</m> has been eliminated from
         that equation <mdash /> this is exactly the effect we will exploit systematically.
       </p>
-      <p>
-        Each of the three displays above is obtained from the <em>original</em> system by
-        a single operation; they are not applied one after another.
-      </p>
     </solution>
   </example>
+
+  <exercises xml:id="exercises-ch1-operations">
+    <title>Practice: Preserving Solutions</title>
+    <exercise xml:id="ex-ch1-zero-multiplier">
+      <statement><p>Why is multiplying an equation by zero not an elementary operation?
+      Use the equation <m>x=2</m> to explain.</p></statement>
+      <answer><p>It changes <m>x=2</m> to <m>0=0</m>, which permits every real
+      <m>x</m>. The original restriction is lost, and the operation cannot be undone.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-undo-replacement">
+      <statement><p>Starting with <m>x+y=3</m> and <m>2x-y=0</m>, replace the second
+      equation by itself minus twice the first. Write the resulting system and explain
+      how to recover the original second equation.</p></statement>
+      <answer><p>The new system is <m>x+y=3</m>, <m>-3y=-6</m>.
+      Add twice the unchanged first equation to the new second equation to recover
+      <m>2x-y=0</m>.</p></answer>
+    </exercise>
+  </exercises>
 </section>

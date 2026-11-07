@@ -98,7 +98,15 @@
             \end{array} \right]
           </mrow>
           <mrow>
-            \amp \xrightarrow{\substack{r_2 + r_1 \\ -r_3 + r_1}}
+            \amp \xrightarrow{r_2+r_1}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 1 \amp 3 \\
+              0 \amp 1 \amp 0 \amp -1 \\
+              0 \amp 0 \amp 1 \amp 2
+            \end{array} \right]
+          </mrow>
+          <mrow>
+            \amp \xrightarrow{-r_3+r_1}
             \left[ \begin{array}{ccc|c}
               1 \amp 0 \amp 0 \amp 1 \\
               0 \amp 1 \amp 0 \amp -1 \\
@@ -180,9 +188,9 @@
   <p>
     In other words, the linear system produced by the procedure above always has
     exactly one solution <mdash/> the row reduction never ends in an inconsistent row,
-    and never leaves a free variable. We do not yet have the tools to prove this; the
-    reason will become clear in later chapters. For now we take the theorem as a
-    promise and put it to work on a larger example.
+    and never leaves a free variable. We use this theorem without proof here.
+    Its hypotheses matter: the <m>x_i</m> must be distinct, and the degree bound
+    is <m>n-1</m>. Let us apply it to a larger example.
   </p>
 
   <example xml:id="eg-interpolation-cubic">
@@ -243,9 +251,9 @@
         <md>
           p(x) = 3 - 2x + x^3.
         </md>
-        Notice that <m>r_2 = 0</m>: the theorem promises a polynomial of degree
-        <em>at most</em> <m>n - 1</m>, and some coefficients may well turn out to be
-        zero. The estimate is
+        Here <m>r_2=0</m>, so the polynomial has no quadratic term. Its degree
+        is still three because the cubic coefficient is nonzero. For other data,
+        the highest coefficients can vanish and the degree can be less than <m>n-1</m>. The estimate is
         <md>
           p\!\left(\tfrac{3}{2}\right)
           = 3 - 2\left(\tfrac{3}{2}\right) + \left(\tfrac{3}{2}\right)^3
@@ -257,10 +265,10 @@
   </example>
 
   <p>
-    A word of caution is in order. The interpolating polynomial passes exactly through
-    the given data points, and estimates taken <em>between</em> data points are usually
-    reasonable. Far outside the range of the data, however, polynomials grow rapidly,
-    and the values of <m>p(x)</m> there should not be trusted as predictions.
+    Passing through every data point does not guarantee accurate estimates between
+    or beyond the data points. An interpolating polynomial can oscillate between the
+    measurements and can grow rapidly outside their interval. Treat its values away
+    from the measured points as predictions that need independent checking.
   </p>
 
   <p>
@@ -270,8 +278,9 @@
     cells share their variables, so run them in order. First, let us hand the row
     reduction of <xref ref="eg-interpolation-cubic" text="type-global"/> <mdash/> the
     one we left as an exercise <mdash/> to Sage. The command <c>matrix(QQ, [...])</c>
-    enters the augmented matrix row by row (the ring <c>QQ</c> keeps the arithmetic in
-    exact fractions), and <c>.rref()</c> returns its reduced row-echelon form.
+    enters the augmented matrix row by row; <c>QQ</c> tells Sage to use exact rational
+    arithmetic, so fractions remain exact. The command <c>.rref()</c> returns the
+    reduced row-echelon form.
   </p>
 
   <sage>
@@ -394,4 +403,25 @@
       </li>
     </ol>
   </p>
+
+  <exercises xml:id="exercises-ch1-interpolation">
+    <title>Practice: Interpolation as a Linear System</title>
+    <exercise xml:id="ex-ch1-interpolation-unknowns">
+      <statement><p>Find the polynomial of degree at most two through
+      <m>(0,1),(1,2),(2,5)</m>. Write the system and its augmented matrix first.
+      Explain why the equations are linear even though the polynomial can contain <m>x^2</m>.</p></statement>
+      <answer><p>Writing <m>p(x)=a+bx+cx^2</m> gives
+      <m>a=1</m>, <m>a+b+c=2</m>, <m>a+2b+4c=5</m>, with augmented matrix
+      <m>\left[\begin{array}{ccc|c}1\amp0\amp0\amp1\\1\amp1\amp1\amp2\\1\amp2\amp4\amp5\end{array}\right]</m>.
+      Row reduction gives <m>a=1,b=0,c=1</m>, hence <m>p(x)=1+x^2</m>.
+      The unknowns are <m>a,b,c</m>; the data supply known values of <m>x</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-interpolation-hypotheses">
+      <statement><p>Can a polynomial pass through both <m>(1,2)</m> and <m>(1,3)</m>?
+      Does passing through all measured points guarantee accurate values between them?</p></statement>
+      <answer><p>No: the first two conditions require both <m>p(1)=2</m> and
+      <m>p(1)=3</m>. The interpolation theorem requires distinct data inputs.
+      Exact agreement at measured points does not guarantee accuracy elsewhere.</p></answer>
+    </exercise>
+  </exercises>
 </section>

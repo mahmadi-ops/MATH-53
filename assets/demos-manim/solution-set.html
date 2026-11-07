@@ -35,9 +35,9 @@
       <input id="parameter" type="range" min="-1" max="1" step="0.01" value="0" aria-describedby="line-formula window-note">
       <output aria-live="off" id="parameter-value" for="parameter">0</output>
     </label>
-    <p id="line-formula" class="equation">p(s) = (−3, −1, 0) + s(9, 1, 1)</p>
+    <p id="line-formula" class="equation">x₁ = −3 + 9s; x₂ = −1 + s; x₃ = s</p>
     <svg id="solution-scene" class="scene rotatable" viewBox="0 0 560 420" role="img" tabindex="0" aria-labelledby="scene-title scene-description" aria-describedby="camera-hint">
-      <title id="scene-title">Planes and their common solution set in ℝ³</title>
+      <title id="scene-title">Planes and their common solutions in three-dimensional coordinate space</title>
       <desc id="scene-description">Two translucent planes intersect in a line. The wine highlight marks solutions of every active equation. Use the parameter slider for the candidate point and the camera controls to rotate.</desc>
     </svg>
     <p id="window-note" class="hint">The rectangles show finite parts of the infinite planes. Every axis uses the same unit scale, and the view fits all plane corners as you rotate.</p>
@@ -57,7 +57,7 @@
     </details>
   </div>
   <figure class="fallback">
-    <img src="../images/solution-set-static.svg" alt="Two planes intersect in the line through (−3, −1, 0) in direction (9, 1, 1).">
+    <img src="../images/solution-set-static.svg" alt="Two planes share the solution line x₁ = −3 + 9s, x₂ = −1 + s, x₃ = s.">
     <figcaption>Every p(s) satisfies x₁ − 2x₂ − 7x₃ = −1 and x₁ − 9x₂ = 6. This pair has the same solution line as the book's original system. JavaScript enables the controls.</figcaption>
   </figure>
   <details>

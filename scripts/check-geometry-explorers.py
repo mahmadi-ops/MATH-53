@@ -63,7 +63,7 @@ def snapshot(page, name):
     for key in ('id','class','tabindex','aria-describedby','aria-labelledby'):
         svg.attrib.pop(key,None)
     svg.set('role','img')
-    svg.set('aria-label',{'solution-set':'The two planes intersect in (-3,-1,0)+s(9,1,1).','transformation-geometry':'The domain cube and basis arrows map to a parallelogram and the matrix columns.','change-of-basis':'The fixed vector (1,2) equals three halves of b1 plus twice b2.'}[name])
+    svg.set('aria-label',{'solution-set':'The two planes intersect in the line x1=-3+9s, x2=-1+s, x3=s.','transformation-geometry':'The domain cube and basis arrows map to a parallelogram and the matrix columns.','change-of-basis':'The fixed vector (1,2) equals three halves of b1 plus twice b2.'}[name])
     style=ET.SubElement(svg,'{'+ns+'}style')
     style.text='text{font-size:17px;paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}'
     out=ROOT/'assets/images'/f'{name}-static.svg'
