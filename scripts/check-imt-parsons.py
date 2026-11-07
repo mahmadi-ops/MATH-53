@@ -231,7 +231,7 @@ def main():
                     assert 'Pagella' in styles['font'] and styles['color']=='rgb(74, 93, 35)'
                     assert styles['height']>=44
                     assert feedback.evaluate('e=>getComputedStyle(e).backgroundColor')=='rgb(237, 240, 230)'
-                    assert question.evaluate('e=>getComputedStyle(e).backgroundColor')=='rgb(255, 255, 255)'
+                    assert question.evaluate('e=>getComputedStyle(e).backgroundColor')=='rgb(237, 240, 230)'
                     assert question.evaluate('e=>getComputedStyle(e).borderColor')=='rgb(196, 205, 177)'
                 assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
                 assert example.evaluate('e=>e.scrollWidth<=e.clientWidth+1')

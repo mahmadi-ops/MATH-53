@@ -116,7 +116,7 @@ html:root {
 #eg-true-false .mchoice button { font-family: var(--font-body); }
 #eg-true-false .multiplechoice_section { background: transparent !important; }
 #eg-true-false .mchoice {
-    background: white !important;
+    background: #EDF0E6 !important;
     border: 1px solid #c4cdb1 !important;
 }
 #eg-true-false .mchoice fieldset { border-color: #c4cdb1; }
