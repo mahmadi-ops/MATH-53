@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the paired IMT Parsons proofs after `pretext build web --no-generate`.
+"""Check the IMT Parsons proofs and true/false example after a website build.
 
 Uses installed Chromium, Playwright, and the locally cached MathJax packages in
 .cache/figure-theme/node_modules, supplied by the figure authoring environment.
@@ -159,7 +159,9 @@ def main():
                 entry.focus();page.keyboard.press('Enter')
             else:
                 exercise.locator('.source .block[tabindex="0"]').focus()
-            page.keyboard.press('ArrowRight');page.keyboard.press('Space')
+            # Horizontal navigation selects a card at a similar height;
+            # move to the first proof card before testing a downward reorder.
+            page.keyboard.press('ArrowRight');page.keyboard.press('ArrowUp');page.keyboard.press('Space')
             page.keyboard.press('ArrowDown');page.keyboard.press('Space')
             ready();compact(id)
             order=page.evaluate('id=>window.componentMap[id].answerBlocks().map(b=>b.lines[0].index)',id)
@@ -183,6 +185,58 @@ def main():
                 assert page.locator('#imt-parsons-proofs').evaluate('e=>e.scrollWidth<=e.clientWidth+1')
                 page.locator('#imt-parsons-proofs').screenshot(path=f'/tmp/math53-imt-parsons-{width}.png')
             print('PASS: responsive phone/tablet layouts and visible controls',flush=True)
+            # Exercise the true/false example through its native controls.
+            # Keep both choices and the feedback independent for each part.
+            tf_ids=['rs-tf-imt-zero-vector','rs-tf-imt-elementary-product']
+            for width in [1500,375,820]:
+                page.evaluate('localStorage.clear()')
+                page.set_viewport_size({'width':width,'height':1100})
+                page.goto(base,wait_until='networkidle')
+                example=page.locator('#eg-true-false')
+                example.locator(':scope > summary').click()
+                page.wait_for_function('''ids=>ids.every(id=>
+                    window.componentMap?.[id]?.optionArray?.length===2)''',arg=tf_ids)
+                for index,id in enumerate(tf_ids):
+                    question=page.locator('#'+id)
+                    feedback=page.locator('#'+id+'_feedback')
+                    assert feedback.get_attribute('aria-live')=='polite'
+                    assert not feedback.inner_text().strip()
+                    choices=question.get_by_role('radio')
+                    assert choices.count()==2
+                    assert question.get_by_role('radiogroup').get_attribute('aria-labelledby')==id+'_prompt'
+                    check=question.get_by_role('button',name='Check',exact=False)
+                    # False is wrong for both statements, including after a
+                    # correct answer: the result must follow the latest input.
+                    for answer in [False,True,False,True]:
+                        choices.nth(0 if answer else 1).check()
+                        check.click()
+                        page.wait_for_function('''({id,answer})=>
+                            window.componentMap[id].correct===answer''',arg={'id':id,'answer':answer})
+                        assert feedback.is_visible() and 'True.' in feedback.inner_text()
+                        assert ('alert-danger' in feedback.get_attribute('class')) != answer
+                    if index==0:
+                        assert not page.locator('#'+tf_ids[1]+'_feedback').inner_text().strip()
+                    # Native radio navigation and button submission work with
+                    # just the keyboard, including changing an earlier answer.
+                    choices.nth(0).focus();page.keyboard.press('ArrowDown')
+                    assert choices.nth(1).is_checked()
+                    page.keyboard.press('Tab');page.keyboard.press('Enter')
+                    assert page.evaluate('id=>window.componentMap[id].correct',id) is False
+                    choices.nth(1).focus();page.keyboard.press('ArrowUp')
+                    page.keyboard.press('Tab');page.keyboard.press('Enter')
+                    assert page.evaluate('id=>window.componentMap[id].correct',id) is True
+                    page.wait_for_function('''id=>document.getElementById(id+'_feedback').querySelector('mjx-container')''',arg=id)
+                    assert not feedback.locator('[data-mml-node="merror"]').count()
+                    styles=check.evaluate('e=>({font:getComputedStyle(e).fontFamily,color:getComputedStyle(e).color,height:e.getBoundingClientRect().height})')
+                    assert 'Pagella' in styles['font'] and styles['color']=='rgb(74, 93, 35)'
+                    assert styles['height']>=44
+                    assert feedback.evaluate('e=>getComputedStyle(e).backgroundColor')=='rgb(237, 240, 230)'
+                    assert question.evaluate('e=>getComputedStyle(e).backgroundColor')=='rgb(255, 255, 255)'
+                    assert question.evaluate('e=>getComputedStyle(e).borderColor')=='rgb(196, 205, 177)'
+                assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+                assert example.evaluate('e=>e.scrollWidth<=e.clientWidth+1')
+                example.screenshot(path=f'/tmp/math53-imt-true-false-{width}.png')
+            print('PASS: true/false grading and retries, independent feedback, keyboard controls, rendered math, book styling, and mobile layouts',flush=True)
             browser.close()
     finally:
         server.shutdown();server.server_close()

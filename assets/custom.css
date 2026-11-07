@@ -110,6 +110,47 @@ html:root {
 #imt-parsons-proofs .block:focus-visible,
 #imt-parsons-proofs [role="button"]:focus-visible,
 #imt-parsons-proofs button:focus-visible { outline: 3px solid #4A5D23; outline-offset: 3px; }
+
+/* The IMT true/false checks use the same book typography and palette. */
+#eg-true-false .mchoice,
+#eg-true-false .mchoice button { font-family: var(--font-body); }
+#eg-true-false .multiplechoice_section { background: transparent !important; }
+#eg-true-false .mchoice {
+    background: white !important;
+    border: 1px solid #c4cdb1 !important;
+}
+#eg-true-false .mchoice fieldset { border-color: #c4cdb1; }
+#eg-true-false .mchoice-option {
+    width: fit-content;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#eg-true-false .mchoice-input { accent-color: #4A5D23; }
+#eg-true-false .mchoice button {
+    min-height: 44px;
+    color: #4A5D23 !important;
+    background: white !important;
+    border: 1px solid #4A5D23 !important;
+    border-radius: 5px;
+}
+#eg-true-false .mchoice button:hover { background: #EDF0E6 !important; }
+#eg-true-false .mchoice :is(input, button):focus-visible {
+    outline: 3px solid #4A5D23;
+    outline-offset: 3px;
+}
+#eg-true-false .alert-success,
+#eg-true-false .alert-info {
+    color: #4A5D23;
+    background: #EDF0E6;
+    border: 1px solid #c4cdb1;
+}
+#eg-true-false .alert-danger {
+    color: #5E011C;
+    background: #f9f3f4;
+    border: 1px solid #5E011C;
+}
 /* Wide display equations scroll horizontally instead of clipping.
    This is the site-wide safety net for narrow screens; the worst
    offenders are also broken into shorter lines at the source level. */

@@ -309,41 +309,46 @@
 
     <example xml:id="eg-true-false">
       <title>True or False?</title>
-      <statement>
+      <introduction>
         <p>
-          <ol>
-            <li>
-              <p>Invertible transformations map the zero vector to itself.</p>
-            </li>
-            <li>
-              <p>
-                Non-invertible matrices cannot be written as a product of elementary
-                matrices.
-              </p>
-            </li>
-          </ol>
+          Choose <em>True</em> or <em>False</em> for each statement, then select
+          <em>Check Me</em> to see feedback. You can change your answer and check again.
         </p>
-      </statement>
-      <solution>
-        <p>
-          <term>(a) True.</term>
-          Condition (2) of <xref ref="thm-invertible-matrix-theorem" text="type-global" />
-          says that for invertible matrices we have <m>A\vec{x} = \vec{0}</m> implies
-          <m>\vec{x} = \vec{0}</m>. This means <m>T_A(\vec{0}) = \vec{0}</m>.
-        </p>
-        <p>
-          <term>(b) True.</term>
-          If we assume that a non-invertible matrix <m>A</m> can be written as a product
-          of elementary matrices, <m>A = E_1 E_2 \cdots E_n</m>, we can easily see that
-          the product is invertible since each elementary matrix is invertible:
-          <md>
-            \left( E_1 E_2 \cdots E_n \right)^{-1}
-            = E_n^{-1} E_{n-1}^{-1} \cdots E_2^{-1} E_1^{-1},
-          </md>
-          which means we reach a contradiction. Hence non-invertible matrices cannot be
-          written as a product of elementary matrices.
-        </p>
-      </solution>
+      </introduction>
+      <task xml:id="tf-imt-zero-vector">
+        <statement correct="yes">
+          <p>Invertible linear transformations map the zero vector to itself.</p>
+        </statement>
+        <feedback>
+          <p>
+            True. In fact, every linear transformation satisfies
+            <m>T(\vec{0})=\vec{0}</m>; invertibility is not needed for this property.
+            For a matrix transformation, <m>A\vec{0}=\vec{0}</m>.
+            Condition (2) of
+            <xref ref="thm-invertible-matrix-theorem" text="type-global" />
+            says more: when <m>A</m> is invertible, the zero vector is the
+            <em>only</em> input mapped to zero.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-imt-elementary-product">
+        <statement correct="yes">
+          <p>
+            Non-invertible matrices cannot be written as a product of elementary
+            matrices.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            True. Every elementary matrix is invertible, so a product
+            <m>A=E_1 E_2 \cdots E_k</m> is invertible, with
+            <md>
+              A^{-1}=E_k^{-1} E_{k-1}^{-1}\cdots E_1^{-1}.
+            </md>
+            Thus a non-invertible matrix cannot be such a product.
+          </p>
+        </feedback>
+      </task>
     </example>
 
     <example xml:id="eg-inverse-from-polynomial">
