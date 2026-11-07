@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-parallelogram-area-proof-figure" width="440" height="340" viewBox="0 0 440 340">
+  <defs>
+    <clipPath id="pf-parallelogram-area-proof-__clipPath-0">
+      <rect x="10.0" y="10.0" width="420.0" height="320.0"/>
+    </clipPath>
+    <clipPath id="pf-parallelogram-area-proof-__clipPath-1">
+      <rect x="10.0" y="10.0" width="420.0" height="320.0"/>
+    </clipPath>
+    <marker id="pf-parallelogram-area-proof-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="pf-parallelogram-area-proof-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-parallelogram-area-proof-arrow-head-end-3_None_24_60-h4A5D23" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#4A5D23" stroke="none"/>
+    </marker>
+    <marker id="pf-parallelogram-area-proof-arrow-head-end-3_None_24_60-h4A5D23-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+  </defs>
+  <path id="pf-parallelogram-area-proof-__path-0" d="M 59.0 281.3 L 339.0 281.3 L 339.0 72.6 L 59.0 72.6 L 59.0 281.3" stroke="black" stroke-width="1" fill="#f2f2f2" clip-path="url(#pf-parallelogram-area-proof-__clipPath-1)"/>
+  <path id="pf-parallelogram-area-proof-__path-1" d="M 59.0 281.3 L 269.0 211.7 L 339.0 72.6 L 129.0 142.2" stroke="none" stroke-width="2" fill="#f9f3f4" clip-path="url(#pf-parallelogram-area-proof-__clipPath-1)"/>
+  <g id="pf-parallelogram-area-proof-axes" stroke="black" stroke-width="2">
+    <line id="pf-parallelogram-area-proof-__line-0" x1="10.0" y1="281.3" x2="430.0" y2="281.3" stroke="black" stroke-width="2" marker-end="url(#pf-parallelogram-area-proof-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-parallelogram-area-proof-arrow-head-end-2_None_24_60-black)"/>
+    <line id="pf-parallelogram-area-proof-__line-1" x1="59.0" y1="330.0" x2="59.0" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#pf-parallelogram-area-proof-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-parallelogram-area-proof-arrow-head-end-2_None_24_60-black)"/>
+  </g>
+  <line id="pf-parallelogram-area-proof-__line-2" x1="269.0" y1="281.3" x2="269.0" y2="211.7" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-parallelogram-area-proof-__line-3" x1="269.0" y1="211.7" x2="339.0" y2="211.7" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-parallelogram-area-proof-__line-4" x1="129.0" y1="142.2" x2="129.0" y2="72.6" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-parallelogram-area-proof-__line-5" x1="59.0" y1="142.2" x2="129.0" y2="142.2" stroke="black" stroke-width="1" fill="none"/>
+  <line id="pf-parallelogram-area-proof-__line-6" x1="59.0" y1="281.3" x2="265.5" y2="212.9" stroke="#4A5D23" stroke-width="3" fill="none" marker-end="url(#pf-parallelogram-area-proof-arrow-head-end-3_None_24_60-h4A5D23)"/>
+  <line id="pf-parallelogram-area-proof-__line-7" x1="59.0" y1="281.3" x2="127.4" y2="145.5" stroke="#4A5D23" stroke-width="3" fill="none" marker-end="url(#pf-parallelogram-area-proof-arrow-head-end-3_None_24_60-h4A5D23)"/>
+  <line id="pf-parallelogram-area-proof-__line-8" x1="269.0" y1="211.7" x2="339.0" y2="72.6" stroke="#4A5D23" stroke-width="1" fill="none"/>
+  <line id="pf-parallelogram-area-proof-__line-9" x1="129.0" y1="142.2" x2="339.0" y2="72.6" stroke="#4A5D23" stroke-width="1" fill="none"/>
+  <g id="pf-parallelogram-area-proof-__label-0" transform="translate(237.5,241.1) translate(-7.8,-0.0)">
+    <g id="pf-parallelogram-area-proof-__g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px; color:#4A5D23" width="15.552px" height="15.568px" role="img" focusable="false" viewBox="0 -927 937 938" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-parallelogram-area-proof-MJX-2-GP-I-1D44E" d="M406 85L399 106C392 100 391 99 386 95C354 68 339 59 324 59C314 59 309 67 309 83C309 87 309 90 310 93L402 472L392 481L359 463C320 478 301 482 274 482C246 482 226 477 199 464C136 433 104 403 79 354C35 265 4 146 4 66C4 23 19-11 38-11C59-11 96 10 133 42C176 79 216 126 271 204L242 77C238 59 236 42 236 26C236 3 245-11 260-11C283-11 324 17 406 85M319 414C297 307 278 255 245 204C190 120 127 59 94 59C82 59 76 72 76 99C76 163 102 274 137 357C161 415 185 433 234 433C257 433 276 429 319 414Z"/>
+          <path id="pf-parallelogram-area-proof-MJX-2-GP-N-20D7" d="M-57 664C-102 700-142 740-177 784C-189 782-200 781-211 781C-223 781-234 782-245 784C-217 750-187 717-154 688L-443 688C-441 680-440 672-440 664C-440 656-441 648-443 640L-154 640C-187 611-217 578-245 544C-234 546-223 547-211 547C-200 547-189 546-177 544C-142 588-102 628-57 664Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\vec{a};texclass:ORD" data-semantic-speech="ModifyingAbove a With right arrow">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:a" data-semantic-speech="a" data-semantic-prefix="Base" transform="translate(383,0)">
+                  <use data-c="1D44E" xlink:href="#pf-parallelogram-area-proof-MJX-2-GP-I-1D44E"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(937,43)">
+                  <use data-c="20D7" xlink:href="#pf-parallelogram-area-proof-MJX-2-GP-N-20D7"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-parallelogram-area-proof-__label-1" transform="translate(97.4,163.0) translate(-15.6,-9.9)">
+    <g id="pf-parallelogram-area-proof-__g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px; color:#4A5D23" width="15.552px" height="19.736px" role="img" focusable="false" viewBox="0 -1178 937 1189" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-parallelogram-area-proof-MJX-3-GP-I-1D44F" d="M433 376C433 414 424 453 412 468C405 477 392 482 377 482C353 482 323 474 295 460C244 433 211 403 149 324L235 722L223 733C171 707 135 698 63 691L59 670L107 670C131 670 141 663 141 646C141 639 140 628 139 622L38 71C37 68 37 64 37 61C37 22 85-11 140-11C177-11 228 8 271 39C367 107 433 244 433 376M361 352C361 288 340 202 310 137C277 68 237 36 183 36C137 36 112 59 112 101C112 126 116 154 125 191C144 271 168 319 208 361C241 395 293 424 322 424C348 424 361 401 361 352Z"/>
+          <path id="pf-parallelogram-area-proof-MJX-3-GP-N-20D7" d="M-57 664C-102 700-142 740-177 784C-189 782-200 781-211 781C-223 781-234 782-245 784C-217 750-187 717-154 688L-443 688C-441 680-440 672-440 664C-440 656-441 648-443 640L-154 640C-187 611-217 578-245 544C-234 546-223 547-211 547C-200 547-189 546-177 544C-142 588-102 628-57 664Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\vec{b};texclass:ORD" data-semantic-speech="ModifyingAbove b With right arrow">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:b" data-semantic-speech="b" data-semantic-prefix="Base" transform="translate(473.5,0)">
+                  <use data-c="1D44F" xlink:href="#pf-parallelogram-area-proof-MJX-3-GP-I-1D44F"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(937,294)">
+                  <use data-c="20D7" xlink:href="#pf-parallelogram-area-proof-MJX-3-GP-N-20D7"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-parallelogram-area-proof-__label-2" transform="translate(164.0,293.3) translate(-7.3,-0.0)">
+    <g id="pf-parallelogram-area-proof-__g-2">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="14.616px" height="10.528px" role="img" focusable="false" viewBox="0 -482 880.6 634.1" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-parallelogram-area-proof-MJX-4-GP-I-1D44E" d="M406 85L399 106C392 100 391 99 386 95C354 68 339 59 324 59C314 59 309 67 309 83C309 87 309 90 310 93L402 472L392 481L359 463C320 478 301 482 274 482C246 482 226 477 199 464C136 433 104 403 79 354C35 265 4 146 4 66C4 23 19-11 38-11C59-11 96 10 133 42C176 79 216 126 271 204L242 77C238 59 236 42 236 26C236 3 245-11 260-11C283-11 324 17 406 85M319 414C297 307 278 255 245 204C190 120 127 59 94 59C82 59 76 72 76 99C76 163 102 274 137 357C161 415 185 433 234 433C257 433 276 429 319 414Z"/>
+          <path id="pf-parallelogram-area-proof-MJX-4-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:a_1" data-semantic-speech="a 1">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:a" data-semantic-speech="a" data-semantic-prefix="Base">
+                <use data-c="1D44E" xlink:href="#pf-parallelogram-area-proof-MJX-4-GP-I-1D44E"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(477,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                <use data-c="31" xlink:href="#pf-parallelogram-area-proof-MJX-4-GP-N-31"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-parallelogram-area-proof-__label-3" transform="translate(304.0,293.3) translate(-7.5,-0.0)">
+    <g id="pf-parallelogram-area-proof-__g-3">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="14.928px" height="14.688px" role="img" focusable="false" viewBox="0 -733 899.6 885.1" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-parallelogram-area-proof-MJX-5-GP-I-1D44F" d="M433 376C433 414 424 453 412 468C405 477 392 482 377 482C353 482 323 474 295 460C244 433 211 403 149 324L235 722L223 733C171 707 135 698 63 691L59 670L107 670C131 670 141 663 141 646C141 639 140 628 139 622L38 71C37 68 37 64 37 61C37 22 85-11 140-11C177-11 228 8 271 39C367 107 433 244 433 376M361 352C361 288 340 202 310 137C277 68 237 36 183 36C137 36 112 59 112 101C112 126 116 154 125 191C144 271 168 319 208 361C241 395 293 424 322 424C348 424 361 401 361 352Z"/>
+          <path id="pf-parallelogram-area-proof-MJX-5-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:b_1" data-semantic-speech="b 1">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:b" data-semantic-speech="b" data-semantic-prefix="Base">
+                <use data-c="1D44F" xlink:href="#pf-parallelogram-area-proof-MJX-5-GP-I-1D44F"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(496,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                <use data-c="31" xlink:href="#pf-parallelogram-area-proof-MJX-5-GP-N-31"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-parallelogram-area-proof-__label-4" transform="translate(351.0,246.5) translate(0.0,-5.3)">
+    <g id="pf-parallelogram-area-proof-__g-4">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="14.616px" height="10.528px" role="img" focusable="false" viewBox="0 -482 880.6 634.1" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-parallelogram-area-proof-MJX-6-GP-I-1D44E" d="M406 85L399 106C392 100 391 99 386 95C354 68 339 59 324 59C314 59 309 67 309 83C309 87 309 90 310 93L402 472L392 481L359 463C320 478 301 482 274 482C246 482 226 477 199 464C136 433 104 403 79 354C35 265 4 146 4 66C4 23 19-11 38-11C59-11 96 10 133 42C176 79 216 126 271 204L242 77C238 59 236 42 236 26C236 3 245-11 260-11C283-11 324 17 406 85M319 414C297 307 278 255 245 204C190 120 127 59 94 59C82 59 76 72 76 99C76 163 102 274 137 357C161 415 185 433 234 433C257 433 276 429 319 414Z"/>
+          <path id="pf-parallelogram-area-proof-MJX-6-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:a_2" data-semantic-speech="a 2">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:a" data-semantic-speech="a" data-semantic-prefix="Base">
+                <use data-c="1D44E" xlink:href="#pf-parallelogram-area-proof-MJX-6-GP-I-1D44E"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(477,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                <use data-c="32" xlink:href="#pf-parallelogram-area-proof-MJX-6-GP-N-32"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-parallelogram-area-proof-__label-5" transform="translate(351.0,142.2) translate(0.0,-7.3)">
+    <g id="pf-parallelogram-area-proof-__g-5">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="14.928px" height="14.688px" role="img" focusable="false" viewBox="0 -733 899.6 885.1" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-parallelogram-area-proof-MJX-7-GP-I-1D44F" d="M433 376C433 414 424 453 412 468C405 477 392 482 377 482C353 482 323 474 295 460C244 433 211 403 149 324L235 722L223 733C171 707 135 698 63 691L59 670L107 670C131 670 141 663 141 646C141 639 140 628 139 622L38 71C37 68 37 64 37 61C37 22 85-11 140-11C177-11 228 8 271 39C367 107 433 244 433 376M361 352C361 288 340 202 310 137C277 68 237 36 183 36C137 36 112 59 112 101C112 126 116 154 125 191C144 271 168 319 208 361C241 395 293 424 322 424C348 424 361 401 361 352Z"/>
+          <path id="pf-parallelogram-area-proof-MJX-7-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:b_2" data-semantic-speech="b 2">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:b" data-semantic-speech="b" data-semantic-prefix="Base">
+                <use data-c="1D44F" xlink:href="#pf-parallelogram-area-proof-MJX-7-GP-I-1D44F"/>
+              </g>
+              <g data-mml-node="mn" transform="translate(496,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                <use data-c="32" xlink:href="#pf-parallelogram-area-proof-MJX-7-GP-N-32"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+</svg>

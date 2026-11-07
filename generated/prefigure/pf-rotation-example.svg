@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-rotation-example-figure" width="340" height="320" viewBox="0 0 340 320">
+  <defs>
+    <clipPath id="pf-rotation-example-__clipPath-0">
+      <rect x="10.0" y="10.0" width="320.0" height="300.0"/>
+    </clipPath>
+    <clipPath id="pf-rotation-example-__clipPath-1">
+      <rect x="10.0" y="10.0" width="320.0" height="300.0"/>
+    </clipPath>
+    <marker id="pf-rotation-example-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="pf-rotation-example-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-rotation-example-arrow-head-end-2_None_24_60-h4A5D23" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#4A5D23" stroke="none"/>
+    </marker>
+    <marker id="pf-rotation-example-arrow-head-end-2_None_24_60-h4A5D23-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-rotation-example-arrow-head-end-2_None_24_60-h5E011C" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#5E011C" stroke="none"/>
+    </marker>
+    <marker id="pf-rotation-example-arrow-head-end-2_None_24_60-h5E011C-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+  </defs>
+  <g id="pf-rotation-example-axes" stroke="black" stroke-width="2">
+    <line id="pf-rotation-example-__line-0" x1="10.0" y1="231.1" x2="330.0" y2="231.1" stroke="black" stroke-width="2" marker-end="url(#pf-rotation-example-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-rotation-example-arrow-head-end-2_None_24_60-black)"/>
+    <g id="pf-rotation-example-__g-0">
+      <line id="pf-rotation-example-__line-1" x1="34.6" y1="234.1" x2="34.6" y2="228.1"/>
+      <line id="pf-rotation-example-__line-2" x1="96.2" y1="234.1" x2="96.2" y2="228.1"/>
+      <line id="pf-rotation-example-__line-3" x1="219.2" y1="234.1" x2="219.2" y2="228.1"/>
+      <line id="pf-rotation-example-__line-4" x1="280.8" y1="234.1" x2="280.8" y2="228.1"/>
+      <line id="pf-rotation-example-__line-5" x1="34.6" y1="234.1" x2="34.6" y2="228.1"/>
+      <line id="pf-rotation-example-__line-6" x1="96.2" y1="234.1" x2="96.2" y2="228.1"/>
+      <line id="pf-rotation-example-__line-7" x1="219.2" y1="234.1" x2="219.2" y2="228.1"/>
+      <line id="pf-rotation-example-__line-8" x1="280.8" y1="234.1" x2="280.8" y2="228.1"/>
+    </g>
+    <line id="pf-rotation-example-__line-9" x1="157.7" y1="310.0" x2="157.7" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#pf-rotation-example-arrow-head-end-2_None_24_60-black)" marker-start="url(#pf-rotation-example-arrow-head-end-2_None_24_60-black)"/>
+    <g id="pf-rotation-example-__g-1">
+      <line id="pf-rotation-example-__line-10" x1="154.7" y1="310.0" x2="160.7" y2="310.0"/>
+      <line id="pf-rotation-example-__line-11" x1="154.7" y1="152.1" x2="160.7" y2="152.1"/>
+      <line id="pf-rotation-example-__line-12" x1="154.7" y1="73.2" x2="160.7" y2="73.2"/>
+      <line id="pf-rotation-example-__line-13" x1="154.7" y1="152.1" x2="160.7" y2="152.1"/>
+      <line id="pf-rotation-example-__line-14" x1="154.7" y1="73.2" x2="160.7" y2="73.2"/>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-0" transform="translate(324.0,225.1) translate(-8.3,-8.2)">
+    <g id="pf-rotation-example-__g-2">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.296px" height="8.184px" role="img" focusable="false" viewBox="0 -482 500 493" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-2-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:x" data-semantic-speech="x">
+              <use data-c="1D465" xlink:href="#pf-rotation-example-MJX-2-GP-I-1D465"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-1" transform="translate(163.7,16.0) translate(0.0,-0.0)">
+    <g id="pf-rotation-example-__g-3">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.584px" width="8.296px" height="12.584px" role="img" focusable="false" viewBox="0 -482 500 758" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-3-GP-I-1D466" d="M490 473L479 482C450 471 427 465 405 463L370 331C358 284 323 211 290 162C255 111 206 67 184 67C162 67 164 115 165 128L180 322C182 353 184 391 184 419C184 464 177 482 160 482C147 482 133 475 85 442L3 386L14 368L64 398C69 402 82 410 89 410C115 410 111 359 110 343L93 100L92 60C91 18 110-11 135-11C172-11 256 74 331 187L282 16C231-161 181-234 111-234C76-234 49-207 49-172C49-167 50-159 51-150L41-146L-7-180C-8-187-8-193-8-198C-8-241 29-276 74-276C180-276 290-152 349 33Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:y" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#pf-rotation-example-MJX-3-GP-I-1D466"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-2" transform="translate(34.6,242.1) translate(-6.9,-0.0)">
+    <g id="pf-rotation-example-__g-4">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="13.824px" height="11.488px" role="img" focusable="false" viewBox="0 -689 833 692" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-4-GP-N-2D" d="M312 282L307 287L44 287L17 220L22 215L282 215Z"/>
+          <path id="pf-rotation-example-MJX-4-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{-2}" data-semantic-speech="minus 2">
+              <use data-c="2D" xlink:href="#pf-rotation-example-MJX-4-GP-N-2D"/>
+              <use data-c="32" xlink:href="#pf-rotation-example-MJX-4-GP-N-32" transform="translate(333,0)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-3" transform="translate(96.2,242.1) translate(-6.9,-0.0)">
+    <g id="pf-rotation-example-__g-5">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="13.824px" height="11.568px" role="img" focusable="false" viewBox="0 -694 833 697" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-5-GP-N-2D" d="M312 282L307 287L44 287L17 220L22 215L282 215Z"/>
+          <path id="pf-rotation-example-MJX-5-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{-1}" data-semantic-speech="minus 1">
+              <use data-c="2D" xlink:href="#pf-rotation-example-MJX-5-GP-N-2D"/>
+              <use data-c="31" xlink:href="#pf-rotation-example-MJX-5-GP-N-31" transform="translate(333,0)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-4" transform="translate(219.2,242.1) translate(-4.1,-0.0)">
+    <g id="pf-rotation-example-__g-6">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-6-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mtext" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="general:text;clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{1}" data-semantic-speech="1">
+              <use data-c="31" xlink:href="#pf-rotation-example-MJX-6-GP-N-31"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-5" transform="translate(280.8,242.1) translate(-4.1,-0.0)">
+    <g id="pf-rotation-example-__g-7">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="8.296px" height="11.488px" role="img" focusable="false" viewBox="0 -689 500 692" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-7-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mtext" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="general:text;clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{2}" data-semantic-speech="2">
+              <use data-c="32" xlink:href="#pf-rotation-example-MJX-7-GP-N-32"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-6" transform="translate(146.7,152.1) translate(-8.3,-5.8)">
+    <g id="pf-rotation-example-__g-8">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-8-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mtext" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="general:text;clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{1}" data-semantic-speech="1">
+              <use data-c="31" xlink:href="#pf-rotation-example-MJX-8-GP-N-31"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-7" transform="translate(146.7,73.2) translate(-8.3,-5.7)">
+    <g id="pf-rotation-example-__g-9">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="8.296px" height="11.488px" role="img" focusable="false" viewBox="0 -689 500 692" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-9-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mtext" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="general:text;clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{2}" data-semantic-speech="2">
+              <use data-c="32" xlink:href="#pf-rotation-example-MJX-9-GP-N-32"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <line id="pf-rotation-example-__line-15" x1="157.7" y1="231.1" x2="278.7" y2="153.4" stroke="#4A5D23" stroke-width="2" fill="none" marker-end="url(#pf-rotation-example-arrow-head-end-2_None_24_60-h4A5D23)"/>
+  <line id="pf-rotation-example-__line-16" x1="157.7" y1="231.1" x2="97.1" y2="75.5" stroke="#5E011C" stroke-width="2" fill="none" marker-end="url(#pf-rotation-example-arrow-head-end-2_None_24_60-h5E011C)"/>
+  <g id="pf-rotation-example-__label-8" transform="translate(290.8,148.1) translate(0.0,-7.8)">
+    <g id="pf-rotation-example-__g-10">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px; color:#4A5D23" width="15.552px" height="15.568px" role="img" focusable="false" viewBox="0 -927 937 938" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-10-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+          <path id="pf-rotation-example-MJX-10-GP-N-20D7" d="M-57 664C-102 700-142 740-177 784C-189 782-200 781-211 781C-223 781-234 782-245 784C-217 750-187 717-154 688L-443 688C-441 680-440 672-440 664C-440 656-441 648-443 640L-154 640C-187 611-217 578-245 544C-234 546-223 547-211 547C-200 547-189 546-177 544C-142 588-102 628-57 664Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\vec{x};texclass:ORD" data-semantic-speech="ModifyingAbove x With right arrow">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:x" data-semantic-speech="x" data-semantic-prefix="Base" transform="translate(385,0)">
+                  <use data-c="1D465" xlink:href="#pf-rotation-example-MJX-10-GP-I-1D465"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(937,43)">
+                  <use data-c="20D7" xlink:href="#pf-rotation-example-MJX-10-GP-N-20D7"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="pf-rotation-example-__label-9" transform="translate(86.2,63.2) translate(-61.9,-19.6)">
+    <g id="pf-rotation-example-__g-11">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.248px; color:#5E011C" width="61.920px" height="19.632px" role="img" focusable="false" viewBox="0 -927 3730.7 1183.1" x="0.0" y="0.0">
+        <defs>
+          <path id="pf-rotation-example-MJX-11-GP-I-1D445" d="M639-3L639 24C599 29 587 37 559 79L375 354C430 364 459 376 495 402C553 444 584 499 584 560C584 646 492 692 409 692C359 692 309 689 259 689L108 692L105 664L161 662C185 661 196 653 196 635C196 621 192 589 187 559L112 125C96 34 94 31 54 28L13 25L9-3L141 0L264-3L267 25L218 28C191 30 182 38 182 58C182 67 183 76 186 93L271 580L280 620L287 648C316 654 336 656 363 656C450 656 496 617 496 543C496 448 418 378 314 378L270 378L267 367C401 172 432 124 507-3C532-1 556 0 581 0C601 0 620-1 639-3Z"/>
+          <path id="pf-rotation-example-MJX-11-GP-I-1D70B" d="M705 481L698 493C671 484 626 474 593 474C581 473 555 472 530 472L215 481C140 481 112 448 83 361L96 353L106 360C127 420 167 423 224 423C236 423 254 422 275 422C189 194 150 125 68-2L77-11L150 15C187 93 250 245 307 421L493 414C475 352 415 171 415 107C413 2 452-11 483-11C534-11 562 2 627 55L619 74L594 57C597 59 568 36 551 36C504 36 490 65 491 127C491 152 493 179 499 208L545 414C568 414 591 415 614 418C632 418 654 428 669 434C682 455 686 457 705 481Z"/>
+          <path id="pf-rotation-example-MJX-11-GP-N-2F" d="M406 650C397 648 389 647 380 647C372 647 363 648 355 650L80-150C88-148 97-147 105-147C114-147 122-148 131-150Z"/>
+          <path id="pf-rotation-example-MJX-11-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+          <path id="pf-rotation-example-MJX-11-GP-N-2061" d=""/>
+          <path id="pf-rotation-example-MJX-11-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+          <path id="pf-rotation-example-MJX-11-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+          <path id="pf-rotation-example-MJX-11-GP-N-20D7" d="M-57 664C-102 700-142 740-177 784C-189 782-200 781-211 781C-223 781-234 782-245 784C-217 750-187 717-154 688L-443 688C-441 680-440 672-440 664C-440 656-441 648-443 640L-154 640C-187 611-217 578-245 544C-234 546-223 547-211 547C-200 547-189 546-177 544C-142 588-102 628-57 664Z"/>
+          <path id="pf-rotation-example-MJX-11-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="appl" data-semantic-role="simple function" data-semantic-annotation="depth:1" data-semantic-id="13" data-semantic-children="5,11" data-semantic-content="12,0" data-semantic-attributes="latex:R_{\pi/2}(\vec{x})" data-semantic-speech="upper R Subscript pi divided by 2 Baseline left parenthesis ModifyingAbove x With right arrow right parenthesis">
+            <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="simple function" data-semantic-annotation="depth:2" data-semantic-id="5" data-semantic-children="0,4" data-semantic-parent="13" data-semantic-attributes="latex:R_{\pi/2}" data-semantic-speech="upper R Subscript pi divided by 2 Baseline">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="simple function" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:3" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:R" data-semantic-operator="appl" data-semantic-speech="upper R" data-semantic-prefix="Base">
+                <use data-c="1D445" xlink:href="#pf-rotation-example-MJX-11-GP-I-1D445"/>
+              </g>
+              <g data-mml-node="TeXAtom" transform="translate(700,-150) scale(0.707)" data-mjx-texclass="ORD" data-semantic-type="infixop" data-semantic-role="division" data-semantic-annotation="depth:3" data-semantic-id="4" data-semantic-children="1,3" data-semantic-content="2" data-semantic-parent="5" data-semantic-attributes="latex:{\pi/2};texclass:ORD" data-semantic-speech="pi divided by 2" data-semantic-prefix="Subscript">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="1" data-semantic-parent="4" data-semantic-attributes="latex:\pi" data-semantic-speech="pi">
+                  <use data-c="1D70B" xlink:href="#pf-rotation-example-MJX-11-GP-I-1D70B"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="division" data-semantic-annotation="depth:4" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:/" data-semantic-operator="infixop,/" data-semantic-speech="slash" transform="translate(705,0)">
+                  <use data-c="2F" xlink:href="#pf-rotation-example-MJX-11-GP-N-2F"/>
+                </g>
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="latex:2" data-semantic-speech="2" transform="translate(1191,0)">
+                  <use data-c="32" xlink:href="#pf-rotation-example-MJX-11-GP-N-32"/>
+                </g>
+              </g>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="application" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="12" data-semantic-parent="13" data-semantic-added="true" data-semantic-operator="appl" data-semantic-speech="of" transform="translate(1945.7,0)">
+              <use data-c="2061" xlink:href="#pf-rotation-example-MJX-11-GP-N-2061"/>
+            </g>
+            <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="11" data-semantic-children="9" data-semantic-content="6,10" data-semantic-parent="13" data-semantic-speech="left parenthesis ModifyingAbove x With right arrow right parenthesis" transform="translate(1945.7,0)">
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="6" data-semantic-parent="11" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                <use data-c="28" xlink:href="#pf-rotation-example-MJX-11-GP-N-28"/>
+              </g>
+              <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(424,0)">
+                <g data-mml-node="mover" data-semantic-type="overscore" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="9" data-semantic-children="7,8" data-semantic-parent="11" data-semantic-attributes="latex:\vec{x};texclass:ORD" data-semantic-speech="ModifyingAbove x With right arrow">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="7" data-semantic-parent="9" data-semantic-attributes="latex:x" data-semantic-speech="x" data-semantic-prefix="Base" transform="translate(385,0)">
+                    <use data-c="1D465" xlink:href="#pf-rotation-example-MJX-11-GP-I-1D465"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow;depth:4" data-semantic-id="8" data-semantic-parent="9" data-semantic-speech="right arrow" data-semantic-prefix="Overscript" transform="translate(937,43)">
+                    <use data-c="20D7" xlink:href="#pf-rotation-example-MJX-11-GP-N-20D7"/>
+                  </g>
+                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="10" data-semantic-parent="11" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(1361,0)">
+                <use data-c="29" xlink:href="#pf-rotation-example-MJX-11-GP-N-29"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+</svg>
