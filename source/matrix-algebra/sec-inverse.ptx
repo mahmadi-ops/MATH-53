@@ -610,39 +610,133 @@
           </ol>
         </p>
       </statement>
-      <proof>
-        <title>Proof of (1)</title>
-        <p>
-          If <m>A</m> is an invertible matrix, then <m>A A^{-1} = I</m>, which means
-          <md>
-            \left( A A^{-1} \right)^T = I^T
-            \qquad \Longrightarrow \qquad
-            \left( A^{-1} \right)^T A^T = I.
-          </md>
-          Also, since <m>A^{-1} A = I</m>,
-          <md>
-            \left( A^{-1} A \right)^T = I^T
-            \qquad \Longrightarrow \qquad
-            A^T \left( A^{-1} \right)^T = I.
-          </md>
-        </p>
-        <p>
-          Both equations together say that <m>\left( A^{-1} \right)^T</m> is an inverse
-          of <m>A^T</m>, and so
-          <md>
-            \left( A^{-1} \right)^T = \left( A^T \right)^{-1}.
-          </md>
-        </p>
-      </proof>
     </theorem>
+
+    <p xml:id="intro-inverse-parsons">
+      <em>Build the three proofs.</em> In each Parsons exercise, arrange the valid
+      blocks into a proof of the corresponding part of
+      <xref ref="thm-inverses-transposes-products" text="type-global" />,
+      leaving one incorrect block unused. All matrices are <m>n\times n</m>.
+      For parts (1) and (2), verify both products required by the definition of
+      an inverse, in the order specified. For part (3), use induction on the
+      number of factors, starting at <m>k=1</m>.
+      Drag the blocks, or Tab into a puzzle and follow its keyboard instructions.
+      Use the arrow keys and Space or Enter to select, move, and drop blocks.
+      Select <em>Check</em> for feedback or <em>Reset</em> to start again.
+    </p>
+    <paragraphs xml:id="inverse-parsons-proofs">
+      <title>Reconstruct the Inverse Proofs</title>
+      <exercise xml:id="ex-inverse-transpose-parsons" language="natural" indentation="show">
+        <title>Part (1): Inverse of a Transpose</title>
+        <statement>
+          <p>
+            Assume <m>A</m> is invertible. Prove that
+            <m>(A^T)^{-1}=(A^{-1})^T</m> by choosing a candidate <m>C</m>,
+            then checking <m>CA^T=I_n</m> before <m>A^TC=I_n</m>.
+          </p>
+        </statement>
+        <blocks randomize="yes">
+          <block>
+            <p>Let <m>C=(A^{-1})^T</m>. Since <m>A</m> is invertible, <m>AA^{-1}=A^{-1}A=I_n</m>.</p>
+          </block>
+          <block>
+            <p>First, <m>CA^T=(AA^{-1})^T</m> by the transpose rule for products, so <m>CA^T=I_n</m>.</p>
+          </block>
+          <block>
+            <p>For the other product, <m>A^TC=(A^{-1}A)^T</m>, so <m>A^TC=I_n</m>.</p>
+          </block>
+          <block>
+            <p>Thus <m>C</m> is a two-sided inverse of <m>A^T</m>, proving <m>(A^T)^{-1}=(A^{-1})^T</m>.</p>
+          </block>
+          <block correct="no">
+            <p>Instead take <m>C=A^{-1}</m>, because transposing a matrix does not change its inverse.</p>
+          </block>
+        </blocks>
+        <hint>
+          <p>
+            Use <m>(UV)^T=V^TU^T</m> and <m>I_n^T=I_n</m>.
+            Transposing reverses the order of the factors. The matrix
+            <m>A</m> need not be symmetric.
+          </p>
+        </hint>
+      </exercise>
+      <exercise xml:id="ex-inverse-product-parsons" language="natural" indentation="show">
+        <title>Part (2): Inverse of a Product</title>
+        <statement>
+          <p>
+            Assume <m>A</m> and <m>B</m> are invertible. Prove that <m>AB</m>
+            is invertible with <m>(AB)^{-1}=B^{-1}A^{-1}</m>. Choose a
+            candidate <m>C</m>, then check <m>(AB)C=I_n</m> before
+            <m>C(AB)=I_n</m>.
+          </p>
+        </statement>
+        <blocks randomize="yes">
+          <block><p>Let <m>C=B^{-1}A^{-1}</m>.</p></block>
+          <block>
+            <p>First regroup <m>(AB)C</m> as <m>A(BB^{-1})A^{-1}</m>. This equals <m>AA^{-1}=I_n</m>.</p>
+          </block>
+          <block>
+            <p>For the other side, regroup <m>C(AB)</m> as <m>B^{-1}(A^{-1}A)B</m>. This equals <m>B^{-1}B=I_n</m>.</p>
+          </block>
+          <block>
+            <p>Thus <m>C</m> is a two-sided inverse of <m>AB</m>, so <m>AB</m> is invertible and <m>(AB)^{-1}=B^{-1}A^{-1}</m>.</p>
+          </block>
+          <block correct="no">
+            <p>Instead take <m>C=A^{-1}B^{-1}</m>; invert each factor without changing the order.</p>
+          </block>
+        </blocks>
+        <hint>
+          <p>
+            Use associativity to put <m>BB^{-1}</m> or <m>A^{-1}A</m>
+            next to each other. You may regroup factors, but you cannot
+            assume matrix multiplication is commutative.
+          </p>
+        </hint>
+      </exercise>
+      <exercise xml:id="ex-inverse-many-products-parsons" language="natural" indentation="show">
+        <title>Part (3): Inverse of Several Factors</title>
+        <statement>
+          <p>
+            Let <m>k\ge1</m> and suppose <m>A_1,\ldots,A_k</m> are invertible.
+            Use part (2) and induction on <m>k</m> to prove that their product
+            is invertible, with inverse <m>A_k^{-1}\cdots A_1^{-1}</m>.
+          </p>
+        </statement>
+        <blocks randomize="yes">
+          <block>
+            <p>Base case <m>k=1</m>: the matrix <m>A_1</m> is invertible with inverse <m>A_1^{-1}</m>, as claimed.</p>
+          </block>
+          <block>
+            <p>Assume the result for <m>k=m\ge1</m>. Let <m>P=A_1\cdots A_m</m>. Then <m>P</m> is invertible with inverse <m>A_m^{-1}\cdots A_1^{-1}</m>.</p>
+          </block>
+          <block>
+            <p>Apply part (2) to <m>P</m> and <m>A_{m+1}</m>. The product <m>PA_{m+1}</m> is invertible with inverse <m>A_{m+1}^{-1}P^{-1}</m>.</p>
+          </block>
+          <block>
+            <p>In this inverse, substitute <m>A_m^{-1}\cdots A_1^{-1}</m> for <m>P^{-1}</m>. This gives the claimed reversed order for <m>m+1</m> factors.</p>
+          </block>
+          <block>
+            <p>The induction step is complete. Hence the result holds for every integer <m>k\ge1</m>.</p>
+          </block>
+          <block correct="no">
+            <p>Instead use <m>P^{-1}A_{m+1}^{-1}</m> as the inverse of <m>PA_{m+1}</m>; the factor order stays the same.</p>
+          </block>
+        </blocks>
+        <hint>
+          <p>
+            Treat the first <m>m</m> factors as a single matrix <m>P</m>.
+            Part (2) puts the inverse of the last factor on the left.
+            Finish by replacing <m>P^{-1}</m> using the induction hypothesis.
+          </p>
+        </hint>
+      </exercise>
+    </paragraphs>
 
     <remark xml:id="rem-prove-2-and-3">
       <p>
-        The proofs of (2) and (3) are left to the reader. For (2), it suffices to verify
-        that <m>\left( B^{-1}A^{-1} \right)(AB) = I</m> and
-        <m>(AB)\left( B^{-1}A^{-1} \right) = I</m>; part (3) then follows by induction on
-        <m>k</m>. Note that, as with the transpose of a product, taking inverses
-        <em>reverses the order</em> of the factors.
+        As with the transpose of a product, taking inverses
+        <em>reverses the order</em> of the factors. Associativity lets us
+        regroup adjacent factors; it does not let us exchange their order.
       </p>
     </remark>
   </subsection>

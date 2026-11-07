@@ -38,9 +38,9 @@
     });
 })();
 
-/* Open the paired IMT proof puzzles before Runestone measures their blocks. */
+/* Open and fit the inverse and IMT proof puzzles before Runestone measures them. */
 (function () {
-    var pair = document.getElementById("imt-parsons-proofs");
+    var pair = document.querySelector("#imt-parsons-proofs, #inverse-parsons-proofs");
     if (!pair) return;
     var exercises = pair.querySelectorAll("details.exercise");
     exercises.forEach(function (exercise) {

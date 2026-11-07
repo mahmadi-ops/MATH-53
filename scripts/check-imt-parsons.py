@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Check the IMT Parsons proofs and true/false example after a website build.
+"""Check the inverse or IMT Parsons proofs after a website build.
+
+Use --proof-set inverse for the three transpose/product proofs. The default IMT
+checks also cover the true/false example.
 
 Uses installed Chromium, Playwright, and the locally cached MathJax packages in
 .cache/figure-theme/node_modules, supplied by the figure authoring environment.
@@ -26,18 +29,33 @@ class QuietHandler(SimpleHTTPRequestHandler):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--site-root',type=Path,default=ROOT/'output/web',help='Built or downloaded published website directory')
+    parser.add_argument('--proof-set',choices=['imt','inverse'],default='imt')
     args=parser.parse_args()
-    source=ET.parse(str(ROOT/'source/matrix-algebra/sec-invertible-matrix-theorem.ptx'))
-    for id,count in PROOFS.items():
+    proofs=PROOFS if args.proof_set=='imt' else {
+        'rs-ex-inverse-transpose-parsons':4,
+        'rs-ex-inverse-product-parsons':4,
+        'rs-ex-inverse-many-products-parsons':5,
+    }
+    page_name='sec-invertible-matrix-theorem' if args.proof_set=='imt' else 'sec-inverse'
+    group_id=args.proof_set+'-parsons-proofs'
+    intro_id='intro-'+args.proof_set+'-parsons'
+    source=ET.parse(str(ROOT/'source/matrix-algebra'/f'{page_name}.ptx'))
+    for id,count in proofs.items():
         exercise=source.xpath('//*[@xml:id="'+id[3:]+'"]')[0]
         assert len(exercise.findall('blocks/block'))==count+1
         assert len(exercise.findall('blocks/block[@correct="no"]'))==1
         assert exercise.find('blocks').get('randomize')=='yes'
-    pair=source.xpath('//*[@xml:id="imt-parsons-proofs"]')[0]
-    assert pair.getnext() is None
-    assert any('(10)' in ''.join(p.itertext()) for p in pair.itersiblings(preceding=True))
-    assert not source.xpath('//p/term[contains(.,"(8)") or contains(.,"(9)")]')
-    print('PASS: both directions, one distractor per proof, written proofs replaced in place',flush=True)
+    pair=source.xpath('//*[@xml:id="'+group_id+'"]')[0]
+    if args.proof_set=='imt':
+        assert pair.getnext() is None
+        assert any('(10)' in ''.join(p.itertext()) for p in pair.itersiblings(preceding=True))
+        assert not source.xpath('//p/term[contains(.,"(8)") or contains(.,"(9)")]')
+    else:
+        theorem=source.xpath('//*[@xml:id="thm-inverses-transposes-products"]')[0]
+        assert theorem.find('proof') is None
+        assert pair.getprevious().getprevious() is theorem
+        assert len(theorem.findall('statement/p/ol/li'))==3
+    print('PASS: proof content and placement, randomized cards, one distractor per proof',flush=True)
     server=ThreadingHTTPServer(('127.0.0.1',0),partial(QuietHandler,directory=str(args.site_root)))
     threading.Thread(target=server.serve_forever,daemon=True).start()
     packages=ROOT/'.cache/figure-theme/node_modules'
@@ -57,10 +75,9 @@ def main():
             browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
             page=browser.new_page(viewport={'width':1500,'height':1100})
             page.route('https://**/*',route_request)
-            base=f'http://127.0.0.1:{server.server_port}/sec-invertible-matrix-theorem.html'
+            base=f'http://127.0.0.1:{server.server_port}/{page_name}.html'
             def ready():
-                page.wait_for_function('''() => {
-                    const ids=['rs-ex-imt-1-8-parsons','rs-ex-imt-1-9-parsons'];
+                page.wait_for_function('''ids => {
                     return ids.every(id=>{
                         const p=window.componentMap?.[id];
                         return parseFloat(p?.answerArea?.style.height)>50 &&
@@ -69,7 +86,7 @@ def main():
                                 area.dataset.parsonsFitMode==='fit' &&
                                 Math.abs(area.getBoundingClientRect().height-Number(area.dataset.parsonsFittedHeight))<1);
                     });
-                }''',timeout=20000)
+                }''',arg=list(proofs),timeout=20000)
             def compact(id):
                 result=page.locator('#'+id[3:]).evaluate('''exercise=>{
                     return [...exercise.querySelectorAll('.source,.answer')].map(area=>{
@@ -98,10 +115,10 @@ def main():
                     p.initializeTabIndex();
                 }''',{'id':id,'kind':kind})
             page.goto(base,wait_until='networkidle');ready()
-            line=page.locator('#intro-imt-parsons').bounding_box()
-            pair_box=page.locator('#imt-parsons-proofs').bounding_box()
+            line=page.locator('#'+intro_id).bounding_box()
+            pair_box=page.locator('#'+group_id).bounding_box()
             assert abs(line['width']-pair_box['width'])<2
-            for id in PROOFS:
+            for id in proofs:
                 exercise=page.locator('#'+id[3:])
                 assert abs(exercise.bounding_box()['width']-line['width'])<2
                 source_box=exercise.locator('.source').bounding_box()
@@ -113,7 +130,7 @@ def main():
                 assert exercise.locator('.source .block').first.bounding_box()['width']>=source_box['width']*.9
                 assert compact(id)[1]['height']==64
             print('PASS: full text-width exercises with two side-by-side work boxes',flush=True)
-            for id,count in PROOFS.items():
+            for id,count in proofs.items():
                 exercise=page.locator('#'+id[3:])
                 check=exercise.get_by_role('button',name='Check',exact=True)
                 reset=exercise.get_by_role('button',name='Reset',exact=True)
@@ -129,7 +146,7 @@ def main():
                 assert exercise.locator('.answer .block').count()==0
                 assert exercise.locator('.source .block').count()==count+1
             print('PASS: correct proofs accepted; incomplete, reordered, and distractor answers rejected; reset works',flush=True)
-            id=next(iter(PROOFS))
+            id=next(iter(proofs))
             exercise=page.locator('#'+id[3:])
             entry=exercise.locator('.sortable-code-container[role="button"]')
             if entry.count():
@@ -139,9 +156,10 @@ def main():
             page.keyboard.press('Space');page.keyboard.press('ArrowRight');page.keyboard.press('Space')
             ready();compact(id)
             assert exercise.locator('.answer .block').count()==1
-            assert page.locator('#ex-imt-1-9-parsons .answer .block').count()==0
+            for other in list(proofs)[1:]:
+                assert page.locator('#'+other[3:]+' .answer .block').count()==0
             exercise.get_by_role('button',name='Reset',exact=True).click();ready()
-            top=page.locator('#imt-parsons-proofs').evaluate('e=>e.getBoundingClientRect().top+scrollY')
+            top=page.locator('#'+group_id).evaluate('e=>e.getBoundingClientRect().top+scrollY')
             page.evaluate('y=>scrollTo(0,y-100)',top)
             a=exercise.locator('.source .block').last.bounding_box()
             page.mouse.move(a['x']+8,a['y']+8);page.mouse.down();page.wait_for_timeout(100)
@@ -170,25 +188,25 @@ def main():
             ready();compact(id)
             assert exercise.locator('.answer .block').count()==1
             exercise.get_by_role('button',name='Reset',exact=True).click();ready();compact(id)
-            assert page.locator('#imt-parsons-proofs mjx-container').count()>30
-            assert not page.locator('#imt-parsons-proofs [data-mml-node="merror"]').count()
-            page.locator('#imt-parsons-proofs').screenshot(path='/tmp/math53-imt-parsons-desktop.png')
+            assert page.locator('#'+group_id+' mjx-container').count()>30
+            assert not page.locator('#'+group_id+' [data-mml-node="merror"]').count()
+            page.locator('#'+group_id).screenshot(path=f'/tmp/math53-{args.proof_set}-parsons-desktop.png')
             print('PASS: keyboard and drag movement, independent boards, rendered math, side-by-side work areas',flush=True)
             print('PASS: compact empty/partial/full boxes, expanded pointer targets, and compact Reset',flush=True)
             for width in [375,820]:
                 page.set_viewport_size({'width':width,'height':1000})
                 page.goto(base,wait_until='networkidle');ready()
-                for id in PROOFS:compact(id)
-                boxes=[page.locator('#'+id[3:]).bounding_box() for id in PROOFS]
-                assert abs(boxes[0]['x']-boxes[1]['x'])<2 and boxes[1]['y']>boxes[0]['y']
+                for id in proofs:compact(id)
+                boxes=[page.locator('#'+id[3:]).bounding_box() for id in proofs]
+                assert all(abs(a['x']-b['x'])<2 and b['y']>a['y'] for a,b in zip(boxes,boxes[1:]))
                 assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
-                assert page.locator('#imt-parsons-proofs').evaluate('e=>e.scrollWidth<=e.clientWidth+1')
-                page.locator('#imt-parsons-proofs').screenshot(path=f'/tmp/math53-imt-parsons-{width}.png')
+                assert page.locator('#'+group_id).evaluate('e=>e.scrollWidth<=e.clientWidth+1')
+                page.locator('#'+group_id).screenshot(path=f'/tmp/math53-{args.proof_set}-parsons-{width}.png')
             print('PASS: responsive phone/tablet layouts and visible controls',flush=True)
             # Exercise the true/false example through its native controls.
             # Keep both choices and the feedback independent for each part.
             tf_ids=['rs-tf-imt-zero-vector','rs-tf-imt-elementary-product']
-            for width in [1500,375,820]:
+            for width in ([1500,375,820] if args.proof_set=='imt' else []):
                 page.evaluate('localStorage.clear()')
                 page.set_viewport_size({'width':width,'height':1100})
                 page.goto(base,wait_until='networkidle')
@@ -236,7 +254,8 @@ def main():
                 assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
                 assert example.evaluate('e=>e.scrollWidth<=e.clientWidth+1')
                 example.screenshot(path=f'/tmp/math53-imt-true-false-{width}.png')
-            print('PASS: true/false grading and retries, independent feedback, keyboard controls, rendered math, book styling, and mobile layouts',flush=True)
+            if args.proof_set=='imt':
+                print('PASS: true/false grading and retries, independent feedback, keyboard controls, rendered math, book styling, and mobile layouts',flush=True)
             browser.close()
     finally:
         server.shutdown();server.server_close()
