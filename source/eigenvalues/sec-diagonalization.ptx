@@ -476,4 +476,57 @@
       conditions above; the problem can also be completed without the builder.
     </p>
   </subsection>
+  <subsection xml:id="subsec-predict-transient-growth">
+    <title>Challenge: Predict, Then Animate</title>
+    <p>
+      Let
+      <md xml:id="eq-predict-growth-matrix">
+        A_\varepsilon=\begin{bmatrix}
+          \tfrac23\amp6\\
+          0\amp\tfrac23-\varepsilon
+        \end{bmatrix},\qquad 0\le\varepsilon\le\tfrac13,
+      </md>
+      and define
+      <md xml:id="eq-predict-growth-recurrence">
+        \vec{x}_{n+1}=A_\varepsilon\vec{x}_n,\qquad
+        \vec{x}_0=\begin{bmatrix}0\\1\end{bmatrix}.
+      </md>
+      Measure the size of the vector by
+      <md xml:id="eq-predict-growth-size">
+        M_n=\max\{|x_{n,1}|,|x_{n,2}|\}.
+      </md>
+    </p>
+    <p>
+      Before playing the animation, record predictions and justify them:
+      <ol>
+        <li><p>For which values of <m>\varepsilon</m> is <m>A_\varepsilon</m> diagonalizable?</p></li>
+        <li><p>Does <m>\vec{x}_n</m> approach the origin for every parameter value? Can <m>M_n</m> increase initially?</p></li>
+        <li><p>What is the exact maximum of <m>M_n</m>, and which iteration or iterations attain it? Include both parameter endpoints.</p></li>
+        <li><p>As <m>\varepsilon</m> approaches zero, the eigenvector directions approach one another. Does this force the maximum excursion to become unbounded?</p></li>
+      </ol>
+      Use diagonalization where it applies and a direct calculation in any
+      exceptional case. Compare your predictions with the trajectory and the
+      graph of <m>M_n</m> before opening the explanation.
+    </p>
+    <figure xml:id="fig-predict-transient-growth">
+      <caption>
+        Record all four predictions to unlock playback. The vector trajectory,
+        eigendirections, and size graph share the same parameter and iteration.
+        Pause, step through the iterates, and compare the parameter endpoints.
+      </caption>
+      <interactive xml:id="int-predict-transient-growth"
+        iframe="demos/predict-transient-growth.html" width="100%" aspect="6:9">
+        <shortdescription>
+          A prediction-gated animation of a two-dimensional matrix recurrence.
+          Synchronized plots show the vector orbit, eigendirections, and the
+          maximum absolute coordinate as the parameter and iteration change.
+        </shortdescription>
+      </interactive>
+    </figure>
+    <p>
+      <url href="external/demos/predict-transient-growth.html">Open the prediction challenge on its own.</url>
+      The matrix, recurrence, and questions above also give a complete written
+      version of the challenge.
+    </p>
+  </subsection>
 </section>

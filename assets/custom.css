@@ -158,8 +158,8 @@ html:root {
     padding: 8px 4px;
     box-sizing: border-box;
 }
-/* The matrix builder grows with its feedback and verification panels. */
-#int-counterexample-diagonalization {
+/* These interactives grow with their controls, feedback, and explanations. */
+:is(#int-counterexample-diagonalization, #int-predict-transient-growth) {
     width: 100% !important;
     max-width: 100%;
     height: var(--counterexample-height, 700px) !important;

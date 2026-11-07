@@ -154,26 +154,28 @@
     update();
 })();
 
-/* Fit the same-origin matrix builder to its content, including feedback. */
+/* Fit each same-origin challenge to its controls, feedback, and explanations. */
 (function () {
-    var frame = document.getElementById("int-counterexample-diagonalization");
-    if (!frame) return;
-    var observer;
-    function connect() {
-        var doc = frame.contentDocument;
-        if (!doc || !doc.body) return;
-        if (observer) observer.disconnect();
-        function fit() {
-            var height = Math.ceil(doc.body.getBoundingClientRect().height);
-            if (height > 0) frame.style.setProperty("--counterexample-height", (height + 2) + "px");
+    ["int-counterexample-diagonalization", "int-predict-transient-growth"].forEach(function (id) {
+        var frame = document.getElementById(id);
+        if (!frame) return;
+        var observer;
+        function connect() {
+            var doc = frame.contentDocument;
+            if (!doc || !doc.body) return;
+            if (observer) observer.disconnect();
+            function fit() {
+                var height = Math.ceil(doc.body.getBoundingClientRect().height);
+                if (height > 0) frame.style.setProperty("--counterexample-height", (height + 2) + "px");
+            }
+            observer = new ResizeObserver(fit);
+            observer.observe(doc.body);
+            doc.fonts.ready.then(fit);
+            fit();
         }
-        observer = new ResizeObserver(fit);
-        observer.observe(doc.body);
-        doc.fonts.ready.then(fit);
-        fit();
-    }
-    frame.addEventListener("load", connect);
-    if (frame.contentDocument && frame.contentDocument.readyState === "complete") connect();
+        frame.addEventListener("load", connect);
+        if (frame.contentDocument && frame.contentDocument.readyState === "complete") connect();
+    });
 })();
 
 /* ------------------------------------------------------------------ *
