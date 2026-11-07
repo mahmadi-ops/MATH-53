@@ -154,6 +154,28 @@
     update();
 })();
 
+/* Fit the same-origin matrix builder to its content, including feedback. */
+(function () {
+    var frame = document.getElementById("int-counterexample-diagonalization");
+    if (!frame) return;
+    var observer;
+    function connect() {
+        var doc = frame.contentDocument;
+        if (!doc || !doc.body) return;
+        if (observer) observer.disconnect();
+        function fit() {
+            var height = Math.ceil(doc.body.getBoundingClientRect().height);
+            if (height > 0) frame.style.setProperty("--counterexample-height", (height + 2) + "px");
+        }
+        observer = new ResizeObserver(fit);
+        observer.observe(doc.body);
+        doc.fonts.ready.then(fit);
+        fit();
+    }
+    frame.addEventListener("load", connect);
+    if (frame.contentDocument && frame.contentDocument.readyState === "complete") connect();
+})();
+
 /* ------------------------------------------------------------------ *
  * Floating Socratic AI tutor for problems pages.                       *
  *                                                                      *

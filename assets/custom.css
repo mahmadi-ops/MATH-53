@@ -158,6 +158,13 @@ html:root {
     padding: 8px 4px;
     box-sizing: border-box;
 }
+/* The matrix builder grows with its feedback and verification panels. */
+#int-counterexample-diagonalization {
+    width: 100% !important;
+    max-width: 100%;
+    height: var(--counterexample-height, 700px) !important;
+    aspect-ratio: auto !important;
+}
 /* Wide display equations scroll horizontally instead of clipping.
    This is the site-wide safety net for narrow screens; the worst
    offenders are also broken into shorter lines at the source level. */

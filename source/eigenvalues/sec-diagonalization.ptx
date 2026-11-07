@@ -429,4 +429,51 @@
       </proof>
     </theorem>
   </subsection>
+  <subsection xml:id="subsec-counterexample-diagonalization">
+    <title>Challenge: Build a Counterexample</title>
+
+    <p xml:id="challenge-positive-eigenvalues">
+      Consider the claim: <q>Every real matrix whose eigenvalues are all
+      positive is diagonalizable over <m>\R</m>.</q> Construct a
+      <m>3\times3</m> counterexample <m>A</m> satisfying all of these conditions:
+    </p>
+    <p>
+      <ol>
+        <li><p>Every entry of <m>A</m> is a nonzero integer.</p></li>
+        <li>
+          <p>Its characteristic polynomial is
+            <md>\det(tI-A)=(t-1)^2(t-2)=t^3-4t^2+5t-2.</md>
+          </p>
+        </li>
+        <li><p>The eigenspace for <m>\lambda=1</m> has dimension one.</p></li>
+      </ol>
+    </p>
+    <p>
+      Verify your construction by computing the characteristic polynomial,
+      finding a basis for each eigenspace, and explaining why <m>A</m> is
+      invertible but not diagonalizable. Use
+      <xref ref="thm-diagonalizable-iff" text="type-global" /> and
+      <xref ref="thm-imt-eigenvalue" text="type-global" /> to justify your conclusion.
+    </p>
+    <figure xml:id="fig-counterexample-diagonalization">
+      <caption>
+        Build and check your matrix. After it satisfies all three conditions,
+        use Show verification to compare the eigenspace bases with your own work.
+        Different valid matrices are accepted.
+      </caption>
+      <interactive xml:id="int-counterexample-diagonalization"
+        iframe="demos/counterexample-diagonalization.html" width="100%" aspect="6:7">
+        <shortdescription>
+          A three-by-three integer matrix builder checks the characteristic
+          polynomial and eigenspace dimension, then verifies a counterexample
+          to the claim that positive eigenvalues guarantee diagonalizability.
+        </shortdescription>
+      </interactive>
+    </figure>
+    <p>
+      <url href="external/demos/counterexample-diagonalization.html">Open the matrix builder on its own.</url>
+      For written work, start with nine unknown entries and impose the three
+      conditions above; the problem can also be completed without the builder.
+    </p>
+  </subsection>
 </section>
