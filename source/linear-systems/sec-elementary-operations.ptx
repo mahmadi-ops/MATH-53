@@ -46,24 +46,62 @@
     <title>Elementary Operations</title>
     <statement>
       <p>
+        The following three operations on a system of linear equations are called
+        <term>elementary operations</term>.
         <ol>
-          <li><p>Interchange two equations.</p></li>
-          <li><p>Multiply an equation by a nonzero number.</p></li>
-          <li><p>Add a multiple of one equation to a different equation.</p></li>
+          <li><p><term>Interchange:</term> interchange two equations.</p></li>
+          <li><p><term>Scaling:</term> multiply an equation by a nonzero number.</p></li>
+          <li>
+            <p>
+              <term>Replacement:</term> replace an equation by the sum of itself and a
+              multiple of a <em>different</em> equation. (Briefly: add a multiple of one
+              equation to another.)
+            </p>
+          </li>
         </ol>
       </p>
     </statement>
   </definition>
 
-  <remark xml:id="rem-operations-reversible">
-    <p>
-      Each elementary operation can be undone by another elementary operation of the same
-      type: interchanging the same two equations again, multiplying by the reciprocal, or
-      subtracting the same multiple. This is why applying an elementary operation always
-      produces an <em>equivalent</em> system <mdash /> nothing is lost and nothing is
-      gained.
-    </p>
-  </remark>
+  <p>
+    The whole method of this chapter rests on one fact: these operations never change
+    the solution set.
+  </p>
+
+  <theorem xml:id="rem-operations-reversible">
+    <title>Elementary Operations Preserve Solutions</title>
+    <statement>
+      <p>
+        If one system of linear equations is obtained from another by an elementary
+        operation, then the two systems are equivalent.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Suppose the new system is obtained from the old one by an elementary operation.
+        Every solution of the old system is a solution of the new one, because each
+        equation of the new system is built from equations of the old system by
+        arithmetic: interchanging equations changes nothing; if numbers satisfy an
+        equation then they satisfy any nonzero multiple of it; and if numbers satisfy two
+        equations, then they satisfy the sum of one with any multiple of the other.
+      </p>
+      <p>
+        For the reverse direction, observe that each elementary operation can be undone
+        by an elementary operation of the same type: interchange the same two equations
+        again, multiply by the reciprocal of the scaling factor, or subtract the same
+        multiple that was added. So the old system is obtained from the new one by an
+        elementary operation, and by the first paragraph every solution of the new system
+        is a solution of the old one. The two systems therefore have exactly the same
+        solutions.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>
+    Nothing is lost and nothing is gained <mdash /> which is exactly why we are free to
+    apply elementary operations as often as we like, in any order, until the system
+    becomes simple enough to read the solutions off.
+  </p>
 
   <example xml:id="eg-elementary-operations">
     <title>The Three Operations in Action</title>
@@ -137,6 +175,100 @@
       </p>
     </solution>
   </example>
+
+  <p>
+    In practice the operations are not applied separately to the original system, as in
+    the demonstration above, but <em>in sequence</em>, each one to the system produced by
+    the one before. By <xref ref="rem-operations-reversible" text="type-global"/>, every
+    system along the way is equivalent to the one we started with. Here is a complete
+    solution carried out this way.
+  </p>
+
+  <example xml:id="eg-solving-by-operations">
+    <title>Solving a System with Elementary Operations</title>
+    <statement>
+      <p>
+        Solve the system
+        <md>
+          <mrow>
+            x_1 - x_2 + x_3 \amp = 2
+          </mrow>
+          <mrow>
+            2x_1 + x_2 - x_3 \amp = 1
+          </mrow>
+          <mrow>
+            x_1 + 2x_2 + x_3 \amp = 8
+          </mrow>
+        </md>
+        using elementary operations.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The plan is to use the first equation to eliminate <m>x_1</m> from the other two.
+        <term>Add <m>-2</m> times the first equation to the second</term>, and
+        <term>add <m>-1</m> times the first equation to the third:</term>
+        <md>
+          <mrow>
+            x_1 - x_2 + x_3 \amp = 2
+          </mrow>
+          <mrow>
+            \phantom{x_1 +{}} 3x_2 - 3x_3 \amp = -3
+          </mrow>
+          <mrow>
+            \phantom{x_1 +{}} 3x_2 \phantom{{}- 3x_3} \amp = 6
+          </mrow>
+        </md>
+        (The new second equation is <m>(2x_1 + x_2 - x_3) - 2(x_1 - x_2 + x_3) = 1 - 2(2)</m>,
+        and the new third is <m>(x_1 + 2x_2 + x_3) - (x_1 - x_2 + x_3) = 8 - 2</m>.)
+        Next <term>multiply the second equation by <m>\tfrac{1}{3}</m></term>, and then
+        <term>add <m>-3</m> times the (new) second equation to the third:</term>
+        <md>
+          <mrow>
+            x_1 - x_2 + x_3 \amp = 2
+          </mrow>
+          <mrow>
+            \phantom{x_1 +{}} x_2 - x_3 \amp = -1
+          </mrow>
+          <mrow>
+            \phantom{x_1 + x_2 +{}} 3x_3 \amp = 9
+          </mrow>
+        </md>
+        Finally <term>multiply the third equation by <m>\tfrac{1}{3}</m>:</term>
+        <md>
+          <mrow>
+            x_1 - x_2 + x_3 \amp = 2
+          </mrow>
+          <mrow>
+            \phantom{x_1 +{}} x_2 - x_3 \amp = -1
+          </mrow>
+          <mrow>
+            \phantom{x_1 + x_2 +{}} x_3 \amp = 3
+          </mrow>
+        </md>
+      </p>
+      <p>
+        This system has a <q>staircase</q> shape, and its solution can now be read off
+        from the bottom up: <m>x_3 = 3</m>, then <m>x_2 = -1 + x_3 = 2</m>, then
+        <m>x_1 = 2 + x_2 - x_3 = 1</m>. (Alternatively, keep going with elementary
+        operations: add the third equation to the second to get <m>x_2 = 2</m>, add
+        <m>-1</m> times the third equation to the first to get <m>x_1 - x_2 = -1</m>, and
+        add the second equation to the first to get <m>x_1 = 1</m>. The final system is
+        simply <m>x_1 = 1</m>, <m>x_2 = 2</m>, <m>x_3 = 3</m>.) Either way, the system has
+        the unique solution <m>(x_1, x_2, x_3) = (1, 2, 3)</m>, as substitution into the
+        original three equations confirms: <m>1 - 2 + 3 = 2</m>, <m>2 + 2 - 3 = 1</m>, and
+        <m>1 + 4 + 3 = 8</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Two things about this computation are worth noticing. First, the variable names
+    <m>x_1, x_2, x_3</m> were carried along at every step but never actually did anything
+    <mdash /> all the work was done on the coefficients and constants. Second, the
+    <q>staircase</q> system in the middle of the solution was already simple enough to
+    finish by substitution. The next section turns both observations into definitions.
+  </p>
 
   <exercises xml:id="exercises-ch1-operations">
     <title>Practice: Preserving Solutions</title>

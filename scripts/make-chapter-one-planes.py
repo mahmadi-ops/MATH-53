@@ -109,7 +109,7 @@ def draw(name, equations, labels, center, radius, title, description, outcome, y
         parts.append(f'<line x1="{x}" y1="{y}" x2="{x+dx}" y2="{y+dy}" stroke="{color}" stroke-width="1.5"/>')
         parts.append(f'<text class="halo" x="{x+dx}" y="{y+dy}" style="fill:{color};font-size:22px">P{i}</text>')
     # Coordinate axes share a scale; their origin need not be at the viewing center.
-    for i, label in enumerate(('x₁', 'x₂', 'x₃') if name == 'no-solution' else ('x', 'y', 'z')):
+    for i, label in enumerate(('x₁', 'x₂', 'x₃')):
         a, b = [0., 0., 0.], [0., 0., 0.]
         a[i], b[i] = center[i]-radius, center[i]+radius
         x1, y1 = project(a); x2, y2 = project(b)
@@ -173,7 +173,7 @@ def draw(name, equations, labels, center, radius, title, description, outcome, y
 
 if __name__ == '__main__':
     draw('unique', [((1,1,2),-1), ((2,1,3),0), ((0,-2,1),2)],
-         ['x + y + 2z = −1', '2x + y + 3z = 0', '−2y + z = 2'],
+         ['x₁ + x₂ + 2x₃ = −1', '2x₁ + x₂ + 3x₃ = 0', '−2x₂ + x₃ = 2'],
          (5/3,-4/3,-2/3), 3, 'Exactly one common point',
          'The three equation planes share only the point (5/3, -4/3, -2/3).', 'Exactly one solution')
     draw('no-solution', [((-3,-9,1),-9), ((2,6,-1),6), ((1,3,-1),2)],
@@ -182,7 +182,7 @@ if __name__ == '__main__':
          'The three equation planes intersect pairwise in parallel lines but share no point.',
          'No solution: satisfying two equations is insufficient', yaw=55, pitch=25)
     draw('infinitely-many', [((2,1,3),1), ((1,2,-1),0), ((0,-6,10),2)],
-         ['2x + y + 3z = 1', 'x + 2y − z = 0', '−6y + 10z = 2'],
+         ['2x₁ + x₂ + 3x₃ = 1', 'x₁ + 2x₂ − x₃ = 0', '−6x₂ + 10x₃ = 2'],
          (2/3,-1/3,0), 3, 'A whole line of common points',
-         'The three equation planes share the line x=2/3-7s/3, y=-1/3+5s/3, z=s.',
+         'The three equation planes share the line x1=2/3-7s/3, x2=-1/3+5s/3, x3=s.',
          'Infinitely many solutions: one for each real value of s')

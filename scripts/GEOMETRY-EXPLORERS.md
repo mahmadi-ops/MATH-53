@@ -1,4 +1,4 @@
-The three course geometry explorers are authored in `assets/demos-manim/` and
+The course geometry explorers are authored in `assets/demos-manim/` and
 embedded in the existing PreTeXt source. They share `geometry-core.js`,
 `geometry-explorers.css`, and the book's existing theme, fonts, and iframe sizing.
 They require no external JavaScript libraries, narration, or video downloads.
@@ -6,6 +6,7 @@ They require no external JavaScript libraries, narration, or video downloads.
 | Section/source | Explorer | Location |
 |---|---|---|
 | `source/linear-systems/sec-systems-of-linear-equations.ptx` | `solution-set.html` | After the parametric example and its geometric interpretation |
+| `source/linear-systems/sec-row-reduction.ptx` | `planes.html` (three embeds, parameterized by `?sys=`) | Inside the unique-solution, inconsistent, and infinitely-many-solutions examples |
 | `source/linear-transformations/sec-transformations.ptx` | `transformation-geometry.html` | Before the opening ℝ³ → ℝ⁴ example; refers to the existing matrix-multiplication example |
 | `source/vector-spaces/sec-coordinates.ptx` | `change-of-basis.html` | Extends the existing same-vector/two-coordinate-systems example |
 
@@ -75,3 +76,22 @@ The change-of-basis interpolation is
 `b1(t) = (1+t,0)`, `b2(t) = (-t,1)`, for `0 <= t <= 1`.
 Its determinant is `1+t > 0`; the coordinates are `((1+2t)/(1+t),2)`.
 Thus the contributions `(1+2t,0)` and `(-2t,2)` always add to `(1,2)`.
+
+## The three-plane explorer
+
+`planes.html` (with `planes.js`) is parameterized by the system in the URL and
+computes the solution set in the page by exact row reduction, so the three
+Section 1.4 embeds need no per-figure code. Its pure math helpers (fraction
+arithmetic, `rref`, `solve`, equation and parametric-line text, box clipping)
+are exported for Node. A quick check that the solver reproduces the book's
+answers for the three systems of Section 1.4 and the two-plane system of
+Section 1.1 is:
+
+```sh
+node -e "const P=require('./assets/demos-manim/planes.js');for(const s of ['1,1,2,-1:2,1,3,0:0,-2,1,2','-3,-9,1,-9:2,6,-1,6:1,3,-1,2','2,1,3,1:1,2,-1,0:0,-6,10,2','1,-2,-7,-1:-1,3,6,0']){const r=P.solve(P.parseSystem(s));console.log(r.kind,r.point?P.pointText(r.point):'',r.kind==='line'?P.lineText(r):'')}"
+```
+
+The static print fallbacks for these embeds are the SVGs written by
+`scripts/make-chapter-one-planes.py` (axis and equation labels use
+`x₁, x₂, x₃`, matching the examples); re-embed their fonts with
+`python scripts/build-book-figures.py --embed-only` after regenerating.

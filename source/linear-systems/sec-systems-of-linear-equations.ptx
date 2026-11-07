@@ -216,6 +216,7 @@
         <m>(0,1)</m>, the unique solution of the system.
       </caption>
       <image width="58%">
+        <shortdescription>Two lines in the xy-plane, x+y=1 and y-x=1, crossing at the single point (0,1).</shortdescription>
         <prefigure label="pf-two-lines-intersect" xmlns="https://prefigure.org">
           <diagram dimensions="(340,340)" margins="10">
             <coordinates bbox="(-3.6,-3.6,3.6,3.6)">
@@ -246,6 +247,7 @@
         <figure xml:id="fig-no-solution">
           <caption>No solution: the lines are parallel and never meet.</caption>
           <image>
+            <shortdescription>Two parallel lines with the same slope that never cross.</shortdescription>
             <prefigure label="pf-no-solution" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
@@ -260,6 +262,7 @@
         <figure xml:id="fig-unique-solution">
           <caption>A unique solution: the lines cross at exactly one point.</caption>
           <image>
+            <shortdescription>Two lines with different slopes crossing at one marked point.</shortdescription>
             <prefigure label="pf-unique-solution" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
@@ -275,6 +278,7 @@
         <figure xml:id="fig-infinitely-many">
           <caption>Infinitely many solutions: the two equations describe the same line.</caption>
           <image>
+            <shortdescription>A single line drawn twice, a thin black line on top of a thick olive one, so every point is shared.</shortdescription>
             <prefigure label="pf-infinitely-many" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
@@ -306,6 +310,61 @@
         solution, and there are infinitely many of them.
       </p>
     </example>
+
+    <p>
+      Notice what is <em>missing</em> from <xref ref="fig-three-possibilities" text="type-global"/>:
+      there is no picture of a system with exactly two solutions, or exactly five. Two
+      distinct lines can only meet once. That is no accident of the plane; it holds for
+      any number of equations in any number of variables, and the reason is a short
+      calculation.
+    </p>
+
+    <theorem xml:id="thm-zero-one-infinitely-many">
+      <title>Zero, One, or Infinitely Many Solutions</title>
+      <statement>
+        <p>
+          A system of linear equations has either no solution, exactly one solution, or
+          infinitely many solutions.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We show that a system with <em>two different</em> solutions must have infinitely
+          many. Suppose <m>(u_1, \ldots, u_n)</m> and <m>(v_1, \ldots, v_n)</m> are two
+          different solutions of a system in the variables <m>x_1, \ldots, x_n</m>. For any
+          real number <m>t</m>, consider the assignment
+          <md>
+            x_1 = u_1 + t(v_1 - u_1), \quad x_2 = u_2 + t(v_2 - u_2), \quad \ldots, \quad
+            x_n = u_n + t(v_n - u_n).
+          </md>
+          Take any equation <m>a_1 x_1 + \cdots + a_n x_n = b</m> of the system. Both
+          given solutions satisfy it, so <m>a_1 u_1 + \cdots + a_n u_n = b</m> and
+          <m>a_1 v_1 + \cdots + a_n v_n = b</m>. Substituting the new assignment,
+          <md>
+            <mrow>
+              \sum_{i=1}^{n} a_i \bigl(u_i + t(v_i - u_i)\bigr)
+              \amp = \sum_{i=1}^{n} a_i u_i + t\Bigl(\sum_{i=1}^{n} a_i v_i - \sum_{i=1}^{n} a_i u_i\Bigr)
+            </mrow>
+            <mrow>
+              \amp = b + t(b - b) = b.
+            </mrow>
+          </md>
+          So the new assignment satisfies every equation of the system, for every real
+          <m>t</m>. Finally, different values of <m>t</m> give different assignments:
+          the two given solutions differ in some coordinate, say <m>u_k \neq v_k</m>, and
+          then <m>u_k + t(v_k - u_k)</m> takes a different value for each <m>t</m>. Hence
+          there are infinitely many solutions.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      Geometrically, the assignments in the proof trace out the entire line through the
+      two given solutions, exactly as in the third picture of
+      <xref ref="fig-three-possibilities" text="type-global"/>. We will meet this
+      <q>line through two solutions</q> again, in vector language, in
+      <xref ref="sec-homogeneous-systems" text="type-global"/>.
+    </p>
   </subsection>
 
   <subsection xml:id="subsec-parametric-form">
@@ -366,12 +425,14 @@
     </example>
 
     <remark xml:id="rem-geometric-interpretation">
-      <title>Question: What is the graphical interpretation of the solution set in this example?</title>
+      <title>Geometric Interpretation of the Solution Set</title>
       <p>
-        Each of the two equations describes a plane in three-dimensional coordinate space.
-        These two planes intersect in a line, described by the parametric equations above.
-        Two planes can also be parallel and distinct, or coincide; it is these particular
-        planes that meet in a line.
+        What does the solution set of <xref ref="eg-parametric-solution" text="type-global"/>
+        look like? Each of the two equations describes a plane in three-dimensional
+        coordinate space, and these two planes intersect in a line: the line traced out
+        by the parametric equations above as <m>s</m> runs through <m>\R</m>. (Two planes
+        can also be parallel and distinct, giving no solutions, or coincide, giving a
+        whole plane of solutions; these particular planes meet in a line.)
       </p>
     </remark>
 
@@ -384,8 +445,13 @@
     </p>
     <p>
       <em>Predict before exploring.</em> As <m>s</m> changes, can the point
-      <m>(-3+9s,-1+s,s)</m> leave either of these two planes? Which of the third
-      equations below will keep the entire line of solutions?
+      <m>(-3+9s,-1+s,s)</m> leave either of these two planes? Suppose a third equation
+      is added to the system. Which of the three candidates
+      <md>
+        x_3 = 0, \qquad x_2 - x_3 = -1, \qquad x_2 - x_3 = 0
+      </md>
+      will keep the entire line of solutions, which will cut it down to a single point,
+      and which will leave no solutions at all?
     </p>
     <p xml:id="intro-solution-set-explorer">
       <em>Explore the solution set.</em>
@@ -421,11 +487,12 @@
     </p>
 
     <p>
-      This raises the central computational problem of the chapter.
+      So far we have found solution sets by ad hoc substitution. The rest of the chapter
+      develops a systematic method for the central computational problem.
     </p>
 
     <remark xml:id="rem-central-problem">
-      <title>Problem</title>
+      <title>The Central Problem</title>
       <p>
         Find all solutions to a system of <m>m</m> linear equations in <m>n</m> variables,
         i.e., <em>solve a system of linear equations</em>.

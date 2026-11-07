@@ -45,15 +45,21 @@
           <li>
             <p>
               <term>Steps 1<ndash />4:</term> the <term>forward phase</term>, to obtain
-              the REM.
+              a row-echelon form (REF).
             </p>
           </li>
           <li>
             <p>
-              <term>Step 5:</term> the <term>backward phase</term>, to obtain the RREM.
+              <term>Step 5:</term> the <term>backward phase</term>, to obtain the reduced
+              row-echelon form (RREF).
             </p>
           </li>
         </ul>
+        The forward phase involves choices <mdash /> which nonzero entry to swap into the
+        pivot row, for instance <mdash /> and different choices produce different
+        row-echelon matrices. The backward phase removes all such differences: by
+        <xref ref="thm-rref-unique" text="type-global"/>, everyone who row reduces the same
+        matrix arrives at the same reduced row-echelon form.
       </p>
     </remark>
   </subsection>
@@ -64,7 +70,10 @@
     <p>
       The three graphical possibilities of
       <xref ref="fig-three-possibilities" text="type-global" /> correspond to three
-      outcomes of the algorithm. The next three examples illustrate each in turn.
+      outcomes of the algorithm. The next three examples illustrate each in turn. Each
+      system has three equations in three unknowns, so each equation is a plane in
+      space and the solution set is whatever the three planes have in common; the
+      interactive figures let you rotate the planes and see it.
     </p>
 
     <example xml:id="eg-unique-solution">
@@ -74,21 +83,21 @@
           Solve the system
           <md>
             <mrow>
-              x + y + 2z \amp = -1
+              x_1 + x_2 + 2x_3 \amp = -1
             </mrow>
             <mrow>
-              y + 2x + 3z \amp = 0
+              x_2 + 2x_1 + 3x_3 \amp = 0
             </mrow>
             <mrow>
-              z - 2y \amp = 2
+              x_3 - 2x_2 \amp = 2
             </mrow>
           </md>
         </p>
       </statement>
       <solution>
         <p>
-          First rewrite each equation with the variables in the order <m>x, y, z</m> and
-          form the augmented matrix. The forward phase gives
+          First rewrite each equation with the variables in the order
+          <m>x_1, x_2, x_3</m> and form the augmented matrix. The forward phase gives
           <md>
             <mrow>
               \left[ \begin{array}{ccc|c}
@@ -155,18 +164,29 @@
         <p>
           Reading off the rows,
           <md>
-            x = \frac{5}{3}, \qquad y = -\frac{4}{3}, \qquad z = -\frac{2}{3},
+            x_1 = \frac{5}{3}, \qquad x_2 = -\frac{4}{3}, \qquad x_3 = -\frac{2}{3},
           </md>
           a unique solution. Every column of the coefficient matrix is a pivot column, so
           there are no free variables.
         </p>
 
         <figure xml:id="fig-unique-planes">
-          <caption>The three planes meet at exactly one point, <m>(5/3,-4/3,-2/3)</m>, the unique solution. The drawing shows finite portions of infinite planes;
-          the labels identify the equations in their original order.</caption>
-          <image source="images/ch1-unique-planes.svg" width="90%">
-            <shortdescription>Three planes have one common point at (5/3,-4/3,-2/3).</shortdescription>
-          </image>
+          <caption>
+            The three planes meet at exactly one point, <m>(5/3,-4/3,-2/3)</m>, the
+            unique solution. Drag the picture (or use the camera sliders) to rotate it,
+            and switch planes off to see that any <em>two</em> of them meet in a whole
+            dashed line: it is the third equation that cuts the line down to a point.
+            The drawing shows finite portions of infinite planes; the labels identify the
+            equations in their original order.
+          </caption>
+          <interactive xml:id="int-unique-planes" iframe="demos-manim/planes.html?sys=1,1,2,-1:2,1,3,0:0,-2,1,2&amp;radius=3&amp;yaw=38&amp;pitch=24" width="100%" aspect="4:5">
+            <shortdescription>Three translucent planes in space sharing exactly one point, (5/3, -4/3, -2/3), with controls to rotate the view and hide planes.</shortdescription>
+            <static>
+              <image source="images/ch1-unique-planes.svg" width="90%">
+                <shortdescription>Three planes have one common point at (5/3,-4/3,-2/3).</shortdescription>
+              </image>
+            </static>
+          </interactive>
         </figure>
       </solution>
     </example>
@@ -234,14 +254,20 @@
         <figure xml:id="fig-no-solution-planes">
           <caption>
             Each pair of planes intersects in a line, but the three planes have no
-            common point. A solution must satisfy all three equations at once.
-            The left panel shows finite portions of the infinite planes. The right
-            panel fixes <m>x_1=0</m> to show three lines with three distinct pairwise
-            crossings. The labels identify the equations in their original order.
+            common point. A solution must satisfy all three equations at once. Switch
+            any one plane off and a dashed line of common solutions of the other two
+            appears; switch it back on and the line pierces the third plane nowhere.
+            (Rotate to look along the three parallel dashed lines.) The labels identify
+            the equations in their original order.
           </caption>
-          <image source="images/ch1-no-solution-planes.svg" width="90%">
-            <shortdescription>Three planes intersect pairwise in parallel lines and have no common point. A two-dimensional slice at x1=0 shows three separate pairwise crossings.</shortdescription>
-          </image>
+          <interactive xml:id="int-no-solution-planes" iframe="demos-manim/planes.html?sys=-3,-9,1,-9:2,6,-1,6:1,3,-1,2&amp;center=0,1,0&amp;radius=4&amp;yaw=55&amp;pitch=25" width="100%" aspect="4:5">
+            <shortdescription>Three translucent planes in space that intersect pairwise in three parallel dashed lines but have no common point, with controls to rotate the view and hide planes.</shortdescription>
+            <static>
+              <image source="images/ch1-no-solution-planes.svg" width="90%">
+                <shortdescription>Three planes intersect pairwise in parallel lines and have no common point. A two-dimensional slice at x1=0 shows three separate pairwise crossings.</shortdescription>
+              </image>
+            </static>
+          </interactive>
         </figure>
       </solution>
     </example>
@@ -262,19 +288,20 @@
           Solve the system
           <md>
             <mrow>
-              2x + y + 3z \amp = 1
+              2x_1 + x_2 + 3x_3 \amp = 1
             </mrow>
             <mrow>
-              2y - z + x \amp = 0
+              2x_2 - x_3 + x_1 \amp = 0
             </mrow>
             <mrow>
-              10z - 6y \amp = 2
+              10x_3 - 6x_2 \amp = 2
             </mrow>
           </md>
         </p>
       </statement>
       <solution>
         <p>
+          After ordering the variables as <m>x_1, x_2, x_3</m> in each equation,
           <md>
             <mrow>
               \amp
@@ -327,48 +354,119 @@
           </md>
         </p>
         <p>
-          Columns <m>1</m> and <m>2</m> are pivot columns, so <m>x</m> and <m>y</m> are
-          basic variables, whereas <m>z</m> is a free variable. Setting <m>z = s</m>, the
-          two nonzero rows read
+          Columns <m>1</m> and <m>2</m> are pivot columns, so <m>x_1</m> and <m>x_2</m>
+          are basic variables, whereas <m>x_3</m> is a free variable. Setting
+          <m>x_3 = s</m>, the two nonzero rows read
           <md>
             <mrow>
-              x + \tfrac{7}{3}s \amp = \tfrac{2}{3}
+              x_1 + \tfrac{7}{3}s \amp = \tfrac{2}{3}
             </mrow>
             <mrow>
-              y - \tfrac{5}{3}s \amp = -\tfrac{1}{3}
+              x_2 - \tfrac{5}{3}s \amp = -\tfrac{1}{3}
             </mrow>
           </md>
           and therefore the solution set in parametric form is
           <md>
             <mrow>
-              x \amp = \tfrac{2}{3} - \tfrac{7}{3}s
+              x_1 \amp = \tfrac{2}{3} - \tfrac{7}{3}s
             </mrow>
             <mrow>
-              y \amp = -\tfrac{1}{3} + \tfrac{5}{3}s
+              x_2 \amp = -\tfrac{1}{3} + \tfrac{5}{3}s
             </mrow>
             <mrow>
-              z \amp = s, \qquad \text{where } s \in \R.
+              x_3 \amp = s, \qquad \text{where } s \in \R.
             </mrow>
           </md>
         </p>
 
         <figure xml:id="fig-infinitely-many-planes">
-          <caption>All three planes contain the line <m>x=2/3-7s/3</m>, <m>y=-1/3+5s/3</m>, <m>z=s</m>. Every point on this line solves all three equations. The drawing shows finite portions of infinite planes;
-          the labels identify the equations in their original order.</caption>
-          <image source="images/ch1-infinitely-many-planes.svg" width="90%">
-            <shortdescription>Three planes share the entire line x=2/3-7s/3, y=-1/3+5s/3, z=s.</shortdescription>
-          </image>
+          <caption>
+            All three planes contain the line <m>x_1=2/3-7s/3</m>, <m>x_2=-1/3+5s/3</m>,
+            <m>x_3=s</m>. Every point on this line solves all three equations: move the
+            parameter slider to slide a point along the line and watch all three
+            equation checks stay true. Switching any one plane off changes nothing about
+            the solution set <mdash /> the third equation was redundant. The drawing shows
+            finite portions of infinite planes; the labels identify the equations in
+            their original order.
+          </caption>
+          <interactive xml:id="int-infinitely-many-planes" iframe="demos-manim/planes.html?sys=2,1,3,1:1,2,-1,0:0,-6,10,2&amp;radius=3&amp;yaw=38&amp;pitch=24" width="100%" aspect="4:5">
+            <shortdescription>Three translucent planes in space all containing one wine-colored line of solutions, with a slider that moves a point along the line and controls to rotate the view and hide planes.</shortdescription>
+            <static>
+              <image source="images/ch1-infinitely-many-planes.svg" width="90%">
+                <shortdescription>Three planes share the entire line x1=2/3-7s/3, x2=-1/3+5s/3, x3=s.</shortdescription>
+              </image>
+            </static>
+          </interactive>
         </figure>
       </solution>
     </example>
 
-    <remark xml:id="rem-free-variables-count">
-      <p>
-        The pattern is now clear. If a system is consistent, then it has a unique solution
-        when there are no free variables, and infinitely many solutions when there is at
-        least one free variable <mdash /> one parameter for each free variable.
-      </p>
-    </remark>
+    <p>
+      The pattern is now clear, and it is worth recording as a theorem, since it is the
+      main result of the chapter.
+    </p>
+
+    <theorem xml:id="rem-free-variables-count">
+      <title>Existence and Uniqueness of Solutions</title>
+      <statement>
+        <p>
+          Let a system of linear equations have augmented matrix <m>A</m>, and let
+          <m>R</m> be a row-echelon form of <m>A</m>.
+          <ol>
+            <li>
+              <p>
+                <term>Existence.</term> The system is consistent if and only if <m>R</m>
+                has no row of the form
+                <m>\left[ \begin{array}{cccc|c} 0 \amp 0 \amp \cdots \amp 0 \amp d \end{array} \right]</m>
+                with <m>d \neq 0</m>; equivalently, if and only if the augmented column
+                is <em>not</em> a pivot column.
+              </p>
+            </li>
+            <li>
+              <p>
+                <term>Uniqueness.</term> If the system is consistent, then it has a unique
+                solution when there are no free variables, and infinitely many solutions
+                when there is at least one free variable <mdash /> one parameter for each
+                free variable.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          A row <m>[\,0 \; \cdots \; 0 \mid d\,]</m> with <m>d \neq 0</m> stands for the
+          equation <m>0 = d</m>, which no values of the variables can satisfy, so a system
+          whose echelon form contains such a row is inconsistent. Conversely, suppose there
+          is no such row. Then every nonzero row of <m>R</m> has its leading entry in a
+          variable column, and the backward phase of the algorithm carries <m>R</m> to a
+          reduced row-echelon matrix in which each basic variable appears, with
+          coefficient <m>1</m>, in exactly one equation, and in no other. Assign arbitrary
+          values to the free variables; each equation then determines the value of its
+          basic variable. This produces a solution, so the system is consistent. That
+          proves existence.
+        </p>
+        <p>
+          For uniqueness, the same description shows that the solutions are in one-to-one
+          correspondence with the choices of values for the free variables. If there are
+          no free variables there is exactly one choice, hence one solution. If there is at
+          least one free variable, it can take infinitely many values, each giving a
+          different solution.
+        </p>
+      </proof>
+    </theorem>
+
+    <p>
+      The theorem explains, from the point of view of the algorithm, the trichotomy of
+      <xref ref="thm-zero-one-infinitely-many" text="type-global"/>: a system has no
+      solution, one solution, or infinitely many, and nothing in between. It also has a
+      useful consequence that can be read off before any computation: <em>a consistent
+      system with more unknowns than equations has infinitely many solutions</em>. For
+      there is at most one pivot per row, hence at most <m>m</m> basic variables in a
+      system of <m>m</m> equations, and when <m>n > m</m> at least <m>n - m</m> of the
+      <m>n</m> variables must be free. We will meet this consequence again in
+      <xref ref="sec-homogeneous-systems" text="type-global"/>.
+    </p>
   </subsection>
 
   <subsection xml:id="subsec-systems-with-parameters">
@@ -376,7 +474,7 @@
 
     <p>
       A parameter can play two different roles. In a solution formula such as
-      <m>z=s</m>, it describes the different solutions of one fixed system. Here,
+      <m>x_3=s</m>, it describes the different solutions of one fixed system. Here,
       <m>a,b,c</m> instead specify the equations themselves: choosing their values
       selects a particular system. Treat them as fixed constants while solving,
       and check when an expression is zero before dividing by it.
@@ -390,13 +488,13 @@
           <m>b</m> and <m>c</m>) so that the system
           <md>
             <mrow>
-              2x + 3y + az \amp = b
+              2x_1 + 3x_2 + ax_3 \amp = b
             </mrow>
             <mrow>
-              \phantom{2x + {}} -y + 2z \amp = c
+              \phantom{2x_1 + {}} -x_2 + 2x_3 \amp = c
             </mrow>
             <mrow>
-              x + 3y - 2z \amp = 1
+              x_1 + 3x_2 - 2x_3 \amp = 1
             </mrow>
           </md>
           has (i) a unique solution, (ii) no solutions, and (iii) infinitely many
@@ -470,7 +568,7 @@
               \end{array} \right]
             </mrow>
             <mrow>
-              \amp \xrightarrow{r_1 + 2r_3}
+              \amp \xrightarrow{2r_3 + r_1}
               \left[ \begin{array}{ccc|c}
                 1 \amp 3 \amp 0 \amp 1 + 2K \\
                 0 \amp 1 \amp 0 \amp -c + 2K \\
@@ -489,13 +587,13 @@
           Hence when <m>a \neq 2</m>, there is a unique solution:
           <md>
             <mrow>
-              x \amp = 1 + 3c - 4\left( \frac{b-2-3c}{a-2} \right)
+              x_1 \amp = 1 + 3c - 4\left( \frac{b-2-3c}{a-2} \right)
             </mrow>
             <mrow>
-              y \amp = -c + 2 \left( \frac{b-2-3c}{a-2} \right)
+              x_2 \amp = -c + 2 \left( \frac{b-2-3c}{a-2} \right)
             </mrow>
             <mrow>
-              z \amp = \frac{b-2-3c}{a-2}.
+              x_3 \amp = \frac{b-2-3c}{a-2}.
             </mrow>
           </md>
         </p>
@@ -512,25 +610,30 @@
           whose last row asserts <m>0 = b-2-3c \neq 0</m>. Then the system has no solution.
         </p>
         <p>
-          <term>Case (III): <m>a - 2 = 0</m> and <m>b - 3c = 2</m>.</term>
-          Now the last row is entirely zero, and <m>z</m> is a free variable, so the
-          system has infinitely many solutions. Setting <m>z = s</m>, the second row gives
-          <m>-y + 2s = c</m>, so <m>y = -c + 2s</m>, and the first row gives
+          <term>Case (III): <m>a - 2 = 0</m> and <m>b - 2 - 3c = 0</m>.</term>
+          Now the last row is entirely zero, and <m>x_3</m> is a free variable, so the
+          system has infinitely many solutions. Setting <m>x_3 = s</m>, the second row
+          gives <m>-x_2 + 2s = c</m>, so <m>x_2 = -c + 2s</m>, and the first row gives
           <md>
-            x = 1 - 3y + 2z = 1 - 3(-c + 2s) + 2s = 1 + 3c - 4s.
+            x_1 = 1 - 3x_2 + 2x_3 = 1 - 3(-c + 2s) + 2s = 1 + 3c - 4s.
           </md>
           The solution set in parametric form is
           <md>
             <mrow>
-              x \amp = 1 + 3c - 4s
+              x_1 \amp = 1 + 3c - 4s
             </mrow>
             <mrow>
-              y \amp = -c + 2s
+              x_2 \amp = -c + 2s
             </mrow>
             <mrow>
-              z \amp = s, \qquad \text{where } s \in \R.
+              x_3 \amp = s, \qquad \text{where } s \in \R.
             </mrow>
           </md>
+        </p>
+        <p>
+          In summary: the system has a unique solution when <m>a \neq 2</m>, no solution
+          when <m>a = 2</m> and <m>b \neq 2 + 3c</m>, and infinitely many solutions when
+          <m>a = 2</m> and <m>b = 2 + 3c</m>.
         </p>
       </solution>
     </example>
@@ -578,6 +681,33 @@
       <answer><p>If <m>a\ne2</m>, division is allowed and the system has a unique solution.
       If <m>a=2,b\ne0</m>, it is inconsistent. If <m>a=2,b=0</m>, the second variable
       is free and there are infinitely many solutions.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-three-planes-geometry">
+      <statement><p>Three planes in space are given by three linear equations in
+      <m>x_1, x_2, x_3</m>. Using <xref ref="rem-free-variables-count" text="type-global"/>,
+      describe every possible shape of the set of points common to all three planes.
+      Which shapes occur in the three examples of this section, and which do not?
+      Can three planes meet in exactly two points?</p></statement>
+      <answer><p>The common set is empty (inconsistent), a single point (no free
+      variables), a line (one free variable), or a plane (two free variables, when all
+      three equations describe the same plane). Only the empty set, a point, and a line
+      occur in the examples. Exactly two points is impossible: by
+      <xref ref="thm-zero-one-infinitely-many" text="type-global"/>, two common points
+      force the whole line through them to be common.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-balancing-chemical">
+      <statement><p>When propane burns, the reaction is
+      <m>x_1\,\mathrm{C_3H_8} + x_2\,\mathrm{O_2} \to x_3\,\mathrm{CO_2} + x_4\,\mathrm{H_2O}</m>,
+      and the numbers of carbon, hydrogen, and oxygen atoms must each balance. Write one
+      linear equation per element (all constant terms will be <m>0</m>), row reduce the
+      resulting system, and find all solutions. Then choose the solution with the smallest positive whole-number
+      coefficients.</p></statement>
+      <answer><p>Carbon: <m>3x_1 = x_3</m>; hydrogen: <m>8x_1 = 2x_4</m>; oxygen:
+      <m>2x_2 = 2x_3 + x_4</m>. The reduced row-echelon form of the augmented matrix is
+      <m>\left[\begin{array}{cccc|c}1\amp0\amp0\amp-\frac14\amp0\\0\amp1\amp0\amp-\frac54\amp0\\0\amp0\amp1\amp-\frac34\amp0\end{array}\right]</m>,
+      so <m>x_4 = s</m> is free and <m>x_1 = \tfrac14 s</m>, <m>x_2 = \tfrac54 s</m>,
+      <m>x_3 = \tfrac34 s</m>. Taking <m>s = 4</m> gives
+      <m>\mathrm{C_3H_8} + 5\,\mathrm{O_2} \to 3\,\mathrm{CO_2} + 4\,\mathrm{H_2O}</m>.</p></answer>
     </exercise>
   </exercises>
 </section>

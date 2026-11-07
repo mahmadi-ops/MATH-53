@@ -29,6 +29,36 @@ also supplied through the PreTeXt `<static>` element for print output.
 See [authoring and checking these explorers](../../scripts/GEOMETRY-EXPLORERS.md)
 for the mathematical invariants, preview commands, and asset refresh procedure.
 
+## planes.html
+
+`planes.html` draws up to three equation planes in `R^3` and the set of points
+common to the visible planes. Section 1.4 embeds it three times, once for each
+outcome of row reduction (one point, no solution, a line). The system comes
+from the URL and everything else is computed in the page by exact row
+reduction with rational arithmetic: the solution set (empty, a point, a line,
+or a plane), the parametric form of a solution line, the dashed pairwise
+intersection lines, and the substitution checks in the readout.
+
+| Param    | Meaning                                                                 |
+|----------|-------------------------------------------------------------------------|
+| `sys`    | rows `a,b,c,d` for `a x1 + b x2 + c x3 = d`, separated by `:` (≤ 3 rows); entries may be integers, decimals, or fractions such as `5/3` |
+| `center` | center of the viewing box (default: the solution point, the point of the solution line nearest the origin, or the origin) |
+| `radius` | half-width of the viewing box (default `3`)                             |
+| `yaw`, `pitch` | starting camera angles in degrees (defaults `38`, `24`)           |
+| `vars`   | three variable names (default `x₁,x₂,x₃`)                               |
+| `param`  | name of the free parameter on a solution line (default `s`)             |
+
+Each plane has a checkbox; hiding a plane removes its equation, so the readout
+always describes the solution set of the visible equations (hide one plane of
+an inconsistent system to see the line the other two share). When the common
+solutions form a line, a slider moves a point along it and the readout checks
+every visible equation at that point. The scene uses the same drag, arrow-key,
+and slider camera controls as `solution-set.html`, shares `geometry-core.js`,
+and has a text fallback without JavaScript; PreTeXt supplies the static SVGs
+in `assets/images/ch1-*-planes.svg` for print.
+
+    planes.html?sys=1,1,2,-1:2,1,3,0:0,-2,1,2&radius=3&yaw=38&pitch=24
+
 ## eigenvectors.html
 
 `eigenvectors.html` introduces the geometry in Section 8.1 using the matrix

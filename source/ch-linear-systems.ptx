@@ -4,11 +4,26 @@
 
   <introduction>
     <p>
-      A system of linear equations may have exactly one solution, no solutions at all, or
-      infinitely many. Which of these occurs, and how to describe the solutions when there
-      are infinitely many, is the subject of this chapter. The tool that settles every
-      case is a single mechanical procedure <mdash /> the row reduction algorithm <mdash />
-      applied to a rectangular array of numbers called the augmented matrix.
+      Linear algebra begins with one concrete problem: given several linear equations in
+      several unknowns, <em>find every assignment of values to the unknowns that satisfies
+      all of the equations at once</em>. A system of linear equations may have exactly one
+      solution, no solutions at all, or infinitely many. Which of these occurs, and how to
+      describe the solutions when there are infinitely many, is the subject of this
+      chapter.
+    </p>
+    <p>
+      The plan is as follows. <xref ref="sec-systems-of-linear-equations" text="type-global"/>
+      fixes the vocabulary and shows what solution sets can look like.
+      <xref ref="sec-elementary-operations" text="type-global"/> identifies the three
+      operations we are allowed to perform on a system without changing its solutions.
+      <xref ref="sec-augmented-matrix" text="type-global"/> strips a system down to the
+      numbers that matter <mdash /> the augmented matrix <mdash /> and describes the simple
+      <q>echelon</q> shapes from which solutions can be read off.
+      <xref ref="sec-row-reduction" text="type-global"/> assembles these pieces into a single
+      mechanical procedure, the row reduction algorithm, that settles every case. Finally,
+      <xref ref="sec-polynomial-interpolation" text="type-global"/> shows the algorithm at
+      work on a problem that does not look linear at first sight: fitting a polynomial
+      exactly through a set of data points.
     </p>
   </introduction>
 

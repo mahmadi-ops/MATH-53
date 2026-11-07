@@ -60,6 +60,28 @@
           k \, r_j + r_i \amp \qquad \text{add } k \text{ times row } j \text{ to row } i.
         </mrow>
       </md>
+      In a replacement <m>k\,r_j + r_i</m>, the row written <em>last</em>, <m>r_i</m>, is
+      the row that changes; row <m>j</m> is only read, and is left as it was. Thus
+      <m>-2r_1 + r_3</m> means <q>replace row <m>3</m> by row <m>3</m> minus twice row
+      <m>1</m>,</q> and row <m>1</m> stays put. (Some books write this operation as
+      <m>r_3 \to r_3 - 2r_1</m>; the meaning is the same.)
+    </p>
+
+    <definition xml:id="def-row-equivalent">
+      <title>Row Equivalence</title>
+      <statement>
+        <p>
+          Two matrices are <term>row equivalent</term> if one can be obtained from the
+          other by a sequence of elementary row operations.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Since row operations on an augmented matrix are exactly elementary operations on
+      the corresponding system, <xref ref="rem-operations-reversible" text="type-global"/>
+      says: <em>if the augmented matrices of two systems are row equivalent, then the
+      systems are equivalent</em>. This is the principle behind everything that follows.
     </p>
 
     <example xml:id="eg-row-operations">
@@ -133,11 +155,13 @@
       <statement>
         <p>
           The first nonzero entry in a nonzero row is its <term>leading entry</term>.
-          A matrix is a <term>row-echelon matrix</term> (REM) if
+          A matrix is in <term>row-echelon form</term> (<term>REF</term>), or is a
+          <term>row-echelon matrix</term>, if
           <ol>
             <li><p>All rows consisting entirely of zeros are at the bottom.</p></li>
             <li>
-              <p>Each leading entry is to the right of all leading entries in rows above it.</p>
+              <p>The leading entry of each nonzero row is strictly to the right of the
+              leading entry of the row above it.</p>
             </li>
             <li><p>All entries below each leading entry are zero.</p></li>
           </ol>
@@ -166,9 +190,10 @@
       <title>Reduced Row-Echelon Matrix</title>
       <statement>
         <p>
-          A matrix is a <term>reduced row-echelon matrix</term> (RREM) if
+          A matrix is in <term>reduced row-echelon form</term> (<term>RREF</term>), or is
+          a <term>reduced row-echelon matrix</term>, if
           <ol>
-            <li><p>It is a row-echelon matrix.</p></li>
+            <li><p>It is in row-echelon form.</p></li>
             <li><p>The leading entry in each nonzero row is <m>1</m>.</p></li>
             <li><p>Each leading <m>1</m> is the only nonzero entry in its column.</p></li>
           </ol>
@@ -203,8 +228,9 @@
           <ul>
             <li>
               <p>
-                A <term>pivot position</term> in a matrix is a location corresponding to a
-                leading entry in an echelon form obtained by row operations. A
+                A <term>pivot position</term> in a matrix <m>A</m> is a location in
+                <m>A</m> that corresponds to a leading entry in a row-echelon form of
+                <m>A</m>, that is, in a row-echelon matrix row equivalent to <m>A</m>. A
                 <term>pivot column</term> is a column containing a pivot position.
                 A leading entry need not equal <m>1</m> in row-echelon form;
                 in reduced row-echelon form, every leading entry is <m>1</m>.
@@ -226,6 +252,35 @@
       </statement>
     </definition>
 
+    <p>
+      There is a question hiding in this definition. A matrix can be carried to
+      row-echelon form by many different sequences of row operations, and different
+      sequences can produce different row-echelon matrices (for instance, scaling a row of
+      one gives another). Could two of them have their leading entries in different
+      places, so that <q>pivot column</q> depends on who did the computation? The answer
+      is no, because of the following theorem, which we state now and use freely.
+    </p>
+
+    <theorem xml:id="thm-rref-unique">
+      <title>Uniqueness of the Reduced Row-Echelon Form</title>
+      <statement>
+        <p>
+          Every matrix is row equivalent to one and only one reduced row-echelon matrix.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      The next section gives an algorithm that reaches <em>a</em> reduced row-echelon
+      matrix; the theorem says it is <em>the</em> reduced row-echelon matrix of
+      <m>A</m>, called the <term>reduced row-echelon form of <m>A</m></term>. Any
+      row-echelon matrix row equivalent to <m>A</m> can be finished off (by scaling rows
+      and clearing entries above leading entries) into this same reduced matrix without
+      moving its leading entries, so every row-echelon form of <m>A</m> has its leading
+      entries in the same positions. Pivot positions, pivot columns, and hence basic and
+      free variables, are therefore properties of the matrix itself. We omit the proof.
+    </p>
+
     <example xml:id="eg-identifying-pivots">
       <title>Identifying Pivots and Free Variables</title>
       <statement>
@@ -245,9 +300,10 @@
       </statement>
       <solution>
         <p>
-          Note that the matrix is a row-echelon matrix. The leading ones sit in positions
-          <m>(1,1)</m>, <m>(2,3)</m>, <m>(3,4)</m>, and <m>(4,7)</m>, so the pivot columns
-          are columns <m>1</m>, <m>3</m>, <m>4</m>, and <m>7</m>.
+          Note that the matrix is already in row-echelon form (though not reduced: there
+          are nonzero entries above some leading entries). The leading entries sit in
+          positions <m>(1,1)</m>, <m>(2,3)</m>, <m>(3,4)</m>, and <m>(4,7)</m>, so the
+          pivot columns are columns <m>1</m>, <m>3</m>, <m>4</m>, and <m>7</m>.
         </p>
         <p>
           Accordingly, <m>x_1</m>, <m>x_3</m>, <m>x_4</m>, and <m>x_7</m> are the basic
@@ -259,8 +315,9 @@
     </example>
 
     <p>
-      We will use elementary row operations to transform a matrix to row-echelon or
-      reduced row-echelon form. The next section gives the algorithm that does it.
+      Knowing what the target looks like, we can now describe how to get there: the next
+      section gives the algorithm that transforms any matrix to row-echelon form, and then
+      to reduced row-echelon form, by elementary row operations.
     </p>
   </subsection>
 
@@ -281,6 +338,25 @@
       <answer><p>It is in row-echelon form, but not reduced because the leading entries
       are not <m>1</m>. The basic variables are <m>x_1,x_3</m>; <m>x_2</m> is free.
       The last column is the constant column and has no associated variable.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-classify-echelon">
+      <statement><p>Classify each matrix as in reduced row-echelon form, in row-echelon
+      form but not reduced, or not in row-echelon form. For those not in row-echelon
+      form, say which condition of <xref ref="def-row-echelon" text="type-global"/> fails.
+      <md>
+        \text{(a)}\;\begin{bmatrix}1\amp2\amp0\\0\amp1\amp3\end{bmatrix},\quad
+        \text{(b)}\;\begin{bmatrix}1\amp0\amp0\\0\amp0\amp1\end{bmatrix},\quad
+        \text{(c)}\;\begin{bmatrix}0\amp1\\1\amp0\end{bmatrix},\quad
+        \text{(d)}\;\begin{bmatrix}1\amp0\amp2\\0\amp0\amp0\\0\amp1\amp3\end{bmatrix},\quad
+        \text{(e)}\;\begin{bmatrix}2\amp0\amp1\\0\amp0\amp3\end{bmatrix},\quad
+        \text{(f)}\;\begin{bmatrix}1\amp4\amp0\amp5\\0\amp0\amp1\amp2\\0\amp0\amp0\amp0\end{bmatrix}.
+      </md></p></statement>
+      <answer><p>(a) Row-echelon but not reduced: the <m>2</m> sits above the leading
+      <m>1</m> of row <m>2</m>. (b) Reduced row-echelon. (c) Not row-echelon: the leading
+      entry of row <m>2</m> is to the left of the leading entry of row <m>1</m>.
+      (d) Not row-echelon: a zero row is not at the bottom. (e) Row-echelon but not
+      reduced: the leading entries are <m>2</m> and <m>3</m>, not <m>1</m>.
+      (f) Reduced row-echelon.</p></answer>
     </exercise>
   </exercises>
 </section>

@@ -183,14 +183,34 @@
         the data points.
       </p>
     </statement>
+    <proof>
+      <p>
+        <term>Uniqueness.</term> Suppose <m>p(x)</m> and <m>q(x)</m> are two polynomials
+        of degree at most <m>n-1</m> that both pass through the data. Their difference
+        <m>d(x) = p(x) - q(x)</m> is again a polynomial of degree at most <m>n-1</m>, and
+        <m>d(x_i) = y_i - y_i = 0</m> for each of the <m>n</m> distinct numbers
+        <m>x_1, \ldots, x_n</m>. But a nonzero polynomial of degree at most <m>n-1</m> has
+        at most <m>n-1</m> roots. So <m>d(x)</m> is the zero polynomial, that is,
+        <m>p(x) = q(x)</m>.
+      </p>
+      <p>
+        <term>Existence.</term> We postpone this half. It will follow from uniqueness once
+        we have the Invertible Matrix Theorem
+        (<xref ref="sec-invertible-matrix-theorem" text="type-global"/>): for a system
+        with as many equations as unknowns, if the solution is unique whenever one exists,
+        then one always exists.
+      </p>
+    </proof>
   </theorem>
 
   <p>
-    In other words, the linear system produced by the procedure above always has
-    exactly one solution <mdash/> the row reduction never ends in an inconsistent row,
-    and never leaves a free variable. We use this theorem without proof here.
-    Its hypotheses matter: the <m>x_i</m> must be distinct, and the degree bound
-    is <m>n-1</m>. Let us apply it to a larger example.
+    In the language of this chapter, the theorem says that the <m>n \times (n+1)</m>
+    augmented matrix produced by the procedure above always row reduces without an
+    inconsistent row and without a free variable: its reduced row-echelon form has a
+    pivot in every variable column. Its hypotheses matter. The <m>x_i</m> must be
+    distinct (two different <m>y</m>-values at the same <m>x</m> are impossible to fit),
+    and the degree bound <m>n-1</m> is what makes the number of unknowns match the number
+    of equations. Let us apply the theorem to a larger example.
   </p>
 
   <example xml:id="eg-interpolation-cubic">
@@ -264,11 +284,15 @@
     </solution>
   </example>
 
-  <p>
-    Passing through every data point does not guarantee accurate estimates between
-    or beyond the data points. An interpolating polynomial can oscillate between the
-    measurements and can grow rapidly outside their interval. Treat its values away
-    from the measured points as predictions that need independent checking.
+  <p xml:id="p-interpolation-caution">
+    <term>A caution.</term> Passing through every data point does not guarantee accurate
+    estimates between or beyond the data points. An interpolating polynomial can
+    oscillate between the measurements and can grow rapidly outside their interval. The
+    ten-point example in the Sage activity below makes this vivid: all ten measured
+    <m>y</m>-values lie between <m>3</m> and <m>10</m>, yet the degree-nine polynomial
+    through them has <m>p(10) = -6</m> and <m>p(-1) = 60</m>, just one unit beyond the
+    data on either side. Treat values away from the measured points as predictions
+    that need independent checking, and see item 2 of the activity to watch it happen.
   </p>
 
   <p>
@@ -316,8 +340,8 @@
   </sage>
 
   <p>
-    The curve passes exactly through every deep wine point, which is precisely what
-    <m>p(x_i) = y_i</m> means.
+    The curve passes exactly through every one of the four data points (marked in
+    wine), which is precisely what <m>p(x_i) = y_i</m> means.
   </p>
 
   <p>
@@ -389,8 +413,9 @@
         <p>
           Change the plot interval of the ten-point graph to
           <m>-1 \leq x \leq 10</m> <mdash/> just one unit beyond the data on each side
-          <mdash/> and watch what the polynomial does. (For instance, evaluate
-          <c>p(10)</c>.) This is the extrapolation caution above, in a picture.
+          <mdash/> and watch what the polynomial does. Evaluate <c>p(10)</c> and
+          <c>p(-1)</c> to confirm the values <m>-6</m> and <m>60</m> quoted in the
+          caution above. This is extrapolation going wrong, in a picture.
         </p>
       </li>
       <li>
