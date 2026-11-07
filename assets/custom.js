@@ -112,6 +112,48 @@
     schedule();
 })();
 
+/* Unlock the parameter cases after correctly identifying the first error. */
+(function () {
+    var first = document.getElementById("task-row-first-error");
+    var repair = document.getElementById("task-row-first-error-repair");
+    if (!first || !repair) return;
+    var unlocked = false;
+    var note = document.createElement("p");
+    note.className = "para";
+    note.setAttribute("role", "status");
+    note.setAttribute("aria-live", "polite");
+    note.textContent = "Identify the first unjustified step to unlock part (b).";
+    repair.before(note);
+    repair.hidden = true;
+
+    function update() {
+        var question = window.componentMap && window.componentMap["rs-task-row-first-error"];
+        if (unlocked || !question) return;
+        var correct = question.correct === true && question.didSubmit;
+        // Older Runestone versions restore the radio without restoring its
+        // grade. Honor a correct submission saved by the native component.
+        if (!correct && !question.didSubmit && typeof question.localStorageKey === "function") {
+            try {
+                var saved = JSON.parse(localStorage.getItem(question.localStorageKey()));
+                correct = saved && saved.correct === "T" &&
+                    saved.answer === String(question.correctIndexList[0]);
+            } catch (_) {
+                // Grading during the current visit also works without storage.
+            }
+        }
+        if (correct) {
+            unlocked = true;
+            repair.hidden = false;
+            note.textContent = "Part (b) is unlocked. Classify the parameter cases below.";
+        }
+    }
+    // Observe native grading and saved-answer restoration without replacing
+    // Runestone's radios, feedback, keyboard controls, or local storage.
+    new MutationObserver(update).observe(first, { childList: true, subtree: true });
+    first.addEventListener("click", update);
+    update();
+})();
+
 /* ------------------------------------------------------------------ *
  * Floating Socratic AI tutor for problems pages.                       *
  *                                                                      *

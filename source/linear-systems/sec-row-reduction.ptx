@@ -641,6 +641,195 @@
 
   <exercises xml:id="exercises-ch1-reduction">
     <title>Practice: Interpreting Row Reduction</title>
+    <exercise xml:id="ex-row-reduction-first-error">
+      <title>Challenge: Spot the First Error</title>
+      <introduction>
+        <p>
+          Let <m>a,b\in\R</m>. Consider the system
+          <md xml:id="sys-first-error-parameters">
+            \begin{cases}
+              x+y+z=1,\\
+              2x+(a+1)y+4z=b,\\
+              3x+3y+(a+1)z=b.
+            \end{cases}
+          </md>
+          A student gives the following argument. Find the first unjustified
+          step, then repair the argument and classify all pairs <m>(a,b)</m>
+          according to whether the system has exactly one solution,
+          infinitely many solutions, or no solution.
+        </p>
+      </introduction>
+      <task xml:id="task-row-first-error">
+        <statement>
+          <p>The student's argument is:</p>
+          <p>
+            <ol marker="1.">
+              <li>
+                <p>
+                  Apply <m>R_2\leftarrow R_2-2R_1</m> and
+                  <m>R_3\leftarrow R_3-3R_1</m>, obtaining
+                  <md xml:id="mat-first-error-step-1">
+                    \left[\begin{array}{ccc|c}
+                      1\amp1\amp1\amp1\\
+                      0\amp a-1\amp2\amp b-2\\
+                      0\amp0\amp a-2\amp b-3
+                    \end{array}\right].
+                  </md>
+                </p>
+              </li>
+              <li>
+                <p>Divide the second row by <m>a-1</m> to make its leading entry <m>1</m>.</p>
+              </li>
+              <li>
+                <p>Divide the third row by <m>a-2</m> to make its leading entry <m>1</m>.</p>
+              </li>
+              <li>
+                <p>Conclude: <q>There are three pivots, so the system has exactly one solution for every choice of <m>a</m> and <m>b</m>.</q></p>
+              </li>
+            </ol>
+          </p>
+          <p>Which is the <em>first</em> unjustified step?</p>
+        </statement>
+        <choices randomize="no" multiple-correct="no">
+          <choice>
+            <statement><p>Step 1.</p></statement>
+            <feedback>
+              <p>
+                These row subtractions are valid for all <m>a,b</m> and give
+                exactly the displayed matrix. Check the next step.
+              </p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>Step 2.</p></statement>
+            <feedback>
+              <p>
+                Correct. Division by <m>a-1</m> requires <m>a\ne1</m>.
+                The student has not handled <m>a=1</m>. The later division
+                also requires <m>a\ne2</m>. Repair the argument by separating
+                these cases in part (b).
+              </p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement><p>Step 3.</p></statement>
+            <feedback>
+              <p>
+                This division does require <m>a\ne2</m>, but an unchecked
+                division has already occurred in step 2. Identify the
+                <em>first</em> missing condition.
+              </p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement><p>Step 4.</p></statement>
+            <feedback>
+              <p>
+                The universal conclusion fails, but an earlier step already
+                excluded a possible parameter value without considering it.
+                Check the divisors used in the row operations.
+              </p>
+            </feedback>
+          </choice>
+        </choices>
+      </task>
+      <task xml:id="task-row-first-error-repair">
+        <introduction>
+          <p>
+            Repair the argument by classifying the three parameter cases.
+            For each one, decide exactly when the system is consistent and
+            how many solutions it has.
+          </p>
+        </introduction>
+        <task xml:id="task-row-generic-case">
+          <statement><p>Suppose <m>a\notin\{1,2\}</m>. What happens?</p></statement>
+          <choices randomize="no" multiple-correct="no">
+            <choice correct="yes">
+              <statement><p>Exactly one solution for every <m>b</m>.</p></statement>
+              <feedback>
+                <p>
+                  Correct. The three pivot candidates <m>1</m>, <m>a-1</m>,
+                  and <m>a-2</m> are all nonzero. Both divisions are valid,
+                  so there is a pivot in every variable column and a unique
+                  solution for every right-hand side <m>b</m>.
+                </p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement><p>Infinitely many solutions for every <m>b</m>.</p></statement>
+              <feedback><p>All three variable columns have pivots in this case. There is no free variable.</p></feedback>
+            </choice>
+            <choice>
+              <statement><p>No solution for every <m>b</m>.</p></statement>
+              <feedback><p>The three nonzero pivots allow back substitution for every <m>b</m>; no contradictory row appears.</p></feedback>
+            </choice>
+            <choice>
+              <statement><p>Exactly one solution only when <m>b=0</m>.</p></statement>
+              <feedback><p>The nonzero pivots impose no restriction on <m>b</m>. Back substitution works for any right-hand side.</p></feedback>
+            </choice>
+          </choices>
+        </task>
+        <task xml:id="task-row-a-one-case">
+          <statement><p>Suppose <m>a=1</m>. Which classification is correct?</p></statement>
+          <choices randomize="no" multiple-correct="no">
+            <choice>
+              <statement><p>Exactly one solution for every <m>b</m>.</p></statement>
+              <feedback><p>The last two rows both involve only <m>z</m>. Check whether they agree; they cannot supply two independent pivots.</p></feedback>
+            </choice>
+            <choice>
+              <statement><p>Infinitely many solutions when <m>b=3</m>; no solution otherwise.</p></statement>
+              <feedback><p>At <m>a=1</m>, the lower equations are <m>2z=b-2</m> and <m>-z=b-3</m>. Eliminate <m>z</m> to find the compatible value of <m>b</m>.</p></feedback>
+            </choice>
+            <choice correct="yes">
+              <statement><p>Infinitely many solutions when <m>b=\tfrac83</m>; no solution otherwise.</p></statement>
+              <feedback>
+                <p>
+                  Correct. The lower equations are <m>2z=b-2</m> and
+                  <m>-z=b-3</m>. Adding the first to twice the second gives
+                  <m>0=3b-8</m>, so consistency requires <m>b=\tfrac83</m>.
+                  Then <m>z=\tfrac13</m> and <m>x+y=\tfrac23</m>, leaving
+                  one free variable and infinitely many solutions.
+                  For every other <m>b</m>, the equations contradict each other.
+                </p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement><p>No solution for any <m>b</m>.</p></statement>
+              <feedback><p>The lower equations can agree for a suitable <m>b</m>. Solve their compatibility condition before deciding inconsistency.</p></feedback>
+            </choice>
+          </choices>
+        </task>
+        <task xml:id="task-row-a-two-case">
+          <statement><p>Suppose <m>a=2</m>. Which classification is correct?</p></statement>
+          <choices randomize="no" multiple-correct="no">
+            <choice>
+              <statement><p>Infinitely many solutions for every <m>b</m>.</p></statement>
+              <feedback><p>The last row asserts <m>0=b-3</m>. A zero coefficient row is consistent only when its augmented entry is also zero.</p></feedback>
+            </choice>
+            <choice correct="yes">
+              <statement><p>Infinitely many solutions when <m>b=3</m>; no solution otherwise.</p></statement>
+              <feedback>
+                <p>
+                  Correct. The last row is <m>[\,0\;0\;0\mid b-3\,]</m>,
+                  so consistency requires <m>b=3</m>. Then the remaining
+                  equations are <m>y+2z=1</m> and <m>x+y+z=1</m>.
+                  One variable is free, giving infinitely many solutions.
+                  If <m>b\ne3</m>, the last row is a contradiction.
+                </p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement><p>Exactly one solution when <m>b=3</m>; no solution otherwise.</p></statement>
+              <feedback><p>The condition <m>b=3</m> makes the last row zero, leaving only two pivots for three variables. The solution is not unique.</p></feedback>
+            </choice>
+            <choice>
+              <statement><p>Infinitely many solutions when <m>b=\tfrac83</m>; no solution otherwise.</p></statement>
+              <feedback><p>Use the last row at <m>a=2</m>: it says <m>0=b-3</m>. The compatible value differs from the <m>a=1</m> case.</p></feedback>
+            </choice>
+          </choices>
+        </task>
+      </task>
+    </exercise>
     <exercise xml:id="ex-ch1-zero-versus-contradiction">
       <statement><p>Translate the augmented rows
       <m>[\,0\;0\;0\mid0\,]</m> and <m>[\,0\;0\;0\mid5\,]</m> into equations.
