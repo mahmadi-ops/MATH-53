@@ -182,8 +182,9 @@
       <m>n\times n</m> matrices and vectors are columns in <m>\R^n</m>.
       Compare the constructions: a right inverse supplies a preimage, while a
       left inverse lets us recover equal inputs from equal outputs.
-      Drag blocks to the proof column, or focus a block, press Space to pick it
-      up, use the arrow keys to move it, and press Space to drop it. Use
+      Drag blocks into the proof area, or Tab into a puzzle and follow its
+      keyboard instructions. Use the arrow keys and Space or Enter to select,
+      move, and drop blocks. Use
       <em>Check</em> for feedback and <em>Reset</em> to start again.
     </p>
     <paragraphs xml:id="imt-parsons-proofs">

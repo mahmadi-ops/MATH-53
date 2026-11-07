@@ -61,7 +61,11 @@ def main():
             def ready():
                 page.wait_for_function('''() => {
                     const ids=['rs-ex-imt-1-8-parsons','rs-ex-imt-1-9-parsons'];
-                    return ids.every(id=>parseFloat(window.componentMap?.[id]?.answerArea?.style.height)>50);
+                    return ids.every(id=>{
+                        const p=window.componentMap?.[id];
+                        return parseFloat(p?.answerArea?.style.height)>50 &&
+                            p.blocks?.length && p.blocks.every(block=>block.hammer);
+                    });
                 }''',timeout=20000)
             def fill(id,kind):
                 page.evaluate('''({id,kind})=>{
@@ -75,8 +79,20 @@ def main():
                     p.updateView();
                 }''',{'id':id,'kind':kind})
             page.goto(base,wait_until='networkidle');ready()
-            boxes=[page.locator('#'+id[3:]).bounding_box() for id in PROOFS]
-            assert abs(boxes[0]['y']-boxes[1]['y'])<2 and boxes[0]['x']<boxes[1]['x']
+            line=page.locator('#intro-imt-parsons').bounding_box()
+            pair_box=page.locator('#imt-parsons-proofs').bounding_box()
+            assert abs(line['width']-pair_box['width'])<2
+            for id in PROOFS:
+                exercise=page.locator('#'+id[3:])
+                assert abs(exercise.bounding_box()['width']-line['width'])<2
+                source_box=exercise.locator('.source').bounding_box()
+                answer_box=exercise.locator('.answer').bounding_box()
+                assert abs(source_box['y']-answer_box['y'])<2
+                assert answer_box['x']>=source_box['x']+source_box['width']
+                span=answer_box['x']+answer_box['width']-source_box['x']
+                assert exercise.bounding_box()['width']*.8<=span<=exercise.bounding_box()['width']
+                assert exercise.locator('.source .block').first.bounding_box()['width']>=source_box['width']*.9
+            print('PASS: full text-width exercises with two side-by-side work boxes',flush=True)
             for id,count in PROOFS.items():
                 exercise=page.locator('#'+id[3:])
                 check=exercise.get_by_role('button',name='Check',exact=True)
@@ -94,8 +110,12 @@ def main():
             print('PASS: correct proofs accepted; incomplete, reordered, and distractor answers rejected; reset works',flush=True)
             id=next(iter(PROOFS))
             exercise=page.locator('#'+id[3:])
-            block=exercise.locator('.source .block[tabindex="0"]')
-            block.focus();page.keyboard.press('Space');page.keyboard.press('ArrowRight');page.keyboard.press('Space')
+            entry=exercise.locator('.sortable-code-container[role="button"]')
+            if entry.count():
+                entry.focus();page.keyboard.press('Enter')
+            else:
+                exercise.locator('.source .block[tabindex="0"]').focus()
+            page.keyboard.press('Space');page.keyboard.press('ArrowRight');page.keyboard.press('Space')
             assert exercise.locator('.answer .block').count()==1
             assert page.locator('#ex-imt-1-9-parsons .answer .block').count()==0
             exercise.get_by_role('button',name='Reset',exact=True).click();ready()
@@ -111,7 +131,7 @@ def main():
             assert page.locator('#imt-parsons-proofs mjx-container').count()>30
             assert not page.locator('#imt-parsons-proofs [data-mml-node="merror"]').count()
             page.locator('#imt-parsons-proofs').screenshot(path='/tmp/math53-imt-parsons-desktop.png')
-            print('PASS: keyboard and drag movement, independent boards, rendered math, desktop side-by-side layout',flush=True)
+            print('PASS: keyboard and drag movement, independent boards, rendered math, side-by-side work areas',flush=True)
             for width in [375,820]:
                 page.set_viewport_size({'width':width,'height':1000})
                 page.goto(base,wait_until='networkidle');ready()
