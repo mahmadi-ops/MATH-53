@@ -38,6 +38,13 @@
     });
 })();
 
+/* Open the paired IMT proof puzzles before Runestone measures their blocks. */
+(function () {
+    document.querySelectorAll("#imt-parsons-proofs > details.exercise").forEach(function (exercise) {
+        exercise.open = true;
+    });
+})();
+
 /* ------------------------------------------------------------------ *
  * Floating Socratic AI tutor for problems pages.                       *
  *                                                                      *

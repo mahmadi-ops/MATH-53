@@ -140,36 +140,6 @@
       zeros, which means <m>I_n</m> is the reduced row-echelon matrix.
     </p>
 
-    <p>
-      <term>(1) <m>\Longleftrightarrow</m> (8).</term>
-      If <m>A</m> is invertible, by definition we have <m>AA^{-1} = I</m>, so we may take
-      <m>C = A^{-1}</m>.
-    </p>
-    <p>
-      Now let us assume there exists an <m>n \times n</m> matrix <m>C</m> with the
-      property that <m>AC = I_n</m>. We can show that <m>A</m> is onto and hence
-      invertible: for any <m>\vec{b} \in \R^n</m>, we can write
-      <md>
-        \vec{b} = I \vec{b} = (AC)\vec{b} = A \left( C\vec{b} \right),
-      </md>
-      or <m>T_A \left( C\vec{b} \right) = \vec{b}</m>. This means that for any
-      <m>\vec{b} \in \R^n</m> there exists <m>\vec{x} = C\vec{b} \in \R^n</m> such that
-      <m>T_A(\vec{x}) = \vec{b}</m>, and hence <m>T_A</m> is onto and therefore <m>A</m>
-      is invertible, by the equivalence of (1) and (6).
-    </p>
-
-    <p>
-      <term>(1) <m>\Longleftrightarrow</m> (9).</term>
-      If <m>A</m> is invertible, by definition we have <m>A^{-1}A = I</m>, so we may take
-      <m>D = A^{-1}</m>.
-    </p>
-    <p>
-      Now assume <m>DA = I</m>. We can show that <m>T_A</m> is one-to-one and hence
-      <m>A</m> is invertible. If <m>T_A(\vec{x}_1) = T_A(\vec{x}_2)</m>, then
-      <m>A\vec{x}_1 = A\vec{x}_2</m> and so <m>DA\vec{x}_1 = DA\vec{x}_2</m>, which gives
-      <m>\vec{x}_1 = \vec{x}_2</m> since <m>DA = I</m>. Hence <m>T_A</m> is injective and
-      <m>A</m> is invertible.
-    </p>
 
     <p>
       <term>(1) <m>\Longleftrightarrow</m> (10).</term>
@@ -204,6 +174,89 @@
       so <m>\left( \left( A^T \right)^{-1} \right)^T = A^{-1}</m> and <m>A</m> is
       invertible.
     </p>
+    <p xml:id="intro-imt-parsons">
+      <em>Build the two proofs.</em> In each Parsons exercise, arrange the valid
+      blocks into a proof, leaving one incorrect block unused. Begin with the
+      forward implication from (1), then prove the converse using the earlier
+      equivalences. Throughout, <m>A</m>, <m>C</m>, and <m>D</m> are
+      <m>n\times n</m> matrices and vectors are columns in <m>\R^n</m>.
+      Compare the constructions: a right inverse supplies a preimage, while a
+      left inverse lets us recover equal inputs from equal outputs.
+      Drag blocks to the proof column, or focus a block, press Space to pick it
+      up, use the arrow keys to move it, and press Space to drop it. Use
+      <em>Check</em> for feedback and <em>Reset</em> to start again.
+    </p>
+    <paragraphs xml:id="imt-parsons-proofs">
+      <title>Reconstruct the One-Sided Inverse Proofs</title>
+      <exercise xml:id="ex-imt-1-8-parsons" language="natural" indentation="show">
+        <title><m>(1)\Longleftrightarrow(8)</m>: A Right Inverse</title>
+        <statement>
+          <p>
+            Prove that <m>A</m> is invertible if and only if
+            <m>AC=I_n</m> for some <m>C</m>. For the converse, show that
+            <m>T_A</m> is onto.
+          </p>
+        </statement>
+        <blocks randomize="yes">
+          <block><p>Assume <m>A</m> is invertible. Take <m>C=A^{-1}</m>.</p></block>
+          <block><p>Then <m>AC=AA^{-1}=I_n</m>. This proves <m>(1)\Rightarrow(8)</m>.</p></block>
+          <block><p>Conversely, suppose <m>AC=I_n</m> for some <m>C</m>.</p></block>
+          <block><p>Let <m>\vec{b}\in\R^n</m> be arbitrary and set <m>\vec{x}=C\vec{b}</m>.</p></block>
+          <block><p>By associativity, <m>A\vec{x}=(AC)\vec{b}=\vec{b}</m>.</p></block>
+          <block>
+            <p>
+              Thus <m>T_A</m> is onto. By <m>(6)\Rightarrow(1)</m>, <m>A</m>
+              is invertible, proving <m>(8)\Rightarrow(1)</m>.
+            </p>
+          </block>
+          <block correct="no">
+            <p>Instead set <m>\vec{x}=\vec{b}C</m>; multiplying in either order gives the same column vector.</p>
+          </block>
+        </blocks>
+        <hint>
+          <p>
+            To prove onto, start with an arbitrary output <m>\vec{b}</m> and
+            construct an input using <m>C</m>. Check the matrix dimensions:
+            <m>C\vec{b}</m> is a column vector. Do not assume that
+            <m>A^{-1}</m> exists in the converse.
+          </p>
+        </hint>
+      </exercise>
+      <exercise xml:id="ex-imt-1-9-parsons" language="natural" indentation="show">
+        <title><m>(1)\Longleftrightarrow(9)</m>: A Left Inverse</title>
+        <statement>
+          <p>
+            Prove that <m>A</m> is invertible if and only if
+            <m>DA=I_n</m> for some <m>D</m>. For the converse, show that
+            <m>T_A</m> is one-to-one.
+          </p>
+        </statement>
+        <blocks randomize="yes">
+          <block><p>Assume <m>A</m> is invertible. Take <m>D=A^{-1}</m>.</p></block>
+          <block><p>Then <m>DA=A^{-1}A=I_n</m>. This proves <m>(1)\Rightarrow(9)</m>.</p></block>
+          <block><p>Conversely, suppose <m>DA=I_n</m> for some <m>D</m>.</p></block>
+          <block><p>Take <m>\vec{x}_1,\vec{x}_2\in\R^n</m> with <m>A\vec{x}_1=A\vec{x}_2</m>.</p></block>
+          <block><p>Multiply on the left by <m>D</m>: <m>DA\vec{x}_1=DA\vec{x}_2</m>.</p></block>
+          <block><p>Since <m>DA=I_n</m>, this gives <m>\vec{x}_1=\vec{x}_2</m>.</p></block>
+          <block>
+            <p>
+              Thus <m>T_A</m> is one-to-one. By <m>(2)\Rightarrow(1)</m>,
+              <m>A</m> is invertible, proving <m>(9)\Rightarrow(1)</m>.
+            </p>
+          </block>
+          <block correct="no">
+            <p>Cancel <m>A</m> directly, since every square matrix can be canceled.</p>
+          </block>
+        </blocks>
+        <hint>
+          <p>
+            In the converse, justify cancellation by multiplying on the
+            <em>left</em> by <m>D</m> and using <m>DA=I_n</m>. Being square
+            alone does not justify canceling <m>A</m>.
+          </p>
+        </hint>
+      </exercise>
+    </paragraphs>
   </subsection>
 
   <subsection xml:id="subsec-imt-applications">

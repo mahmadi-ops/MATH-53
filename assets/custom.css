@@ -40,6 +40,58 @@ html:root {
     --font-print: "TeX Gyre Pagella", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 
+/* The two IMT proof puzzles share the book's type and accent colors. */
+#imt-parsons-proofs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 18px;
+    --questionBgColor: #EDF0E6;
+    --componentBorderColor: #c4cdb1;
+    --parsonsBgColor: white;
+    --parsonsBorderColor: #4A5D23;
+    --parsonsCorrectBgColor: #EDF0E6;
+    --parsonsCorrectBorderColor: #4A5D23;
+    --parsonsIncorrectBgColor: #f9f3f4;
+    --parsonsIncorrectBorderColor: #5E011C;
+}
+#imt-parsons-proofs > .heading,
+#imt-parsons-proofs > .autopermalink { grid-column: 1 / -1; }
+#imt-parsons-proofs > .exercise {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    font-size: 15px;
+}
+#imt-parsons-proofs .knowl__content,
+#imt-parsons-proofs .parsons { box-sizing: border-box; max-width: 100%; }
+#imt-parsons-proofs .parsons_section,
+#imt-parsons-proofs .parsons { background: transparent !important; }
+#imt-parsons-proofs .parsons,
+#imt-parsons-proofs .parsons .block,
+#imt-parsons-proofs button { font-family: var(--font-body); }
+#imt-parsons-proofs .parsons .block { background-color: white; border-color: #c4cdb1; }
+#imt-parsons-proofs .parsons .block.incorrectPosition { background-color: #f9f3f4; border-color: #5E011C; }
+#imt-parsons-proofs .parsons-controls button {
+    min-height: 44px;
+    color: #4A5D23 !important;
+    background: white !important;
+    border: 1px solid #4A5D23 !important;
+    border-radius: 5px;
+    margin: 6px 8px 6px 0;
+}
+#imt-parsons-proofs .parsons-controls button:hover { background: #EDF0E6 !important; }
+#imt-parsons-proofs .block:focus-visible,
+#imt-parsons-proofs button:focus-visible { outline: 3px solid #4A5D23; outline-offset: 3px; }
+@media (min-width: 1200px) {
+    /* Use the main column's existing side padding for readable proof blocks. */
+    #imt-parsons-proofs { width: calc(100% + 240px); margin-inline: -120px; }
+}
+@media (max-width: 1199px) {
+    #imt-parsons-proofs { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Wide display equations scroll horizontally instead of clipping.
    This is the site-wide safety net for narrow screens; the worst
    offenders are also broken into shorter lines at the source level. */
