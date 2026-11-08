@@ -70,7 +70,9 @@ def check_source():
     assert equations['eq-predict-growth-recurrence'] == (
         '\\vec{x}_{n+1}=A_\\varepsilon\\vec{x}_n,\\qquad'
         '\\vec{x}_0=\\begin{bmatrix}0\\\\1\\end{bmatrix}.')
-    assert equations['eq-predict-growth-size'] == 'M_n=\\max\\{|x_{n,1}|,|x_{n,2}|\\}.'
+    assert equations['eq-predict-growth-coordinates'] == '\\vec{x}_n=\\begin{bmatrix}u_n\\\\v_n\\end{bmatrix},'
+    assert equations['eq-predict-growth-size'] == 'M_n=\\max\\{|u_n|,|v_n|\\}.'
+    assert 'absolute value' in text and 'infinity norm' in text
     return text
 
 

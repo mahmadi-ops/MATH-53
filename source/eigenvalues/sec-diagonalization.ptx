@@ -491,10 +491,20 @@
         \vec{x}_{n+1}=A_\varepsilon\vec{x}_n,\qquad
         \vec{x}_0=\begin{bmatrix}0\\1\end{bmatrix}.
       </md>
-      Measure the size of the vector by
-      <md xml:id="eq-predict-growth-size">
-        M_n=\max\{|x_{n,1}|,|x_{n,2}|\}.
+      Name the two coordinates of the vector after <m>n</m> iterations
+      <md xml:id="eq-predict-growth-coordinates">
+        \vec{x}_n=\begin{bmatrix}u_n\\v_n\end{bmatrix},
       </md>
+      so the subscript records the iteration and the letter records the
+      coordinate: <m>u_n</m> is the first coordinate of <m>\vec{x}_n</m> and
+      <m>v_n</m> is the second. Measure the size of <m>\vec{x}_n</m> by
+      <md xml:id="eq-predict-growth-size">
+        M_n=\max\{|u_n|,|v_n|\}.
+      </md>
+      The bars mean absolute value, so <m>M_n</m> is the largest absolute value
+      among the coordinates of <m>\vec{x}_n</m>. For example, if <m>u_n=-3</m>
+      and <m>v_n=2</m>, then <m>M_n=\max\{3,2\}=3</m>. This measure of size is
+      called the <term>infinity norm</term> of <m>\vec{x}_n</m>.
     </p>
     <p>
       Before playing the animation, record predictions and justify them:
