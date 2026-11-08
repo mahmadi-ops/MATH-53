@@ -147,8 +147,8 @@
     });
     line(svg, x(0), top, x(0), top + innerHeight, 'axis');
     line(svg, left, y(0), left + innerWidth, y(0), 'axis');
-    el('text', { x: left + innerWidth, y: height - 2, 'text-anchor': 'end' }, svg, 'first coordinate');
-    el('text', { x: left, y: 14 }, svg, 'second coordinate');
+    el('text', { x: left + innerWidth, y: height - 2, 'text-anchor': 'end' }, svg, 'uₙ (first coordinate)');
+    el('text', { x: left, y: 14 }, svg, 'vₙ (second coordinate)');
     line(svg, x(-0.25), y(0), x(8.75), y(0), 'eigen-first');
     const eigenRight = epsilon === 0 ? 8.75 : Math.min(8.75, 1.5 / epsilon);
     line(svg, x(-0.25), y(epsilon / 24), x(eigenRight), y(-epsilon * eigenRight / 6), 'eigen-second');
@@ -196,7 +196,7 @@
     epsilonSlider.setAttribute('aria-valuetext', `${epsilonText}, approximately ${format(epsilon)}`);
     $('iteration-value').textContent = n;
     iterationSlider.value = n;
-    $('current-readout').textContent = `ε = ${epsilonText}; n = ${n}: xₙ = (${format(current.x)}, ${format(current.y)}), Mₙ = ${format(current.m)}.`;
+    $('current-readout').textContent = `ε = ${epsilonText}; n = ${n}: uₙ = ${format(current.x)}, vₙ = ${format(current.y)}, Mₙ = ${format(current.m)}.`;
     Object.entries({ n, x: current.x, y: current.y, m: current.m }).forEach(([key, value]) => { $('current-readout').dataset[key] = value; });
     const maximum = peak(epsilon);
     const exactPeak = fractionLabel(480 - Number(epsilonSlider.value), 60);

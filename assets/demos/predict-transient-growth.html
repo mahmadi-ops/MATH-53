@@ -19,8 +19,9 @@
           <span class="math"><var>A</var><sub>ε</sub> =</span>
           <span class="matrix" aria-hidden="true"><span>2/3</span><span>6</span><span>0</span><span>2/3 − ε</span></span>
         </div>
-        <p class="math"><var>x</var><sub><var>n</var>+1</sub> = <var>A</var><sub>ε</sub><var>x</var><sub><var>n</var></sub>,<br><var>M</var><sub><var>n</var></sub> = max(|<var>x</var><sub><var>n</var>,1</sub>|, |<var>x</var><sub><var>n</var>,2</sub>|).</p>
+        <p class="math"><var>x</var><sub><var>n</var>+1</sub> = <var>A</var><sub>ε</sub><var>x</var><sub><var>n</var></sub>,<br><var>x</var><sub><var>n</var></sub> = (<var>u</var><sub><var>n</var></sub>, <var>v</var><sub><var>n</var></sub>),<br><var>M</var><sub><var>n</var></sub> = max(|<var>u</var><sub><var>n</var></sub>|, |<var>v</var><sub><var>n</var></sub>|).</p>
       </div>
+      <p>Here <var>u</var><sub><var>n</var></sub> and <var>v</var><sub><var>n</var></sub> are the first and second coordinates after <var>n</var> iterations, so <var>M</var><sub><var>n</var></sub> is the larger of their absolute values (the infinity norm of <var>x</var><sub><var>n</var></sub>).</p>
       <p id="prediction-instructions">Record all four predictions before exploring. They do not have to be correct. Give answers for the whole interval, including both endpoints.</p>
     </header>
 
@@ -126,9 +127,9 @@
         <h2 id="explanation-heading">Why the peak stays finite</h2>
         <p>Write <var>r</var> = 2/3 and <var>s</var> = 2/3 − ε. For ε &gt; 0, the distinct eigenvalues <var>r</var> and <var>s</var> have eigenvectors (1, 0) and (6, −ε), so the matrix is diagonalizable. At ε = 0 these directions coalesce, and there is only one independent eigenvector.</p>
         <p>For <var>n</var> ≥ 1,</p>
-        <p class="formula">ε &gt; 0: <var>x</var><sub><var>n</var></sub> = (6(<var>r</var><sup><var>n</var></sup> − <var>s</var><sup><var>n</var></sup>)/ε, <var>s</var><sup><var>n</var></sup>);<br>ε = 0: <var>x</var><sub><var>n</var></sub> = (6<var>n</var><var>r</var><sup><var>n</var>−1</sup>, <var>r</var><sup><var>n</var></sup>).</p>
+        <p class="formula">ε &gt; 0: (<var>u</var><sub><var>n</var></sub>, <var>v</var><sub><var>n</var></sub>) = (6(<var>r</var><sup><var>n</var></sup> − <var>s</var><sup><var>n</var></sup>)/ε, <var>s</var><sup><var>n</var></sup>);<br>ε = 0: (<var>u</var><sub><var>n</var></sub>, <var>v</var><sub><var>n</var></sub>) = (6<var>n</var><var>r</var><sup><var>n</var>−1</sup>, <var>r</var><sup><var>n</var></sup>).</p>
         <p>Both coordinates tend to zero, even at the defective endpoint. Yet <var>M</var><sub>0</sub> = 1 and <var>M</var><sub>1</sub> = 6: convergence can begin with substantial growth.</p>
-        <p>If <var>u</var><sub><var>n</var></sub> is the first coordinate, then <var>u</var><sub>1</sub> = 6, <var>u</var><sub>2</sub> = 8 − 6ε, and <var>u</var><sub>3</sub> − <var>u</var><sub>2</sub> = −6ε(1 − ε). Also <var>u</var><sub><var>n</var>+1</sub> − <var>u</var><sub><var>n</var></sub> = −<var>u</var><sub><var>n</var></sub>/3 + 6<var>s</var><sup><var>n</var></sup>. Once this difference is nonpositive, the next is strictly negative: it equals <var>r</var> times the preceding difference plus 6(<var>s</var> − 1)<var>s</var><sup><var>n</var></sup>. The second coordinate never exceeds 1.</p>
+        <p>For the first coordinate, <var>u</var><sub>1</sub> = 6, <var>u</var><sub>2</sub> = 8 − 6ε, and <var>u</var><sub>3</sub> − <var>u</var><sub>2</sub> = −6ε(1 − ε). Also <var>u</var><sub><var>n</var>+1</sub> − <var>u</var><sub><var>n</var></sub> = −<var>u</var><sub><var>n</var></sub>/3 + 6<var>s</var><sup><var>n</var></sup>. Once this difference is nonpositive, the next is strictly negative: it equals <var>r</var> times the preceding difference plus 6(<var>s</var> − 1)<var>s</var><sup><var>n</var></sup>. The second coordinate <var>v</var><sub><var>n</var></sub> = <var>s</var><sup><var>n</var></sup> never exceeds 1.</p>
         <p>Thus the exact peak is <strong>8 − 6ε at <var>n</var> = 2</strong>. At ε = 0 it is also attained at <var>n</var> = 3; at ε = 1/3 it is also attained at <var>n</var> = 1. As ε → 0, the peak tends to 8. A coalescing eigenbasis does not force this trajectory’s peak to become unbounded.</p>
       </section>
     </section>
