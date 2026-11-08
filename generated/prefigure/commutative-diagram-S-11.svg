@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="commutative-diagram-S-figure" width="472" height="292" viewBox="0 0 472 292">
+  <defs>
+    <clipPath id="commutative-diagram-S-__clipPath-0">
+      <rect x="6.0" y="6.0" width="460.0" height="280.0"/>
+    </clipPath>
+    <clipPath id="commutative-diagram-S-__clipPath-1">
+      <rect x="6.0" y="6.0" width="460.0" height="280.0"/>
+    </clipPath>
+    <marker id="commutative-diagram-S-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="commutative-diagram-S-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="commutative-diagram-S-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
+      <g transform="rotate(180, 4.5, 4.0)">
+        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="commutative-diagram-S-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
+      <g transform="rotate(180, 6.5, 6.0)">
+        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="commutative-diagram-S-commutative-square">
+    <g id="commutative-diagram-S-node-P2" transform="translate(75.0,52.7) scale(1.4,1.4) translate(-10.2,-7.0)">
+      <g id="commutative-diagram-S-__g-0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="20.360px" height="13.912px" role="img" focusable="false" viewBox="0 -686 1226.6 838.1" x="0.0" y="0.0">
+          <defs>
+            <path id="commutative-diagram-S-MJX-2-GP-DS-2119" d="M710 509C710 623 600 686 453 686L80 686L80 642L135 639C161 638 167 624 167 571L167 116C167 59 165 49 137 47L89 44L89 0L414 0L414 44L366 47C337 49 336 59 336 116L336 642L412 642C502 642 536 563 536 481C536 403 515 319 440 319C422 319 411 323 386 333L399 282C406 279 417 274 439 274C596 274 710 340 710 509M666 509C666 411 617 356 543 332C568 372 580 426 580 481C580 541 565 597 531 635C611 620 666 580 666 509M297 44L206 44C210 60 211 83 211 116L211 571C211 603 209 626 205 642L292 642L292 116C292 83 293 60 297 44Z"/>
+            <path id="commutative-diagram-S-MJX-2-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="numbersetletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\mathbb{P}_2" data-semantic-speech="double struck upper P 2">
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="numbersetletter" data-semantic-font="double-struck" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:\mathbb{P};texclass:ORD" data-semantic-speech="double struck upper P" data-semantic-prefix="Base">
+                    <use data-c="2119" xlink:href="#commutative-diagram-S-MJX-2-GP-DS-2119"/>
+                  </g>
+                </g>
+                <g data-mml-node="mn" transform="translate(823,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                  <use data-c="32" xlink:href="#commutative-diagram-S-MJX-2-GP-N-32"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <g id="commutative-diagram-S-node-M22" transform="translate(397.0,52.7) scale(1.4,1.4) translate(-15.2,-7.0)">
+      <g id="commutative-diagram-S-__g-1">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="30.328px" height="13.976px" role="img" focusable="false" viewBox="0 -690 1827.1 842.1" x="0.0" y="0.0">
+          <defs>
+            <path id="commutative-diagram-S-MJX-3-GP-DS-1D544" d="M957 0L957 44L909 47C884 49 879 58 879 115L879 575C879 631 881 641 909 643L952 646L952 690L716 690L535 183L276 690L80 690L80 646L124 643C152 641 154 634 154 598L154 575L154 115C154 59 150 49 124 47L80 44L80 0L273 0L273 44L229 47C202 49 198 59 198 115L198 463L442-8L521-8C528 25 542 71 570 148L710 539L710 115C710 58 708 50 679 47L645 44L645 0M840 44L749 44C753 60 754 83 754 115L754 646L840 646C836 630 835 607 835 575L835 115C835 83 836 60 840 44M515 124C501 85 496 68 488 36L470 36L198 560L198 575C198 607 197 630 193 646L248 646Z"/>
+            <path id="commutative-diagram-S-MJX-3-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\mathbb{M}_{22}" data-semantic-speech="double struck upper M 22">
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="double-struck" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:\mathbb{M};texclass:ORD" data-semantic-speech="double struck upper M" data-semantic-prefix="Base">
+                    <use data-c="1D544" xlink:href="#commutative-diagram-S-MJX-3-GP-DS-1D544"/>
+                  </g>
+                </g>
+                <g data-mml-node="TeXAtom" transform="translate(1070,-150) scale(0.707)" data-mjx-texclass="ORD">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:{22};texclass:ORD" data-semantic-speech="22" data-semantic-prefix="Subscript">
+                    <use data-c="32" xlink:href="#commutative-diagram-S-MJX-3-GP-N-32"/>
+                    <use data-c="32" xlink:href="#commutative-diagram-S-MJX-3-GP-N-32" transform="translate(500,0)"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <g id="commutative-diagram-S-node-R3" transform="translate(75.0,239.3) scale(1.4,1.4) translate(-11.1,-7.1)">
+      <g id="commutative-diagram-S-__g-2">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="22.296px" height="14.112px" role="img" focusable="false" viewBox="0 -850.2 1343.6 850.2" x="0.0" y="0.0">
+          <defs>
+            <path id="commutative-diagram-S-MJX-4-GP-DS-211D" d="M827 44C806 48 769 75 758 89L556 330C668 361 717 418 717 514C717 622 622 686 490 686L86 686L86 642L127 639C156 637 158 627 158 571L158 115C158 58 156 49 128 47L80 44L80 0L405 0L405 44L357 47C329 49 327 58 327 115L327 642L423 642C514 642 543 566 543 493C543 414 475 357 406 355L368 355L356 301L611 0L817 0M673 514C673 444 638 404 542 375C569 406 587 447 587 493C587 547 574 601 540 638C618 626 673 584 673 514M742 44L633 44L408 311C440 312 474 318 503 324L725 61C729 56 735 50 742 44M288 44L197 44C201 60 202 83 202 115L202 571C202 603 201 626 197 642L283 642L283 115C283 83 284 60 288 44Z"/>
+            <path id="commutative-diagram-S-MJX-4-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="numbersetletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\mathbb{R}^3" data-semantic-speech="double struck upper R cubed">
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="numbersetletter" data-semantic-font="double-struck" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:\mathbb{R};texclass:ORD" data-semantic-speech="double struck upper R" data-semantic-prefix="Base">
+                    <use data-c="211D" xlink:href="#commutative-diagram-S-MJX-4-GP-DS-211D"/>
+                  </g>
+                </g>
+                <g data-mml-node="mn" transform="translate(940,363) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:3" data-semantic-speech="3" data-semantic-prefix="Exponent">
+                  <use data-c="33" xlink:href="#commutative-diagram-S-MJX-4-GP-N-33"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <g id="commutative-diagram-S-node-R4" transform="translate(397.0,239.3) scale(1.4,1.4) translate(-11.1,-7.1)">
+      <g id="commutative-diagram-S-__g-3">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="22.296px" height="14.168px" role="img" focusable="false" viewBox="0 -853.7 1343.6 853.7" x="0.0" y="0.0">
+          <defs>
+            <path id="commutative-diagram-S-MJX-5-GP-DS-211D" d="M827 44C806 48 769 75 758 89L556 330C668 361 717 418 717 514C717 622 622 686 490 686L86 686L86 642L127 639C156 637 158 627 158 571L158 115C158 58 156 49 128 47L80 44L80 0L405 0L405 44L357 47C329 49 327 58 327 115L327 642L423 642C514 642 543 566 543 493C543 414 475 357 406 355L368 355L356 301L611 0L817 0M673 514C673 444 638 404 542 375C569 406 587 447 587 493C587 547 574 601 540 638C618 626 673 584 673 514M742 44L633 44L408 311C440 312 474 318 503 324L725 61C729 56 735 50 742 44M288 44L197 44C201 60 202 83 202 115L202 571C202 603 201 626 197 642L283 642L283 115C283 83 284 60 288 44Z"/>
+            <path id="commutative-diagram-S-MJX-5-GP-N-34" d="M472-3L472 27L424 30C375 33 364 46 364 106L364 181C423 181 444 180 472 177L472 248C472 248 423 245 391 245L364 245L364 384C364 562 366 648 371 689L359 694L285 667L2 204L13 181L280 181L280 106C280 46 269 32 220 30L158 27L158-3L319 0M280 245L65 245L280 597Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="numbersetletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:\mathbb{R}^4" data-semantic-speech="double struck upper R Superscript 4">
+                <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="numbersetletter" data-semantic-font="double-struck" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:\mathbb{R};texclass:ORD" data-semantic-speech="double struck upper R" data-semantic-prefix="Base">
+                    <use data-c="211D" xlink:href="#commutative-diagram-S-MJX-5-GP-DS-211D"/>
+                  </g>
+                </g>
+                <g data-mml-node="mn" transform="translate(940,363) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:4" data-semantic-speech="4" data-semantic-prefix="Exponent">
+                  <use data-c="34" xlink:href="#commutative-diagram-S-MJX-5-GP-N-34"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <line id="commutative-diagram-S-arrow-S" x1="116.4" y1="52.7" x2="339.4" y2="52.7" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
+    <g id="commutative-diagram-S-label-S" transform="translate(229.1,34.7) scale(1.4,1.4) translate(-4.6,-12.0)">
+      <g id="commutative-diagram-S-__g-4">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.296px" width="9.232px" height="12.016px" role="img" focusable="false" viewBox="0 -706 556 724" x="0.0" y="0.0">
+          <defs>
+            <path id="commutative-diagram-S-MJX-6-GP-I-1D446" d="M506 672C460 696 422 706 374 706C300 706 225 675 171 622C129 580 108 530 108 471C108 386 146 339 230 319L325 296C380 283 406 249 406 191C406 95 335 30 232 30C178 30 140 42 96 73L96 172L66 172C60 117 53 72 42 20C92-5 144-18 197-18C352-18 485 98 485 234C485 313 442 355 341 377L276 391C210 405 180 442 180 508C180 595 247 658 339 658C388 658 421 645 451 613L451 537L481 537C485 591 492 629 506 672Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:S" data-semantic-speech="upper S">
+                <use data-c="1D446" xlink:href="#commutative-diagram-S-MJX-6-GP-I-1D446"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <line id="commutative-diagram-S-arrow-left-iso" x1="75.0" y1="87.7" x2="75.0" y2="204.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#commutative-diagram-S-arrow-head-start-2_None_24_60-black)"/>
+    <line id="commutative-diagram-S-arrow-right-iso" x1="397.0" y1="87.7" x2="397.0" y2="204.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)" marker-start="url(#commutative-diagram-S-arrow-head-start-2_None_24_60-black)"/>
+    <line id="commutative-diagram-S-arrow-A" x1="107.2" y1="239.3" x2="353.2" y2="239.3" stroke="black" stroke-width="2" fill="none" marker-end="url(#commutative-diagram-S-arrow-head-end-2_None_24_60-black)"/>
+    <g id="commutative-diagram-S-label-A" transform="translate(231.4,269.7) scale(1.4,1.4) translate(-81.2,-6.2)">
+      <g id="commutative-diagram-S-__g-5">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="162.488px" height="12.416px" role="img" focusable="false" viewBox="0 -728 9790 748" x="0.0" y="0.0">
+          <defs>
+            <path id="commutative-diagram-S-MJX-7-GP-N-6D" d="M869-3L869 27L822 30C788 32 785 39 785 102L785 308C785 407 727 469 635 469C600 469 571 460 553 444L477 376C445 442 404 469 335 469C298 469 270 460 252 444L183 380L183 465L174 469C123 448 71 434 18 428L18 400L55 400C95 400 99 393 99 327L99 102C99 39 96 32 62 30L16 27L16-3L143 0L262-3L262 27L220 30C186 32 183 39 183 102L183 314C183 359 249 408 309 408C363 408 400 357 400 281L400 102C400 39 397 32 363 30L317 27L317-3L442 0L567-3L567 27L521 30C487 32 484 39 484 102L484 314C484 359 550 408 610 408C664 408 701 357 701 281L701-3C727-1 754 0 780 0C810 0 839-1 869-3Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-61" d="M471-3L471 27L432 29C408 30 404 38 404 87L404 270C404 416 362 469 246 469C203 469 163 458 125 435L72 403L72 338L98 331L111 362C131 409 142 416 188 416C282 416 321 379 324 288L225 270C89 245 32 198 32 111C32 33 79-12 158-12C176-12 193-9 200-4L324 82L319-3C345-1 371 0 397 0C422 0 446-1 471-3M324 124C295 83 232 45 193 45C153 45 118 82 118 125C118 162 138 197 168 216C193 231 248 245 324 256Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-72" d="M374 458C363 465 345 469 327 469C297 469 265 453 244 428L188 362L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L144 0L287-3L287 27L235 30C190 33 188 36 188 102L188 274C188 334 228 384 277 384C307 384 328 370 344 338L365 338Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-69" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L146 0M196 592C196 621 176 642 147 642C116 642 96 622 96 592C96 562 116 542 146 542C176 542 196 562 196 592Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-78" d="M496-3L496 27L471 30C459 31 447 39 436 54L288 254L430 420C436 427 447 431 464 431L478 431L478 459L396 459L272 284L196 400C181 422 170 435 136 469L20 449L25 423L46 421C64 419 86 406 96 392L216 218L67 42C60 33 47 27 37 27L20 27L20 0L106 0C106 0 113 23 166 94L240 192L373-3C393-1 414 0 434 0C455 0 475-1 496-3Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-20" d=""/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-6E" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 465L163 469C112 448 60 434 7 428L7 400L44 400C84 400 88 393 88 327L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-73" d="M391 148C391 179 383 202 363 222C337 248 304 259 216 276C134 292 107 312 107 358C107 408 142 436 203 436C270 436 321 401 321 354L321 331L349 331C350 389 351 413 354 444C301 462 265 469 224 469C108 469 37 414 37 324C37 276 59 242 105 221C132 209 185 193 253 178C298 168 317 147 317 109C317 55 267 17 196 17C123 17 71 52 71 102L71 143L41 143C41 74 38 44 30 4C82-13 121-20 167-20C298-20 391 50 391 148Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-66" d="M341 640L341 717C320 725 308 728 295 728C263 728 228 711 206 686L148 620C119 587 106 542 106 476L106 434L37 403L37 381L106 385L106 102C106 39 103 32 69 30L23 27L23-3L148 0L273-3L273 27L227 30C193 32 190 39 190 102L190 385L314 385L321 438C277 435 234 434 190 434L190 519C190 634 203 662 260 662C287 662 305 655 329 634Z"/>
+            <path id="commutative-diagram-S-MJX-7-GP-N-6F" d="M514 237C514 372 416 469 279 469C133 469 32 366 32 217C32 76 121-20 250-20C404-20 514 87 514 237M421 200C421 85 370 13 289 13C191 13 125 109 125 251C125 371 173 436 261 436C353 436 421 336 421 200Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{matrix transformation}" data-semantic-speech="matrix transformation">
+                <use data-c="6D" xlink:href="#commutative-diagram-S-MJX-7-GP-N-6D"/>
+                <use data-c="61" xlink:href="#commutative-diagram-S-MJX-7-GP-N-61" transform="translate(883,0)"/>
+                <use data-c="74" xlink:href="#commutative-diagram-S-MJX-7-GP-N-74" transform="translate(1383,0)"/>
+                <use data-c="72" xlink:href="#commutative-diagram-S-MJX-7-GP-N-72" transform="translate(1709,0)"/>
+                <use data-c="69" xlink:href="#commutative-diagram-S-MJX-7-GP-N-69" transform="translate(2104,0)"/>
+                <use data-c="78" xlink:href="#commutative-diagram-S-MJX-7-GP-N-78" transform="translate(2395,0)"/>
+                <use data-c="20" xlink:href="#commutative-diagram-S-MJX-7-GP-N-20" transform="translate(2911,0)"/>
+                <use data-c="74" xlink:href="#commutative-diagram-S-MJX-7-GP-N-74" transform="translate(3161,0)"/>
+                <use data-c="72" xlink:href="#commutative-diagram-S-MJX-7-GP-N-72" transform="translate(3487,0)"/>
+                <use data-c="61" xlink:href="#commutative-diagram-S-MJX-7-GP-N-61" transform="translate(3882,0)"/>
+                <use data-c="6E" xlink:href="#commutative-diagram-S-MJX-7-GP-N-6E" transform="translate(4382,0)"/>
+                <use data-c="73" xlink:href="#commutative-diagram-S-MJX-7-GP-N-73" transform="translate(4964,0)"/>
+                <use data-c="66" xlink:href="#commutative-diagram-S-MJX-7-GP-N-66" transform="translate(5388,0)"/>
+                <use data-c="6F" xlink:href="#commutative-diagram-S-MJX-7-GP-N-6F" transform="translate(5721,0)"/>
+                <use data-c="72" xlink:href="#commutative-diagram-S-MJX-7-GP-N-72" transform="translate(6267,0)"/>
+                <use data-c="6D" xlink:href="#commutative-diagram-S-MJX-7-GP-N-6D" transform="translate(6662,0)"/>
+                <use data-c="61" xlink:href="#commutative-diagram-S-MJX-7-GP-N-61" transform="translate(7545,0)"/>
+                <use data-c="74" xlink:href="#commutative-diagram-S-MJX-7-GP-N-74" transform="translate(8045,0)"/>
+                <use data-c="69" xlink:href="#commutative-diagram-S-MJX-7-GP-N-69" transform="translate(8371,0)"/>
+                <use data-c="6F" xlink:href="#commutative-diagram-S-MJX-7-GP-N-6F" transform="translate(8662,0)"/>
+                <use data-c="6E" xlink:href="#commutative-diagram-S-MJX-7-GP-N-6E" transform="translate(9208,0)"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </g>
+</svg>

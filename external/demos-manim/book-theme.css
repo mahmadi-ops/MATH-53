@@ -1,0 +1,66 @@
+/* Share the book's self-hosted Pagella fonts and color definitions. */
+@import url("../custom.css");
+
+:root {
+    color-scheme: light;
+    --bg: white;
+    --pane: var(--example-like-body-background, #EDF0E6);
+    --ink: black;
+    --muted: #404040;
+    --axis: #404040;
+    --tick: #666666;
+    --grid: var(--solution-like-body-background, #DDE2CF);
+    --cube: var(--proof-like-body-background, #d9d9d9);
+    --olive: var(--link-text-color, #4A5D23);
+    --wine: var(--definition-like-border-color, #5E011C);
+    /* Darken the book's mustard so thin arrows and labels remain legible. */
+    --mustard: color-mix(in srgb, var(--remark-like-border-color, #E1AD01) 60%, black);
+    --line: color-mix(in srgb, var(--olive) 35%, white);
+    --btnbord: var(--olive);
+    --btnhov: var(--solution-like-body-background, #DDE2CF);
+    --brk: var(--muted);
+
+    /* Consistent meanings across the linear algebra diagrams. */
+    --x: var(--olive);
+    --b: var(--wine);
+    --range: var(--olive);
+    --sol: var(--wine);
+    --oth: #808080;
+    --u: var(--olive);
+    --v: var(--wine);
+    --w: var(--mustard);
+    --n: var(--muted);
+    --face: var(--olive);
+    --img: var(--olive);
+    --orig: #666666;
+
+    /* Eigenvector animation. */
+    --v1: var(--olive);
+    --v2: var(--wine);
+    --border: var(--v1);
+    --hover: var(--btnhov);
+
+    /* Coupled oscillators. */
+    --m1: var(--olive);
+    --m2: var(--wine);
+    --spring: var(--olive);
+    --mid: var(--mustard);
+    --wall: var(--cube);
+    --cart-wheel: var(--pane);
+    --cart-label: white;
+    --trace-axis: #bdbdbd;
+    --mid-quiet: #808080;
+}
+
+html, body, svg text {
+    font-family: var(--font-body, Palatino, Georgia, serif);
+}
+
+button, input, kbd {
+    font-family: inherit;
+}
+
+button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 3px;
+}

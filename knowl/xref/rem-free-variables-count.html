@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.41</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Existence and Uniqueness of Solutions.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let a system of linear equations have augmented matrix <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(R\)</span> be a row-echelon form of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<ol class="decimal" id="rem-free-variables-count-2-1-4">
+<li>
+<div class="para">
+<dfn class="terminology">Existence.</dfn> The system is consistent if and only if <span class="process-math">\(R\)</span> has no row of the form <span class="process-math">\(\left[ \begin{array}{cccc|c} 0 \amp 0 \amp \cdots \amp 0 \amp d \end{array} \right]\)</span> with <span class="process-math">\(d \neq 0\text{;}\)</span> equivalently, if and only if the augmented column is <em class="emphasis">not</em> a pivot column.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-free-variables-count-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#rem-free-variables-count-2-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<dfn class="terminology">Uniqueness.</dfn> If the system is consistent, then it has a unique solution when there are no free variables, and infinitely many solutions when there is at least one free variable — one parameter for each free variable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-free-variables-count-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#rem-free-variables-count-2-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-free-variables-count-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 1.41: Existence and Uniqueness of Solutions"><a tabindex="-1" href="#rem-free-variables-count" title="Copy heading and permalink for Theorem 1.41: Existence and Uniqueness of Solutions" aria-label="Copy heading and permalink for Theorem 1.41: Existence and Uniqueness of Solutions">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">A row <span class="process-math">\([\,0 \; \cdots \; 0 \mid d\,]\)</span> with <span class="process-math">\(d \neq 0\)</span> stands for the equation <span class="process-math">\(0 = d\text{,}\)</span> which no values of the variables can satisfy, so a system whose echelon form contains such a row is inconsistent. Conversely, suppose there is no such row. Then every nonzero row of <span class="process-math">\(R\)</span> has its leading entry in a variable column, and the backward phase of the algorithm carries <span class="process-math">\(R\)</span> to a reduced row-echelon matrix in which each basic variable appears, with coefficient <span class="process-math">\(1\text{,}\)</span> in exactly one equation, and in no other. Assign arbitrary values to the free variables; each equation then determines the value of its basic variable. This produces a solution, so the system is consistent. That proves existence.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-free-variables-count-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">For uniqueness, the same description shows that the solutions are in one-to-one correspondence with the choices of values for the free variables. If there are no free variables there is exactly one choice, hence one solution. If there is at least one free variable, it can take infinitely many values, each giving a different solution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-free-variables-count-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 1.41.1"><a tabindex="-1" href="#rem-free-variables-count-3" title="Copy heading and permalink for Proof 1.41.1" aria-label="Copy heading and permalink for Proof 1.41.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-row-reduction.html#rem-free-variables-count">In Context</a></span>
+</body>
+</html>
