@@ -270,6 +270,80 @@
     finish by substitution. The next section turns both observations into definitions.
   </p>
 
+  <example xml:id="eg-shared-versus-equivalent">
+    <title>Shared Solutions versus Equivalent Systems</title>
+    <statement>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              Let <m>A</m> and <m>B</m> be the first and second systems of
+              <xref ref="eg-equivalent-systems" text="type-global" />. Find a sequence of
+              elementary operations that carries <m>A</m> to <m>B</m>, without solving
+              either system.
+            </p>
+          </li>
+          <li>
+            <p>
+              The systems
+              <md>
+                <mrow>
+                  C: \quad \begin{array}{rcl} x + y \amp = \amp 1 \\ 2x + 2y \amp = \amp 2 \end{array}
+                  \qquad \text{and} \qquad
+                  D: \quad \begin{array}{rcl} x - y \amp = \amp 1 \\ 2x - 2y \amp = \amp 2 \end{array}
+                </mrow>
+              </md>
+              both have the solution <m>(x, y) = (1, 0)</m>. Are they equivalent?
+            </p>
+          </li>
+          <li><p>State exactly what must be shown to prove that two systems are equivalent.</p></li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        (a) Apply operations in sequence, each to the system produced by the one before.
+        Add <m>-1</m> times the second equation to the first; then add <m>-1</m> times the
+        new first equation to the second; then multiply the second equation by
+        <m>-1</m>; finally add the second equation to the first:
+        <md>
+          <mrow>
+            \begin{array}{rcl} 2x - y \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
+            \;\longrightarrow\;
+            \begin{array}{rcl} x \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
+            \;\longrightarrow\;
+            \begin{array}{rcl} x \amp = \amp 1 \\ -y \amp = \amp -1 \end{array}
+          </mrow>
+          <mrow>
+            \;\longrightarrow\;
+            \begin{array}{rcl} x \amp = \amp 1 \\ y \amp = \amp 1 \end{array}
+            \;\longrightarrow\;
+            \begin{array}{rcl} x + y \amp = \amp 2 \\ y \amp = \amp 1 \end{array}
+          </mrow>
+        </md>
+        The last system is <m>B</m>. By <xref ref="rem-operations-reversible" text="type-global" />,
+        each step preserves the solution set, so <m>A</m> and <m>B</m> are equivalent.
+        No solving was needed.
+      </p>
+      <p>
+        (b) No. The pair <m>(0, 1)</m> solves <m>C</m>, since <m>0 + 1 = 1</m> and
+        <m>0 + 2 = 2</m>, but not <m>D</m>, since <m>0 - 1 = -1 \neq 1</m>. Geometrically,
+        both equations of <m>C</m> describe the line <m>x + y = 1</m> and both equations of
+        <m>D</m> describe the line <m>x - y = 1</m>. The two lines share only the point
+        <m>(1, 0)</m>, while each system has infinitely many solutions.
+      </p>
+      <p>
+        (c) Two systems are equivalent when their solution sets are equal, and that
+        requires two inclusions: every solution of the first system solves the second,
+        <em>and</em> every solution of the second solves the first. Exhibiting one common
+        solution proves neither inclusion. The check in
+        <xref ref="eg-equivalent-systems" text="type-global" /> was enough only because
+        each system was known to have exactly one solution, which describes both solution
+        sets completely.
+      </p>
+    </solution>
+  </example>
+
   <exercises xml:id="exercises-ch1-operations">
     <title>Practice: Preserving Solutions</title>
     <exercise xml:id="ex-ch1-zero-multiplier">

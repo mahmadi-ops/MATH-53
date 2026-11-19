@@ -284,6 +284,114 @@
     </solution>
   </example>
 
+  <p>
+    The next example changes a single measurement and follows its effect through the
+    whole calculation, so that the data decide the degree of the polynomial rather than
+    the other way around.
+  </p>
+
+  <example xml:id="eg-interpolation-parameter">
+    <title>Letting One Measurement Vary</title>
+    <statement>
+      <p>
+        Replace the last data point of <xref ref="eg-interpolation-cubic" text="type-global" />
+        by <m>(2, k)</m>, where <m>k</m> is a real number.
+        <ol marker="(a)">
+          <li><p>Find the polynomial <m>p_k(x)</m> of degree at most three through <m>(-1, 4)</m>, <m>(0, 3)</m>, <m>(1, 2)</m>, and <m>(2, k)</m>.</p></li>
+          <li><p>For which <m>k</m> can the same four points be fit by a polynomial of degree at most two? What is the actual degree in that case?</p></li>
+          <li><p>A fifth measurement <m>(3, m)</m> is taken. Find the condition on <m>k</m> and <m>m</m> for a polynomial of degree at most three to pass through all five points.</p></li>
+          <li><p>Express the estimate <m>p_k\!\left(\frac{3}{2}\right)</m> in terms of <m>k</m>, and recover the value of <xref ref="eg-interpolation-cubic" text="type-global" /> at <m>k = 7</m>.</p></li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        (a) The augmented matrix is the one of <xref ref="eg-interpolation-cubic" text="type-global" />
+        with last entry <m>k</m> in place of <m>7</m>. Treating <m>k</m> as a constant,
+        <md>
+          <mrow>
+            \left[ \begin{array}{cccc|c}
+              1 \amp -1 \amp 1 \amp -1 \amp 4 \\
+              1 \amp 0 \amp 0 \amp 0 \amp 3 \\
+              1 \amp 1 \amp 1 \amp 1 \amp 2 \\
+              1 \amp 2 \amp 4 \amp 8 \amp k
+            \end{array} \right]
+            \amp \xrightarrow{r_1 \leftrightarrow r_2}
+            \left[ \begin{array}{cccc|c}
+              1 \amp 0 \amp 0 \amp 0 \amp 3 \\
+              1 \amp -1 \amp 1 \amp -1 \amp 4 \\
+              1 \amp 1 \amp 1 \amp 1 \amp 2 \\
+              1 \amp 2 \amp 4 \amp 8 \amp k
+            \end{array} \right]
+            \xrightarrow{\substack{-r_1 + r_2 \\ -r_1 + r_3 \\ -r_1 + r_4}}
+            \left[ \begin{array}{cccc|c}
+              1 \amp 0 \amp 0 \amp 0 \amp 3 \\
+              0 \amp -1 \amp 1 \amp -1 \amp 1 \\
+              0 \amp 1 \amp 1 \amp 1 \amp -1 \\
+              0 \amp 2 \amp 4 \amp 8 \amp k - 3
+            \end{array} \right]
+          </mrow>
+          <mrow>
+            \amp \xrightarrow{\substack{r_2 + r_3 \\ 2r_2 + r_4}}
+            \left[ \begin{array}{cccc|c}
+              1 \amp 0 \amp 0 \amp 0 \amp 3 \\
+              0 \amp -1 \amp 1 \amp -1 \amp 1 \\
+              0 \amp 0 \amp 2 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 6 \amp 6 \amp k - 1
+            \end{array} \right]
+            \xrightarrow{-3r_3 + r_4}
+            \left[ \begin{array}{cccc|c}
+              1 \amp 0 \amp 0 \amp 0 \amp 3 \\
+              0 \amp -1 \amp 1 \amp -1 \amp 1 \\
+              0 \amp 0 \amp 2 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0 \amp 6 \amp k - 1
+            \end{array} \right].
+          </mrow>
+        </md>
+        Back substitution gives <m>r_3 = \frac{k-1}{6}</m>, <m>r_2 = 0</m>,
+        <m>r_1 = -1 + r_2 - r_3 = -\frac{k+5}{6}</m>, and <m>r_0 = 3</m>, so
+        <md>
+          p_k(x) = 3 - \frac{k+5}{6}\,x + \frac{k-1}{6}\,x^3.
+        </md>
+        At <m>k = 7</m> this is <m>3 - 2x + x^3</m>, as before. Notice that <m>r_2 = 0</m>
+        for <em>every</em> <m>k</m>: the missing quadratic term in
+        <xref ref="eg-interpolation-cubic" text="type-global" /> is forced by the first
+        three data points alone.
+      </p>
+      <p>
+        (b) The fit has degree at most two exactly when <m>r_3 = 0</m>, that is, when
+        <m>k = 1</m>. Then <m>p_1(x) = 3 - x</m>, which has degree <m>1</m>: the four points
+        <m>(-1, 4)</m>, <m>(0, 3)</m>, <m>(1, 2)</m>, <m>(2, 1)</m> lie on a line. For every
+        other <m>k</m> the degree is exactly three.
+        <xref ref="thm-interpolating-polynomial" text="type-global" /> promises degree
+        <em>at most</em> <m>n - 1</m>; whether the degree is lower is decided by the data.
+      </p>
+      <p>
+        (c) Now there are five equations in the four unknowns <m>r_0, \ldots, r_3</m>. The
+        first four already force the polynomial to be <m>p_k</m>, by the uniqueness in
+        <xref ref="thm-interpolating-polynomial" text="type-global" />, so the system is
+        consistent exactly when <m>p_k(3) = m</m>. Since
+        <md>
+          p_k(3) = 3 - \frac{k+5}{2} + \frac{9(k-1)}{2} = 4k - 4,
+        </md>
+        the condition is <m>m = 4k - 4</m>. In matrix terms, row reducing the
+        <m>5 \times 5</m> augmented matrix leaves a last row
+        <m>[\,0 \; 0 \; 0 \; 0 \mid m - 4k + 4\,]</m>, which is a contradiction unless
+        <m>m = 4k - 4</m>. For the original data, <m>k = 7</m>, the fifth point must be
+        <m>(3, 24)</m>.
+      </p>
+      <p>
+        (d) Substituting <m>x = \frac{3}{2}</m>,
+        <md>
+          p_k\!\left(\tfrac{3}{2}\right) = 3 - \frac{k+5}{4} + \frac{9(k-1)}{16} = \frac{19 + 5k}{16},
+        </md>
+        which equals <m>\frac{54}{16} = \frac{27}{8}</m> at <m>k = 7</m>. The estimate
+        depends linearly on the measured value: each unit change in <m>k</m> moves
+        <m>p_k\!\left(\frac{3}{2}\right)</m> by <m>\frac{5}{16}</m>.
+      </p>
+    </solution>
+  </example>
+
   <p xml:id="p-interpolation-caution">
     <term>A caution.</term> Passing through every data point does not guarantee accurate
     estimates between or beyond the data points. An interpolating polynomial can
@@ -292,7 +400,7 @@
     <m>y</m>-values lie between <m>3</m> and <m>10</m>, yet the degree-nine polynomial
     through them has <m>p(10) = -6</m> and <m>p(-1) = 60</m>, just one unit beyond the
     data on either side. Treat values away from the measured points as predictions
-    that need independent checking, and see item 2 of the activity to watch it happen.
+    that need independent checking, and see item 1 of the activity to watch it happen.
   </p>
 
   <p>
@@ -401,16 +509,6 @@
     <ol>
       <li>
         <p>
-          Edit the first two cells to redo <xref ref="eg-interpolation-quadratic"
-          text="type-global"/>: row reduce its augmented matrix, then graph
-          <m>p(x) = 1 - x + 2x^2</m> together with the data points <m>(-1,4)</m>,
-          <m>(1,2)</m>, <m>(3,16)</m> on the interval <m>-2 \leq x \leq 4</m>. Add the
-          extra point <m>(2, 7)</m> in a different color to display the estimate from
-          the example on the graph.
-        </p>
-      </li>
-      <li>
-        <p>
           Change the plot interval of the ten-point graph to
           <m>-1 \leq x \leq 10</m> <mdash/> just one unit beyond the data on each side
           <mdash/> and watch what the polynomial does. Evaluate <c>p(10)</c> and
@@ -420,10 +518,39 @@
       </li>
       <li>
         <p>
-          Replace <c>data</c> with ten measurements of your own (keep the
-          <m>x</m>-values distinct) and re-run both cells. The same two cells work for
-          any number of points <mdash/> that is the point of letting Sage build the
-          matrix.
+          <em>A controlled experiment.</em> Keep the inputs <m>0, 1, \ldots, 9</m> and
+          the ten measurements, but increase only the last <m>y</m>-value, at
+          <m>x = 9</m>, by a small amount <m>\varepsilon</m>. Call the new interpolating
+          polynomial <m>q</m>.
+          <ol marker="(a)">
+            <li>
+              <p>
+                Before computing anything, predict: at which of the ten measured inputs
+                can the fitted value change, and by how much?
+              </p>
+            </li>
+            <li>
+              <p>
+                Take <m>\varepsilon = 0.1</m>: in the ten-point cell, replace
+                <c>(9, 5)</c> by <c>(9, 51/10)</c>, so that the arithmetic stays exact,
+                and re-run that cell and the one after it. The cells now define the new
+                polynomial (still named <c>p</c> in the code). Evaluate it at <m>10</m> and
+                at <m>-1</m>, and compare with the original values <m>-6</m> and <m>60</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Stretch.</em> Without computing any new coefficients, explain why
+                <md>
+                  q(x) - p(x) = \frac{\varepsilon}{9!}\, x(x-1)(x-2)\cdots(x-8).
+                </md>
+                (What are the roots of <m>q - p</m>, and what is its value at
+                <m>x = 9</m>?) Use the formula to predict <m>q(10)</m> and <m>q(-1)</m> for
+                every <m>\varepsilon</m>, and explain what it says about how sensitive the
+                interpolating polynomial is outside the measured interval.
+              </p>
+            </li>
+          </ol>
         </p>
       </li>
     </ol>
@@ -441,12 +568,42 @@
       Row reduction gives <m>a=1,b=0,c=1</m>, hence <m>p(x)=1+x^2</m>.
       The unknowns are <m>a,b,c</m>; the data supply known values of <m>x</m>.</p></answer>
     </exercise>
-    <exercise xml:id="ex-ch1-interpolation-hypotheses">
-      <statement><p>Can a polynomial pass through both <m>(1,2)</m> and <m>(1,3)</m>?
-      Does passing through all measured points guarantee accurate values between them?</p></statement>
-      <answer><p>No: the first two conditions require both <m>p(1)=2</m> and
-      <m>p(1)=3</m>. The interpolation theorem requires distinct data inputs.
-      Exact agreement at measured points does not guarantee accuracy elsewhere.</p></answer>
+    <exercise xml:id="ex-ch1-repeated-input">
+      <statement><p>Use the data <m>(0,1)</m>, <m>(1,2)</m>, <m>(1,c)</m>, <m>(2,5)</m>,
+      where <m>c</m> is a real number.
+      (a) For which <m>c</m> is there a polynomial of degree at most two through all four
+      points? Build the augmented matrix and exhibit the inconsistent or redundant row.
+      (b) Find the polynomial in every compatible case.
+      (c) Now allow degree at most three. Describe all such fits, and decide whether
+      their value at <m>x=\tfrac12</m> is determined. Use the free coefficient to justify
+      your answer.</p></statement>
+      <answer><p>(a) With <m>p(x)=r_0+r_1x+r_2x^2</m>, the augmented matrix is
+      <m>\left[\begin{array}{ccc|c}1\amp0\amp0\amp1\\1\amp1\amp1\amp2\\1\amp1\amp1\amp c\\1\amp2\amp4\amp5\end{array}\right]</m>.
+      The two rows for the input <m>1</m> have the same coefficients, and <m>-r_2+r_3</m>
+      turns the third row into <m>[\,0\;0\;0\mid c-2\,]</m>. If <m>c\ne2</m> this row is a
+      contradiction: no polynomial (of any degree) takes two different values at
+      <m>x=1</m>. If <m>c=2</m> it is a zero row, and the repeated measurement is redundant.
+      (b) For <m>c=2</m> the remaining rows are the data of the previous exercise, so the
+      unique fit is <m>p(x)=1+x^2</m>.
+      (c) For <m>c=2</m> there are four unknowns <m>r_0,\ldots,r_3</m> but only three
+      independent conditions, so one coefficient is free. With <m>r_3=t</m>, the fits are
+      <m>q_t(x)=1+2t\,x+(1-3t)x^2+t\,x^3=1+x^2+t\,x(x-1)(x-2)</m>, <m>t\in\R</m>.
+      Then <m>q_t(\tfrac12)=\tfrac54+\tfrac{3t}{8}</m> changes with <m>t</m>, so the value
+      at <m>\tfrac12</m> is not determined. <xref ref="thm-interpolating-polynomial" text="type-global"/>
+      does not apply: there are only three distinct inputs, and the degree bound three is
+      too large for them.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-interpolation-accuracy">
+      <statement><p>The polynomial <m>1+x^2</m> of the previous exercises passes through
+      every measured point. Does that guarantee accurate values between or beyond the
+      measurements? How is this question different from the nonuniqueness found in part
+      (c) of the previous exercise?</p></statement>
+      <answer><p>No. Exact agreement at the measured points says nothing about the true
+      relationship elsewhere; see the caution earlier in this section. The two issues are
+      different. Nonuniqueness is a mathematical fact about which polynomials satisfy the
+      conditions once the degree bound is raised. Accuracy is about whether any chosen
+      model matches the real quantity away from the data, and no amount of algebra on the
+      data alone can settle that.</p></answer>
     </exercise>
   </exercises>
 </section>

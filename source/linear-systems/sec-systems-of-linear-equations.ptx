@@ -49,26 +49,68 @@
             -x_1 + 3x_2 + 6x_3 \amp = 0
           </mrow>
         </md>
+        Its <term>variables</term> are <m>x_1</m>, <m>x_2</m>, <m>x_3</m>; its
+        <term>coefficients</term>, the numbers multiplying the variables, are
+        <m>1, -2, -7</m> in the first equation and <m>-1, 3, 6</m> in the second; and its
+        <term>constant terms</term>, on the right-hand sides, are <m>-1</m> and <m>0</m>.
       </p>
-      <p>
-        <ul>
-          <li>
-            <p>The <term>variables</term> are <m>x_1</m>, <m>x_2</m>, <m>x_3</m>.</p>
-          </li>
-          <li>
-            <p>
-              The <term>coefficients</term> are the numbers multiplying the variables:
-              <m>1, -2, -7</m> in the first equation and <m>-1, 3, 6</m> in the second.
-            </p>
-          </li>
-          <li>
-            <p>
-              The <term>constant terms</term> are the numbers on the right-hand sides:
-              <m>-1</m> and <m>0</m>.
-            </p>
-          </li>
-        </ul>
-      </p>
+    </example>
+
+    <p>
+      Coefficients can be read off like this only once each equation is in the
+      <em>standard form</em> of <xref ref="def-linear-equation" text="type-global" />:
+      every variable on the left, in a fixed order, and the constant alone on the right.
+    </p>
+
+    <example xml:id="eg-standard-form">
+      <title>Standard Form and Zero Coefficients</title>
+      <statement>
+        <p>
+          Put the following equations into standard form, with the variables in the
+          order <m>x_1, x_2, x_3</m>:
+          <md>
+            <mrow>
+              3x_3 \amp = x_1 - 2
+            </mrow>
+            <mrow>
+              2(x_1 + x_3) - x_2 \amp = 4
+            </mrow>
+          </md>
+          List all the coefficients of each equation, including any zero coefficients.
+          Why would reading the coefficients off before rearranging give the wrong list?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In the first equation, add <m>2 - 3x_3</m> to both sides to get
+          <m>2 = x_1 - 3x_3</m>, that is, <m>x_1 - 3x_3 = 2</m>. In the second, expand
+          the product and put the variables in order: <m>2x_1 - x_2 + 2x_3 = 4</m>. In
+          standard form the system is
+          <md>
+            <mrow>
+              x_1 + 0x_2 - 3x_3 \amp = 2
+            </mrow>
+            <mrow>
+              2x_1 - x_2 + 2x_3 \amp = 4,
+            </mrow>
+          </md>
+          with coefficients <m>1, 0, -3</m> in the first equation and <m>2, -1, 2</m> in
+          the second, and constant terms <m>2</m> and <m>4</m>.
+        </p>
+        <p>
+          Reading the first equation as written would go wrong in three ways: the
+          variable <m>x_1</m> sits on the right-hand side, the number <m>-2</m> there is
+          not yet the constant term (moving it across changes its sign), and
+          <m>x_2</m> does not appear at all. Its coefficient is <m>0</m>, and that
+          <m>0</m> must be recorded, because each coefficient is identified by the
+          variable it multiplies, that is, by its position in the list. In the second
+          equation, the <m>2</m> multiplies <em>both</em> <m>x_1</m> and <m>x_3</m>, which
+          only becomes visible after expanding, and the variables appear out of order.
+          The position of every coefficient will matter again in
+          <xref ref="sec-augmented-matrix" text="type-global" />, where we record the
+          coefficients alone in a rectangular array.
+        </p>
+      </solution>
     </example>
 
     <definition xml:id="def-solution">
@@ -114,15 +156,8 @@
           </md>
         </p>
         <p>
-          <term>(b) is also a solution.</term> Substituting,
-          <md>
-            <mrow>
-              6 - 2(0) - 7(1) \amp = 6 - 7 = -1, \checkmark
-            </mrow>
-            <mrow>
-              -6 + 3(0) + 6(1) \amp = -6 + 6 = 0. \checkmark
-            </mrow>
-          </md>
+          <term>(b) is also a solution.</term> The same substitution gives
+          <m>6 - 0 - 7 = -1</m> and <m>-6 + 0 + 6 = 0</m>.
         </p>
         <p>
           <term>(c) is not a solution.</term> The first equation gives
@@ -293,22 +328,65 @@
       </sidebyside>
     </figure>
 
-    <example xml:id="eg-coincident-lines">
-      <title>A System with Infinitely Many Solutions</title>
-      <p>
-        The system
-        <md>
-          <mrow>
-            x - y \amp = 0
-          </mrow>
-          <mrow>
-            2x - 2y \amp = 0
-          </mrow>
-        </md>
-        illustrates the third case. The second equation is just twice the first, so both
-        equations describe the same line <m>y = x</m>. Every point on that line is a
-        solution, and there are infinitely many of them.
-      </p>
+    <example xml:id="eg-family-of-lines">
+      <title>One Family, All Three Cases</title>
+      <statement>
+        <p>
+          For all real numbers <m>a</m> and <m>b</m>, classify the solution set of
+          <md>
+            <mrow>
+              x + y \amp = 1
+            </mrow>
+            <mrow>
+              ax + y \amp = b.
+            </mrow>
+          </md>
+          Give exact conditions on <m>a</m> and <m>b</m> for one solution, no solutions,
+          and infinitely many solutions; find all solutions in every consistent case; and
+          interpret each case as intersecting, parallel, or coincident lines. Why would
+          dividing by <m>a - 1</m> before separating cases lose answers?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Subtracting the first equation from the second gives
+          <md>
+            (a - 1)x = b - 1.
+          </md>
+          Every solution of the system satisfies this equation. Conversely, if
+          <m>x + y = 1</m> and <m>(a-1)x = b-1</m> both hold, adding them gives back
+          <m>ax + y = b</m>. So the system has exactly the same solutions as the pair
+          <m>x + y = 1</m>, <m>(a-1)x = b-1</m>, and everything depends on whether
+          <m>a - 1</m> is zero.
+        </p>
+        <p>
+          <term>Case <m>a \neq 1</m>.</term> Then <m>x = \dfrac{b-1}{a-1}</m> and
+          <m>y = 1 - x = \dfrac{a-b}{a-1}</m>: exactly one solution, for every <m>b</m>.
+          The lines have slopes <m>-1</m> and <m>-a</m>, which differ, so they intersect
+          in one point.
+        </p>
+        <p>
+          <term>Case <m>a = 1</m> and <m>b = 1</m>.</term> Both equations are
+          <m>x + y = 1</m>, and the derived equation reads <m>0 = 0</m>. The lines
+          coincide, and every point <m>(x, y) = (t, 1 - t)</m> with <m>t \in \R</m> is a
+          solution. The same thing happens whenever one equation is a nonzero multiple
+          of the other: in <m>x - y = 0</m>, <m>2x - 2y = 0</m>, both equations describe
+          the line <m>y = x</m>.
+        </p>
+        <p>
+          <term>Case <m>a = 1</m> and <m>b \neq 1</m>.</term> The derived equation reads
+          <m>0 = b - 1</m> with <m>b - 1 \neq 0</m>, which is impossible: no solutions. The
+          lines <m>x + y = 1</m> and <m>x + y = b</m> are parallel and distinct.
+        </p>
+        <p>
+          The formula <m>x = (b-1)/(a-1)</m> has no meaning when <m>a = 1</m>, and
+          dividing by <m>a - 1</m> at the start would silently assume <m>a \neq 1</m>.
+          Both the coincident case and the parallel case live exactly at <m>a = 1</m>, so
+          the division would discard every system except those with a unique solution.
+          The three cases are the three pictures of
+          <xref ref="fig-three-possibilities" text="type-global" />.
+        </p>
+      </solution>
     </example>
 
     <p>
@@ -424,6 +502,69 @@
       </solution>
     </example>
 
+    <example xml:id="eg-combining-solutions">
+      <title>Combining Two Known Solutions</title>
+      <statement>
+        <p>
+          <xref ref="eg-checking-solutions" text="type-global" /> found two solutions of
+          the system of <xref ref="eg-system-vocabulary" text="type-global" />:
+          <m>(x_1, x_2, x_3) = (-3, -1, 0)</m> and <m>(x_1, x_2, x_3) = (6, 0, 1)</m>.
+          Combining <m>\alpha</m> times the first with <m>\beta</m> times the second,
+          coordinate by coordinate, gives the assignment
+          <md>
+            x_1 = -3\alpha + 6\beta, \qquad x_2 = -\alpha, \qquad x_3 = \beta.
+          </md>
+          <ol marker="(a)">
+            <li><p>Find every pair of real numbers <m>\alpha, \beta</m> for which this assignment is a solution of the system.</p></li>
+            <li><p>Prove that the solutions obtained this way are <em>all</em> the solutions of the system, not merely some of them.</p></li>
+            <li><p>Is the coordinatewise sum of two solutions of this system always a solution?</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a) Substituting into the left-hand sides,
+          <md>
+            <mrow>
+              (-3\alpha + 6\beta) - 2(-\alpha) - 7\beta \amp = -\alpha - \beta,
+            </mrow>
+            <mrow>
+              -(-3\alpha + 6\beta) + 3(-\alpha) + 6\beta \amp = 0.
+            </mrow>
+          </md>
+          The second equation holds for every <m>\alpha</m> and <m>\beta</m>, and the
+          first holds exactly when <m>-\alpha - \beta = -1</m>. So the assignment is a
+          solution if and only if <m>\alpha + \beta = 1</m>. Writing <m>\beta = t</m> and
+          <m>\alpha = 1 - t</m>, these solutions are
+          <md>
+            x_1 = -3 + 9t, \qquad x_2 = -1 + t, \qquad x_3 = t, \qquad t \in \R.
+          </md>
+        </p>
+        <p>
+          (b) Let <m>(x_1, x_2, x_3)</m> be <em>any</em> solution. Adding the two equations
+          gives <m>x_2 - x_3 = -1</m>, and then the first equation gives
+          <m>x_1 = -1 + 2x_2 + 7x_3 = -3 + 9x_3</m>. So the solution is
+          <m>(-3 + 9x_3, \, -1 + x_3, \, x_3)</m>, which is the family of part (a) with
+          <m>t = x_3</m>, that is, with <m>\alpha = 1 - x_3</m> and <m>\beta = x_3</m>. Every
+          solution therefore arises, and the family coincides with the solution set of
+          <xref ref="eg-parametric-solution" text="type-global" />. Coordinate by
+          coordinate, the family is <m>(-3, -1, 0) + t\bigl((6, 0, 1) - (-3, -1, 0)\bigr)</m>:
+          the line through the two given solutions that appears in the proof of
+          <xref ref="thm-zero-one-infinitely-many" text="type-global" />.
+        </p>
+        <p>
+          (c) No. The sum of the two given solutions is <m>(3, -1, 1)</m>, the case
+          <m>\alpha = \beta = 1</m>. Its first left-hand side is <m>3 + 2 - 7 = -2</m>, not
+          <m>-1</m>. The obstruction is the nonzero constant: each solution contributes
+          <m>-1</m> to the first left-hand side, so a combination contributes
+          <m>-(\alpha + \beta)</m>, and this equals <m>-1</m> only when the weights add
+          up to <m>1</m>. When every constant term is <m>0</m>, sums of solutions are
+          solutions; we return to such systems in
+          <xref ref="sec-homogeneous-systems" text="type-global" />.
+        </p>
+      </solution>
+    </example>
+
     <remark xml:id="rem-geometric-interpretation">
       <title>Geometric Interpretation of the Solution Set</title>
       <p>
@@ -487,6 +628,73 @@
     </p>
 
     <p>
+      In <xref ref="eg-inconsistent" text="type-global" /> the contradiction could be
+      seen at a glance: one expression was assigned two different values. A third
+      equation can also produce a contradiction that no two of the equations show on
+      their own.
+    </p>
+
+    <example xml:id="eg-hidden-contradiction">
+      <title>A Contradiction Hidden Across Three Equations</title>
+      <statement>
+        <p>
+          For each real number <m>c</m>, consider the system
+          <md>
+            <mrow>
+              x_1 + x_2 \phantom{{}+ x_3} \amp = 1
+            </mrow>
+            <mrow>
+              \phantom{x_1 +{}} x_2 + x_3 \amp = 1
+            </mrow>
+            <mrow>
+              x_1 + 2x_2 + x_3 \amp = c.
+            </mrow>
+          </md>
+          <ol marker="(a)">
+            <li><p>Find exactly when the system is consistent, and describe every solution in that case.</p></li>
+            <li><p>Show that every <em>pair</em> of the three equations is consistent, for every <m>c</m>, even when the full system is inconsistent.</p></li>
+            <li><p>Explain geometrically why three planes that meet in pairs need not have a common point.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a) Adding the first two equations gives <m>x_1 + 2x_2 + x_3 = 2</m>. Any
+          solution of the whole system must therefore satisfy both
+          <m>x_1 + 2x_2 + x_3 = 2</m> and <m>x_1 + 2x_2 + x_3 = c</m>, so <m>c = 2</m> is
+          necessary. If <m>c \neq 2</m>, the system is inconsistent. If <m>c = 2</m>, the
+          third equation is the sum of the first two, so every solution of the first two
+          equations satisfies it automatically. Taking <m>x_2 = t</m>, the first two
+          equations give
+          <md>
+            x_1 = 1 - t, \qquad x_2 = t, \qquad x_3 = 1 - t, \qquad t \in \R,
+          </md>
+          and indeed <m>(1-t) + 2t + (1-t) = 2</m> for every <m>t</m>.
+        </p>
+        <p>
+          (b) Take <m>x_2 = t</m> in each case. The first two equations have the solutions
+          <m>(1-t, \, t, \, 1-t)</m>; they do not involve <m>c</m> at all. For the first and
+          third, <m>x_1 = 1 - t</m>, and the third equation then gives
+          <m>x_3 = c - 1 - t</m>. For the second and third, <m>x_3 = 1 - t</m>, and the
+          third equation then gives <m>x_1 = c - 1 - t</m>. Each pair has infinitely many
+          solutions for every <m>c</m>.
+        </p>
+        <p>
+          (c) Each equation describes a plane, and part (b) shows that any two of the
+          planes meet in a line. All three of these lines have the same direction: along
+          each of them, increasing <m>t</m> by <m>1</m> changes <m>(x_1, x_2, x_3)</m> by
+          <m>(-1, 1, -1)</m>. When <m>c \neq 2</m> they are three different parallel lines,
+          and a point common to all three planes would have to lie on all three lines at
+          once. Consistency of each pair is a statement about two equations at a time;
+          a solution of the system must satisfy all of them simultaneously. The same
+          configuration appears in <xref ref="fig-no-solution-planes" text="type-global" />
+          of <xref ref="sec-row-reduction" text="type-global" />, where the
+          interactive figure lets you switch the planes on and off.
+        </p>
+      </solution>
+    </example>
+
+    <p>
       So far we have found solution sets by ad hoc substitution. The rest of the chapter
       develops a systematic method for the central computational problem.
     </p>
@@ -521,6 +729,15 @@
       <answer><p><m>x=5-2s</m>, <m>y=s</m>, for any real <m>s</m>.
       Every solution has this form by taking <m>s=y</m>; conversely,
       <m>(5-2s)+2s=5</m> for every real <m>s</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-standard-form-solutions">
+      <statement><p>Return to the system of <xref ref="eg-standard-form" text="type-global" />.
+      Describe all of its solutions in parametric form, showing both that every solution
+      has your form and that every parameter value works.</p></statement>
+      <answer><p>The first equation gives <m>x_1=2+3x_3</m>. Substituting into the second,
+      <m>2(2+3x_3)-x_2+2x_3=4</m>, so <m>x_2=8x_3</m>. With <m>x_3=t</m>, every solution is
+      <m>x_1=2+3t</m>, <m>x_2=8t</m>, <m>x_3=t</m>, for some real <m>t</m>. Conversely,
+      <m>(2+3t)-3t=2</m> and <m>2(2+3t)-8t+2t=4</m> for every real <m>t</m>.</p></answer>
     </exercise>
   </exercises>
 </section>

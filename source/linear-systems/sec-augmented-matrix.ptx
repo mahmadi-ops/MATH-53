@@ -111,37 +111,108 @@
         </p>
       </statement>
       <solution>
-        <p>Each display below starts from the original augmented matrix independently.</p>
         <p>
-          <term>Interchange the first two equations (two rows),</term> <m>r_1 \leftrightarrow r_2</m>:
+          In the new notation the three operations are <m>r_1 \leftrightarrow r_2</m>,
+          <m>-2r_1</m>, and <m>3r_2 + r_1</m>, and each acts on the rows of the matrix
+          exactly as it acted on the equations. The interchange swaps the first two rows,
+          and the scaling multiplies every entry of the first row, constant included, by
+          <m>-2</m>. The replacement is the one worth writing out:
           <md>
             \left[ \begin{array}{ccc|c}
-              -1 \amp 3 \amp 6 \amp 1 \\
               3 \amp -2 \amp -7 \amp -1 \\
-              2 \amp 0 \amp -1 \amp 3
-            \end{array} \right].
-          </md>
-        </p>
-        <p>
-          <term>Multiply the first row by <m>-2</m>,</term> <m>-2r_1</m>:
-          <md>
-            \left[\begin{array}{ccc|c}
-              -6 \amp 4 \amp 14 \amp 2 \\
               -1 \amp 3 \amp 6 \amp 1 \\
               2 \amp 0 \amp -1 \amp 3
-            \end{array}\right].
-          </md>
-        </p>
-        <p>
-          <term>Add <m>3</m> times the second equation to the first equation,</term>
-          <m>3r_2 + r_1</m>:
-          <md>
+            \end{array} \right]
+            \xrightarrow{3r_2 + r_1}
             \left[ \begin{array}{ccc|c}
               0 \amp 7 \amp 11 \amp 2 \\
               -1 \amp 3 \amp 6 \amp 1 \\
               2 \amp 0 \amp -1 \amp 3
             \end{array} \right].
           </md>
+          The new first row is <m>[\,3 \; -2 \; -7 \mid -1\,] + 3[\,-1 \; 3 \; 6 \mid 1\,]</m>,
+          the same arithmetic as in <xref ref="eg-elementary-operations" text="type-global" />,
+          with the variable names left out.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-operation-order">
+      <title>Does the Order of Row Operations Matter?</title>
+      <statement>
+        <p>
+          Let <m>M</m> be the augmented matrix of
+          <xref ref="eg-row-operations" text="type-global" />. Let <m>S</m> be the
+          interchange <m>r_1 \leftrightarrow r_2</m>, and let <m>T</m> be the replacement
+          <m>3r_2 + r_1</m>, which changes row <m>1</m> and leaves row <m>2</m> as it is.
+          <ol marker="(a)">
+            <li><p>Compute the result of applying <m>S</m> and then <m>T</m> to <m>M</m>, and the result of applying <m>T</m> and then <m>S</m>.</p></li>
+            <li><p>Do the two final matrices agree? Give explicit row operations that recover <m>M</m> from each of them.</p></li>
+            <li><p>Explain why the two final matrices nevertheless represent systems with the same solution set.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a) <m>S</m> first, then <m>T</m>:
+          <md>
+            <mrow>
+              M \xrightarrow{r_1 \leftrightarrow r_2}
+              \left[ \begin{array}{ccc|c}
+                -1 \amp 3 \amp 6 \amp 1 \\
+                3 \amp -2 \amp -7 \amp -1 \\
+                2 \amp 0 \amp -1 \amp 3
+              \end{array} \right]
+              \xrightarrow{3r_2 + r_1}
+              \left[ \begin{array}{ccc|c}
+                8 \amp -3 \amp -15 \amp -2 \\
+                3 \amp -2 \amp -7 \amp -1 \\
+                2 \amp 0 \amp -1 \amp 3
+              \end{array} \right].
+            </mrow>
+          </md>
+          <m>T</m> first, then <m>S</m>:
+          <md>
+            <mrow>
+              M \xrightarrow{3r_2 + r_1}
+              \left[ \begin{array}{ccc|c}
+                0 \amp 7 \amp 11 \amp 2 \\
+                -1 \amp 3 \amp 6 \amp 1 \\
+                2 \amp 0 \amp -1 \amp 3
+              \end{array} \right]
+              \xrightarrow{r_1 \leftrightarrow r_2}
+              \left[ \begin{array}{ccc|c}
+                -1 \amp 3 \amp 6 \amp 1 \\
+                0 \amp 7 \amp 11 \amp 2 \\
+                2 \amp 0 \amp -1 \amp 3
+              \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          (b) No; already the first entries, <m>8</m> and <m>-1</m>, differ. The labels
+          <m>r_1</m> and <m>r_2</m> refer to <em>positions</em>, not to the rows that
+          happen to occupy them. After the interchange, position <m>2</m> holds the
+          original first row, so <m>S</m> followed by <m>T</m> adds <m>3</m> times the
+          original first row to the original second row, while <m>T</m> followed by
+          <m>S</m> adds <m>3</m> times the original second row to the original first row.
+        </p>
+        <p>
+          To recover <m>M</m>, undo the operations in the reverse order. The replacement
+          <m>T</m> is undone by <m>-3r_2 + r_1</m>, and the interchange <m>S</m> by itself.
+          From the result of <m>S</m> then <m>T</m>, apply <m>-3r_2 + r_1</m> and then
+          <m>r_1 \leftrightarrow r_2</m>; for instance, the first step turns the first row
+          back into <m>[\,8 \; -3 \; -15 \mid -2\,] - 3[\,3 \; -2 \; -7 \mid -1\,] = [\,-1 \; 3 \; 6 \mid 1\,]</m>.
+          From the result of <m>T</m> then <m>S</m>, apply <m>r_1 \leftrightarrow r_2</m>
+          and then <m>-3r_2 + r_1</m>.
+        </p>
+        <p>
+          (c) Each final matrix is obtained from <m>M</m> by elementary row operations, so
+          each is row equivalent to <m>M</m>. By
+          <xref ref="rem-operations-reversible" text="type-global" />, both corresponding
+          systems are equivalent to the original system, and hence to each other. Row
+          operations are allowed to change the matrix; what they cannot change is the
+          solution set. Two different matrices can represent equivalent systems.
         </p>
       </solution>
     </example>
@@ -169,23 +240,6 @@
       </statement>
     </definition>
 
-    <example xml:id="eg-row-echelon-shape">
-      <title>The Shape of a Row-Echelon Matrix</title>
-      <p>
-        <md>
-          \begin{bmatrix}
-            0 \amp \square \amp * \amp * \amp * \amp * \amp * \amp * \\
-            0 \amp 0 \amp 0 \amp \square \amp * \amp * \amp * \amp * \\
-            0 \amp 0 \amp 0 \amp 0 \amp \square \amp * \amp * \amp * \\
-            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \square \amp * \\
-            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
-          \end{bmatrix}
-        </md>
-        Here <m>\square</m> can be any nonzero real number, and <m>*</m> can be any real
-        number.
-      </p>
-    </example>
-
     <definition xml:id="def-reduced-row-echelon">
       <title>Reduced Row-Echelon Matrix</title>
       <statement>
@@ -201,21 +255,38 @@
       </statement>
     </definition>
 
-    <example xml:id="eg-reduced-row-echelon-shape">
-      <title>The Shape of a Reduced Row-Echelon Matrix</title>
-      <p>
-        <md>
-          \begin{bmatrix}
-            0 \amp 1 \amp * \amp 0 \amp 0 \amp * \amp 0 \amp * \\
-            0 \amp 0 \amp 0 \amp 1 \amp 0 \amp * \amp 0 \amp * \\
-            0 \amp 0 \amp 0 \amp 0 \amp 1 \amp * \amp 0 \amp * \\
-            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1 \amp * \\
-            0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
-          \end{bmatrix}
-        </md>
-        Here <m>*</m> can be any real number.
-      </p>
-    </example>
+    <figure xml:id="fig-echelon-shapes">
+      <caption>
+        The shapes of a row-echelon matrix (left) and of a reduced row-echelon matrix
+        (right). Here <m>\square</m> stands for any nonzero real number and <m>*</m> for
+        any real number. In the reduced shape every leading entry is <m>1</m>, and every
+        other entry of its column is <m>0</m>.
+      </caption>
+      <sidebyside widths="48% 48%" margins="0%">
+        <p>
+          <md>
+            \begin{bmatrix}
+              0 \amp \square \amp * \amp * \amp * \amp * \amp * \amp * \\
+              0 \amp 0 \amp 0 \amp \square \amp * \amp * \amp * \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp \square \amp * \amp * \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \square \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{bmatrix}
+          </md>
+        </p>
+        <p>
+          <md>
+            \begin{bmatrix}
+              0 \amp 1 \amp * \amp 0 \amp 0 \amp * \amp 0 \amp * \\
+              0 \amp 0 \amp 0 \amp 1 \amp 0 \amp * \amp 0 \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp 1 \amp * \amp 0 \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1 \amp * \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{bmatrix}
+          </md>
+        </p>
+      </sidebyside>
+    </figure>
   </subsection>
 
   <subsection xml:id="subsec-pivots">
@@ -310,6 +381,75 @@
           variables, and the remaining variables (columns <m>2</m>, <m>5</m>, and
           <m>6</m>) <mdash /> that is, <m>x_2</m>, <m>x_5</m>, and <m>x_6</m> <mdash />
           are the free variables.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-echelon-parameters">
+      <title>A Pivot That Moves</title>
+      <statement>
+        <p>
+          For all real numbers <m>a</m> and <m>b</m>, classify the augmented matrix
+          <md>
+            \left[ \begin{array}{cccc|c}
+              1 \amp 2 \amp a \amp 0 \amp 3 \\
+              0 \amp b \amp 1 \amp 1 \amp 2 \\
+              0 \amp 0 \amp 0 \amp 0 \amp 0
+            \end{array} \right]
+          </md>
+          as in reduced row-echelon form, in row-echelon form but not reduced, or not in
+          row-echelon form. In each case, identify the basic and the free variables.
+          Explain why the number of free variables stays the same when the second pivot
+          changes column. When <m>b \neq 0</m>, carry the matrix to reduced row-echelon
+          form without assuming <m>b = 1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The matrix is in row-echelon form for every <m>a</m> and <m>b</m>: the zero row is
+          at the bottom, the first row leads in column <m>1</m>, and the second row's
+          leading entry is either <m>b</m> in column <m>2</m> (if <m>b \neq 0</m>) or the
+          <m>1</m> in column <m>3</m> (if <m>b = 0</m>). Either way, it lies strictly to
+          the right of column <m>1</m>, with only zeros below it. What depends on <m>a</m>
+          and <m>b</m> is where the second pivot sits and whether the matrix is reduced.
+        </p>
+        <p>
+          <term>Case <m>b \neq 0</m>.</term> The pivot columns are <m>1</m> and <m>2</m>,
+          so <m>x_1, x_2</m> are basic and <m>x_3, x_4</m> are free. The matrix is not
+          reduced, because the entry <m>2</m> above the second pivot is nonzero. Dividing
+          the second row by <m>b</m> and then clearing that entry,
+          <md>
+            <mrow>
+              \xrightarrow{\frac{1}{b} r_2}
+              \left[ \begin{array}{cccc|c}
+                1 \amp 2 \amp a \amp 0 \amp 3 \\
+                0 \amp 1 \amp \frac{1}{b} \amp \frac{1}{b} \amp \frac{2}{b} \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0
+              \end{array} \right]
+              \xrightarrow{-2r_2 + r_1}
+              \left[ \begin{array}{cccc|c}
+                1 \amp 0 \amp a - \frac{2}{b} \amp -\frac{2}{b} \amp 3 - \frac{4}{b} \\
+                0 \amp 1 \amp \frac{1}{b} \amp \frac{1}{b} \amp \frac{2}{b} \\
+                0 \amp 0 \amp 0 \amp 0 \amp 0
+              \end{array} \right].
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <term>Case <m>b = 0</m>.</term> The second row is
+          <m>[\,0 \; 0 \; 1 \; 1 \mid 2\,]</m>, so the pivot columns are <m>1</m> and
+          <m>3</m>; now <m>x_1, x_3</m> are basic and <m>x_2, x_4</m> are free. The
+          matrix is reduced exactly when the entry <m>a</m> above the pivot in column
+          <m>3</m> is zero. If <m>a \neq 0</m>, the replacement <m>-a\,r_2 + r_1</m> gives
+          the reduced form with first row <m>[\,1 \; 2 \; 0 \; -a \mid 3 - 2a\,]</m>.
+        </p>
+        <p>
+          In summary, the matrix is in reduced row-echelon form exactly when
+          <m>a = b = 0</m>, and in row-echelon form but not reduced otherwise. In every case
+          there are two pivots, one in each nonzero row, and therefore two free variables.
+          Setting <m>b = 0</m> does not remove the second pivot; it moves it to the right,
+          to the next nonzero entry of the same row. What changes is <em>which</em>
+          variable is free (<m>x_2</m> instead of <m>x_3</m>), not how many are.
         </p>
       </solution>
     </example>

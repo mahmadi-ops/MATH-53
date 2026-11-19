@@ -467,6 +467,86 @@
       <m>n</m> variables must be free. We will meet this consequence again in
       <xref ref="sec-homogeneous-systems" text="type-global"/>.
     </p>
+
+    <example xml:id="eg-three-free-variables">
+      <title>Three Free Variables</title>
+      <statement>
+        <p>
+          Return to the augmented matrix of
+          <xref ref="eg-identifying-pivots" text="type-global" />, whose free variables are
+          <m>x_2</m>, <m>x_5</m>, and <m>x_6</m>.
+          <ol marker="(a)">
+            <li><p>Describe all solutions of the system, using the parameters <m>x_2 = p</m>, <m>x_5 = q</m>, <m>x_6 = r</m>, and verify your answer in all four equations.</p></li>
+            <li><p>A student says that <m>x_3</m> must be free because its column contains several nonzero entries. Explain the error.</p></li>
+            <li><p>Append the equation <m>x_2 + x_5 + x_6 = 0</m> to the system. Without repeating the whole reduction, describe the solutions of the enlarged system.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a) The matrix is already in row-echelon form and has no row
+          <m>[\,0 \; \cdots \; 0 \mid d\,]</m> with <m>d \neq 0</m>, so the system is
+          consistent. Back substitution, from the bottom row up, gives
+          <md>
+            <mrow>
+              x_7 \amp = 2,
+            </mrow>
+            <mrow>
+              x_4 \amp = -1 - x_5 + x_6 = -1 - q + r,
+            </mrow>
+            <mrow>
+              x_3 \amp = -8x_4 - 3x_6 + 7x_7 = 22 + 8q - 11r,
+            </mrow>
+            <mrow>
+              x_1 \amp = 4 + 3x_2 - 4x_3 + 2x_4 - 5x_5 + 7x_6 = -86 + 3p - 39q + 53r.
+            </mrow>
+          </md>
+          So the solution set in parametric form is
+          <md>
+            <mrow>
+              x_1 \amp = -86 + 3p - 39q + 53r, \amp x_2 \amp = p, \amp x_3 \amp = 22 + 8q - 11r,
+            </mrow>
+            <mrow>
+              x_4 \amp = -1 - q + r, \amp x_5 \amp = q, \amp x_6 \amp = r, \qquad x_7 = 2,
+            </mrow>
+          </md>
+          where <m>p, q, r \in \R</m>: one parameter for each free variable, as
+          <xref ref="rem-free-variables-count" text="type-global" /> predicts. To verify,
+          substitute into each row and collect terms. In the first row the constants give
+          <m>-86 + 4(22) - 2(-1) = 4</m>, the <m>p</m>-terms give <m>3p - 3p = 0</m>, the
+          <m>q</m>-terms give <m>-39q + 32q + 2q + 5q = 0</m>, and the <m>r</m>-terms give
+          <m>53r - 44r - 2r - 7r = 0</m>, so the left side is <m>4</m>. In the second row,
+          <m>(22 + 8q - 11r) + 8(-1 - q + r) + 3r - 7(2) = 0</m>; in the third,
+          <m>(-1 - q + r) + q - r = -1</m>; and the fourth reads <m>x_7 = 2</m>.
+        </p>
+        <p>
+          (b) Whether a variable is free depends on pivot positions, not on how many
+          nonzero entries its column has. The column of <m>x_3</m> contains the leading
+          entry of row <m>2</m>, so it is a pivot column and <m>x_3</m> is basic. A
+          row-echelon matrix must have zeros <em>below</em> each leading entry, but the
+          entries <em>above</em> it, such as the <m>4</m> in row <m>1</m>, may be anything.
+        </p>
+        <p>
+          (c) A solution of the enlarged system is a solution of the original system that
+          also satisfies the new equation. Substituting the general solution from (a),
+          the new equation becomes <m>p + q + r = 0</m>: a single condition on the
+          parameters. Solving it for <m>p = -q - r</m> leaves two free parameters:
+          <md>
+            <mrow>
+              x_1 \amp = -86 - 42q + 50r, \amp x_2 \amp = -q - r, \amp x_3 \amp = 22 + 8q - 11r,
+            </mrow>
+            <mrow>
+              x_4 \amp = -1 - q + r, \amp x_5 \amp = q, \amp x_6 \amp = r, \qquad x_7 = 2,
+            </mrow>
+          </md>
+          with <m>q, r \in \R</m>. Solving for <m>p</m> matches the echelon form of the
+          enlarged matrix: the new row has its leading entry in column <m>2</m>, which had no
+          pivot, so <m>x_2</m> becomes basic and only <m>x_5</m> and <m>x_6</m> remain free.
+          The new equation imposes one genuinely new condition, and the solution set loses
+          exactly one parameter.
+        </p>
+      </solution>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-systems-with-parameters">
