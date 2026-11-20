@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="book-theme.css">
   <link rel="stylesheet" href="geometry-explorers.css">
   <script src="book-theme.js" defer></script>
+  <script src="book-math.js" defer></script>
   <script src="geometry-core.js" defer></script>
   <script src="change-of-basis.js" defer></script>
 </head>
 <body><main>
   <h1>Keep the vector fixed. Change its coordinates.</h1>
-  <p class="prediction"><strong>Predict:</strong> The wine arrow ends at (1, 2). If the basis grid changes, must this arrow move?</p>
+  <p class="prediction"><strong>Predict:</strong> The wine arrow ends at <span class="math">(1, 2)</span>. If the basis grid changes, must this arrow move?</p>
   <div class="live-explorer" hidden>
     <div class="controls">
       <button id="play" type="button" aria-pressed="false">Play guide</button>
@@ -28,26 +29,26 @@
       <title id="basis-title">A fixed vector and a smoothly changing two-dimensional basis grid</title>
       <desc id="basis-description">The vector x stays at (1, 2). The olive and mustard scaled basis arrows are arranged head to tail, always ending at the tip of x.</desc>
     </svg>
-    <div class="legend"><span class="wine"><span class="swatch"></span>Fixed vector x = (1, 2)</span><span class="olive"><span class="swatch"></span>First basis contribution</span><span class="mustard"><span class="swatch"></span>Second basis contribution</span></div>
+    <div class="legend"><span class="wine"><span class="swatch"></span>Fixed vector <span class="math">x = (1, 2)</span></span><span class="olive"><span class="swatch"></span>First basis contribution</span><span class="mustard"><span class="swatch"></span>Second basis contribution</span></div>
     <div class="readout">
       <p id="basis-vectors"></p>
       <p class="equation">Coordinates in the displayed basis: <output aria-live="off" id="coordinate-pair" for="basis-progress">(1, 2)</output></p>
       <p id="basis-combination" class="equation"></p>
       <p id="independence"></p>
     </div>
-    <p id="guide-caption" class="guide" role="status">Start: x = e₁ + 2e₂. Watch the arrow stay fixed as its grid changes.</p>
+    <p id="guide-caption" class="guide" role="status">Start: <span class="math">x = e₁ + 2e₂</span>. Watch the arrow stay fixed as its grid changes.</p>
   </div>
   <figure class="fallback">
     <img src="../images/change-of-basis-static.svg" alt="The vector (1, 2) is the sum of (3, 0) and (−2, 2), that is, three halves of b₁ plus twice b₂.">
-    <figcaption>In the standard basis the coordinates are (1, 2). With b₁ = (2, 0) and b₂ = (−1, 1), they are (3/2, 2). The vector itself stays fixed. JavaScript enables the grid animation.</figcaption>
+    <figcaption>In the standard basis the coordinates are <span class="math">(1, 2)</span>. With <span class="math">b₁ = (2, 0)</span> and <span class="math">b₂ = (−1, 1)</span>, they are <span class="math">(3/2, 2)</span>. The vector itself stays fixed. JavaScript enables the grid animation.</figcaption>
   </figure>
   <details>
     <summary>Read the guided explanation</summary>
     <ol>
-      <li>Start with the standard basis (1, 0), (0, 1). The coordinates of x are (1, 2).</li>
-      <li>At progress t, use b₁(t) = (1 + t, 0) and b₂(t) = (−t, 1). Their determinant is 1 + t, which stays positive for 0 ≤ t ≤ 1, so they always form a basis.</li>
-      <li>The coordinates are ((1 + 2t)/(1 + t), 2). The first scaled arrow ends at (1 + 2t, 0); adding the second, (−2t, 2), always reaches the same point (1, 2).</li>
-      <li>At t = 1, b₁ = (2, 0), b₂ = (−1, 1), and x = (3/2)b₁ + 2b₂. The coordinates are now (3/2, 2).</li>
+      <li>Start with the standard basis <span class="math">(1, 0)</span>, <span class="math">(0, 1)</span>. The coordinates of <span class="math">x</span> are <span class="math">(1, 2)</span>.</li>
+      <li>At progress <span class="math">t</span>, use <span class="math">b₁(t) = (1 + t, 0)</span> and <span class="math">b₂(t) = (−t, 1)</span>. Their determinant is <span class="math">1 + t</span>, which stays positive for <span class="math">0 ≤ t ≤ 1</span>, so they always form a basis.</li>
+      <li>The coordinates are <span class="math">((1 + 2t)/(1 + t), 2)</span>. The first scaled arrow ends at <span class="math">(1 + 2t, 0)</span>; adding the second, <span class="math">(−2t, 2)</span>, always reaches the same point <span class="math">(1, 2)</span>.</li>
+      <li>At <span class="math">t = 1</span>, <span class="math">b₁ = (2, 0)</span>, <span class="math">b₂ = (−1, 1)</span>, and <span class="math">x = (3/2)b₁ + 2b₂</span>. The coordinates are now <span class="math">(3/2, 2)</span>.</li>
     </ol>
   </details>
   <p class="question">What changed—the vector, its coordinates, or both?</p>

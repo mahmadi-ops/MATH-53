@@ -78,4 +78,17 @@ for(let A=-6;A<=6;A++)for(let B=-6;B<=8;B++) {
 }
 assert.equal(L.secondEquation(L.frac(2),L.frac(3)),"2x + y = 3");
 assert.equal(L.secondEquation(L.frac(-3,2),L.frac(1,2)),"−(3/2)x + y = 1/2");
-console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions.");
+
+// Math formatting shared by the explorers: italic letters, real subscripts, upright operator names.
+const M=require("../assets/demos-manim/book-math.js");
+const shape=text=>M.runs(text).map(r=>(r.italic?"i":"r")+(r.level<0?"_":r.level>0?"^":"")+":"+r.text).join("|");
+assert.equal(shape("x₁ - 2x₂ = −1"),"i:x|r_:1|r: − 2|i:x|r_:2|r: = −1");
+assert.equal(shape("det[b₁(t)] > 0"),"r:det[|i:b|r_:1|r:(|i:t|r:)] > 0");
+assert.equal(shape("T: ℝ³ → ℝ²"),"i:T|r:: ℝ|r^:3|r: → ℝ|r^:2");
+assert.equal(shape("aᵢ"),"i:a|i_:i");
+assert.deepEqual(M.unbreakable("(a − 1)x = b − 1"),["(a − 1)x","= b − 1"]);
+assert.deepEqual(M.unbreakable("x₁ = 2/3 − (7/3)s; x₂ = s"),["x₁","= 2/3 − (7/3)s;","x₂","= s"]);
+assert.deepEqual(M.unbreakable("T(1, −1, 2) = (−1, 1)"),["T(1, −1, 2)","= (−1, 1)"]);
+assert.deepEqual(M.pieces("Since $a ≠ 1$, done").map(p=>p.math),[false,true,false]);
+assert.equal(M.plain("At $s = 0$, $p = (1, 2)$."),"At s = 0, p = (1, 2).");
+console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions; math formatting.");

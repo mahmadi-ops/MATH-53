@@ -6,7 +6,14 @@
   <title>Three planes and their common solutions</title>
   <link rel="stylesheet" href="book-theme.css">
   <link rel="stylesheet" href="geometry-explorers.css">
+  <style>
+    /* The parameter's label names the free variable, so it gets a line of its own
+       instead of the narrow label column of the other sliders. */
+    #parameter-block .slider { grid-template-columns: minmax(100px, 1fr) 55px; }
+    #parameter-label { grid-column: 1 / -1; white-space: normal; }
+  </style>
   <script src="book-theme.js" defer></script>
+  <script src="book-math.js" defer></script>
   <script src="geometry-core.js" defer></script>
   <script src="planes.js" defer></script>
 </head>
@@ -19,7 +26,7 @@
       <button id="reset" type="button">Reset</button>
     </div>
     <div id="parameter-block" hidden>
-      <label class="slider" for="parameter"><span id="parameter-label">Parameter s</span>
+      <label class="slider" for="parameter"><span id="parameter-label">Parameter <span class="math">s</span></span>
         <input id="parameter" type="range" min="-1" max="1" step="0.01" value="0" aria-describedby="solution-text window-note">
         <output aria-live="off" id="parameter-value" for="parameter">0</output>
       </label>
@@ -46,7 +53,7 @@
   <details>
     <summary>How to read this figure</summary>
     <ol>
-      <li>Each equation a₁x₁ + a₂x₂ + a₃x₃ = d with not all aᵢ zero is a plane. A solution of the system is a point lying on every plane at once.</li>
+      <li>Each equation <span class="math">a₁x₁ + a₂x₂ + a₃x₃ = d</span> with not all <span class="math">aᵢ</span> zero is a plane. A solution of the system is a point lying on every plane at once.</li>
       <li>Two planes that are not parallel meet in a line (dashed gray). A third plane either contains that line (infinitely many solutions), crosses it at one point (a unique solution), or is parallel to it and misses it (no solution).</li>
       <li>When the common solutions form a line, the slider moves a point along it; the readout substitutes the point into every visible equation and checks that each is satisfied.</li>
       <li>Hiding a plane removes its equation from the system, so the readout always describes the solution set of the equations that are visible.</li>

@@ -11,6 +11,17 @@ and `assets/fonts/` in their relative locations for offline use.
 Older links with `theme=dark` or `theme=light` still work and now use the shared
 book styling. Mathematical URL parameters and controls are unchanged.
 
+## Math in the figures
+
+The book's text is typeset by MathJax in its Pagella font, so math in a figure
+is set the same way: variables in the Pagella italic, numbers and operators
+upright, real subscripts. The figures do not load MathJax. `book-math.js` does
+this from plain strings: in static HTML write `<span class="math">x₁ + y = 1</span>`;
+in a string set by a script, put the math between dollar signs
+(`"Since $a ≠ 1$, the lines cross."`) and write it with `BookMath.set(element, string)`,
+or pass it to `scene.text(...)` for a label inside a picture. Text in `<option>`
+elements cannot be formatted and stays plain. The styles are in `book-theme.css`.
+
 ## Course geometry explorers
 
 | Page | Book placement | Main idea |

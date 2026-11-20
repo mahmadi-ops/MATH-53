@@ -64,3 +64,12 @@ button:focus-visible, input:focus-visible {
     outline: 2px solid var(--olive);
     outline-offset: 3px;
 }
+
+/* Math set like the book's text (see book-math.js): variables in the Pagella
+   italic, subscripts at TeX's script size, and never bold, as in the book. */
+.math { font-weight: 400; }
+.math i { font-style: italic; }
+.math .together { white-space: nowrap; }
+.math sub, .math sup { font-size: .707em; line-height: 0; position: relative; vertical-align: baseline; }
+.math sub { top: .22em; }
+.math sup { top: -.42em; }

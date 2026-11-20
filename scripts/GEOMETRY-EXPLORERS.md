@@ -78,6 +78,22 @@ The change-of-basis interpolation is
 Its determinant is `1+t > 0`; the coordinates are `((1+2t)/(1+t),2)`.
 Thus the contributions `(1+2t,0)` and `(-2t,2)` always add to `(1,2)`.
 
+## Math in the explorers
+
+Labels, legends and readouts are written as plain strings whose math is marked
+with dollar signs, for example `"Since $a ≠ 1$, the lines cross at $(x, y) = (2, −1)$."`.
+`assets/demos-manim/book-math.js` turns the marked parts into the book's math
+style (italic variables, upright numbers and operator names such as `det`, real
+subscripts and superscripts from `x₁` and `ℝ³`), both in HTML
+(`BookMath.set(element, string)`) and inside a picture (`scene.text` in
+`geometry-core.js` calls `BookMath.svg`). Static HTML uses
+`<span class="math">…</span>`, formatted when the page loads. Use
+`BookMath.plain(string)` for `aria-valuetext`, `<desc>` and other plain text.
+A caption with `role="status"` should be rewritten only when its string changes.
+`node scripts/check-geometry-math.cjs` checks the formatter's rules. After
+changing a label, refresh the static SVGs with
+`python scripts/check-geometry-explorers.py --write-previews`.
+
 ## The two-line explorer
 
 `line-family.html` (with `line-family.js`) shows the system `x + y = 1`,

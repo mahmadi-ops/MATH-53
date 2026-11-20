@@ -132,7 +132,9 @@
   if (typeof module !== "undefined" && module.exports) { module.exports = api; return; }
 
   /* ---------- browser ---------- */
-  const G = root.BookGeometry, C = G.colors, $ = id => document.getElementById(id);
+  const G = root.BookGeometry, M = root.BookMath, C = G.colors, $ = id => document.getElementById(id);
+  const m = text => "$" + text + "$";      // math, set like the book's text (book-math.js)
+  const paragraph = string => { const el = document.createElement("p"); M.set(el, string); return el; };
   const params = new URLSearchParams(location.search);
   const rows = parseSystem(params.get("sys")) || parseSystem("1,1,2,-1:2,1,3,0:0,-2,1,2");
   const vars = (params.get("vars") || "").split(",").filter(Boolean).length === 3 ? params.get("vars").split(",") : DEFAULT_VARS;
@@ -184,13 +186,15 @@
     box.type = "checkbox"; box.checked = true; box.id = "plane-" + p.i;
     box.addEventListener("change", () => { p.on = box.checked; update(); });
     const swatch = document.createElement("span"); swatch.className = "swatch";
-    label.append(box, swatch, document.createTextNode(p.name + ": " + p.text));
+    const equation = document.createElement("span");
+    M.set(equation, m(p.name + ": " + p.text));
+    label.append(box, swatch, equation);
     legend.append(label);
   });
 
   function activeRows() { return planes.filter(p => p.on).map(p => p.row); }
   function activeNames() {
-    const names = planes.filter(p => p.on).map(p => p.name);
+    const names = planes.filter(p => p.on).map(p => m(p.name));
     return names.length ? names.join(names.length > 2 ? ", " : " and ") : "no planes";
   }
   function sliderRange(sol) {
@@ -211,7 +215,7 @@
       const term = coefText(c) + "(" + G.fmt(point[k]) + ")";
       terms += terms === "" ? (c[0] < 0 ? "−" : "") + term : (c[0] < 0 ? " − " : " + ") + term;
     });
-    return `${plane.name} check: ${terms || "0"} = ${G.fmt(value)}` + (ok ? " ✓" : ` ≠ ${G.fmt(plane.c)} ✗`);
+    return `${m(plane.name)} check: $${terms || "0"} = ${G.fmt(value)}` + (ok ? "$ ✓" : ` ≠ ${G.fmt(plane.c)}$ ✗`);
   }
 
   function update() {
@@ -222,7 +226,7 @@
       const [lo, hi] = sliderRange(current);
       $("parameter").min = lo; $("parameter").max = hi;
       if (s < lo || s > hi) s = Math.round(((lo + hi) / 2) * 100) / 100;
-      $("parameter-label").textContent = "Parameter " + paramName + " (the free variable " + vars[current.free[0]] + ")";
+      M.set($("parameter-label"), "Parameter " + m(paramName) + " (the free variable " + m(vars[current.free[0]]) + ")");
     }
     draw();
   }
@@ -248,36 +252,36 @@
     if (current.kind === "point") {
       const p = toNum(current.point);
       scene.point(p, C.wine, 8, { "data-common-solution": "point" });
-      scene.text(p, pointText(current.point), C.wine, [14, -12]);
-      readout = `Common solution set of ${activeNames()}: exactly one point, ${pointText(current.point)}.`;
-      $("checks").replaceChildren(...active.map(pl => { const el = document.createElement("p"); el.textContent = check(pl, p); return el; }));
+      scene.text(p, m(pointText(current.point)), C.wine, [14, -12]);
+      readout = `Common solution set of ${activeNames()}: exactly one point, ${m(pointText(current.point))}.`;
+      $("checks").replaceChildren(...active.map(pl => paragraph(check(pl, p))));
     } else if (current.kind === "line") {
       const p = toNum(current.point), d = toNum(current.direction), t = clipLine(p, d, bounds) || [-1, 1];
       const a = p.map((x, k) => x + t[0] * d[k]), b = p.map((x, k) => x + t[1] * d[k]);
       scene.line(a, b, C.wine, 5, { "data-common-solution": "line" });
       const q = candidate(current);
       scene.point(q, C.wine, 6, { stroke: "white", "data-candidate": "" });
-      scene.text(q, "p(" + paramName + ") = " + G.tuple(q), C.wine, [-40, -16]);
-      readout = `Common solution set of ${activeNames()}: the entire wine line ${lineText(current, vars, paramName)}, for every real ${paramName}.`;
+      scene.text(q, m("p(" + paramName + ") = " + G.tuple(q)), C.wine, [-40, -16]);
+      readout = `Common solution set of ${activeNames()}: the entire wine line ${m(lineText(current, vars, paramName))}, for every real ${m(paramName)}.`;
       $("parameter").value = s; $("parameter-value").value = G.fmt(s);
       $("parameter").setAttribute("aria-valuetext", `${paramName} = ${G.fmt(s)}; point ${G.tuple(q)}`);
-      $("checks").replaceChildren(...active.map(pl => { const el = document.createElement("p"); el.textContent = check(pl, q); return el; }));
+      $("checks").replaceChildren(...active.map(pl => paragraph(check(pl, q))));
     } else if (current.kind === "empty") {
       const pairs = [];
       for (let i = 0; i < active.length; i++) for (let j = i + 1; j < active.length; j++) {
         const pair = solve([active[i].row, active[j].row]);
-        pairs.push(`${active[i].name} and ${active[j].name} ${pair.kind === "line" ? "meet in a dashed line" : pair.kind === "empty" ? "are parallel and never meet" : "coincide"}`);
+        pairs.push(`${m(active[i].name)} and ${m(active[j].name)} ${pair.kind === "line" ? "meet in a dashed line" : pair.kind === "empty" ? "are parallel and never meet" : "coincide"}`);
       }
       readout = `Common solution set of ${activeNames()}: empty — no point lies on all of them (the system is inconsistent). ` + pairs.join("; ") + ".";
       $("checks").replaceChildren();
     } else if (current.kind === "plane") {
-      readout = `Common solution set of ${activeNames()}: a whole plane — every point of ${active.length === 1 ? active[0].name : "the (coinciding) planes"} is a solution.`;
+      readout = `Common solution set of ${activeNames()}: a whole plane — every point of ${active.length === 1 ? m(active[0].name) : "the (coinciding) planes"} is a solution.`;
       $("checks").replaceChildren();
     } else {
       readout = "No equations are active: every point of space is a solution.";
       $("checks").replaceChildren();
     }
-    $("solution-text").textContent = readout;
+    M.set($("solution-text"), readout);
 
     // Plane labels at an outer corner of each patch.
     const pick = [(p) => scene.project(p)[0], (p) => scene.project(p)[1], (p) => -scene.project(p)[0]];
@@ -285,7 +289,7 @@
     active.forEach(p => {
       if (p.points.length < 3) return;
       const corner = p.points.reduce((best, v) => pick[p.i](v) < pick[p.i](best) ? v : best, p.points[0]);
-      scene.text(corner, p.name, p.color, offsets[p.i], { "font-size": 19 });
+      scene.text(corner, m(p.name), p.color, offsets[p.i], { "font-size": 19 });
     });
     // Keep labels inside the frame at every rotation.
     scene.layer.querySelectorAll("text").forEach(label => {

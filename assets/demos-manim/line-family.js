@@ -56,7 +56,7 @@
   if (typeof module !== "undefined" && module.exports) { module.exports = api; return; }
 
   /* ---------- browser ---------- */
-  const G = root.BookGeometry, C = G.colors, $ = id => document.getElementById(id);
+  const G = root.BookGeometry, M = root.BookMath, C = G.colors, $ = id => document.getElementById(id);
   const R = 5, UNIT = 50, size = [560, 560];
   const scene = new G.Scene($("line-scene"), p => [size[0] / 2 + UNIT * p[0], size[1] / 2 - UNIT * p[1]]);
   const presets = { point: [2, 3], empty: [1, 3], line: [1, 1] };
@@ -74,8 +74,8 @@
     }
     scene.arrow([-R - 0.3, 0], [R + 0.35, 0], "#606060", 1.2);
     scene.arrow([0, -R - 0.3], [0, R + 0.35], "#606060", 1.2);
-    scene.text([R + 0.35, 0], "x", "#404040", [-6, 22], { "font-style": "italic" });
-    scene.text([0, R + 0.35], "y", "#404040", [10, 10], { "font-style": "italic" });
+    scene.text([R + 0.35, 0], "$x$", "#404040", [-6, 22]);
+    scene.text([0, R + 0.35], "$y$", "#404040", [10, 10]);
     [-4, -2, 2, 4].forEach(k => {
       scene.line([k, -0.1], [k, 0.1], "#606060", 1.2);
       scene.line([-0.1, k], [0.1, k], "#606060", 1.2);
@@ -115,10 +115,10 @@
       scene.line(first[0], first[1], C.wine, 9, { "stroke-opacity": 0.3, "stroke-linecap": "round" });
       scene.line(first[0], first[1], C.olive, 3.2);
       scene.line(first[0], first[1], C.mustard, 3.2, { "stroke-dasharray": "10 10" });
-      scene.text([-2.2, 3.2], "both equations: x + y = 1", C.wine, [22, -2]);
+      scene.text([-2.2, 3.2], "both equations: $x + y = 1$", C.wine, [22, -2]);
     } else {
       scene.line(first[0], first[1], C.olive, 3.2);
-      scene.text([-3.6, 4.6], "x + y = 1", C.olive, [-10, 18], { "text-anchor": "end" });
+      scene.text([-3.6, 4.6], "$x + y = 1$", C.olive, [-10, 18], { "text-anchor": "end" });
       avoid.push(...span([-3.6, 4.6], [-10, 18], "end", halfWidth("x + y = 1")));
       if (second) scene.line(second[0], second[1], C.mustard, 3.2);
       if (result.kind === "point") {
@@ -133,7 +133,7 @@
             return { offset, mode, points, score: clearance(points, [olive, mustard], avoid) - 0.15 * (ring - 1) };
           })));
           scene.point(p, C.wine, 7, { "data-solution": "" });
-          scene.text(p, label, C.wine, choice.offset, { "text-anchor": choice.mode });
+          scene.text(p, "$" + label + "$", C.wine, choice.offset, { "text-anchor": choice.mode });
           avoid.push(p, ...choice.points);
         }
       }
@@ -150,7 +150,7 @@
           options.push({ anchor, offset, mode, score: clearance(points, [olive], avoid) });
         }));
         const choice = best(options);
-        scene.text(choice.anchor, equation, C.mustard, choice.offset, { "text-anchor": choice.mode });
+        scene.text(choice.anchor, "$" + equation + "$", C.mustard, choice.offset, { "text-anchor": choice.mode });
       }
     }
     // Keep every label inside the frame.
@@ -164,34 +164,36 @@
 
     $("a-value").value = text(a);
     $("b-value").value = text(b);
-    $("second-equation").textContent = equation;
-    const values = "a = " + text(a) + ", b = " + text(b) + ". ";
-    const derived = "Subtracting the first equation from the second, (a − 1)x = b − 1 becomes ";
+    M.set($("second-equation"), "$" + equation + "$");
+    // Readouts: math between dollar signs is set like the book's text.
+    let status, derived, check;
+    const values = "$a = " + text(a) + "$, $b = " + text(b) + "$. ";
+    const subtract = "Subtracting the first equation from the second, $(a − 1)x = b − 1$ becomes ";
     if (result.kind === "point") {
-      const solution = "(x, y) = (" + text(result.x) + ", " + text(result.y) + ")";
-      $("status").textContent = values + "Since a ≠ 1, the lines have different slopes, −1 and " +
-        text(frac(-a[0], a[1])) + ", and cross at exactly one point: " + solution + "." +
+      const solution = "$(x, y) = (" + text(result.x) + ", " + text(result.y) + ")$";
+      status = values + "Since $a ≠ 1$, the lines have different slopes, $−1$ and $" +
+        text(frac(-a[0], a[1])) + "$, and cross at exactly one point: " + solution + "." +
         (inside ? "" : " This point lies outside the window.");
       const isOne = result.coefficient[0] === 1 && result.coefficient[1] === 1;
-      $("derived").textContent = derived + term(result.coefficient, "x") + " = " + text(result.constant) +
-        (isOne ? ", so" : ", so x = " + text(result.x) + " and") + " y = 1 − x = " + text(result.y) + ".";
-      $("check").textContent = "Check: x + y = " + text(result.x) + " + " + wrapped(result.y) + " = " +
-        text(add(result.x, result.y)) + ", and ax + y = (" + text(a) + ")(" + text(result.x) + ") + " +
-        wrapped(result.y) + " = " + text(add(mul(a, result.x), result.y)) + ".";
+      derived = subtract + "$" + term(result.coefficient, "x") + " = " + text(result.constant) + "$" +
+        (isOne ? ", so" : ", so $x = " + text(result.x) + "$ and") + " $y = 1 − x = " + text(result.y) + "$.";
+      check = "Check: $x + y = " + text(result.x) + " + " + wrapped(result.y) + " = " +
+        text(add(result.x, result.y)) + "$, and $ax + y = (" + text(a) + ")(" + text(result.x) + ") + " +
+        wrapped(result.y) + " = " + text(add(mul(a, result.x), result.y)) + "$.";
     } else if (result.kind === "empty") {
-      $("status").textContent = values + "The lines x + y = 1 and x + y = " + text(b) +
-        " have the same slope but are different lines: they are parallel, and the system has no solution.";
-      $("derived").textContent = derived + "0x = " + text(result.constant) + ", that is, 0 = " + text(result.constant) +
-        ", which no x satisfies.";
-      $("check").textContent = "A solution would make x + y equal to both 1 and " + text(b) + " at once.";
+      status = values + "The lines $x + y = 1$ and $x + y = " + text(b) +
+        "$ have the same slope but are different lines: they are parallel, and the system has no solution.";
+      derived = subtract + "$0x = " + text(result.constant) + "$, that is, $0 = " + text(result.constant) +
+        "$, which no $x$ satisfies.";
+      check = "A solution would make $x + y$ equal to both $1$ and $" + text(b) + "$ at once.";
     } else {
-      $("status").textContent = values + "Both equations are x + y = 1: the two lines coincide, and the system has " +
-        "infinitely many solutions, the points (x, y) = (t, 1 − t) for every real number t.";
-      $("derived").textContent = derived + "0x = 0, which every x satisfies.";
-      $("check").textContent = "Check: t + (1 − t) = 1 for every t, in both equations.";
+      status = values + "Both equations are $x + y = 1$: the two lines coincide, and the system has " +
+        "infinitely many solutions, the points $(x, y) = (t, 1 − t)$ for every real number $t$.";
+      derived = subtract + "$0x = 0$, which every $x$ satisfies.";
+      check = "Check: $t + (1 − t) = 1$ for every $t$, in both equations.";
     }
-    $("scene-description").textContent = "The olive line x + y = 1 and the mustard line " + equation + ". " +
-      $("status").textContent;
+    M.set($("status"), status); M.set($("derived"), derived); M.set($("check"), check);
+    $("scene-description").textContent = "The olive line x + y = 1 and the mustard line " + equation + ". " + M.plain(status);
     Object.keys(presets).forEach(kind => $("case-" + kind).setAttribute("aria-pressed", String(kind === result.kind)));
   }
 

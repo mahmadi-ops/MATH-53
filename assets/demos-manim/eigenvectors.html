@@ -6,6 +6,7 @@
 <title>Eigenvectors: two invariant lines</title>
 <link rel="stylesheet" href="book-theme.css">
 <script src="book-theme.js" defer></script>
+<script src="book-math.js"></script>
 <style>
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
@@ -60,9 +61,9 @@
 <body>
 <main>
   <header>
-    <h1>One application of <i>A</i></h1>
+    <h1>One application of <span class="math">A</span></h1>
     <span class="matrix-label" aria-label="A equals the matrix with rows 1, 2 and 3, minus 4">
-      <span aria-hidden="true"><i>A</i> = <span class="matrix"><span>1</span><span>2</span><span>3</span><span>−4</span></span></span>
+      <span aria-hidden="true"><span class="math">A =</span> <span class="matrix"><span>1</span><span>2</span><span>3</span><span>−4</span></span></span>
     </span>
   </header>
   <div id="controls" hidden>
@@ -76,7 +77,7 @@
   </div>
   <div id="panes">
     <section class="pane">
-      <h2 class="positive">v₁ = (2, 1) → 2v₁</h2>
+      <h2 class="positive"><span class="math">v₁ = (2, 1) → 2v₁</span></h2>
       <svg id="positive" viewBox="0 0 300 280" role="img" aria-labelledby="positive-title positive-desc">
         <title id="positive-title">An eigenvalue of 2 doubles the vector</title>
         <desc id="positive-desc">The vector (2, 1) becomes (4, 2), twice as long on the same line y = x/2, in the same direction. The dashed arrow marks the starting vector.</desc>
@@ -92,7 +93,7 @@
           <path d="M25,205 H280 M70,255 V25"/>
           <path d="M146,201 V209 M222,201 V209 M66,129 H74"/>
         </g>
-        <text x="272" y="223">x</text><text x="56" y="29">y</text>
+        <text x="272" y="223" font-style="italic">x</text><text x="56" y="29" font-style="italic">y</text>
         <text x="53" y="223">0</text><text x="142" y="223">2</text><text x="218" y="223">4</text>
         <text x="52" y="133">2</text>
         <path d="M25,227.5 L280,100" stroke="var(--v1)" stroke-opacity="0.5" stroke-dasharray="3 5" fill="none"/>
@@ -101,11 +102,11 @@
         <text x="118" y="194">(2, 1)</text>
         <text class="tip-label" id="v1-label" x="218" y="113">(4, 2)</text>
       </svg>
-      <p class="equation positive"><i>A</i>v₁ = (4, 2) = 2v₁</p>
+      <p class="equation positive"><span class="math">Av₁ = (4, 2) = 2v₁</span></p>
       <p class="note">Same direction. Twice as long.</p>
     </section>
     <section class="pane pane-wine">
-      <h2 class="negative">v₂ = (−1, 3) → −5v₂</h2>
+      <h2 class="negative"><span class="math">v₂ = (−1, 3) → −5v₂</span></h2>
       <svg id="negative" viewBox="0 0 300 280" role="img" aria-labelledby="negative-title negative-desc">
         <title id="negative-title">An eigenvalue of minus 5 reverses and stretches the vector</title>
         <desc id="negative-desc">The vector (minus 1, 3) becomes (5, minus 15), five times as long on the same line y = minus 3x, in the opposite direction. This panel uses a different fixed scale from the left panel.</desc>
@@ -121,7 +122,7 @@
           <path d="M25,65 H280 M115,260 V16"/>
           <path d="M175,61 V69 M111,125 H119 M111,185 H119 M111,245 H119"/>
         </g>
-        <text x="272" y="83">x</text><text x="122" y="22">y</text>
+        <text x="272" y="83" font-style="italic">x</text><text x="122" y="22" font-style="italic">y</text>
         <text x="98" y="83">0</text><text x="171" y="83">5</text>
         <text x="88" y="129">−5</text><text x="80" y="189">−10</text><text x="80" y="249">−15</text>
         <path d="M99,17 L179,257" stroke="var(--v2)" stroke-opacity="0.5" stroke-dasharray="3 5" fill="none"/>
@@ -130,7 +131,7 @@
         <text x="25" y="29">(−1, 3)</text>
         <text class="tip-label" id="v2-label" x="186" y="248">(5, −15)</text>
       </svg>
-      <p class="equation negative"><i>A</i>v₂ = (5, −15) = −5v₂</p>
+      <p class="equation negative"><span class="math">Av₂ = (5, −15) = −5v₂</span></p>
       <p class="note">Opposite direction. Five times as long.</p>
     </section>
   </div>
@@ -151,6 +152,7 @@
   let progress = reducedMotion.matches ? 1 : 0;
   let frame = null;
   let started = 0;
+  let shown = null;        // the status message on screen (a live region: write it only when it changes)
 
   function ease(t) {
     t = Math.max(0, Math.min(1, t));
@@ -172,12 +174,13 @@
     document.getElementById("v1-label").setAttribute("opacity", first === 1 ? 1 : 0);
     document.getElementById("v2-label").setAttribute("opacity", second === 1 ? 1 : 0);
     slider.value = Math.round(progress * 100);
-    const message = progress === 0 ? "Press Play: first v₁ doubles, then v₂ reverses and stretches."
-      : progress < 0.45 ? "v₁ stays on its line and doubles: (2, 1) → (4, 2)."
-      : progress < 0.9 ? "v₂ stays on its line, reverses direction, and grows fivefold."
-      : "Result: Av₁ = 2v₁ and Av₂ = −5v₂. Both stay on their original lines.";
-    if (status.textContent !== message) status.textContent = message;
-    slider.setAttribute("aria-valuetext", Math.round(progress * 100) + "% — " + message);
+    // Math between dollar signs is set like the book's text (book-math.js).
+    const message = progress === 0 ? "Press Play: first $v₁$ doubles, then $v₂$ reverses and stretches."
+      : progress < 0.45 ? "$v₁$ stays on its line and doubles: $(2, 1) → (4, 2)$."
+      : progress < 0.9 ? "$v₂$ stays on its line, reverses direction, and grows fivefold."
+      : "Result: $Av₁ = 2v₁$ and $Av₂ = −5v₂$. Both stay on their original lines.";
+    if (message !== shown) { shown = message; BookMath.set(status, message); }
+    slider.setAttribute("aria-valuetext", Math.round(progress * 100) + "% — " + BookMath.plain(message));
   }
 
   function stop() {

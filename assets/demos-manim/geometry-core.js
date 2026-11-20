@@ -80,14 +80,17 @@
     point(p,color,radius=5,attrs={}) {
       const q=this.project(p);this.layer.append(node("circle",{cx:q[0],cy:q[1],r:radius,fill:color,stroke:"white","stroke-width":2,...attrs}));
     }
+    // A label; math between dollar signs is set like the book's text (book-math.js).
     text(p,text,color="#222",offset=[8,-10],attrs={}) {
-      const q=this.project(p);this.layer.append(node("text",{x:q[0]+offset[0],y:q[1]+offset[1],style:`fill:${color}`,...attrs},text));
+      const q=this.project(p),el=node("text",{x:q[0]+offset[0],y:q[1]+offset[1],style:`fill:${color}`,...attrs});
+      if(root.BookMath) root.BookMath.svg(el,text); else el.textContent=String(text).replace(/\$/g,"");
+      this.layer.append(el);return el;
     }
     axes(bounds,labels) {
       bounds.forEach((b,k)=>{
         const a=bounds.map(()=>0),c=a.slice();a[k]=b[0];c[k]=b[1];
         this.arrow(a,c,"#606060",1.1);
-        this.text(c,labels[k],"#404040",[k===1 ? -24:5,k===2 ? -8:18]);
+        this.text(c,"$"+labels[k]+"$","#404040",[k===1 ? -24:5,k===2 ? -8:18]);
       });
       this.text(bounds.map(()=>0),"0","#606060",[-16,18]);
     }
