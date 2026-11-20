@@ -139,16 +139,19 @@
             2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
           </mrow>
         </md>
-        Apply each of the three elementary operations to it.
+        Use the three elementary operations, one after another, to eliminate
+        <m>x_1</m> from the second equation.
       </p>
     </statement>
     <solution>
       <p>
-        Each demonstration below starts from the <em>original</em> system and applies
-        one operation independently.
+        The operations are applied <em>in sequence</em>: each one acts on the system
+        produced by the one before, not on the original system. This is how they are
+        always used in practice.
       </p>
       <p>
-        <term>Interchange the first two equations,</term> <m>E_1 \leftrightarrow E_2</m>:
+        <term>Interchange the first two equations,</term> <m>E_1 \leftrightarrow E_2</m>,
+        to bring the equation with the simplest <m>x_1</m>-term to the top:
         <md>
           <mrow>
             -x_1 + 3x_2 + 6x_3 \amp = 1
@@ -162,13 +165,14 @@
         </md>
       </p>
       <p>
-        <term>Multiply the first equation by <m>-2</m>,</term> <m>-2E_1</m>:
+        <term>Multiply the first equation by <m>-1</m>,</term> <m>-E_1</m>, so that it
+        begins with <m>x_1</m>:
         <md>
           <mrow>
-            -6x_1 + 4x_2 + 14x_3 \amp = 2
+            x_1 - 3x_2 - 6x_3 \amp = -1
           </mrow>
           <mrow>
-            -x_1 + 3x_2 + 6x_3 \amp = 1
+            3x_1 - 2x_2 - 7x_3 \amp = -1
           </mrow>
           <mrow>
             2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
@@ -176,195 +180,144 @@
         </md>
       </p>
       <p>
-        <term>Add <m>3</m> times the second equation to the first equation,</term> <m>3E_2 + E_1</m>:
+        <term>Add <m>-3</m> times the first equation to the second equation,</term>
+        <m>-3E_1 + E_2</m>:
         <md>
           <mrow>
-            \phantom{-6x_1 +{}} 7x_2 + 11x_3 \amp = 2
+            x_1 - 3x_2 - 6x_3 \amp = -1
           </mrow>
           <mrow>
-            -x_1 + 3x_2 + 6x_3 \amp = 1
+            \phantom{x_1 +{}} 7x_2 + 11x_3 \amp = 2
           </mrow>
           <mrow>
             2x_1 \phantom{{}- 2x_2} - x_3 \amp = 3
           </mrow>
         </md>
-        Here the first equation became
-        <m>(3x_1 - 2x_2 - 7x_3) + 3(-x_1 + 3x_2 + 6x_3) = -1 + 3(1)</m>, i.e.,
+        Here the second equation became
+        <m>(3x_1 - 2x_2 - 7x_3) - 3(x_1 - 3x_2 - 6x_3) = -1 - 3(-1)</m>, i.e.,
         <m>0x_1 + 7x_2 + 11x_3 = 2</m>. Notice that <m>x_1</m> has been eliminated from
         that equation <mdash /> this is exactly the effect we will exploit systematically.
+        By <xref ref="rem-operations-reversible" text="type-global"/>, every system along
+        the way is equivalent to the one we started with.
       </p>
     </solution>
   </example>
 
   <p>
-    In practice the operations are not applied separately to the original system, as in
-    the demonstration above, but <em>in sequence</em>, each one to the system produced by
-    the one before. By <xref ref="rem-operations-reversible" text="type-global"/>, every
-    system along the way is equivalent to the one we started with. Here is a complete
-    solution carried out this way.
-  </p>
-
-  <example xml:id="eg-solving-by-operations">
-    <title>Solving a System with Elementary Operations</title>
-    <statement>
-      <p>
-        Solve the system
-        <md>
-          <mrow>
-            x_1 - x_2 + x_3 \amp = 2
-          </mrow>
-          <mrow>
-            2x_1 + x_2 - x_3 \amp = 1
-          </mrow>
-          <mrow>
-            x_1 + 2x_2 + x_3 \amp = 8
-          </mrow>
-        </md>
-        using elementary operations.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        The plan is to use the first equation to eliminate <m>x_1</m> from the other two.
-        <term>Add <m>-2</m> times the first equation to the second</term>
-        (<m>-2E_1 + E_2</m>), and <term>add <m>-1</m> times the first equation to the
-        third</term> (<m>-E_1 + E_3</m>):
-        <md>
-          <mrow>
-            x_1 - x_2 + x_3 \amp = 2
-          </mrow>
-          <mrow>
-            \phantom{x_1 +{}} 3x_2 - 3x_3 \amp = -3
-          </mrow>
-          <mrow>
-            \phantom{x_1 +{}} 3x_2 \phantom{{}- 3x_3} \amp = 6
-          </mrow>
-        </md>
-        (The new second equation is <m>(2x_1 + x_2 - x_3) - 2(x_1 - x_2 + x_3) = 1 - 2(2)</m>,
-        and the new third is <m>(x_1 + 2x_2 + x_3) - (x_1 - x_2 + x_3) = 8 - 2</m>.)
-        Next <term>multiply the second equation by <m>\tfrac{1}{3}</m></term>
-        (<m>\tfrac{1}{3}E_2</m>), and then <term>add <m>-3</m> times the (new) second
-        equation to the third</term> (<m>-3E_2 + E_3</m>):
-        <md>
-          <mrow>
-            x_1 - x_2 + x_3 \amp = 2
-          </mrow>
-          <mrow>
-            \phantom{x_1 +{}} x_2 - x_3 \amp = -1
-          </mrow>
-          <mrow>
-            \phantom{x_1 + x_2 +{}} 3x_3 \amp = 9
-          </mrow>
-        </md>
-        Finally <term>multiply the third equation by <m>\tfrac{1}{3}</m></term>
-        (<m>\tfrac{1}{3}E_3</m>):
-        <md>
-          <mrow>
-            x_1 - x_2 + x_3 \amp = 2
-          </mrow>
-          <mrow>
-            \phantom{x_1 +{}} x_2 - x_3 \amp = -1
-          </mrow>
-          <mrow>
-            \phantom{x_1 + x_2 +{}} x_3 \amp = 3
-          </mrow>
-        </md>
-      </p>
-      <p>
-        This system has a <q>staircase</q> shape, and its solution can now be read off
-        from the bottom up: <m>x_3 = 3</m>, then <m>x_2 = -1 + x_3 = 2</m>, then
-        <m>x_1 = 2 + x_2 - x_3 = 1</m>. (Alternatively, keep going with elementary
-        operations: add the third equation to the second to get <m>x_2 = 2</m>, add
-        <m>-1</m> times the third equation to the first to get <m>x_1 - x_2 = -1</m>, and
-        add the second equation to the first to get <m>x_1 = 1</m>. The final system is
-        simply <m>x_1 = 1</m>, <m>x_2 = 2</m>, <m>x_3 = 3</m>.) Either way, the system has
-        the unique solution <m>(x_1, x_2, x_3) = (1, 2, 3)</m>, as substitution into the
-        original three equations confirms: <m>1 - 2 + 3 = 2</m>, <m>2 + 2 - 3 = 1</m>, and
-        <m>1 + 4 + 3 = 8</m>.
-      </p>
-    </solution>
-  </example>
-
-  <p>
-    Two things about this computation are worth noticing. First, the variable names
+    One thing about this computation is worth noticing. The variable names
     <m>x_1, x_2, x_3</m> were carried along at every step but never actually did anything
-    <mdash /> all the work was done on the coefficients and constants. Second, the
-    <q>staircase</q> system in the middle of the solution was already simple enough to
-    finish by substitution. The next section turns both observations into definitions.
+    <mdash /> all the work was done on the coefficients and constants. The next section
+    turns this observation into a bookkeeping device.
   </p>
 
   <example xml:id="eg-shared-versus-equivalent">
-    <title>Shared Solutions versus Equivalent Systems</title>
-    <statement>
+    <title>True or False: Shared Solutions versus Equivalent Systems</title>
+    <introduction>
       <p>
-        <ol marker="(a)">
-          <li>
-            <p>
-              Let <m>A</m> and <m>B</m> be the first and second systems of
-              <xref ref="eg-equivalent-systems" text="type-global" />. Find a sequence of
-              elementary operations that carries <m>A</m> to <m>B</m>, without solving
-              either system.
-            </p>
-          </li>
-          <li>
-            <p>
-              The systems
-              <md>
-                <mrow>
-                  C: \quad \begin{array}{rcl} x + y \amp = \amp 1 \\ 2x + 2y \amp = \amp 2 \end{array}
-                  \qquad \text{and} \qquad
-                  D: \quad \begin{array}{rcl} x - y \amp = \amp 1 \\ 2x - 2y \amp = \amp 2 \end{array}
-                </mrow>
-              </md>
-              both have the solution <m>(x, y) = (1, 0)</m>. Are they equivalent?
-            </p>
-          </li>
-          <li><p>State exactly what must be shown to prove that two systems are equivalent.</p></li>
-        </ol>
-      </p>
-    </statement>
-    <solution>
-      <p>
-        (a) Apply operations in sequence, each to the system produced by the one before:
-        add <m>-1</m> times the second equation to the first; then add <m>-1</m> times the
-        new first equation to the second; then multiply the second equation by
-        <m>-1</m>; finally add the second equation to the first. In shorthand,
+        Let <m>A</m> and <m>B</m> be the first and second systems of
+        <xref ref="eg-equivalent-systems" text="type-global" />, and let <m>C</m> and
+        <m>D</m> be two more systems:
         <md>
           <mrow>
-            \begin{array}{rcl} 2x - y \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
-            \;\xrightarrow{-E_2 + E_1}\;
-            \begin{array}{rcl} x \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
-            \;\xrightarrow{-E_1 + E_2}\;
-            \begin{array}{rcl} x \amp = \amp 1 \\ -y \amp = \amp -1 \end{array}
+            A: \;\; \begin{array}{rcl} 2x - y \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
+            \amp \qquad
+            B: \;\; \begin{array}{rcl} x + y \amp = \amp 2 \\ y \amp = \amp 1 \end{array}
           </mrow>
           <mrow>
-            \;\xrightarrow{-E_2}\;
-            \begin{array}{rcl} x \amp = \amp 1 \\ y \amp = \amp 1 \end{array}
-            \;\xrightarrow{E_2 + E_1}\;
-            \begin{array}{rcl} x + y \amp = \amp 2 \\ y \amp = \amp 1 \end{array}
+            C: \;\; \begin{array}{rcl} x + y \amp = \amp 1 \\ 2x + 2y \amp = \amp 2 \end{array}
+            \amp \qquad
+            D: \;\; \begin{array}{rcl} x - y \amp = \amp 1 \\ 2x - 2y \amp = \amp 2 \end{array}
           </mrow>
         </md>
-        The last system is <m>B</m>. By <xref ref="rem-operations-reversible" text="type-global" />,
-        each step preserves the solution set, so <m>A</m> and <m>B</m> are equivalent.
-        No solving was needed.
+        Choose <em>True</em> or <em>False</em> for each statement, then select
+        <em>Check Me</em> to see feedback. You can change your answer and check again.
       </p>
-      <p>
-        (b) No. The pair <m>(0, 1)</m> solves <m>C</m>, since <m>0 + 1 = 1</m> and
-        <m>0 + 2 = 2</m>, but not <m>D</m>, since <m>0 - 1 = -1 \neq 1</m>. Geometrically,
-        both equations of <m>C</m> describe the line <m>x + y = 1</m> and both equations of
-        <m>D</m> describe the line <m>x - y = 1</m>. The two lines share only the point
-        <m>(1, 0)</m>, while each system has infinitely many solutions.
-      </p>
-      <p>
-        (c) Two systems are equivalent when their solution sets are equal, and that
-        requires two inclusions: every solution of the first system solves the second,
-        <em>and</em> every solution of the second solves the first. Exhibiting one common
-        solution proves neither inclusion. The check in
-        <xref ref="eg-equivalent-systems" text="type-global" /> was enough only because
-        each system was known to have exactly one solution, which describes both solution
-        sets completely.
-      </p>
-    </solution>
+    </introduction>
+    <task xml:id="tf-equivalent-chain">
+      <statement correct="yes">
+        <p>
+          The operations <m>-E_2 + E_1</m>, then <m>-E_1 + E_2</m>, then <m>-E_2</m>, then
+          <m>E_2 + E_1</m>, each applied to the system produced by the one before, carry
+          system <m>A</m> to system <m>B</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          True. Step by step,
+          <md>
+            <mrow>
+              \begin{array}{rcl} 2x - y \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
+              \;\xrightarrow{-E_2 + E_1}\;
+              \begin{array}{rcl} x \amp = \amp 1 \\ x - y \amp = \amp 0 \end{array}
+              \;\xrightarrow{-E_1 + E_2}\;
+              \begin{array}{rcl} x \amp = \amp 1 \\ -y \amp = \amp -1 \end{array}
+            </mrow>
+            <mrow>
+              \;\xrightarrow{-E_2}\;
+              \begin{array}{rcl} x \amp = \amp 1 \\ y \amp = \amp 1 \end{array}
+              \;\xrightarrow{E_2 + E_1}\;
+              \begin{array}{rcl} x + y \amp = \amp 2 \\ y \amp = \amp 1 \end{array}
+            </mrow>
+          </md>
+          The last system is <m>B</m>. By
+          <xref ref="rem-operations-reversible" text="type-global" />, each step preserves
+          the solution set, so <m>A</m> and <m>B</m> are equivalent, and we know this
+          without solving either system.
+        </p>
+      </feedback>
+    </task>
+    <task xml:id="tf-equivalent-shared-solution">
+      <statement correct="no">
+        <p>
+          Systems <m>C</m> and <m>D</m> both have the solution <m>(x, y) = (1, 0)</m>, so
+          they are equivalent.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          False. The pair <m>(0, 1)</m> solves <m>C</m>, since <m>0 + 1 = 1</m> and
+          <m>0 + 2 = 2</m>, but not <m>D</m>, since <m>0 - 1 = -1 \neq 1</m>.
+          Geometrically, both equations of <m>C</m> describe the line <m>x + y = 1</m> and
+          both equations of <m>D</m> describe the line <m>x - y = 1</m>. The two lines
+          share only the point <m>(1, 0)</m>, while each system has infinitely many
+          solutions. Sharing one solution is not the same as having the same solutions.
+        </p>
+      </feedback>
+    </task>
+    <task xml:id="tf-equivalent-unique">
+      <statement correct="yes">
+        <p>
+          If two systems each have exactly one solution, and it is the same solution for
+          both, then the two systems are equivalent.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          True. Each solution set consists of that one solution and nothing else, so the
+          two solution sets are equal. This is why the check in
+          <xref ref="eg-equivalent-systems" text="type-global" /> was enough: each system
+          there was known to have the single solution <m>x = y = 1</m>.
+        </p>
+      </feedback>
+    </task>
+    <task xml:id="tf-equivalent-one-inclusion">
+      <statement correct="no">
+        <p>
+          To prove that two systems are equivalent, it is enough to show that every
+          solution of the first system is also a solution of the second.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          False. Two systems are equivalent when their solution sets are equal, and that
+          requires two inclusions: every solution of the first system solves the second,
+          <em>and</em> every solution of the second solves the first. For example, the
+          only solution of the system <m>x + y = 1</m>, <m>x - y = 1</m> is <m>(1, 0)</m>,
+          which also solves <m>C</m>. But <m>C</m> has other solutions, such as
+          <m>(0, 1)</m>, so the two systems are not equivalent.
+        </p>
+      </feedback>
+    </task>
   </example>
 
   <exercises xml:id="exercises-ch1-operations">

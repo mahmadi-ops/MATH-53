@@ -115,106 +115,63 @@
       <solution>
         <p>
           In the new notation the three operations are <m>r_1 \leftrightarrow r_2</m>,
-          <m>-2r_1</m>, and <m>3r_2 + r_1</m>, and each acts on the rows of the matrix
-          exactly as it acted on the equations. The interchange swaps the first two rows,
-          and the scaling multiplies every entry of the first row, constant included, by
-          <m>-2</m>. The replacement is the one worth writing out:
+          <m>-r_1</m>, and <m>-3r_1 + r_2</m>. Each acts on the rows of the matrix exactly
+          as it acted on the equations, and each is applied to the matrix produced by the
+          one before.
+        </p>
+        <p>
+          <term>Interchange the first two rows,</term> <m>r_1 \leftrightarrow r_2</m>:
           <md>
             \left[ \begin{array}{ccc|c}
               3 \amp -2 \amp -7 \amp -1 \\
               -1 \amp 3 \amp 6 \amp 1 \\
               2 \amp 0 \amp -1 \amp 3
             \end{array} \right]
-            \xrightarrow{3r_2 + r_1}
+            \xrightarrow{r_1 \leftrightarrow r_2}
             \left[ \begin{array}{ccc|c}
-              0 \amp 7 \amp 11 \amp 2 \\
               -1 \amp 3 \amp 6 \amp 1 \\
+              3 \amp -2 \amp -7 \amp -1 \\
               2 \amp 0 \amp -1 \amp 3
             \end{array} \right].
           </md>
-          The new first row is <m>[\,3 \; -2 \; -7 \mid -1\,] + 3[\,-1 \; 3 \; 6 \mid 1\,]</m>,
+        </p>
+        <p>
+          <term>Multiply the first row by <m>-1</m>,</term> <m>-r_1</m>:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              -1 \amp 3 \amp 6 \amp 1 \\
+              3 \amp -2 \amp -7 \amp -1 \\
+              2 \amp 0 \amp -1 \amp 3
+            \end{array} \right]
+            \xrightarrow{-r_1}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -3 \amp -6 \amp -1 \\
+              3 \amp -2 \amp -7 \amp -1 \\
+              2 \amp 0 \amp -1 \amp 3
+            \end{array} \right].
+          </md>
+        </p>
+        <p>
+          <term>Add <m>-3</m> times the first row to the second row,</term>
+          <m>-3r_1 + r_2</m>:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp -3 \amp -6 \amp -1 \\
+              3 \amp -2 \amp -7 \amp -1 \\
+              2 \amp 0 \amp -1 \amp 3
+            \end{array} \right]
+            \xrightarrow{-3r_1 + r_2}
+            \left[ \begin{array}{ccc|c}
+              1 \amp -3 \amp -6 \amp -1 \\
+              0 \amp 7 \amp 11 \amp 2 \\
+              2 \amp 0 \amp -1 \amp 3
+            \end{array} \right].
+          </md>
+          The new second row is
+          <m>[\,3 \; -2 \; -7 \mid -1\,] - 3[\,1 \; -3 \; -6 \mid -1\,] = [\,0 \;\; 7 \;\; 11 \mid 2\,]</m>,
           the same arithmetic as in <xref ref="eg-elementary-operations" text="type-global" />,
-          with the variable names left out.
-        </p>
-      </solution>
-    </example>
-
-    <example xml:id="eg-operation-order">
-      <title>Does the Order of Row Operations Matter?</title>
-      <statement>
-        <p>
-          Let <m>M</m> be the augmented matrix of
-          <xref ref="eg-row-operations" text="type-global" />. Let <m>S</m> be the
-          interchange <m>r_1 \leftrightarrow r_2</m>, and let <m>T</m> be the replacement
-          <m>3r_2 + r_1</m>, which changes row <m>1</m> and leaves row <m>2</m> as it is.
-          <ol marker="(a)">
-            <li><p>Compute the result of applying <m>S</m> and then <m>T</m> to <m>M</m>, and the result of applying <m>T</m> and then <m>S</m>.</p></li>
-            <li><p>Do the two final matrices agree? Give explicit row operations that recover <m>M</m> from each of them.</p></li>
-            <li><p>Explain why the two final matrices nevertheless represent systems with the same solution set.</p></li>
-          </ol>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          (a) <m>S</m> first, then <m>T</m>:
-          <md>
-            <mrow>
-              M \xrightarrow{r_1 \leftrightarrow r_2}
-              \left[ \begin{array}{ccc|c}
-                -1 \amp 3 \amp 6 \amp 1 \\
-                3 \amp -2 \amp -7 \amp -1 \\
-                2 \amp 0 \amp -1 \amp 3
-              \end{array} \right]
-              \xrightarrow{3r_2 + r_1}
-              \left[ \begin{array}{ccc|c}
-                8 \amp -3 \amp -15 \amp -2 \\
-                3 \amp -2 \amp -7 \amp -1 \\
-                2 \amp 0 \amp -1 \amp 3
-              \end{array} \right].
-            </mrow>
-          </md>
-          <m>T</m> first, then <m>S</m>:
-          <md>
-            <mrow>
-              M \xrightarrow{3r_2 + r_1}
-              \left[ \begin{array}{ccc|c}
-                0 \amp 7 \amp 11 \amp 2 \\
-                -1 \amp 3 \amp 6 \amp 1 \\
-                2 \amp 0 \amp -1 \amp 3
-              \end{array} \right]
-              \xrightarrow{r_1 \leftrightarrow r_2}
-              \left[ \begin{array}{ccc|c}
-                -1 \amp 3 \amp 6 \amp 1 \\
-                0 \amp 7 \amp 11 \amp 2 \\
-                2 \amp 0 \amp -1 \amp 3
-              \end{array} \right].
-            </mrow>
-          </md>
-        </p>
-        <p>
-          (b) No; already the first entries, <m>8</m> and <m>-1</m>, differ. The labels
-          <m>r_1</m> and <m>r_2</m> refer to <em>positions</em>, not to the rows that
-          happen to occupy them. After the interchange, position <m>2</m> holds the
-          original first row, so <m>S</m> followed by <m>T</m> adds <m>3</m> times the
-          original first row to the original second row, while <m>T</m> followed by
-          <m>S</m> adds <m>3</m> times the original second row to the original first row.
-        </p>
-        <p>
-          To recover <m>M</m>, undo the operations in the reverse order. The replacement
-          <m>T</m> is undone by <m>-3r_2 + r_1</m>, and the interchange <m>S</m> by itself.
-          From the result of <m>S</m> then <m>T</m>, apply <m>-3r_2 + r_1</m> and then
-          <m>r_1 \leftrightarrow r_2</m>; for instance, the first step turns the first row
-          back into <m>[\,8 \; -3 \; -15 \mid -2\,] - 3[\,3 \; -2 \; -7 \mid -1\,] = [\,-1 \; 3 \; 6 \mid 1\,]</m>.
-          From the result of <m>T</m> then <m>S</m>, apply <m>r_1 \leftrightarrow r_2</m>
-          and then <m>-3r_2 + r_1</m>.
-        </p>
-        <p>
-          (c) Each final matrix is obtained from <m>M</m> by elementary row operations, so
-          each is row equivalent to <m>M</m>. By
-          <xref ref="rem-operations-reversible" text="type-global" />, both corresponding
-          systems are equivalent to the original system, and hence to each other. Row
-          operations are allowed to change the matrix; what they cannot change is the
-          solution set. Two different matrices can represent equivalent systems.
+          with the variable names left out. Read as a system, the last matrix is exactly
+          the system that example ended with.
         </p>
       </solution>
     </example>

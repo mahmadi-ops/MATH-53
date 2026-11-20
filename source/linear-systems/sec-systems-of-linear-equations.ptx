@@ -77,7 +77,6 @@
             </mrow>
           </md>
           List all the coefficients of each equation, including any zero coefficients.
-          Why would reading the coefficients off before rearranging give the wrong list?
         </p>
       </statement>
       <solution>
@@ -96,19 +95,6 @@
           </md>
           with coefficients <m>1, 0, -3</m> in the first equation and <m>2, -1, 2</m> in
           the second, and constant terms <m>2</m> and <m>4</m>.
-        </p>
-        <p>
-          Reading the first equation as written would go wrong in three ways: the
-          variable <m>x_1</m> sits on the right-hand side, the number <m>-2</m> there is
-          not yet the constant term (moving it across changes its sign), and
-          <m>x_2</m> does not appear at all. Its coefficient is <m>0</m>, and that
-          <m>0</m> must be recorded, because each coefficient is identified by the
-          variable it multiplies, that is, by its position in the list. In the second
-          equation, the <m>2</m> multiplies <em>both</em> <m>x_1</m> and <m>x_3</m>, which
-          only becomes visible after expanding, and the variables appear out of order.
-          The position of every coefficient will matter again in
-          <xref ref="sec-augmented-matrix" text="type-global" />, where we record the
-          coefficients alone in a rectangular array.
         </p>
       </solution>
     </example>
@@ -390,6 +376,34 @@
     </example>
 
     <p>
+      <em>Explore the family.</em> In <xref ref="fig-line-family" text="type-global" />
+      the olive line <m>x + y = 1</m> is fixed, and <m>a</m> and <m>b</m> set the second
+      line. Before changing them, predict which value of <m>a</m> makes the two lines
+      parallel. Then move <m>a</m> toward <m>1</m>, from either side, and watch what
+      happens to the point where the lines cross.
+    </p>
+
+    <figure xml:id="fig-line-family">
+      <caption>
+        The lines <m>x + y = 1</m> (olive) and <m>ax + y = b</m> (mustard) of
+        <xref ref="eg-family-of-lines" text="type-global" />. In the interactive figure
+        the sliders set <m>a</m> and <m>b</m>: changing <m>a</m> turns the second line
+        about the point <m>(0, b)</m>, changing <m>b</m> slides it up or down, and the
+        readout names the case and gives the exact solution. With <m>a = 2</m> and
+        <m>b = 3</m>, the starting position, the lines cross at <m>(2, -1)</m>; with
+        <m>a = 1</m> and <m>b = 3</m> they are parallel.
+      </caption>
+      <interactive xml:id="int-line-family" iframe="demos-manim/line-family.html" width="100%" aspect="3:5">
+        <shortdescription>A fixed line x + y = 1 and a second line a x + y = b whose coefficient a and constant b are set by sliders; a readout says whether the system has one solution, no solution, or infinitely many, and gives the solution exactly.</shortdescription>
+        <static>
+          <image source="images/ch1-line-family" width="62%">
+            <shortdescription>The line x + y = 1, the line 2x + y = 3 crossing it at the point (2, -1), and the dashed line x + y = 3 parallel to it.</shortdescription>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+    <p>
       Notice what is <em>missing</em> from <xref ref="fig-three-possibilities" text="type-global"/>:
       there is no picture of a system with exactly two solutions, or exactly five. Two
       distinct lines can only meet once. That is no accident of the plane; it holds for
@@ -503,66 +517,126 @@
     </example>
 
     <example xml:id="eg-combining-solutions">
-      <title>Combining Two Known Solutions</title>
-      <statement>
+      <title>True or False: Combining Two Known Solutions</title>
+      <introduction>
         <p>
           <xref ref="eg-checking-solutions" text="type-global" /> found two solutions of
-          the system of <xref ref="eg-system-vocabulary" text="type-global" />:
-          <m>(x_1, x_2, x_3) = (-3, -1, 0)</m> and <m>(x_1, x_2, x_3) = (6, 0, 1)</m>.
-          Combining <m>\alpha</m> times the first with <m>\beta</m> times the second,
-          coordinate by coordinate, gives the assignment
+          the system of <xref ref="eg-system-vocabulary" text="type-global" />,
+          <md>
+            <mrow>
+              x_1 - 2x_2 - 7x_3 \amp = -1
+            </mrow>
+            <mrow>
+              -x_1 + 3x_2 + 6x_3 \amp = 0,
+            </mrow>
+          </md>
+          namely <m>(x_1, x_2, x_3) = (-3, -1, 0)</m> and
+          <m>(x_1, x_2, x_3) = (6, 0, 1)</m>. Combining <m>\alpha</m> times the first with
+          <m>\beta</m> times the second, coordinate by coordinate, gives the assignment
           <md>
             x_1 = -3\alpha + 6\beta, \qquad x_2 = -\alpha, \qquad x_3 = \beta.
           </md>
-          <ol marker="(a)">
-            <li><p>Find every pair of real numbers <m>\alpha, \beta</m> for which this assignment is a solution of the system.</p></li>
-            <li><p>Prove that the solutions obtained this way are <em>all</em> the solutions of the system, not merely some of them.</p></li>
-            <li><p>Is the coordinatewise sum of two solutions of this system always a solution?</p></li>
-          </ol>
+          Choose <em>True</em> or <em>False</em> for each statement, then select
+          <em>Check Me</em> to see feedback. You can change your answer and check again.
         </p>
-      </statement>
-      <solution>
-        <p>
-          (a) Substituting into the left-hand sides,
-          <md>
-            <mrow>
-              (-3\alpha + 6\beta) - 2(-\alpha) - 7\beta \amp = -\alpha - \beta,
-            </mrow>
-            <mrow>
-              -(-3\alpha + 6\beta) + 3(-\alpha) + 6\beta \amp = 0.
-            </mrow>
-          </md>
-          The second equation holds for every <m>\alpha</m> and <m>\beta</m>, and the
-          first holds exactly when <m>-\alpha - \beta = -1</m>. So the assignment is a
-          solution if and only if <m>\alpha + \beta = 1</m>. Writing <m>\beta = t</m> and
-          <m>\alpha = 1 - t</m>, these solutions are
-          <md>
-            x_1 = -3 + 9t, \qquad x_2 = -1 + t, \qquad x_3 = t, \qquad t \in \R.
-          </md>
-        </p>
-        <p>
-          (b) Let <m>(x_1, x_2, x_3)</m> be <em>any</em> solution. Adding the two equations
-          gives <m>x_2 - x_3 = -1</m>, and then the first equation gives
-          <m>x_1 = -1 + 2x_2 + 7x_3 = -3 + 9x_3</m>. So the solution is
-          <m>(-3 + 9x_3, \, -1 + x_3, \, x_3)</m>, which is the family of part (a) with
-          <m>t = x_3</m>, that is, with <m>\alpha = 1 - x_3</m> and <m>\beta = x_3</m>. Every
-          solution therefore arises, and the family coincides with the solution set of
-          <xref ref="eg-parametric-solution" text="type-global" />. Coordinate by
-          coordinate, the family is <m>(-3, -1, 0) + t\bigl((6, 0, 1) - (-3, -1, 0)\bigr)</m>:
-          the line through the two given solutions that appears in the proof of
-          <xref ref="thm-zero-one-infinitely-many" text="type-global" />.
-        </p>
-        <p>
-          (c) No. The sum of the two given solutions is <m>(3, -1, 1)</m>, the case
-          <m>\alpha = \beta = 1</m>. Its first left-hand side is <m>3 + 2 - 7 = -2</m>, not
-          <m>-1</m>. The obstruction is the nonzero constant: each solution contributes
-          <m>-1</m> to the first left-hand side, so a combination contributes
-          <m>-(\alpha + \beta)</m>, and this equals <m>-1</m> only when the weights add
-          up to <m>1</m>. When every constant term is <m>0</m>, sums of solutions are
-          solutions; we return to such systems in
-          <xref ref="sec-homogeneous-systems" text="type-global" />.
-        </p>
-      </solution>
+      </introduction>
+      <task xml:id="tf-combining-sum">
+        <statement correct="no">
+          <p>
+            The coordinatewise sum of the two solutions, <m>(3, -1, 1)</m>, is again a
+            solution of the system.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            False. The sum is the case <m>\alpha = \beta = 1</m>, and its first left-hand
+            side is <m>3 - 2(-1) - 7(1) = -2</m>, not <m>-1</m>. Each of the two solutions
+            contributes <m>-1</m> to the first left-hand side, so their sum contributes
+            <m>-2</m>.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-combining-negative-weight">
+        <statement correct="yes">
+          <p>
+            Taking <m>\alpha = -1</m> and <m>\beta = 2</m> gives <m>(15, 1, 2)</m>, which
+            is a solution of the system.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            True. Substituting, <m>15 - 2(1) - 7(2) = -1</m> and
+            <m>-15 + 3(1) + 6(2) = 0</m>. A weight may be negative; what matters, as the
+            next statement shows, is that the two weights add up to <m>1</m>.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-combining-condition">
+        <statement correct="yes">
+          <p>
+            The assignment <m>(-3\alpha + 6\beta, \, -\alpha, \, \beta)</m> is a solution
+            of the system exactly when <m>\alpha + \beta = 1</m>.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            True. Substituting into the left-hand sides,
+            <md>
+              <mrow>
+                (-3\alpha + 6\beta) - 2(-\alpha) - 7\beta \amp = -\alpha - \beta,
+              </mrow>
+              <mrow>
+                -(-3\alpha + 6\beta) + 3(-\alpha) + 6\beta \amp = 0.
+              </mrow>
+            </md>
+            The second equation holds for every <m>\alpha</m> and <m>\beta</m>, and the
+            first holds exactly when <m>-\alpha - \beta = -1</m>, that is, when
+            <m>\alpha + \beta = 1</m>. Writing <m>\beta = t</m> and <m>\alpha = 1 - t</m>,
+            these solutions are <m>x_1 = -3 + 9t</m>, <m>x_2 = -1 + t</m>, <m>x_3 = t</m>.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-combining-all-solutions">
+        <statement correct="no">
+          <p>
+            The system has solutions that do not lie on the line through
+            <m>(-3, -1, 0)</m> and <m>(6, 0, 1)</m>.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            False. Let <m>(x_1, x_2, x_3)</m> be <em>any</em> solution. Adding the two
+            equations gives <m>x_2 - x_3 = -1</m>, and then the first equation gives
+            <m>x_1 = -1 + 2x_2 + 7x_3 = -3 + 9x_3</m>. So the solution is
+            <m>(-3 + 9x_3, \, -1 + x_3, \, x_3)</m>, which is the combination with
+            <m>\beta = x_3</m> and <m>\alpha = 1 - x_3</m>. Coordinate by coordinate, it is
+            <m>(-3, -1, 0) + x_3\bigl((6, 0, 1) - (-3, -1, 0)\bigr)</m>, a point of the line
+            through the two given solutions. This is the line that appears in the proof of
+            <xref ref="thm-zero-one-infinitely-many" text="type-global" />, and it is the
+            whole solution set of <xref ref="eg-parametric-solution" text="type-global" />.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-combining-zero-constants">
+        <statement correct="yes">
+          <p>
+            If both constant terms of the system were replaced by <m>0</m>, then the
+            coordinatewise sum of any two solutions of the new system would again be a
+            solution of the new system.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            True. Each solution of the new system makes both left-hand sides equal to
+            <m>0</m>, so the sum of two solutions makes them equal to <m>0 + 0 = 0</m>.
+            For the original system the obstruction is the nonzero constant <m>-1</m>:
+            a combination contributes <m>-(\alpha + \beta)</m> to the first left-hand
+            side, and this equals <m>-1</m> only when the weights add up to <m>1</m>. We
+            return to systems whose constant terms are all <m>0</m> in
+            <xref ref="sec-homogeneous-systems" text="type-global" />.
+          </p>
+        </feedback>
+      </task>
     </example>
 
     <remark xml:id="rem-geometric-interpretation">
@@ -626,73 +700,6 @@
     <p>
       <em>Why does one free parameter describe a line? What changes when the third equation is added?</em>
     </p>
-
-    <p>
-      In <xref ref="eg-inconsistent" text="type-global" /> the contradiction could be
-      seen at a glance: one expression was assigned two different values. A third
-      equation can also produce a contradiction that no two of the equations show on
-      their own.
-    </p>
-
-    <example xml:id="eg-hidden-contradiction">
-      <title>A Contradiction Hidden Across Three Equations</title>
-      <statement>
-        <p>
-          For each real number <m>c</m>, consider the system
-          <md>
-            <mrow>
-              x_1 + x_2 \phantom{{}+ x_3} \amp = 1
-            </mrow>
-            <mrow>
-              \phantom{x_1 +{}} x_2 + x_3 \amp = 1
-            </mrow>
-            <mrow>
-              x_1 + 2x_2 + x_3 \amp = c.
-            </mrow>
-          </md>
-          <ol marker="(a)">
-            <li><p>Find exactly when the system is consistent, and describe every solution in that case.</p></li>
-            <li><p>Show that every <em>pair</em> of the three equations is consistent, for every <m>c</m>, even when the full system is inconsistent.</p></li>
-            <li><p>Explain geometrically why three planes that meet in pairs need not have a common point.</p></li>
-          </ol>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          (a) Adding the first two equations gives <m>x_1 + 2x_2 + x_3 = 2</m>. Any
-          solution of the whole system must therefore satisfy both
-          <m>x_1 + 2x_2 + x_3 = 2</m> and <m>x_1 + 2x_2 + x_3 = c</m>, so <m>c = 2</m> is
-          necessary. If <m>c \neq 2</m>, the system is inconsistent. If <m>c = 2</m>, the
-          third equation is the sum of the first two, so every solution of the first two
-          equations satisfies it automatically. Taking <m>x_2 = t</m>, the first two
-          equations give
-          <md>
-            x_1 = 1 - t, \qquad x_2 = t, \qquad x_3 = 1 - t, \qquad t \in \R,
-          </md>
-          and indeed <m>(1-t) + 2t + (1-t) = 2</m> for every <m>t</m>.
-        </p>
-        <p>
-          (b) Take <m>x_2 = t</m> in each case. The first two equations have the solutions
-          <m>(1-t, \, t, \, 1-t)</m>; they do not involve <m>c</m> at all. For the first and
-          third, <m>x_1 = 1 - t</m>, and the third equation then gives
-          <m>x_3 = c - 1 - t</m>. For the second and third, <m>x_3 = 1 - t</m>, and the
-          third equation then gives <m>x_1 = c - 1 - t</m>. Each pair has infinitely many
-          solutions for every <m>c</m>.
-        </p>
-        <p>
-          (c) Each equation describes a plane, and part (b) shows that any two of the
-          planes meet in a line. All three of these lines have the same direction: along
-          each of them, increasing <m>t</m> by <m>1</m> changes <m>(x_1, x_2, x_3)</m> by
-          <m>(-1, 1, -1)</m>. When <m>c \neq 2</m> they are three different parallel lines,
-          and a point common to all three planes would have to lie on all three lines at
-          once. Consistency of each pair is a statement about two equations at a time;
-          a solution of the system must satisfy all of them simultaneously. The same
-          configuration appears in <xref ref="fig-no-solution-planes" text="type-global" />
-          of <xref ref="sec-row-reduction" text="type-global" />, where the
-          interactive figure lets you switch the planes on and off.
-        </p>
-      </solution>
-    </example>
 
     <p>
       So far we have found solution sets by ad hoc substitution. The rest of the chapter
