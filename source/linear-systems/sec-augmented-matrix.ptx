@@ -481,43 +481,4 @@
       to reduced row-echelon form, by elementary row operations.
     </p>
   </subsection>
-
-  <exercises xml:id="exercises-ch1-matrices">
-    <title>Practice: Reading and Writing Matrices</title>
-    <exercise xml:id="ex-ch1-missing-coefficients">
-      <statement><p>Form the augmented matrix for <m>x+3z=4</m>, <m>2y-z=5</m>,
-      using variable order <m>x,y,z</m>. Then translate it back into equations.
-      Why must the missing coefficients be recorded?</p></statement>
-      <answer><p><m>\left[\begin{array}{ccc|c}1\amp0\amp3\amp4\\0\amp2\amp-1\amp5\end{array}\right]</m>.
-      Reading the rows returns the stated equations. Zeros keep each variable in its
-      designated column.</p></answer>
-    </exercise>
-    <exercise xml:id="ex-ch1-echelon-pivots">
-      <statement><p>Is
-      <m>\left[\begin{array}{ccc|c}2\amp1\amp0\amp4\\0\amp0\amp-3\amp6\end{array}\right]</m>
-      in row-echelon form? Is it reduced? Identify the basic and free variables.</p></statement>
-      <answer><p>It is in row-echelon form, but not reduced because the leading entries
-      are not <m>1</m>. The basic variables are <m>x_1,x_3</m>; <m>x_2</m> is free.
-      The last column is the constant column and has no associated variable.</p></answer>
-    </exercise>
-    <exercise xml:id="ex-ch1-classify-echelon">
-      <statement><p>Classify each matrix as in reduced row-echelon form, in row-echelon
-      form but not reduced, or not in row-echelon form. For those not in row-echelon
-      form, say which condition of <xref ref="def-row-echelon" text="type-global"/> fails.
-      <md>
-        \text{(a)}\;\begin{bmatrix}1\amp2\amp0\\0\amp1\amp3\end{bmatrix},\quad
-        \text{(b)}\;\begin{bmatrix}1\amp0\amp0\\0\amp0\amp1\end{bmatrix},\quad
-        \text{(c)}\;\begin{bmatrix}0\amp1\\1\amp0\end{bmatrix},\quad
-        \text{(d)}\;\begin{bmatrix}1\amp0\amp2\\0\amp0\amp0\\0\amp1\amp3\end{bmatrix},\quad
-        \text{(e)}\;\begin{bmatrix}2\amp0\amp1\\0\amp0\amp3\end{bmatrix},\quad
-        \text{(f)}\;\begin{bmatrix}1\amp4\amp0\amp5\\0\amp0\amp1\amp2\\0\amp0\amp0\amp0\end{bmatrix}.
-      </md></p></statement>
-      <answer><p>(a) Row-echelon but not reduced: the <m>2</m> sits above the leading
-      <m>1</m> of row <m>2</m>. (b) Reduced row-echelon. (c) Not row-echelon: the leading
-      entry of row <m>2</m> is to the left of the leading entry of row <m>1</m>.
-      (d) Not row-echelon: a zero row is not at the bottom. (e) Row-echelon but not
-      reduced: the leading entries are <m>2</m> and <m>3</m>, not <m>1</m>.
-      (f) Reduced row-echelon.</p></answer>
-    </exercise>
-  </exercises>
 </section>

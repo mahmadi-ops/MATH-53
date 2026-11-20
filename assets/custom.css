@@ -111,52 +111,45 @@ html:root {
 :is(#imt-parsons-proofs, #inverse-parsons-proofs) [role="button"]:focus-visible,
 :is(#imt-parsons-proofs, #inverse-parsons-proofs) button:focus-visible { outline: 3px solid #4A5D23; outline-offset: 3px; }
 
-/* The true/false and first-error checks use the book typography and palette. */
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice,
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice button { font-family: var(--font-body); }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .multiplechoice_section { background: transparent !important; }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice {
+/* The true/false checks use the book typography and palette. */
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice,
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice button { font-family: var(--font-body); }
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .multiplechoice_section { background: transparent !important; }
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice {
     background: #EDF0E6 !important;
     border: 1px solid #c4cdb1 !important;
 }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice fieldset { border-color: #c4cdb1; }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice-option {
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice fieldset { border-color: #c4cdb1; }
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice-option {
     width: fit-content;
     min-height: 44px;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice-input { accent-color: #4A5D23; }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice button {
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice-input { accent-color: #4A5D23; }
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice button {
     min-height: 44px;
     color: #4A5D23 !important;
     background: white !important;
     border: 1px solid #4A5D23 !important;
     border-radius: 5px;
 }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice button:hover { background: #EDF0E6 !important; }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice :is(input, button):focus-visible {
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice button:hover { background: #EDF0E6 !important; }
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .mchoice :is(input, button):focus-visible {
     outline: 3px solid #4A5D23;
     outline-offset: 3px;
 }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .alert-success,
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .alert-info {
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .alert-success,
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .alert-info {
     color: #4A5D23;
     background: #EDF0E6;
     border: 1px solid #c4cdb1;
 }
-:is(#eg-true-false, #ex-row-reduction-first-error, #eg-combining-solutions, #eg-shared-versus-equivalent) .alert-danger {
+:is(#eg-true-false, #eg-combining-solutions, #eg-shared-versus-equivalent) .alert-danger {
     color: #5E011C;
     background: #f9f3f4;
     border: 1px solid #5E011C;
-}
-#ex-row-reduction-first-error [hidden] { display: none !important; }
-#ex-row-reduction-first-error .mchoice-option {
-    display: block;
-    width: auto;
-    padding: 8px 4px;
-    box-sizing: border-box;
 }
 /* These interactives grow with their controls, feedback, and explanations. */
 :is(#int-counterexample-diagonalization, #int-predict-transient-growth) {

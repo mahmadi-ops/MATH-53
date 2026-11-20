@@ -714,37 +714,4 @@
       </p>
     </remark>
   </subsection>
-
-  <exercises xml:id="exercises-ch1-systems">
-    <title>Practice: Equations and Solutions</title>
-    <exercise xml:id="ex-ch1-linearity">
-      <statement><p>Which equations are linear in <m>x,y</m>? Explain:
-      (a) <m>3x-2y=7</m>; (b) <m>xy=4</m>; (c) <m>x^2+y=1</m>;
-      (d) <m>y=5</m>; (e) <m>x/2+y=0</m>.</p></statement>
-      <answer><p>(a), (d), and (e) are linear. In (b) the unknowns are multiplied;
-      in (c) an unknown is squared.</p></answer>
-    </exercise>
-    <exercise xml:id="ex-ch1-all-equations">
-      <statement><p>For <m>x+y=3</m>, <m>x-y=1</m>, test the pairs
-      <m>(2,1)</m> and <m>(3,0)</m>. Why is satisfying just one equation insufficient?</p></statement>
-      <answer><p>Only <m>(2,1)</m> is a solution. The pair <m>(3,0)</m> satisfies the
-      first equation but not the second. A solution must satisfy every equation.</p></answer>
-    </exercise>
-    <exercise xml:id="ex-ch1-parametric-check">
-      <statement><p>Describe all solutions of <m>x+2y=5</m> using a parameter.
-      Show both that every solution has your form and that every parameter value works.</p></statement>
-      <answer><p><m>x=5-2s</m>, <m>y=s</m>, for any real <m>s</m>.
-      Every solution has this form by taking <m>s=y</m>; conversely,
-      <m>(5-2s)+2s=5</m> for every real <m>s</m>.</p></answer>
-    </exercise>
-    <exercise xml:id="ex-ch1-standard-form-solutions">
-      <statement><p>Return to the system of <xref ref="eg-standard-form" text="type-global" />.
-      Describe all of its solutions in parametric form, showing both that every solution
-      has your form and that every parameter value works.</p></statement>
-      <answer><p>The first equation gives <m>x_1=2+3x_3</m>. Substituting into the second,
-      <m>2(2+3x_3)-x_2+2x_3=4</m>, so <m>x_2=8x_3</m>. With <m>x_3=t</m>, every solution is
-      <m>x_1=2+3t</m>, <m>x_2=8t</m>, <m>x_3=t</m>, for some real <m>t</m>. Conversely,
-      <m>(2+3t)-3t=2</m> and <m>2(2+3t)-8t+2t=4</m> for every real <m>t</m>.</p></answer>
-    </exercise>
-  </exercises>
 </section>
