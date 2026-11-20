@@ -27,6 +27,13 @@ Usage:
 labels.json (optional) maps an xml:id, or "~some text" (a substring of the
 block's text), to a short note shown in the block's tag, e.g.
   {"eg-standard-form": "Review item 01"}
+
+For a second round of edits, pass the build that the earlier review copy was
+made from as --previous PREV/output/web. Changes already present in it keep
+the yellow highlight; changes made since are highlighted in green, and a
+block that was revised since shows its version from the earlier copy. Name
+the rounds with --round-names "Round 1" "Round 2". A page that is new (not
+in the old build) is marked as new throughout.
 """
 
 import argparse
@@ -90,19 +97,28 @@ def same_kind(a, b):
     return a.tag == b.tag and (a.get("class") or "").split()[:1] == (b.get("class") or "").split()[:1]
 
 
+def shorten(t, limit=90):
+    """Trim a title, without cutting in the middle of a formula."""
+    t = re.sub(r"\s+", " ", t).strip()
+    if len(t) > limit:
+        t = t[:limit]
+        if t.count("\\(") > t.count("\\)"):
+            t = t[:t.rindex("\\(")]
+        t = t.rstrip() + "…"
+    return t
+
+
 def block_title(el):
     if el.tag == "figure":
         cap = el.xpath('./figcaption')
         if cap:
-            t = re.sub(r"\s+", " ", cap[0].text_content()).strip()
-            return (t[:90] + "…") if len(t) > 90 else t
+            return shorten(cap[0].text_content())
     heads = el.xpath('.//*[contains(concat(" ", @class, " "), " heading ")]')
     if heads:
         t = re.sub(r"\s+", " ", heads[0].text_content()).strip()
         if len(t) > 8:
             return t
-    t = re.sub(r"\s+", " ", el.text_content()).strip()
-    return (t[:90] + "…") if len(t) > 90 else t
+    return shorten(el.text_content())
 
 
 def ids_in(el):
@@ -127,23 +143,43 @@ def strip_ids(el):
     return el
 
 
-def tag_div(kind, label, anchor):
-    text = {"new": "New", "changed": "Changed", "removed": "Removed"}[kind]
-    if label:
-        text += " · " + label
+def tag_div(text, anchor):
     return html.fragment_fromstring(
         f'<div class="rv-tag"><a href="#{anchor}">{htmllib.escape(text)}</a></div>')
 
 
-def review_page(old_path, new_path, out_path, labels, page_title, summary):
-    old_doc = html.parse(str(old_path), PARSER).getroot()
+def load_blocks(path, sec_id):
+    """Blocks of a page's main section; empty if the page does not exist."""
+    if path is None or not Path(path).exists():
+        return []
+    doc = html.parse(str(path), PARSER).getroot()
+    try:
+        return blocks_of(doc.get_element_by_id(sec_id))
+    except KeyError:
+        return []
+
+
+def stable_id(el):
+    """An id that came from an xml:id in the source (not an automatic one)."""
+    i = el.get("id")
+    return i if i and not re.search(r"-\d+$", i) else None
+
+
+def review_page(old_path, new_path, out_path, labels, page_title, summary,
+                prev_path=None, rounds=("earlier", "latest")):
     new_doc = html.parse(str(new_path), PARSER).getroot()
     sec_id = Path(new_path).stem
-    old_sec = old_doc.get_element_by_id(sec_id)
     new_sec = new_doc.get_element_by_id(sec_id)
-    old_blocks, new_blocks = blocks_of(old_sec), blocks_of(new_sec)
+    old_blocks, new_blocks = load_blocks(old_path, sec_id), blocks_of(new_sec)
     old_sigs = [signature(b) for b in old_blocks]
     new_sigs = [signature(b) for b in new_blocks]
+
+    # An optional intermediate build (an earlier review copy) splits the
+    # changes into two rounds: those already in it, and those made since.
+    two_rounds = prev_path is not None
+    prev_blocks = load_blocks(prev_path, sec_id) if two_rounds else []
+    prev_sigs = {signature(b) for b in prev_blocks}
+    prev_by_id = {stable_id(b): b for b in prev_blocks if stable_id(b)}
 
     outer = list(new_blocks)  # element standing for each new block in the page
     marks = []                # (kind, new_index or None, old_index or None)
@@ -164,7 +200,7 @@ def review_page(old_path, new_path, out_path, labels, page_title, summary):
                 same_id = old_blocks[i].get("id") and old_blocks[i].get("id") == new_blocks[j].get("id")
                 r = difflib.SequenceMatcher(None, old_sigs[i].split(), new_sigs[j].split(),
                                             autojunk=False).ratio()
-                if same_id and not re.search(r"-\d+$", old_blocks[i].get("id")):
+                if same_id and stable_id(old_blocks[i]):
                     r = max(r, 0.99)
                 if r > best_r:
                     best, best_r = i, r
@@ -180,40 +216,59 @@ def review_page(old_path, new_path, out_path, labels, page_title, summary):
         for i in pending_removed:
             marks.append(("removed", j2, i))  # j2: insert before the next block
 
-    count = 0
-    for kind, j, i in marks:
-        count += 1
+    counts = {}
+    for count, (kind, j, i) in enumerate(marks, 1):
         anchor = f"rv-{sec_id}-{count}"
         if kind in ("new", "changed"):
-            el = new_blocks[j]
-            sig = new_sigs[j]
-            wrap = html.fragment_fromstring(f'<div class="rv rv-{kind}" id="{anchor}"></div>')
-            el.addprevious(wrap)
+            el, sig = new_blocks[j], new_sigs[j]
+            latest = two_rounds and sig not in prev_sigs
+            earlier_version = prev_by_id.get(stable_id(el)) if latest else None
+            previous, previous_title = None, "Previous version"
+            if earlier_version is not None:
+                # The block was already in the earlier review copy and has been
+                # edited since: show that version, which is what changed last.
+                previous, previous_title = earlier_version, "Version in the earlier review copy"
+                word = "Revised"
+            elif kind == "changed":
+                previous, word = old_blocks[i], "Changed"
+            else:
+                word = "New"
             lab = label_for(el, sig, labels) or (label_for(old_blocks[i], old_sigs[i], labels) if i is not None else "")
-            wrap.append(tag_div(kind, lab, anchor))
+            wrap = html.fragment_fromstring(
+                f'<div class="rv rv-{kind}{" rv-latest" if latest else ""}" id="{anchor}"></div>')
+            el.addprevious(wrap)
             wrap.append(el)
-            if kind == "changed":
-                prev = html.fragment_fromstring('<details class="rv-prev" open=""><summary>Previous version</summary></details>')
-                prev.append(strip_ids(copy.deepcopy(old_blocks[i])))
+            if previous is not None:
+                prev = html.fragment_fromstring(
+                    f'<details class="rv-prev" open=""><summary>{previous_title}</summary></details>')
+                prev.append(strip_ids(copy.deepcopy(previous)))
                 wrap.append(prev)
             outer[j] = wrap
             title = block_title(el)
         else:
-            el = strip_ids(copy.deepcopy(old_blocks[i]))
+            latest = two_rounds and old_sigs[i] in prev_sigs
+            word = "Removed"
             lab = label_for(old_blocks[i], old_sigs[i], labels)
-            wrap = html.fragment_fromstring(f'<div class="rv rv-removed" id="{anchor}"></div>')
-            wrap.append(tag_div(kind, lab, anchor))
-            wrap.append(el)
+            wrap = html.fragment_fromstring(
+                f'<div class="rv rv-removed{" rv-latest" if latest else ""}" id="{anchor}"></div>')
+            wrap.append(strip_ids(copy.deepcopy(old_blocks[i])))
             if j < len(outer):
                 outer[j].addprevious(wrap)
             else:
                 outer[-1].addnext(wrap)
             title = block_title(old_blocks[i])
-        summary.append({"page": out_path.name, "anchor": anchor, "kind": kind,
-                        "label": lab, "title": title, "section": page_title})
+        round_name = (rounds[1] if latest else rounds[0]) if two_rounds else ""
+        text = " · ".join(t for t in (word, round_name, lab) if t)
+        wrap.insert(0, tag_div(text, anchor))
+        key = (round_name, word)
+        counts[key] = counts.get(key, 0) + 1
+        summary.append({"page": out_path.name, "anchor": anchor, "kind": kind, "word": word,
+                        "latest": latest, "round": round_name, "label": lab, "title": title,
+                        "section": page_title})
 
     for d in new_doc.iter("details"):
-        d.set("open", "")
+        if "born-hidden-knowl" in (d.get("class") or ""):   # examples, solutions, proofs
+            d.set("open", "")
     for s in new_doc.xpath('//script[@type="text/x-sage"]'):
         pre = html.fragment_fromstring('<pre class="rv-sage"></pre>')
         pre.text = (s.text or "").strip("\n")
@@ -222,16 +277,14 @@ def review_page(old_path, new_path, out_path, labels, page_title, summary):
     head = new_doc.find("head")
     head.insert(0, html.fragment_fromstring('<meta charset="utf-8">'))
     head.append(html.fragment_fromstring('<link rel="stylesheet" href="review-highlight.css">'))
-    n_new = sum(1 for k, *_ in marks if k == "new")
-    n_chg = sum(1 for k, *_ in marks if k == "changed")
-    n_rem = sum(1 for k, *_ in marks if k == "removed")
+    tally = ", ".join(f"{n} {word.lower()}" + (f" ({rnd})" if rnd else "")
+                      for (rnd, word), n in sorted(counts.items())) or "no changes"
     banner = html.fragment_fromstring(
         f'<div class="rv-banner"><strong>Review copy.</strong> {htmllib.escape(page_title)}: '
-        f'{n_new} new, {n_chg} changed, {n_rem} removed. '
-        f'<a href="review-summary.html">All changes</a></div>')
+        f'{htmllib.escape(tally)}. <a href="review-summary.html">All changes</a></div>')
     new_sec.insert(0, banner)
     out_path.write_bytes(html.tostring(new_doc, doctype="<!DOCTYPE html>", encoding="utf-8"))
-    return n_new, n_chg, n_rem
+    return tally
 
 
 CSS = """
@@ -239,6 +292,8 @@ CSS = """
       border-left: 5px solid #d4a300; border-radius: 3px;
       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 .rv-new, .rv-changed { background: #fff4b8; }
+.rv-latest.rv-new, .rv-latest.rv-changed { background: #dcecc9; border-left-color: #4A5D23; }
+.rv-latest > .rv-tag { background: #4A5D23; }
 .rv-removed { background: #eeeeee; border-left-color: #9a9a9a; color: #6b6b6b; }
 .rv-removed > :not(.rv-tag), .rv-removed > :not(.rv-tag) * { text-decoration: line-through;
       text-decoration-color: #9a9a9a; }
@@ -246,7 +301,9 @@ CSS = """
       letter-spacing: 0.04em; text-transform: uppercase; padding: 0.1em 0.5em;
       margin-bottom: 0.35em; border-radius: 3px; background: #d4a300; color: #fff; }
 .rv-tag a { color: inherit; text-decoration: none; }
-.rv-removed .rv-tag { background: #8a8a8a; }
+.rv-removed > .rv-tag { background: #8a8a8a; }
+.rv-removed.rv-latest { border-left-color: #4A5D23; }
+.rv-removed.rv-latest > .rv-tag { background: #4A5D23; }
 .rv-prev { margin-top: 0.6em; padding: 0.4em 0.7em; background: #f1f1f1;
       border: 1px dashed #b5b5b5; color: #5e5e5e; }
 .rv-prev > summary { font: 600 0.72rem/1.4 system-ui, sans-serif; text-transform: uppercase;
@@ -261,7 +318,9 @@ pre.rv-sage { background: #f6f6f6; border: 1px solid #ddd; padding: 0.6em; font-
 .rv-summary td, .rv-summary th { border-bottom: 1px solid #ddd; padding: 0.35em 0.5em;
       text-align: left; vertical-align: top; }
 .rv-summary .k-new, .rv-summary .k-changed { background: #fff4b8; }
+.rv-summary .k-latest { background: #dcecc9; }
 .rv-summary .k-removed { background: #eee; color: #666; }
+.rv-legend span { display: inline-block; padding: 0.1em 0.6em; margin-right: 0.6em; border-radius: 3px; }
 @media print {
   .ptx-masthead, .ptx-navbar, .ptx-sidebar, .ptx-page-footer, .ptx-content-footer,
   .autopermalink, .interactive-iframe-container__opener, #ptx-sidebar, nav { display: none !important; }
@@ -272,20 +331,37 @@ pre.rv-sage { background: #f6f6f6; border: 1px solid #ddd; padding: 0.6em; font-
 """
 
 
-def summary_page(out_dir, rows, title, totals):
-    body = [f"<h1>{htmllib.escape(title)}</h1>",
-            f"<p>{totals[0]} new, {totals[1]} changed, {totals[2]} removed blocks. "
-            "New and changed blocks are highlighted in yellow; a changed block shows its "
-            "previous version in grey underneath; removed blocks are grey and struck through.</p>",
-            "<table><tr><th>#</th><th>Section</th><th>Change</th><th>Note</th><th>Block</th></tr>"]
-    for n, r in enumerate(rows, 1):
+def summary_page(out_dir, rows, title, rounds, two_rounds):
+    counts = {}
+    for r in rows:
+        counts[(r["round"], r["word"])] = counts.get((r["round"], r["word"]), 0) + 1
+    tally = ", ".join(f"{n} {word.lower()}" + (f" ({rnd})" if rnd else "")
+                      for (rnd, word), n in sorted(counts.items())) or "no changes"
+    body = [f"<h1>{htmllib.escape(title)}</h1>", f"<p>{htmllib.escape(tally)}.</p>"]
+    if two_rounds:
         body.append(
-            f'<tr class="k-{r["kind"]}"><td>{n}</td><td>{htmllib.escape(r["section"])}</td>'
-            f'<td>{r["kind"].capitalize()}</td><td>{htmllib.escape(r["label"])}</td>'
+            '<p class="rv-legend"><span style="background:#dcecc9;border-left:5px solid #4A5D23">'
+            f'{htmllib.escape(rounds[1])}</span> changes made since the earlier review copy. '
+            '<span style="background:#fff4b8;border-left:5px solid #d4a300">'
+            f'{htmllib.escape(rounds[0])}</span> changes that were already in it.</p>')
+    body.append(
+        "<p>New and changed blocks are highlighted, and each carries a tag. A changed or "
+        "revised block shows its previous version in grey underneath; removed blocks are "
+        "grey and struck through.</p>"
+        "<table><tr><th>#</th><th>Section</th><th>Change</th>"
+        + ("<th>Round</th>" if two_rounds else "") + "<th>Note</th><th>Block</th></tr>")
+    for n, r in enumerate(rows, 1):
+        cls = "k-removed" if r["kind"] == "removed" else ("k-latest" if r["latest"] else "k-" + r["kind"])
+        body.append(
+            f'<tr class="{cls}"><td>{n}</td><td>{htmllib.escape(r["section"])}</td>'
+            f'<td>{r["word"]}</td>'
+            + (f'<td>{htmllib.escape(r["round"])}</td>' if two_rounds else "")
+            + f'<td>{htmllib.escape(r["label"])}</td>'
             f'<td><a href="{r["page"]}#{r["anchor"]}">{htmllib.escape(r["title"])}</a></td></tr>')
     body.append("</table>")
     doc = ("<!DOCTYPE html><html><head><meta charset='utf-8'><title>Review summary</title>"
            "<link rel='stylesheet' href='review-highlight.css'>"
+           "<script>MathJax = {tex: {inlineMath: [['\\\\(', '\\\\)']]}};</script>"
            "<script defer src='https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js'></script>"
            "<style>body{font-family:'TeX Gyre Pagella',Palatino,Georgia,serif;max-width:60rem;"
            "margin:2rem auto;padding:0 1rem}</style></head><body class='rv-summary'>"
@@ -301,22 +377,28 @@ def main():
     ap.add_argument("--pages", nargs="+", required=True)
     ap.add_argument("--labels")
     ap.add_argument("--title", default="Review of changes")
+    ap.add_argument("--previous", help="web build of an earlier review copy; changes made "
+                    "since it are highlighted in a second color")
+    ap.add_argument("--round-names", nargs=2, default=["Round 1", "Round 2"],
+                    metavar=("EARLIER", "LATEST"))
     a = ap.parse_args()
     old_web, new_web, out = Path(a.old_web), Path(a.new_web), Path(a.out_dir)
+    prev_web = Path(a.previous) if a.previous else None
     if out.exists():
         shutil.rmtree(out)
     shutil.copytree(new_web, out)
     labels = json.loads(Path(a.labels).read_text()) if a.labels else {}
     (out / "review-highlight.css").write_text(CSS)
-    rows, totals = [], [0, 0, 0]
+    rows = []
     for page in a.pages:
         doc = html.parse(str(new_web / page), PARSER).getroot()
-        heading = doc.xpath('//section[@id="%s"]/h1' % Path(page).stem)
+        heading = doc.xpath('//section[@id="%s"]/h1 | //section[@id="%s"]/h2' % (Path(page).stem, Path(page).stem))
         page_title = re.sub(r"\s+", " ", heading[0].text_content()).strip() if heading else page
-        counts = review_page(old_web / page, new_web / page, out / page, labels, page_title, rows)
-        totals = [t + c for t, c in zip(totals, counts)]
-        print(f"{page}: {counts[0]} new, {counts[1]} changed, {counts[2]} removed")
-    summary_page(out, rows, a.title, totals)
+        tally = review_page(old_web / page, new_web / page, out / page, labels, page_title, rows,
+                            prev_path=(prev_web / page) if prev_web else None,
+                            rounds=tuple(a.round_names))
+        print(f"{page}: {tally}")
+    summary_page(out, rows, a.title, tuple(a.round_names), prev_web is not None)
     print(f"Wrote {out / 'review-summary.html'}")
 
 

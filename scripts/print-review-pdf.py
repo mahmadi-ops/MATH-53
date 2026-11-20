@@ -2,8 +2,9 @@
 """Print a review copy made by review-changes.py to a single PDF.
 
 Serves the review directory locally, opens the summary page and each
-reviewed page in headless Chromium (Playwright), waits for MathJax and the
-interactive figures, and prints them, in order, into one PDF.
+reviewed page in headless Chromium (Playwright), waits for MathJax, replaces each
+interactive figure by a picture of its opening view (they fall back to text
+when printed), and prints the pages, in order, into one PDF.
 
 Usage:
   python3 scripts/print-review-pdf.py REVIEW_DIR OUT.pdf --pages sec-a.html sec-b.html
@@ -14,6 +15,7 @@ Requires: pip install playwright pypdf && playwright install chromium
 """
 
 import argparse
+import base64
 import functools
 import http.server
 import io
@@ -76,7 +78,27 @@ def main():
             page.wait_for_function(
                 "() => window.MathJax && MathJax.startup && MathJax.startup.promise", timeout=60000)
             page.evaluate("() => MathJax.startup.promise")
-            page.wait_for_timeout(2500)  # let the interactive iframes draw
+            page.wait_for_timeout(1500)
+            # Interactive figures switch to a text fallback when printed, so
+            # replace each one by a picture of its opening view.
+            for frame in page.query_selector_all("iframe"):
+                try:
+                    frame.scroll_into_view_if_needed()
+                    page.wait_for_timeout(900)
+                    shot = base64.b64encode(frame.screenshot()).decode("ascii")
+                except Exception:
+                    continue
+                page.evaluate(
+                    """([el, src]) => {
+                        const box = el.closest('.interactive-iframe-container') || el;
+                        const fig = document.createElement('div');
+                        fig.className = 'rv-snapshot';
+                        fig.innerHTML = '<img alt="" style="width:100%;max-width:560px;display:block;margin:0 auto">'
+                          + '<div style="font:0.72rem system-ui,sans-serif;color:#666;text-align:center">'
+                          + 'Opening view of the interactive figure (live in the web version)</div>';
+                        fig.querySelector('img').src = src;
+                        box.replaceWith(fig);
+                    }""", [frame, "data:image/png;base64," + shot])
             pdf = page.pdf(format="Letter", print_background=True,
                            margin={"top": "0.6in", "bottom": "0.6in", "left": "0.6in", "right": "0.6in"})
             for p in PdfReader(io.BytesIO(pdf)).pages:
