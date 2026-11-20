@@ -47,8 +47,9 @@
     <p>
       The three elementary operations of
       <xref ref="def-elementary-operations" text="type-global" /> become
-      <term>elementary row operations</term> on the augmented matrix. We use the
-      following notation, where <m>r_i</m> denotes row <m>i</m>:
+      <term>elementary row operations</term> on the augmented matrix. The shorthand is
+      the one we used for equations, with <m>r_i</m>, denoting row <m>i</m>, in place of
+      <m>E_i</m>:
       <md>
         <mrow>
           r_i \leftrightarrow r_j \amp \qquad \text{interchange rows } i \text{ and } j,
@@ -71,8 +72,9 @@
       <title>Row Equivalence</title>
       <statement>
         <p>
-          Two matrices are <term>row equivalent</term> if one can be obtained from the
-          other by a sequence of elementary row operations.
+          Two matrices <m>A</m> and <m>B</m> are <term>row equivalent</term>, written
+          <m>A \sim B</m>, if one can be obtained from the other by a sequence of
+          elementary row operations.
         </p>
       </statement>
     </definition>
@@ -351,6 +353,68 @@
       entries in the same positions. Pivot positions, pivot columns, and hence basic and
       free variables, are therefore properties of the matrix itself. We omit the proof.
     </p>
+
+    <p>
+      The theorem also turns row equivalence into something we can test. To show that
+      <m>A \sim B</m>, it is enough to exhibit row operations leading from one matrix to
+      the other. To show that two matrices are <em>not</em> row equivalent, no amount of
+      failed attempts will do; we need the theorem.
+    </p>
+
+    <example xml:id="eg-row-equivalence-test">
+      <title>Deciding Whether Two Matrices Are Row Equivalent</title>
+      <statement>
+        <p>
+          Let
+          <md>
+            A = \begin{bmatrix} 0 \amp 2 \\ 1 \amp 1 \\ 2 \amp 4 \end{bmatrix}, \qquad
+            B = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 2 \\ 0 \amp 0 \end{bmatrix}, \qquad
+            C = \begin{bmatrix} 1 \amp 2 \\ 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}.
+          </md>
+          <ol marker="(a)">
+            <li><p>Show that <m>A \sim B</m>.</p></li>
+            <li><p>Find row operations that carry <m>B</m> back to <m>A</m>.</p></li>
+            <li><p>Is <m>A \sim C</m>?</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a) Three operations suffice:
+          <md>
+            A = \begin{bmatrix} 0 \amp 2 \\ 1 \amp 1 \\ 2 \amp 4 \end{bmatrix}
+            \xrightarrow{r_1 \leftrightarrow r_2}
+            \begin{bmatrix} 1 \amp 1 \\ 0 \amp 2 \\ 2 \amp 4 \end{bmatrix}
+            \xrightarrow{-2r_1 + r_3}
+            \begin{bmatrix} 1 \amp 1 \\ 0 \amp 2 \\ 0 \amp 2 \end{bmatrix}
+            \xrightarrow{-r_2 + r_3}
+            \begin{bmatrix} 1 \amp 1 \\ 0 \amp 2 \\ 0 \amp 0 \end{bmatrix} = B.
+          </md>
+        </p>
+        <p>
+          (b) Undo the three operations in the reverse order: <m>r_2 + r_3</m>, then
+          <m>2r_1 + r_3</m>, then <m>r_1 \leftrightarrow r_2</m>. This is why the definition
+          can say <q>one from the other</q> without saying which: if <m>A \sim B</m>, then
+          <m>B \sim A</m>.
+        </p>
+        <p>
+          (c) No. Continuing from <m>B</m> with <m>\tfrac{1}{2} r_2</m> and then
+          <m>-r_2 + r_1</m> gives the reduced row-echelon form of <m>A</m>:
+          <md>
+            B \xrightarrow{\frac{1}{2} r_2}
+            \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+            \xrightarrow{-r_2 + r_1}
+            \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}.
+          </md>
+          The matrix <m>C</m> is already in reduced row-echelon form, and it is a different
+          matrix. If <m>A</m> were row equivalent to <m>C</m>, then <m>A</m> would be row
+          equivalent to two different reduced row-echelon matrices, contradicting
+          <xref ref="thm-rref-unique" text="type-global" />. In general, two matrices of
+          the same size are row equivalent exactly when they have the same reduced
+          row-echelon form.
+        </p>
+      </solution>
+    </example>
 
     <example xml:id="eg-identifying-pivots">
       <title>Identifying Pivots and Free Variables</title>

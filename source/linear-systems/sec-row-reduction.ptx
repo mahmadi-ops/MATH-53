@@ -281,6 +281,296 @@
       </p>
     </remark>
 
+    <p>
+      Row reduction detects every inconsistent system in this one way. Geometrically,
+      however, three planes can fail to have a common point in visibly different ways.
+    </p>
+
+    <example xml:id="eg-inconsistent-configurations">
+      <title>Three Ways to Have No Common Point</title>
+      <statement>
+        <p>
+          Each of the following systems is inconsistent. For each one, row reduce far
+          enough to exhibit the contradictory row, and then describe how the three planes
+          are placed relative to one another.
+          <ol marker="(a)" cols="3">
+            <li>
+              <p>
+                <m>\begin{array}{rcr} x_1 + x_2 + x_3 \amp = \amp 1 \\ 2x_1 + 2x_2 + 2x_3 \amp = \amp 4 \\ -x_1 - x_2 - x_3 \amp = \amp 3 \end{array}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\begin{array}{rcr} x_1 + x_2 + x_3 \amp = \amp 1 \\ x_1 + x_2 + x_3 \amp = \amp 3 \\ x_1 - x_2 \phantom{{}+ x_3} \amp = \amp 0 \end{array}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\begin{array}{rcr} x_1 + x_2 \phantom{{}+ x_3} \amp = \amp 1 \\ x_2 + x_3 \amp = \amp 1 \\ x_1 + 2x_2 + x_3 \amp = \amp 3 \end{array}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a) Two replacements clear the first column, and one more tidies up:
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 1 \\
+              2 \amp 2 \amp 2 \amp 4 \\
+              -1 \amp -1 \amp -1 \amp 3
+            \end{array} \right]
+            \xrightarrow[r_1 + r_3]{-2r_1 + r_2}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 2 \\
+              0 \amp 0 \amp 0 \amp 4
+            \end{array} \right]
+            \xrightarrow{-2r_2 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 2 \\
+              0 \amp 0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+          The second row says <m>0 = 2</m>. Dividing the second equation by <m>2</m> and
+          the third by <m>-1</m> shows what happened: the three equations ask the same
+          expression <m>x_1 + x_2 + x_3</m> to equal <m>1</m>, <m>2</m>, and <m>-3</m>.
+          These are <term>three parallel planes</term>.
+        </p>
+
+        <figure xml:id="fig-parallel-planes">
+          <caption>
+            The three planes of part (a) are parallel. There are no dashed lines, because no two
+            of the planes meet: switch any one plane off, and the other two still have no
+            common point. Rotate the picture until the planes are seen edge-on, as three
+            parallel lines.
+          </caption>
+          <interactive xml:id="int-parallel-planes" iframe="demos-manim/planes.html?sys=1,1,1,1:2,2,2,4:-1,-1,-1,3&amp;radius=3&amp;yaw=125&amp;pitch=12" width="100%" aspect="4:5">
+            <shortdescription>Three translucent parallel planes in space, with controls to rotate the view and hide planes.</shortdescription>
+            <static>
+              <image source="images/ch1-parallel-planes" width="90%">
+                <shortdescription>Three parallel planes; no two of them meet.</shortdescription>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+        <p>
+          (b) Here
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 1 \\
+              1 \amp 1 \amp 1 \amp 3 \\
+              1 \amp -1 \amp 0 \amp 0
+            \end{array} \right]
+            \xrightarrow[-r_1 + r_3]{-r_1 + r_2}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 2 \\
+              0 \amp -2 \amp -1 \amp -1
+            \end{array} \right]
+            \xrightarrow{r_2 \leftrightarrow r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 1 \amp 1 \\
+              0 \amp -2 \amp -1 \amp -1 \\
+              0 \amp 0 \amp 0 \amp 2
+            \end{array} \right],
+          </md>
+          and the last row says <m>0 = 2</m>. The first two planes are parallel, as in (a).
+          The coefficients <m>1, -1, 0</m> of the third equation are not a multiple of
+          <m>1, 1, 1</m>, so the third plane is parallel to neither of them: it cuts each of
+          them in a line. This is <term>two parallel planes crossed by a third</term>.
+        </p>
+
+        <figure xml:id="fig-two-parallel-planes">
+          <caption>
+            The parallel planes <m>P_1</m> and <m>P_2</m> of part (b) never meet, and <m>P_3</m>
+            crosses each of them in a dashed line. Switch <m>P_1</m> or <m>P_2</m> off and the
+            two remaining equations have a whole line of common solutions; switch
+            <m>P_3</m> off and the system is still inconsistent.
+          </caption>
+          <interactive xml:id="int-two-parallel-planes" iframe="demos-manim/planes.html?sys=1,1,1,1:1,1,1,3:1,-1,0,0&amp;radius=3&amp;yaw=-150&amp;pitch=40" width="100%" aspect="4:5">
+            <shortdescription>Two translucent parallel planes crossed by a third plane along two parallel dashed lines, with controls to rotate the view and hide planes.</shortdescription>
+            <static>
+              <image source="images/ch1-two-parallel-planes" width="90%">
+                <shortdescription>Two parallel planes crossed by a third plane in two parallel lines; no point lies on all three.</shortdescription>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+        <p>
+          (c) Finally,
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 1 \\
+              0 \amp 1 \amp 1 \amp 1 \\
+              1 \amp 2 \amp 1 \amp 3
+            \end{array} \right]
+            \xrightarrow{-r_1 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 1 \\
+              0 \amp 1 \amp 1 \amp 1 \\
+              0 \amp 1 \amp 1 \amp 2
+            \end{array} \right]
+            \xrightarrow{-r_2 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 1 \amp 0 \amp 1 \\
+              0 \amp 1 \amp 1 \amp 1 \\
+              0 \amp 0 \amp 0 \amp 1
+            \end{array} \right],
+          </md>
+          and the last row says <m>0 = 1</m>. This time no two of the coefficient lists
+          <m>1, 1, 0</m> and <m>0, 1, 1</m> and <m>1, 2, 1</m> are multiples of one another,
+          so no two of the planes are parallel: <term>every pair of planes meets in a
+          line, but the three lines never meet</term>. This is the system of
+          <xref ref="eg-hidden-contradiction" text="type-global" /> with <m>c = 3</m>, and
+          the configuration drawn in <xref ref="fig-no-solution-planes" text="type-global" />.
+        </p>
+
+        <figure xml:id="fig-prism-planes">
+          <caption>
+            No two of the planes of part (c) are parallel. Each pair meets in a dashed line, but
+            the three lines are parallel and different. Switch any one plane off and the other
+            two share a line. Rotate to look along the dashed lines: the planes then appear
+            as the three sides of a triangle.
+          </caption>
+          <interactive xml:id="int-prism-planes" iframe="demos-manim/planes.html?sys=1,1,0,1:0,1,1,1:1,2,1,3&amp;radius=3&amp;yaw=155&amp;pitch=30" width="100%" aspect="4:5">
+            <shortdescription>Three translucent planes in space that meet pairwise in three parallel dashed lines but have no common point, with controls to rotate the view and hide planes.</shortdescription>
+            <static>
+              <image source="images/ch1-prism-planes" width="90%">
+                <shortdescription>Three planes meeting pairwise in three parallel lines, with no common point.</shortdescription>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+        <p>
+          The three echelon forms look alike. To tell the configurations apart, compare the
+          coefficient lists of the original equations: all three proportional in (a),
+          exactly two proportional in (b), and no two proportional in (c).
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      These three pictures have one feature in common, and it lets us draw all of them in
+      the plane. When a system of three equations in three unknowns is inconsistent, the
+      contradictory row uses up one of the three rows, so the coefficient columns contain at
+      most two pivots. Replace every constant term by <m>0</m>: the new system has the same
+      coefficient columns, hence a free variable, hence a solution <m>(d_1, d_2, d_3)</m> other
+      than <m>(0, 0, 0)</m>. Moving a point by any multiple of <m>(d_1, d_2, d_3)</m> changes
+      none of the three left-hand sides. So each plane contains, along with any of its
+      points, the entire line through that point in this one direction; in part (c), for
+      instance, the direction is <m>(1, -1, 1)</m>. Looking along that direction we see every
+      plane edge-on, as a line, and every line in which two planes meet end-on, as a point.
+      <xref ref="fig-inconsistent-edge-on" text="type-global" /> shows the three views.
+    </p>
+
+    <figure xml:id="fig-inconsistent-edge-on">
+      <caption>
+        The three configurations of
+        <xref ref="eg-inconsistent-configurations" text="type-global" />, each seen
+        edge-on along a direction in which all three planes run. The planes
+        <m>P_1</m>, <m>P_2</m>, <m>P_3</m> appear as lines; a dot marks a line in which
+        two planes meet, seen end-on. In no picture do all three lines pass through one
+        point. Rotating the interactive figures of the example brings each of them into
+        its view here.
+      </caption>
+      <sidebyside widths="30% 30% 30%" margins="auto">
+        <figure xml:id="fig-edge-on-parallel">
+          <caption>Three parallel planes.</caption>
+          <image>
+            <shortdescription>Three parallel lines labeled P1, P2, P3 that never cross.</shortdescription>
+            <prefigure label="pf-edge-on-parallel" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-3,-3,3,3)">
+                  <group at="edge-on-parallel">
+                    <line at="par-P3" endpoints="((-3,0.6),(0.6,-3))" stroke="#606060" thickness="2.5"/>
+                    <line at="par-P1" endpoints="((-2.2,3),(3,-2.2))" stroke="#4A5D23" thickness="2.5"/>
+                    <line at="par-P2" endpoints="((-1.4,3),(3,-1.4))" stroke="#876801" thickness="2.5"/>
+                    <label anchor="(-2.1,-0.3)" alignment="southwest" color="#606060"><m>P_3</m></label>
+                    <label anchor="(1.9,-1.1)" alignment="southwest" color="#4A5D23"><m>P_1</m></label>
+                    <label anchor="(1.6,0.0)" alignment="northeast" color="#876801"><m>P_2</m></label>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="edge-on-parallel" text="Edge-on view of three parallel planes, seen as three parallel lines">
+                    <annotation ref="par-P3" text="Plane P 3, a gray line at the lower left"/>
+                    <annotation ref="par-P1" text="Plane P 1, an olive line parallel to P 3, in the middle"/>
+                    <annotation ref="par-P2" text="Plane P 2, a mustard line parallel to the other two, at the upper right. No two of the lines meet."/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        <figure xml:id="fig-edge-on-two-parallel">
+          <caption>Two parallel planes crossed by a third.</caption>
+          <image>
+            <shortdescription>Two parallel lines P1 and P2 crossed by a third line P3 at two separate marked points.</shortdescription>
+            <prefigure label="pf-edge-on-two-parallel" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-3,-3,3,3)">
+                  <group at="edge-on-two-parallel">
+                    <line at="tp-P1" endpoints="((-3,-1.65),(3,-0.15))" stroke="#4A5D23" thickness="2.5"/>
+                    <line at="tp-P2" endpoints="((-3,0.15),(3,1.65))" stroke="#876801" thickness="2.5"/>
+                    <line at="tp-P3" endpoints="((-0.5,-3),(1,3))" stroke="#606060" thickness="2.5"/>
+                    <point at="tp-P1P3" p="(0.0267,-0.8933)" fill="#5E011C" size="4.5"/>
+                    <point at="tp-P2P3" p="(0.5067,1.0267)" fill="#5E011C" size="4.5"/>
+                    <label anchor="(-2.2,-1.45)" alignment="north" color="#4A5D23"><m>P_1</m></label>
+                    <label anchor="(-2.2,0.35)" alignment="north" color="#876801"><m>P_2</m></label>
+                    <label anchor="(0.85,2.4)" alignment="east" color="#606060"><m>P_3</m></label>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="edge-on-two-parallel" text="Edge-on view of two parallel planes crossed by a third plane">
+                    <annotation ref="tp-P1" text="Plane P 1, an olive line across the lower half"/>
+                    <annotation ref="tp-P2" text="Plane P 2, a mustard line parallel to P 1 across the upper half"/>
+                    <annotation ref="tp-P3" text="Plane P 3, a steep gray line crossing both P 1 and P 2"/>
+                    <annotation ref="tp-P1P3" text="The line where P 1 and P 3 meet, seen end-on as a point. It is not on P 2."/>
+                    <annotation ref="tp-P2P3" text="The line where P 2 and P 3 meet, seen end-on as a point. It is not on P 1."/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        <figure xml:id="fig-edge-on-triangle">
+          <caption>Each pair of planes meets, but in three different parallel lines.</caption>
+          <image>
+            <shortdescription>Three lines P1, P2, P3 forming a triangle, with the three corners marked; no point lies on all three lines.</shortdescription>
+            <prefigure label="pf-edge-on-triangle" xmlns="https://prefigure.org">
+              <diagram dimensions="(230,230)" margins="6">
+                <coordinates bbox="(-3,-3,3,3)">
+                  <group at="edge-on-triangle">
+                    <line at="tr-P1" endpoints="((-1.5,-1.2),(1.7,-0.8))" infinite="yes" stroke="#4A5D23" thickness="2.5"/>
+                    <line at="tr-P2" endpoints="((-1.5,-1.2),(0.3,1.7))" infinite="yes" stroke="#876801" thickness="2.5"/>
+                    <line at="tr-P3" endpoints="((1.7,-0.8),(0.3,1.7))" infinite="yes" stroke="#606060" thickness="2.5"/>
+                    <point at="tr-P1P2" p="(-1.5,-1.2)" fill="#5E011C" size="4.5"/>
+                    <point at="tr-P1P3" p="(1.7,-0.8)" fill="#5E011C" size="4.5"/>
+                    <point at="tr-P2P3" p="(0.3,1.7)" fill="#5E011C" size="4.5"/>
+                    <label anchor="(0.1,-1.0)" alignment="south" color="#4A5D23"><m>P_1</m></label>
+                    <label anchor="(-0.75,0.0)" alignment="northwest" color="#876801"><m>P_2</m></label>
+                    <label anchor="(1.15,0.2)" alignment="northeast" color="#606060"><m>P_3</m></label>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="edge-on-triangle" text="Edge-on view of three planes, no two parallel, seen as three lines forming a triangle">
+                    <annotation ref="tr-P1" text="Plane P 1, an olive line forming the bottom side of the triangle"/>
+                    <annotation ref="tr-P2" text="Plane P 2, a mustard line forming the left side of the triangle"/>
+                    <annotation ref="tr-P3" text="Plane P 3, a gray line forming the right side of the triangle"/>
+                    <annotation ref="tr-P1P2" text="The line where P 1 and P 2 meet, seen end-on as the lower left corner. It is not on P 3."/>
+                    <annotation ref="tr-P1P3" text="The line where P 1 and P 3 meet, seen end-on as the lower right corner. It is not on P 2."/>
+                    <annotation ref="tr-P2P3" text="The line where P 2 and P 3 meet, seen end-on as the top corner. It is not on P 1."/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+
     <example xml:id="eg-infinitely-many-rr">
       <title>A System with Infinitely Many Solutions</title>
       <statement>
@@ -963,6 +1253,17 @@
       occur in the examples. Exactly two points is impossible: by
       <xref ref="thm-zero-one-infinitely-many" text="type-global"/>, two common points
       force the whole line through them to be common.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-which-configuration">
+      <statement><p>Without row reducing, decide which of the three pictures in
+      <xref ref="fig-inconsistent-edge-on" text="type-global"/> describes the planes
+      <m>x_1 - x_2 + 2x_3 = 1</m>, <m>-2x_1 + 2x_2 - 4x_3 = 3</m>, <m>x_1 + x_3 = 0</m>.
+      Then confirm with one row operation that the system is inconsistent.</p></statement>
+      <answer><p>The second coefficient list is <m>-2</m> times the first, but the constant
+      <m>3</m> is not <m>-2</m> times <m>1</m>, so the first two planes are parallel and
+      different. The third list <m>1, 0, 1</m> is not a multiple of <m>1, -1, 2</m>, so the
+      third plane crosses both: two parallel planes crossed by a third. The operation
+      <m>2r_1 + r_2</m> produces the row <m>[\,0\;0\;0\mid5\,]</m>.</p></answer>
     </exercise>
     <exercise xml:id="ex-ch1-balancing-chemical">
       <statement><p>When propane burns, the reaction is

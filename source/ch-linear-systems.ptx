@@ -20,10 +20,12 @@
       numbers that matter <mdash /> the augmented matrix <mdash /> and describes the simple
       <q>echelon</q> shapes from which solutions can be read off.
       <xref ref="sec-row-reduction" text="type-global"/> assembles these pieces into a single
-      mechanical procedure, the row reduction algorithm, that settles every case. Finally,
+      mechanical procedure, the row reduction algorithm, that settles every case.
       <xref ref="sec-polynomial-interpolation" text="type-global"/> shows the algorithm at
       work on a problem that does not look linear at first sight: fitting a polynomial
-      exactly through a set of data points.
+      exactly through a set of data points. Finally,
+      <xref ref="sec-further-applications" text="type-global"/> collects four more
+      applications, from the temperatures on a heated plate to magic squares.
     </p>
   </introduction>
 
@@ -32,5 +34,6 @@
   <xi:include href="linear-systems/sec-augmented-matrix.ptx" />
   <xi:include href="linear-systems/sec-row-reduction.ptx" />
   <xi:include href="linear-systems/sec-polynomial-interpolation.ptx" />
+  <xi:include href="linear-systems/sec-further-applications.ptx" />
 
 </chapter>

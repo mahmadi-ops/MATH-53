@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-heat-plate-figure" width="356" height="356" viewBox="0 0 356 356">
+  <defs>
+    <clipPath id="pf-heat-plate-__clipPath-0">
+      <rect x="8.0" y="8.0" width="340.0" height="340.0"/>
+    </clipPath>
+    <clipPath id="pf-heat-plate-__clipPath-1">
+      <rect x="8.0" y="8.0" width="340.0" height="340.0"/>
+    </clipPath>
+  </defs>
+  <g id="pf-heat-plate-heat-plate">
+    <path id="pf-heat-plate-plate-outline" d="M 73.9 282.1 L 282.1 282.1 L 282.1 73.9 L 73.9 73.9 Z" stroke="black" stroke-width="2" fill="#EDF0E6"/>
+    <g id="pf-heat-plate-grid-lines">
+      <line id="pf-heat-plate-__line-0" x1="143.3" y1="282.1" x2="143.3" y2="73.9" stroke="#808080" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+      <line id="pf-heat-plate-__line-1" x1="212.7" y1="282.1" x2="212.7" y2="73.9" stroke="#808080" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+      <line id="pf-heat-plate-__line-2" x1="73.9" y1="212.7" x2="282.1" y2="212.7" stroke="#808080" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+      <line id="pf-heat-plate-__line-3" x1="73.9" y1="143.3" x2="282.1" y2="143.3" stroke="#808080" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+    </g>
+    <g id="pf-heat-plate-edge-top">
+      <rect id="pf-heat-plate-__circle-0" x="139.3" y="69.9" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <rect id="pf-heat-plate-__circle-1" x="208.7" y="69.9" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <g id="pf-heat-plate-__label-0" transform="translate(178.0,64.9) translate(-11.8,-12.0)">
+        <g id="pf-heat-plate-__g-0">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="23.608px" height="12.048px" role="img" focusable="false" viewBox="0 -706 1422.4 726" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-2-GP-N-38" d="M464 206C464 286 427 329 313 381C404 443 436 485 436 545C436 631 365 689 259 689C140 689 53 613 53 508C53 440 80 402 168 345C127 326 110 315 88 294C50 256 30 211 30 159C30 56 113-20 226-20C356-20 464 82 464 206M385 164C385 80 322 14 241 14C156 14 101 74 101 167C101 240 130 286 204 331L284 295C347 267 385 218 385 164M368 534C368 477 343 438 278 396L223 423C160 454 128 494 128 544C128 610 176 655 247 655C320 655 368 607 368 534Z"/>
+              <path id="pf-heat-plate-MJX-2-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-heat-plate-MJX-2-GP-N-2218" d="M400 250C400 346 336 410 240 410C144 410 80 346 80 250C80 154 144 90 240 90C336 90 400 154 400 250M352 250C352 183 307 138 240 138C173 138 128 183 128 250C128 317 173 362 240 362C307 362 352 317 352 250Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="integer" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:80^\circ" data-semantic-speech="80 Superscript ring">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:80" data-semantic-speech="80" data-semantic-prefix="Base">
+                    <use data-c="38" xlink:href="#pf-heat-plate-MJX-2-GP-N-38"/>
+                    <use data-c="30" xlink:href="#pf-heat-plate-MJX-2-GP-N-30" transform="translate(500,0)"/>
+                  </g>
+                  <g data-mml-node="mo" transform="translate(1033,416.1) scale(0.707)" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:\circ" data-semantic-speech="ring" data-semantic-prefix="Exponent">
+                    <use data-c="2218" xlink:href="#pf-heat-plate-MJX-2-GP-N-2218"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-heat-plate-edge-right">
+      <rect id="pf-heat-plate-__circle-2" x="278.1" y="139.3" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <rect id="pf-heat-plate-__circle-3" x="278.1" y="208.7" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <g id="pf-heat-plate-__label-1" transform="translate(293.1,178.0) translate(0.0,-6.0)">
+        <g id="pf-heat-plate-__g-1">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="23.608px" height="12.048px" role="img" focusable="false" viewBox="0 -706 1422.4 726" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-3-GP-N-36" d="M468 219C468 334 399 409 293 409C234 409 197 385 131 331C152 512 236 610 416 664L416 672L379 689C283 657 242 637 191 593C88 506 32 384 32 247C32 82 112-20 241-20C371-20 468 83 468 219M382 184C382 80 331 13 254 13C169 13 123 86 123 220C123 255 127 274 138 291C160 325 207 349 255 349C331 349 382 283 382 184Z"/>
+              <path id="pf-heat-plate-MJX-3-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-heat-plate-MJX-3-GP-N-2218" d="M400 250C400 346 336 410 240 410C144 410 80 346 80 250C80 154 144 90 240 90C336 90 400 154 400 250M352 250C352 183 307 138 240 138C173 138 128 183 128 250C128 317 173 362 240 362C307 362 352 317 352 250Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="integer" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:60^\circ" data-semantic-speech="60 Superscript ring">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:60" data-semantic-speech="60" data-semantic-prefix="Base">
+                    <use data-c="36" xlink:href="#pf-heat-plate-MJX-3-GP-N-36"/>
+                    <use data-c="30" xlink:href="#pf-heat-plate-MJX-3-GP-N-30" transform="translate(500,0)"/>
+                  </g>
+                  <g data-mml-node="mo" transform="translate(1033,416.1) scale(0.707)" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:\circ" data-semantic-speech="ring" data-semantic-prefix="Exponent">
+                    <use data-c="2218" xlink:href="#pf-heat-plate-MJX-3-GP-N-2218"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-heat-plate-edge-bottom">
+      <rect id="pf-heat-plate-__circle-4" x="139.3" y="278.1" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <rect id="pf-heat-plate-__circle-5" x="208.7" y="278.1" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <g id="pf-heat-plate-__label-2" transform="translate(178.0,291.1) translate(-11.8,-0.0)">
+        <g id="pf-heat-plate-__g-2">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="23.608px" height="12.136px" role="img" focusable="false" viewBox="0 -711 1422.4 731" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-4-GP-N-34" d="M472-3L472 27L424 30C375 33 364 46 364 106L364 181C423 181 444 180 472 177L472 248C472 248 423 245 391 245L364 245L364 384C364 562 366 648 371 689L359 694L285 667L2 204L13 181L280 181L280 106C280 46 269 32 220 30L158 27L158-3L319 0M280 245L65 245L280 597Z"/>
+              <path id="pf-heat-plate-MJX-4-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-heat-plate-MJX-4-GP-N-2218" d="M400 250C400 346 336 410 240 410C144 410 80 346 80 250C80 154 144 90 240 90C336 90 400 154 400 250M352 250C352 183 307 138 240 138C173 138 128 183 128 250C128 317 173 362 240 362C307 362 352 317 352 250Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="integer" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:40^\circ" data-semantic-speech="40 Superscript ring">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:40" data-semantic-speech="40" data-semantic-prefix="Base">
+                    <use data-c="34" xlink:href="#pf-heat-plate-MJX-4-GP-N-34"/>
+                    <use data-c="30" xlink:href="#pf-heat-plate-MJX-4-GP-N-30" transform="translate(500,0)"/>
+                  </g>
+                  <g data-mml-node="mo" transform="translate(1033,421.1) scale(0.707)" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:\circ" data-semantic-speech="ring" data-semantic-prefix="Exponent">
+                    <use data-c="2218" xlink:href="#pf-heat-plate-MJX-4-GP-N-2218"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-heat-plate-edge-left">
+      <rect id="pf-heat-plate-__circle-6" x="69.9" y="139.3" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <rect id="pf-heat-plate-__circle-7" x="69.9" y="208.7" width="8.0" height="8.0" stroke="black" stroke-width="2" fill="#606060"/>
+      <g id="pf-heat-plate-__label-3" transform="translate(62.9,178.0) translate(-23.6,-6.0)">
+        <g id="pf-heat-plate-__g-3">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="23.608px" height="12.048px" role="img" focusable="false" viewBox="0 -706 1422.4 726" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-5-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-heat-plate-MJX-5-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-heat-plate-MJX-5-GP-N-2218" d="M400 250C400 346 336 410 240 410C144 410 80 346 80 250C80 154 144 90 240 90C336 90 400 154 400 250M352 250C352 183 307 138 240 138C173 138 128 183 128 250C128 317 173 362 240 362C307 362 352 317 352 250Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="integer" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:20^\circ" data-semantic-speech="20 Superscript ring">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:20" data-semantic-speech="20" data-semantic-prefix="Base">
+                    <use data-c="32" xlink:href="#pf-heat-plate-MJX-5-GP-N-32"/>
+                    <use data-c="30" xlink:href="#pf-heat-plate-MJX-5-GP-N-30" transform="translate(500,0)"/>
+                  </g>
+                  <g data-mml-node="mo" transform="translate(1033,416.1) scale(0.707)" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:\circ" data-semantic-speech="ring" data-semantic-prefix="Exponent">
+                    <use data-c="2218" xlink:href="#pf-heat-plate-MJX-5-GP-N-2218"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-heat-plate-heat-x1">
+      <g id="pf-heat-plate-heat-x1" transform="translate(149.3,137.3) translate(0.0,-10.5)">
+        <g id="pf-heat-plate-__g-4">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="15.544px" height="10.528px" role="img" focusable="false" viewBox="0 -482 936.6 634.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-6-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+              <path id="pf-heat-plate-MJX-6-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:x_1" data-semantic-speech="x 1">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:x" data-semantic-speech="x" data-semantic-prefix="Base">
+                    <use data-c="1D465" xlink:href="#pf-heat-plate-MJX-6-GP-I-1D465"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(533,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                    <use data-c="31" xlink:href="#pf-heat-plate-MJX-6-GP-N-31"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <circle cx="143.3" cy="143.3" r="5" stroke="black" stroke-width="2" fill="#5E011C"/>
+    </g>
+    <g id="pf-heat-plate-heat-x2">
+      <g id="pf-heat-plate-heat-x2" transform="translate(218.7,137.3) translate(0.0,-10.5)">
+        <g id="pf-heat-plate-__g-5">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="15.544px" height="10.528px" role="img" focusable="false" viewBox="0 -482 936.6 634.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-7-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+              <path id="pf-heat-plate-MJX-7-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:x_2" data-semantic-speech="x 2">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:x" data-semantic-speech="x" data-semantic-prefix="Base">
+                    <use data-c="1D465" xlink:href="#pf-heat-plate-MJX-7-GP-I-1D465"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(533,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                    <use data-c="32" xlink:href="#pf-heat-plate-MJX-7-GP-N-32"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <circle cx="212.7" cy="143.3" r="5" stroke="black" stroke-width="2" fill="#5E011C"/>
+    </g>
+    <g id="pf-heat-plate-heat-x3">
+      <g id="pf-heat-plate-heat-x3" transform="translate(149.3,206.7) translate(0.0,-10.7)">
+        <g id="pf-heat-plate-__g-6">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.728px" width="15.544px" height="10.728px" role="img" focusable="false" viewBox="0 -482 936.6 646.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-8-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+              <path id="pf-heat-plate-MJX-8-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:x_3" data-semantic-speech="x 3">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:x" data-semantic-speech="x" data-semantic-prefix="Base">
+                    <use data-c="1D465" xlink:href="#pf-heat-plate-MJX-8-GP-I-1D465"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(533,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:3" data-semantic-speech="3" data-semantic-prefix="Subscript">
+                    <use data-c="33" xlink:href="#pf-heat-plate-MJX-8-GP-N-33"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <circle cx="143.3" cy="212.7" r="5" stroke="black" stroke-width="2" fill="#5E011C"/>
+    </g>
+    <g id="pf-heat-plate-heat-x4">
+      <g id="pf-heat-plate-heat-x4" transform="translate(218.7,206.7) translate(0.0,-10.5)">
+        <g id="pf-heat-plate-__g-7">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="15.544px" height="10.528px" role="img" focusable="false" viewBox="0 -482 936.6 634.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-heat-plate-MJX-9-GP-I-1D465" d="M484 472C472 479 463 482 454 482C414 482 374 446 312 354L275 299L269 347C257 446 230 482 171 482C145 482 123 474 114 461L56 378L73 368C103 402 123 416 142 416C175 416 197 375 214 277L225 215L185 153C142 86 108 54 80 54C65 54 54 58 52 63L41 91L21 88C21 68 19 55 13 23C11 11 10 8 9 1C24-7 40-11 52-11C85-11 124 18 155 65L231 182L242 113C256 28 278-11 314-11C336-11 368 6 400 35L449 79L440 98C404 68 379 53 363 53C348 53 335 63 325 83C316 102 305 139 300 168L282 269L317 318C364 383 391 406 422 406C438 406 450 398 455 383L469 387Z"/>
+              <path id="pf-heat-plate-MJX-9-GP-N-34" d="M472-3L472 27L424 30C375 33 364 46 364 106L364 181C423 181 444 180 472 177L472 248C472 248 423 245 391 245L364 245L364 384C364 562 366 648 371 689L359 694L285 667L2 204L13 181L280 181L280 106C280 46 269 32 220 30L158 27L158-3L319 0M280 245L65 245L280 597Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:x_4" data-semantic-speech="x 4">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:x" data-semantic-speech="x" data-semantic-prefix="Base">
+                    <use data-c="1D465" xlink:href="#pf-heat-plate-MJX-9-GP-I-1D465"/>
+                  </g>
+                  <g data-mml-node="mn" transform="translate(533,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:4" data-semantic-speech="4" data-semantic-prefix="Subscript">
+                    <use data-c="34" xlink:href="#pf-heat-plate-MJX-9-GP-N-34"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <circle cx="212.7" cy="212.7" r="5" stroke="black" stroke-width="2" fill="#5E011C"/>
+    </g>
+  </g>
+</svg>

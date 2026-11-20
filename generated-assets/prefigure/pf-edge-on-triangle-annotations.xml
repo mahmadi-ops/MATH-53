@@ -1,0 +1,66 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-edge-on-triangle-edge-on-triangle" speech2="Edge-on view of three planes, no two parallel, seen as three lines forming a triangle">
+      <grouped>pf-edge-on-triangle-edge-on-triangle</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-edge-on-triangle-tr-P1</active>
+        <active>pf-edge-on-triangle-tr-P2</active>
+        <active>pf-edge-on-triangle-tr-P3</active>
+        <active>pf-edge-on-triangle-tr-P1P2</active>
+        <active>pf-edge-on-triangle-tr-P1P3</active>
+        <active>pf-edge-on-triangle-tr-P2P3</active>
+      </children>
+      <components>
+        <active>pf-edge-on-triangle-tr-P1</active>
+        <active>pf-edge-on-triangle-tr-P2</active>
+        <active>pf-edge-on-triangle-tr-P3</active>
+        <active>pf-edge-on-triangle-tr-P1P2</active>
+        <active>pf-edge-on-triangle-tr-P1P3</active>
+        <active>pf-edge-on-triangle-tr-P2P3</active>
+      </components>
+    </annotation>
+    <annotation id="pf-edge-on-triangle-tr-P1" speech2="Plane P 1, an olive line forming the bottom side of the triangle">
+      <active>pf-edge-on-triangle-tr-P1</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-edge-on-triangle-edge-on-triangle</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-triangle-tr-P2" speech2="Plane P 2, a mustard line forming the left side of the triangle">
+      <active>pf-edge-on-triangle-tr-P2</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-edge-on-triangle-edge-on-triangle</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-triangle-tr-P3" speech2="Plane P 3, a gray line forming the right side of the triangle">
+      <active>pf-edge-on-triangle-tr-P3</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-edge-on-triangle-edge-on-triangle</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-triangle-tr-P1P2" speech2="The line where P 1 and P 2 meet, seen end-on as the lower left corner. It is not on P 3.">
+      <active>pf-edge-on-triangle-tr-P1P2</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-edge-on-triangle-edge-on-triangle</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-triangle-tr-P1P3" speech2="The line where P 1 and P 3 meet, seen end-on as the lower right corner. It is not on P 2.">
+      <active>pf-edge-on-triangle-tr-P1P3</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-edge-on-triangle-edge-on-triangle</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-triangle-tr-P2P3" speech2="The line where P 2 and P 3 meet, seen end-on as the top corner. It is not on P 1.">
+      <active>pf-edge-on-triangle-tr-P2P3</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-edge-on-triangle-edge-on-triangle</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

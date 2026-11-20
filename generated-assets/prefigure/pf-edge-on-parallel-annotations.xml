@@ -1,0 +1,39 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-edge-on-parallel-edge-on-parallel" speech2="Edge-on view of three parallel planes, seen as three parallel lines">
+      <grouped>pf-edge-on-parallel-edge-on-parallel</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-edge-on-parallel-par-P3</active>
+        <active>pf-edge-on-parallel-par-P1</active>
+        <active>pf-edge-on-parallel-par-P2</active>
+      </children>
+      <components>
+        <active>pf-edge-on-parallel-par-P3</active>
+        <active>pf-edge-on-parallel-par-P1</active>
+        <active>pf-edge-on-parallel-par-P2</active>
+      </components>
+    </annotation>
+    <annotation id="pf-edge-on-parallel-par-P3" speech2="Plane P 3, a gray line at the lower left">
+      <active>pf-edge-on-parallel-par-P3</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-edge-on-parallel-edge-on-parallel</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-parallel-par-P1" speech2="Plane P 1, an olive line parallel to P 3, in the middle">
+      <active>pf-edge-on-parallel-par-P1</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-edge-on-parallel-edge-on-parallel</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-parallel-par-P2" speech2="Plane P 2, a mustard line parallel to the other two, at the upper right. No two of the lines meet.">
+      <active>pf-edge-on-parallel-par-P2</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-edge-on-parallel-edge-on-parallel</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

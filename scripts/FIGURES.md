@@ -40,8 +40,11 @@ Commit the source and generated SVG/PDF assets together. The three live Sage
 plots use the same accents and a serif stack headed by Pagella; remote Sage
 servers fall back to Palatino or DejaVu Serif when Pagella is unavailable.
 
-The three chapter-one plane diagrams use the actual equations from the row-reduction
-examples, with scalar equations and their common points or lines. Regenerate them with
+The chapter-one plane diagrams use the actual equations from the row-reduction
+examples, with scalar equations and their common points or lines; three more
+(`ch1-parallel-planes.svg`, `ch1-two-parallel-planes.svg`, `ch1-prism-planes.svg`)
+are the print versions of the interactive figures in the example "Three Ways to
+Have No Common Point". Regenerate them with
 `python scripts/make-chapter-one-planes.py`, then use `--embed-only` as above to
 embed the book fonts. Direct plane labels and highlighted common solutions identify
 what each drawing represents; the inconsistent example includes a slice at x1=0

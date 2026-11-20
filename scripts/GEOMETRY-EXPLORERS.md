@@ -6,7 +6,7 @@ They require no external JavaScript libraries, narration, or video downloads.
 | Section/source | Explorer | Location |
 |---|---|---|
 | `source/linear-systems/sec-systems-of-linear-equations.ptx` | `solution-set.html` | After the parametric example and its geometric interpretation |
-| `source/linear-systems/sec-row-reduction.ptx` | `planes.html` (three embeds, parameterized by `?sys=`) | Inside the unique-solution, inconsistent, and infinitely-many-solutions examples |
+| `source/linear-systems/sec-row-reduction.ptx` | `planes.html` (six embeds, parameterized by `?sys=`) | Inside the unique-solution, inconsistent, and infinitely-many-solutions examples, and after each part of the "Three Ways to Have No Common Point" example |
 | `source/linear-transformations/sec-transformations.ptx` | `transformation-geometry.html` | Before the opening ℝ³ → ℝ⁴ example; refers to the existing matrix-multiplication example |
 | `source/vector-spaces/sec-coordinates.ptx` | `change-of-basis.html` | Extends the existing same-vector/two-coordinate-systems example |
 

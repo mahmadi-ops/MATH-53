@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-further-applications" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Further Applications: Heat, Levers, Triangles, and Magic Squares</title>
+
+  <introduction>
+    <p>
+      Polynomial interpolation was our first example of a problem that becomes a system
+      of linear equations once the right unknowns have been named. This section collects
+      four more, from physics, geometry, and recreational mathematics. In each of them the
+      real work is the modeling: deciding what the unknowns are and translating the
+      problem into equations. After that, the row reduction algorithm of
+      <xref ref="sec-row-reduction" text="type-global"/> takes over.
+    </p>
+    <p>
+      Each example also carries a lesson about reading the answer. Row reduction
+      describes every solution of the linear system, and it knows nothing else about the
+      problem. Whether a solution makes sense <mdash/> a weight must be positive, the
+      entries of a magic square must be different whole numbers <mdash/> is a separate
+      question, and it is ours to ask.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-heat-plate">
+    <title>Temperatures on a Plate</title>
+
+    <p>
+      A thin square metal plate is insulated on both faces, and each of its four edges is
+      held at a constant temperature. After a while the temperature at every point of the
+      plate stops changing, and we would like to know these equilibrium temperatures. A
+      simple model replaces the plate by a grid of points and uses the following rule.
+    </p>
+
+    <principle xml:id="prin-averaging-rule">
+      <title>The Averaging Rule</title>
+      <statement>
+        <p>
+          At equilibrium, the temperature at each interior grid point is the average of
+          the temperatures at its four nearest grid points: the ones directly above it,
+          below it, to its left, and to its right.
+        </p>
+      </statement>
+    </principle>
+
+    <figure xml:id="fig-heat-plate">
+      <caption>
+        A square plate whose edges are held at <m>80^\circ</m>, <m>60^\circ</m>,
+        <m>40^\circ</m>, and <m>20^\circ</m>, with a grid of four interior points. Each
+        interior point has two neighbors on the edges and two neighbors among the other
+        interior points.
+      </caption>
+      <image width="52%">
+        <shortdescription>A square plate with a two-by-two grid of interior points labeled x1, x2 in the top row and x3, x4 in the bottom row; the top edge is at 80 degrees, the right edge at 60, the bottom edge at 40, and the left edge at 20.</shortdescription>
+        <prefigure label="pf-heat-plate" xmlns="https://prefigure.org">
+          <diagram dimensions="(340,340)" margins="8">
+            <coordinates bbox="(-0.95,-0.95,3.95,3.95)">
+              <group at="heat-plate">
+                <rectangle at="plate-outline" lower-left="(0,0)" dimensions="(3,3)" fill="#EDF0E6" stroke="black" thickness="2"/>
+                <group at="grid-lines">
+                  <line endpoints="((1,0),(1,3))" stroke="#808080" thickness="1" dash="4 3"/>
+                  <line endpoints="((2,0),(2,3))" stroke="#808080" thickness="1" dash="4 3"/>
+                  <line endpoints="((0,1),(3,1))" stroke="#808080" thickness="1" dash="4 3"/>
+                  <line endpoints="((0,2),(3,2))" stroke="#808080" thickness="1" dash="4 3"/>
+                </group>
+                <group at="edge-top">
+                  <point p="(1,3)" style="box" size="4" fill="#606060"/>
+                  <point p="(2,3)" style="box" size="4" fill="#606060"/>
+                  <label anchor="(1.5,3)" alignment="north" offset="(0,5)"><m>80^\circ</m></label>
+                </group>
+                <group at="edge-right">
+                  <point p="(3,2)" style="box" size="4" fill="#606060"/>
+                  <point p="(3,1)" style="box" size="4" fill="#606060"/>
+                  <label anchor="(3,1.5)" alignment="east" offset="(7,0)"><m>60^\circ</m></label>
+                </group>
+                <group at="edge-bottom">
+                  <point p="(1,0)" style="box" size="4" fill="#606060"/>
+                  <point p="(2,0)" style="box" size="4" fill="#606060"/>
+                  <label anchor="(1.5,0)" alignment="south" offset="(0,-5)"><m>40^\circ</m></label>
+                </group>
+                <group at="edge-left">
+                  <point p="(0,2)" style="box" size="4" fill="#606060"/>
+                  <point p="(0,1)" style="box" size="4" fill="#606060"/>
+                  <label anchor="(0,1.5)" alignment="west" offset="(-7,0)"><m>20^\circ</m></label>
+                </group>
+                <point at="heat-x1" p="(1,2)" size="5" fill="#5E011C" alignment="northeast"><m>x_1</m></point>
+                <point at="heat-x2" p="(2,2)" size="5" fill="#5E011C" alignment="northeast"><m>x_2</m></point>
+                <point at="heat-x3" p="(1,1)" size="5" fill="#5E011C" alignment="northeast"><m>x_3</m></point>
+                <point at="heat-x4" p="(2,1)" size="5" fill="#5E011C" alignment="northeast"><m>x_4</m></point>
+              </group>
+            </coordinates>
+            <annotations>
+              <annotation ref="heat-plate" text="A square plate with a grid: four interior points with unknown temperatures and eight edge points with known temperatures">
+                <annotation ref="plate-outline" text="The outline of the square plate"/>
+                <annotation ref="grid-lines" text="Two vertical and two horizontal dashed grid lines, which cross at the four interior points and meet the edges at the eight edge points"/>
+                <annotation ref="edge-top" text="The top edge, held at 80 degrees, with two grid points"/>
+                <annotation ref="edge-right" text="The right edge, held at 60 degrees, with two grid points"/>
+                <annotation ref="edge-bottom" text="The bottom edge, held at 40 degrees, with two grid points"/>
+                <annotation ref="edge-left" text="The left edge, held at 20 degrees, with two grid points"/>
+                <annotation ref="heat-x1" text="Upper left interior point, temperature x 1. Its neighbors are the top edge at 80 degrees, the left edge at 20 degrees, x 2 to its right, and x 3 below it."/>
+                <annotation ref="heat-x2" text="Upper right interior point, temperature x 2. Its neighbors are the top edge at 80 degrees, the right edge at 60 degrees, x 1 to its left, and x 4 below it."/>
+                <annotation ref="heat-x3" text="Lower left interior point, temperature x 3. Its neighbors are the left edge at 20 degrees, the bottom edge at 40 degrees, x 1 above it, and x 4 to its right."/>
+                <annotation ref="heat-x4" text="Lower right interior point, temperature x 4. Its neighbors are the right edge at 60 degrees, the bottom edge at 40 degrees, x 2 above it, and x 3 to its left."/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <example xml:id="eg-heat-plate">
+      <title>Four Temperatures on a Square Plate</title>
+      <statement>
+        <p>
+          The plate in <xref ref="fig-heat-plate" text="type-global"/> carries a grid with
+          four interior points, whose equilibrium temperatures <m>x_1, x_2, x_3, x_4</m> are
+          unknown. The top edge is held at <m>80^\circ</m>, the right edge at
+          <m>60^\circ</m>, the bottom edge at <m>40^\circ</m>, and the left edge at
+          <m>20^\circ</m>. Use the averaging rule to find the four temperatures.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The upper left point has the top edge above it, the left edge to its left, and the
+          interior points with temperatures <m>x_2</m> and <m>x_3</m> to its right and below
+          it. The other three points are similar, and the averaging rule gives one equation
+          for each interior point:
+          <md>
+            <mrow>
+              x_1 \amp = \tfrac{1}{4}(80 + 20 + x_2 + x_3), \amp x_2 \amp = \tfrac{1}{4}(80 + 60 + x_1 + x_4),
+            </mrow>
+            <mrow>
+              x_3 \amp = \tfrac{1}{4}(20 + 40 + x_1 + x_4), \amp x_4 \amp = \tfrac{1}{4}(60 + 40 + x_2 + x_3).
+            </mrow>
+          </md>
+          Multiplying each equation by <m>4</m> and collecting the unknowns on the left puts
+          the system in standard form:
+          <md>
+            <mrow>
+              4x_1 - x_2 - x_3 \phantom{{}- x_4} \amp = 100
+            </mrow>
+            <mrow>
+              -x_1 + 4x_2 \phantom{{}- x_3} - x_4 \amp = 140
+            </mrow>
+            <mrow>
+              -x_1 \phantom{{}+ 4x_2} + 4x_3 - x_4 \amp = 60
+            </mrow>
+            <mrow>
+              \phantom{-x_1} - x_2 - x_3 + 4x_4 \amp = 100
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Now row reduce. A little planning keeps fractions out of the forward phase. (When
+          two operations are attached to one arrow, the upper one is performed first.)
+          <md>
+            <mrow>
+              \left[ \begin{array}{cccc|c}
+                4 \amp -1 \amp -1 \amp 0 \amp 100 \\
+                -1 \amp 4 \amp 0 \amp -1 \amp 140 \\
+                -1 \amp 0 \amp 4 \amp -1 \amp 60 \\
+                0 \amp -1 \amp -1 \amp 4 \amp 100
+              \end{array} \right]
+              \amp \xrightarrow[-r_1]{r_1 \leftrightarrow r_2}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -4 \amp 0 \amp 1 \amp -140 \\
+                4 \amp -1 \amp -1 \amp 0 \amp 100 \\
+                -1 \amp 0 \amp 4 \amp -1 \amp 60 \\
+                0 \amp -1 \amp -1 \amp 4 \amp 100
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[r_1 + r_3]{-4r_1 + r_2}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -4 \amp 0 \amp 1 \amp -140 \\
+                0 \amp 15 \amp -1 \amp -4 \amp 660 \\
+                0 \amp -4 \amp 4 \amp 0 \amp -80 \\
+                0 \amp -1 \amp -1 \amp 4 \amp 100
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[r_2 \leftrightarrow r_3]{-\frac{1}{4} r_3}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -4 \amp 0 \amp 1 \amp -140 \\
+                0 \amp 1 \amp -1 \amp 0 \amp 20 \\
+                0 \amp 15 \amp -1 \amp -4 \amp 660 \\
+                0 \amp -1 \amp -1 \amp 4 \amp 100
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[r_2 + r_4]{-15r_2 + r_3}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -4 \amp 0 \amp 1 \amp -140 \\
+                0 \amp 1 \amp -1 \amp 0 \amp 20 \\
+                0 \amp 0 \amp 14 \amp -4 \amp 360 \\
+                0 \amp 0 \amp -2 \amp 4 \amp 120
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[r_3 \leftrightarrow r_4]{-\frac{1}{2} r_4}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -4 \amp 0 \amp 1 \amp -140 \\
+                0 \amp 1 \amp -1 \amp 0 \amp 20 \\
+                0 \amp 0 \amp 1 \amp -2 \amp -60 \\
+                0 \amp 0 \amp 14 \amp -4 \amp 360
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-14r_3 + r_4}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -4 \amp 0 \amp 1 \amp -140 \\
+                0 \amp 1 \amp -1 \amp 0 \amp 20 \\
+                0 \amp 0 \amp 1 \amp -2 \amp -60 \\
+                0 \amp 0 \amp 0 \amp 24 \amp 1200
+              \end{array} \right].
+            </mrow>
+          </md>
+          There are four pivots and no free variables, so the solution is unique. Back
+          substitution gives
+          <md>
+            <mrow>
+              x_4 \amp = \tfrac{1200}{24} = 50, \amp x_3 \amp = -60 + 2x_4 = 40,
+            </mrow>
+            <mrow>
+              x_2 \amp = 20 + x_3 = 60, \amp x_1 \amp = -140 + 4x_2 - x_4 = 50.
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The equilibrium temperatures are <m>50^\circ</m>, <m>60^\circ</m>,
+          <m>40^\circ</m>, and <m>50^\circ</m>. As a check, the neighbors of the upper right
+          point average to <m>\tfrac{1}{4}(80 + 60 + 50 + 50) = 60</m>. The answer is also
+          plausible. All four values lie between the coldest edge and the warmest, as they
+          must, since an average never falls outside the range of the numbers averaged. The
+          warmest interior point, <m>x_2</m>, is the one next to the two warmest edges, and
+          the coolest, <m>x_3</m>, is next to the two coolest.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Four grid points give only a rough picture of the plate. A finer grid gives a better
+      one, at a price: with <m>100</m> interior points in each direction there are
+      <m>10{,}000</m> unknowns and <m>10{,}000</m> equations. Nobody solves such a system by
+      hand, but the algorithm is the same, and this is the kind of problem for which it
+      was designed. Notice also that every equation, however fine the grid, involves at
+      most five of the unknowns.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-levers">
+    <title>Balancing Levers</title>
+
+    <p>
+      A lever is a rigid bar that is free to turn about one of its points, the pivot.
+      Archimedes found the rule that decides when it stays level.
+    </p>
+
+    <principle xml:id="prin-law-of-the-lever">
+      <title>The Law of the Lever</title>
+      <statement>
+        <p>
+          Two weights hanging from a lever, on opposite sides of the pivot, balance exactly
+          when the products
+          <md>
+            (\text{weight}) \times (\text{distance from the pivot})
+          </md>
+          are equal on the two sides.
+        </p>
+      </statement>
+    </principle>
+
+    <figure xml:id="fig-lever-mobile">
+      <caption>
+        A mobile made of three levers. The numbers above each bar are the distances from
+        that bar's pivot to the points where its loads hang.
+      </caption>
+      <image width="88%">
+        <shortdescription>A hanging mobile: a main bar suspended from the ceiling with arms of length 4 and 3; from its left end hangs a bar with arms 1 and 2 carrying weights w1 and w2, and from its right end hangs a bar with arms 1 and 3 carrying weights w3 and w4.</shortdescription>
+        <prefigure label="pf-lever-mobile" xmlns="https://prefigure.org">
+          <diagram dimensions="(460,231)" margins="8">
+            <coordinates bbox="(-5.9,1.7,6.9,7.9)">
+              <group at="mobile">
+                <group at="main-lever">
+                  <line endpoints="((-1.2,7.6),(1.2,7.6))" stroke="#606060" thickness="5"/>
+                  <line endpoints="((0,7.6),(0,6.4))" stroke="#606060" thickness="1.5"/>
+                  <line endpoints="((-4,6.4),(3,6.4))" stroke="black" thickness="4"/>
+                  <point p="(0,6.4)" size="4" fill="#5E011C"/>
+                  <label anchor="(-2,6.4)" alignment="north" offset="(0,3)"><m>4</m></label>
+                  <label anchor="(1.5,6.4)" alignment="north" offset="(0,3)"><m>3</m></label>
+                </group>
+                <group at="left-lever">
+                  <line endpoints="((-4,6.4),(-4,4.6))" stroke="#606060" thickness="1.5"/>
+                  <line endpoints="((-5,4.6),(-2,4.6))" stroke="black" thickness="4"/>
+                  <point p="(-4,4.6)" size="4" fill="#5E011C"/>
+                  <label anchor="(-4.5,4.6)" alignment="north" offset="(0,3)"><m>1</m></label>
+                  <label anchor="(-3,4.6)" alignment="north" offset="(0,3)"><m>2</m></label>
+                </group>
+                <group at="right-lever">
+                  <line endpoints="((3,6.4),(3,4.6))" stroke="#606060" thickness="1.5"/>
+                  <line endpoints="((2,4.6),(6,4.6))" stroke="black" thickness="4"/>
+                  <point p="(3,4.6)" size="4" fill="#5E011C"/>
+                  <label anchor="(2.5,4.6)" alignment="north" offset="(0,3)"><m>1</m></label>
+                  <label anchor="(4.5,4.6)" alignment="north" offset="(0,3)"><m>3</m></label>
+                </group>
+                <group at="weight-1">
+                  <line endpoints="((-5,4.6),(-5,3.4))" stroke="#606060" thickness="1.5"/>
+                  <rectangle center="(-5,2.85)" dimensions="(1,1.1)" fill="#DDE2CF" stroke="#4A5D23" thickness="2"/>
+                  <label anchor="(-5,2.85)" alignment="center"><m>w_1</m></label>
+                </group>
+                <group at="weight-2">
+                  <line endpoints="((-2,4.6),(-2,3.4))" stroke="#606060" thickness="1.5"/>
+                  <rectangle center="(-2,2.85)" dimensions="(1,1.1)" fill="#DDE2CF" stroke="#4A5D23" thickness="2"/>
+                  <label anchor="(-2,2.85)" alignment="center"><m>w_2</m></label>
+                </group>
+                <group at="weight-3">
+                  <line endpoints="((2,4.6),(2,3.4))" stroke="#606060" thickness="1.5"/>
+                  <rectangle center="(2,2.85)" dimensions="(1,1.1)" fill="#DDE2CF" stroke="#4A5D23" thickness="2"/>
+                  <label anchor="(2,2.85)" alignment="center"><m>w_3</m></label>
+                </group>
+                <group at="weight-4">
+                  <line endpoints="((6,4.6),(6,3.4))" stroke="#606060" thickness="1.5"/>
+                  <rectangle center="(6,2.85)" dimensions="(1,1.1)" fill="#DDE2CF" stroke="#4A5D23" thickness="2"/>
+                  <label anchor="(6,2.85)" alignment="center"><m>w_4</m></label>
+                </group>
+              </group>
+            </coordinates>
+            <annotations>
+              <annotation ref="mobile" text="A hanging mobile made of three levers and four weights">
+                <annotation ref="main-lever" text="The main bar, hanging from the ceiling by a string at its pivot. Its left arm has length 4 and its right arm has length 3. A smaller bar hangs from each end."/>
+                <annotation ref="left-lever" text="The left bar, hanging from the left end of the main bar. Weight w 1 hangs at distance 1 to the left of its pivot, and weight w 2 at distance 2 to the right."/>
+                <annotation ref="right-lever" text="The right bar, hanging from the right end of the main bar. Weight w 3 hangs at distance 1 to the left of its pivot, and weight w 4 at distance 3 to the right."/>
+                <annotation ref="weight-1" text="Weight w 1, at the left end of the left bar"/>
+                <annotation ref="weight-2" text="Weight w 2, at the right end of the left bar"/>
+                <annotation ref="weight-3" text="Weight w 3, at the left end of the right bar"/>
+                <annotation ref="weight-4" text="Weight w 4, at the right end of the right bar"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <example xml:id="eg-lever-mobile">
+      <title>A Mobile That Balances</title>
+      <statement>
+        <p>
+          The mobile in <xref ref="fig-lever-mobile" text="type-global"/> consists of three
+          levers. The main bar hangs from the ceiling, and two smaller bars hang from its
+          ends, at distances <m>4</m> and <m>3</m> from its pivot. The left bar carries
+          weights <m>w_1</m> and <m>w_2</m> at distances <m>1</m> and <m>2</m> from its
+          pivot, and the right bar carries weights <m>w_3</m> and <m>w_4</m> at distances
+          <m>1</m> and <m>3</m> from its pivot. The bars and strings are light enough to
+          ignore.
+          <ol marker="(a)">
+            <li><p>Find all weights <m>w_1, w_2, w_3, w_4</m> for which all three levers balance.</p></li>
+            <li><p>Find the weights if the whole mobile is to weigh <m>14</m> ounces.</p></li>
+            <li><p>Can the mobile balance with four equal weights?</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a) The law of the lever gives one equation for each bar. For the left bar,
+          <m>1 \cdot w_1 = 2 \cdot w_2</m>, and for the right bar,
+          <m>1 \cdot w_3 = 3 \cdot w_4</m>. Each end of the main bar carries the total
+          weight hanging below it, so the main bar balances when
+          <m>4(w_1 + w_2) = 3(w_3 + w_4)</m>. In standard form,
+          <md>
+            <mrow>
+              w_1 - 2w_2 \phantom{{}- 3w_3 - 3w_4} \amp = 0
+            </mrow>
+            <mrow>
+              w_3 - 3w_4 \amp = 0
+            </mrow>
+            <mrow>
+              4w_1 + 4w_2 - 3w_3 - 3w_4 \amp = 0
+            </mrow>
+          </md>
+          and row reduction gives
+          <md>
+            <mrow>
+              \left[ \begin{array}{cccc|c}
+                1 \amp -2 \amp 0 \amp 0 \amp 0 \\
+                0 \amp 0 \amp 1 \amp -3 \amp 0 \\
+                4 \amp 4 \amp -3 \amp -3 \amp 0
+              \end{array} \right]
+              \amp \xrightarrow[r_2 \leftrightarrow r_3]{-4r_1 + r_3}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -2 \amp 0 \amp 0 \amp 0 \\
+                0 \amp 12 \amp -3 \amp -3 \amp 0 \\
+                0 \amp 0 \amp 1 \amp -3 \amp 0
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[\frac{1}{12} r_2]{3r_3 + r_2}
+              \left[ \begin{array}{cccc|c}
+                1 \amp -2 \amp 0 \amp 0 \amp 0 \\
+                0 \amp 1 \amp 0 \amp -1 \amp 0 \\
+                0 \amp 0 \amp 1 \amp -3 \amp 0
+              \end{array} \right]
+              \xrightarrow{2r_2 + r_1}
+              \left[ \begin{array}{cccc|c}
+                1 \amp 0 \amp 0 \amp -2 \amp 0 \\
+                0 \amp 1 \amp 0 \amp -1 \amp 0 \\
+                0 \amp 0 \amp 1 \amp -3 \amp 0
+              \end{array} \right].
+            </mrow>
+          </md>
+          The variable <m>w_4</m> is free. Setting <m>w_4 = t</m>,
+          <md>
+            w_1 = 2t, \qquad w_2 = t, \qquad w_3 = 3t, \qquad w_4 = t.
+          </md>
+          The linear system has a solution for every real <m>t</m>, but a weight must be
+          positive, so the mobile balances exactly when <m>t > 0</m>. We could have
+          predicted infinitely many solutions: there are more unknowns than equations, and
+          the system is consistent because the empty mobile, with every weight zero, is a
+          solution. It also makes physical sense. Doubling every weight doubles both sides
+          of each balance equation, so only the proportions <m>2 : 1 : 3 : 1</m> matter.
+        </p>
+        <p>
+          (b) The total weight is <m>2t + t + 3t + t = 7t</m>, so <m>7t = 14</m> and
+          <m>t = 2</m>: the weights are <m>4</m>, <m>2</m>, <m>6</m>, and <m>2</m> ounces.
+          In terms of the system, we have added a fourth equation,
+          <m>w_1 + w_2 + w_3 + w_4 = 14</m>, and the solution is now unique.
+        </p>
+        <p>
+          (c) No. Equal weights would require <m>w_1 = w_2</m>, that is, <m>2t = t</m>, which
+          forces <m>t = 0</m>. With these distances, the only way to have four equal weights
+          is to have no weights at all.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-law-of-cosines">
+    <title>The Law of Cosines</title>
+
+    <p>
+      In a triangle with sides <m>a</m>, <m>b</m>, <m>c</m>, let <m>\alpha</m>,
+      <m>\beta</m>, <m>\gamma</m> be the angles opposite those sides, as in
+      <xref ref="fig-law-of-cosines" text="type-global"/>. The perpendicular from the
+      vertex <m>A</m> meets the opposite side at a point <m>D</m> and cuts that side into
+      two pieces. The two right triangles in the figure show that the pieces have lengths
+      <m>c\cos\beta</m> and <m>b\cos\gamma</m>, so
+      <m>a = b\cos\gamma + c\cos\beta</m>. Dropping perpendiculars from the other two
+      vertices gives two more equations of the same kind:
+      <md>
+        <mrow>
+          c\cos\beta + b\cos\gamma \amp = a
+        </mrow>
+        <mrow>
+          c\cos\alpha + a\cos\gamma \amp = b
+        </mrow>
+        <mrow>
+          b\cos\alpha + a\cos\beta \amp = c
+        </mrow>
+      </md>
+      (If one of the angles is larger than <m>90^\circ</m>, a perpendicular lands outside
+      the triangle and one cosine is negative, but the three equations remain true.) Regard
+      the sides as known. Then these are three <em>linear</em> equations in the three
+      unknowns <m>\cos\alpha</m>, <m>\cos\beta</m>, <m>\cos\gamma</m>.
+    </p>
+
+    <figure xml:id="fig-law-of-cosines">
+      <caption>
+        The perpendicular from <m>A</m> cuts the side <m>a</m> into pieces of lengths
+        <m>c\cos\beta</m> and <m>b\cos\gamma</m>. The triangle is drawn with
+        <m>a = 14</m>, <m>b = 15</m>, <m>c = 13</m>; its height is <m>12</m>.
+      </caption>
+      <image width="58%">
+        <shortdescription>Triangle ABC with base BC of length a, left side c, right side b, and angles alpha at A, beta at B, gamma at C. A dashed perpendicular from A meets the base at D, dividing it into a left piece c cosine beta and a right piece b cosine gamma.</shortdescription>
+        <prefigure label="pf-law-of-cosines" xmlns="https://prefigure.org">
+          <diagram dimensions="(380,360)" margins="8">
+            <coordinates bbox="(-2,-3.7,16,13.3)">
+              <group at="cosine-triangle">
+                <polygon at="triangle-ABC" points="((0,0),(14,0),(5,12))" closed="yes" fill="#EDF0E6" stroke="#4A5D23" thickness="2.5"/>
+                <line at="altitude-AD" endpoints="((5,12),(5,0))" stroke="#606060" thickness="1.5" dash="6 4"/>
+                <angle-marker at="right-angle-D" points="((14,0),(5,0),(5,12))" radius="12" stroke="#606060" thickness="1.5"/>
+                <group at="angle-alpha">
+                  <angle-marker points="((0,0),(5,12),(14,0))" radius="34" stroke="#5E011C" thickness="1.5"/>
+                  <label anchor="(5.95,9.55)" alignment="center"><m>\alpha</m></label>
+                </group>
+                <angle-marker at="angle-beta" points="((14,0),(0,0),(5,12))" radius="28" stroke="#5E011C" thickness="1.5"><m>\beta</m></angle-marker>
+                <angle-marker at="angle-gamma" points="((5,12),(14,0),(0,0))" radius="34" stroke="#5E011C" thickness="1.5"><m>\gamma</m></angle-marker>
+                <group at="vertices">
+                  <label anchor="(5,12)" alignment="north" offset="(0,4)"><m>A</m></label>
+                  <label anchor="(0,0)" alignment="west" offset="(-5,0)"><m>B</m></label>
+                  <label anchor="(14,0)" alignment="east" offset="(5,0)"><m>C</m></label>
+                  <label anchor="(5,0)" alignment="south" offset="(0,-4)"><m>D</m></label>
+                </group>
+                <label at="side-c" anchor="(2.5,6)" alignment="northwest" offset="(-3,3)"><m>c</m></label>
+                <label at="side-b" anchor="(9.5,6)" alignment="northeast" offset="(3,3)"><m>b</m></label>
+                <label at="piece-BD" anchor="(2.4,0)" alignment="south" offset="(0,-5)"><m>c\cos\beta</m></label>
+                <label at="piece-DC" anchor="(9.5,0)" alignment="south" offset="(0,-5)"><m>b\cos\gamma</m></label>
+                <group at="side-a">
+                  <line endpoints="((0,-2.6),(14,-2.6))" stroke="#606060" thickness="1" arrows="2"/>
+                  <label anchor="(7,-2.6)" alignment="south" offset="(0,-3)"><m>a</m></label>
+                </group>
+              </group>
+            </coordinates>
+            <annotations>
+              <annotation ref="cosine-triangle" text="A triangle A B C with the perpendicular from A to the opposite side">
+                <annotation ref="triangle-ABC" text="Triangle with vertex B at the lower left, vertex C at the lower right, and vertex A at the top, to the left of center"/>
+                <annotation ref="vertices" text="The labels of the vertices A, B, C and of the point D on the base, directly below A"/>
+                <annotation ref="side-c" text="The left side, from A to B, has length c"/>
+                <annotation ref="side-b" text="The right side, from A to C, has length b"/>
+                <annotation ref="side-a" text="The base, from B to C, has length a"/>
+                <annotation ref="angle-alpha" text="The angle alpha at the top vertex A, opposite the base a"/>
+                <annotation ref="angle-beta" text="The angle beta at the vertex B, opposite the side b"/>
+                <annotation ref="angle-gamma" text="The angle gamma at the vertex C, opposite the side c"/>
+                <annotation ref="altitude-AD" text="A dashed perpendicular from A down to the point D on the base"/>
+                <annotation ref="right-angle-D" text="The perpendicular meets the base at a right angle at D"/>
+                <annotation ref="piece-BD" text="The piece of the base from B to D has length c times cosine beta"/>
+                <annotation ref="piece-DC" text="The piece of the base from D to C has length b times cosine gamma"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <example xml:id="eg-law-of-cosines">
+      <title>Solving for the Cosines</title>
+      <statement>
+        <p>
+          Solve the three equations above for <m>\cos\alpha</m>, <m>\cos\beta</m>, and
+          <m>\cos\gamma</m> in terms of the sides <m>a</m>, <m>b</m>, <m>c</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          With the unknowns in the order <m>\cos\alpha</m>, <m>\cos\beta</m>,
+          <m>\cos\gamma</m>, the augmented matrix is
+          <m>\left[ \begin{array}{ccc|c} 0 \amp c \amp b \amp a \\ c \amp 0 \amp a \amp b \\ b \amp a \amp 0 \amp c \end{array} \right]</m>.
+          Its entries are letters, and row reducing it means dividing by them. (That is
+          legitimate here, since side lengths are positive.) A change of unknowns makes the
+          arithmetic much friendlier. Multiply the three equations by <m>a</m>, <m>b</m>,
+          and <m>c</m>, respectively, and put
+          <md>
+            u = bc\cos\alpha, \qquad v = ca\cos\beta, \qquad w = ab\cos\gamma.
+          </md>
+          The system becomes
+          <md>
+            <mrow>
+              v + w \amp = a^2
+            </mrow>
+            <mrow>
+              u \phantom{{}+ v} + w \amp = b^2
+            </mrow>
+            <mrow>
+              u + v \phantom{{}+ w} \amp = c^2
+            </mrow>
+          </md>
+          in which every coefficient is <m>0</m> or <m>1</m>, and
+          <md>
+            \left[ \begin{array}{ccc|c}
+              0 \amp 1 \amp 1 \amp a^2 \\
+              1 \amp 0 \amp 1 \amp b^2 \\
+              1 \amp 1 \amp 0 \amp c^2
+            \end{array} \right]
+            \xrightarrow[-r_1 + r_3]{r_1 \leftrightarrow r_2}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 1 \amp b^2 \\
+              0 \amp 1 \amp 1 \amp a^2 \\
+              0 \amp 1 \amp -1 \amp c^2 - b^2
+            \end{array} \right]
+            \xrightarrow{-r_2 + r_3}
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 1 \amp b^2 \\
+              0 \amp 1 \amp 1 \amp a^2 \\
+              0 \amp 0 \amp -2 \amp c^2 - b^2 - a^2
+            \end{array} \right].
+          </md>
+          There are three pivots whatever the values of <m>a</m>, <m>b</m>, <m>c</m>, so
+          the solution is unique, and no cases need to be separated. Back substitution
+          gives
+          <md>
+            w = \frac{a^2 + b^2 - c^2}{2}, \qquad
+            v = a^2 - w = \frac{a^2 + c^2 - b^2}{2}, \qquad
+            u = b^2 - w = \frac{b^2 + c^2 - a^2}{2},
+          </md>
+          and dividing by <m>bc</m>, <m>ca</m>, and <m>ab</m>,
+          <md>
+            \cos\alpha = \frac{b^2 + c^2 - a^2}{2bc}, \qquad
+            \cos\beta = \frac{a^2 + c^2 - b^2}{2ac}, \qquad
+            \cos\gamma = \frac{a^2 + b^2 - c^2}{2ab}.
+          </md>
+        </p>
+        <p>
+          The first formula, rearranged, is the <term>law of cosines</term>:
+          <m>a^2 = b^2 + c^2 - 2bc\cos\alpha</m>. When <m>\alpha = 90^\circ</m> the last
+          term vanishes and it becomes the Pythagorean theorem.
+        </p>
+        <p>
+          As a check, take the triangle of
+          <xref ref="fig-law-of-cosines" text="type-global"/>, with <m>a = 14</m>,
+          <m>b = 15</m>, <m>c = 13</m>. Then <m>u = 99</m>, <m>v = 70</m>, <m>w = 126</m>, so
+          <md>
+            \cos\alpha = \frac{99}{15 \cdot 13} = \frac{33}{65}, \qquad
+            \cos\beta = \frac{70}{14 \cdot 13} = \frac{5}{13}, \qquad
+            \cos\gamma = \frac{126}{14 \cdot 15} = \frac{3}{5}.
+          </md>
+          The figure agrees: the pieces of the base are
+          <m>c\cos\beta = 13 \cdot \tfrac{5}{13} = 5</m> and
+          <m>b\cos\gamma = 15 \cdot \tfrac{3}{5} = 9</m>, and <m>5 + 9 = 14</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      A system whose coefficients contain parameters usually forces us to separate cases,
+      as in <xref ref="eg-parameters-abc" text="type-global"/>. Here a well-chosen change
+      of unknowns removed the parameters from the coefficients altogether. Choosing the
+      unknowns is part of the modeling, and it is worth a moment's thought.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-magic-squares">
+    <title>Magic Squares</title>
+
+    <p>
+      A <term>magic square</term> of size <m>n</m> is an <m>n \times n</m> array that
+      contains each of the whole numbers <m>1, 2, \ldots, n^2</m> exactly once, and in
+      which every row, every column, and both diagonals add up to the same number. That
+      common sum is forced. The entries add up to
+      <m>1 + 2 + \cdots + n^2 = \tfrac{1}{2}n^2(n^2+1)</m>, and this total is shared equally
+      among the <m>n</m> rows, so each row adds up to <m>\tfrac{1}{2}n(n^2+1)</m>. For
+      <m>n = 3</m> the magic sum is <m>15</m>.
+    </p>
+    <p>
+      The conditions on the sums are linear equations in the entries, so a linear system
+      can do most of the work. The condition that the entries be the different numbers
+      <m>1, 2, \ldots, n^2</m> is <em>not</em> a linear equation, and it has to be checked
+      separately.
+    </p>
+
+    <example xml:id="eg-magic-square-two">
+      <title>No Magic Square of Size 2</title>
+      <statement>
+        <p>
+          Suppose that both rows, both columns, and both diagonals of
+          <m>\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> add up to the same number
+          <m>s</m>. Show that <m>a = b = c = d</m>, and conclude that there is no magic
+          square of size <m>2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The six conditions are six linear equations in the four unknowns <m>a</m>,
+          <m>b</m>, <m>c</m>, <m>d</m>, with <m>s</m> treated as a constant:
+          <md>
+            <mrow>
+              E_1\colon\; a + b \amp = s, \amp E_3\colon\; a + c \amp = s, \amp E_5\colon\; a + d \amp = s,
+            </mrow>
+            <mrow>
+              E_2\colon\; c + d \amp = s, \amp E_4\colon\; b + d \amp = s, \amp E_6\colon\; b + c \amp = s.
+            </mrow>
+          </md>
+          The replacement <m>-E_1 + E_3</m> turns the third equation into <m>c - b = 0</m>,
+          and <m>-E_3 + E_5</m>, applied to the original equations, gives <m>d - c = 0</m>.
+          So <m>b = c = d</m>. Then <m>E_6</m> reads <m>2b = s</m>, so <m>b = \tfrac{s}{2}</m>,
+          and <m>E_1</m> gives <m>a = s - b = \tfrac{s}{2}</m> as well. Conversely,
+          <m>a = b = c = d = \tfrac{s}{2}</m> satisfies all six equations.
+        </p>
+        <p>
+          So this system, with more equations than unknowns, is consistent and has exactly
+          one solution, in which all four entries are equal. A magic square of size
+          <m>2</m> would need the four <em>different</em> entries <m>1, 2, 3, 4</m>, with
+          <m>s = 5</m>; the only solution of the equations has every entry equal to
+          <m>\tfrac{5}{2}</m>. The linear system has a solution, but the problem does not.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-magic-square-three">
+      <title>Completing a Magic Square of Size 3</title>
+      <statement>
+        <p>
+          Find all magic squares of size <m>3</m> whose top row is <m>4, 9, 2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Name the six unknown entries:
+          <md>
+            \begin{bmatrix} 4 \amp 9 \amp 2 \\ a \amp b \amp c \\ d \amp e \amp f \end{bmatrix}.
+          </md>
+          The top row already adds up to <m>15</m>. The other two rows, the three columns,
+          and the two diagonals give seven equations in the six unknowns:
+          <md>
+            <mrow>
+              a + b + c \amp = 15, \amp d + e + f \amp = 15, \amp \amp
+            </mrow>
+            <mrow>
+              a + d \amp = 11, \amp b + e \amp = 6, \amp c + f \amp = 13,
+            </mrow>
+            <mrow>
+              b + f \amp = 11, \amp b + d \amp = 13. \amp \amp
+            </mrow>
+          </md>
+          (For instance, the first column gives <m>4 + a + d = 15</m>, and the diagonal from
+          the upper left gives <m>4 + b + f = 15</m>.) More equations than unknowns does not
+          by itself mean that there are no solutions, and it is worth looking at the
+          equations before reducing a <m>7 \times 7</m> augmented matrix. Three of them
+          express <m>e</m>, <m>f</m>, and <m>d</m> through <m>b</m>:
+          <md>
+            e = 6 - b, \qquad f = 11 - b, \qquad d = 13 - b.
+          </md>
+          Substituting into <m>d + e + f = 15</m> gives <m>30 - 3b = 15</m>, so <m>b = 5</m>.
+          Then <m>d = 8</m>, <m>e = 1</m>, <m>f = 6</m>, and the first and third columns give
+          <m>a = 11 - d = 3</m> and <m>c = 13 - f = 7</m>.
+        </p>
+        <p>
+          One equation, <m>a + b + c = 15</m>, was never used. It holds, since
+          <m>3 + 5 + 7 = 15</m>, so the system is consistent, with the unique solution
+          <md>
+            \begin{bmatrix} 4 \amp 9 \amp 2 \\ 3 \amp 5 \amp 7 \\ 8 \amp 1 \amp 6 \end{bmatrix}.
+          </md>
+          The seventh equation was redundant: the reduced row-echelon form of the augmented
+          matrix, computed in the Sage cell below, has six pivots and one zero row.
+        </p>
+        <p>
+          It remains to check the condition that the equations could not see. The entries
+          are the numbers <m>1</m> through <m>9</m>, each used once. So there is exactly one
+          magic square with this top row.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The cell below row reduces the augmented matrix of the seven equations, with the
+      unknowns in the order <m>a, b, c, d, e, f</m>. Change the last column to try a
+      different top row.
+    </p>
+
+    <sage>
+      <input>
+        M = matrix(QQ, [[1, 1, 1, 0, 0, 0, 15],
+                        [0, 0, 0, 1, 1, 1, 15],
+                        [1, 0, 0, 1, 0, 0, 11],
+                        [0, 1, 0, 0, 1, 0,  6],
+                        [0, 0, 1, 0, 0, 1, 13],
+                        [0, 1, 0, 0, 0, 1, 11],
+                        [0, 1, 0, 1, 0, 0, 13]])
+        M.rref()
+      </input>
+    </sage>
+  </subsection>
+
+  <exercises xml:id="exercises-ch1-applications">
+    <title>Practice: Modeling with Linear Systems</title>
+    <exercise xml:id="ex-ch1-heat-symmetry">
+      <statement><p>In <xref ref="fig-heat-plate" text="type-global"/>, suppose instead that
+      the top edge is held at <m>80^\circ</m> and the other three edges at <m>0^\circ</m>.
+      (a) Use the symmetry of the plate to explain why <m>x_1 = x_2</m> and
+      <m>x_3 = x_4</m>. (b) Use part (a) to reduce the averaging equations to two equations
+      in two unknowns, and solve them.</p></statement>
+      <answer><p>(a) Reflecting the plate in its vertical center line exchanges the left
+      and right edges, which are at the same temperature, and leaves the top and bottom
+      edges alone. So the reflected temperatures solve the same equations, and since the
+      solution is unique, <m>x_1 = x_2</m> and <m>x_3 = x_4</m>. (b) The equations for
+      <m>x_1</m> and <m>x_3</m> become <m>x_1 = \tfrac14(80 + 0 + x_1 + x_3)</m> and
+      <m>x_3 = \tfrac14(0 + 0 + x_1 + x_3)</m>, that is, <m>3x_1 - x_3 = 80</m> and
+      <m>-x_1 + 3x_3 = 0</m>. Hence <m>x_1 = 3x_3</m>, <m>8x_3 = 80</m>, and
+      <m>x_3 = x_4 = 10</m>, <m>x_1 = x_2 = 30</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-lever-distances">
+      <statement><p>Change the distances in the mobile of
+      <xref ref="fig-lever-mobile" text="type-global"/>: the main bar has arms <m>5</m>
+      (left) and <m>2</m> (right), the left bar has arms <m>1</m> and <m>1</m>, and the
+      right bar has arms <m>1</m> and <m>4</m>. Find all weights for which the mobile
+      balances, and the solution in the smallest positive whole numbers.</p></statement>
+      <answer><p>The equations are <m>w_1 = w_2</m>, <m>w_3 = 4w_4</m>, and
+      <m>5(w_1 + w_2) = 2(w_3 + w_4)</m>. Substituting the first two into the third gives
+      <m>10w_1 = 10w_4</m>. With <m>w_4 = t</m>, the solutions are
+      <m>(w_1, w_2, w_3, w_4) = (t, t, 4t, t)</m>, and the mobile balances for every
+      <m>t > 0</m>. The smallest whole-number solution is <m>(1, 1, 4, 1)</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-cosines-758">
+      <statement><p>A triangle has sides <m>a = 7</m>, <m>b = 5</m>, and <m>c = 8</m>. Find
+      <m>u</m>, <m>v</m>, <m>w</m> as in <xref ref="eg-law-of-cosines" text="type-global"/>,
+      and then the cosines of the three angles. Which angle is <m>60^\circ</m>?</p></statement>
+      <answer><p>The system is <m>v + w = 49</m>, <m>u + w = 25</m>, <m>u + v = 64</m>, with
+      solution <m>u = 20</m>, <m>v = 44</m>, <m>w = 5</m>. So
+      <m>\cos\alpha = \tfrac{20}{40} = \tfrac12</m>,
+      <m>\cos\beta = \tfrac{44}{56} = \tfrac{11}{14}</m>, and
+      <m>\cos\gamma = \tfrac{5}{35} = \tfrac17</m>. The angle <m>\alpha</m>, opposite the
+      side of length <m>7</m>, is <m>60^\circ</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-magic-top-rows">
+      <statement><p>(a) Find the magic square of size <m>3</m> whose top row is
+      <m>2, 7, 6</m>. (b) The numbers <m>1, 5, 9</m> also add up to <m>15</m>. Solve the
+      seven equations for a square with top row <m>1, 5, 9</m>. Is the result a magic
+      square?</p></statement>
+      <answer><p>(a) The equations are <m>a+d=13</m>, <m>b+e=8</m>, <m>c+f=9</m>,
+      <m>b+f=13</m>, <m>b+d=9</m>, together with the two row equations. As in
+      <xref ref="eg-magic-square-three" text="type-global"/>, <m>30-3b=15</m>, so
+      <m>b=5</m>, and the square is
+      <m>\begin{bmatrix}2\amp7\amp6\\9\amp5\amp1\\4\amp3\amp8\end{bmatrix}</m>.
+      (b) Now <m>a+d=14</m>, <m>b+e=10</m>, <m>c+f=6</m>, <m>b+f=14</m>, <m>b+d=6</m>.
+      Again <m>b=5</m>, and the unique solution of the linear system is
+      <m>\begin{bmatrix}1\amp5\amp9\\13\amp5\amp-3\\1\amp5\amp9\end{bmatrix}</m>.
+      Every row, column, and diagonal adds up to <m>15</m>, but the entries are not the
+      numbers <m>1</m> through <m>9</m> used once each, so this is not a magic square. No
+      magic square has top row <m>1, 5, 9</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-magic-center">
+      <statement><p>Show that the center entry of every magic square of size <m>3</m> is
+      <m>5</m>. (Add the middle row, the middle column, and the two diagonals.)</p></statement>
+      <answer><p>Those four lines add up to <m>4 \cdot 15 = 60</m>. Together they contain
+      every entry of the square once, except the center entry <m>b</m>, which they contain
+      four times. Since all nine entries add up to <m>45</m>, this gives
+      <m>45 + 3b = 60</m>, so <m>b = 5</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-trig-linear">
+      <statement><p>The equations
+      <m>3\sin\theta + 2\cos\theta = -3</m> and <m>\sin\theta - \cos\theta = -1</m> are not
+      linear in <m>\theta</m>, but they are linear in <m>u = \sin\theta</m> and
+      <m>v = \cos\theta</m>. Solve for <m>u</m> and <m>v</m>, and then find every
+      <m>\theta</m> that satisfies both equations.</p></statement>
+      <answer><p>The system <m>3u + 2v = -3</m>, <m>u - v = -1</m> has the unique solution
+      <m>u = -1</m>, <m>v = 0</m>. Since <m>(-1)^2 + 0^2 = 1</m>, there are angles with
+      <m>\sin\theta = -1</m> and <m>\cos\theta = 0</m>, namely
+      <m>\theta = \tfrac{3\pi}{2} + 2\pi k</m> for whole numbers <m>k</m>.</p></answer>
+    </exercise>
+    <exercise xml:id="ex-ch1-trig-side-condition">
+      <statement><p>Treat each pair of equations as a linear system in
+      <m>u = \sin\theta</m> and <m>v = \cos\theta</m>, and then find every <m>\theta</m> that
+      satisfies it. Remember that <m>u</m> and <m>v</m> must also satisfy
+      <m>u^2 + v^2 = 1</m>.
+      (a) <m>\sin\theta + \cos\theta = 2</m>, <m>\sin\theta - \cos\theta = 0</m>.
+      (b) <m>\sin\theta + \cos\theta = 1</m>, <m>2\sin\theta + 2\cos\theta = 2</m>.</p></statement>
+      <answer><p>(a) The linear system has the unique solution <m>u = v = 1</m>, but
+      <m>1^2 + 1^2 = 2 \neq 1</m>, so no angle has <m>\sin\theta = \cos\theta = 1</m>: there
+      is no such <m>\theta</m>, although the linear system is consistent.
+      (b) The second equation is twice the first, so the linear system has infinitely many
+      solutions, <m>u = 1 - t</m>, <m>v = t</m>. The condition <m>(1-t)^2 + t^2 = 1</m>
+      reduces to <m>2t(t-1) = 0</m>, so only <m>t = 0</m> and <m>t = 1</m> survive:
+      <m>(u, v) = (1, 0)</m> or <m>(0, 1)</m>. Hence <m>\theta = \tfrac{\pi}{2} + 2\pi k</m>
+      or <m>\theta = 2\pi k</m>, for whole numbers <m>k</m>. Infinitely many solutions of
+      the linear system leave only two angles in each full turn.</p></answer>
+    </exercise>
+  </exercises>
+</section>

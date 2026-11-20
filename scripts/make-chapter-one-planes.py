@@ -12,6 +12,9 @@ from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parent.parent
 COLORS = ('#4A5D23', '#876801', '#606060')
+# Inconsistent systems: the original row-reduction example, and the three
+# configurations of the "Three Ways to Have No Common Point" example.
+INCONSISTENT = ('no-solution', 'parallel', 'two-parallel', 'prism')
 
 
 def add(a, b):
@@ -115,13 +118,20 @@ def draw(name, equations, labels, center, radius, title, description, outcome, y
         x1, y1 = project(a); x2, y2 = project(b)
         parts.append(f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" stroke="#888" stroke-width="1"/>')
         parts.append(f'<text class="halo" x="{x2+8:.2f}" y="{y2-6:.2f}">{math_label(label)}</text>')
-    if name == 'no-solution':
+    if name in INCONSISTENT:
+        meeting_pairs = 0
         for a, b in combinations(equations, 2):
+            normal = cross(a[0], b[0])
+            if dot(normal, normal) < 1e-12:
+                continue  # parallel planes have no line of intersection
             point, direction = intersection(a, b)
             segment = line_segment(point, direction, center, radius)
             if segment:
+                meeting_pairs += 1
                 parts.append(f'<polyline points="{coords(segment)}" fill="none" stroke="#404040" stroke-width="2" stroke-dasharray="7 5"/>')
-        note = 'Dashed lines: pairwise intersections; no point lies on all three planes.'
+        note = {0: 'No two of the planes meet: all three are parallel.',
+                2: 'Dashed lines: where the third plane crosses the two parallel planes.',
+                3: 'Dashed lines: pairwise intersections; no point lies on all three planes.'}[meeting_pairs]
     elif name == 'unique':
         for a, b in combinations(equations, 2):
             segment = line_segment(*intersection(a, b), center, radius)
@@ -186,3 +196,18 @@ if __name__ == '__main__':
          (2/3,-1/3,0), 3, 'A whole line of common points',
          'The three equation planes share the line x1=2/3-7s/3, x2=-1/3+5s/3, x3=s.',
          'Infinitely many solutions: one for each real value of s')
+    draw('parallel', [((1,1,1),1), ((2,2,2),4), ((-1,-1,-1),3)],
+         ['x₁ + x₂ + x₃ = 1', '2x₁ + 2x₂ + 2x₃ = 4', '−x₁ − x₂ − x₃ = 3'],
+         (0,0,0), 3, 'Three parallel planes',
+         'The three equation planes are parallel to one another, so no two of them meet.',
+         'No solution: no two of the equations can hold together', yaw=125, pitch=12)
+    draw('two-parallel', [((1,1,1),1), ((1,1,1),3), ((1,-1,0),0)],
+         ['x₁ + x₂ + x₃ = 1', 'x₁ + x₂ + x₃ = 3', 'x₁ − x₂ = 0'],
+         (0,0,0), 3, 'Two parallel planes crossed by a third',
+         'The first two equation planes are parallel; the third crosses each of them in a line, and the two lines are parallel.',
+         'No solution: the first two equations cannot hold together', yaw=-150, pitch=40)
+    draw('prism', [((1,1,0),1), ((0,1,1),1), ((1,2,1),3)],
+         ['x₁ + x₂ = 1', 'x₂ + x₃ = 1', 'x₁ + 2x₂ + x₃ = 3'],
+         (0,0,0), 3, 'Every pair meets, but there is no common point',
+         'Each pair of equation planes meets in a line; the three lines are parallel and different, so no point lies on all three planes.',
+         'No solution: satisfying two equations is insufficient', yaw=155, pitch=30)

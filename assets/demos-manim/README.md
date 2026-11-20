@@ -32,8 +32,11 @@ for the mathematical invariants, preview commands, and asset refresh procedure.
 ## planes.html
 
 `planes.html` draws up to three equation planes in `R^3` and the set of points
-common to the visible planes. Section 1.4 embeds it three times, once for each
-outcome of row reduction (one point, no solution, a line). The system comes
+common to the visible planes. Section 1.4 embeds it six times: once for each
+outcome of row reduction (one point, no solution, a line), and three times in
+the example "Three Ways to Have No Common Point" (three parallel planes, two
+parallel planes crossed by a third, and three planes meeting pairwise in
+parallel lines). The system comes
 from the URL and everything else is computed in the page by exact row
 reduction with rational arithmetic: the solution set (empty, a point, a line,
 or a plane), the parametric form of a solution line, the dashed pairwise
