@@ -93,7 +93,9 @@ def main():
                         const box = el.closest('.interactive-iframe-container') || el;
                         const fig = document.createElement('div');
                         fig.className = 'rv-snapshot';
-                        fig.innerHTML = '<img alt="" style="width:100%;max-width:560px;display:block;margin:0 auto">'
+                        fig.style.breakInside = 'avoid';
+                        // A tall figure must still fit on one page, below its tag.
+                        fig.innerHTML = '<img alt="" style="width:auto;height:auto;max-width:min(100%,560px);max-height:7.6in;display:block;margin:0 auto">'
                           + '<div style="font:0.72rem system-ui,sans-serif;color:#666;text-align:center">'
                           + 'Opening view of the interactive figure (live in the web version)</div>';
                         fig.querySelector('img').src = src;
