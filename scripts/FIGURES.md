@@ -50,3 +50,11 @@ embed the book fonts. Direct plane labels and highlighted common solutions ident
 what each drawing represents; the inconsistent example includes a slice at x1=0
 to separate the pairwise intersections. The script checks that its plane vertices and highlighted
 solutions satisfy the corresponding equations.
+
+PreTeXt cannot take a `<prefigure>` inside the `<static>` element of an
+`<interactive>`, so the print version of a 2D interactive figure is kept as a
+standalone PreFigure diagram in `scripts/prefigure/NAME.xml` and referenced from
+`<static>` as `images/NAME`. `python scripts/build-book-figures.py --standalone`
+builds every such diagram into `assets/images/NAME.svg` and `NAME.pdf` with the
+book fonts (a full run of the script does this too). At present there is one,
+`ch1-line-family`, for the two-line explorer of Section 1.1.

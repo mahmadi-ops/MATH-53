@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Print version of the interactive figure assets/demos-manim/line-family.html
+     (Section 1.1, "One Family, All Three Cases"): the fixed line x + y = 1, the
+     second line a x + y = b at the interactive's starting position a = 2, b = 3,
+     and, dashed, the parallel position a = 1, b = 3.
+     Build with the standalone option of scripts/build-book-figures.py;
+     see scripts/FIGURES.md. -->
+<diagram xmlns="https://prefigure.org" dimensions="(360,360)" margins="10">
+  <coordinates bbox="(-5.4,-5.4,5.4,5.4)">
+    <group at="line-family">
+      <axes xlabel="x" ylabel="y" arrows="2" hticks="(-4,2,4)" vticks="(-4,2,4)"/>
+      <line at="lf-parallel" endpoints="((-2.4,5.4),(5.4,-2.4))" stroke="#876801" thickness="2" dash="7 5"/>
+      <line at="lf-fixed" endpoints="((-4.4,5.4),(5.4,-4.4))" stroke="#4A5D23" thickness="2.5"/>
+      <line at="lf-crossing" endpoints="((-1.2,5.4),(4.2,-5.4))" stroke="#876801" thickness="2.5"/>
+      <point at="lf-solution" p="(2,-1)" fill="#5E011C" size="5"/>
+      <label anchor="(2,-1)" alignment="west" offset="(-9,-3)" color="#5E011C"><m>(2,-1)</m></label>
+      <label anchor="(-3.4,4.4)" alignment="southwest" offset="(-2,-2)" color="#4A5D23"><m>x+y=1</m></label>
+      <label anchor="(3.7,-4.4)" alignment="west" offset="(-8,0)" color="#876801"><m>2x+y=3</m></label>
+      <label anchor="(1.6,1.4)" alignment="northeast" offset="(3,3)" color="#876801"><m>x+y=3</m></label>
+    </group>
+  </coordinates>
+  <annotations>
+    <annotation ref="line-family" text="Graph of the fixed line x plus y equals 1 together with two positions of the second line a x plus y equals b">
+      <annotation ref="lf-fixed" text="The olive line x plus y equals 1, which passes through the points (0, 1) and (1, 0)"/>
+      <annotation ref="lf-crossing" text="The solid mustard line 2 x plus y equals 3, the second line when a is 2 and b is 3. It is steeper than the olive line."/>
+      <annotation ref="lf-solution" text="The point (2, negative 1), where the olive line and the solid mustard line cross. It is the only solution when a is 2 and b is 3."/>
+      <annotation ref="lf-parallel" text="The dashed mustard line x plus y equals 3, the second line when a is 1 and b is 3. It is parallel to the olive line, so the two never meet and the system has no solution."/>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,6 +1,6 @@
 # Interactive figures
 
-All nine figures share `book-theme.css`, which imports `../custom.css` for the
+All of the figures share `book-theme.css`, which imports `../custom.css` for the
 book's self-hosted TeX Gyre Pagella font, olive and wine accents, and pale
 backgrounds. A darker shade of the book's mustard distinguishes the third
 vector in the volume diagrams and the middle spring in the oscillator.
@@ -15,6 +15,7 @@ book styling. Mathematical URL parameters and controls are unchanged.
 
 | Page | Book placement | Main idea |
 |------|----------------|-----------|
+| `line-family.html` | Section 1.1, after the example "One Family, All Three Cases" | The lines `x + y = 1` and `ax + y = b`: sliders for `a` and `b` show one solution, none, or infinitely many |
 | `solution-set.html` | Section 1.1, after the parametric solution example | Two planes, a moving solution, and a third equation leaving a point, a line, or the empty set |
 | `transformation-geometry.html` | Section 3.1, before the first example | `T(x,y,z) = (x+2y, 2x+y)` sends the basis vectors to matrix columns and loses the z-coordinate |
 | `change-of-basis.html` | Section 7.4, in the same-vector/two-bases example | The grid and coordinates change while `(1,2)` stays fixed |
@@ -28,6 +29,29 @@ also supplied through the PreTeXt `<static>` element for print output.
 
 See [authoring and checking these explorers](../../scripts/GEOMETRY-EXPLORERS.md)
 for the mathematical invariants, preview commands, and asset refresh procedure.
+
+## line-family.html
+
+`line-family.html` (with `line-family.js`) draws the fixed line `x + y = 1` and
+the line `ax + y = b` for the system of the Section 1.1 example "One Family, All
+Three Cases". Two sliders set `a` (from −3 to 3) and `b` (from −3 to 4) in steps
+of 1/2, and three buttons jump to an example of each case. The page classifies
+the system exactly, with fractions: one solution `((b−1)/(a−1), (a−b)/(a−1))`
+when `a ≠ 1`, no solution when `a = 1` and `b ≠ 1`, and the whole line when
+`a = b = 1`. The readout shows the derived equation `(a − 1)x = b − 1` for the
+current values and checks the solution in both equations. Labels are placed to
+stay clear of the lines, the axis numbers, and each other.
+
+| Param | Meaning |
+|-------|---------|
+| `a`, `b` | starting values of the sliders (defaults `2`, `3`), rounded to the nearest half |
+
+The sliders and buttons are native controls, so the figure works from the
+keyboard; without JavaScript a text description of the three cases is shown.
+The print version is `assets/images/ch1-line-family.svg` (and `.pdf`), built
+from the PreFigure source `scripts/prefigure/ch1-line-family.xml`.
+
+    line-family.html?a=1&b=3
 
 ## planes.html
 

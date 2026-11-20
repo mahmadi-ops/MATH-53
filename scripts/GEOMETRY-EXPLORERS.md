@@ -5,6 +5,7 @@ They require no external JavaScript libraries, narration, or video downloads.
 
 | Section/source | Explorer | Location |
 |---|---|---|
+| `source/linear-systems/sec-systems-of-linear-equations.ptx` | `line-family.html` | After the example "One Family, All Three Cases" |
 | `source/linear-systems/sec-systems-of-linear-equations.ptx` | `solution-set.html` | After the parametric example and its geometric interpretation |
 | `source/linear-systems/sec-row-reduction.ptx` | `planes.html` (six embeds, parameterized by `?sys=`) | Inside the unique-solution, inconsistent, and infinitely-many-solutions examples, and after each part of the "Three Ways to Have No Common Point" example |
 | `source/linear-transformations/sec-transformations.ptx` | `transformation-geometry.html` | Before the opening ℝ³ → ℝ⁴ example; refers to the existing matrix-multiplication example |
@@ -76,6 +77,18 @@ The change-of-basis interpolation is
 `b1(t) = (1+t,0)`, `b2(t) = (-t,1)`, for `0 <= t <= 1`.
 Its determinant is `1+t > 0`; the coordinates are `((1+2t)/(1+t),2)`.
 Thus the contributions `(1+2t,0)` and `(-2t,2)` always add to `(1,2)`.
+
+## The two-line explorer
+
+`line-family.html` (with `line-family.js`) shows the system `x + y = 1`,
+`ax + y = b` of Section 1.1 for slider values of `a` and `b`. Its math helpers
+(fractions, `classify`, equation text, clipping) are exported for Node, and
+`node scripts/check-geometry-math.cjs` checks every slider position against the
+formulas of the example: the classification, that the reported point satisfies
+both equations, and that it equals `((b−1)/(a−1), (a−b)/(a−1))`. The print
+version is a PreFigure diagram kept in `scripts/prefigure/ch1-line-family.xml`;
+`python scripts/build-book-figures.py --standalone` rebuilds
+`assets/images/ch1-line-family.svg` and `.pdf` from it.
 
 ## The three-plane explorer
 

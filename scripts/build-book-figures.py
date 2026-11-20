@@ -136,14 +136,43 @@ def theme_chart(path):
     embed_font(path)
 
 
+def build_standalone():
+    """PreFigure diagrams kept in scripts/prefigure/, outside the book source.
+
+    They are the print versions of interactive figures, which PreTeXt reads from
+    a <static> element as ordinary image files (a <prefigure> cannot be nested
+    there). Each NAME.xml becomes assets/images/NAME.svg and NAME.pdf.
+    """
+    import shutil
+    import tempfile
+    import cairosvg
+    import prefig
+    for source in sorted((ROOT / 'scripts' / 'prefigure').glob('*.xml')):
+        target = ROOT / 'assets' / 'images' / (source.stem + '.svg')
+        with tempfile.TemporaryDirectory() as tmp:
+            work = Path(tmp) / source.name
+            shutil.copy(source, work)
+            prefig.engine.build('svg', str(work), ignore_publication=True)
+            shutil.copy(Path(tmp) / 'output' / (source.stem + '.svg'), target)
+        embed_font(target)
+        cairosvg.svg2pdf(url=str(target), write_to=str(target.with_suffix('.pdf')))
+        print('built', target.relative_to(ROOT), 'and its PDF', flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--xmlid')
+    parser.add_argument('--standalone', action='store_true',
+                        help='Build only the PreFigure diagrams in scripts/prefigure/')
     parser.add_argument('--embed-only', action='store_true')
     parser.add_argument('--skip-mindmap', action='store_true',
                         help='Reuse the committed mind-map SVG, without requiring a browser')
     args = parser.parse_args()
     os.chdir(ROOT)
+    if args.standalone:
+        prepare(include_mindmap=False)
+        build_standalone()
+        return
     if not args.embed_only:
         prepare(include_mindmap=not args.skip_mindmap and not args.xmlid)
         from pretext.cli import main as pretext
@@ -152,6 +181,8 @@ def main():
         pretext(['generate', 'prefigure', 'latex-image', '--force', *extra], standalone_mode=False)
         if not args.xmlid and not args.skip_mindmap:
             subprocess.run([sys.executable, str(ROOT / 'scripts' / 'make-mindmap-figure.py')], check=True)
+        if not args.xmlid:
+            build_standalone()
 
     # All source-defined PreFigure assets, including accessible SVG variants.
     for source in (ROOT / 'source').rglob('*.ptx'):

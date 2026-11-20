@@ -66,4 +66,16 @@ for(let yaw=-180;yaw<=180;yaw+=30)for(const pitch of [10,30,75]) {
   const project=G.fittedProjector({yaw,pitch},points,[560,420]);
   points.forEach(p=>{const q=project(p);assert.ok(q[0]>=44-1e-8&&q[0]<=516+1e-8&&q[1]>=44-1e-8&&q[1]<=376+1e-8);});
 }
-console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums.");
+
+// The two-line explorer of Section 1.1: x + y = 1, a x + y = b on the slider grid.
+const L=require("../assets/demos-manim/line-family.js");
+for(let A=-6;A<=6;A++)for(let B=-6;B<=8;B++) {
+  const a=A/2,b=B/2,result=L.classify(L.frac(A,2),L.frac(B,2));
+  if(A===2) {assert.equal(result.kind,B===2?"line":"empty");continue;}
+  assert.equal(result.kind,"point");
+  const x=L.num(result.x),y=L.num(result.y);
+  near(x+y,1);near(a*x+y,b);near(x,(b-1)/(a-1));near(y,(a-b)/(a-1));
+}
+assert.equal(L.secondEquation(L.frac(2),L.frac(3)),"2x + y = 3");
+assert.equal(L.secondEquation(L.frac(-3,2),L.frac(1,2)),"−(3/2)x + y = 1/2");
+console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions.");
