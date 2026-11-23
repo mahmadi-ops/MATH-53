@@ -71,6 +71,9 @@
     <!-- and links that the PDF prints for videos and interactives from it;    -->
     <!-- without it they held bare page names that a phone cannot open.        -->
     <baseurl href="https://mahmadi-ops.github.io/MATH-53/"/>
+    <!-- Google Analytics 4 (anonymous visit counts).  One property covers   -->
+    <!-- every book on mahmadi-ops.github.io; reports split them by path.    -->
+    <analytics google-gst="G-HLPGGP7XJ2"/>
     <css theme="denver"/>
     <webwork divisional="dynamic"/>
   </html>
