@@ -461,6 +461,42 @@
             </prefigure>
           </image>
         </figure>
+        <p>
+          <xref ref="fig-translated-solutions-3d" text="type-global" /> draws this picture
+          for the two systems of this example, in <m>\R^3</m>. As in
+          <xref ref="fig-translated-solutions" text="type-global" />, the homogeneous
+          solutions are written <m>s\vec{v}_h</m>, here with
+          <m>\vec{v}_h = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m>. Two operations
+          relate the two solution sets. <em>Scaling</em> <m>\vec{v}_h</m> by <m>s</m> moves
+          along the gray line through the origin. <em>Adding</em> <m>\vec{p}</m> then
+          carries the point <m>s\vec{v}_h</m> to
+          <m>\vec{w} = \vec{p} + s\vec{v}_h</m> on the olive line.
+        </p>
+        <figure xml:id="fig-translated-solutions-3d">
+          <caption>
+            The two solution sets of this example in <m>\R^3</m>. The gray line through
+            the origin holds the homogeneous solutions <m>s\vec{v}_h</m>, with
+            <m>\vec{v}_h = (-1, 1, 0)</m>; the olive line, parallel to it and one unit
+            lower, holds the solutions <m>\vec{w} = \vec{p} + s\vec{v}_h</m> of the
+            non-homogeneous system, with <m>\vec{p} = (0, 0, -1)</m>. In the
+            interactive figure the slider sets <m>s</m>: the thick gray arrow is
+            <m>s\vec{v}_h</m>, and the dashed copies of <m>\vec{p}</m> and
+            <m>s\vec{v}_h</m> complete the parallelogram whose far corner is
+            <m>\vec{w}</m>. Play the guide to watch <m>s\vec{v}_h</m> slide along
+            <m>\vec{p}</m>, and drag the picture to rotate it. The starting position,
+            <m>s = 1.5</m>, gives <m>\vec{w} = (-1.5, 1.5, -1)</m>. A button replaces
+            <m>\vec{p}</m> by another particular solution, <m>(1, -1, -1)</m>: the
+            parallelogram leans, and the olive line does not move.
+          </caption>
+          <interactive xml:id="int-translated-solutions" iframe="demos-manim/translated-solutions.html" width="100%" aspect="2:3">
+            <shortdescription>A gray line of homogeneous solutions through the origin and a parallel olive line of solutions of the non-homogeneous system in space. A slider scales the vector v h, and a parallelogram of arrows shows that adding the particular solution p to s v h gives a point of the olive line.</shortdescription>
+            <static>
+              <image source="images/ch2-translated-solutions" width="90%">
+                <shortdescription>In space, a gray line through the origin and an olive line parallel to it, one unit lower. The arrows 1.5 v h and p, with dashed copies of each, form a parallelogram whose far corner, the point (-1.5, 1.5, -1), lies on the olive line.</shortdescription>
+              </image>
+            </static>
+          </interactive>
+        </figure>
       </solution>
     </example>
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the three geometry explorers, optionally refreshing static SVGs/previews.
+"""Check the geometry explorers, optionally refreshing static SVGs/previews.
 
 Run after `pretext build web --no-generate`. Requires Playwright and Chromium,
 already supplied by the book's authoring environment. No browser downloads or
@@ -23,6 +23,9 @@ DEMOS={
     'transformation-geometry': ('int-transformation-geometry','sec-transformations'),
     'change-of-basis': ('int-change-of-basis','sec-coordinates'),
 }
+# Explorers with a guide and a no-JavaScript picture whose static files are
+# written elsewhere (see scripts/make-translated-solutions-static.py).
+GUIDED={**DEMOS,'translated-solutions': ('int-translated-solutions','sec-homogeneous-systems')}
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -161,17 +164,59 @@ def main():
             assert page.locator('#coordinate-pair').text_content()=='(3/2, 2)'
             page.locator('#reset').click();assert page.locator('#coordinate-pair').text_content()=='(1, 2)'
             print('PASS: fixed vector throughout the grid change; exact endpoint coordinates; head-to-tail sums',flush=True)
+            page.goto(f'{base}/assets/demos-manim/translated-solutions.html',wait_until='networkidle')
+            page.wait_for_selector('html.js-ready')
+            assert page.locator('#sum-equation').inner_text().endswith('= (−1.5, 1.5, −1)')
+            assert '−1.5 + 1.5 − (−1) = 1 ✓' in page.locator('#sum-check').inner_text()
+            ends='(sel)=>{const e=document.querySelector(sel);return ["x1","y1","x2","y2"].map(k=>+e.getAttribute(k));}'
+            close=lambda a,b:all(abs(x-y)<1e-6 for x,y in zip(a,b))
+            for other in (False,True):
+                if other:page.locator('#other-particular').click()
+                for value in (-2,-0.75,0.5,2):
+                    slider(page,'#scalar',value)
+                    total,scaled,particular,scaled_copy,particular_copy=[page.evaluate(ends,f'line[data-vector="{name}"]') for name in ('sum','scaled','particular','scaled-copy','particular-copy')]
+                    # Head to tail both ways round the parallelogram, ending at the tip of w.
+                    assert close(scaled_copy[:2],particular[2:]) and close(particular_copy[:2],scaled[2:])
+                    assert close(scaled_copy[2:],total[2:]) and close(particular_copy[2:],total[2:])
+                    line=page.evaluate(ends,'line[data-line="translated"]')
+                    cross=(line[2]-line[0])*(total[3]-line[1])-(line[3]-line[1])*(total[2]-line[0])
+                    assert abs(cross)<1e-6*((line[2]-line[0])**2+(line[3]-line[1])**2)
+                assert ('(1, −1, −1)' if other else '(0, 0, −1)') in page.locator('#particular-name').inner_text()
+            assert '= (−1, 1, −1)' in page.locator('#sum-equation').inner_text()
+            page.evaluate('''() => {
+                const set=(id,value)=>{const e=document.getElementById(id);e.value=value;e.dispatchEvent(new Event('input',{bubbles:true}));};
+                const svg=document.getElementById('translation-scene'),v=svg.viewBox.baseVal,button=document.getElementById('other-particular');
+                for(const other of [false,true]) {
+                    if(other!==(button.getAttribute('aria-pressed')==='true'))button.click();
+                    for(const yaw of [-180,-156,-90,0,45,90,180])for(const pitch of [10,18,75])for(const s of [-2,0,1,2]) {
+                        set('yaw',yaw);set('pitch',pitch);set('scalar',s);
+                        for(const e of svg.querySelectorAll('[data-drawing] > *')) {
+                            const b=e.getBBox();
+                            if(b.x<4||b.y<4||b.x+b.width>v.width-4||b.y+b.height>v.height-4)
+                                throw new Error(`Clipped ${e.tagName}: other=${other}, yaw=${yaw}, pitch=${pitch}, s=${s}`);
+                        }
+                    }
+                }
+            }''')
+            page.locator('#reset').click()
+            assert page.locator('#other-particular').get_attribute('aria-pressed')=='false'
+            assert page.locator('#scalar').input_value()=='1.5' and page.locator('#yaw').input_value()=='-156'
+            page.locator('#translation-scene').focus();page.keyboard.press('ArrowRight')
+            assert page.locator('#yaw').input_value()=='-151'
+            page.locator('#scalar').focus();page.keyboard.press('ArrowRight')
+            assert page.locator('#scalar').input_value()=='1.75'
+            print('PASS: translated solutions; head-to-tail sums on the olive line for both particular solutions; no clipping through 168 camera/slider cases; keyboard and reset',flush=True)
             assert not errors,errors
             guide=browser.new_page()
             guide.clock.install()
-            for name in DEMOS:
+            for name in GUIDED:
                 guide.goto(f'{base}/assets/demos-manim/{name}.html',wait_until='networkidle')
                 guide.locator('#play').click();guide.clock.fast_forward(16000)
                 assert guide.locator('#play').inner_text()=='Replay guide',name
                 guide.locator('#reset').click();assert guide.locator('#play').inner_text()=='Play guide',name
             guide.close()
-            print('PASS: all three one-shot guides finish and reset correctly',flush=True)
-            for name in DEMOS:
+            print('PASS: all one-shot guides finish and reset correctly',flush=True)
+            for name in GUIDED:
                 page.set_viewport_size({'width':375,'height':900})
                 page.goto(f'{base}/assets/demos-manim/{name}.html',wait_until='networkidle')
                 assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),name
@@ -180,7 +225,7 @@ def main():
             for reduced in (True,False):
                 context=browser.new_context(reduced_motion='reduce' if reduced else 'no-preference',java_script_enabled=reduced)
                 view=context.new_page()
-                for name in DEMOS:
+                for name in GUIDED:
                     view.goto(f'{base}/assets/demos-manim/{name}.html',wait_until='networkidle')
                     if reduced:
                         assert view.locator('#play').inner_text()=='Next guided step'
@@ -195,17 +240,19 @@ def main():
                 tree=ET.parse(str(ROOT/'assets/images'/f'{name}-static.svg'))
                 assert tree.getroot().tag=='{http://www.w3.org/2000/svg}svg'
                 assert tree.xpath('//*[@id="book-figure-font"]'),name
+            tree=ET.parse(str(ROOT/'assets/images/ch2-translated-solutions.svg'))
+            assert tree.xpath('//*[@id="book-figure-font"]') and (ROOT/'assets/images/ch2-translated-solutions.pdf').exists()
             if not args.write_previews and (ROOT/'output/web/sec-coordinates.html').exists():
                 # External book services are unrelated to the self-contained embeds.
                 page.route('https://**/*',lambda route:route.abort())
-                for name,(xmlid,section) in DEMOS.items():
+                for name,(xmlid,section) in GUIDED.items():
                     page.goto(f'{base}/output/web/{section}.html',wait_until='networkidle')
                     page.locator(f'iframe#{xmlid}').evaluate('(f)=>{for(let e=f.parentElement;e;e=e.parentElement)if(e.tagName==="DETAILS")e.open=true;}')
                     frame=page.frame_locator(f'iframe#{xmlid}')
                     frame.locator('html.js-ready').wait_for()
                     assert frame.locator('.question').is_visible(),section
                     assert page.locator(f'iframe#{xmlid}').evaluate('(f)=>f.clientHeight>=f.contentDocument.body.scrollHeight-2'),section
-                print('PASS: all three rebuilt book sections embed and fit the explorers at mobile width',flush=True)
+                print('PASS: all rebuilt book sections embed and fit the explorers at mobile width',flush=True)
             browser.close()
     finally:
         server.shutdown();server.server_close()

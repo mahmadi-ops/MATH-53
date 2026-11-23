@@ -8,6 +8,7 @@ They require no external JavaScript libraries, narration, or video downloads.
 | `source/linear-systems/sec-systems-of-linear-equations.ptx` | `line-family.html` | After the example "One Family, All Three Cases" |
 | `source/linear-systems/sec-systems-of-linear-equations.ptx` | `solution-set.html` | After the parametric example and its geometric interpretation |
 | `source/linear-systems/sec-row-reduction.ptx` | `planes.html` (six embeds, parameterized by `?sys=`) | Inside the unique-solution, inconsistent, and infinitely-many-solutions examples, and after each part of the "Three Ways to Have No Common Point" example |
+| `source/vectors/sec-homogeneous-systems.ptx` | `translated-solutions.html` | Inside the example "Comparing a Homogeneous System with Its Non-Homogeneous Partner", after the figure "The picture to remember" |
 | `source/linear-transformations/sec-transformations.ptx` | `transformation-geometry.html` | Before the opening ℝ³ → ℝ⁴ example; refers to the existing matrix-multiplication example |
 | `source/vector-spaces/sec-coordinates.ptx` | `change-of-basis.html` | Extends the existing same-vector/two-coordinate-systems example |
 
@@ -105,6 +106,31 @@ both equations, and that it equals `((b−1)/(a−1), (a−b)/(a−1))`. The pri
 version is a PreFigure diagram kept in `scripts/prefigure/ch1-line-family.xml`;
 `python scripts/build-book-figures.py --standalone` rebuilds
 `assets/images/ch1-line-family.svg` and `.pdf` from it.
+
+## The translated-solutions explorer
+
+`translated-solutions.html` (with `translated-solutions.js`) belongs to the
+Section 2.3 example that compares a homogeneous system with its non-homogeneous
+partner. Its data (the three shared left-hand sides, the constants `−1, 1, 0`,
+`v_h = (−1, 1, 0)`, and the two particular solutions `(0, 0, −1)` and
+`(1, −1, −1)`) and its helpers are exported for Node, and
+`node scripts/check-geometry-math.cjs` checks, for every slider position and
+both particular solutions, that `s v_h` solves the homogeneous system, that
+`p + s v_h` solves the non-homogeneous one, that both lie in the plane
+`x + y = 0` drawn in the figure, and that the two particular solutions differ
+by a homogeneous solution. `python scripts/check-geometry-explorers.py` checks
+in the browser that the dashed copies meet at the tip of `w`, that this tip
+stays on the olive line, and that nothing is clipped at any rotation.
+
+The figure is numbered, because the text refers to it. Its print version and
+no-JavaScript picture are `assets/images/ch2-translated-solutions.svg` and
+`.pdf`, copied from the page at its starting position:
+
+```sh
+python scripts/make-translated-solutions-static.py
+```
+
+Run this after changing the drawing or a label, and commit both files.
 
 ## The three-plane explorer
 

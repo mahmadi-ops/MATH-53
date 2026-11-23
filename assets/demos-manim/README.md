@@ -28,10 +28,11 @@ elements cannot be formatted and stays plain. The styles are in `book-theme.css`
 |------|----------------|-----------|
 | `line-family.html` | Section 1.1, after the example "One Family, All Three Cases" | The lines `x + y = 1` and `ax + y = b`: sliders for `a` and `b` show one solution, none, or infinitely many |
 | `solution-set.html` | Section 1.1, after the parametric solution example | Two planes, a moving solution, and a third equation leaving a point, a line, or the empty set |
+| `translated-solutions.html` | Section 2.3, in the example "Comparing a Homogeneous System with Its Non-Homogeneous Partner" | Scaling `v_h` moves along the line of homogeneous solutions; adding a particular solution `p` carries it to the parallel line `p + s v_h` |
 | `transformation-geometry.html` | Section 3.1, before the first example | `T(x,y,z) = (x+2y, 2x+y)` sends the basis vectors to matrix columns and loses the z-coordinate |
 | `change-of-basis.html` | Section 7.4, in the same-vector/two-bases example | The grid and coordinates change while `(1,2)` stays fixed |
 
-These three figures also share `geometry-explorers.css` and `geometry-core.js`.
+These figures also share `geometry-explorers.css` and `geometry-core.js`.
 Each has labeled native controls, a prediction prompt, a silent captioned guide,
 readable guided steps, keyboard camera rotation where applicable, reduced-motion
 steps, and an SVG/text fallback when JavaScript is disabled. They use no external
@@ -63,6 +64,41 @@ The print version is `assets/images/ch1-line-family.svg` (and `.pdf`), built
 from the PreFigure source `scripts/prefigure/ch1-line-family.xml`.
 
     line-family.html?a=1&b=3
+
+## translated-solutions.html
+
+`translated-solutions.html` (with `translated-solutions.js`) is the 3D companion
+of the figure "The picture to remember" in Section 2.3. For the two systems of
+the example there, it draws the line of homogeneous solutions `s v_h`, with
+`v_h = (−1, 1, 0)`, the parallel line of solutions `w = p + s v_h` of the
+non-homogeneous system, and the vectors that relate them: `v_h` (thin, dark),
+`s v_h` (thick, gray), the particular solution `p = (0, 0, −1)` (wine), their
+dashed copies, which complete a parallelogram, and the sum `w` (olive).
+
+A slider sets `s` from −2 to 2 in steps of 1/4. The guide plays the
+construction in three captioned steps: scale `v_h`, slide `s v_h` along `p`,
+then let `s` run over its range. A button replaces `p` by a second particular
+solution, `(1, −1, −1)`; the parallelogram leans and the olive line stays where
+it is. The readout substitutes `s v_h` and `w` into the two systems. The faint
+rectangle is part of the plane `x + y = 0`, which contains both lines, and the
+dots mark `s = −2, …, 2`.
+
+| Param | Meaning |
+|-------|---------|
+| `s` | starting value of the slider (default `1.5`), rounded to the nearest quarter |
+| `yaw`, `pitch` | starting camera angles in degrees (defaults `−156`, `18`) |
+
+The scene uses the same drag, arrow-key, and slider camera controls as
+`solution-set.html`. The drawing is wide and low, so on screens narrower than
+480 pixels it is laid out in a smaller frame (400 by 212 instead of 560 by 260
+units), which keeps the labels legible; the name of the plane is omitted there.
+Labels are placed again whenever the picture appears or changes size, because
+in the book it starts inside a closed solution. Without JavaScript the page shows
+`assets/images/ch2-translated-solutions.svg`, which, with its `.pdf`, is also
+the print version; both are written by
+`scripts/make-translated-solutions-static.py`.
+
+    translated-solutions.html?s=-1&yaw=-135&pitch=12
 
 ## planes.html
 

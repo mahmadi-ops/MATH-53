@@ -79,6 +79,27 @@ for(let A=-6;A<=6;A++)for(let B=-6;B<=8;B++) {
 assert.equal(L.secondEquation(L.frac(2),L.frac(3)),"2x + y = 3");
 assert.equal(L.secondEquation(L.frac(-3,2),L.frac(1,2)),"−(3/2)x + y = 1/2");
 
+// The translated-solutions explorer of Section 2.3: every s v_h solves the homogeneous
+// system, and adding either particular solution gives a solution of its partner.
+const T=require("../assets/demos-manim/translated-solutions.js");
+equal(T.leftSides(T.VH),[0,0,0]);
+T.PARTICULAR.forEach(p=>equal(T.leftSides(p),T.RHS));
+for(let k=-8;k<=8;k++) {
+  const s=k/4,sv=T.scaled(s);
+  equal(T.leftSides(sv),[0,0,0]);
+  T.PARTICULAR.forEach(p=>{
+    const w=T.translate(p,s);
+    equal(w,p.map((x,i)=>x+sv[i]));equal(T.leftSides(w),T.RHS);
+    // Both lines lie in the plane x + y = 0, the patch drawn in the figure.
+    near(sv[0]+sv[1],0);near(w[0]+w[1],0);
+  });
+}
+// Two particular solutions differ by a homogeneous solution, so they give the same line.
+equal(T.PARTICULAR[1].map((x,i)=>x-T.PARTICULAR[0][i]),T.scaled(-1));
+assert.equal(T.substituted([1,1,-1],[-1.5,1.5,-1]),"−1.5 + 1.5 − (−1)");
+assert.equal(T.substituted([1,1,1],[-1.5,1.5,-1]),"−1.5 + 1.5 + (−1)");
+assert.equal(T.substituted([1,1,0],[2,-2,0]),"2 + (−2)");
+
 // Math formatting shared by the explorers: italic letters, real subscripts, upright operator names.
 const M=require("../assets/demos-manim/book-math.js");
 const shape=text=>M.runs(text).map(r=>(r.italic?"i":"r")+(r.level<0?"_":r.level>0?"^":"")+":"+r.text).join("|");
@@ -91,4 +112,4 @@ assert.deepEqual(M.unbreakable("x₁ = 2/3 − (7/3)s; x₂ = s"),["x₁","= 2/3
 assert.deepEqual(M.unbreakable("T(1, −1, 2) = (−1, 1)"),["T(1, −1, 2)","= (−1, 1)"]);
 assert.deepEqual(M.pieces("Since $a ≠ 1$, done").map(p=>p.math),[false,true,false]);
 assert.equal(M.plain("At $s = 0$, $p = (1, 2)$."),"At s = 0, p = (1, 2).");
-console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions; math formatting.");
+console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions; homogeneous and translated solutions on all 17 slider positions for both particular solutions; math formatting.");
