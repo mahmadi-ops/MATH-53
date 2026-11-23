@@ -185,6 +185,75 @@
       </solution>
     </example>
 
+    <example xml:id="eg-two-parameters-enough">
+      <title>Do Two Parameters Always Give Every Solution?</title>
+      <statement>
+        <p>
+          Let <m>\vec{V}_1</m> and <m>\vec{V}_2</m> be the basic solutions of
+          <xref ref="eg-basic-solutions" text="type-global" />, so that every solution of
+          the system is <m>a_1 \vec{V}_1 + a_2 \vec{V}_2</m>.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Let <m>\vec{W}_1 = \vec{V}_1 + \vec{V}_2</m> and
+                <m>\vec{W}_2 = 2\vec{V}_1 + 2\vec{V}_2</m>. A student claims that
+                <m>s\vec{W}_1 + t\vec{W}_2</m>, with <m>s, t \in \R</m>, is another
+                description of all solutions, because it still has two parameters. Decide
+                whether the claim is correct. If it is not, exhibit a solution it misses.
+              </p>
+            </li>
+            <li>
+              <p>
+                Replace <m>\vec{W}_2</m> by <m>\vec{V}_1 - \vec{V}_2</m>. Prove that
+                <m>a\vec{W}_1 + b\vec{W}_2</m> now describes every solution, and give the
+                conversions between the old coefficients and the new ones.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> The claim is wrong. Since <m>\vec{W}_2 = 2\vec{W}_1</m>,
+          <md>
+            s\vec{W}_1 + t\vec{W}_2 = (s + 2t)\,\vec{W}_1, \qquad
+            \vec{W}_1
+            = \begin{bmatrix} \frac{9}{5} \\ -\frac{4}{5} \\ 1 \\ 0 \end{bmatrix}
+            + \begin{bmatrix} -\frac{14}{5} \\ -\frac{1}{5} \\ 0 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} -1 \\ -1 \\ 1 \\ 1 \end{bmatrix}.
+          </md>
+          Only the multiples of the single vector <m>\vec{W}_1</m> appear. In each of
+          them the third and fourth entries are equal, whereas <m>\vec{V}_1</m> has third
+          entry <m>1</m> and fourth entry <m>0</m>. So <m>\vec{V}_1</m> is a solution the
+          description misses. There are two symbols but only one independent choice, the
+          number <m>s + 2t</m>.
+        </p>
+        <p>
+          <term>(b)</term> Now
+          <m>\vec{W}_2 = \vec{V}_1 - \vec{V}_2
+          = \begin{bmatrix} \frac{23}{5} \\ -\frac{3}{5} \\ 1 \\ -1 \end{bmatrix}</m> and
+          <md>
+            a\vec{W}_1 + b\vec{W}_2 = (a + b)\,\vec{V}_1 + (a - b)\,\vec{V}_2,
+          </md>
+          which is a solution for every <m>a</m> and <m>b</m>. Conversely, a given
+          solution <m>a_1 \vec{V}_1 + a_2 \vec{V}_2</m> is obtained when
+          <m>a + b = a_1</m> and <m>a - b = a_2</m>, that is, when
+          <md>
+            a = \frac{a_1 + a_2}{2}, \qquad b = \frac{a_1 - a_2}{2}.
+          </md>
+          These values exist and are unique, so every solution appears exactly once.
+        </p>
+        <p>
+          Counting parameters is not enough; what matters is whether the vectors they
+          multiply are really different directions.
+          <xref ref="sec-linear-independence" text="type-global" /> gives this property a
+          name.
+        </p>
+      </solution>
+    </example>
+
     <example xml:id="eg-homogeneous-parameter">
       <title>A Homogeneous System with a Parameter</title>
       <statement>
@@ -392,6 +461,124 @@
             </prefigure>
           </image>
         </figure>
+      </solution>
+    </example>
+
+    <example xml:id="eg-compatible-right-hand-sides">
+      <title>Which Right-Hand Sides Are Compatible?</title>
+      <statement>
+        <p>
+          Keep the left-hand sides of
+          <xref ref="eg-structure-comparison" text="type-global" /> and let the right-hand
+          sides be arbitrary numbers <m>a</m>, <m>b</m>, <m>c</m>:
+          <md>
+            <mrow>
+              x + y + z \amp = a
+            </mrow>
+            <mrow>
+              x + y - z \amp = b
+            </mrow>
+            <mrow>
+              x + y \phantom{{}- z} \amp = c
+            </mrow>
+          </md>
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Determine exactly which triples <m>(a, b, c)</m> give a consistent
+                system, and find every solution in that case.
+              </p>
+            </li>
+            <li>
+              <p>
+                Write the solutions as a particular solution plus a homogeneous solution,
+                as in <xref ref="thm-particular-plus-homogeneous" text="type-global" />.
+              </p>
+            </li>
+            <li>
+              <p>
+                Do two different compatible right-hand sides give the same line or
+                different lines?
+              </p>
+            </li>
+            <li>
+              <p>
+                Recover both systems of
+                <xref ref="eg-structure-comparison" text="type-global" /> as checks.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Row reduce the augmented matrix:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 1 \amp a \\
+                1 \amp 1 \amp -1 \amp b \\
+                1 \amp 1 \amp 0 \amp c
+              \end{array} \right]
+              \amp \xrightarrow[-r_1 + r_3]{-r_1 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 1 \amp a \\
+                0 \amp 0 \amp -2 \amp b - a \\
+                0 \amp 0 \amp -1 \amp c - a
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-2r_3 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 1 \amp a \\
+                0 \amp 0 \amp 0 \amp a + b - 2c \\
+                0 \amp 0 \amp -1 \amp c - a
+              \end{array} \right].
+            </mrow>
+          </md>
+          The system is consistent exactly when <m>a + b = 2c</m>. In that case
+          <m>z = a - c = \frac{a - b}{2}</m> and <m>x + y = c</m>, with <m>y = s</m>
+          free:
+          <md>
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix} c - s \\ s \\ \frac{a - b}{2} \end{bmatrix},
+            \qquad s \in \R.
+          </md>
+        </p>
+        <p>
+          <term>(b)</term> Separating the part that contains <m>s</m>,
+          <md>
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \underbrace{\begin{bmatrix} c \\ 0 \\ \frac{a - b}{2} \end{bmatrix}}_{\vec{p}}
+            + \underbrace{s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}}_{\vec{v}_h}.
+          </md>
+          The homogeneous part is the same for every compatible right-hand side.
+        </p>
+        <p>
+          <term>(c)</term> Different lines. Every solution set is a line parallel to
+          <m>\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m>. If one point lay on two of
+          these lines, substituting it into the three left-hand sides would produce both
+          <m>(a, b, c)</m> and <m>(a', b', c')</m>, so the two triples would be equal.
+          Distinct compatible right-hand sides therefore give distinct parallel lines
+          with no point in common.
+        </p>
+        <p>
+          <term>(d)</term> For <m>(a, b, c) = (0, 0, 0)</m> the condition
+          <m>a + b = 2c</m> holds and <m>\vec{p} = \vec{0}</m>: the line through the
+          origin. For <m>(a, b, c) = (-1, 1, 0)</m> it holds again and
+          <m>\vec{p} = \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}</m>, as in
+          <xref ref="eg-structure-comparison" text="type-global" />. A right-hand side
+          such as <m>(1, 0, 0)</m> fails the condition, and then there is no translate
+          at all.
+        </p>
+        <p>
+          The compatible right-hand sides are exactly the vectors
+          <m>\begin{bmatrix} a \\ b \\ c \end{bmatrix}</m> with <m>a + b = 2c</m>. Each
+          column of the coefficient matrix satisfies this condition, in agreement with
+          <xref ref="rem-three-forms" text="type-global" />.
+        </p>
       </solution>
     </example>
   </subsection>

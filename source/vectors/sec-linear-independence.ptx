@@ -102,6 +102,94 @@
       </proof>
     </theorem>
 
+    <example xml:id="eg-one-check-enough">
+      <title>Is One Check Enough?</title>
+      <statement>
+        <p>
+          In <xref ref="eg-independence-by-definition" text="type-global" /> the first
+          check showed that <m>\vec{w}</m> is not in
+          <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>, because its first entry is
+          nonzero. A student stops there and declares
+          <m>\{ \vec{u}, \vec{v}, \vec{w} \}</m> linearly independent.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Is this reasoning complete? Give three vectors for which
+                <m>\vec{w}</m> is not in
+                <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m> and yet the set is
+                linearly dependent.
+              </p>
+            </li>
+            <li>
+              <p>
+                Prove the corrected criterion:
+                <m>\{ \vec{u}, \vec{v}, \vec{w} \}</m> is linearly independent exactly
+                when <m>\{ \vec{u}, \vec{v} \}</m> is linearly independent and
+                <m>\vec{w}</m> is not in
+                <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use (b) to redo
+                <xref ref="eg-independence-by-definition" text="type-global" /> with a
+                single two-variable check.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> No. Take
+          <md>
+            \vec{u} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \qquad
+            \vec{v} = \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix}, \qquad
+            \vec{w} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}.
+          </md>
+          Here <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m> is the <m>x</m>-axis and
+          <m>\vec{w}</m> is not on it. But <m>\vec{v} = 2\vec{u}</m>, so
+          <m>\vec{v}</m> is in <m>\operatorname{Span}\{ \vec{u}, \vec{w} \}</m> and the
+          set is linearly dependent.
+        </p>
+        <p>
+          <term>(b)</term> Suppose first that <m>\{ \vec{u}, \vec{v} \}</m> is linearly
+          independent and <m>\vec{w}</m> is not in
+          <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>, and let
+          <m>a\vec{u} + b\vec{v} + c\vec{w} = \vec{0}</m>. If <m>c \neq 0</m>, then
+          <m>\vec{w} = -\frac{a}{c}\vec{u} - \frac{b}{c}\vec{v}</m> would be in
+          <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>, which is excluded. So
+          <m>c = 0</m> and <m>a\vec{u} + b\vec{v} = \vec{0}</m>, and the independence of
+          <m>\{ \vec{u}, \vec{v} \}</m> gives <m>a = b = 0</m>. By
+          <xref ref="thm-independence-trivial-solution" text="type-global" /> the three
+          vectors are linearly independent.
+        </p>
+        <p>
+          Conversely, suppose <m>\{ \vec{u}, \vec{v}, \vec{w} \}</m> is linearly
+          independent. Then <m>\vec{w}</m> is not in
+          <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m> by
+          <xref ref="def-linear-independence" text="type-global" />. And if
+          <m>a\vec{u} + b\vec{v} = \vec{0}</m>, then
+          <m>a\vec{u} + b\vec{v} + 0\vec{w} = \vec{0}</m>, so <m>a = b = 0</m> by
+          <xref ref="thm-independence-trivial-solution" text="type-global" />; that is,
+          <m>\{ \vec{u}, \vec{v} \}</m> is linearly independent.
+        </p>
+        <p>
+          <term>(c)</term> For
+          <m>\vec{u} = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}</m> and
+          <m>\vec{v} = \begin{bmatrix} 0 \\ 2 \\ 3 \end{bmatrix}</m>, the equation
+          <m>a\vec{u} + b\vec{v} = \vec{0}</m> gives <m>a + 2b = 0</m> and
+          <m>2a + 3b = 0</m>, hence <m>a = b = 0</m>. The vector
+          <m>\vec{w} = \begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}</m> has first entry
+          <m>1</m>, so it lies outside the <m>yz</m>-plane
+          <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>. By (b) the set is linearly
+          independent: one system in two unknowns in place of three span tests.
+        </p>
+      </solution>
+    </example>
+
     <example xml:id="eg-express-as-combination">
       <title>Expressing a Vector as a Linear Combination</title>
       <statement>

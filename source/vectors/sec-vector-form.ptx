@@ -117,23 +117,84 @@
       </statement>
       <solution>
         <p>
+          The system is <m>A\vec{X} = \vec{b}</m> with
           <md>
-            \begin{bmatrix} 2 \amp 4 \amp -3 \\ 0 \amp -1 \amp 5 \\ 1 \amp 1 \amp 4 \end{bmatrix}
-            \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
-            = x_1 \begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix}
-            + x_2 \begin{bmatrix} 4 \\ -1 \\ 1 \end{bmatrix}
-            + x_3 \begin{bmatrix} -3 \\ 5 \\ 4 \end{bmatrix}
-            = \begin{bmatrix} -6 \\ 0 \\ 1 \end{bmatrix}.
+            A = \begin{bmatrix} 2 \amp 4 \amp -3 \\ 0 \amp -1 \amp 5 \\ 1 \amp 1 \amp 4 \end{bmatrix}, \qquad
+            \vec{X} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}, \qquad
+            \vec{b} = \begin{bmatrix} -6 \\ 0 \\ 1 \end{bmatrix}.
+          </md>
+          Nothing new has to be computed. The columns
+          <m>\vec{A}_1, \vec{A}_2, \vec{A}_3</m> of <m>A</m> are the three vectors of the
+          vector form in <xref ref="eg-vector-form" text="type-global" />, and by
+          <xref ref="def-matrix-vector-product" text="type-global" />
+          <md>
+            A\vec{X} = x_1 \vec{A}_1 + x_2 \vec{A}_2 + x_3 \vec{A}_3.
+          </md>
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-reordering-unknowns">
+      <title>Changing the Order of the Unknowns</title>
+      <statement>
+        <p>
+          Let <m>A\vec{X} = \vec{b}</m> be the system of
+          <xref ref="eg-matrix-form" text="type-global" />. Do not solve it.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Store the unknowns in the order
+                <m>\vec{Y} = \begin{bmatrix} x_3 \\ x_1 \\ x_2 \end{bmatrix}</m>. Find the
+                matrix <m>B</m> for which <m>B\vec{Y} = \vec{b}</m> represents the very
+                same equations, and justify the position of each column.
+              </p>
+            </li>
+            <li>
+              <p>
+                A student instead interchanges rows 1 and 3 of <m>A</m> and leaves
+                <m>\vec{b}</m> unchanged. Are the equations still the same? How must
+                <m>\vec{b}</m> change if the first and third equations are interchanged?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> By
+          <xref ref="def-matrix-vector-product" text="type-global" />,
+          <m>B\vec{Y} = x_3 \vec{B}_1 + x_1 \vec{B}_2 + x_2 \vec{B}_3</m>. The vector form
+          <m>x_1 \vec{A}_1 + x_2 \vec{A}_2 + x_3 \vec{A}_3 = \vec{b}</m> does not care in
+          which order its terms are added, so we need <m>\vec{B}_1 = \vec{A}_3</m>,
+          <m>\vec{B}_2 = \vec{A}_1</m>, <m>\vec{B}_3 = \vec{A}_2</m>:
+          <md>
+            B = \begin{bmatrix} \vec{A}_3 \amp \vec{A}_1 \amp \vec{A}_2 \end{bmatrix}
+            = \begin{bmatrix} -3 \amp 2 \amp 4 \\ 5 \amp 0 \amp -1 \\ 4 \amp 1 \amp 1 \end{bmatrix}.
+          </md>
+          Each column travels with its unknown. As a check, the first row of
+          <m>B\vec{Y} = \vec{b}</m> reads <m>-3x_3 + 2x_1 + 4x_2 = -6</m>, the first
+          equation again.
+        </p>
+        <p>
+          <term>(b)</term> No. A row of the augmented matrix
+          <m>\left[ \begin{array}{c|c} A \amp \vec{b} \end{array} \right]</m> is one
+          equation: its coefficients <em>together with</em> its constant. Moving the rows
+          of <m>A</m> alone attaches each constant to the wrong equation. The first
+          equation would become <m>x_1 + x_2 + 4x_3 = -6</m> and the third
+          <m>2x_1 + 4x_2 - 3x_3 = 1</m>, and neither belongs to the original system.
+          Interchanging two equations is an elementary operation
+          (<xref ref="def-elementary-operations" text="type-global" />) only when the
+          whole rows move, so the constants must be interchanged as well:
+          <md>
+            \vec{b}' = \begin{bmatrix} 1 \\ 0 \\ -6 \end{bmatrix}.
           </md>
         </p>
         <p>
-          Writing
-          <m>A = \begin{bmatrix} \vec{A}_1 \amp \vec{A}_2 \amp \vec{A}_3 \end{bmatrix}</m>,
-          <m>\vec{X} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</m>, and
-          <m>\vec{b} = \begin{bmatrix} -6 \\ 0 \\ 1 \end{bmatrix}</m>, this is
-          <md>
-            A\vec{X} = x_1 \vec{A}_1 + x_2 \vec{A}_2 + x_3 \vec{A}_3 = \vec{b}.
-          </md>
+          In short, reordering the unknowns permutes the columns of <m>A</m> and leaves
+          <m>\vec{b}</m> alone; reordering the equations permutes the rows of <m>A</m>
+          and the entries of <m>\vec{b}</m> together.
         </p>
       </solution>
     </example>

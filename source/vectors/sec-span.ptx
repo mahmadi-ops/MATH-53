@@ -155,6 +155,84 @@
     </solution>
   </example>
 
+  <example xml:id="eg-same-span-more-ways">
+    <title>Same Span, More Ways to Write a Vector</title>
+    <statement>
+      <p>
+        Let <m>\vec{u} = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}</m> and
+        <m>\vec{v} = \begin{bmatrix} 0 \\ 2 \\ 3 \end{bmatrix}</m> as in
+        <xref ref="eg-span-adding-vector" text="type-global" />, and let
+        <m>\vec{b} = \begin{bmatrix} 0 \\ 2 \\ 1 \end{bmatrix}</m>.
+      </p>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              Write <m>\vec{b}</m> as a linear combination of <m>\vec{u}</m> and
+              <m>\vec{v}</m>. In how many ways can this be done?
+            </p>
+          </li>
+          <li>
+            <p>
+              Case (I): <m>\vec{w} = \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}</m>. Find
+              every triple <m>(\alpha, \beta, \gamma)</m> with
+              <m>\alpha\vec{u} + \beta\vec{v} + \gamma\vec{w} = \vec{b}</m>. The span did
+              not change in this case; what did?
+            </p>
+          </li>
+          <li>
+            <p>
+              Case (II): <m>\vec{w} = \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}</m>. Find
+              every such triple. Why was a target with nonzero first entry out of reach
+              of <m>\vec{u}</m> and <m>\vec{v}</m> alone?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <term>(a)</term> Comparing entries in
+        <m>\alpha\vec{u} + \beta\vec{v} = \vec{b}</m> gives
+        <m>\alpha + 2\beta = 2</m> and <m>2\alpha + 3\beta = 1</m>, so
+        <m>\beta = 3</m> and <m>\alpha = -4</m>. There is exactly one way:
+        <md>
+          \vec{b} = -4\vec{u} + 3\vec{v}.
+        </md>
+      </p>
+      <p>
+        <term>(b)</term> The entries give <m>\alpha + 2\beta + \gamma = 2</m> and
+        <m>2\alpha + 3\beta - \gamma = 1</m>. With <m>\gamma = t</m> free,
+        <md>
+          (\alpha, \beta, \gamma) = (-4 + 5t,\; 3 - 3t,\; t), \qquad t \in \R.
+        </md>
+        The freedom comes from the relation
+        <m>5\vec{u} - 3\vec{v} + \vec{w} = \vec{0}</m>, which is
+        <m>\vec{w} = -5\vec{u} + 3\vec{v}</m> from
+        <xref ref="eg-span-adding-vector" text="type-global" /> rewritten. Adding
+        <m>t</m> times this relation to <m>\vec{b} = -4\vec{u} + 3\vec{v}</m> changes the
+        coefficients but not the vector. The span is the same plane as before; what is
+        lost is the uniqueness of the coefficients.
+      </p>
+      <p>
+        <term>(c)</term> The first entry of
+        <m>\alpha\vec{u} + \beta\vec{v} + \gamma\vec{w}</m> is <m>\gamma</m>, and the
+        first entry of <m>\vec{b}</m> is <m>0</m>, so <m>\gamma = 0</m>. Part (a) then
+        forces <m>\alpha = -4</m>, <m>\beta = 3</m>: the only triple is
+        <m>(-4, 3, 0)</m>. Every combination of <m>\vec{u}</m> and <m>\vec{v}</m> has
+        first entry <m>0</m>, so a target with nonzero first entry is not in
+        <m>\operatorname{Span}\{ \vec{u}, \vec{v} \}</m>; the new vector <m>\vec{w}</m>
+        is what supplies that entry.
+      </p>
+      <p>
+        A redundant vector leaves the span alone and costs the uniqueness of the
+        coefficients. A vector outside the span enlarges it and keeps the coefficients
+        unique. This is the distinction that
+        <xref ref="sec-linear-independence" text="type-global" /> makes precise.
+      </p>
+    </solution>
+  </example>
+
   <subsection xml:id="subsec-seeing-a-span">
     <title>Seeing a Span</title>
 

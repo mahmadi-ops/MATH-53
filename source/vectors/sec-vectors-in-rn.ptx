@@ -128,20 +128,6 @@
       </statement>
     </definition>
 
-    <example xml:id="eg-vector-addition">
-      <title>Adding Two Vectors</title>
-      <p>
-        Let <m>\vec{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</m> and
-        <m>\vec{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}</m>. Then
-        <md>
-          \vec{u} + \vec{v}
-          = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
-            + \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
-          = \begin{bmatrix} 5 \\ 7 \\ 9 \end{bmatrix}.
-        </md>
-      </p>
-    </example>
-
     <theorem xml:id="thm-vector-addition-properties">
       <title>Properties of Vector Addition</title>
       <statement>
@@ -190,15 +176,111 @@
     </theorem>
 
     <example xml:id="eg-vector-scalar">
-      <title>Scaling a Vector</title>
+      <title>Adding and Scaling Vectors</title>
       <p>
-        Let <m>\vec{u} = \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}</m> and
-        <m>k = -2</m>. Then
+        Let
         <md>
-          k\vec{u} = -2 \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}
-          = \begin{bmatrix} 2 \\ -4 \\ -10 \end{bmatrix}.
+          \vec{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \qquad
+          \vec{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}, \qquad
+          k = -2.
+        </md>
+        Addition and scalar multiplication both work entry by entry:
+        <md>
+          \vec{u} + \vec{v} = \begin{bmatrix} 5 \\ 7 \\ 9 \end{bmatrix}, \qquad
+          k\vec{v} = -2 \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
+          = \begin{bmatrix} -8 \\ -10 \\ -12 \end{bmatrix}, \qquad
+          \vec{u} + k\vec{v} = \begin{bmatrix} -7 \\ -8 \\ -9 \end{bmatrix}.
         </md>
       </p>
+    </example>
+
+    <example xml:id="eg-recovering-two-vectors">
+      <title>Recovering Two Vectors from Two Combinations</title>
+      <statement>
+        <p>
+          Two unknown vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>\R^n</m> satisfy
+          <md>
+            \vec{u} + \vec{v} = \vec{p}, \qquad \vec{u} + \lambda\vec{v} = \vec{q},
+          </md>
+          where the vectors <m>\vec{p}</m>, <m>\vec{q}</m> and the scalar
+          <m>\lambda</m> are known.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                For every real <m>\lambda</m>, decide whether <m>\vec{u}</m> and
+                <m>\vec{v}</m> are determined uniquely, cannot exist, or can be chosen in
+                infinitely many ways. Give formulas in each case.
+              </p>
+            </li>
+            <li>
+              <p>
+                Apply your answer to
+                <m>\vec{p} = \begin{bmatrix} 5 \\ 7 \\ 9 \end{bmatrix}</m>,
+                <m>\vec{q} = \begin{bmatrix} -7 \\ -8 \\ -9 \end{bmatrix}</m>,
+                <m>\lambda = -2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Why would dividing by <m>\lambda - 1</m> before separating cases lose
+                part of the answer?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Subtract the first equation from the second. By the
+          properties in <xref ref="thm-vector-addition-properties" text="type-global" />
+          and <xref ref="thm-vector-scalar-properties" text="type-global" />,
+          <md>
+            (\lambda - 1)\,\vec{v} = \vec{q} - \vec{p}.
+          </md>
+          Everything depends on whether <m>\lambda - 1</m> is zero.
+        </p>
+        <p>
+          <term>Case <m>\lambda \neq 1</m>.</term> Multiplying by
+          <m>\frac{1}{\lambda - 1}</m> gives
+          <md>
+            \vec{v} = \frac{1}{\lambda - 1}\,(\vec{q} - \vec{p}), \qquad
+            \vec{u} = \vec{p} - \vec{v} = \frac{1}{\lambda - 1}\,(\lambda\vec{p} - \vec{q}).
+          </md>
+          There is exactly one pair.
+        </p>
+        <p>
+          <term>Case <m>\lambda = 1</m> and <m>\vec{q} \neq \vec{p}</m>.</term> The
+          derived equation reads <m>\vec{0} = \vec{q} - \vec{p}</m>, which is false. No
+          pair exists: the two equations ask the same sum <m>\vec{u} + \vec{v}</m> to
+          equal two different vectors.
+        </p>
+        <p>
+          <term>Case <m>\lambda = 1</m> and <m>\vec{q} = \vec{p}</m>.</term> The two
+          equations are the same equation. Every <m>\vec{v}</m> in <m>\R^n</m> is
+          allowed, with <m>\vec{u} = \vec{p} - \vec{v}</m>, so there are infinitely many
+          pairs.
+        </p>
+        <p>
+          <term>(b)</term> Here <m>\lambda = -2 \neq 1</m>, so
+          <md>
+            \vec{v} = -\tfrac{1}{3}(\vec{q} - \vec{p})
+            = -\tfrac{1}{3} \begin{bmatrix} -12 \\ -15 \\ -18 \end{bmatrix}
+            = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}, \qquad
+            \vec{u} = \vec{p} - \vec{v} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}.
+          </md>
+          These are the vectors of <xref ref="eg-vector-scalar" text="type-global" />.
+        </p>
+        <p>
+          <term>(c)</term> The factor <m>\frac{1}{\lambda - 1}</m> has no meaning when
+          <m>\lambda = 1</m>. Dividing first silently discards both cases with
+          <m>\lambda = 1</m>, which are exactly the cases with no solution and with
+          infinitely many. Entry by entry, the problem is the system
+          <m>x + y = p_i</m>, <m>x + \lambda y = q_i</m>, and the three outcomes are
+          those of <xref ref="thm-zero-one-infinitely-many" text="type-global" />.
+        </p>
+      </solution>
     </example>
   </subsection>
 
