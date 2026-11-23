@@ -28,7 +28,7 @@ elements cannot be formatted and stays plain. The styles are in `book-theme.css`
 |------|----------------|-----------|
 | `line-family.html` | Section 1.1, after the example "One Family, All Three Cases" | The lines `x + y = 1` and `ax + y = b`: sliders for `a` and `b` show one solution, none, or infinitely many |
 | `solution-set.html` | Section 1.1, after the parametric solution example | Two planes, a moving solution, and a third equation leaving a point, a line, or the empty set |
-| `translated-solutions.html` | Section 2.3, in the example "Comparing a Homogeneous System with Its Non-Homogeneous Partner" | Scaling `v_h` moves along the line of homogeneous solutions; adding a particular solution `p` carries it to the parallel line `p + s v_h` |
+| `translated-solutions.html` | Section 2.3, in the example "Comparing a Homogeneous System with Its Non-Homogeneous Partner" | Scaling `v_1` moves along the line of homogeneous solutions; adding a particular solution `p` carries it to the parallel line `p + s v_1` |
 | `transformation-geometry.html` | Section 3.1, before the first example | `T(x,y,z) = (x+2y, 2x+y)` sends the basis vectors to matrix columns and loses the z-coordinate |
 | `change-of-basis.html` | Section 7.4, in the same-vector/two-bases example | The grid and coordinates change while `(1,2)` stays fixed |
 
@@ -69,17 +69,17 @@ from the PreFigure source `scripts/prefigure/ch1-line-family.xml`.
 
 `translated-solutions.html` (with `translated-solutions.js`) is the 3D companion
 of the figure "The picture to remember" in Section 2.3. For the two systems of
-the example there, it draws the line of homogeneous solutions `s v_h`, with
-`v_h = (−1, 1, 0)`, the parallel line of solutions `w = p + s v_h` of the
-non-homogeneous system, and the vectors that relate them: `v_h` (thin, dark),
-`s v_h` (thick, gray), the particular solution `p = (0, 0, −1)` (wine), their
+the example there, it draws the line of homogeneous solutions `s v_1`, with
+`v_1 = (−1, 1, 0)`, the parallel line of solutions `w = p + s v_1` of the
+non-homogeneous system, and the vectors that relate them: `v_1` (thin, dark),
+`s v_1` (thick, gray), the particular solution `p = (0, 0, −1)` (wine), their
 dashed copies, which complete a parallelogram, and the sum `w` (olive).
 
 A slider sets `s` from −2 to 2 in steps of 1/4. The guide plays the
-construction in three captioned steps: scale `v_h`, slide `s v_h` along `p`,
+construction in three captioned steps: scale `v_1`, slide `s v_1` along `p`,
 then let `s` run over its range. A button replaces `p` by a second particular
 solution, `(1, −1, −1)`; the parallelogram leans and the olive line stays where
-it is. The readout substitutes `s v_h` and `w` into the two systems. The faint
+it is. The readout substitutes `s v_1` and `w` into the two systems. The faint
 rectangle is part of the plane `x + y = 0`, which contains both lines, and the
 dots mark `s = −2, …, 2`.
 

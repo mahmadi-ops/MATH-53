@@ -112,11 +112,11 @@ version is a PreFigure diagram kept in `scripts/prefigure/ch1-line-family.xml`;
 `translated-solutions.html` (with `translated-solutions.js`) belongs to the
 Section 2.3 example that compares a homogeneous system with its non-homogeneous
 partner. Its data (the three shared left-hand sides, the constants `−1, 1, 0`,
-`v_h = (−1, 1, 0)`, and the two particular solutions `(0, 0, −1)` and
+`v_1 = (−1, 1, 0)`, and the two particular solutions `(0, 0, −1)` and
 `(1, −1, −1)`) and its helpers are exported for Node, and
 `node scripts/check-geometry-math.cjs` checks, for every slider position and
-both particular solutions, that `s v_h` solves the homogeneous system, that
-`p + s v_h` solves the non-homogeneous one, that both lie in the plane
+both particular solutions, that `s v_1` solves the homogeneous system, that
+`p + s v_1` solves the non-homogeneous one, that both lie in the plane
 `x + y = 0` drawn in the figure, and that the two particular solutions differ
 by a homogeneous solution. `python scripts/check-geometry-explorers.py` checks
 in the browser that the dashed copies meet at the tip of `w`, that this tip

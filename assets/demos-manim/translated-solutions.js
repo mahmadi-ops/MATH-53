@@ -5,12 +5,12 @@
        x + y − z = 0        x + y − z =  1
        x + y     = 0        x + y     =  0
 
-   The homogeneous solutions are the multiples s·v_h of v_h = (−1, 1, 0), a line
-   through the origin. Adding one particular solution p of the second system to
-   each of them gives every solution of the second system, w = p + s·v_h: the
-   same line, moved by p. The slider scales v_h; the guide then slides s·v_h
-   along p. A button swaps p = (0, 0, −1) for another particular solution,
-   (1, −1, −1), and the line of sums does not change.
+   The homogeneous solutions are the multiples v_h = s·v_1 of the basic solution
+   v_1 = (−1, 1, 0), a line through the origin. Adding one particular solution
+   p of the second system to each of them gives every solution of the second
+   system, w = p + s·v_1: the same line, moved by p. The slider scales v_1; the
+   guide then slides s·v_1 along p. A button swaps p = (0, 0, −1) for another
+   particular solution, (1, −1, −1), and the line of sums does not change.
 
    Optional URL parameters: s (starting scalar), yaw, pitch.
    The pure math helpers are exported for the Node checks. */
@@ -20,11 +20,11 @@
   /* ---------- the two systems ---------- */
   const ROWS = [[1, 1, 1], [1, 1, -1], [1, 1, 0]];   // left-hand sides, shared
   const RHS = [-1, 1, 0];                             // the non-homogeneous constants
-  const VH = [-1, 1, 0];                              // basic homogeneous solution
+  const V1 = [-1, 1, 0];                              // the basic solution of the homogeneous system
   const PARTICULAR = [[0, 0, -1], [1, -1, -1]];       // two particular solutions
   const dot = (a, b) => a.reduce((sum, x, i) => sum + x * b[i], 0);
-  const scaled = s => VH.map(x => s * x);
-  const translate = (p, s) => p.map((x, k) => x + s * VH[k]);
+  const scaled = s => V1.map(x => s * x);
+  const translate = (p, s) => p.map((x, k) => x + s * V1[k]);
   const leftSides = point => ROWS.map(row => dot(row, point));
   const number = x => (Math.abs(x) < .0005 ? "0" : Number(x.toFixed(3)).toString()).replace(/-/g, "−");
   // A left-hand side with the point's coordinates written in, e.g. "−1.5 + 1.5 − (−1)".
@@ -39,15 +39,15 @@
     return text || "0";
   }
 
-  const api = { ROWS, RHS, VH, PARTICULAR, scaled, translate, leftSides, substituted, number };
+  const api = { ROWS, RHS, V1, PARTICULAR, scaled, translate, leftSides, substituted, number };
   if (typeof module !== "undefined" && module.exports) { module.exports = api; return; }
 
   /* ---------- browser ---------- */
   const G = root.BookGeometry, M = root.BookMath, C = G.colors, $ = id => document.getElementById(id);
   const params = new URLSearchParams(location.search);
   const S_MAX = 2, STEP = 0.25;                       // slider range and step
-  const FROM = -3.15, TO = 2.35;                      // the part of each line that is drawn, in multiples of v_h
-                                                      // (the second particular solution reaches p₀ − 3v_h)
+  const FROM = -3.15, TO = 2.35;                      // the part of each line that is drawn, in multiples of v_1
+                                                      // (the second particular solution reaches p₀ − 3v_1)
   const DARK = "#222", RUNG = [-2, -1, 0, 1, 2];
   const clampS = x => Math.max(-S_MAX, Math.min(S_MAX, Math.round(x / STEP) * STEP));
   const startS = Number.isFinite(parseFloat(params.get("s"))) ? clampS(parseFloat(params.get("s"))) : 1.5;
@@ -59,20 +59,20 @@
   let frame = WIDE, size = frame.size;
   const bounds = [[-2.4, 2.4], [-2.4, 2.4], [-1.45, 1]];
   // The vertical plane x + y = 0 holds both lines, p and every vector drawn.
-  const patch = [[FROM, -1.3], [TO, -1.3], [TO, .5], [FROM, .5]].map(([a, z]) => [VH[0] * a, VH[1] * a, z]);
+  const patch = [[FROM, -1.3], [TO, -1.3], [TO, .5], [FROM, .5]].map(([a, z]) => [V1[0] * a, V1[1] * a, z]);
   const fitPoints = patch.slice();
   bounds.forEach((b, k) => b.forEach(value => { const p = [0, 0, 0]; p[k] = value; fitPoints.push(p); }));
 
   const scene = new G.Scene($("translation-scene"), G.fittedProjector(camera, fitPoints, size, frame.padding));
-  let s = startS, slide = 1, which = 0, guideStep = -1;   // slide: how far s·v_h has moved along p (0 to 1)
+  let s = startS, slide = 1, which = 0, guideStep = -1;   // slide: how far s·v_1 has moved along p (0 to 1)
 
   const tuple = point => "(" + point.map(number).join(", ") + ")";
   const captions = [
-    "1. Scale. Every solution of the homogeneous system is a multiple $svₕ$ of $vₕ = (−1, 1, 0)$. As $s$ changes, the tip of $svₕ$ runs along the gray line through the origin.",
-    "2. Add. Slide $svₕ$ along $p$ without turning it, until its tail sits at the tip of $p$. Its tip is now at $w = p + svₕ$, a solution of the non-homogeneous system.",
-    "3. Every solution. Change $s$ again: the tip of $svₕ$ traces the gray line and the tip of $w = p + svₕ$ traces the olive line. The olive line is the gray line moved by $p$."
+    "1. Scale. Every solution of the homogeneous system is a multiple $vₕ = sv₁$ of the basic solution $v₁ = (−1, 1, 0)$. As $s$ changes, the tip of $sv₁$ runs along the gray line through the origin.",
+    "2. Add. Slide $sv₁$ along $p$ without turning it, until its tail sits at the tip of $p$. Its tip is now at $w = p + sv₁$, a solution of the non-homogeneous system.",
+    "3. Every solution. Change $s$ again: the tip of $sv₁$ traces the gray line and the tip of $w = p + sv₁$ traces the olive line. The olive line is the gray line moved by $p$."
   ];
-  const idle = "Move $s$, or press Play to follow the construction: scale $vₕ$, then add $p$.";
+  const idle = "Move $s$, or press Play to follow the construction: scale $v₁$, then add $p$.";
   // The caption is a live region: write it only when it changes.
   let shown = idle;
   function caption(text) { if (text !== shown) { shown = text; M.set($("guide-caption"), text); } }
@@ -112,7 +112,7 @@
     scene.polygon([[0, 0, 0], sv, moved(sv), moved([0, 0, 0])], C.mustard, .09, { stroke: "none" });
     if (done) scene.arrow([0, 0, 0], w, C.olive, 3.5, { "data-vector": "sum" });
     scene.arrow([0, 0, 0], sv, C.gray, 5, { "data-vector": "scaled" });
-    scene.arrow([0, 0, 0], VH, DARK, 1.8, { "data-vector": "basic" });
+    scene.arrow([0, 0, 0], V1, DARK, 1.8, { "data-vector": "basic" });
     scene.arrow([0, 0, 0], p, C.wine, 3.5, { "data-vector": "particular" });
     if (slide > 0) {
       // A white casing keeps the dashes readable where they lie on the olive line.
@@ -129,11 +129,11 @@
     if (done) {
       // Below the olive line, on the side that has room for it.
       const x = scene.project(w)[0], left = x > size[0] - 132 || (s < 0 && x > 124);
-      labels.push(scene.text(w, Math.abs(s) < 1e-9 ? "$w = p$" : "$w = p + svₕ$", C.olive, left ? [-112, 37] : [10, 25], { "data-label": "sum" }));
+      labels.push(scene.text(w, Math.abs(s) < 1e-9 ? "$w = p$" : "$w = p + sv₁$", C.olive, left ? [-112, 37] : [10, 25], { "data-label": "sum" }));
     }
     labels.push(scene.text(p.map(x => x / 2), "$p$", C.wine, [side < 0 ? -22 : 10, 6], { "data-label": "particular" }));
-    if (Math.abs(s) > 1e-9) labels.push(scene.text(sv, Math.abs(s - 1) < 1e-9 ? "$svₕ = vₕ$" : "$svₕ$", "#404040", [s > 0 ? -8 : -34, -16], { "data-label": "scaled" }));
-    if (Math.abs(s - 1) > 1e-9) labels.push(scene.text(VH, "$vₕ$", DARK, [-10, -16], { "data-label": "basic" }));
+    if (Math.abs(s) > 1e-9) labels.push(scene.text(sv, Math.abs(s - 1) < 1e-9 ? "$sv₁ = v₁$" : "$sv₁$", "#404040", [s > 0 ? -8 : -34, -16], { "data-label": "scaled" }));
+    if (Math.abs(s - 1) > 1e-9) labels.push(scene.text(V1, "$v₁$", DARK, [-10, -16], { "data-label": "basic" }));
     if (done && Math.abs(s) >= .5) labels.push(scene.text(sv.map((x, k) => x + p[k] / 2), "$p$", C.wine, [s > 0 ? 10 : -22, 6], { "data-label": "particular-copy" }));
     // Labels can be measured only while the picture is displayed. In the book it
     // starts inside a closed solution, and is drawn again when that opens.
@@ -163,17 +163,17 @@
 
     // Controls and readout.
     $("scalar").value = s; $("scalar-value").value = number(s);
-    $("scalar").setAttribute("aria-valuetext", `s = ${number(s)}; s v_h = ${tuple(sv)}; w = p + s v_h = ${tuple(w)}`);
+    $("scalar").setAttribute("aria-valuetext", `s = ${number(s)}; s v_1 = ${tuple(sv)}; w = p + s v_1 = ${tuple(w)}`);
     $("other-particular").setAttribute("aria-pressed", String(which === 1));
     M.set($("particular-name"), `A particular solution $p = ${tuple(p)}$`);
     const factor = s < 0 ? "(" + number(s) + ")" : number(s);     // a negative scalar is written in brackets
-    M.set($("sum-equation"), `$w = p + svₕ = ${tuple(p)} + ${factor}${tuple(VH)} = ${tuple(w)}$`);
-    M.set($("scaled-check"), `Scale: $svₕ = ${factor}${tuple(VH)} = ${tuple(sv)}$ solves the homogeneous system: ${checks(sv, [0, 0, 0])}`);
+    M.set($("sum-equation"), `$w = p + sv₁ = ${tuple(p)} + ${factor}${tuple(V1)} = ${tuple(w)}$`);
+    M.set($("scaled-check"), `Scale: $vₕ = sv₁ = ${factor}${tuple(V1)} = ${tuple(sv)}$ solves the homogeneous system: ${checks(sv, [0, 0, 0])}`);
     M.set($("sum-check"), `Add $p$: $w = ${tuple(w)}$ solves the non-homogeneous system: ${checks(w, RHS)}`);
-    $("scene-description").textContent = `A gray line through the origin holds the homogeneous solutions s v_h, with v_h = (−1, 1, 0). An olive line parallel to it holds the solutions p + s v_h of the non-homogeneous system. With s = ${number(s)} and p = ${tuple(p)}: s v_h = ${tuple(sv)} and w = p + s v_h = ${tuple(w)}. Dashed copies of p and s v_h complete the parallelogram of the sum.`;
+    $("scene-description").textContent = `A gray line through the origin holds the homogeneous solutions s v_1, with v_1 = (−1, 1, 0). An olive line parallel to it holds the solutions p + s v_1 of the non-homogeneous system. With s = ${number(s)} and p = ${tuple(p)}: s v_1 = ${tuple(sv)} and w = p + s v_1 = ${tuple(w)}. Dashed copies of p and s v_1 complete the parallelogram of the sum.`;
   }
 
-  // Guide: scale v_h, slide the result along p, then let s run over the whole range.
+  // Guide: scale v_1, slide the result along p, then let s run over the whole range.
   const ease = t => t * t * (3 - 2 * t);
   const player = G.player($("play"), 15000, progress => {
     const step = progress < .25 ? 0 : progress < .5 ? 1 : 2;
@@ -193,12 +193,12 @@
   $("scalar").addEventListener("input", () => { player.stop(); slide = 1; s = +$("scalar").value; draw(); });
   $("scalar").addEventListener("change", () => {
     guideStep = -1;
-    caption(`At $s = ${number(s)}$: scaling gives $svₕ = ${tuple(scaled(s))}$ on the gray line, and adding $p$ gives $w = ${tuple(translate(PARTICULAR[which], s))}$ on the olive line.`);
+    caption(`At $s = ${number(s)}$: scaling gives $sv₁ = ${tuple(scaled(s))}$ on the gray line, and adding $p$ gives $w = ${tuple(translate(PARTICULAR[which], s))}$ on the olive line.`);
   });
   $("other-particular").addEventListener("click", () => {
     player.stop(); slide = 1; which = 1 - which; guideStep = -1; s = clampS(s); draw();
     caption(which
-      ? "With $p = (1, −1, −1)$ the parallelogram leans, but $p + svₕ$ still lands on the same olive line. The two choices of $p$ differ by $(1, −1, 0) = −vₕ$, a solution of the homogeneous system."
+      ? "With $p = (1, −1, −1)$ the parallelogram leans, but $p + sv₁$ still lands on the same olive line. The two choices of $p$ differ by $(1, −1, 0) = −v₁$, a solution of the homogeneous system."
       : "Back to $p = (0, 0, −1)$. The olive line has not moved: any one solution of the non-homogeneous system can serve as $p$.");
   });
   const updateCamera = G.cameraControls($("translation-scene"), camera, draw);

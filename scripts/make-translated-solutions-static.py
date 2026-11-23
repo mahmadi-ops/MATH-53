@@ -34,10 +34,10 @@ ROOT = Path(__file__).resolve().parent.parent
 NAME = 'ch2-translated-solutions'
 SVG = 'http://www.w3.org/2000/svg'
 LABEL = ('In three-dimensional space, a gray line through the origin holds the homogeneous '
-         'solutions s v_h, and an olive line parallel to it, one unit lower, holds the solutions '
-         'p + s v_h. A wine arrow p = (0, 0, -1) points from the origin down to the olive line. '
-         'For s = 1.5, the arrows s v_h and p, with dashed copies of each, form a parallelogram '
-         'whose far corner is w = p + s v_h = (-1.5, 1.5, -1), on the olive line.')
+         'solutions s v_1, and an olive line parallel to it, one unit lower, holds the solutions '
+         'p + s v_1. A wine arrow p = (0, 0, -1) points from the origin down to the olive line. '
+         'For s = 1.5, the arrows s v_1 and p, with dashed copies of each, form a parallelogram '
+         'whose far corner is w = p + s v_1 = (-1.5, 1.5, -1), on the olive line.')
 sys.dont_write_bytecode = True
 
 

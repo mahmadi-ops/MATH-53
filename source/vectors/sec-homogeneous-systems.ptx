@@ -168,18 +168,18 @@
             \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}
             = a_1 \begin{bmatrix} \frac{9}{5} \\ -\frac{4}{5} \\ 1 \\ 0 \end{bmatrix}
             + a_2 \begin{bmatrix} -\frac{14}{5} \\ -\frac{1}{5} \\ 0 \\ 1 \end{bmatrix}
-            = a_1 \vec{V}_1 + a_2 \vec{V}_2.
+            = a_1 \vec{v}_1 + a_2 \vec{v}_2.
           </md>
         </p>
         <p>
           The vectors
           <md>
-            \vec{V}_1 = \begin{bmatrix} \frac{9}{5} \\ -\frac{4}{5} \\ 1 \\ 0 \end{bmatrix}
+            \vec{v}_1 = \begin{bmatrix} \frac{9}{5} \\ -\frac{4}{5} \\ 1 \\ 0 \end{bmatrix}
             \qquad \text{and} \qquad
-            \vec{V}_2 = \begin{bmatrix} -\frac{14}{5} \\ -\frac{1}{5} \\ 0 \\ 1 \end{bmatrix}
+            \vec{v}_2 = \begin{bmatrix} -\frac{14}{5} \\ -\frac{1}{5} \\ 0 \\ 1 \end{bmatrix}
           </md>
           are the <term>basic solutions</term>, and the general solution
-          <m>\vec{V}_h = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}</m> is a
+          <m>\vec{v}_h = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}</m> is a
           linear combination of the basic ones.
         </p>
       </solution>
@@ -189,25 +189,25 @@
       <title>Do Two Parameters Always Give Every Solution?</title>
       <statement>
         <p>
-          Let <m>\vec{V}_1</m> and <m>\vec{V}_2</m> be the basic solutions of
+          Let <m>\vec{v}_1</m> and <m>\vec{v}_2</m> be the basic solutions of
           <xref ref="eg-basic-solutions" text="type-global" />, so that every solution of
-          the system is <m>a_1 \vec{V}_1 + a_2 \vec{V}_2</m>.
+          the system is <m>a_1 \vec{v}_1 + a_2 \vec{v}_2</m>.
         </p>
         <p>
           <ol marker="(a)">
             <li>
               <p>
-                Let <m>\vec{W}_1 = \vec{V}_1 + \vec{V}_2</m> and
-                <m>\vec{W}_2 = 2\vec{V}_1 + 2\vec{V}_2</m>. A student claims that
-                <m>s\vec{W}_1 + t\vec{W}_2</m>, with <m>s, t \in \R</m>, is another
+                Let <m>\vec{w}_1 = \vec{v}_1 + \vec{v}_2</m> and
+                <m>\vec{w}_2 = 2\vec{v}_1 + 2\vec{v}_2</m>. A student claims that
+                <m>s\vec{w}_1 + t\vec{w}_2</m>, with <m>s, t \in \R</m>, is another
                 description of all solutions, because it still has two parameters. Decide
                 whether the claim is correct. If it is not, exhibit a solution it misses.
               </p>
             </li>
             <li>
               <p>
-                Replace <m>\vec{W}_2</m> by <m>\vec{V}_1 - \vec{V}_2</m>. Prove that
-                <m>a\vec{W}_1 + b\vec{W}_2</m> now describes every solution, and give the
+                Replace <m>\vec{w}_2</m> by <m>\vec{v}_1 - \vec{v}_2</m>. Prove that
+                <m>a\vec{w}_1 + b\vec{w}_2</m> now describes every solution, and give the
                 conversions between the old coefficients and the new ones.
               </p>
             </li>
@@ -216,29 +216,29 @@
       </statement>
       <solution>
         <p>
-          <term>(a)</term> The claim is wrong. Since <m>\vec{W}_2 = 2\vec{W}_1</m>,
+          <term>(a)</term> The claim is wrong. Since <m>\vec{w}_2 = 2\vec{w}_1</m>,
           <md>
-            s\vec{W}_1 + t\vec{W}_2 = (s + 2t)\,\vec{W}_1, \qquad
-            \vec{W}_1
+            s\vec{w}_1 + t\vec{w}_2 = (s + 2t)\,\vec{w}_1, \qquad
+            \vec{w}_1
             = \begin{bmatrix} \frac{9}{5} \\ -\frac{4}{5} \\ 1 \\ 0 \end{bmatrix}
             + \begin{bmatrix} -\frac{14}{5} \\ -\frac{1}{5} \\ 0 \\ 1 \end{bmatrix}
             = \begin{bmatrix} -1 \\ -1 \\ 1 \\ 1 \end{bmatrix}.
           </md>
-          Only the multiples of the single vector <m>\vec{W}_1</m> appear. In each of
-          them the third and fourth entries are equal, whereas <m>\vec{V}_1</m> has third
-          entry <m>1</m> and fourth entry <m>0</m>. So <m>\vec{V}_1</m> is a solution the
+          Only the multiples of the single vector <m>\vec{w}_1</m> appear. In each of
+          them the third and fourth entries are equal, whereas <m>\vec{v}_1</m> has third
+          entry <m>1</m> and fourth entry <m>0</m>. So <m>\vec{v}_1</m> is a solution the
           description misses. There are two symbols but only one independent choice, the
           number <m>s + 2t</m>.
         </p>
         <p>
           <term>(b)</term> Now
-          <m>\vec{W}_2 = \vec{V}_1 - \vec{V}_2
+          <m>\vec{w}_2 = \vec{v}_1 - \vec{v}_2
           = \begin{bmatrix} \frac{23}{5} \\ -\frac{3}{5} \\ 1 \\ -1 \end{bmatrix}</m> and
           <md>
-            a\vec{W}_1 + b\vec{W}_2 = (a + b)\,\vec{V}_1 + (a - b)\,\vec{V}_2,
+            a\vec{w}_1 + b\vec{w}_2 = (a + b)\,\vec{v}_1 + (a - b)\,\vec{v}_2,
           </md>
           which is a solution for every <m>a</m> and <m>b</m>. Conversely, a given
-          solution <m>a_1 \vec{V}_1 + a_2 \vec{V}_2</m> is obtained when
+          solution <m>a_1 \vec{v}_1 + a_2 \vec{v}_2</m> is obtained when
           <m>a + b = a_1</m> and <m>a - b = a_2</m>, that is, when
           <md>
             a = \frac{a_1 + a_2}{2}, \qquad b = \frac{a_1 - a_2}{2}.
@@ -327,10 +327,10 @@
       <statement>
         <p>
           Suppose the matrix equation <m>A\vec{x} = \vec{b}</m> is consistent and let
-          <m>\vec{p} \neq \vec{0}</m> be a solution. Assume that <m>\vec{v}_h</m> is a
-          solution of <m>A\vec{x} = \vec{0}</m>. Then the solution set of
+          <m>\vec{p} \neq \vec{0}</m> be a solution. Then the solution set of
           <m>A\vec{x} = \vec{b}</m> is the set of all the vectors of the form
-          <m>\vec{w} = \vec{p} + \vec{v}_h</m>.
+          <m>\vec{w} = \vec{p} + \vec{v}_h</m>, as <m>\vec{v}_h</m> ranges over all
+          solutions of the homogeneous equation <m>A\vec{x} = \vec{0}</m>.
         </p>
       </statement>
     </theorem>
@@ -392,9 +392,11 @@
           <md>
             x = -s, \quad y = s, \quad z = 0,
             \qquad \text{i.e.} \qquad
-            \vec{v}_h = s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix},
-            \quad s \in \R.
+            \vec{v}_h = s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix} = s\vec{v}_1,
+            \quad s \in \R,
           </md>
+          where <m>\vec{v}_1 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m> is the
+          basic solution.
         </p>
         <p>
           <term>The non-homogeneous system.</term>
@@ -420,28 +422,27 @@
           So <m>z = -1</m> and <m>x = -y</m>. With <m>y = s</m>,
           <md>
             \vec{w} = s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
-            + \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}.
+            + \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}
+            = s\vec{v}_1 + \vec{p}.
           </md>
         </p>
         <p>
           Note that <m>\vec{p} = \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}</m> is a
           solution of the non-homogeneous system, whereas
-          <m>s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix} = \vec{v}_h</m> is the solution
-          of the homogeneous system.
+          <m>s\vec{v}_1 = \vec{v}_h</m> is the solution of the homogeneous system.
         </p>
         <p>
           Geometrically, <m>\vec{p}</m> is a vector in <m>\R^3</m>, whereas
-          <m>s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m> corresponds to a line in
-          <m>\R^3</m>. The solution set of the non-homogeneous system is that line
+          <m>s\vec{v}_1</m> corresponds to a line in <m>\R^3</m>. The solution set of the non-homogeneous system is that line
           translated by <m>\vec{p}</m>.
         </p>
         <figure xml:id="fig-translated-solutions">
           <caption>
-            The picture to remember. The homogeneous solutions <m>s\vec{v}_h</m> form a
-            line through the origin (gray). Adding one particular solution
-            <m>\vec{p}</m> of <m>A\vec{x} = \vec{b}</m> translates that line: every
-            solution of the non-homogeneous system is <m>\vec{p} + s\vec{v}_h</m>
-            (olive green).
+            The picture to remember. The homogeneous solutions
+            <m>\vec{v}_h = s\vec{v}_1</m> form a line through the origin (gray). Adding
+            one particular solution <m>\vec{p}</m> of <m>A\vec{x} = \vec{b}</m>
+            translates that line: every solution of the non-homogeneous system is
+            <m>\vec{p} + s\vec{v}_1</m> (olive green).
           </caption>
           <image width="62%">
             <prefigure label="pf-translated-solutions" xmlns="https://prefigure.org">
@@ -453,8 +454,8 @@
                   <line endpoints="((0,0),(0.6,1.8))" stroke="#5E011C" thickness="2" arrows="1"/>
                   <line endpoints="((0.6,1.8),(2.6,2.8))" stroke="#4A5D23" thickness="2" arrows="1"/>
                   <point p="(0.6,1.8)" fill="#5E011C" size="4"/>
-                  <label p="(3.6,1.55)" alignment="se" offset="(4,-6)" color="gray"><m>s\vec{v}_h</m></label>
-                  <label p="(3.2,3.15)" alignment="se" offset="(6,-6)" color="#4A5D23"><m>\vec{p} + s\vec{v}_h</m></label>
+                  <label p="(3.6,1.55)" alignment="se" offset="(4,-6)" color="gray"><m>s\vec{v}_1</m></label>
+                  <label p="(3.2,3.15)" alignment="se" offset="(6,-6)" color="#4A5D23"><m>\vec{p} + s\vec{v}_1</m></label>
                   <label p="(0.22,1.0)" alignment="w" offset="(-8,0)" color="#5E011C"><m>\vec{p}</m></label>
                 </coordinates>
               </diagram>
@@ -463,36 +464,35 @@
         </figure>
         <p>
           <xref ref="fig-translated-solutions-3d" text="type-global" /> draws this picture
-          for the two systems of this example, in <m>\R^3</m>. As in
-          <xref ref="fig-translated-solutions" text="type-global" />, the homogeneous
-          solutions are written <m>s\vec{v}_h</m>, here with
-          <m>\vec{v}_h = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m>. Two operations
-          relate the two solution sets. <em>Scaling</em> <m>\vec{v}_h</m> by <m>s</m> moves
-          along the gray line through the origin. <em>Adding</em> <m>\vec{p}</m> then
-          carries the point <m>s\vec{v}_h</m> to
-          <m>\vec{w} = \vec{p} + s\vec{v}_h</m> on the olive line.
+          for the two systems of this example, in <m>\R^3</m>. Two operations relate
+          the two solution sets. <em>Scaling</em> the basic solution
+          <m>\vec{v}_1</m> by <m>s</m> gives the homogeneous solution
+          <m>\vec{v}_h = s\vec{v}_1</m> and moves along the gray line through the origin.
+          <em>Adding</em> <m>\vec{p}</m> then carries the point <m>s\vec{v}_1</m> to
+          <m>\vec{w} = \vec{p} + s\vec{v}_1</m> on the olive line.
         </p>
         <figure xml:id="fig-translated-solutions-3d">
           <caption>
             The two solution sets of this example in <m>\R^3</m>. The gray line through
-            the origin holds the homogeneous solutions <m>s\vec{v}_h</m>, with
-            <m>\vec{v}_h = (-1, 1, 0)</m>; the olive line, parallel to it and one unit
-            lower, holds the solutions <m>\vec{w} = \vec{p} + s\vec{v}_h</m> of the
+            the origin holds the homogeneous solutions <m>\vec{v}_h = s\vec{v}_1</m>,
+            with <m>\vec{v}_1 = (-1, 1, 0)</m>; the olive line, parallel to it and one
+            unit lower, holds the solutions <m>\vec{w} = \vec{p} + s\vec{v}_1</m> of the
             non-homogeneous system, with <m>\vec{p} = (0, 0, -1)</m>. In the
-            interactive figure the slider sets <m>s</m>: the thick gray arrow is
-            <m>s\vec{v}_h</m>, and the dashed copies of <m>\vec{p}</m> and
-            <m>s\vec{v}_h</m> complete the parallelogram whose far corner is
-            <m>\vec{w}</m>. Play the guide to watch <m>s\vec{v}_h</m> slide along
-            <m>\vec{p}</m>, and drag the picture to rotate it. The starting position,
-            <m>s = 1.5</m>, gives <m>\vec{w} = (-1.5, 1.5, -1)</m>. A button replaces
-            <m>\vec{p}</m> by another particular solution, <m>(1, -1, -1)</m>: the
-            parallelogram leans, and the olive line does not move.
+            interactive figure the slider sets <m>s</m>: the thin dark arrow is
+            <m>\vec{v}_1</m>, the thick gray arrow is <m>s\vec{v}_1</m>, and the dashed
+            copies of <m>\vec{p}</m> and <m>s\vec{v}_1</m> complete the parallelogram
+            whose far corner is <m>\vec{w}</m>. Play the guide to watch
+            <m>s\vec{v}_1</m> slide along <m>\vec{p}</m>, and drag the picture to rotate
+            it. The starting position, <m>s = 1.5</m>, gives
+            <m>\vec{w} = (-1.5, 1.5, -1)</m>. A button replaces <m>\vec{p}</m> by
+            another particular solution, <m>(1, -1, -1)</m>: the parallelogram leans,
+            and the olive line does not move.
           </caption>
           <interactive xml:id="int-translated-solutions" iframe="demos-manim/translated-solutions.html" width="100%" aspect="2:3">
-            <shortdescription>A gray line of homogeneous solutions through the origin and a parallel olive line of solutions of the non-homogeneous system in space. A slider scales the vector v h, and a parallelogram of arrows shows that adding the particular solution p to s v h gives a point of the olive line.</shortdescription>
+            <shortdescription>A gray line of homogeneous solutions through the origin and a parallel olive line of solutions of the non-homogeneous system in space. A slider scales the basic solution v 1, and a parallelogram of arrows shows that adding the particular solution p to s v 1 gives a point of the olive line.</shortdescription>
             <static>
               <image source="images/ch2-translated-solutions" width="90%">
-                <shortdescription>In space, a gray line through the origin and an olive line parallel to it, one unit lower. The arrows 1.5 v h and p, with dashed copies of each, form a parallelogram whose far corner, the point (-1.5, 1.5, -1), lies on the olive line.</shortdescription>
+                <shortdescription>In space, a gray line through the origin and an olive line parallel to it, one unit lower. The arrows 1.5 v 1 and p, with dashed copies of each, form a parallelogram whose far corner, the point (-1.5, 1.5, -1), lies on the olive line.</shortdescription>
               </image>
             </static>
           </interactive>

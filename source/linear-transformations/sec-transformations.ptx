@@ -74,26 +74,6 @@
       <em>Which different inputs produce the same output? What information does this transformation lose?</em>
     </p>
 
-    <example xml:id="eg-transformation">
-      <title>A Transformation from <m>\R^3</m> to <m>\R^4</m></title>
-      <p>
-        Consider <m>T : \R^3 \to \R^4</m> defined by
-        <md>
-          T \begin{bmatrix} x \\ y \\ z \end{bmatrix}
-          = \begin{bmatrix} x + y \\ y \\ y - z \\ -y + z \end{bmatrix}.
-        </md>
-        This transformation transforms
-        <m>\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix} \in \R^3</m> to
-        <m>\begin{bmatrix} 1 \\ 0 \\ -2 \\ 2 \end{bmatrix} \in \R^4</m>.
-      </p>
-      <p>
-        In the language of the definition, <m>T : \R^3 \to \R^4</m> with
-        <m>T(\vec{x}) = \vec{b}</m>, where
-        <m>\vec{x} = \begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \R^3</m> and
-        <m>\vec{b} = \begin{bmatrix} x+y \\ y \\ y-z \\ -y+z \end{bmatrix} \in \R^4</m>.
-      </p>
-    </example>
-
     <definition xml:id="def-matrix-transformation">
       <title>Matrix Transformation</title>
       <statement>
@@ -108,11 +88,19 @@
     </definition>
 
     <example xml:id="eg-matrix-transformation">
-      <title>The Previous Transformation Is a Matrix Transformation</title>
+      <title>A Matrix Transformation from <m>\R^3</m> to <m>\R^4</m></title>
       <p>
-        Continuing <xref ref="eg-transformation" text="type-global" />, we can write
+        Consider <m>T : \R^3 \to \R^4</m> defined by
         <md>
-          T_A(\vec{x})
+          T \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+          = \begin{bmatrix} x + y \\ y \\ y - z \\ -y + z \end{bmatrix}.
+        </md>
+        For instance, <m>T</m> transforms
+        <m>\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix} \in \R^3</m> to
+        <m>\begin{bmatrix} 1 \\ 0 \\ -2 \\ 2 \end{bmatrix} \in \R^4</m>. Separating the
+        three variables shows that <m>T</m> is a matrix transformation:
+        <md>
+          T(\vec{x})
           = x \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
           + y \begin{bmatrix} 1 \\ 1 \\ 1 \\ -1 \end{bmatrix}
           + z \begin{bmatrix} 0 \\ 0 \\ -1 \\ 1 \end{bmatrix}
@@ -123,9 +111,119 @@
               0 \amp -1 \amp 1
             \end{bmatrix}}_{A}
           \underbrace{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}_{\vec{x}}
-          = \begin{bmatrix} x+y \\ y \\ y-z \\ -y+z \end{bmatrix}.
+          = T_A(\vec{x}).
         </md>
       </p>
+    </example>
+
+    <example xml:id="eg-attainable-outputs">
+      <title>Which Outputs Occur, and from Which Input?</title>
+      <statement>
+        <p>
+          Let <m>T = T_A</m> be the transformation of
+          <xref ref="eg-matrix-transformation" text="type-global" />, and let
+          <m>\vec{b} = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \\ b_4 \end{bmatrix}</m> be a
+          proposed output.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Determine exactly when <m>T(\vec{x}) = \vec{b}</m> has a solution, and
+                find every input <m>\vec{x}</m> when it does.
+              </p>
+            </li>
+            <li>
+              <p>
+                Show that your condition is sufficient as well as necessary.
+              </p>
+            </li>
+            <li>
+              <p>
+                The output has four entries. Do they record four independent pieces of
+                information about the input?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> The equation <m>T(\vec{x}) = \vec{b}</m> is the linear system
+          <m>A\vec{x} = \vec{b}</m>. Row reduce its augmented matrix:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 0 \amp b_1 \\
+                0 \amp 1 \amp 0 \amp b_2 \\
+                0 \amp 1 \amp -1 \amp b_3 \\
+                0 \amp -1 \amp 1 \amp b_4
+              \end{array} \right]
+              \amp \xrightarrow[r_2 + r_4]{-r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 0 \amp b_1 \\
+                0 \amp 1 \amp 0 \amp b_2 \\
+                0 \amp 0 \amp -1 \amp b_3 - b_2 \\
+                0 \amp 0 \amp 1 \amp b_2 + b_4
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{r_3 + r_4}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 1 \amp 0 \amp b_1 \\
+                0 \amp 1 \amp 0 \amp b_2 \\
+                0 \amp 0 \amp -1 \amp b_3 - b_2 \\
+                0 \amp 0 \amp 0 \amp b_3 + b_4
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow[-r_2 + r_1]{-r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp 0 \amp b_1 - b_2 \\
+                0 \amp 1 \amp 0 \amp b_2 \\
+                0 \amp 0 \amp 1 \amp b_2 - b_3 \\
+                0 \amp 0 \amp 0 \amp b_3 + b_4
+              \end{array} \right].
+            </mrow>
+          </md>
+          The last row reads <m>0 = b_3 + b_4</m>, so the system is consistent exactly
+          when <m>b_4 = -b_3</m>. In that case every column of <m>A</m> has a pivot,
+          there is no free variable, and there is exactly one input:
+          <md>
+            \vec{x} = \begin{bmatrix} b_1 - b_2 \\ b_2 \\ b_2 - b_3 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <term>(b)</term> The condition is necessary because of the last row. It is
+          sufficient because, when <m>b_4 = -b_3</m>, the input found in (a) really
+          does produce <m>\vec{b}</m>:
+          <md>
+            T \begin{bmatrix} b_1 - b_2 \\ b_2 \\ b_2 - b_3 \end{bmatrix}
+            = \begin{bmatrix}
+                (b_1 - b_2) + b_2 \\ b_2 \\ b_2 - (b_2 - b_3) \\ -b_2 + (b_2 - b_3)
+              \end{bmatrix}
+            = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \\ -b_3 \end{bmatrix}
+            = \vec{b}.
+          </md>
+        </p>
+        <p>
+          <term>(c)</term> No. The fourth entry of every output is the negative of the
+          third, since <m>-y + z = -(y - z)</m>, so it repeats what the third entry
+          already says. The range of <m>T</m> is the set of vectors of <m>\R^4</m> with
+          <m>b_3 + b_4 = 0</m>, not all of <m>\R^4</m>. For example,
+          <m>\begin{bmatrix} 1 \\ 0 \\ -2 \\ 2 \end{bmatrix}</m> is an output, and the
+          formula in (a) returns its input
+          <m>\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}</m>, whereas
+          <m>\begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix}</m> is not an output of any
+          input.
+        </p>
+        <p>
+          Two separate facts appeared here: every output that occurs comes from only one
+          input, and not every vector of the codomain occurs.
+          <xref ref="sec-injections-surjections" text="type-global" /> gives each of them
+          a name.
+        </p>
+      </solution>
     </example>
 
     <definition xml:id="def-equality-of-transformations">
@@ -195,6 +293,132 @@
         </latex-image>
       </image>
     </figure>
+
+    <example xml:id="eg-recovering-the-input">
+      <title>Recovering the Input from the Output</title>
+      <statement>
+        <p>
+          Let <m>T(x, y, z) = (x + 2y,\, 2x + y)</m> be the transformation of
+          <xref ref="eg-transformation-by-multiplication" text="type-global" />, and
+          suppose that only the output
+          <m>\begin{bmatrix} p \\ q \end{bmatrix}</m> is observed.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Find every input whose output is
+                <m>\begin{bmatrix} p \\ q \end{bmatrix}</m>. Which coordinate of the
+                input cannot be recovered, and which are determined?
+              </p>
+            </li>
+            <li>
+              <p>
+                A second instrument records <m>m = x - y + z</m>. Do the three numbers
+                <m>p</m>, <m>q</m>, <m>m</m> determine the input? Give formulas for it
+                and verify them.
+              </p>
+            </li>
+            <li>
+              <p>
+                Explain why recording <m>m = x - y</m> instead would not repair the loss
+                of information.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Row reduce the augmented matrix of
+          <m>A\vec{x} = \begin{bmatrix} p \\ q \end{bmatrix}</m>:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 0 \amp p \\
+                2 \amp 1 \amp 0 \amp q
+              \end{array} \right]
+              \amp \xrightarrow{-2r_1 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 0 \amp p \\
+                0 \amp -3 \amp 0 \amp q - 2p
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-\frac{1}{3} r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 0 \amp p \\
+                0 \amp 1 \amp 0 \amp \frac{2p - q}{3}
+              \end{array} \right]
+              \xrightarrow{-2r_2 + r_1}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp 0 \amp \frac{2q - p}{3} \\
+                0 \amp 1 \amp 0 \amp \frac{2p - q}{3}
+              \end{array} \right].
+            </mrow>
+          </md>
+          The third column has no pivot, so <m>z = t</m> is free:
+          <md>
+            \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+            = \begin{bmatrix} \frac{2q - p}{3} \\ \frac{2p - q}{3} \\ t \end{bmatrix},
+            \qquad t \in \R.
+          </md>
+          The output determines <m>x</m> and <m>y</m>, and it says nothing about
+          <m>z</m>.
+        </p>
+        <p>
+          <term>(b)</term> Yes. The three readings give three equations:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 0 \amp p \\
+                2 \amp 1 \amp 0 \amp q \\
+                1 \amp -1 \amp 1 \amp m
+              \end{array} \right]
+              \amp \xrightarrow[-r_1 + r_3]{-2r_1 + r_2}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 0 \amp p \\
+                0 \amp -3 \amp 0 \amp q - 2p \\
+                0 \amp -3 \amp 1 \amp m - p
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 2 \amp 0 \amp p \\
+                0 \amp -3 \amp 0 \amp q - 2p \\
+                0 \amp 0 \amp 1 \amp m + p - q
+              \end{array} \right].
+            </mrow>
+          </md>
+          Now every column has a pivot, so the input is unique:
+          <md>
+            x = \frac{2q - p}{3}, \qquad y = \frac{2p - q}{3}, \qquad z = m + p - q.
+          </md>
+          To verify the new formula, note that <m>x - y = q - p</m>, so
+          <m>x - y + z = (q - p) + (m + p - q) = m</m>. For instance, the input
+          <m>\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}</m> gives <m>p = -1</m>,
+          <m>q = 1</m>, <m>m = 4</m>, and the formulas return
+          <m>x = 1</m>, <m>y = -1</m>, <m>z = 2</m>.
+        </p>
+        <p>
+          <term>(c)</term> With <m>m = x - y</m> the third row of the augmented matrix is
+          <m>\left[ \begin{array}{ccc|c} 1 \amp -1 \amp 0 \amp m \end{array} \right]</m>,
+          and the same row operations end with
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 2 \amp 0 \amp p \\
+              0 \amp -3 \amp 0 \amp q - 2p \\
+              0 \amp 0 \amp 0 \amp m + p - q
+            \end{array} \right].
+          </md>
+          The third column still has no pivot, so <m>z</m> remains free. This reading
+          can be computed from the other two, because
+          <m>x - y = (2x + y) - (x + 2y) = q - p</m>; it repeats what is already known. A
+          new reading helps only if it involves <m>z</m>.
+        </p>
+      </solution>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-linear-transformations">
@@ -226,6 +450,34 @@
         </p>
       </statement>
     </definition>
+
+    <p>
+      A first example comes from geometry. Let <m>R_\theta : \R^2 \to \R^2</m> be the
+      transformation that rotates every vector counterclockwise about the origin through
+      the angle <m>\theta</m>. The animation in
+      <xref ref="fig-rotation-is-linear" text="type-global" /> checks the two properties of
+      <xref ref="def-linear-transformation" text="type-global" /> for <m>R_\theta</m>,
+      using only what a rotation does to a picture. Rotations return in
+      <xref ref="sec-special-transformations" text="type-global" />, where the matrix of
+      <m>R_\theta</m> is found.
+    </p>
+
+    <figure xml:id="fig-rotation-is-linear">
+      <caption>
+        A rotation is a linear transformation. Rotating the plane carries the
+        parallelogram on <m>\vec{u}</m> and <m>\vec{v}</m> to the parallelogram on
+        <m>R_\theta(\vec{u})</m> and <m>R_\theta(\vec{v})</m>, so the rotated diagonal
+        <m>R_\theta(\vec{u} + \vec{v})</m> is the diagonal
+        <m>R_\theta(\vec{u}) + R_\theta(\vec{v})</m> of the new parallelogram. A rotation
+        also carries a line through the origin to a line through the origin and does not
+        change lengths, so <m>R_\theta(a\vec{u}) = aR_\theta(\vec{u})</m> for every
+        scalar <m>a</m>.
+      </caption>
+      <video xml:id="video-rotation-is-linear"
+             source="videos/rotation_is_linear_manim.mp4"
+             preview="videos/previews/rotation_is_linear_manim.jpg"
+             width="90%" aspect="16:9"/>
+    </figure>
 
     <theorem xml:id="thm-linear-transformation-properties">
       <title>Properties of Linear Transformations</title>
@@ -269,6 +521,56 @@
           </ol>
         </p>
       </statement>
+      <proof>
+        <p>
+          Each part uses only the two properties in
+          <xref ref="def-linear-transformation" text="type-global" />.
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Preservation of scalar multiplication with the scalar <m>0</m> gives
+                <m>T(0\vec{x}) = 0T(\vec{x})</m>. On the left, <m>0\vec{x}</m> is the zero
+                vector of <m>\R^n</m>. On the right, <m>0</m> times any vector of
+                <m>\R^m</m> is the zero vector of <m>\R^m</m>. Hence
+                <m>T(\vec{0}) = \vec{0}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Preservation of scalar multiplication with the scalar <m>-1</m> gives
+                <m>T((-1)\vec{x}) = (-1)T(\vec{x})</m>. Since
+                <m>(-1)\vec{x} = -\vec{x}</m> and
+                <m>(-1)T(\vec{x}) = -T(\vec{x})</m>, this says
+                <m>T(-\vec{x}) = -T(\vec{x})</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For two vectors, use preservation of addition and then preservation of
+                scalar multiplication:
+                <md>
+                  T(a_1\vec{x}_1 + a_2\vec{x}_2)
+                  = T(a_1\vec{x}_1) + T(a_2\vec{x}_2)
+                  = a_1 T(\vec{x}_1) + a_2 T(\vec{x}_2).
+                </md>
+                For <m>k</m> vectors, split off the last term in the same way,
+                <md>
+                  T\bigl( (a_1\vec{x}_1 + \cdots + a_{k-1}\vec{x}_{k-1}) + a_k\vec{x}_k \bigr)
+                  = T(a_1\vec{x}_1 + \cdots + a_{k-1}\vec{x}_{k-1}) + a_k T(\vec{x}_k),
+                </md>
+                and repeat the step on the shorter sum that remains. After
+                <m>k - 1</m> steps every term has been split off, which gives
+                <md>
+                  T(a_1\vec{x}_1 + a_2\vec{x}_2 + \cdots + a_k\vec{x}_k)
+                  = a_1 T(\vec{x}_1) + a_2 T(\vec{x}_2) + \cdots + a_k T(\vec{x}_k).
+                </md>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </proof>
     </theorem>
 
     <example xml:id="eg-transformation-from-values">
@@ -424,6 +726,101 @@
             = \begin{bmatrix} x^2 \\ y \end{bmatrix}
           </md>
           would require <m>ax + by = x^2</m> for all <m>x, y</m>, which is not possible.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="eg-incomplete-linearity-test">
+      <title>Passing a Few Checks Is Not Enough</title>
+      <statement>
+        <p>
+          For real numbers <m>a</m> and <m>b</m>, define <m>F : \R^2 \to \R^2</m> by
+          <md>
+            F \begin{bmatrix} x \\ y \end{bmatrix}
+            = \begin{bmatrix} x + a\,y(y - 1) + b \\ y \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Determine exactly which <m>a</m> and <m>b</m> make <m>F</m> a linear
+                transformation.
+              </p>
+            </li>
+            <li>
+              <p>
+                Take <m>b = 0</m> and <m>a \neq 0</m>. Show that
+                <m>F(\vec{0}) = \vec{0}</m>, <m>F(\vec{e}_1) = \vec{e}_1</m> and
+                <m>F(\vec{e}_2) = \vec{e}_2</m>, and that <m>F</m> is still not linear.
+              </p>
+            </li>
+            <li>
+              <p>
+                A matrix is determined by its columns, and the columns are the images of
+                <m>\vec{e}_1</m> and <m>\vec{e}_2</m>. Why does this not show that the
+                <m>F</m> of part (b) is the transformation
+                <m>\vec{x} \mapsto \vec{x}</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> A linear transformation preserves the zero vector
+          (<xref ref="thm-linear-transformation-properties" text="type-global" />), and
+          <m>F(\vec{0}) = \begin{bmatrix} b \\ 0 \end{bmatrix}</m>, so <m>b = 0</m> is
+          necessary. With <m>b = 0</m>,
+          <md>
+            F \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ 1 \end{bmatrix},
+            \qquad
+            F \begin{bmatrix} 0 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} 2a \\ 2 \end{bmatrix}.
+          </md>
+          Preservation of scalar multiplication requires
+          <m>F \begin{bmatrix} 0 \\ 2 \end{bmatrix}
+          = 2\,F \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          = \begin{bmatrix} 0 \\ 2 \end{bmatrix}</m>, so <m>a = 0</m> is necessary too.
+          Conversely, when <m>a = b = 0</m> we have <m>F(\vec{x}) = \vec{x}</m>, the
+          matrix transformation of
+          <m>\begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>, which is linear by
+          <xref ref="thm-matrix-transformations-linear" text="type-global" />. Hence
+          <m>F</m> is linear exactly when <m>a = b = 0</m>.
+        </p>
+        <p>
+          <term>(b)</term> The term <m>a\,y(y - 1)</m> vanishes when <m>y = 0</m> and when
+          <m>y = 1</m>, so
+          <md>
+            F \begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix},
+            \qquad
+            F \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix},
+            \qquad
+            F \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}.
+          </md>
+          Yet <m>F</m> is not linear, by part (a):
+          <m>F(2\vec{e}_2) = \begin{bmatrix} 2a \\ 2 \end{bmatrix}
+          \neq 2F(\vec{e}_2)</m>.
+        </p>
+        <p>
+          <term>(c)</term> The statement about columns is a statement about linear
+          transformations. If <m>T</m> is known to be linear, then
+          <m>T \begin{bmatrix} x \\ y \end{bmatrix} = xT(\vec{e}_1) + yT(\vec{e}_2)</m>
+          by <xref ref="thm-linear-transformation-properties" text="type-global" />, so
+          the two basis images determine <m>T</m>. For a function that is not known to be
+          linear, that step is not available. The matrix with columns
+          <m>F(\vec{e}_1)</m> and <m>F(\vec{e}_2)</m> is
+          <m>\begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m>, and its
+          transformation sends <m>\begin{bmatrix} 0 \\ 2 \end{bmatrix}</m> to itself,
+          while <m>F</m> sends it to <m>\begin{bmatrix} 2a \\ 2 \end{bmatrix}</m>.
+        </p>
+        <p>
+          One failed instance, as in
+          <xref ref="eg-not-a-matrix-transformation" text="type-global" />, is enough to
+          show that a transformation is not linear. Passing the test at a few chosen
+          vectors shows nothing: the two properties must hold for all vectors and all
+          scalars.
         </p>
       </solution>
     </example>

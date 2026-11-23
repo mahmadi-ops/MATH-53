@@ -58,20 +58,48 @@
       </caption>
       <image width="52%">
         <prefigure label="pf-rotation-basis" xmlns="https://prefigure.org">
-          <diagram dimensions="(320,300)" margins="10">
-            <coordinates bbox="(-1.5,-0.6,1.6,1.6)">
-              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <arc center="(0,0)" radius="1" range="(0,180)" stroke="gray" thickness="1"/>
-              <line endpoints="((0,0),(1,0))" stroke="#4A5D23" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(0,1))" stroke="#4A5D23" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(0.643,0.766))" stroke="#5E011C" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(-0.766,0.643))" stroke="#876801" thickness="2" arrows="1"/>
-              <label p="(1,0)" alignment="se" offset="(0,-10)" color="#4A5D23"><m>\vec{e}_1</m></label>
-              <label p="(0,1)" alignment="w" offset="(-12,0)" color="#4A5D23"><m>\vec{e}_2</m></label>
-              <label p="(0.643,0.766)" alignment="e" offset="(8,4)" color="#5E011C"><m>R_\theta(\vec{e}_1)</m></label>
-              <label p="(-0.766,0.643)" alignment="w" offset="(-8,6)" color="#876801"><m>R_\theta(\vec{e}_2)</m></label>
-              <label p="(0.42,0.16)" alignment="e"><m>\theta</m></label>
+          <diagram dimensions="(350,220)" margins="10">
+            <coordinates bbox="(-1.7,-0.5,1.6,1.5)">
+              <group at="rotation-basis">
+                <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                <arc at="unit-circle" center="(0,0)" radius="1" range="(0,180)" stroke="gray" thickness="1"/>
+                <group at="angle-e1">
+                  <arc center="(0,0)" radius="0.34" range="(0,50)" stroke="black" thickness="1"/>
+                  <label p="(0.42,0.20)" alignment="e" offset="(0,0)"><m>\theta</m></label>
+                </group>
+                <group at="angle-e2">
+                  <arc center="(0,0)" radius="0.34" range="(90,140)" stroke="black" thickness="1"/>
+                  <label p="(-0.20,0.42)" alignment="n" offset="(0,0)"><m>\theta</m></label>
+                </group>
+                <group at="vector-e1">
+                  <line endpoints="((0,0),(1,0))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <label p="(1,0)" alignment="se" offset="(0,-10)" color="#4A5D23"><m>\vec{e}_1</m></label>
+                </group>
+                <group at="vector-e2">
+                  <line endpoints="((0,0),(0,1))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <label p="(0,1)" alignment="ne" offset="(6,4)" color="#4A5D23"><m>\vec{e}_2</m></label>
+                </group>
+                <group at="image-e1">
+                  <line endpoints="((0,0),(0.643,0.766))" stroke="#5E011C" thickness="2" arrows="1"/>
+                  <label p="(0.643,0.766)" alignment="e" offset="(8,4)" color="#5E011C"><m>R_\theta(\vec{e}_1)</m></label>
+                </group>
+                <group at="image-e2">
+                  <line endpoints="((0,0),(-0.766,0.643))" stroke="#876801" thickness="2" arrows="1"/>
+                  <label p="(-0.766,0.643)" alignment="w" offset="(-8,6)" color="#876801"><m>R_\theta(\vec{e}_2)</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="rotation-basis" text="The standard basis vectors and their images under the rotation R theta, drawn with the same scale on both axes">
+                <annotation ref="unit-circle" text="The upper half of the unit circle; all four vectors end on it, since a rotation does not change length"/>
+                <annotation ref="vector-e1" text="The olive vector e 1, from the origin to the point 1 comma 0 on the x axis"/>
+                <annotation ref="vector-e2" text="The olive vector e 2, from the origin to the point 0 comma 1 on the y axis"/>
+                <annotation ref="image-e1" text="The wine vector R theta of e 1, in the first quadrant, ending at the point cosine theta comma sine theta on the unit circle"/>
+                <annotation ref="angle-e1" text="The angle theta, measured counterclockwise from e 1 to R theta of e 1"/>
+                <annotation ref="image-e2" text="The mustard vector R theta of e 2, in the second quadrant, ending at the point minus sine theta comma cosine theta on the unit circle; it is perpendicular to R theta of e 1"/>
+                <annotation ref="angle-e2" text="The same angle theta, measured counterclockwise from e 2 to R theta of e 2"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
@@ -131,58 +159,167 @@
       </caption>
       <image width="52%">
         <prefigure label="pf-rotation-example" xmlns="https://prefigure.org">
-          <diagram dimensions="(320,300)" margins="10">
+          <diagram dimensions="(332,248)" margins="10">
             <coordinates bbox="(-2.4,-1.0,2.8,2.8)">
-              <axes xlabel="x" ylabel="y" arrows="2" hticks="(-2,1,2)" vticks="(-1,1,2)"/>
-              <line endpoints="((0,0),(2,1))" stroke="#4A5D23" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(-1,2))" stroke="#5E011C" thickness="2" arrows="1"/>
-              <label p="(2,1)" alignment="e" offset="(6,4)" color="#4A5D23"><m>\vec{x}</m></label>
-              <label p="(-1,2)" alignment="nw" offset="(-6,6)" color="#5E011C"><m>R_{\pi/2}(\vec{x})</m></label>
+              <group at="quarter-turn">
+                <axes xlabel="x" ylabel="y" arrows="2" hticks="(-2,1,2)" vticks="(-1,1,2)"/>
+                <group at="right-angle">
+                  <line endpoints="((0.268,0.134),(0.134,0.402))" stroke="black" thickness="1"/>
+                  <line endpoints="((0.134,0.402),(-0.134,0.268))" stroke="black" thickness="1"/>
+                </group>
+                <group at="vector-x">
+                  <line endpoints="((0,0),(2,1))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <label p="(2,1)" alignment="e" offset="(6,4)" color="#4A5D23"><m>\vec{x}</m></label>
+                </group>
+                <group at="image-x">
+                  <line endpoints="((0,0),(-1,2))" stroke="#5E011C" thickness="2" arrows="1"/>
+                  <label p="(-1,2)" alignment="nw" offset="(-6,6)" color="#5E011C"><m>R_{\pi/2}(\vec{x})</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="quarter-turn" text="A vector x and its image under a quarter turn, drawn with the same scale on both axes">
+                <annotation ref="vector-x" text="The olive vector x, from the origin to the point 2 comma 1"/>
+                <annotation ref="image-x" text="The wine vector R pi over 2 of x, from the origin to the point minus 1 comma 2; it has the same length as x"/>
+                <annotation ref="right-angle" text="A small square at the origin marks the right angle between x and its image"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
     </figure>
+
+    <example xml:id="eg-half-turn-twice">
+      <title>Twice Gives a Half Turn: Must It Be a Quarter Turn?</title>
+      <statement>
+        <p>
+          For each nonzero real number <m>a</m>, let <m>T_a : \R^2 \to \R^2</m> be the
+          transformation
+          <md>
+            T_a \begin{bmatrix} x \\ y \end{bmatrix}
+            = \begin{bmatrix} -ay \\ \frac{x}{a} \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Show that applying <m>T_a</m> twice sends every vector to its negative:
+                <m>T_a(T_a(\vec{x})) = -\vec{x}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Does it follow that <m>T_a</m> is a quarter turn? Determine exactly which
+                <m>a</m> make <m>T_a</m> a rotation through a quarter turn, and say which
+                way it turns.
+              </p>
+            </li>
+            <li>
+              <p>
+                Give a concrete counterexample to the claim: <q>if applying a linear
+                transformation twice gives a half turn, then the transformation is a
+                quarter turn.</q>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Apply the rule twice:
+          <md>
+            T_a\!\left( T_a \begin{bmatrix} x \\ y \end{bmatrix} \right)
+            = T_a \begin{bmatrix} -ay \\ \frac{x}{a} \end{bmatrix}
+            = \begin{bmatrix} -a \cdot \frac{x}{a} \\ \frac{-ay}{a} \end{bmatrix}
+            = \begin{bmatrix} -x \\ -y \end{bmatrix}.
+          </md>
+          This holds for every <m>a \neq 0</m>. Sending each vector to its negative is the
+          half turn <m>R_\pi</m>.
+        </p>
+        <p>
+          <term>(b)</term> No. <m>T_a</m> is the matrix transformation with matrix
+          <md>
+            \begin{bmatrix} 0 \amp -a \\ \frac{1}{a} \amp 0 \end{bmatrix},
+            \qquad \text{so} \qquad
+            T_a(\vec{e}_1) = \begin{bmatrix} 0 \\ \frac{1}{a} \end{bmatrix},
+            \quad
+            T_a(\vec{e}_2) = \begin{bmatrix} -a \\ 0 \end{bmatrix}.
+          </md>
+          A rotation does not change the length of a vector. Since <m>\vec{e}_1</m> and
+          <m>\vec{e}_2</m> have length <m>1</m>, a rotation needs
+          <m>\left| \frac{1}{a} \right| = 1</m> and <m>|a| = 1</m>, that is,
+          <m>a = \pm 1</m>. For <m>a = 1</m> the matrix is
+          <m>\begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}</m>, the counterclockwise
+          quarter turn <m>R_{\pi/2}</m> of
+          <xref ref="eg-rotation-quarter-turn" text="type-global" />. For <m>a = -1</m>
+          it is <m>\begin{bmatrix} 0 \amp 1 \\ -1 \amp 0 \end{bmatrix}</m>, the matrix of
+          <m>R_{-\pi/2}</m>, the clockwise quarter turn. For every other <m>a</m>,
+          <m>T_a</m> is not a rotation.
+        </p>
+        <p>
+          <term>(c)</term> Take <m>a = 2</m>, so
+          <m>T_2 \begin{bmatrix} x \\ y \end{bmatrix}
+          = \begin{bmatrix} -2y \\ \frac{x}{2} \end{bmatrix}</m>. By part (a), applying
+          <m>T_2</m> twice gives the half turn. But
+          <m>T_2(\vec{e}_1) = \begin{bmatrix} 0 \\ \frac{1}{2} \end{bmatrix}</m> has length
+          <m>\frac{1}{2}</m>, so <m>T_2</m> is not a rotation. It does not even turn every
+          vector through a right angle: for
+          <m>\vec{x} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>,
+          <md>
+            T_2(\vec{x}) = \begin{bmatrix} -2 \\ \frac{1}{2} \end{bmatrix},
+            \qquad
+            \vec{x} \cdot T_2(\vec{x}) = (1)(-2) + (1)\left(\tfrac{1}{2}\right)
+            = -\tfrac{3}{2} \neq 0,
+          </md>
+          unlike the check at the end of
+          <xref ref="eg-rotation-quarter-turn" text="type-global" />.
+        </p>
+        <p>
+          The identity <m>T(T(\vec{x})) = -\vec{x}</m> is satisfied by many
+          transformations. What singles out the quarter turns among them is geometric:
+          a rotation also preserves lengths.
+        </p>
+      </solution>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-reflections">
     <title>Reflections in <m>\R^2</m></title>
 
     <example xml:id="eg-reflection-x-axis">
-      <title>Reflection in the <m>x</m>-Axis</title>
+      <title>Reflection in the <m>x</m>-Axis and in the Line <m>y = x</m></title>
       <p>
-        In <m>\R^2</m>, reflection in the <m>x</m>-axis, which transforms
-        <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> to
-        <m>\begin{bmatrix} a \\ -b \end{bmatrix}</m>, is a matrix transformation. Since
-        <m>T(\vec{e}_1) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and
-        <m>T(\vec{e}_2) = \begin{bmatrix} 0 \\ -1 \end{bmatrix}</m>,
-        <md>
-          T \begin{bmatrix} a \\ b \end{bmatrix}
-          = a \begin{bmatrix} 1 \\ 0 \end{bmatrix} + b \begin{bmatrix} 0 \\ -1 \end{bmatrix}
-          = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}
-            \begin{bmatrix} a \\ b \end{bmatrix}
-          = \begin{bmatrix} a \\ -b \end{bmatrix}.
-        </md>
+        Two reflections can be read directly from what they do to coordinates. In each
+        case the columns of the matrix are <m>T(\vec{e}_1)</m> and <m>T(\vec{e}_2)</m>.
       </p>
-    </example>
-
-    <example xml:id="eg-reflection-y-equals-x">
-      <title>Reflection in the Line <m>y = x</m></title>
       <p>
-        Reflection in the line <m>y = x</m> transforms
-        <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> to
-        <m>\begin{bmatrix} b \\ a \end{bmatrix}</m>. This is a matrix transformation:
-        here <m>T(\vec{e}_1) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> and
-        <m>T(\vec{e}_2) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>, so
-        <md>
-          T \begin{bmatrix} a \\ b \end{bmatrix}
-          = a \begin{bmatrix} 0 \\ 1 \end{bmatrix} + b \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
-            \begin{bmatrix} a \\ b \end{bmatrix}
-          = \begin{bmatrix} b \\ a \end{bmatrix},
-        </md>
-        i.e., <m>T_A(\vec{x}) = A\vec{x}</m> where <m>\vec{x} \in \R^2</m> and
-        <m>A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>.
+        <ul>
+          <li>
+            <p>
+              <term>Reflection in the <m>x</m>-axis</term> transforms
+              <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> to
+              <m>\begin{bmatrix} a \\ -b \end{bmatrix}</m>. Here
+              <m>T(\vec{e}_1) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and
+              <m>T(\vec{e}_2) = \begin{bmatrix} 0 \\ -1 \end{bmatrix}</m>, so
+              <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <term>Reflection in the line <m>y = x</m></term> transforms
+              <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> to
+              <m>\begin{bmatrix} b \\ a \end{bmatrix}</m>. Here
+              <m>T(\vec{e}_1) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> and
+              <m>T(\vec{e}_2) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>, so
+              <m>A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        Both are matrix transformations, <m>T_A(\vec{x}) = A\vec{x}</m> with
+        <m>\vec{x} \in \R^2</m>.
       </p>
     </example>
 
@@ -240,24 +377,161 @@
       </caption>
       <image width="55%">
         <prefigure label="pf-reflection-y-mx" xmlns="https://prefigure.org">
-          <diagram dimensions="(330,300)" margins="10">
+          <diagram dimensions="(344,290)" margins="10">
             <coordinates bbox="(-1.7,-1.0,1.9,2.0)">
-              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <line endpoints="((-1.1,-1.65),(1.2,1.8))" stroke="#606060" thickness="2"/>
-              <line endpoints="((0,0),(1,0))" stroke="#4A5D23" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(-0.28,0.96))" stroke="#5E011C" thickness="2" arrows="1"/>
-              <arc center="(0,0)" radius="0.42" range="(0,56)" stroke="black" thickness="1"/>
-              <arc center="(0,0)" radius="0.62" range="(0,112)" stroke="gray" thickness="1"/>
-              <label p="(1,0)" alignment="se" offset="(0,-10)" color="#4A5D23"><m>\vec{e}_1</m></label>
-              <label p="(-0.28,0.96)" alignment="nw" offset="(-6,6)" color="#5E011C"><m>Q_m(\vec{e}_1)</m></label>
-              <label p="(1.15,1.75)" alignment="e" offset="(4,4)" color="#606060"><m>y=mx</m></label>
-              <label p="(0.44,0.14)" alignment="e" offset="(2,0)"><m>\theta</m></label>
-              <label p="(0.30,0.60)" alignment="n" offset="(0,6)"><m>2\theta</m></label>
+              <group at="reflection">
+                <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                <group at="mirror-line">
+                  <line endpoints="((-0.62,-0.93),(1.2,1.8))" stroke="#606060" thickness="2"/>
+                  <label p="(1.15,1.75)" alignment="e" offset="(4,4)" color="#606060"><m>y=mx</m></label>
+                </group>
+                <group at="angle-theta">
+                  <arc center="(0,0)" radius="0.42" range="(0,56.31)" stroke="black" thickness="1"/>
+                  <label p="(0.47,0.17)" alignment="e" offset="(2,0)"><m>\theta</m></label>
+                </group>
+                <group at="angle-two-theta">
+                  <arc center="(0,0)" radius="0.64" range="(0,112.62)" stroke="gray" thickness="1"/>
+                  <label p="(0.24,0.68)" alignment="n" offset="(0,4)"><m>2\theta</m></label>
+                </group>
+                <group at="vector-e1">
+                  <line endpoints="((0,0),(1,0))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <label p="(1,0)" alignment="se" offset="(0,-10)" color="#4A5D23"><m>\vec{e}_1</m></label>
+                </group>
+                <group at="image-e1">
+                  <line endpoints="((0,0),(-0.385,0.923))" stroke="#5E011C" thickness="2" arrows="1"/>
+                  <label p="(-0.385,0.923)" alignment="nw" offset="(-6,6)" color="#5E011C"><m>Q_m(\vec{e}_1)</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="reflection" text="The vector e 1 and its mirror image in the line y equals m x, drawn with the same scale on both axes">
+                <annotation ref="mirror-line" text="The grey line y equals m x through the origin, rising to the right; here it is steeper than the diagonal"/>
+                <annotation ref="vector-e1" text="The olive vector e 1, from the origin to the point 1 comma 0 on the x axis"/>
+                <annotation ref="angle-theta" text="The angle theta from the positive x axis up to the line y equals m x"/>
+                <annotation ref="image-e1" text="The wine vector Q m of e 1, the mirror image of e 1 in the line; it has length 1 and lies as far beyond the line as e 1 lies before it"/>
+                <annotation ref="angle-two-theta" text="The angle from the positive x axis to Q m of e 1 is 2 theta, so Q m of e 1 ends at the point cosine 2 theta comma sine 2 theta"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
     </figure>
+
+    <example xml:id="eg-mirror-from-pair">
+      <title>Finding the Mirror from One Vector and Its Image</title>
+      <statement>
+        <p>
+          An unknown reflection <m>Q</m> in a line through the origin sends
+          <m>\vec{u} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}</m> to
+          <m>\vec{v} = \begin{bmatrix} -1 \\ 2 \end{bmatrix}</m>.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Find one direction that <m>Q</m> fixes and one direction that <m>Q</m>
+                reverses, and determine the mirror line.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the matrix of <m>Q</m> from those two directions, without the formula
+                of <xref ref="eg-reflection-y-mx" text="type-global" />. Then compare with
+                that formula.
+              </p>
+            </li>
+            <li>
+              <p>
+                Verify that <m>Q(\vec{u}) = \vec{v}</m>, and that
+                <m>Q(Q(\vec{x})) = \vec{x}</m> for every <m>\vec{x}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> Reflecting twice in the same line returns every vector to where
+          it started, so <m>Q(\vec{v}) = Q(Q(\vec{u})) = \vec{u}</m>: the reflection
+          interchanges <m>\vec{u}</m> and <m>\vec{v}</m>. Since <m>Q</m> is linear,
+          <md>
+            Q(\vec{u} + \vec{v}) = \vec{v} + \vec{u},
+            \qquad
+            Q(\vec{u} - \vec{v}) = \vec{v} - \vec{u} = -(\vec{u} - \vec{v}).
+          </md>
+          So <m>Q</m> fixes
+          <m>\vec{f} = \vec{u} + \vec{v} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}</m> and
+          reverses
+          <m>\vec{g} = \vec{u} - \vec{v} = \begin{bmatrix} 3 \\ -1 \end{bmatrix}</m>. A
+          reflection fixes exactly the vectors on its mirror, so the mirror is the line
+          through <m>\vec{f}</m>, namely <m>y = 3x</m>. As a check, the reversed direction
+          is perpendicular to the mirror:
+          <m>\vec{f} \cdot \vec{g} = (1)(3) + (3)(-1) = 0</m>.
+        </p>
+        <p>
+          <term>(b)</term> Write a general vector as
+          <m>\begin{bmatrix} x \\ y \end{bmatrix} = \alpha\vec{f} + \beta\vec{g}</m> and
+          solve for <m>\alpha</m> and <m>\beta</m>:
+          <md>
+            <mrow>
+              \left[ \begin{array}{cc|c}
+                1 \amp 3 \amp x \\ 3 \amp -1 \amp y
+              \end{array} \right]
+              \amp \xrightarrow{-3r_1 + r_2}
+              \left[ \begin{array}{cc|c}
+                1 \amp 3 \amp x \\ 0 \amp -10 \amp y - 3x
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-\frac{1}{10} r_2}
+              \left[ \begin{array}{cc|c}
+                1 \amp 3 \amp x \\ 0 \amp 1 \amp \frac{3x - y}{10}
+              \end{array} \right]
+              \xrightarrow{-3r_2 + r_1}
+              \left[ \begin{array}{cc|c}
+                1 \amp 0 \amp \frac{x + 3y}{10} \\ 0 \amp 1 \amp \frac{3x - y}{10}
+              \end{array} \right].
+            </mrow>
+          </md>
+          So <m>\alpha = \frac{x + 3y}{10}</m> and <m>\beta = \frac{3x - y}{10}</m>. By
+          linearity, and because <m>Q(\vec{f}) = \vec{f}</m> and
+          <m>Q(\vec{g}) = -\vec{g}</m>,
+          <md>
+            Q \begin{bmatrix} x \\ y \end{bmatrix}
+            = \alpha\vec{f} - \beta\vec{g}
+            = \frac{x + 3y}{10} \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+            - \frac{3x - y}{10} \begin{bmatrix} 3 \\ -1 \end{bmatrix}
+            = \frac{1}{5} \begin{bmatrix} -4x + 3y \\ 3x + 4y \end{bmatrix},
+          </md>
+          and the matrix of <m>Q</m> is
+          <m>\dfrac{1}{5} \begin{bmatrix} -4 \amp 3 \\ 3 \amp 4 \end{bmatrix}</m>. The
+          formula of <xref ref="eg-reflection-y-mx" text="type-global" /> with
+          <m>m = 3</m> gives
+          <m>\dfrac{1}{10} \begin{bmatrix} 1 - 9 \amp 6 \\ 6 \amp 9 - 1 \end{bmatrix}</m>,
+          the same matrix.
+        </p>
+        <p>
+          <term>(c)</term> First,
+          <md>
+            \frac{1}{5} \begin{bmatrix} -4 \amp 3 \\ 3 \amp 4 \end{bmatrix}
+            \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+            = \frac{1}{5} \begin{bmatrix} -5 \\ 10 \end{bmatrix}
+            = \begin{bmatrix} -1 \\ 2 \end{bmatrix}.
+          </md>
+          Second, for <m>\vec{x} = \alpha\vec{f} + \beta\vec{g}</m>,
+          <md>
+            Q(Q(\vec{x})) = Q(\alpha\vec{f} - \beta\vec{g})
+            = \alpha\vec{f} + \beta\vec{g} = \vec{x}.
+          </md>
+        </p>
+        <p>
+          The directions <m>\vec{u} + \vec{v}</m> and <m>\vec{u} - \vec{v}</m> are the
+          natural ones here: because <m>Q</m> interchanges <m>\vec{u}</m> and
+          <m>\vec{v}</m>, their sum does not change and their difference changes sign.
+          No slope had to be guessed.
+        </p>
+      </solution>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-shear-projection">
@@ -312,6 +586,124 @@
       <interactive xml:id="int-projection-x-interactive" iframe="demos-manim/axb.html?mat=1,0:0,0&amp;x=2,1.5&amp;show=true" width="100%" aspect="5:4"/>
     </figure>
 
+    <example xml:id="eg-projection-from-directions">
+      <title>A Projection Built from What It Fixes and What It Collapses</title>
+      <statement>
+        <p>
+          Let <m>m</m> be a real number. Consider the linear transformations
+          <m>T : \R^2 \to \R^2</m> that fix
+          <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> and send
+          <m>\begin{bmatrix} 1 \\ m \end{bmatrix}</m> to zero:
+          <md>
+            T \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix},
+            \qquad
+            T \begin{bmatrix} 1 \\ m \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                For which <m>m</m> does such a transformation exist, and when is it
+                unique?
+              </p>
+            </li>
+            <li>
+              <p>
+                When it exists, find its matrix, its range, and the set of inputs it
+                sends to <m>\vec{0}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Show that <m>T(T(\vec{x})) = T(\vec{x})</m> for every <m>\vec{x}</m>. Is
+                <m>T</m> one-to-one? Is it onto?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> If <m>m = 1</m>, the two requirements concern the same nonzero
+          vector, which would have to be both fixed and sent to zero. No such <m>T</m>
+          exists.
+        </p>
+        <p>
+          Let <m>m \neq 1</m>. Write a general vector as
+          <m>\begin{bmatrix} x \\ y \end{bmatrix}
+          = \alpha \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+          + \beta \begin{bmatrix} 1 \\ m \end{bmatrix}</m> and solve for <m>\alpha</m> and
+          <m>\beta</m>:
+          <md>
+            \left[ \begin{array}{cc|c}
+              1 \amp 1 \amp x \\ 1 \amp m \amp y
+            \end{array} \right]
+            \xrightarrow{-r_1 + r_2}
+            \left[ \begin{array}{cc|c}
+              1 \amp 1 \amp x \\ 0 \amp m - 1 \amp y - x
+            \end{array} \right].
+          </md>
+          Since <m>m - 1 \neq 0</m>, there is a pivot in every row and every column, so
+          every vector has exactly one such expression:
+          <md>
+            \beta = \frac{y - x}{m - 1},
+            \qquad
+            \alpha = x - \beta = \frac{mx - y}{m - 1}.
+          </md>
+          Linearity then leaves no choice:
+          <md>
+            T \begin{bmatrix} x \\ y \end{bmatrix}
+            = \alpha\, T \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            + \beta\, T \begin{bmatrix} 1 \\ m \end{bmatrix}
+            = \frac{mx - y}{m - 1} \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+          </md>
+          So there is at most one such <m>T</m>. There is exactly one, because this
+          formula is a matrix transformation, hence linear, and it meets both
+          requirements: <m>(x, y) = (1, 1)</m> gives <m>\alpha = 1</m>, and
+          <m>(x, y) = (1, m)</m> gives <m>\alpha = 0</m>.
+        </p>
+        <p>
+          <term>(b)</term> Reading off the coefficients of <m>x</m> and <m>y</m>, the
+          matrix is
+          <md>
+            A = \frac{1}{m - 1} \begin{bmatrix} m \amp -1 \\ m \amp -1 \end{bmatrix}.
+          </md>
+          Every output is a multiple of
+          <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>, and every such multiple is its own
+          image, so the range is
+          <m>\operatorname{Span}\left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix} \right\}</m>,
+          the line <m>y = x</m>. The inputs sent to <m>\vec{0}</m> are those with
+          <m>mx - y = 0</m>: the line <m>y = mx</m>, which is
+          <m>\operatorname{Span}\left\{ \begin{bmatrix} 1 \\ m \end{bmatrix} \right\}</m>.
+        </p>
+        <p>
+          <term>(c)</term> For every <m>\vec{x}</m> the output is
+          <m>T(\vec{x}) = \alpha \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>, and <m>T</m>
+          fixes <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>, so
+          <md>
+            T(T(\vec{x})) = \alpha\, T \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            = \alpha \begin{bmatrix} 1 \\ 1 \end{bmatrix} = T(\vec{x}).
+          </md>
+          <m>T</m> is not one-to-one, since the nonzero vector
+          <m>\begin{bmatrix} 1 \\ m \end{bmatrix}</m> is sent to <m>\vec{0}</m>
+          (<xref ref="thm-injective-iff-trivial" text="type-global" />). It is not onto,
+          since <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> is not a multiple of
+          <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>.
+        </p>
+        <p>
+          Applying <m>T</m> a second time changes nothing, which is the characteristic
+          behaviour of a projection. This one projects the plane onto the
+          line <m>y = x</m> along the direction
+          <m>\begin{bmatrix} 1 \\ m \end{bmatrix}</m>. The projection of
+          <xref ref="eg-projection-x-axis" text="type-global" /> is built the same way: it
+          fixes <m>\vec{e}_1</m> and sends <m>\vec{e}_2</m> to zero. For <m>m = -1</m> the
+          collapsed direction is perpendicular to the line <m>y = x</m>, and
+          <m>A = \dfrac{1}{2} \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m>.
+        </p>
+      </solution>
+    </example>
+
     <example xml:id="eg-vertical-shear">
       <title>Vertical Shear</title>
       <p>
@@ -337,14 +729,25 @@
       </caption>
       <image width="72%">
         <prefigure label="pf-vertical-shear" xmlns="https://prefigure.org">
-          <diagram dimensions="(440,200)" margins="10">
+          <diagram dimensions="(450,195)" margins="10">
             <coordinates bbox="(-1.2,-1.6,7.4,1.9)">
-              <polygon points="((0,0),(1,0),(1,1),(0,1))" fill="#5E011C" stroke="#5E011C" thickness="1"/>
-              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <polygon points="((5,0),(6,-0.8),(6,0.2),(5,1))" fill="#5E011C" stroke="#5E011C" thickness="1"/>
-              <line endpoints="((5,0),(6,-0.8))" stroke="#4A5D23" thickness="2" arrows="1"/>
-              <label p="(5.9,-0.9)" alignment="se" offset="(4,-4)" color="#4A5D23"><m>T(\vec{e}_1)</m></label>
+              <group at="vertical-shear">
+                <polygon at="unit-square" points="((0,0),(1,0),(1,1),(0,1))" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+                <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                <polygon at="parallelogram" points="((5,0),(6,-0.8),(6,0.2),(5,1))" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+                <group at="image-e1">
+                  <line endpoints="((5,0),(6,-0.8))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <label p="(5.9,-0.9)" alignment="se" offset="(4,-4)" color="#4A5D23"><m>T(\vec{e}_1)</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="vertical-shear" text="A unit square on the left and, drawn further to the right for comparison, the parallelogram that a vertical shear with negative k makes of it">
+                <annotation ref="unit-square" text="The unit square, with its lower left corner at the origin and sides along the two axes"/>
+                <annotation ref="parallelogram" text="The image of the square: its left and right sides are still vertical and of length 1, but the right side has slid down, so the bottom and top edges slope down to the right"/>
+                <annotation ref="image-e1" text="The olive vector T of e 1 runs along the bottom edge of the parallelogram: one unit to the right and k units up, which is down because k is negative"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>

@@ -12,13 +12,13 @@
   <script src="translated-solutions.js" defer></script>
 </head>
 <body><main>
-  <h1 id="title">Scale <span class="math">vₕ</span>, then add <span class="math">p</span></h1>
-  <p class="prediction"><strong>Predict:</strong> The gray line holds every solution <span class="math">svₕ</span> of the homogeneous system. Suppose the same vector <span class="math">p</span> is added to each of them. What shape do the sums <span class="math">p + svₕ</span> form, and where does it sit relative to the gray line?</p>
+  <h1 id="title">Scale <span class="math">v₁</span>, then add <span class="math">p</span></h1>
+  <p class="prediction"><strong>Predict:</strong> The gray line holds every solution <span class="math">vₕ = sv₁</span> of the homogeneous system. Suppose the same vector <span class="math">p</span> is added to each of them. What shape do the sums <span class="math">p + sv₁</span> form, and where does it sit relative to the gray line?</p>
   <div class="live-explorer" hidden>
     <div class="legend" aria-label="What the colors mean">
-      <span class="gray"><span class="swatch"></span>Homogeneous solutions <span class="math">svₕ</span></span>
+      <span class="gray"><span class="swatch"></span>Homogeneous solutions <span class="math">vₕ = sv₁</span></span>
       <span class="wine"><span class="swatch"></span><span id="particular-name">A particular solution <span class="math">p = (0, 0, −1)</span></span></span>
-      <span class="olive"><span class="swatch"></span>All solutions <span class="math">w = p + svₕ</span></span>
+      <span class="olive"><span class="swatch"></span>All solutions <span class="math">w = p + sv₁</span></span>
     </div>
     <div class="controls">
       <button id="play" type="button" aria-pressed="false">Play guide</button>
@@ -29,7 +29,7 @@
       <input id="scalar" type="range" min="-2" max="2" step="0.25" value="1.5" aria-describedby="sum-equation window-note">
       <output aria-live="off" id="scalar-value" for="scalar">1.5</output>
     </label>
-    <p id="sum-equation" class="equation olive"><span class="math">w = p + svₕ = (0, 0, −1) + 1.5(−1, 1, 0) = (−1.5, 1.5, −1)</span></p>
+    <p id="sum-equation" class="equation olive"><span class="math">w = p + sv₁ = (0, 0, −1) + 1.5(−1, 1, 0) = (−1.5, 1.5, −1)</span></p>
     <svg id="translation-scene" class="scene rotatable" viewBox="0 0 560 260" role="img" tabindex="0" aria-labelledby="scene-title scene-description" aria-describedby="camera-hint">
       <title id="scene-title">The homogeneous solutions, a particular solution, and their sums in three-dimensional coordinate space</title>
       <desc id="scene-description">A gray line through the origin holds the homogeneous solutions. An olive line parallel to it holds the solutions of the non-homogeneous system. A wine arrow p joins the two.</desc>
@@ -39,7 +39,7 @@
       <p id="scaled-check"></p>
       <p id="sum-check"></p>
     </div>
-    <p id="guide-caption" class="guide" role="status">Move <span class="math">s</span>, or press Play to follow the construction: scale <span class="math">vₕ</span>, then add <span class="math">p</span>.</p>
+    <p id="guide-caption" class="guide" role="status">Move <span class="math">s</span>, or press Play to follow the construction: scale <span class="math">v₁</span>, then add <span class="math">p</span>.</p>
     <details>
       <summary>Camera controls</summary>
       <p id="camera-hint" class="hint">Drag the plot, focus it and use the arrow keys, or use these sliders. Reset restores the starting view.</p>
@@ -48,15 +48,15 @@
     </details>
   </div>
   <figure class="fallback">
-    <img src="../images/ch2-translated-solutions.svg" alt="A gray line through the origin, an olive line parallel to it one unit lower, and a parallelogram of vectors showing that p plus s times v h ends on the olive line.">
-    <figcaption>The homogeneous solutions are the multiples <span class="math">svₕ</span> of <span class="math">vₕ = (−1, 1, 0)</span>, a line through the origin. Adding <span class="math">p = (0, 0, −1)</span> to each of them gives every solution <span class="math">w = p + svₕ</span> of the non-homogeneous system: the same line, moved by <span class="math">p</span>. JavaScript enables the controls.</figcaption>
+    <img src="../images/ch2-translated-solutions.svg" alt="A gray line through the origin, an olive line parallel to it one unit lower, and a parallelogram of vectors showing that p plus s times v 1 ends on the olive line.">
+    <figcaption>The homogeneous solutions are the multiples <span class="math">vₕ = sv₁</span> of the basic solution <span class="math">v₁ = (−1, 1, 0)</span>, a line through the origin. Adding <span class="math">p = (0, 0, −1)</span> to each of them gives every solution <span class="math">w = p + sv₁</span> of the non-homogeneous system: the same line, moved by <span class="math">p</span>. JavaScript enables the controls.</figcaption>
   </figure>
   <details>
     <summary>Read the guided explanation</summary>
     <ol>
-      <li><strong>Scale.</strong> The homogeneous system has the solutions <span class="math">svₕ</span> with <span class="math">vₕ = (−1, 1, 0)</span>. The thin dark arrow is <span class="math">vₕ</span> itself and the thick gray arrow is <span class="math">svₕ</span>: longer when <span class="math">|s| &gt; 1</span>, shorter when <span class="math">|s| &lt; 1</span>, reversed when <span class="math">s &lt; 0</span>. Its tip never leaves the gray line.</li>
-      <li><strong>Add.</strong> To add <span class="math">p</span>, place the tail of one vector at the tip of the other. The dashed gray arrow is <span class="math">svₕ</span> starting at the tip of <span class="math">p</span>; the dashed wine arrow is <span class="math">p</span> starting at the tip of <span class="math">svₕ</span>. Both end at the same point, the tip of <span class="math">w = p + svₕ</span>, and the four arrows form a parallelogram.</li>
-      <li><strong>Check.</strong> The readout substitutes <span class="math">svₕ</span> into the homogeneous system and <span class="math">w</span> into the non-homogeneous one. The left-hand sides are the same in both systems, so adding <span class="math">p</span> changes each of them by exactly what <span class="math">p</span> contributes: <span class="math">−1</span>, <span class="math">1</span> and <span class="math">0</span>.</li>
+      <li><strong>Scale.</strong> The homogeneous system has the solutions <span class="math">vₕ = sv₁</span>, the multiples of its basic solution <span class="math">v₁ = (−1, 1, 0)</span>. The thin dark arrow is <span class="math">v₁</span> itself and the thick gray arrow is <span class="math">sv₁</span>: longer when <span class="math">|s| &gt; 1</span>, shorter when <span class="math">|s| &lt; 1</span>, reversed when <span class="math">s &lt; 0</span>. Its tip never leaves the gray line.</li>
+      <li><strong>Add.</strong> To add <span class="math">p</span>, place the tail of one vector at the tip of the other. The dashed gray arrow is <span class="math">sv₁</span> starting at the tip of <span class="math">p</span>; the dashed wine arrow is <span class="math">p</span> starting at the tip of <span class="math">sv₁</span>. Both end at the same point, the tip of <span class="math">w = p + sv₁</span>, and the four arrows form a parallelogram.</li>
+      <li><strong>Check.</strong> The readout substitutes <span class="math">sv₁</span> into the homogeneous system and <span class="math">w</span> into the non-homogeneous one. The left-hand sides are the same in both systems, so adding <span class="math">p</span> changes each of them by exactly what <span class="math">p</span> contributes: <span class="math">−1</span>, <span class="math">1</span> and <span class="math">0</span>.</li>
       <li><strong>Every solution.</strong> As <span class="math">s</span> runs over all real numbers, the tip of <span class="math">w</span> traces the olive line. The faint dashed segments show the same <span class="math">p</span> carrying five points of the gray line to the olive line.</li>
     </ol>
   </details>

@@ -2482,15 +2482,15 @@
               \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}
               = s \begin{bmatrix} 7 \\ -3 \\ 1 \\ 0 \end{bmatrix}
               + t \begin{bmatrix} -7 \\ 3 \\ 0 \\ 1 \end{bmatrix}
-              = s\vec{V}_1 + t\vec{V}_2.
+              = s\vec{v}_1 + t\vec{v}_2.
             </md>
           </p>
           <p>
             The vectors
             <md>
-              \vec{V}_1 = \begin{bmatrix} 7 \\ -3 \\ 1 \\ 0 \end{bmatrix}
+              \vec{v}_1 = \begin{bmatrix} 7 \\ -3 \\ 1 \\ 0 \end{bmatrix}
               \qquad \text{and} \qquad
-              \vec{V}_2 = \begin{bmatrix} -7 \\ 3 \\ 0 \\ 1 \end{bmatrix}
+              \vec{v}_2 = \begin{bmatrix} -7 \\ 3 \\ 0 \\ 1 \end{bmatrix}
             </md>
             are the <term>basic solutions</term>, obtained by setting one parameter to
             <m>1</m> and the other to <m>0</m>. Every solution is a linear combination of
@@ -2498,7 +2498,7 @@
             <xref ref="def-linear-combination" text="type-global" />.
           </p>
           <p>
-            Checking <m>\vec{V}_1</m> in the first equation:
+            Checking <m>\vec{v}_1</m> in the first equation:
             <m>7 + 2(-3) - 1 + 0 = 0</m>. <m>\checkmark</m>
           </p>
         </solution>

@@ -48,28 +48,66 @@
         <prefigure label="pf-injection-schematic" xmlns="https://prefigure.org">
           <diagram dimensions="(520,220)" margins="8">
             <coordinates bbox="(0,0,10.4,4.4)">
-              <ellipse center="(1.3,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <ellipse center="(4.2,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <point p="(1.3,3.1)" fill="#4A5D23" size="4"/>
-              <point p="(1.3,2.2)" fill="#4A5D23" size="4"/>
-              <point p="(1.3,1.3)" fill="#4A5D23" size="4"/>
-              <point p="(4.2,3.0)" fill="#4A5D23" size="4"/>
-              <point p="(4.2,1.2)" fill="#4A5D23" size="4"/>
-              <line endpoints="((1.5,3.1),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <line endpoints="((1.5,2.2),(4.0,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <line endpoints="((1.5,1.3),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <ellipse center="(6.6,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <ellipse center="(9.5,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <point p="(6.6,3.0)" fill="#4A5D23" size="4"/>
-              <point p="(6.6,1.3)" fill="#4A5D23" size="4"/>
-              <point p="(9.5,3.1)" fill="#4A5D23" size="4"/>
-              <point p="(9.5,2.2)" fill="#4A5D23" size="4"/>
-              <point p="(9.5,1.2)" fill="#4A5D23" size="4"/>
-              <line endpoints="((6.8,3.0),(9.3,3.1))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <line endpoints="((6.8,1.3),(9.3,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <label p="(2.75,0.15)" alignment="n"><m>\text{not one-to-one}</m></label>
-              <label p="(8.05,0.15)" alignment="n"><m>\text{one-to-one}</m></label>
+              <group at="schematic">
+                <group at="left-pair">
+                  <ellipse at="left-domain" center="(1.3,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <ellipse at="left-codomain" center="(4.2,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <group at="left-inputs">
+                    <point p="(1.3,3.1)" fill="#4A5D23" size="4"/>
+                    <point p="(1.3,2.2)" fill="#4A5D23" size="4"/>
+                    <point p="(1.3,1.3)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="left-outputs">
+                    <point p="(4.2,3.0)" fill="#4A5D23" size="4"/>
+                    <point p="(4.2,1.2)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="left-arrows">
+                    <line endpoints="((1.5,3.1),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
+                    <line endpoints="((1.5,2.2),(4.0,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
+                    <line endpoints="((1.5,1.3),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
+                  </group>
+                  <label at="left-label" p="(2.75,0.15)" alignment="n"><m>\text{not one-to-one}</m></label>
+                </group>
+                <group at="right-pair">
+                  <ellipse at="right-domain" center="(6.6,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <ellipse at="right-codomain" center="(9.5,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <group at="right-inputs">
+                    <point p="(6.6,3.0)" fill="#4A5D23" size="4"/>
+                    <point p="(6.6,1.3)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="right-outputs">
+                    <point p="(9.5,3.1)" fill="#4A5D23" size="4"/>
+                    <point p="(9.5,2.2)" fill="#4A5D23" size="4"/>
+                    <point p="(9.5,1.2)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="right-arrows">
+                    <line endpoints="((6.8,3.0),(9.3,3.1))" stroke="#5E011C" thickness="1" arrows="1"/>
+                    <line endpoints="((6.8,1.3),(9.3,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
+                  </group>
+                  <label at="right-label" p="(8.05,0.15)" alignment="n"><m>\text{one-to-one}</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="schematic" text="Two arrow diagrams, each with a domain oval on its left and a codomain oval on its right; the first transformation is not one-to-one and the second is one-to-one">
+                <annotation ref="left-pair" text="First diagram, labelled not one-to-one">
+                  <annotation ref="left-domain" text="The domain oval"/>
+                  <annotation ref="left-inputs" text="Three inputs in the domain: top, middle and bottom"/>
+                  <annotation ref="left-codomain" text="The codomain oval"/>
+                  <annotation ref="left-outputs" text="Two outputs in the codomain: upper and lower"/>
+                  <annotation ref="left-arrows" text="Three arrows: the top input and the bottom input both go to the upper output, and the middle input goes to the lower output; two different inputs share an output"/>
+                  <annotation ref="left-label" text="The label not one-to-one"/>
+                </annotation>
+                <annotation ref="right-pair" text="Second diagram, labelled one-to-one">
+                  <annotation ref="right-domain" text="The domain oval"/>
+                  <annotation ref="right-inputs" text="Two inputs in the domain: upper and lower"/>
+                  <annotation ref="right-codomain" text="The codomain oval"/>
+                  <annotation ref="right-outputs" text="Three outputs in the codomain: top, middle and bottom"/>
+                  <annotation ref="right-arrows" text="Two arrows: the upper input goes to the top output and the lower input goes to the bottom output; distinct inputs have distinct outputs, and the middle output is not used"/>
+                  <annotation ref="right-label" text="The label one-to-one"/>
+                </annotation>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
@@ -87,85 +125,116 @@
       </statement>
       <proof>
         <p>
-          <term>(1) <m>\Longrightarrow</m> (2).</term>
-          Let <m>\vec{u}</m> be an element of <m>\R^n</m> such that
-          <m>T_A(\vec{u}) = \vec{0}</m>. Then, since <m>T_A</m> is a one-to-one linear
-          transformation, we have <m>T_A(\vec{0}) = \vec{0}</m> and hence
-          <m>\vec{0} = \vec{u}</m>.
+          The statement has two directions, and each needs its own argument.
         </p>
         <p>
-          <term>(2) <m>\Longrightarrow</m> (1).</term>
-          Let <m>\vec{u}</m> and <m>\vec{v}</m> be elements in <m>\R^n</m> such that
-          <m>A\vec{u} = A\vec{v}</m>. Then <m>A(\vec{u} - \vec{v}) = \vec{0}</m>, which
-          implies <m>\vec{u} - \vec{v} = \vec{0}</m>, or <m>\vec{u} = \vec{v}</m>. Hence
-          we have shown that if <m>T_A(\vec{u}) = T_A(\vec{v})</m> then
-          <m>\vec{u} = \vec{v}</m>, which means <m>T_A</m> is one-to-one.
+          <term>First direction.</term>
+          <em>Assume</em> that <m>T_A</m> is one-to-one. <em>We show</em> that
+          <m>A\vec{x} = \vec{0}</m> implies <m>\vec{x} = \vec{0}</m>.
+        </p>
+        <p>
+          Let <m>\vec{u}</m> be an element of <m>\R^n</m> such that
+          <m>A\vec{u} = \vec{0}</m>, that is, <m>T_A(\vec{u}) = \vec{0}</m>. Since
+          <m>T_A</m> is a linear transformation, we also have
+          <m>T_A(\vec{0}) = \vec{0}</m>
+          (<xref ref="thm-linear-transformation-properties" text="type-global" />). So
+          <m>T_A(\vec{u}) = T_A(\vec{0})</m>, and because <m>T_A</m> is one-to-one,
+          <m>\vec{u} = \vec{0}</m>.
+        </p>
+        <p>
+          <term>Second direction.</term>
+          <em>Assume</em> that <m>A\vec{x} = \vec{0}</m> implies
+          <m>\vec{x} = \vec{0}</m>. <em>We show</em> that <m>T_A</m> is one-to-one,
+          that is, that <m>T_A(\vec{u}) = T_A(\vec{v})</m> implies
+          <m>\vec{u} = \vec{v}</m>.
+        </p>
+        <p>
+          Let <m>\vec{u}</m> and <m>\vec{v}</m> be elements of <m>\R^n</m> such that
+          <m>T_A(\vec{u}) = T_A(\vec{v})</m>, that is,
+          <m>A\vec{u} = A\vec{v}</m>. Then <m>A(\vec{u} - \vec{v}) = \vec{0}</m>. By
+          the assumption, applied to the vector <m>\vec{u} - \vec{v}</m>, this implies
+          <m>\vec{u} - \vec{v} = \vec{0}</m>, or <m>\vec{u} = \vec{v}</m>. Hence
+          <m>T_A</m> is one-to-one.
         </p>
       </proof>
     </theorem>
 
     <example xml:id="eg-injective-true-false">
       <title>True or False?</title>
-      <statement>
+      <introduction>
         <p>
-          Let <m>T(\vec{x}) = A\vec{x}</m>, where <m>A</m> is an <m>m \times n</m> matrix.
-          If we also assume that <m>T</m> is injective, then which statement is true and
-          which one is false?
+          Let <m>T(\vec{x}) = A\vec{x}</m>, where <m>A</m> is an <m>m \times n</m> matrix,
+          and assume that <m>T</m> is injective. Choose <em>True</em> or <em>False</em>
+          for each statement, then select <em>Check Me</em> to see feedback. You can
+          change your answer and check again.
         </p>
-        <p>
-          <ol>
-            <li>
-              <p>
-                For every <m>\vec{b} \in \R^m</m>, there exists one solution for the
-                equation <m>T(\vec{x}) = \vec{b}</m>.
-              </p>
-            </li>
-            <li><p><m>A\vec{x} = \vec{0}</m> has only the trivial solution.</p></li>
-            <li><p>The columns of <m>A</m> are linearly independent.</p></li>
-          </ol>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <term>(I) False.</term> For example, let
-          <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> and
-          <m>T : \R^2 \to \R^3</m>, which is a one-to-one transformation. Now, for
-          <m>\vec{b} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</m>, the system
-          <m>A\vec{x} = \vec{b}</m> has no solution, since the augmented matrix is
-          <md>
-            \left[ \begin{array}{cc|c}
-              1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 2 \\ 1 \amp 0 \amp 3
-            \end{array} \right]
-            \xrightarrow{r_3 - r_1}
-            \left[ \begin{array}{cc|c}
-              1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 2
-            \end{array} \right],
-          </md>
-          and therefore the system is inconsistent.
-        </p>
-        <p>
-          <term>(II) True.</term> See
-          <xref ref="thm-injective-iff-trivial" text="type-global" />.
-        </p>
-        <p>
-          <term>(III) True.</term> Note that
-          <md>
-            A\vec{x} = \vec{0}
-            \iff x_1\vec{A}_1 + x_2\vec{A}_2 + \cdots + x_n\vec{A}_n = \vec{0}.
-          </md>
-          If <m>A\vec{x} = \vec{0}</m> has only the trivial solution, it means that none
-          of the columns of <m>A</m> can be written as a linear combination of the rest of
-          them, since if for example <m>\vec{A}_1</m> could be written as a linear
-          combination
-          <md>
-            \vec{A}_1 = a_2\vec{A}_2 + a_3\vec{A}_3 + \cdots + a_n\vec{A}_n,
-          </md>
-          this gives
-          <m>\vec{A}_1 - a_2\vec{A}_2 - a_3\vec{A}_3 - \cdots - a_n\vec{A}_n = \vec{0}</m>,
-          which contradicts the fact that <m>A\vec{x} = \vec{0}</m> has only the trivial
-          solution.
-        </p>
-      </solution>
+      </introduction>
+      <task xml:id="tf-injective-every-output">
+        <statement correct="no">
+          <p>
+            For every <m>\vec{b} \in \R^m</m>, there exists one solution for the
+            equation <m>T(\vec{x}) = \vec{b}</m>.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            False. For example, let
+            <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> and
+            <m>T : \R^2 \to \R^3</m>, which is a one-to-one transformation. Now, for
+            <m>\vec{b} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</m>, the system
+            <m>A\vec{x} = \vec{b}</m> has no solution, since the augmented matrix is
+            <md>
+              \left[ \begin{array}{cc|c}
+                1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 2 \\ 1 \amp 0 \amp 3
+              \end{array} \right]
+              \xrightarrow{r_3 - r_1}
+              \left[ \begin{array}{cc|c}
+                1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 2
+              \end{array} \right],
+            </md>
+            and therefore the system is inconsistent.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-injective-trivial-solution">
+        <statement correct="yes">
+          <p>
+            <m>A\vec{x} = \vec{0}</m> has only the trivial solution.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            True. See <xref ref="thm-injective-iff-trivial" text="type-global" />.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-injective-independent-columns">
+        <statement correct="yes">
+          <p>
+            The columns of <m>A</m> are linearly independent.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            True. Note that
+            <md>
+              A\vec{x} = \vec{0}
+              \iff x_1\vec{A}_1 + x_2\vec{A}_2 + \cdots + x_n\vec{A}_n = \vec{0}.
+            </md>
+            If <m>A\vec{x} = \vec{0}</m> has only the trivial solution, it means that none
+            of the columns of <m>A</m> can be written as a linear combination of the rest of
+            them, since if for example <m>\vec{A}_1</m> could be written as a linear
+            combination
+            <md>
+              \vec{A}_1 = a_2\vec{A}_2 + a_3\vec{A}_3 + \cdots + a_n\vec{A}_n,
+            </md>
+            this gives
+            <m>\vec{A}_1 - a_2\vec{A}_2 - a_3\vec{A}_3 - \cdots - a_n\vec{A}_n = \vec{0}</m>,
+            which contradicts the fact that <m>A\vec{x} = \vec{0}</m> has only the trivial
+            solution.
+          </p>
+        </feedback>
+      </task>
     </example>
 
     <example xml:id="eg-which-are-injections">
@@ -342,28 +411,66 @@
         <prefigure label="pf-surjection-schematic" xmlns="https://prefigure.org">
           <diagram dimensions="(520,220)" margins="8">
             <coordinates bbox="(0,0,10.4,4.4)">
-              <ellipse center="(1.3,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <ellipse center="(4.2,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <point p="(1.3,3.1)" fill="#4A5D23" size="4"/>
-              <point p="(1.3,2.2)" fill="#4A5D23" size="4"/>
-              <point p="(1.3,1.3)" fill="#4A5D23" size="4"/>
-              <point p="(4.2,3.0)" fill="#4A5D23" size="4"/>
-              <point p="(4.2,1.2)" fill="#4A5D23" size="4"/>
-              <line endpoints="((1.5,3.1),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <line endpoints="((1.5,2.2),(4.0,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <line endpoints="((1.5,1.3),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <ellipse center="(6.6,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <ellipse center="(9.5,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
-              <point p="(6.6,3.0)" fill="#4A5D23" size="4"/>
-              <point p="(6.6,1.3)" fill="#4A5D23" size="4"/>
-              <point p="(9.5,3.1)" fill="#4A5D23" size="4"/>
-              <point p="(9.5,2.2)" fill="#4A5D23" size="4"/>
-              <point p="(9.5,1.2)" fill="#4A5D23" size="4"/>
-              <line endpoints="((6.8,3.0),(9.3,3.1))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <line endpoints="((6.8,1.3),(9.3,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
-              <label p="(2.75,0.15)" alignment="n"><m>\text{onto}</m></label>
-              <label p="(8.05,0.15)" alignment="n"><m>\text{not onto}</m></label>
+              <group at="schematic">
+                <group at="left-pair">
+                  <ellipse at="left-domain" center="(1.3,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <ellipse at="left-codomain" center="(4.2,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <group at="left-inputs">
+                    <point p="(1.3,3.1)" fill="#4A5D23" size="4"/>
+                    <point p="(1.3,2.2)" fill="#4A5D23" size="4"/>
+                    <point p="(1.3,1.3)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="left-outputs">
+                    <point p="(4.2,3.0)" fill="#4A5D23" size="4"/>
+                    <point p="(4.2,1.2)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="left-arrows">
+                    <line endpoints="((1.5,3.1),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
+                    <line endpoints="((1.5,2.2),(4.0,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
+                    <line endpoints="((1.5,1.3),(4.0,3.0))" stroke="#5E011C" thickness="1" arrows="1"/>
+                  </group>
+                  <label at="left-label" p="(2.75,0.15)" alignment="n"><m>\text{onto}</m></label>
+                </group>
+                <group at="right-pair">
+                  <ellipse at="right-domain" center="(6.6,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <ellipse at="right-codomain" center="(9.5,2.2)" axes="(1.0,1.9)" stroke="black" thickness="2"/>
+                  <group at="right-inputs">
+                    <point p="(6.6,3.0)" fill="#4A5D23" size="4"/>
+                    <point p="(6.6,1.3)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="right-outputs">
+                    <point p="(9.5,3.1)" fill="#4A5D23" size="4"/>
+                    <point p="(9.5,2.2)" fill="#4A5D23" size="4"/>
+                    <point p="(9.5,1.2)" fill="#4A5D23" size="4"/>
+                  </group>
+                  <group at="right-arrows">
+                    <line endpoints="((6.8,3.0),(9.3,3.1))" stroke="#5E011C" thickness="1" arrows="1"/>
+                    <line endpoints="((6.8,1.3),(9.3,1.2))" stroke="#5E011C" thickness="1" arrows="1"/>
+                  </group>
+                  <label at="right-label" p="(8.05,0.15)" alignment="n"><m>\text{not onto}</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="schematic" text="Two arrow diagrams, each with a domain oval on its left and a codomain oval on its right; the first transformation is onto and the second is not onto">
+                <annotation ref="left-pair" text="First diagram, labelled onto">
+                  <annotation ref="left-domain" text="The domain oval"/>
+                  <annotation ref="left-inputs" text="Three inputs in the domain: top, middle and bottom"/>
+                  <annotation ref="left-codomain" text="The codomain oval"/>
+                  <annotation ref="left-outputs" text="Two outputs in the codomain: upper and lower"/>
+                  <annotation ref="left-arrows" text="Three arrows: the top input and the bottom input go to the upper output, and the middle input goes to the lower output; every element of the codomain is hit"/>
+                  <annotation ref="left-label" text="The label onto"/>
+                </annotation>
+                <annotation ref="right-pair" text="Second diagram, labelled not onto">
+                  <annotation ref="right-domain" text="The domain oval"/>
+                  <annotation ref="right-inputs" text="Two inputs in the domain: upper and lower"/>
+                  <annotation ref="right-codomain" text="The codomain oval"/>
+                  <annotation ref="right-outputs" text="Three outputs in the codomain: top, middle and bottom"/>
+                  <annotation ref="right-arrows" text="Two arrows: the upper input goes to the top output and the lower input goes to the bottom output; the middle output is missed"/>
+                  <annotation ref="right-label" text="The label not onto"/>
+                </annotation>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
@@ -440,24 +547,122 @@
     </example>
 
     <example xml:id="eg-surjective-geometric">
-      <title>An Onto Transformation, Seen Geometrically</title>
+      <title>An Onto Transformation, and What One More Measurement Adds</title>
       <statement>
         <p>
-          Let <m>T : \R^3 \to \R^2</m> be the matrix transformation
-          <m>T(\vec{x}) = A\vec{x}</m>, where
-          <m>A = \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{bmatrix}</m>.
-          Is <m>T</m> onto?
+          Let <m>T : \R^3 \to \R^2</m> be the matrix transformation of
+          <xref ref="eg-not-injective-geometric" text="type-global" />,
+          <m>T(\vec{x}) = A\vec{x}</m> with
+          <m>A = \begin{bmatrix} 1 \amp 0 \amp 1 \\ 0 \amp 1 \amp 1 \end{bmatrix}</m>, so
+          that <m>T(x, y, z) = (x + z,\, y + z)</m>.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                For an arbitrary output
+                <m>\vec{b} = \begin{bmatrix} u \\ v \end{bmatrix}</m>, describe every
+                input <m>\vec{x}</m> with <m>T(\vec{x}) = \vec{b}</m>. Is <m>T</m> onto?
+              </p>
+            </li>
+            <li>
+              <p>
+                A further instrument records <m>m = px + qy + rz</m>, where <m>p</m>,
+                <m>q</m>, <m>r</m> are fixed real numbers. For which <m>p</m>, <m>q</m>,
+                <m>r</m> do the three readings <m>u</m>, <m>v</m>, <m>m</m> determine
+                the input uniquely?
+              </p>
+            </li>
+            <li>
+              <p>
+                In the exceptional case, which values of <m>m</m> are possible, and what
+                freedom remains?
+              </p>
+            </li>
+            <li>
+              <p>
+                Give one informative instrument and one redundant instrument.
+              </p>
+            </li>
+          </ol>
         </p>
       </statement>
       <solution>
         <p>
-          The matrix <m>A</m> is already in reduced row echelon form and has a pivot in
-          every row. Therefore the augmented matrix of <m>A\vec{x} = \vec{b}</m> can
-          never have a pivot in its last column, and the system is consistent for every
-          <m>\vec{b} \in \R^2</m>. Concretely, for any
-          <m>\vec{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}</m>, the input
-          <m>\vec{x} = \begin{bmatrix} b_1 \\ b_2 \\ 0 \end{bmatrix}</m> satisfies
-          <m>T(\vec{x}) = \vec{b}</m>. Hence <m>T</m> is onto.
+          <term>(a)</term> The augmented matrix of <m>A\vec{x} = \vec{b}</m>,
+          <md>
+            \left[ \begin{array}{ccc|c}
+              1 \amp 0 \amp 1 \amp u \\
+              0 \amp 1 \amp 1 \amp v
+            \end{array} \right],
+          </md>
+          is already in reduced row echelon form. There is a pivot in every row, so no
+          row of the form
+          <m>\left[ \begin{array}{ccc|c} 0 \amp 0 \amp 0 \amp d \end{array} \right]</m>
+          with <m>d \neq 0</m> can occur: the system is consistent for every <m>u</m> and
+          <m>v</m>, and <m>T</m> is onto. The third column has no pivot, so
+          <m>z = t</m> is free and
+          <md>
+            \vec{x} = \begin{bmatrix} u - t \\ v - t \\ t \end{bmatrix}
+            = \begin{bmatrix} u \\ v \\ 0 \end{bmatrix}
+            + t \begin{bmatrix} -1 \\ -1 \\ 1 \end{bmatrix},
+            \qquad t \in \R.
+          </md>
+          Every output comes from a whole line of inputs: one particular input plus the
+          line of inputs with output <m>\vec{0}</m> found in
+          <xref ref="eg-not-injective-geometric" text="type-global" />, exactly as
+          <xref ref="thm-particular-plus-homogeneous" text="type-global" /> predicts.
+        </p>
+        <p>
+          <term>(b)</term> The new reading adds a third row:
+          <md>
+            <mrow>
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp 1 \amp u \\
+                0 \amp 1 \amp 1 \amp v \\
+                p \amp q \amp r \amp m
+              \end{array} \right]
+              \amp \xrightarrow{-p\,r_1 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp 1 \amp u \\
+                0 \amp 1 \amp 1 \amp v \\
+                0 \amp q \amp r - p \amp m - pu
+              \end{array} \right]
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{-q\,r_2 + r_3}
+              \left[ \begin{array}{ccc|c}
+                1 \amp 0 \amp 1 \amp u \\
+                0 \amp 1 \amp 1 \amp v \\
+                0 \amp 0 \amp r - p - q \amp m - pu - qv
+              \end{array} \right].
+            </mrow>
+          </md>
+          If <m>r \neq p + q</m>, every column has a pivot and the input is unique:
+          <md>
+            z = \frac{m - pu - qv}{r - p - q}, \qquad x = u - z, \qquad y = v - z.
+          </md>
+        </p>
+        <p>
+          <term>(c)</term> If <m>r = p + q</m>, the last row is
+          <m>\left[ \begin{array}{ccc|c} 0 \amp 0 \amp 0 \amp m - pu - qv \end{array} \right]</m>.
+          When <m>m \neq pu + qv</m> the system is inconsistent: no input produces those
+          three readings. When <m>m = pu + qv</m> the row is zero, and the whole line of
+          part (a) remains. So the only possible reading is <m>m = pu + qv</m>, and it
+          removes none of the freedom.
+        </p>
+        <p>
+          <term>(d)</term> Recording <m>z</m> itself, <m>(p, q, r) = (0, 0, 1)</m>, is
+          informative, since <m>r \neq p + q</m>: then <m>z = m</m>,
+          <m>x = u - m</m>, <m>y = v - m</m>. Recording <m>x + y + 2z</m>,
+          <m>(p, q, r) = (1, 1, 2)</m>, is redundant, since <m>r = p + q</m>: this
+          reading is always <m>u + v</m>.
+        </p>
+        <p>
+          The number <m>r - p - q</m> is the reading of the instrument on
+          <m>\begin{bmatrix} -1 \\ -1 \\ 1 \end{bmatrix}</m>, the direction of the line in
+          part (a). An instrument is informative exactly when it does not vanish on that
+          direction, that is, when it can tell apart the inputs that <m>T</m> cannot.
         </p>
         <figure xml:id="fig-surjective-geometric">
           <caption>
@@ -473,32 +678,125 @@
     </example>
 
     <example xml:id="eg-not-surjective-geometric">
-      <title>A Transformation That Is Not Onto, Seen Geometrically</title>
+      <title>One-to-One but Not Onto: What the Output Remembers</title>
       <statement>
         <p>
-          Let <m>T : \R^2 \to \R^3</m> be the matrix transformation
-          <m>T(\vec{x}) = A\vec{x}</m>, where
-          <m>A = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m>.
-          Is <m>T</m> onto?
+          Let <m>T : \R^2 \to \R^3</m> be the matrix transformation of
+          <xref ref="eg-injective-geometric" text="type-global" />,
+          <m>T(\vec{x}) = A\vec{x}</m> with
+          <m>A = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}</m>, so
+          that <m>T(x, y) = (x,\, x + y,\, y)</m>.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Find exactly which vectors
+                <m>\vec{b} = \begin{bmatrix} p \\ q \\ r \end{bmatrix}</m> are outputs of
+                <m>T</m>, and recover every input in that case. Is <m>T</m> onto?
+              </p>
+            </li>
+            <li>
+              <p>
+                Use part (a) to explain again why <m>T</m> is one-to-one.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose one of the three output entries is lost. In each of the three
+                cases, decide whether the two remaining entries still determine the
+                input, and give formulas for it.
+              </p>
+            </li>
+            <li>
+              <p>
+                How can <m>T</m> miss most vectors of <m>\R^3</m> and yet lose no
+                information about its input?
+              </p>
+            </li>
+          </ol>
         </p>
       </statement>
       <solution>
         <p>
-          Every output of <m>T</m> is a linear combination of the two columns of
-          <m>A</m>:
+          <term>(a)</term> Row reduce the augmented matrix of
+          <m>A\vec{x} = \vec{b}</m>:
           <md>
-            T \begin{bmatrix} x \\ y \end{bmatrix}
-            = x \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
-            + y \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
-            = \begin{bmatrix} x \\ x + y \\ y \end{bmatrix}.
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp p \\ 1 \amp 1 \amp q \\ 0 \amp 1 \amp r
+            \end{array} \right]
+            \xrightarrow{-r_1 + r_2}
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp p \\ 0 \amp 1 \amp q - p \\ 0 \amp 1 \amp r
+            \end{array} \right]
+            \xrightarrow{-r_2 + r_3}
+            \left[ \begin{array}{cc|c}
+              1 \amp 0 \amp p \\ 0 \amp 1 \amp q - p \\ 0 \amp 0 \amp p - q + r
+            \end{array} \right].
           </md>
-          The middle entry of every output is the sum of the other two, so the range of
-          <m>T</m> is the plane <m>b_2 = b_1 + b_3</m> in <m>\R^3</m> <mdash/> a
-          two-dimensional slice of the three-dimensional codomain. For instance,
+          The system is consistent exactly when <m>q = p + r</m>. So the range of
+          <m>T</m> is the plane <m>b_2 = b_1 + b_3</m> in <m>\R^3</m>, a two-dimensional
+          slice of the three-dimensional codomain. For instance,
           <m>\vec{b} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</m> has
-          <m>1 \neq 1 + 1</m>, so it is not an output of <m>T</m>, and <m>T</m> is
-          not onto. Alternatively: <m>A</m> has only two pivots, so it cannot have a
-          pivot in every one of its three rows.
+          <m>1 \neq 1 + 1</m>, so it is not an output, and <m>T</m> is not onto.
+          (Alternatively: <m>A</m> has only two pivots, so it cannot have a pivot in
+          every one of its three rows.) When <m>q = p + r</m>, the input is
+          <md>
+            x = p, \qquad y = q - p = r.
+          </md>
+        </p>
+        <p>
+          <term>(b)</term> Both columns have a pivot, so there is no free variable: every
+          output in the range comes from exactly one input. This is the conclusion of
+          <xref ref="eg-injective-geometric" text="type-global" />, now with a formula
+          for the input.
+        </p>
+        <p>
+          <term>(c)</term> Each case leaves two equations in <m>x</m> and <m>y</m>.
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <em>Third entry lost.</em>
+                <md>
+                  \left[ \begin{array}{cc|c} 1 \amp 0 \amp p \\ 1 \amp 1 \amp q \end{array} \right]
+                  \xrightarrow{-r_1 + r_2}
+                  \left[ \begin{array}{cc|c} 1 \amp 0 \amp p \\ 0 \amp 1 \amp q - p \end{array} \right],
+                  \qquad (x, y) = (p,\, q - p).
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Second entry lost.</em> The two remaining equations are
+                <m>x = p</m> and <m>y = r</m>, so <m>(x, y) = (p,\, r)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>First entry lost.</em>
+                <md>
+                  \left[ \begin{array}{cc|c} 1 \amp 1 \amp q \\ 0 \amp 1 \amp r \end{array} \right]
+                  \xrightarrow{-r_2 + r_1}
+                  \left[ \begin{array}{cc|c} 1 \amp 0 \amp q - r \\ 0 \amp 1 \amp r \end{array} \right],
+                  \qquad (x, y) = (q - r,\, r).
+                </md>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Each coefficient matrix has two pivots, so the input is determined in every
+          case. Any one of the three entries can be lost without losing the input.
+        </p>
+        <p>
+          <term>(d)</term> The three entries of an output always satisfy
+          <m>q = p + r</m>, so they carry only two independent numbers, exactly as many
+          as the input has. Being onto is a question about the codomain: here
+          <m>\R^3</m> contains vectors off the plane. Being one-to-one is a question
+          about the inputs: here no two of them share an output. Neither property
+          decides the other.
         </p>
         <figure xml:id="fig-not-surjective-geometric">
           <caption>
@@ -554,7 +852,11 @@
     </p>
     <p>
       A transformation can have either property without the other, both, or neither.
-      The two examples below complete the picture.
+      For instance, the transformation <m>T : \R^3 \to \R^4</m> of
+      <xref ref="eg-attainable-outputs" text="type-global" /> is one-to-one but not
+      onto: each vector <m>\vec{b}</m> with <m>b_3 + b_4 = 0</m> is the output of exactly
+      one input, and no other vector of <m>\R^4</m> is an output at all.
+      The examples below complete the picture.
     </p>
 
     <example xml:id="eg-neither-injective-nor-surjective">
@@ -580,7 +882,7 @@
           not one-to-one: the solution set of <m>T(\vec{x}) = \vec{0}</m> is the entire
           plane <m>x + 2y - z = 0</m>. There is also no pivot in the second row, so
           <m>T</m> is not onto: the range is
-          <m>\Span\left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right\}</m>, a line in
+          <m>\operatorname{Span}\left\{ \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right\}</m>, a line in
           <m>\R^2</m>, since every column of <m>A</m> is a multiple of
           <m>\begin{bmatrix} 1 \\ 2 \end{bmatrix}</m>. For example,
           <m>\vec{b} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is not on this line, so
@@ -716,67 +1018,6 @@
             region on the right is the range of <m>T</m>, which is all of <m>\R^2</m>.
           </caption>
           <interactive xml:id="int-both-geometric" iframe="demos-manim/axb.html?mat=2,1:1,1&amp;x=1,1&amp;show=true" width="100%" aspect="5:4"/>
-        </figure>
-      </solution>
-    </example>
-
-    <example xml:id="eg-rotation-bijective">
-      <title>Rotation Is Both One-to-One and Onto</title>
-      <statement>
-        <p>
-          Let <m>R_\theta : \R^2 \to \R^2</m> denote counterclockwise rotation about the
-          origin through an angle <m>\theta</m>. Show that <m>R_\theta</m> is both
-          one-to-one and onto, for every <m>\theta</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Rotating <m>\vec{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> counterclockwise
-          through <m>\theta</m> lands on the point of the unit circle at angle
-          <m>\theta</m>, and rotating <m>\vec{e}_2</m> lands a further quarter turn along:
-          <md>
-            R_\theta(\vec{e}_1) = \begin{bmatrix} \cos\theta \\ \sin\theta \end{bmatrix},
-            \qquad
-            R_\theta(\vec{e}_2) = \begin{bmatrix} -\sin\theta \\ \cos\theta \end{bmatrix},
-            \qquad \text{so} \qquad
-            A = \begin{bmatrix} \cos\theta \amp -\sin\theta \\ \sin\theta \amp \cos\theta \end{bmatrix}.
-          </md>
-          (This matrix is studied further in
-          <xref ref="subsec-rotations" text="type-global" />.)
-        </p>
-        <p>
-          Now
-          <md>
-            \det A = \cos^2\theta + \sin^2\theta = 1 \neq 0,
-          </md>
-          so <m>A</m> is invertible for <em>every</em> angle <m>\theta</m>. By
-          <xref ref="thm-invertible-matrix-theorem" text="type-global" />,
-          <m>A\vec{x} = \vec{0}</m> has only the trivial solution, so <m>R_\theta</m> is
-          one-to-one by <xref ref="thm-injective-iff-trivial" text="type-global" />; and
-          the columns of <m>A</m> span <m>\R^2</m>, so <m>R_\theta</m> is onto.
-        </p>
-        <p>
-          The geometry says the same thing more directly: rotating back through
-          <m>-\theta</m> undoes the rotation. Indeed
-          <md>
-            A^{-1} = \frac{1}{1} \begin{bmatrix} \cos\theta \amp \sin\theta \\ -\sin\theta \amp \cos\theta \end{bmatrix}
-            = \begin{bmatrix} \cos(-\theta) \amp -\sin(-\theta) \\ \sin(-\theta) \amp \cos(-\theta) \end{bmatrix},
-          </md>
-          which is the matrix of <m>R_{-\theta}</m>. So every <m>\vec{b} \in \R^2</m> has
-          exactly one preimage, namely <m>\vec{x} = R_{-\theta}(\vec{b})</m> <mdash />
-          which is precisely the statement that <m>R_\theta</m> is one-to-one and onto.
-        </p>
-
-        <figure xml:id="fig-rotation-geometric">
-          <caption>
-            The quarter turn <m>R_{\pi/2}</m>, with matrix
-            <m>\left[\begin{smallmatrix} 0 \amp -1 \\ 1 \amp 0 \end{smallmatrix}\right]</m>.
-            Click and drag the head of either vector: the deep wine solution set on the left
-            is always a single point, so each output comes from exactly one input, and the
-            olive green region on the right fills all of <m>\R^2</m>, so every output is
-            achieved. Rotation loses nothing and misses nothing.
-          </caption>
-          <interactive xml:id="int-rotation-geometric" iframe="demos-manim/axb.html?mat=0,-1:1,0&amp;x=2,1&amp;show=true" width="100%" aspect="5:4"/>
         </figure>
       </solution>
     </example>

@@ -1,0 +1,39 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-rotation-example-quarter-turn" speech2="A vector x and its image under a quarter turn, drawn with the same scale on both axes">
+      <grouped>pf-rotation-example-quarter-turn</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-rotation-example-vector-x</active>
+        <active>pf-rotation-example-image-x</active>
+        <active>pf-rotation-example-right-angle</active>
+      </children>
+      <components>
+        <active>pf-rotation-example-vector-x</active>
+        <active>pf-rotation-example-image-x</active>
+        <active>pf-rotation-example-right-angle</active>
+      </components>
+    </annotation>
+    <annotation id="pf-rotation-example-vector-x" speech2="The olive vector x, from the origin to the point 2 comma 1">
+      <active>pf-rotation-example-vector-x</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-rotation-example-quarter-turn</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-example-image-x" speech2="The wine vector R pi over 2 of x, from the origin to the point minus 1 comma 2; it has the same length as x">
+      <active>pf-rotation-example-image-x</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-rotation-example-quarter-turn</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-example-right-angle" speech2="A small square at the origin marks the right angle between x and its image">
+      <active>pf-rotation-example-right-angle</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-rotation-example-quarter-turn</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

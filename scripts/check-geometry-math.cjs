@@ -79,10 +79,10 @@ for(let A=-6;A<=6;A++)for(let B=-6;B<=8;B++) {
 assert.equal(L.secondEquation(L.frac(2),L.frac(3)),"2x + y = 3");
 assert.equal(L.secondEquation(L.frac(-3,2),L.frac(1,2)),"−(3/2)x + y = 1/2");
 
-// The translated-solutions explorer of Section 2.3: every s v_h solves the homogeneous
+// The translated-solutions explorer of Section 2.3: every s v_1 solves the homogeneous
 // system, and adding either particular solution gives a solution of its partner.
 const T=require("../assets/demos-manim/translated-solutions.js");
-equal(T.leftSides(T.VH),[0,0,0]);
+equal(T.leftSides(T.V1),[0,0,0]);
 T.PARTICULAR.forEach(p=>equal(T.leftSides(p),T.RHS));
 for(let k=-8;k<=8;k++) {
   const s=k/4,sv=T.scaled(s);
