@@ -83,6 +83,62 @@
         <xref ref="thm-matrix-inverses-equivalences" text="type-global" />.
       </p>
     </remark>
+
+    <example xml:id="eg-imt-one-to-one-onto">
+      <title>True or False? One-to-One and Onto</title>
+      <introduction>
+        <p>
+          Conditions (2) and (6) of
+          <xref ref="thm-invertible-matrix-theorem" text="type-global" /> describe the
+          transformation <m>T_A(\vec{x}) = A\vec{x}</m>. Choose <em>True</em> or
+          <em>False</em> for each statement, then select <em>Check Me</em> to see
+          feedback. You can change your answer and check again.
+        </p>
+      </introduction>
+      <task xml:id="tf-imt-injective-implies-surjective">
+        <statement correct="yes">
+          <p>
+            Let <m>A</m> be an <m>n \times n</m> matrix. If <m>T_A</m> is one-to-one,
+            then <m>T_A</m> is onto.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            True. If <m>T_A</m> is one-to-one, then condition (2) holds, so <m>A</m> is
+            invertible. Then condition (6) holds as well: the columns of <m>A</m> span
+            <m>\R^n</m>, which says that <m>T_A</m> is onto. The same argument runs
+            from (6) back to (2). For a square matrix, <m>T_A</m> is one-to-one exactly
+            when it is onto, and exactly when <m>A</m> is invertible.
+          </p>
+        </feedback>
+      </task>
+      <task xml:id="tf-imt-onto-not-square">
+        <statement correct="no">
+          <p>
+            Let <m>A</m> be an <m>m \times n</m> matrix. If <m>T_A</m> is onto, then
+            <m>T_A</m> is one-to-one.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            False. The theorem is about square matrices only. For
+            <md>
+              A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \end{bmatrix},
+            </md>
+            the transformation <m>T_A</m> from <m>\R^3</m> to <m>\R^2</m> is onto,
+            because <m>A</m> has a pivot position in every row. It is not one-to-one,
+            because
+            <md>
+              A\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+              = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.
+            </md>
+            Onto requires a pivot position in every row, and one-to-one requires a pivot
+            position in every column. Both can hold only when <m>m = n</m>, and then
+            <m>A</m> is invertible.
+          </p>
+        </feedback>
+      </task>
+    </example>
   </subsection>
 
   <subsection xml:id="subsec-imt-proof">
