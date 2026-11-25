@@ -1,0 +1,48 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-translated-solutions-translated-solutions" speech2="Two parallel lines in the plane, drawn with the same scale on both axes: the solutions of a homogeneous system, and the same line moved by one particular solution">
+      <grouped>pf-translated-solutions-translated-solutions</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-translated-solutions-ts-homogeneous</active>
+        <active>pf-translated-solutions-ts-particular</active>
+        <active>pf-translated-solutions-ts-all</active>
+        <active>pf-translated-solutions-ts-step</active>
+      </children>
+      <components>
+        <active>pf-translated-solutions-ts-homogeneous</active>
+        <active>pf-translated-solutions-ts-particular</active>
+        <active>pf-translated-solutions-ts-all</active>
+        <active>pf-translated-solutions-ts-step</active>
+      </components>
+    </annotation>
+    <annotation id="pf-translated-solutions-ts-homogeneous" speech2="The grey line through the origin holds the homogeneous solutions, the multiples s v 1 of the vector v 1">
+      <active>pf-translated-solutions-ts-homogeneous</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-translated-solutions-translated-solutions</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-translated-solutions-ts-particular" speech2="The wine vector p, from the origin to a point above the grey line, is one particular solution of the non-homogeneous system">
+      <active>pf-translated-solutions-ts-particular</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-translated-solutions-translated-solutions</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-translated-solutions-ts-all" speech2="The olive line passes through the tip of p and is parallel to the grey line; it holds every solution p plus s v 1 of the non-homogeneous system">
+      <active>pf-translated-solutions-ts-all</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-translated-solutions-translated-solutions</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-translated-solutions-ts-step" speech2="An olive arrow starts at the tip of p and runs along the olive line: adding a multiple of v 1 to p moves along that line">
+      <active>pf-translated-solutions-ts-step</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-translated-solutions-translated-solutions</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -35,7 +35,7 @@
         Here we show that the null space of an <m>m \times n</m> matrix is a subspace of
         <m>\R^n</m> and we leave the column space as an exercise. Recall
         <md>
-          \operatorname{Nul} A = \operatorname{Ker} A
+          \operatorname{Nul} A
           = \left\{ \vec{x} \in \R^n \; \middle| \; A_{m \times n} \vec{x}_{n \times 1}
             = \vec{0}_{m \times 1} \right\}.
         </md>

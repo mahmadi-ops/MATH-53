@@ -66,8 +66,8 @@ config.background_color = BLACK
 THETA = 60 * DEGREES
 A = -np.tan(THETA / 2)                      # the horizontal shears
 B = np.sin(THETA)                           # the vertical shear
-O = np.array([-4.25, -0.45, 0.0])            # the origin of the plane, on screen
-S = 1.3                                     # screen units per unit of the plane
+O = np.array([-4.55, -0.45, 0.0])            # the origin of the plane, on screen
+S = 1.2                                     # screen units per unit of the plane
 
 H_COL, V_COL, F_COL = BLUE, ORANGE, PINK
 NOTE_COL = GREY_B
@@ -179,10 +179,11 @@ class RotationByShears(Scene):
         self.wait(1.0)
 
         # ---- the product, built from right to left ---------------------------
-        tan_half = r"-\tan\frac{\theta}{2}"
-        third = math(matrix("1", tan_half, "0", "1"), size=34, color=H_COL)
-        second = math(matrix("1", "0", r"\sin\theta", "1"), size=34, color=V_COL)
-        first = math(matrix("1", tan_half, "0", "1"), size=34, color=H_COL)
+        # written with a slash: the thin rule of \frac is lost when the PDF is converted to SVG
+        tan_half = r"-\tan(\theta/2)"
+        third = math(matrix("1", tan_half, "0", "1"), size=31, color=H_COL)
+        second = math(matrix("1", "0", r"\sin\theta", "1"), size=31, color=V_COL)
+        first = math(matrix("1", tan_half, "0", "1"), size=31, color=H_COL)
         factors = VGroup(third, second, first).arrange(RIGHT, buff=0.14)
         at_right(factors, -1.25)
         tags = VGroup(*[
@@ -216,7 +217,7 @@ class RotationByShears(Scene):
 
         self.add(start)
         self.bring_to_back(start)
-        shear(1, "H", first, tags[2], r"1.\ \ shear horizontally: $a = -\tan\frac{\theta}{2}$")
+        shear(1, "H", first, tags[2], r"1.\ \ shear horizontally: $a = -\tan(\theta/2)$")
         shear(2, "V", second, tags[1], r"2.\ \ shear vertically: $b = \sin\theta$")
         shear(3, "H", third, tags[0], r"3.\ \ shear horizontally again, with the same $a$")
 
@@ -232,7 +233,7 @@ class RotationByShears(Scene):
         self.play(Create(arc), FadeIn(theta_tag), run_time=0.9)
 
         result = math(matrix(r"\cos\theta", r"-\sin\theta", r"\sin\theta", r"\cos\theta"), r"=",
-                      size=34)
+                      size=31)
         result.next_to(factors, LEFT, buff=0.16)
         order = note(r"(the factor on the right acts first)")
         order.move_to([RIGHT_EDGE - order.width / 2, -2.45, 0])

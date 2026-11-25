@@ -41,7 +41,7 @@
     "⁺": "+", "⁻": "−", "ⁱ": "i", "ⁿ": "n", "ᵀ": "T"
   };
   // Names that mathematics sets upright.
-  const UPRIGHT = new Set(["det", "rank", "dim", "Span", "Col", "Nul", "Row", "ker", "vol",
+  const UPRIGHT = new Set(["det", "rank", "dim", "Span", "Col", "Nul", "Row", "ker", "Ker", "vol",
     "sin", "cos", "tan", "log", "ln", "exp", "max", "min"]);
   const LETTER = /[A-Za-z]/;
 

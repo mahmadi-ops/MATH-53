@@ -136,16 +136,17 @@
   </subsection>
 
   <subsection xml:id="subsec-null-space">
-    <title>Null Space</title>
+    <title>Null Space of a Matrix and Kernel of a Transformation</title>
 
     <definition xml:id="def-null-space">
-      <title>Null Space</title>
+      <title>Null Space of a Matrix</title>
       <statement>
         <p>
           Let <m>A</m> be an <m>m \times n</m> matrix. The <term>null space</term> of
-          <m>A</m>, or <term>kernel</term> of <m>A</m>, is defined as
+          <m>A</m> is the set of all solutions of the homogeneous equation
+          <m>A\vec{x} = \vec{0}</m>:
           <md>
-            \operatorname{Ker} A = \operatorname{Nul} A
+            \operatorname{Nul} A
             = \left\{ \vec{x} \in \R^n \; : \; A\vec{x} = \vec{0} \right\}.
           </md>
         </p>
@@ -223,6 +224,182 @@
         </figure>
       </solution>
     </example>
+
+    <p>
+      The null space belongs to a matrix. The same idea for a transformation has its own
+      name.
+    </p>
+
+    <definition xml:id="def-kernel">
+      <title>Kernel of a Transformation</title>
+      <statement>
+        <p>
+          Let <m>T : \R^n \to \R^m</m> be a linear transformation. The
+          <term>kernel</term> of <m>T</m> is the set of all inputs that <m>T</m> sends to
+          the zero vector:
+          <md>
+            \operatorname{Ker} T
+            = \left\{ \vec{x} \in \R^n \; : \; T(\vec{x}) = \vec{0} \right\}.
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <observation xml:id="obs-kernel-is-null-space">
+      <title>Two Names, One Set</title>
+      <p>
+        For a matrix transformation <m>T_A(\vec{x}) = A\vec{x}</m>, the condition
+        <m>T_A(\vec{x}) = \vec{0}</m> is the equation <m>A\vec{x} = \vec{0}</m>.
+        Therefore
+        <md>
+          \operatorname{Ker} T_A = \operatorname{Nul} A.
+        </md>
+      </p>
+      <p>
+        In these notes the two words are kept apart: <m>\operatorname{Nul}</m> is
+        always followed by a matrix, and <m>\operatorname{Ker}</m> by a transformation.
+        We speak of the <em>null space of the matrix</em> <m>A</m> and of the
+        <em>kernel of the transformation</em> <m>T_A</m>. Both live in the domain
+        <m>\R^n</m>, not in the codomain <m>\R^m</m>.
+      </p>
+    </observation>
+
+    <example xml:id="eg-null-space-and-kernel">
+      <title>The Null Space of <m>A</m> and the Kernel of <m>T_A</m></title>
+      <statement>
+        <p>
+          Let
+          <m>A = \begin{bmatrix} 1 \amp 2 \\ 2 \amp 4 \\ -1 \amp -2 \end{bmatrix}</m>,
+          and let <m>T_A : \R^2 \to \R^3</m> be its matrix transformation,
+          <m>T_A(\vec{x}) = A\vec{x}</m>.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li><p>Find <m>\operatorname{Nul} A</m>.</p></li>
+            <li><p>Find <m>\operatorname{Ker} T_A</m>.</p></li>
+            <li>
+              <p>
+                Find all vectors <m>\vec{x} \in \R^2</m> that <m>T_A</m> sends to the
+                same output as <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> We solve <m>A\vec{x} = \vec{0}</m>:
+          <md>
+            \left[ \begin{array}{cc|c}
+              1 \amp 2 \amp 0 \\
+              2 \amp 4 \amp 0 \\
+              -1 \amp -2 \amp 0
+            \end{array} \right]
+            \xrightarrow[r_1 + r_3]{-2r_1 + r_2}
+            \left[ \begin{array}{cc|c}
+              1 \amp 2 \amp 0 \\
+              0 \amp 0 \amp 0 \\
+              0 \amp 0 \amp 0
+            \end{array} \right].
+          </md>
+          With <m>y = t</m> free, the first row gives <m>x = -2t</m>, so
+          <md>
+            \operatorname{Nul} A
+            = \operatorname{Span}\left\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \right\},
+          </md>
+          a line through the origin in <m>\R^2</m>.
+        </p>
+        <p>
+          <term>(b)</term> By <xref ref="def-kernel" text="type-global" />, the kernel of
+          <m>T_A</m> consists of the vectors <m>\vec{x} \in \R^2</m> with
+          <m>T_A(\vec{x}) = \vec{0}</m>, that is, with <m>A\vec{x} = \vec{0}</m>. This
+          is the equation solved in part (a), so
+          <md>
+            \operatorname{Ker} T_A = \operatorname{Nul} A
+            = \operatorname{Span}\left\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \right\}.
+          </md>
+          Parts (a) and (b) describe one set from two points of view: as the solutions of
+          a homogeneous system whose coefficient matrix is <m>A</m>, and as the inputs
+          that <m>T_A</m> sends to the zero vector. As a check,
+          <md>
+            T_A \begin{bmatrix} -2 \\ 1 \end{bmatrix}
+            = \begin{bmatrix} -2 + 2 \\ -4 + 4 \\ 2 - 2 \end{bmatrix}
+            = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}.
+          </md>
+          Notice that the kernel is a line in the domain <m>\R^2</m>, although the
+          outputs of <m>T_A</m> are vectors in <m>\R^3</m>.
+        </p>
+        <p>
+          <term>(c)</term> First,
+          <m>T_A \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+          = \begin{bmatrix} 3 \\ 6 \\ -3 \end{bmatrix}</m>. Since <m>T_A</m> is linear,
+          <md>
+            <mrow>
+              T_A(\vec{x}) = T_A \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+              \amp \iff
+              T_A \left( \vec{x} - \begin{bmatrix} 1 \\ 1 \end{bmatrix} \right) = \vec{0}
+            </mrow>
+            <mrow>
+              \amp \iff
+              \vec{x} - \begin{bmatrix} 1 \\ 1 \end{bmatrix} \in \operatorname{Ker} T_A.
+            </mrow>
+          </md>
+          So the vectors we want are
+          <md>
+            \vec{x} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+            + t \begin{bmatrix} -2 \\ 1 \end{bmatrix},
+            \qquad t \in \R,
+          </md>
+          the line through <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> parallel to the
+          kernel. For instance, <m>t = 1</m> gives
+          <m>\begin{bmatrix} -1 \\ 2 \end{bmatrix}</m>, and indeed
+          <md>
+            T_A \begin{bmatrix} -1 \\ 2 \end{bmatrix}
+            = \begin{bmatrix} -1 + 4 \\ -2 + 8 \\ 1 - 4 \end{bmatrix}
+            = \begin{bmatrix} 3 \\ 6 \\ -3 \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          This is <xref ref="thm-particular-plus-homogeneous" text="type-global" /> in the
+          language of transformations: two inputs have the same output exactly when
+          they differ by a vector of the kernel. In particular <m>T_A</m> is not
+          one-to-one, because its kernel contains nonzero vectors
+          (<xref ref="thm-injective-iff-trivial" text="type-global" />).
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      <em>Explore the kernel.</em> In
+      <xref ref="fig-kernel-interactive" text="type-global" /> you move an input
+      <m>\vec{x}</m> around the domain <m>\R^2</m> of the transformation <m>T_A</m> of
+      <xref ref="eg-null-space-and-kernel" text="type-global" />. Before starting,
+      predict what happens to the output when the input slides along a line parallel to
+      the kernel.
+    </p>
+
+    <figure xml:id="fig-kernel-interactive">
+      <caption>
+        The kernel of <m>T_A</m> for
+        <m>A = \left[\begin{smallmatrix} 1 \amp 2 \\ 2 \amp 4 \\ -1 \amp -2 \end{smallmatrix}\right]</m>.
+        The wine line is
+        <m>\operatorname{Ker} T_A = \operatorname{Nul} A
+        = \operatorname{Span}\{(-2,1)\}</m>. In the interactive figure the sliders, or
+        the handle at the tip of the vector, set the input; the readout gives
+        <m>T_A(\vec{x})</m>, which is the zero vector exactly when the input is on the
+        wine line, and the dashed line marks all inputs with the same output. The
+        printed picture shows that <m>(1,1)</m> and <m>(-1,2)</m>, which differ by the
+        kernel vector <m>(-2,1)</m>, are both sent to <m>(3,6,-3)</m>.
+      </caption>
+      <interactive xml:id="int-kernel" iframe="demos-manim/kernel.html" width="100%" aspect="3:5">
+        <shortdescription>The plane of inputs of a transformation from R 2 to R 3, with its kernel drawn as a line through the origin; sliders move an input vector, a readout gives its output, and a dashed line parallel to the kernel marks all inputs with the same output.</shortdescription>
+        <static>
+          <image source="images/ch5-kernel" width="70%">
+            <shortdescription>The xy-plane with the kernel, the line through the origin and the point (-2, 1), and a dashed parallel line through the points (1, 1) and (-1, 2), which have the same output (3, 6, -3).</shortdescription>
+          </image>
+        </static>
+      </interactive>
+    </figure>
   </subsection>
 
   <subsection xml:id="subsec-rank-nullity">

@@ -12,6 +12,7 @@ They require no external JavaScript libraries, narration, or video downloads.
 | `source/linear-transformations/sec-transformations.ptx` | `transformation-geometry.html` | Before the opening ℝ³ → ℝ⁴ example; refers to the existing matrix-multiplication example |
 | `source/matrix-algebra/sec-elementary-matrices.ptx` | `shear-rotation.html` | In the application "Rotating a Picture Using Only Shears", after the four-panel figure |
 | `source/subspaces/sec-basis-dimension.ptx` | `two-bases.html` | After the example "Two Different Bases for the Same Subspace" and the figure of the two bases |
+| `source/subspaces/sec-column-null-space.ptx` | `kernel.html` | After the example "The Null Space of A and the Kernel of T_A" |
 | `source/vector-spaces/sec-coordinates.ptx` | `change-of-basis.html` | Extends the existing same-vector/two-coordinate-systems example |
 
 The explorers are unnumbered additions so existing example numbers and IDs stay
@@ -118,7 +119,7 @@ application "Rotating a Picture Using Only Shears". Its math helpers
 `H_a V_b H_a` equals the rotation matrix, that the same three shears row reduce
 the rotation matrix to the identity (the method of the example), that every
 partial product has determinant 1, and that the picture stays inside the
-plotting window. The browser checks treat it like the other guided explorers.
+plotting window chosen for that angle (`windowFor`). The browser checks treat it like the other guided explorers.
 The print version is a PreFigure diagram kept in
 `scripts/prefigure/ch4-shear-rotation.xml` (the first shear at 60°, with arrows);
 `python scripts/build-book-figures.py --standalone` rebuilds
@@ -139,6 +140,17 @@ are checked. The print version is a PreFigure diagram kept in
 `scripts/prefigure/ch5-two-bases.xml` (the vector `(2, 1, 0)` in both bases);
 `python scripts/build-book-figures.py --standalone` rebuilds
 `assets/images/ch5-two-bases.svg` and `.pdf` from it.
+
+## The kernel explorer
+
+`kernel.html` (with `kernel.js`) belongs to the Section 5.3 example "The Null
+Space of A and the Kernel of T_A". Its math helpers (`transform`, `coefficient`,
+`inKernel`, `slide`) are exported for Node, and `node scripts/check-geometry-math.cjs`
+checks on all 117 slider positions that the output is `(x + 2y)(1, 2, −1)`, that it
+is zero exactly on the multiples of `(−2, 1)`, and that sliding along the kernel
+does not change it. Like the two-bases explorer it is listed under `SLIDERS` in
+`scripts/check-geometry-explorers.py`. The print version is a PreFigure diagram
+kept in `scripts/prefigure/ch5-kernel.xml`.
 
 ## The translated-solutions explorer
 

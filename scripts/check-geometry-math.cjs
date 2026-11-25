@@ -119,10 +119,13 @@ for(let theta=-90;theta<=90;theta+=5) {
   for(let k=0;k<=60;k++) {
     const M2=S.matrixAt(theta,k/20);
     near(S.det(M2),1);
-    S.SQUARE.forEach(p=>{const q=S.apply(M2,p);assert.ok(Math.abs(q[0])<=2.3-0.25&&Math.abs(q[1])<=3.2-0.15);});
+    // inside the window chosen for this angle, with a margin
+    const [halfWidth,halfHeight]=S.windowFor(theta);
+    S.SQUARE.forEach(p=>{const q=S.apply(M2,p);assert.ok(Math.abs(q[0])<=halfWidth-0.24&&Math.abs(q[1])<=halfHeight-0.24);});
   }
 }
 assert.deepEqual([0,0.4,1,1.2,2,2.7,3].map(S.stageOf),[0,1,1,2,2,3,3]);
+near(S.windowFor(60)[1]/S.windowFor(60)[0],S.ASPECT);assert.ok(S.windowFor(90)[0]<=2.26&&S.windowFor(0)[0]===1.75);
 same(S.multiply(S.H(-1),S.multiply(S.V(1),S.H(-1))),[[0,-1],[1,0]]);
 
 // The two-bases explorer of Section 5.2: on the whole slider grid the weights in each
@@ -142,6 +145,23 @@ assert.equal(B.combination(B.BASES.standard,[2,1]),"2e₁ + 1e₂");
 assert.equal(B.combination(B.BASES.second,[-3.5,2]),"(−3.5)e₁ + 2(e₁ + e₂)");
 assert.equal(B.snap(1.74,-2,2),1.5);assert.equal(B.snap(9,-2,2),2);
 
+// The kernel explorer of Section 5.3: T(x, y) = A(x, y) = (x + 2y)(1, 2, −1); the output
+// is zero exactly on the multiples of (−2, 1), and sliding along the kernel keeps it.
+const K=require("../assets/demos-manim/kernel.js");
+equal(K.transform(...K.KERNEL),[0,0,0]);
+for(let i=-6;i<=6;i++)for(let j=-4;j<=4;j++) {
+  const x=i/2,y=j/2,out=K.transform(x,y),c=K.coefficient(x,y);
+  equal(out,[x+2*y,2*x+4*y,-x-2*y]);equal(out,K.RANGE.map(r=>c*r));
+  assert.equal(K.inKernel(x,y),x===-2*y);
+  assert.ok(Math.abs(c)<=7);                       // the output stays on the drawn number line
+  for(const direction of [-1,1]) {
+    const next=K.slide(x,y,direction);
+    if(next) {equal(K.transform(...next),out);near(next[0]-x,direction*-1);near(next[1]-y,direction*0.5);}
+  }
+}
+equal(K.transform(1,1),[3,6,-3]);equal(K.transform(-1,2),[3,6,-3]);
+assert.equal(K.slide(3,-2,-1),null);
+
 // Math formatting shared by the explorers: italic letters, real subscripts, upright operator names.
 const M=require("../assets/demos-manim/book-math.js");
 const shape=text=>M.runs(text).map(r=>(r.italic?"i":"r")+(r.level<0?"_":r.level>0?"^":"")+":"+r.text).join("|");
@@ -150,9 +170,10 @@ assert.equal(shape("det[b₁(t)] > 0"),"r:det[|i:b|r_:1|r:(|i:t|r:)] > 0");
 assert.equal(shape("T: ℝ³ → ℝ²"),"i:T|r:: ℝ|r^:3|r: → ℝ|r^:2");
 assert.equal(shape("aᵢ"),"i:a|i_:i");
 assert.equal(shape("A = HₐV_bHₐ"),"i:A|r: = |i:H|i_:a|i:V|i_:b|i:H|i_:a");
+assert.equal(shape("Ker T = Nul A"),"r:Ker |i:T|r: = Nul |i:A");
 assert.deepEqual(M.unbreakable("(a − 1)x = b − 1"),["(a − 1)x","= b − 1"]);
 assert.deepEqual(M.unbreakable("x₁ = 2/3 − (7/3)s; x₂ = s"),["x₁","= 2/3 − (7/3)s;","x₂","= s"]);
 assert.deepEqual(M.unbreakable("T(1, −1, 2) = (−1, 1)"),["T(1, −1, 2)","= (−1, 1)"]);
 assert.deepEqual(M.pieces("Since $a ≠ 1$, done").map(p=>p.math),[false,true,false]);
 assert.equal(M.plain("At $s = 0$, $p = (1, 2)$."),"At s = 0, p = (1, 2).");
-console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions; homogeneous and translated solutions on all 17 slider positions for both particular solutions; three shears equal to the rotation on all 37 slider angles; one vector in two bases on all 81 slider positions; math formatting.");
+console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions; homogeneous and translated solutions on all 17 slider positions for both particular solutions; three shears equal to the rotation on all 37 slider angles; one vector in two bases on all 81 slider positions; the kernel and equal outputs on all 117 slider positions; math formatting.");

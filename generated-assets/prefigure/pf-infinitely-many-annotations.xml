@@ -1,0 +1,30 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-infinitely-many-infinitely-many" speech2="Two equations that describe the same line in the x y plane, so the system has infinitely many solutions">
+      <grouped>pf-infinitely-many-infinitely-many</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-infinitely-many-im-first</active>
+        <active>pf-infinitely-many-im-second</active>
+      </children>
+      <components>
+        <active>pf-infinitely-many-im-first</active>
+        <active>pf-infinitely-many-im-second</active>
+      </components>
+    </annotation>
+    <annotation id="pf-infinitely-many-im-first" speech2="A thick olive line of slope 1 through the origin, the graph of the first equation">
+      <active>pf-infinitely-many-im-first</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-infinitely-many-infinitely-many</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-infinitely-many-im-second" speech2="A thin black line drawn exactly on top of the olive one, the graph of the second equation; every point of the line is a solution">
+      <active>pf-infinitely-many-im-second</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-infinitely-many-infinitely-many</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

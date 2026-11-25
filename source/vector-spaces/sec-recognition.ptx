@@ -652,14 +652,14 @@
       that lists the <m>48</m> weights. Because <m>W \neq 0</m>, that row is not the zero
       row, so <m>T</m> has rank <m>1</m>, and
       <xref ref="thm-rank-nullity" text="type-global" /> gives
-      <m>\dim \ker(T) = 48 - 1 = 47</m>. The kernel is where the machine's blindness
+      <m>\dim \operatorname{Ker} T = 48 - 1 = 47</m>. The kernel is where the machine's blindness
       lives. If <m>G</m> lies in it, then adding <m>G</m> to any picture leaves the
       verdict untouched:
       <md>
         s(X + G) = s(X) + G \cdot W = s(X).
       </md>
-      Note what this does and does not say. A picture <m>G</m> in <m>\ker(T)</m> need not
-      have score zero itself; what is zero is the change it causes. So <m>\ker(T)</m> is
+      Note what this does and does not say. A picture <m>G</m> in <m>\operatorname{Ker} T</m> need not
+      have score zero itself; what is zero is the change it causes. So <m>\operatorname{Ker} T</m> is
       the <m>47</m>-dimensional space of directions of change the classifier cannot
       detect, and recognition, for this machine, is one linear transformation followed by
       one comparison.
@@ -671,8 +671,8 @@
         The boundary is one member of a family. Fix a number <m>c</m> and a picture
         <m>X_0</m> with <m>s(X_0) = c</m>. Then <m>s(X) = c</m> exactly when
         <m>s(X) - s(X_0) = (X - X_0) \cdot W = 0</m>, that is, exactly when
-        <m>X - X_0</m> lies in <m>\ker(T)</m>. So each set
-        <m>\{ X : s(X) = c \}</m> is the translate <m>X_0 + \ker(T)</m><mdash />a
+        <m>X - X_0</m> lies in <m>\operatorname{Ker} T</m>. So each set
+        <m>\{ X : s(X) = c \}</m> is the translate <m>X_0 + \operatorname{Ker} T</m><mdash />a
         parallel copy of the boundary <m>\{ s = 0 \}</m>, one copy for every real
         number, stacked through picture space like the pages of a book. The blend line
         <m>S_{\lambda}</m> cuts through them at constant speed, and that is the whole
@@ -953,7 +953,7 @@
       By <xref ref="thm-weight-picture" text="type-global" /> the classifier's
       transformation is <m>T(G) = G \cdot W</m>, so
       <md>
-        G \in \ker(T)
+        G \in \operatorname{Ker} T
         \quad \text{if and only if} \quad
         G \cdot W = 0
         \quad \text{if and only if} \quad

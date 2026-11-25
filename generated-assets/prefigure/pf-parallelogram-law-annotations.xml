@@ -1,0 +1,57 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-parallelogram-law-parallelogram-law" speech2="The parallelogram law: two vectors drawn from the same point, the parallelogram they span, and its two diagonals; the same scale is used in both directions">
+      <grouped>pf-parallelogram-law-parallelogram-law</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-parallelogram-law-pl-u</active>
+        <active>pf-parallelogram-law-pl-v</active>
+        <active>pf-parallelogram-law-pl-sides</active>
+        <active>pf-parallelogram-law-pl-sum</active>
+        <active>pf-parallelogram-law-pl-difference</active>
+      </children>
+      <components>
+        <active>pf-parallelogram-law-pl-u</active>
+        <active>pf-parallelogram-law-pl-v</active>
+        <active>pf-parallelogram-law-pl-sides</active>
+        <active>pf-parallelogram-law-pl-sum</active>
+        <active>pf-parallelogram-law-pl-difference</active>
+      </components>
+    </annotation>
+    <annotation id="pf-parallelogram-law-pl-u" speech2="The black vector u, from the common starting point steeply up and a little to the right">
+      <active>pf-parallelogram-law-pl-u</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-parallelogram-law-parallelogram-law</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-law-pl-v" speech2="The wine vector v, from the same starting point to the right and a little up">
+      <active>pf-parallelogram-law-pl-v</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-parallelogram-law-parallelogram-law</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-law-pl-sides" speech2="Two thin grey segments, a copy of v starting at the tip of u and a copy of u starting at the tip of v, complete the parallelogram">
+      <active>pf-parallelogram-law-pl-sides</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-parallelogram-law-parallelogram-law</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-law-pl-sum" speech2="The olive vector u plus v is the diagonal from the common starting point to the opposite corner">
+      <active>pf-parallelogram-law-pl-sum</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-parallelogram-law-parallelogram-law</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-law-pl-difference" speech2="The mustard vector u minus v is the other diagonal, drawn from the tip of v to the tip of u">
+      <active>pf-parallelogram-law-pl-difference</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-parallelogram-law-parallelogram-law</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

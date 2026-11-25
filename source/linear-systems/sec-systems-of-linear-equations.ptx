@@ -241,14 +241,29 @@
         <prefigure label="pf-two-lines-intersect" xmlns="https://prefigure.org">
           <diagram dimensions="(340,340)" margins="10">
             <coordinates bbox="(-3.6,-3.6,3.6,3.6)">
-              <axes xlabel="x" ylabel="y" arrows="2" hticks="(-3,1,3)" vticks="(-3,1,3)"/>
-              <line endpoints="((-3.6,4.6),(3.6,-2.6))" stroke="#4A5D23" thickness="2"/>
-              <line endpoints="((-3.6,-2.6),(3.6,4.6))" stroke="black" thickness="2"/>
-              <point p="(0,1)" fill="#876801" size="5"/>
-              <label p="(0,1)" alignment="e" offset="(10,8)"><m>(0,1)</m></label>
-              <label p="(-2.2,3.2)" alignment="e" offset="(6,0)" color="#4A5D23"><m>x+y=1</m></label>
-              <label p="(-2.0,-1.0)" alignment="se" offset="(2,-6)"><m>y-x=1</m></label>
+              <group at="two-lines">
+                <axes xlabel="x" ylabel="y" arrows="2" hticks="(-3,1,3)" vticks="(-3,1,3)"/>
+                <group at="tl-first">
+                  <line endpoints="((-3.6,4.6),(3.6,-2.6))" stroke="#4A5D23" thickness="2"/>
+                  <label p="(-2.2,3.2)" alignment="e" offset="(6,0)" color="#4A5D23"><m>x+y=1</m></label>
+                </group>
+                <group at="tl-second">
+                  <line endpoints="((-3.6,-2.6),(3.6,4.6))" stroke="black" thickness="2"/>
+                  <label p="(-2.0,-1.0)" alignment="se" offset="(2,-6)"><m>y-x=1</m></label>
+                </group>
+                <group at="tl-solution">
+                  <point p="(0,1)" fill="#876801" size="5"/>
+                  <label p="(0,1)" alignment="e" offset="(10,8)"><m>(0,1)</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="two-lines" text="Graph of two lines in the x y plane, with both axes marked from minus 3 to 3 in steps of 1 and the same scale on both">
+                <annotation ref="tl-first" text="The olive line x plus y equals 1, falling from left to right through the points 0 comma 1 and 1 comma 0"/>
+                <annotation ref="tl-second" text="The black line y minus x equals 1, rising from left to right through the points minus 1 comma 0 and 0 comma 1"/>
+                <annotation ref="tl-solution" text="The mustard point 0 comma 1 on the y axis, where the two lines cross; it is the only solution of the system"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
@@ -272,10 +287,18 @@
             <prefigure label="pf-no-solution" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-2.6,-1.6),(2.6,3.6))" stroke="black" thickness="2"/>
-                  <line endpoints="((-2.6,-3.6),(2.6,1.6))" stroke="#4A5D23" thickness="2"/>
+                  <group at="no-solution">
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <line at="ns-first" endpoints="((-2.6,-1.6),(2.6,3.6))" stroke="black" thickness="2"/>
+                    <line at="ns-second" endpoints="((-2.6,-3.6),(2.6,1.6))" stroke="#4A5D23" thickness="2"/>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="no-solution" text="Two lines in the x y plane that never meet, so the system has no solution">
+                    <annotation ref="ns-first" text="A black line of slope 1 that crosses the y axis at 1"/>
+                    <annotation ref="ns-second" text="An olive line of the same slope 1 that crosses the y axis at minus 1; it is parallel to the black line, two units below it"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>
@@ -287,11 +310,20 @@
             <prefigure label="pf-unique-solution" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="black" thickness="2"/>
-                  <line endpoints="((-2.6,3.6),(2.6,-1.6))" stroke="#4A5D23" thickness="2"/>
-                  <point p="(0.5,0.5)" fill="#876801" size="4"/>
+                  <group at="unique-solution">
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <line at="us-first" endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="black" thickness="2"/>
+                    <line at="us-second" endpoints="((-2.6,3.6),(2.6,-1.6))" stroke="#4A5D23" thickness="2"/>
+                    <point at="us-point" p="(0.5,0.5)" fill="#876801" size="4"/>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="unique-solution" text="Two lines in the x y plane that cross at exactly one point, so the system has a unique solution">
+                    <annotation ref="us-first" text="A black line of slope 1 through the origin"/>
+                    <annotation ref="us-second" text="An olive line of slope minus 1 that crosses the y axis at 1"/>
+                    <annotation ref="us-point" text="A mustard point at one half comma one half, the single point that lies on both lines"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>
@@ -303,10 +335,18 @@
             <prefigure label="pf-infinitely-many" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.6,-2.6,2.6,2.6)">
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="#4A5D23" thickness="7"/>
-                  <line endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="black" thickness="2"/>
+                  <group at="infinitely-many">
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <line at="im-first" endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="#4A5D23" thickness="7"/>
+                    <line at="im-second" endpoints="((-2.6,-2.6),(2.6,2.6))" stroke="black" thickness="2"/>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="infinitely-many" text="Two equations that describe the same line in the x y plane, so the system has infinitely many solutions">
+                    <annotation ref="im-first" text="A thick olive line of slope 1 through the origin, the graph of the first equation"/>
+                    <annotation ref="im-second" text="A thin black line drawn exactly on top of the olive one, the graph of the second equation; every point of the line is a solution"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>

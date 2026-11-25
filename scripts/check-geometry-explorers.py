@@ -30,7 +30,7 @@ GUIDED={**DEMOS,'translated-solutions': ('int-translated-solutions','sec-homogen
         'shear-rotation': ('int-shear-rotation','sec-elementary-matrices')}
 
 # Explorers with sliders only (no guide): checked for layout, fallback and embedding.
-SLIDERS={'two-bases': ('int-two-bases','sec-basis-dimension')}
+SLIDERS={'two-bases': ('int-two-bases','sec-basis-dimension'),'kernel': ('int-kernel','sec-column-null-space')}
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -260,13 +260,24 @@ def main():
             assert (page.locator('#x').input_value(),page.locator('#y').input_value())==('-1','1')
             page.locator('#reset').click()
             assert (page.locator('#x').input_value(),page.locator('#y').input_value())==('2','1')
+            page.goto(f'{base}/assets/demos-manim/kernel.html?x=1&y=1',wait_until='networkidle')
+            assert '(3, 6, −3)' in page.locator('#output').inner_text() and 'not in the kernel' in page.locator('#status').inner_text()
+            before=page.locator('#output').inner_text().split('=')[1]
+            page.locator('#slide-on').click()            # (1, 1) -> (0, 1.5): same output
+            assert (page.locator('#x').input_value(),page.locator('#y').input_value())==('0','1.5')
+            assert page.locator('#output').inner_text().split('=')[1]==before
+            page.locator('#to-kernel').click()
+            assert '(0, 0, 0)' in page.locator('#output').inner_text() and 'is in the kernel' in page.locator('#status').inner_text()
+            assert page.locator('[data-level]').count()==0
+            page.locator('#reset').click()
+            assert (page.locator('#x').input_value(),page.locator('#y').input_value())==('1','1')
             plain=browser.new_context(java_script_enabled=False).new_page()
             for name in SLIDERS:
                 plain.goto(f'{base}/assets/demos-manim/{name}.html',wait_until='networkidle')
                 assert plain.locator('.fallback').is_visible()
                 assert plain.locator('.fallback img').evaluate('(e)=>e.complete&&e.naturalWidth>0')
             plain.context.close()
-            print('PASS: two-bases explorer: weights in both bases, dragging, reset, mobile layout, no-JavaScript diagram',flush=True)
+            print('PASS: two-bases and kernel explorers: readouts, dragging, sliding along the kernel, reset, mobile layout, no-JavaScript diagrams',flush=True)
             for name in DEMOS:
                 tree=ET.parse(str(ROOT/'assets/images'/f'{name}-static.svg'))
                 assert tree.getroot().tag=='{http://www.w3.org/2000/svg}svg'

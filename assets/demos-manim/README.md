@@ -33,6 +33,7 @@ elements cannot be formatted and stays plain. The styles are in `book-theme.css`
 | `transformation-geometry.html` | Section 3.1, before the first example | `T(x,y,z) = (x+2y, 2x+y)` sends the basis vectors to matrix columns and loses the z-coordinate |
 | `shear-rotation.html` | Section 4.5, in the application "Rotating a Picture Using Only Shears" | A rotation through `θ` carried out as three shears `H_a V_b H_a`, with `a = −tan(θ/2)` and `b = sin θ` |
 | `two-bases.html` | Section 5.2, after the example "Two Different Bases for the Same Subspace" | One vector `(x, y, 0)` of the xy-plane written as `x e_1 + y e_2` and as `(x − y) e_1 + y (e_1 + e_2)`, side by side |
+| `kernel.html` | Section 5.3, after the example "The Null Space of A and the Kernel of T_A" | The kernel of `T_A : R^2 → R^3` as a line of inputs; inputs that differ by a kernel vector have the same output |
 | `change-of-basis.html` | Section 7.4, in the same-vector/two-bases example | The grid and coordinates change while `(1,2)` stays fixed |
 
 These figures also share `geometry-explorers.css` and `geometry-core.js`.
@@ -56,7 +57,9 @@ the shears one after another to a square picture with a letter F (0 = none,
 the current shear moves the corners and the midpoints of the sides. The readout
 gives `a` and `b`, the three factors (the one being applied is outlined), the
 matrix applied so far and the rotation matrix. The guide plays the three shears in
-order. Both axes use the same unit.
+order. Both axes use the same unit. The frame is compact (270 px wide at most) and the
+window is fitted to the chosen angle, so that the sliders, the picture and the
+caption fit on a phone screen together; a larger angle shows the picture smaller.
 
 | Param | Meaning |
 |-------|---------|
@@ -78,6 +81,23 @@ Only the handle takes over touches, so the page still scrolls on a phone.
 | Param | Meaning |
 |-------|---------|
 | `x`, `y` | starting entries of the vector (defaults `2`, `1`), rounded to the nearest half |
+
+## kernel.html
+
+`kernel.html` (with `kernel.js`) belongs to the Section 5.3 example "The Null
+Space of A and the Kernel of T_A", with `A = [1 2; 2 4; −1 −2]` and
+`T(x, y) = (x + 2y)(1, 2, −1)`. The upper picture is the domain `R^2` with the
+kernel `Ker T = Nul A = Span{(−2, 1)}` as a wine line; the lower one is the line
+of all outputs, marked by the coefficient `c = x + 2y`. Sliders for `x` (−3 to 3)
+and `y` (−2 to 2) in steps of 1/2, or the round handle at the tip of the input,
+move the input; two buttons slide it parallel to the kernel, which leaves the
+output where it is, and one puts it on the kernel. The readout gives `T(x, y)`,
+says whether the input is in the kernel, and names the dashed line of all inputs
+with the same output.
+
+| Param | Meaning |
+|-------|---------|
+| `x`, `y` | starting input (defaults `1`, `1`), rounded to the nearest half |
 
 ## line-family.html
 

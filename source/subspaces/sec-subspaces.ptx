@@ -92,15 +92,28 @@
       </caption>
       <image width="50%">
         <prefigure label="pf-line-not-subspace" xmlns="https://prefigure.org">
-          <diagram dimensions="(300,280)" margins="10">
+          <diagram dimensions="(300,269)" margins="10">
             <coordinates bbox="(-2.6,-2.4,2.8,2.4)">
-              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <line endpoints="((-2.6,0.2),(2.6,2.0))" stroke="#5E011C" thickness="2"/>
-              <line endpoints="((0,0),(1.4,1.58))" stroke="#876801" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(-1.4,-1.58))" stroke="#606060" thickness="2" arrows="1"/>
-              <label p="(1.4,1.58)" alignment="e" offset="(6,2)" color="#876801"><m>\vec{u}</m></label>
-              <label p="(-1.4,-1.58)" alignment="w" offset="(-6,-2)" color="#606060"><m>-\vec{u}</m></label>
+              <group at="line-not-subspace">
+                <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                <line at="lns-line" endpoints="((-2.6,0.2),(2.6,2.0))" stroke="#5E011C" thickness="2"/>
+                <group at="lns-u">
+                  <line endpoints="((0,0),(1.4,1.58))" stroke="#876801" thickness="2" arrows="1"/>
+                  <label p="(1.4,1.58)" alignment="e" offset="(6,2)" color="#876801"><m>\vec{u}</m></label>
+                </group>
+                <group at="lns-minus-u">
+                  <line endpoints="((0,0),(-1.4,-1.58))" stroke="#606060" thickness="2" arrows="1"/>
+                  <label p="(-1.4,-1.58)" alignment="w" offset="(-6,-2)" color="#606060"><m>-\vec{u}</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="line-not-subspace" text="A line in the x y plane that does not pass through the origin, with a vector on it and the negative of that vector; the same scale is used on both axes">
+                <annotation ref="lns-line" text="The wine line rises gently from left to right and crosses the y axis above the origin, so the zero vector is not on it"/>
+                <annotation ref="lns-u" text="The mustard vector u, from the origin up and to the right, ends on the wine line"/>
+                <annotation ref="lns-minus-u" text="The grey vector minus u, from the origin down and to the left, ends far below the wine line; the line is not closed under scalar multiplication"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>

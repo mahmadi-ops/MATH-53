@@ -54,18 +54,36 @@
       </caption>
       <image width="52%">
         <prefigure label="pf-position-vector-r2" xmlns="https://prefigure.org">
-          <diagram dimensions="(300,280)" margins="10">
+          <diagram dimensions="(300,287)" margins="10">
             <coordinates bbox="(-0.8,-0.8,3.4,3.2)">
-              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <line endpoints="((0,0),(2.4,2.2))" stroke="#4A5D23" thickness="2" arrows="1"/>
-              <line endpoints="((2.4,0),(2.4,2.2))" stroke="#4A5D23" thickness="1"/>
-              <line endpoints="((0,2.2),(2.4,2.2))" stroke="#4A5D23" thickness="1"/>
-              <point p="(2.4,2.2)" fill="black" size="4"/>
-              <label p="(2.4,2.2)" alignment="ne" offset="(6,4)"><m>(a,b)</m></label>
-              <label p="(1.1,1.3)" alignment="nw" offset="(-6,2)" color="#4A5D23"><m>\vec{v}</m></label>
-              <label p="(2.4,0)" alignment="s" offset="(0,-8)"><m>a</m></label>
-              <label p="(0,2.2)" alignment="w" offset="(-8,0)"><m>b</m></label>
+              <group at="position-vector">
+                <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                <group at="pv-vector">
+                  <line endpoints="((0,0),(2.4,2.2))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <label p="(1.1,1.3)" alignment="nw" offset="(-6,2)" color="#4A5D23"><m>\vec{v}</m></label>
+                </group>
+                <group at="pv-point">
+                  <point p="(2.4,2.2)" fill="black" size="4"/>
+                  <label p="(2.4,2.2)" alignment="ne" offset="(6,4)"><m>(a,b)</m></label>
+                </group>
+                <group at="pv-a">
+                  <line endpoints="((2.4,0),(2.4,2.2))" stroke="#4A5D23" thickness="1"/>
+                  <label p="(2.4,0)" alignment="s" offset="(0,-8)"><m>a</m></label>
+                </group>
+                <group at="pv-b">
+                  <line endpoints="((0,2.2),(2.4,2.2))" stroke="#4A5D23" thickness="1"/>
+                  <label p="(0,2.2)" alignment="w" offset="(-8,0)"><m>b</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="position-vector" text="A vector in the x y plane drawn as an arrow from the origin to a point, with the same scale on both axes">
+                <annotation ref="pv-point" text="The point a comma b, in the first quadrant"/>
+                <annotation ref="pv-vector" text="The olive arrow v from the origin to the point a comma b"/>
+                <annotation ref="pv-a" text="A thin vertical line from the point down to the x axis meets it at a, the first entry of v"/>
+                <annotation ref="pv-b" text="A thin horizontal line from the point across to the y axis meets it at b, the second entry of v"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
@@ -302,19 +320,40 @@
       </caption>
       <image width="62%">
         <prefigure label="pf-parallelogram-law" xmlns="https://prefigure.org">
-          <diagram dimensions="(400,300)" margins="12">
-            <coordinates bbox="(-2.6,-0.6,3.4,3.4)">
-              <line endpoints="((0,0),(1.0,2.4))" stroke="black" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(2.6,0.8))" stroke="#5E011C" thickness="2" arrows="1"/>
-              <line endpoints="((1.0,2.4),(3.6,3.2))" stroke="gray" thickness="1"/>
-              <line endpoints="((2.6,0.8),(3.6,3.2))" stroke="gray" thickness="1"/>
-              <line endpoints="((0,0),(3.6,3.2))" stroke="#4A5D23" thickness="2" arrows="1"/>
-              <line endpoints="((2.6,0.8),(1.0,2.4))" stroke="#876801" thickness="2" arrows="1"/>
-              <label p="(0.5,1.2)" alignment="w" offset="(-8,0)"><m>\vec{u}</m></label>
-              <label p="(1.3,0.4)" alignment="se" offset="(0,-8)" color="#5E011C"><m>\vec{v}</m></label>
-              <label p="(2.0,1.9)" alignment="nw" offset="(-4,6)" color="#4A5D23"><m>\vec{u}+\vec{v}</m></label>
-              <label p="(1.8,1.6)" alignment="se" offset="(8,-2)" color="#876801"><m>\vec{u}-\vec{v}</m></label>
+          <diagram dimensions="(404,336)" margins="12">
+            <coordinates bbox="(-0.8,-0.5,4.2,3.6)">
+              <group at="parallelogram-law">
+                <group at="pl-u">
+                  <line endpoints="((0,0),(1.0,2.4))" stroke="black" thickness="2" arrows="1"/>
+                  <label p="(0.5,1.2)" alignment="w" offset="(-8,0)"><m>\vec{u}</m></label>
+                </group>
+                <group at="pl-v">
+                  <line endpoints="((0,0),(2.6,0.8))" stroke="#5E011C" thickness="2" arrows="1"/>
+                  <label p="(1.3,0.4)" alignment="se" offset="(0,-8)" color="#5E011C"><m>\vec{v}</m></label>
+                </group>
+                <group at="pl-sides">
+                  <line endpoints="((1.0,2.4),(3.6,3.2))" stroke="gray" thickness="1"/>
+                  <line endpoints="((2.6,0.8),(3.6,3.2))" stroke="gray" thickness="1"/>
+                </group>
+                <group at="pl-sum">
+                  <line endpoints="((0,0),(3.6,3.2))" stroke="#4A5D23" thickness="2" arrows="1"/>
+                  <label p="(2.0,1.9)" alignment="nw" offset="(-4,6)" color="#4A5D23"><m>\vec{u}+\vec{v}</m></label>
+                </group>
+                <group at="pl-difference">
+                  <line endpoints="((2.6,0.8),(1.0,2.4))" stroke="#876801" thickness="2" arrows="1"/>
+                  <label p="(1.8,1.6)" alignment="se" offset="(8,-2)" color="#876801"><m>\vec{u}-\vec{v}</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="parallelogram-law" text="The parallelogram law: two vectors drawn from the same point, the parallelogram they span, and its two diagonals; the same scale is used in both directions">
+                <annotation ref="pl-u" text="The black vector u, from the common starting point steeply up and a little to the right"/>
+                <annotation ref="pl-v" text="The wine vector v, from the same starting point to the right and a little up"/>
+                <annotation ref="pl-sides" text="Two thin grey segments, a copy of v starting at the tip of u and a copy of u starting at the tip of v, complete the parallelogram"/>
+                <annotation ref="pl-sum" text="The olive vector u plus v is the diagonal from the common starting point to the opposite corner"/>
+                <annotation ref="pl-difference" text="The mustard vector u minus v is the other diagonal, drawn from the tip of v to the tip of u"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>

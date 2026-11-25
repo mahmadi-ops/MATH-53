@@ -37,13 +37,26 @@
   const LETTER = [[-0.45, -0.7], [-0.45, 0.7], [0.55, 0.7], [0.55, 0.38], [-0.1, 0.38],
     [-0.1, 0.12], [0.35, 0.12], [0.35, -0.2], [-0.1, -0.2], [-0.1, -0.7]];
 
-  const api = { H, V, multiply, apply, det, rotation, coefficients, fractions, matrixAt, stageOf, SQUARE, LETTER };
+  // The plotting window for one angle: half-width and half-height, in units. The
+  // picture reaches |x| = 1 + |a| after the first shear and |y| = 1 + |b|(1 + |a|)
+  // after the second, so the window is the smallest one of fixed shape (ASPECT =
+  // height / width) that holds those with a margin. It depends on the angle only,
+  // never on the step, so nothing rescales while the shears are applied.
+  const ASPECT = 1.46, MARGIN = 0.25;
+  function windowFor(degrees) {
+    const { a, b } = coefficients(degrees), reach = [1 + Math.abs(a), 1 + Math.abs(b) * (1 + Math.abs(a))];
+    const halfWidth = Math.max(1.75, reach[0] + MARGIN, (reach[1] + MARGIN) / ASPECT);
+    return [halfWidth, halfWidth * ASPECT];
+  }
+
+  const api = { H, V, multiply, apply, det, rotation, coefficients, fractions, matrixAt, stageOf, windowFor, ASPECT, SQUARE, LETTER };
   if (typeof module !== "undefined" && module.exports) { module.exports = api; return; }
 
   /* ---------- browser ---------- */
   const G = root.BookGeometry, M = root.BookMath, C = G.colors, $ = id => document.getElementById(id);
-  // The window: |x| ≤ 2.3 and |y| ≤ 3.2 hold the picture at every angle and step.
-  const RX = 2.3, RY = 3.2, UNIT = 90, size = [2 * RX * UNIT, 2 * RY * UNIT];
+  // The frame has a fixed size; the unit is chosen so that the window of the current angle fills it.
+  const size = [300, 300 * ASPECT];
+  let RX = 2.25, RY = RX * ASPECT, UNIT = size[0] / (2 * RX);
   const scene = new G.Scene($("shear-scene"), p => [size[0] / 2 + UNIT * p[0], size[1] / 2 - UNIT * p[1]]);
   const thetaSlider = $("theta"), stepSlider = $("step");
   const number = x => G.fmt(x);
@@ -63,16 +76,16 @@
   const MARKS = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]];
 
   function drawFrame() {
-    for (let i = -2; i <= 2; i++) scene.line([i, -RY], [i, RY], C.grid, 1);
-    for (let i = -3; i <= 3; i++) scene.line([-RX, i], [RX, i], C.grid, 1);
+    for (let i = -Math.floor(RX); i <= Math.floor(RX); i++) scene.line([i, -RY], [i, RY], C.grid, 1);
+    for (let i = -Math.floor(RY); i <= Math.floor(RY); i++) scene.line([-RX, i], [RX, i], C.grid, 1);
     scene.arrow([-RX + 0.05, 0], [RX - 0.05, 0], "#606060", 1.2);
     scene.arrow([0, -RY + 0.05], [0, RY - 0.05], "#606060", 1.2);
     scene.text([RX - 0.05, 0], "$x$", "#404040", [-12, 22]);
     scene.text([0, RY - 0.05], "$y$", "#404040", [10, 16]);
-    [-2, -1, 1, 2].forEach(k => {
-      scene.line([k, -0.07], [k, 0.07], "#606060", 1.2);
-      scene.line([-0.07, k], [0.07, k], "#606060", 1.2);
-    });
+    for (let k = -Math.floor(RY); k <= Math.floor(RY); k++) {
+      if (k && Math.abs(k) < RX - 0.3) scene.line([k, -0.07], [k, 0.07], "#606060", 1.2);
+      if (k && Math.abs(k) < RY - 0.3) scene.line([-0.07, k], [0.07, k], "#606060", 1.2);
+    }
   }
 
   // A 2 × 2 matrix as an HTML element.
@@ -102,6 +115,7 @@
   function draw() {
     const theta = +thetaSlider.value, { a, b } = coefficients(theta), stage = stageOf(u);
     const now = matrixAt(theta, u), f = fractions(u);
+    [RX, RY] = windowFor(theta); UNIT = size[0] / (2 * RX);
     scene.clear();
     drawFrame();
     // Where the picture started.
@@ -118,7 +132,7 @@
       const before = matrixAt(theta, stage - 1);
       MARKS.forEach(p => {
         const from = apply(before, p), to = apply(now, p);
-        if (Math.hypot(to[0] - from[0], to[1] - from[1]) * UNIT > 9) scene.arrow(from, to, C.mustard, 2.4, { "data-slide": "" });
+        if (Math.hypot(to[0] - from[0], to[1] - from[1]) * UNIT > 9) scene.arrow(from, to, C.mustard, 2.2, { "data-slide": "" });
       });
     }
 

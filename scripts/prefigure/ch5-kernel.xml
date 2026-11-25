@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Print version of the interactive figure assets/demos-manim/kernel.html
+     (Section 5.3, "The Null Space of A and the Kernel of T_A"): the domain R^2 of
+     T_A for A = [1 2; 2 4; -1 -2], with the kernel Span{(-2, 1)} and the parallel
+     line of inputs sent to (3, 6, -3), through (1, 1) and (-1, 2).
+     Build with the standalone option of scripts/build-book-figures.py;
+     see scripts/FIGURES.md. -->
+<diagram xmlns="https://prefigure.org" dimensions="(423,289)" margins="10">
+  <coordinates bbox="(-3.6,-2.0,3.6,2.8)">
+    <group at="kernel-picture">
+      <axes xlabel="x" ylabel="y" arrows="2" hticks="(-3,1,3)" vticks="(-1,1,2)"/>
+      <group at="k-kernel">
+        <line endpoints="((-3.6,1.8),(3.6,-1.8))" stroke="#5E011C" thickness="3"/>
+        <label p="(3.0,-1.5)" alignment="sw" offset="(-2,-8)" color="#5E011C"><m>\operatorname{Ker} T_A = \operatorname{Nul} A</m></label>
+      </group>
+      <group at="k-basis">
+        <point p="(-2,1)" fill="#5E011C" size="4"/>
+        <label p="(-2,1)" alignment="s" offset="(-6,-8)" color="#5E011C"><m>(-2,1)</m></label>
+      </group>
+      <group at="k-level">
+        <line endpoints="((-2.6,2.8),(3.6,-0.3))" stroke="#4A5D23" thickness="2" dash="6 4"/>
+      </group>
+      <group at="k-first">
+        <line endpoints="((0,0),(1,1))" stroke="#4A5D23" thickness="2" arrows="1"/>
+        <point p="(1,1)" fill="#4A5D23" size="4"/>
+        <label p="(1,1)" alignment="ne" offset="(4,4)" color="#4A5D23"><m>(1,1)</m></label>
+      </group>
+      <group at="k-second">
+        <line endpoints="((0,0),(-1,2))" stroke="#4A5D23" thickness="2" arrows="1"/>
+        <point p="(-1,2)" fill="#4A5D23" size="4"/>
+        <label p="(-1,2)" alignment="ne" offset="(4,4)" color="#4A5D23"><m>(-1,2)</m></label>
+      </group>
+      <group at="k-difference">
+        <line endpoints="((1,1),(-1,2))" stroke="#876801" thickness="3" arrows="1"/>
+      </group>
+    </group>
+  </coordinates>
+  <annotations>
+    <annotation ref="kernel-picture" text="The plane of inputs of the transformation T A, with x and y axes marked in units and the same scale on both; it shows the kernel and a second line parallel to it">
+      <annotation ref="k-kernel" text="The wine line through the origin with slope minus one half is the kernel of T A, which is also the null space of A; every input on it is sent to the zero vector"/>
+      <annotation ref="k-basis" text="The point minus 2 comma 1 is marked on that line; the kernel consists of all multiples of the vector minus 2 comma 1"/>
+      <annotation ref="k-level" text="A dashed olive line parallel to the kernel, one and a half units above it on the y axis, holds every input that T A sends to 3 comma 6 comma minus 3"/>
+      <annotation ref="k-first" text="The olive vector from the origin to the point 1 comma 1, on the dashed line"/>
+      <annotation ref="k-second" text="The olive vector from the origin to the point minus 1 comma 2, also on the dashed line"/>
+      <annotation ref="k-difference" text="A mustard arrow along the dashed line from 1 comma 1 to minus 1 comma 2: the two inputs differ by the kernel vector minus 2 comma 1, so they have the same output"/>
+    </annotation>
+  </annotations>
+</diagram>

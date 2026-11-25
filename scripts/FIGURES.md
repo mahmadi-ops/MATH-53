@@ -56,7 +56,8 @@ PreTeXt cannot take a `<prefigure>` inside the `<static>` element of an
 standalone PreFigure diagram in `scripts/prefigure/NAME.xml` and referenced from
 `<static>` as `images/NAME`. `python scripts/build-book-figures.py --standalone`
 builds every such diagram into `assets/images/NAME.svg` and `NAME.pdf` with the
-book fonts (a full run of the script does this too). At present there are three:
+book fonts (a full run of the script does this too). At present there are four:
 `ch1-line-family`, for the two-line explorer of Section 1.1,
-`ch4-shear-rotation`, for the three-shear explorer of Section 4.5, and
-`ch5-two-bases`, for the two-bases explorer of Section 5.2.
+`ch4-shear-rotation`, for the three-shear explorer of Section 4.5,
+`ch5-two-bases`, for the two-bases explorer of Section 5.2, and
+`ch5-kernel`, for the kernel explorer of Section 5.3.

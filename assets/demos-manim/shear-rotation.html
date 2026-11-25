@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="book-theme.css">
   <link rel="stylesheet" href="geometry-explorers.css">
   <style>
-    /* Keep the picture from growing taller than a screen in wide frames. */
-    #shear-scene { max-width: 420px; margin-inline: auto; }
+    /* A compact picture: with the two sliders above it and the caption below, it fits a phone screen. */
+    #shear-scene { max-width: 270px; margin-inline: auto; }
+    .stages button { flex: 1 1 62px; min-width: 0; padding: 7px 4px; }
+    .guide { min-height: 4.4em; }
     .m2 { display: inline-grid; grid-template-columns: repeat(2, auto); gap: 0 .8em; text-align: right;
       border-inline: 1px solid #505050; border-radius: 3px; padding: 2px 6px; margin: 0 4px; vertical-align: middle;
       font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -32,20 +34,9 @@
   <h1 id="title">A rotation made of three shears</h1>
   <p class="prediction"><strong>Predict:</strong> A shear only slides points along horizontal lines, or only along vertical lines. The picture will be sheared horizontally, then vertically, then horizontally again. After which of the three shears do you expect it to look like a square again?</p>
   <div class="live-explorer" hidden>
-    <div class="legend" aria-label="What the colors mean">
-      <span class="gray"><span class="swatch"></span>Where the picture started</span>
-      <span class="olive"><span class="swatch"></span>The picture now</span>
-      <span class="mustard"><span class="swatch"></span>How the current shear moves points</span>
-    </div>
     <div class="controls">
       <button id="play" type="button" aria-pressed="false">Play guide</button>
       <button id="reset" type="button">Reset</button>
-    </div>
-    <div class="stages" role="group" aria-label="Jump to a stage">
-      <button id="stage-0" type="button" aria-pressed="false">Picture</button>
-      <button id="stage-1" type="button" aria-pressed="false">1 shear</button>
-      <button id="stage-2" type="button" aria-pressed="false">2 shears</button>
-      <button id="stage-3" type="button" aria-pressed="false">3 shears</button>
     </div>
     <label class="slider" for="theta"><span>Angle <span class="math">θ</span></span>
       <input id="theta" type="range" min="-90" max="90" step="5" value="60" aria-describedby="status window-note">
@@ -55,17 +46,28 @@
       <input id="step" type="range" min="0" max="3" step="0.01" value="0" aria-describedby="guide-caption">
       <output aria-live="off" id="step-value" for="step">0</output>
     </label>
-    <svg id="shear-scene" class="scene" viewBox="0 0 414 576" role="img" aria-labelledby="scene-title scene-description">
+    <svg id="shear-scene" class="scene" viewBox="0 0 300 438" role="img" aria-labelledby="scene-title scene-description">
       <title id="scene-title">A square picture with a letter F being sheared three times in the xy-plane</title>
       <desc id="scene-description">A square picture with a letter F. The dashed square marks where the picture started.</desc>
     </svg>
-    <p id="window-note" class="hint">The window shows <span class="math">−2.3 ≤ x ≤ 2.3</span> and <span class="math">−3.2 ≤ y ≤ 3.2</span>, with the same unit on both axes; the marks on the axes are one unit apart. The picture is the square with corners <span class="math">(±1, ±1)</span>, and its centre stays at the origin.</p>
     <p id="guide-caption" class="guide" role="status">Move the sliders, or press Play to watch the three shears one after another.</p>
+    <div class="stages" role="group" aria-label="Jump to a stage">
+      <button id="stage-0" type="button" aria-pressed="false">Picture</button>
+      <button id="stage-1" type="button" aria-pressed="false">1 shear</button>
+      <button id="stage-2" type="button" aria-pressed="false">2 shears</button>
+      <button id="stage-3" type="button" aria-pressed="false">3 shears</button>
+    </div>
+    <div class="legend" aria-label="What the colors mean">
+      <span class="gray"><span class="swatch"></span>Where the picture started</span>
+      <span class="olive"><span class="swatch"></span>The picture now</span>
+      <span class="mustard"><span class="swatch"></span>How the current shear moves points</span>
+    </div>
     <div class="readout">
       <p id="status"></p>
       <p id="factors" class="factors"></p>
       <p id="product" class="products"></p>
     </div>
+    <p id="window-note" class="hint">Both axes use the same unit, and the marks on them are one unit apart. The picture is the square with corners <span class="math">(±1, ±1)</span>; its centre stays at the origin. The window is chosen for each angle so that the picture fits at every step, so a larger angle shows the picture a little smaller.</p>
   </div>
   <figure class="fallback">
     <img src="../images/ch4-shear-rotation.svg" alt="A square picture with a letter F after one horizontal shear: it has become a parallelogram, and arrows show each horizontal line sliding sideways by an amount proportional to its height.">

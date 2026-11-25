@@ -740,4 +740,249 @@
       </p>
     </remark>
   </subsection>
+
+  <subsection xml:id="subsec-inverse-transformation">
+    <title>The Inverse of a Transformation</title>
+
+    <p>
+      A matrix <m>A</m> acts on vectors through its matrix transformation
+      <m>T_A(\vec{x}) = A\vec{x}</m>. When <m>A</m> is invertible, what does
+      <m>A^{-1}</m> do to vectors? To answer this we first need a name for applying one
+      transformation after another.
+    </p>
+
+    <definition xml:id="def-composition">
+      <title>Composition of Transformations</title>
+      <statement>
+        <p>
+          Let <m>T : \R^n \to \R^m</m> and <m>S : \R^m \to \R^p</m> be transformations.
+          The <term>composition</term> of <m>S</m> with <m>T</m> is the transformation
+          <m>S \circ T : \R^n \to \R^p</m> defined by
+          <md>
+            (S \circ T)(\vec{x}) = S\left( T(\vec{x}) \right)
+            \qquad \text{for every } \vec{x} \in \R^n.
+          </md>
+          In words: first apply <m>T</m>, then apply <m>S</m> to the result.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The transformation that changes nothing is the <term>identity transformation</term>
+      of <m>\R^n</m>, which sends every <m>\vec{x}</m> to itself. It is the matrix
+      transformation of the identity matrix, since <m>I_n \vec{x} = \vec{x}</m>.
+    </p>
+
+    <definition xml:id="def-inverse-transformation">
+      <title>Inverse of a Transformation</title>
+      <statement>
+        <p>
+          Let <m>T : \R^n \to \R^n</m> be a transformation. A transformation
+          <m>S : \R^n \to \R^n</m> is an <term>inverse</term> of <m>T</m> if, for every
+          <m>\vec{x} \in \R^n</m>,
+          <md>
+            S\left( T(\vec{x}) \right) = \vec{x}
+            \qquad \text{and} \qquad
+            T\left( S(\vec{x}) \right) = \vec{x},
+          </md>
+          that is, if <m>S \circ T</m> and <m>T \circ S</m> are both the identity
+          transformation. In that case <m>T</m> is called <term>invertible</term>, and
+          <m>S</m> is written <m>T^{-1}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Compare this with <xref ref="def-inverse" text="type-global" />: the two equations
+      <m>S \circ T = \text{identity}</m> and <m>T \circ S = \text{identity}</m> play the
+      role of <m>BA = I_n</m> and <m>AB = I_n</m>. The first says that <m>S</m>
+      <em>undoes</em> <m>T</m>, and the second that <m>T</m> undoes <m>S</m>. The next
+      theorem shows that the resemblance is exact.
+    </p>
+
+    <theorem xml:id="thm-inverse-of-matrix-transformation">
+      <title>Composition and Inverses of Matrix Transformations</title>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                If <m>A</m> is an <m>m \times n</m> matrix and <m>B</m> is a
+                <m>p \times m</m> matrix, then <m>T_B \circ T_A = T_{BA}</m>: composing
+                matrix transformations corresponds to multiplying their matrices.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>A</m> is an invertible <m>n \times n</m> matrix, then <m>T_A</m>
+                is invertible and <m>\left( T_A \right)^{-1} = T_{A^{-1}}</m>: the
+                inverse matrix is the matrix of the inverse transformation.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          <term>(1)</term> For every <m>\vec{x} \in \R^n</m>,
+          <md>
+            <mrow>
+              (T_B \circ T_A)(\vec{x}) \amp = T_B\left( A\vec{x} \right)
+              = B\left( A\vec{x} \right)
+            </mrow>
+            <mrow>
+              \amp = (BA)\vec{x} = T_{BA}(\vec{x}),
+            </mrow>
+          </md>
+          where the third equality is the associativity of matrix multiplication
+          (<xref ref="thm-matrix-product-properties" text="type-global" />), with
+          <m>\vec{x}</m> regarded as an <m>n \times 1</m> matrix.
+        </p>
+        <p>
+          <term>(2)</term> By part (1), for every <m>\vec{x} \in \R^n</m>,
+          <md>
+            <mrow>
+              \left( T_{A^{-1}} \circ T_A \right)(\vec{x})
+              \amp = \left( A^{-1}A \right)\vec{x} = I_n\vec{x} = \vec{x},
+            </mrow>
+            <mrow>
+              \left( T_A \circ T_{A^{-1}} \right)(\vec{x})
+              \amp = \left( AA^{-1} \right)\vec{x} = I_n\vec{x} = \vec{x}.
+            </mrow>
+          </md>
+          So <m>T_{A^{-1}}</m> is an inverse of <m>T_A</m>.
+        </p>
+      </proof>
+    </theorem>
+
+    <example xml:id="eg-inverse-transformation">
+      <title>A Transformation and Its Inverse</title>
+      <statement>
+        <p>
+          Let <m>T : \R^2 \to \R^2</m> and <m>S : \R^2 \to \R^2</m> be defined, for
+          <m>\vec{x} = \begin{bmatrix} x \\ y \end{bmatrix}</m>, by
+          <md>
+            T(\vec{x}) = \begin{bmatrix} x + 2y \\ x + 3y \end{bmatrix}
+            \qquad \text{and} \qquad
+            S(\vec{x}) = \begin{bmatrix} 3x - 2y \\ -x + y \end{bmatrix}.
+          </md>
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Compute <m>S(T(\vec{x}))</m> and <m>T(S(\vec{x}))</m>, and conclude that
+                <m>S = T^{-1}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Follow the vector <m>\begin{bmatrix} 1 \\ 2 \end{bmatrix}</m> through
+                <m>T</m> and then through <m>T^{-1}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Do the same on the level of matrices: find the matrices <m>A</m> of
+                <m>T</m> and <m>B</m> of <m>S</m>, and compute <m>BA</m> and <m>AB</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> To apply <m>S</m> after <m>T</m>, substitute the two entries
+          of <m>T(\vec{x})</m> for <m>x</m> and <m>y</m> in the formula for <m>S</m>:
+          <md>
+            <mrow>
+              S\left( T(\vec{x}) \right)
+              \amp = S \begin{bmatrix} x + 2y \\ x + 3y \end{bmatrix}
+              = \begin{bmatrix} 3(x + 2y) - 2(x + 3y) \\ -(x + 2y) + (x + 3y) \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} x \\ y \end{bmatrix} = \vec{x}.
+            </mrow>
+          </md>
+          In the other order,
+          <md>
+            <mrow>
+              T\left( S(\vec{x}) \right)
+              \amp = T \begin{bmatrix} 3x - 2y \\ -x + y \end{bmatrix}
+              = \begin{bmatrix} (3x - 2y) + 2(-x + y) \\ (3x - 2y) + 3(-x + y) \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} x \\ y \end{bmatrix} = \vec{x}.
+            </mrow>
+          </md>
+          Both compositions return every vector to where it started, so by
+          <xref ref="def-inverse-transformation" text="type-global" />, <m>T</m> is
+          invertible and <m>S = T^{-1}</m>.
+        </p>
+        <p>
+          <term>(b)</term> First <m>T</m>, then <m>T^{-1} = S</m>:
+          <md>
+            <mrow>
+              \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+              \amp \;\xrightarrow{\;T\;}\;
+              \begin{bmatrix} 1 + 2(2) \\ 1 + 3(2) \end{bmatrix}
+              = \begin{bmatrix} 5 \\ 7 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp \;\xrightarrow{\;T^{-1}\;}\;
+              \begin{bmatrix} 3(5) - 2(7) \\ -5 + 7 \end{bmatrix}
+              = \begin{bmatrix} 1 \\ 2 \end{bmatrix}.
+            </mrow>
+          </md>
+          The transformation <m>T</m> moves the vector, and <m>T^{-1}</m> brings it back.
+        </p>
+        <p>
+          <term>(c)</term> Reading off the coefficients of <m>x</m> and <m>y</m>,
+          <m>T = T_A</m> and <m>S = T_B</m> with
+          <md>
+            A = \begin{bmatrix} 1 \amp 2 \\ 1 \amp 3 \end{bmatrix}
+            \qquad \text{and} \qquad
+            B = \begin{bmatrix} 3 \amp -2 \\ -1 \amp 1 \end{bmatrix}.
+          </md>
+          Then
+          <md>
+            <mrow>
+              BA \amp = \begin{bmatrix} 3 \amp -2 \\ -1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \amp 2 \\ 1 \amp 3 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} 3 - 2 \amp 6 - 6 \\ -1 + 1 \amp -2 + 3 \end{bmatrix}
+              = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix},
+            </mrow>
+            <mrow>
+              AB \amp = \begin{bmatrix} 1 \amp 2 \\ 1 \amp 3 \end{bmatrix}
+              \begin{bmatrix} 3 \amp -2 \\ -1 \amp 1 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp = \begin{bmatrix} 3 - 2 \amp -2 + 2 \\ 3 - 3 \amp -2 + 3 \end{bmatrix}
+              = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+            </mrow>
+          </md>
+          So <m>B = A^{-1}</m>. This agrees with
+          <xref ref="thm-two-by-two-inverse" text="type-global" />: here
+          <m>ad - bc = (1)(3) - (2)(1) = 1</m>, so
+          <m>A^{-1} = \dfrac{1}{1} \begin{bmatrix} 3 \amp -2 \\ -1 \amp 1 \end{bmatrix}</m>.
+        </p>
+        <p>
+          The two levels say the same thing. By
+          <xref ref="thm-inverse-of-matrix-transformation" text="type-global" />,
+          <m>S \circ T = T_B \circ T_A = T_{BA} = T_{I_2}</m>, which is the computation
+          of part (a) written with matrices; and part (b) becomes
+          <md>
+            A^{-1} \left( A \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right)
+            = A^{-1} \begin{bmatrix} 5 \\ 7 \end{bmatrix}
+            = \begin{bmatrix} 1 \\ 2 \end{bmatrix}.
+          </md>
+          In practice this is how an inverse transformation is found: write down the
+          matrix <m>A</m> of <m>T</m>, compute <m>A^{-1}</m>, and read off
+          <m>T^{-1}(\vec{x}) = A^{-1}\vec{x}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
 </section>

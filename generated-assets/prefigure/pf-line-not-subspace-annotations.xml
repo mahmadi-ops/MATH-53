@@ -1,0 +1,39 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-line-not-subspace-line-not-subspace" speech2="A line in the x y plane that does not pass through the origin, with a vector on it and the negative of that vector; the same scale is used on both axes">
+      <grouped>pf-line-not-subspace-line-not-subspace</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-line-not-subspace-lns-line</active>
+        <active>pf-line-not-subspace-lns-u</active>
+        <active>pf-line-not-subspace-lns-minus-u</active>
+      </children>
+      <components>
+        <active>pf-line-not-subspace-lns-line</active>
+        <active>pf-line-not-subspace-lns-u</active>
+        <active>pf-line-not-subspace-lns-minus-u</active>
+      </components>
+    </annotation>
+    <annotation id="pf-line-not-subspace-lns-line" speech2="The wine line rises gently from left to right and crosses the y axis above the origin, so the zero vector is not on it">
+      <active>pf-line-not-subspace-lns-line</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-line-not-subspace-line-not-subspace</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-line-not-subspace-lns-u" speech2="The mustard vector u, from the origin up and to the right, ends on the wine line">
+      <active>pf-line-not-subspace-lns-u</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-line-not-subspace-line-not-subspace</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-line-not-subspace-lns-minus-u" speech2="The grey vector minus u, from the origin down and to the left, ends far below the wine line; the line is not closed under scalar multiplication">
+      <active>pf-line-not-subspace-lns-minus-u</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-line-not-subspace-line-not-subspace</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
