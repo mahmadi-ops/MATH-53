@@ -62,26 +62,85 @@
 
     <figure xml:id="fig-plane-subspace">
       <caption>
-        A plane through the origin in <m>\R^3</m> is closed under linear combinations: if
-        <m>\vec{u}</m> and <m>\vec{v}</m> lie in <m>H</m>, so does
-        <m>a\vec{u} + b\vec{v}</m>.
+        A plane <m>H</m> through the origin in <m>\R^3</m> is closed under linear
+        combinations: if <m>\vec{u}</m> and <m>\vec{v}</m> lie in <m>H</m>, so does
+        <m>a\vec{u} + b\vec{v}</m>. The dashed lines complete the parallelogram on
+        <m>a\vec{u}</m> and <m>b\vec{v}</m>, which stays inside the plane. In the web
+        version the picture can be rotated.
       </caption>
-      <image width="58%">
-        <latex-image>
-          \begin{tikzpicture}[scale=1, every node/.style={font=\small}]
-            \fill[bookolive!8] (-1.6,-0.9) -- (3.4,-0.9) -- (4.6,1.3) -- (-0.4,1.3) -- cycle;
-            \draw[bookolive!45] (-1.6,-0.9) -- (3.4,-0.9) -- (4.6,1.3) -- (-0.4,1.3) -- cycle;
-            \coordinate (O) at (0.9,0.05);
-            \draw[bookmustard, very thick, -{Stealth[length=2.2mm]}] (O) -- ++(0.55,0.85)
-              node[above left, black] {$\vec{v}$};
-            \draw[bookwine, very thick, -{Stealth[length=2.2mm]}] (O) -- ++(1.9,-0.15)
-              node[below right, black] {$\vec{u}$};
-            \draw[bookgray, very thick, -{Stealth[length=2.2mm]}] (O) -- ++(2.45,0.7)
-              node[above right, black] {$a\vec{u}+b\vec{v}$};
-            \node at (0.1,-0.62) {$H$};
-            \node at (2.0,1.05) {$ax+by+cz=0$};
-          \end{tikzpicture}
-        </latex-image>
+      <image width="90%">
+        <description>
+          <p>
+            A flat, tilted patch of a plane through the origin in three-dimensional
+            space, with the three coordinate axes. Two arrows start at the origin and
+            lie in the plane: a wine arrow for the vector u and a mustard arrow for
+            the vector v. Each is extended along its own direction to a dot, a u on
+            the line of u and b v on the line of v. Dashed lines from the two dots
+            complete a parallelogram inside the plane, and a dark arrow from the
+            origin to its far corner is the linear combination a u plus b v, which
+            also lies in the plane.
+          </p>
+        </description>
+        <asymptote label="asymptote-plane-subspace"><![CDATA[
+import graph3;
+texpreamble("\usepackage[T1]{fontenc}\usepackage[sc]{mathpazo}");
+// Larger lettering, so that the labels stay readable on a phone.
+defaultpen(fontsize(13pt));
+viewportmargin=(16,16);
+// HTML remains rotatable; print output uses vector rendering.
+if(settings.outformat != "html") settings.render=0;
+size(11cm,9cm);
+currentprojection=orthographic(camera=(5,-7,4.5),up=Z);
+currentlight=nolight;
+
+// The book's colours.
+pen wine=rgb("5E011C"), olive=rgb("4A5D23"), mustard=rgb("876801"), slate=rgb("404040");
+
+// Two vectors that span the plane H through the origin.
+triple u=(2,0.2,0.5), v=(0.1,2,0.7);
+real a=1.5, b=1.3;
+triple w=a*u+b*v;
+triple P(real s, real t) {return s*u+t*v;}
+
+// A patch of H, with lines parallel to u and to v.
+real lo=-0.6, hi=1.8;
+path3 patch=P(lo,lo)--P(hi,lo)--P(hi,hi)--P(lo,hi)--cycle;
+draw(surface(patch),olive+opacity(0.16));
+draw(patch,olive+opacity(0.7)+linewidth(0.6pt));
+for(real k=-0.5; k<hi; k+=0.5) {
+  draw(P(k,lo)--P(k,hi),olive+opacity(0.28)+linewidth(0.3pt));
+  draw(P(lo,k)--P(hi,k),olive+opacity(0.28)+linewidth(0.3pt));
+}
+label("$H$",P(lo+0.22,hi-0.25),olive);
+
+// Coordinate axes.
+pen ax=gray(0.45)+linewidth(0.5pt);
+draw(Label("$x$",1),(-1.6,0,0)--(4.4,0,0),ax,Arrow3(size=5));
+draw(Label("$y$",1),(0,-1.6,0)--(0,4.4,0),ax,Arrow3(size=5));
+draw(Label("$z$",1),(0,0,-1.4)--(0,0,3.0),ax,Arrow3(size=5));
+
+// a u and b v, and the parallelogram they span inside H.
+draw(O--a*u,wine+opacity(0.45)+linewidth(1.2pt));
+draw(O--b*v,mustard+opacity(0.5)+linewidth(1.2pt));
+draw(a*u--w,mustard+dashed+linewidth(0.9pt));
+draw(b*v--w,wine+dashed+linewidth(0.9pt));
+dot(a*u,wine+linewidth(3.5pt));
+dot(b*v,mustard+linewidth(3.5pt));
+label("$a\vec{u}$",a*u,S,wine);
+label("$b\vec{v}$",b*v,N,mustard);
+
+// u, v and the linear combination.
+draw(O--u,wine+linewidth(2pt),Arrow3(size=8));
+draw(O--v,mustard+linewidth(2pt),Arrow3(size=8));
+draw(O--w,slate+linewidth(2pt),Arrow3(size=8));
+label("$\vec{u}$",u,S,wine);
+label("$\vec{v}$",v,NW,mustard);
+label("$a\vec{u}+b\vec{v}$",w,E,slate);
+dot(O,black+linewidth(3pt));
+
+// Reserve space around strokes and labels in the interactive viewport.
+currentpicture.addBox((-1.8,-1.8,-1.6),(4.8,4.8,3.2));
+]]></asymptote>
       </image>
     </figure>
 

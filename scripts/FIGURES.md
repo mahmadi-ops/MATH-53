@@ -3,7 +3,7 @@ Static graphs use the book's olive (`#4A5D23`), wine (`#5E011C`), dark mustard
 matrices keep their original data values and colors. Figure captions and image
 descriptions name the corresponding accents.
 
-To regenerate the 41 PreFigure diagrams, four TikZ figures, and recognition
+To regenerate the 41 PreFigure diagrams, three TikZ figures, and recognition
 mind map with the book's fonts, use Python 3.12, Node 22+, XeLaTeX, and Cairo:
 
 ```sh
@@ -61,3 +61,28 @@ book fonts (a full run of the script does this too). At present there are four:
 `ch4-shear-rotation`, for the three-shear explorer of Section 4.5,
 `ch5-two-bases`, for the two-bases explorer of Section 5.2, and
 `ch5-kernel`, for the kernel explorer of Section 5.3.
+
+## Asymptote figures
+
+One figure is drawn with Asymptote: `fig-plane-subspace` in Section 5.1 (a plane
+through the origin with two vectors and a linear combination of them). Its code
+is in the source, in an `<asymptote label="asymptote-plane-subspace">` element,
+and follows the MATH 13 book: `import graph3`, vector rendering for print
+(`settings.render=0` unless the output is HTML), an `addBox` call to leave room
+in the interactive viewport, and the book's colours. The lettering is set in
+Palatino (`mathpazo`) at 13 pt so that it stays readable on a phone.
+
+The web version is a WebGL page that the reader can rotate
+(`generated-assets/asymptote/asymptote-plane-subspace.html`); the print version
+is the PDF beside it. Both are committed, because the deploy build does not
+generate assets. To regenerate them:
+
+```
+pretext generate asymptote -x fig-plane-subspace
+pretext generate asymptote -x fig-plane-subspace -t print
+```
+
+By default PreTeXt sends the code to the Asymptote server. Where that server
+cannot be reached but `asy` is installed, add `asy-method="local"` to the
+`<project>` element of `project.ptx` for the two commands and remove it again.
+
