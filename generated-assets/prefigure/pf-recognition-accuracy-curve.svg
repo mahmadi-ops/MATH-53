@@ -1,0 +1,439 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-recognition-accuracy-curve-figure" width="520" height="310" viewBox="0 0 520 310">
+  <style id="book-figure-font">@font-face{font-family:'TeX Gyre Pagella';font-weight:400;font-style:normal;src:url(data:font/woff2;base64,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) format('woff2')}
+@font-face{font-family:'TeX Gyre Pagella';font-weight:400;font-style:italic;src:url(data:font/woff2;base64,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) format('woff2')}
+@font-face{font-family:'TeX Gyre Pagella';font-weight:700;font-style:normal;src:url(data:font/woff2;base64,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) format('woff2')}
+@font-face{font-family:'TeX Gyre Pagella';font-weight:700;font-style:italic;src:url(data:font/woff2;base64,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) format('woff2')}
+text,tspan{font-family:'TeX Gyre Pagella',Palatino,serif!important}</style><defs>
+    <clipPath id="pf-recognition-accuracy-curve-__clipPath-0">
+      <rect x="0.0" y="0.0" width="520.0" height="310.0"/>
+    </clipPath>
+    <clipPath id="pf-recognition-accuracy-curve-__clipPath-1">
+      <rect x="0.0" y="0.0" width="520.0" height="310.0"/>
+    </clipPath>
+  </defs>
+  <g id="pf-recognition-accuracy-curve-accuracy-curve">
+    <g id="pf-recognition-accuracy-curve-ac-frame">
+      <line id="pf-recognition-accuracy-curve-__line-0" x1="62.0" y1="198.3" x2="500.0" y2="198.3" stroke="#E2E6D9" stroke-width="1" fill="none"/>
+      <line id="pf-recognition-accuracy-curve-__line-1" x1="62.0" y1="154.5" x2="500.0" y2="154.5" stroke="#E2E6D9" stroke-width="1" fill="none"/>
+      <line id="pf-recognition-accuracy-curve-__line-2" x1="62.0" y1="110.7" x2="500.0" y2="110.7" stroke="#E2E6D9" stroke-width="1" fill="none"/>
+      <line id="pf-recognition-accuracy-curve-__line-3" x1="62.0" y1="66.9" x2="500.0" y2="66.9" stroke="#E2E6D9" stroke-width="1" fill="none"/>
+      <line id="pf-recognition-accuracy-curve-__line-4" x1="62.0" y1="23.1" x2="500.0" y2="23.1" stroke="#E2E6D9" stroke-width="1" fill="none"/>
+      <line id="pf-recognition-accuracy-curve-__line-5" x1="62.0" y1="264.0" x2="62.0" y2="10.0" stroke="#606060" stroke-width="1" fill="none"/>
+      <line id="pf-recognition-accuracy-curve-__line-6" x1="62.0" y1="264.0" x2="500.0" y2="264.0" stroke="#606060" stroke-width="1" fill="none"/>
+      <line id="pf-recognition-accuracy-curve-__line-7" x1="131.2" y1="264.0" x2="131.2" y2="269.0" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-0" transform="translate(131.2,276.0) translate(-8.3,-0.0)">
+        <g id="pf-recognition-accuracy-curve-__g-0">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="16.600px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1000 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-2-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-2-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:20" data-semantic-speech="20">
+                  <use data-c="32" xlink:href="#pf-recognition-accuracy-curve-MJX-2-GP-N-32"/>
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-2-GP-N-30" transform="translate(500,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-8" x1="223.4" y1="264.0" x2="223.4" y2="269.0" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-1" transform="translate(223.4,276.0) translate(-8.3,-0.0)">
+        <g id="pf-recognition-accuracy-curve-__g-1">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="16.600px" height="11.848px" role="img" focusable="false" viewBox="0 -694 1000 714" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-3-GP-N-34" d="M472-3L472 27L424 30C375 33 364 46 364 106L364 181C423 181 444 180 472 177L472 248C472 248 423 245 391 245L364 245L364 384C364 562 366 648 371 689L359 694L285 667L2 204L13 181L280 181L280 106C280 46 269 32 220 30L158 27L158-3L319 0M280 245L65 245L280 597Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-3-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:40" data-semantic-speech="40">
+                  <use data-c="34" xlink:href="#pf-recognition-accuracy-curve-MJX-3-GP-N-34"/>
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-3-GP-N-30" transform="translate(500,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-9" x1="315.6" y1="264.0" x2="315.6" y2="269.0" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-2" transform="translate(315.6,276.0) translate(-8.3,-0.0)">
+        <g id="pf-recognition-accuracy-curve-__g-2">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="16.600px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1000 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-4-GP-N-36" d="M468 219C468 334 399 409 293 409C234 409 197 385 131 331C152 512 236 610 416 664L416 672L379 689C283 657 242 637 191 593C88 506 32 384 32 247C32 82 112-20 241-20C371-20 468 83 468 219M382 184C382 80 331 13 254 13C169 13 123 86 123 220C123 255 127 274 138 291C160 325 207 349 255 349C331 349 382 283 382 184Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-4-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:60" data-semantic-speech="60">
+                  <use data-c="36" xlink:href="#pf-recognition-accuracy-curve-MJX-4-GP-N-36"/>
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-4-GP-N-30" transform="translate(500,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-10" x1="407.8" y1="264.0" x2="407.8" y2="269.0" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-3" transform="translate(407.8,276.0) translate(-8.3,-0.0)">
+        <g id="pf-recognition-accuracy-curve-__g-3">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="16.600px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1000 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-5-GP-N-38" d="M464 206C464 286 427 329 313 381C404 443 436 485 436 545C436 631 365 689 259 689C140 689 53 613 53 508C53 440 80 402 168 345C127 326 110 315 88 294C50 256 30 211 30 159C30 56 113-20 226-20C356-20 464 82 464 206M385 164C385 80 322 14 241 14C156 14 101 74 101 167C101 240 130 286 204 331L284 295C347 267 385 218 385 164M368 534C368 477 343 438 278 396L223 423C160 454 128 494 128 544C128 610 176 655 247 655C320 655 368 607 368 534Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-5-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:80" data-semantic-speech="80">
+                  <use data-c="38" xlink:href="#pf-recognition-accuracy-curve-MJX-5-GP-N-38"/>
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-5-GP-N-30" transform="translate(500,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-11" x1="500.0" y1="264.0" x2="500.0" y2="269.0" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-4" transform="translate(500.0,276.0) translate(-12.4,-0.0)">
+        <g id="pf-recognition-accuracy-curve-__g-4">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="24.896px" height="11.848px" role="img" focusable="false" viewBox="0 -694 1500 714" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-6-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-6-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:100" data-semantic-speech="100">
+                  <use data-c="31" xlink:href="#pf-recognition-accuracy-curve-MJX-6-GP-N-31"/>
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-6-GP-N-30" transform="translate(500,0)"/>
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-6-GP-N-30" transform="translate(1000,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-12" x1="62.0" y1="242.1" x2="57.0" y2="242.1" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-5" transform="translate(50.0,242.1) translate(-20.7,-5.9)">
+        <g id="pf-recognition-accuracy-curve-__g-5">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="20.744px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1250 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-7-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-7-GP-N-2E" d="M183 53C183 83 155 111 124 111C94 111 67 83 67 53C67 23 94-5 123-5C155-5 183 22 183 53Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-7-GP-N-35" d="M459 253C459 366 378 446 264 446C216 446 180 433 118 396L127 605L432 600L437 605C435 623 435 629 435 644C435 660 435 666 437 684L432 689C432 689 326 684 258 684C190 684 84 689 84 689L79 684L81 547C81 459 78 366 75 322L95 316C142 363 169 377 218 377C314 377 374 309 374 201C374 90 310 25 201 25C147 25 97 43 83 69L37 151L13 137C36 80 48 48 62 4C90-11 130-20 173-20C240-20 311 9 366 57C427 111 459 179 459 253Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="float" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0.5" data-semantic-speech="0.5">
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-7-GP-N-30"/>
+                  <use data-c="2E" xlink:href="#pf-recognition-accuracy-curve-MJX-7-GP-N-2E" transform="translate(500,0)"/>
+                  <use data-c="35" xlink:href="#pf-recognition-accuracy-curve-MJX-7-GP-N-35" transform="translate(750,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-13" x1="62.0" y1="198.3" x2="57.0" y2="198.3" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-6" transform="translate(50.0,198.3) translate(-20.7,-5.9)">
+        <g id="pf-recognition-accuracy-curve-__g-6">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="20.744px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1250 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-8-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-8-GP-N-2E" d="M183 53C183 83 155 111 124 111C94 111 67 83 67 53C67 23 94-5 123-5C155-5 183 22 183 53Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-8-GP-N-36" d="M468 219C468 334 399 409 293 409C234 409 197 385 131 331C152 512 236 610 416 664L416 672L379 689C283 657 242 637 191 593C88 506 32 384 32 247C32 82 112-20 241-20C371-20 468 83 468 219M382 184C382 80 331 13 254 13C169 13 123 86 123 220C123 255 127 274 138 291C160 325 207 349 255 349C331 349 382 283 382 184Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="float" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0.6" data-semantic-speech="0.6">
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-8-GP-N-30"/>
+                  <use data-c="2E" xlink:href="#pf-recognition-accuracy-curve-MJX-8-GP-N-2E" transform="translate(500,0)"/>
+                  <use data-c="36" xlink:href="#pf-recognition-accuracy-curve-MJX-8-GP-N-36" transform="translate(750,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-14" x1="62.0" y1="154.5" x2="57.0" y2="154.5" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-7" transform="translate(50.0,154.5) translate(-20.7,-5.9)">
+        <g id="pf-recognition-accuracy-curve-__g-7">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="20.744px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1250 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-9-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-9-GP-N-2E" d="M183 53C183 83 155 111 124 111C94 111 67 83 67 53C67 23 94-5 123-5C155-5 183 22 183 53Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-9-GP-N-37" d="M497 659L497 689C389 685 380 684 273 684C168 684 151 685 54 689L44 684C44 684 47 620 47 579C47 539 44 477 44 477L74 477L81 533C89 595 96 603 142 603L409 603C369 521 338 463 300 402L56 10L65-3C65-3 93 0 111 0C129 0 157-3 157-3C199 106 225 171 314 330Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="float" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0.7" data-semantic-speech="0.7">
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-9-GP-N-30"/>
+                  <use data-c="2E" xlink:href="#pf-recognition-accuracy-curve-MJX-9-GP-N-2E" transform="translate(500,0)"/>
+                  <use data-c="37" xlink:href="#pf-recognition-accuracy-curve-MJX-9-GP-N-37" transform="translate(750,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-15" x1="62.0" y1="110.7" x2="57.0" y2="110.7" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-8" transform="translate(50.0,110.7) translate(-20.7,-5.9)">
+        <g id="pf-recognition-accuracy-curve-__g-8">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="20.744px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1250 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-10-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-10-GP-N-2E" d="M183 53C183 83 155 111 124 111C94 111 67 83 67 53C67 23 94-5 123-5C155-5 183 22 183 53Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-10-GP-N-38" d="M464 206C464 286 427 329 313 381C404 443 436 485 436 545C436 631 365 689 259 689C140 689 53 613 53 508C53 440 80 402 168 345C127 326 110 315 88 294C50 256 30 211 30 159C30 56 113-20 226-20C356-20 464 82 464 206M385 164C385 80 322 14 241 14C156 14 101 74 101 167C101 240 130 286 204 331L284 295C347 267 385 218 385 164M368 534C368 477 343 438 278 396L223 423C160 454 128 494 128 544C128 610 176 655 247 655C320 655 368 607 368 534Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="float" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0.8" data-semantic-speech="0.8">
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-10-GP-N-30"/>
+                  <use data-c="2E" xlink:href="#pf-recognition-accuracy-curve-MJX-10-GP-N-2E" transform="translate(500,0)"/>
+                  <use data-c="38" xlink:href="#pf-recognition-accuracy-curve-MJX-10-GP-N-38" transform="translate(750,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-16" x1="62.0" y1="66.9" x2="57.0" y2="66.9" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-9" transform="translate(50.0,66.9) translate(-20.7,-5.9)">
+        <g id="pf-recognition-accuracy-curve-__g-9">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="20.744px" height="11.768px" role="img" focusable="false" viewBox="0 -689 1250 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-11-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-11-GP-N-2E" d="M183 53C183 83 155 111 124 111C94 111 67 83 67 53C67 23 94-5 123-5C155-5 183 22 183 53Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-11-GP-N-39" d="M457 417C457 586 376 689 244 689C116 689 20 589 20 455C20 340 95 256 199 256C233 256 272 267 290 282L360 340C352 172 243 49 62 5L62-3L96-20C207 16 255 39 309 85C406 168 457 283 457 417M370 471C370 379 317 317 240 317C160 317 106 388 106 492C106 593 158 656 240 656C285 656 318 637 340 597C358 565 370 516 370 471Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="float" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0.9" data-semantic-speech="0.9">
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-11-GP-N-30"/>
+                  <use data-c="2E" xlink:href="#pf-recognition-accuracy-curve-MJX-11-GP-N-2E" transform="translate(500,0)"/>
+                  <use data-c="39" xlink:href="#pf-recognition-accuracy-curve-MJX-11-GP-N-39" transform="translate(750,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <line id="pf-recognition-accuracy-curve-__line-17" x1="62.0" y1="23.1" x2="57.0" y2="23.1" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-10" transform="translate(50.0,23.1) translate(-20.7,-5.9)">
+        <g id="pf-recognition-accuracy-curve-__g-10">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="20.744px" height="11.848px" role="img" focusable="false" viewBox="0 -694 1250 714" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-12-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-12-GP-N-2E" d="M183 53C183 83 155 111 124 111C94 111 67 83 67 53C67 23 94-5 123-5C155-5 183 22 183 53Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-12-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="float" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1.0" data-semantic-speech="1.0">
+                  <use data-c="31" xlink:href="#pf-recognition-accuracy-curve-MJX-12-GP-N-31"/>
+                  <use data-c="2E" xlink:href="#pf-recognition-accuracy-curve-MJX-12-GP-N-2E" transform="translate(500,0)"/>
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-12-GP-N-30" transform="translate(750,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-recognition-accuracy-curve-__label-11" transform="translate(281.0,296.0) translate(-79.5,-0.0)">
+        <g id="pf-recognition-accuracy-curve-__g-11">
+          <text font-family="TeX Gyre Pagella" font-size="14" x="0.0" y="10.4">grain size</text>
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="10.608px" height="8.384px" role="img" focusable="false" viewBox="0 -494 639 505" x="64.1" y="2.2">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-13-GP-I-1D70E" d="M639 482L632 494C605 485 559 478 526 478L420 479C389 480 354 482 330 482C286 482 243 467 198 437C110 379 59 277 53 152C47 27 92-11 157-11C201-11 242 9 292 54C337 95 384 158 416 221C443 274 464 342 466 384C467 397 465 409 463 420C496 418 524 418 546 418C564 418 586 426 603 432C614 453 619 458 639 482M400 356C393 207 289 39 201 39C152 39 126 85 129 151C134 270 180 388 229 427C243 438 265 444 289 444C350 444 404 434 400 356Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\sigma" data-semantic-speech="sigma">
+                  <use data-c="1D70E" xlink:href="#pf-recognition-accuracy-curve-MJX-13-GP-I-1D70E"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <text font-family="TeX Gyre Pagella" font-size="14" x="79.1" y="10.4">(gray levels)</text>
+        </g>
+      </g>
+      <g id="pf-recognition-accuracy-curve-__label-12" transform="translate(14.0,137.0) rotate(-90.0) translate(-93.9,-7.1)">
+        <g id="pf-recognition-accuracy-curve-__g-12">
+          <text font-family="TeX Gyre Pagella" font-size="14" x="0.0" y="10.2">probability of a correct verdict</text>
+        </g>
+      </g>
+    </g>
+    <g id="pf-recognition-accuracy-curve-ac-guessing">
+      <line id="pf-recognition-accuracy-curve-__line-18" x1="62.0" y1="242.1" x2="500.0" y2="242.1" stroke="#404040" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-13" transform="translate(482.0,235.1) scale(0.9,0.9) translate(-54.8,-12.9)">
+        <g id="pf-recognition-accuracy-curve-__g-13">
+          <text font-family="TeX Gyre Pagella" font-size="14" fill="#606060" x="0.0" y="9.0">guessing</text>
+        </g>
+      </g>
+    </g>
+    <g id="pf-recognition-accuracy-curve-ac-formula">
+      <path id="pf-recognition-accuracy-curve-__path-0" d="M 62.0 23.1 L 67.5 23.1 L 73.0 23.1 L 78.4 23.1 L 83.9 23.1 L 89.4 23.1 L 94.8 23.1 L 100.3 23.1 L 105.8 23.1 L 111.3 23.1 L 116.8 23.2 L 122.2 23.2 L 127.7 23.4 L 133.2 23.6 L 138.7 24.0 L 144.1 24.5 L 149.6 25.1 L 155.1 26.0 L 160.6 27.0 L 166.0 28.2 L 171.5 29.6 L 177.0 31.1 L 182.4 32.8 L 187.9 34.7 L 193.4 36.6 L 198.9 38.7 L 204.3 40.9 L 209.8 43.1 L 215.3 45.4 L 220.8 47.8 L 226.2 50.1 L 231.7 52.6 L 237.2 55.0 L 242.7 57.4 L 248.2 59.8 L 253.6 62.3 L 259.1 64.7 L 264.6 67.1 L 270.1 69.5 L 275.5 71.8 L 281.0 74.2 L 286.5 76.5 L 291.9 78.7 L 297.4 81.0 L 302.9 83.2 L 308.4 85.3 L 313.9 87.4 L 319.3 89.5 L 324.8 91.6 L 330.3 93.6 L 335.8 95.6 L 341.2 97.5 L 346.7 99.4 L 352.2 101.3 L 357.6 103.1 L 363.1 104.9 L 368.6 106.6 L 374.1 108.3 L 379.6 110.0 L 385.0 111.7 L 390.5 113.3 L 396.0 114.8 L 401.4 116.4 L 406.9 117.9 L 412.4 119.4 L 417.9 120.8 L 423.4 122.3 L 428.8 123.7 L 434.3 125.0 L 439.8 126.4 L 445.2 127.7 L 450.7 129.0 L 456.2 130.2 L 461.7 131.5 L 467.1 132.7 L 472.6 133.9 L 478.1 135.0 L 483.6 136.2 L 489.1 137.3 L 494.5 138.4 L 500.0 139.5" stroke="#4A5D23" stroke-width="3" fill="none" clip-path="url(#pf-recognition-accuracy-curve-__clipPath-1)"/>
+      <g id="pf-recognition-accuracy-curve-__label-14" transform="translate(167.4,169.8) translate(0.0,-7.2)">
+        <g id="pf-recognition-accuracy-curve-__g-14">
+          <text font-family="TeX Gyre Pagella" font-size="14" fill="#4A5D23" x="0.0" y="11.6">exact formula</text>
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.720px; color:#4A5D23" width="83.904px" height="14.344px" role="img" focusable="false" viewBox="0 -700 5055 864" x="89.4" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-N-3A6" d="M797 359C797 481 660 570 474 581C474 648 481 656 525 659L573 662L573 692L426 689L280 692L280 662L328 659C372 656 378 648 379 579C194 563 55 467 55 343C55 218 202 117 379 108C378 40 371 33 328 30L280 27L280-3L426 0L573-3L573 27L525 30C480 33 474 41 474 112C652 133 797 237 797 359M690 344C690 230 601 161 474 151L474 537C603 523 690 458 690 344M379 155C254 174 162 250 162 366C162 470 249 529 379 538Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-N-2062" d=""/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-N-2016" d="M128-150L128 650C120 648 112 647 104 647C96 647 88 648 80 650L80-150C88-148 96-147 104-147C112-147 120-148 128-150M296-150L296 650C288 648 280 647 272 647C264 647 256 648 248 650L248-150C256-148 264-147 272-147C280-147 288-148 296-150Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-I-1D44A" d="M980 664L980 692C948 690 915 689 883 689C850 689 817 690 785 692L780 664L819 662C848 661 860 653 860 639C860 626 857 608 851 590L704 128L546 700L528 700L476 588L252 132L221 616C219 646 234 660 266 662L303 664L303 692L182 689L71 692L71 664L89 662C130 657 138 645 142 588L174 158C179 92 181 44 182-8L232-8C246 27 264 66 282 102L506 546L618 154C633 102 644 53 657-8L708-8L715 18C726 58 733 85 746 124L917 631C923 648 938 660 960 662Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-N-2F" d="M406 650C397 648 389 647 380 647C372 647 363 648 355 650L80-150C88-148 97-147 105-147C114-147 122-148 131-150Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-I-1D70E" d="M639 482L632 494C605 485 559 478 526 478L420 479C389 480 354 482 330 482C286 482 243 467 198 437C110 379 59 277 53 152C47 27 92-11 157-11C201-11 242 9 292 54C337 95 384 158 416 221C443 274 464 342 466 384C467 397 465 409 463 420C496 418 524 418 546 418C564 418 586 426 603 432C614 453 619 458 639 482M400 356C393 207 289 39 201 39C152 39 126 85 129 151C134 270 180 388 229 427C243 438 265 444 289 444C350 444 404 434 400 356Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-14-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit;depth:1" data-semantic-id="15" data-semantic-children="0,13" data-semantic-content="14" data-semantic-attributes="latex:\Phi(\| W \| / 2\sigma)" data-semantic-speech="normal upper Phi left parenthesis StartMetric upper W EndMetric divided by 2 sigma right parenthesis">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="15" data-semantic-attributes="latex:\Phi" data-semantic-speech="normal upper Phi">
+                  <use data-c="3A6" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-3A6"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="14" data-semantic-parent="15" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(850,0)">
+                  <use data-c="2062" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-2062"/>
+                </g>
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="13" data-semantic-children="12" data-semantic-content="1,8" data-semantic-parent="15" data-semantic-speech="left parenthesis StartMetric upper W EndMetric divided by 2 sigma right parenthesis" transform="translate(850,0)">
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="1" data-semantic-parent="13" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                    <use data-c="28" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-28"/>
+                  </g>
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="infixop" data-semantic-role="division" data-semantic-annotation="depth:3" data-semantic-id="12" data-semantic-children="9,11" data-semantic-content="5" data-semantic-parent="13" data-semantic-speech="StartMetric upper W EndMetric divided by 2 sigma" transform="translate(424,0)">
+                    <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="metric" data-semantic-annotation="depth:4" data-semantic-id="9" data-semantic-children="3" data-semantic-content="2,4" data-semantic-parent="12" data-semantic-speech="StartMetric upper W EndMetric">
+                      <g data-mml-node="mo" data-mjx-texclass="ORD" data-semantic-type="fence" data-semantic-role="metric" data-semantic-annotation="depth:5" data-semantic-id="2" data-semantic-parent="9" data-semantic-attributes="latex:\|;texclass:ORD" data-semantic-operator="fenced" data-semantic-speech="double vertical bar">
+                        <use data-c="2016" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-2016"/>
+                      </g>
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="3" data-semantic-parent="9" data-semantic-attributes="latex:W" data-semantic-speech="upper W" transform="translate(376,0)">
+                        <use data-c="1D44A" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-I-1D44A"/>
+                      </g>
+                      <g data-mml-node="mo" data-mjx-texclass="ORD" data-semantic-type="fence" data-semantic-role="metric" data-semantic-annotation="depth:5" data-semantic-id="4" data-semantic-parent="9" data-semantic-attributes="latex:\|;texclass:ORD" data-semantic-operator="fenced" data-semantic-speech="double vertical bar" transform="translate(1356,0)">
+                        <use data-c="2016" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-2016"/>
+                      </g>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="division" data-semantic-annotation="depth:4" data-semantic-id="5" data-semantic-parent="12" data-semantic-attributes="latex:/" data-semantic-operator="infixop,/" data-semantic-speech="slash" transform="translate(1732,0)">
+                      <use data-c="2F" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-2F"/>
+                    </g>
+                    <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:simple;clearspeak:unit;depth:4" data-semantic-id="11" data-semantic-children="6,7" data-semantic-content="10" data-semantic-parent="12" data-semantic-speech="2 sigma" transform="translate(2218,0)">
+                      <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="6" data-semantic-parent="11" data-semantic-attributes="latex:2" data-semantic-speech="2">
+                        <use data-c="32" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-32"/>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:5" data-semantic-id="10" data-semantic-parent="11" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(500,0)">
+                        <use data-c="2062" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-2062"/>
+                      </g>
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="7" data-semantic-parent="11" data-semantic-attributes="latex:\sigma" data-semantic-speech="sigma" transform="translate(500,0)">
+                        <use data-c="1D70E" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-I-1D70E"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="8" data-semantic-parent="13" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(3781,0)">
+                    <use data-c="29" xlink:href="#pf-recognition-accuracy-curve-MJX-14-GP-N-29"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-recognition-accuracy-curve-ac-simulation">
+      <circle id="pf-recognition-accuracy-curve-__circle-0" cx="85.0" cy="23.1" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-1" cx="131.2" cy="23.7" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-2" cx="177.3" cy="30.5" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-3" cx="223.4" cy="47.9" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-4" cx="269.5" cy="70.2" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-5" cx="315.6" cy="90.9" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-6" cx="361.7" cy="111.8" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-7" cx="407.8" cy="130.1" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-8" cx="453.9" cy="147.0" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <circle id="pf-recognition-accuracy-curve-__circle-9" cx="500.0" cy="159.8" r="4" stroke="white" stroke-width="2" fill="#5E011C"/>
+      <g id="pf-recognition-accuracy-curve-__label-15" transform="translate(167.4,189.6) translate(0.0,-6.2)">
+        <g id="pf-recognition-accuracy-curve-__g-15">
+          <text font-family="TeX Gyre Pagella" font-size="14" fill="#5E011C" x="0.0" y="10.2">simulation, 4000 shots each</text>
+        </g>
+      </g>
+    </g>
+    <g id="pf-recognition-accuracy-curve-ac-cell">
+      <line id="pf-recognition-accuracy-curve-__line-19" x1="154.2" y1="28.8" x2="145.0" y2="60.4" stroke="#404040" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-16" transform="translate(84.4,69.1) scale(0.9,0.9) translate(0.0,-5.2)">
+        <g id="pf-recognition-accuracy-curve-__g-16">
+          <text font-family="TeX Gyre Pagella" font-size="14" x="0.0" y="10.2">the section's cell:</text>
+        </g>
+      </g>
+      <g id="pf-recognition-accuracy-curve-__label-17" transform="translate(84.4,83.6) scale(0.9,0.9) translate(0.0,-7.7)">
+        <g id="pf-recognition-accuracy-curve-__g-17">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="49.040px" height="11.768px" role="img" focusable="false" viewBox="0 -689 2954.6 709" x="0.0" y="0.1">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-15-GP-I-1D70E" d="M639 482L632 494C605 485 559 478 526 478L420 479C389 480 354 482 330 482C286 482 243 467 198 437C110 379 59 277 53 152C47 27 92-11 157-11C201-11 242 9 292 54C337 95 384 158 416 221C443 274 464 342 466 384C467 397 465 409 463 420C496 418 524 418 546 418C564 418 586 426 603 432C614 453 619 458 639 482M400 356C393 207 289 39 201 39C152 39 126 85 129 151C134 270 180 388 229 427C243 438 265 444 289 444C350 444 404 434 400 356Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-15-GP-N-3D" d="M680 330C678 340 677 350 677 360C677 370 678 380 680 390L80 390C82 380 83 370 83 360C83 350 82 340 80 330M680 110C678 120 677 130 677 140C677 150 678 160 680 170L80 170C82 160 83 150 83 140C83 130 82 120 80 110Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-15-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-15-GP-N-35" d="M459 253C459 366 378 446 264 446C216 446 180 433 118 396L127 605L432 600L437 605C435 623 435 629 435 644C435 660 435 666 437 684L432 689C432 689 326 684 258 684C190 684 84 689 84 689L79 684L81 547C81 459 78 366 75 322L95 316C142 363 169 377 218 377C314 377 374 309 374 201C374 90 310 25 201 25C147 25 97 43 83 69L37 151L13 137C36 80 48 48 62 4C90-11 130-20 173-20C240-20 311 9 366 57C427 111 459 179 459 253Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-annotation="depth:1" data-semantic-id="3" data-semantic-children="0,2" data-semantic-content="1" data-semantic-attributes="latex:\sigma = 25" data-semantic-speech="sigma equals 25">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="3" data-semantic-attributes="latex:\sigma" data-semantic-speech="sigma">
+                  <use data-c="1D70E" xlink:href="#pf-recognition-accuracy-curve-MJX-15-GP-I-1D70E"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:=" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(916.8,0)">
+                  <use data-c="3D" xlink:href="#pf-recognition-accuracy-curve-MJX-15-GP-N-3D"/>
+                </g>
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:25" data-semantic-speech="25" transform="translate(1954.6,0)">
+                  <use data-c="32" xlink:href="#pf-recognition-accuracy-curve-MJX-15-GP-N-32"/>
+                  <use data-c="35" xlink:href="#pf-recognition-accuracy-curve-MJX-15-GP-N-35" transform="translate(500,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <text font-family="TeX Gyre Pagella" font-size="14" x="53.5" y="11.5">, accuracy</text>
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="54.536px" height="11.848px" role="img" focusable="false" viewBox="0 -694 3285.8 714" x="119.3" y="0.0">
+            <defs>
+              <path id="pf-recognition-accuracy-curve-MJX-16-GP-N-2248" d="M678 434C671 434 665 435 658 437C652 439 646 442 640 446C618 379 584 349 537 336C529 333 521 332 513 332C471 332 432 360 396 385C349 417 296 447 242 447C230 447 217 446 204 442C142 425 109 375 80 286C87 286 94 285 100 283C106 281 113 278 118 274C140 341 174 371 221 384C229 387 237 388 245 388C287 388 326 360 362 335C409 303 462 273 516 273C528 273 541 274 554 278C616 295 649 345 678 434M678 214C671 214 665 215 658 217C652 219 646 222 640 226C618 159 584 129 537 116C529 113 521 112 513 112C471 112 432 140 396 165C349 197 296 227 242 227C230 227 217 226 204 222C142 205 109 155 80 66C87 66 94 65 100 63C106 61 113 58 118 54C140 121 174 151 221 164C229 167 237 168 245 168C287 168 326 140 362 115C409 83 462 53 516 53C528 53 541 54 554 58C616 75 649 125 678 214Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-16-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-16-GP-N-2E" d="M183 53C183 83 155 111 124 111C94 111 67 83 67 53C67 23 94-5 123-5C155-5 183 22 183 53Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-16-GP-N-39" d="M457 417C457 586 376 689 244 689C116 689 20 589 20 455C20 340 95 256 199 256C233 256 272 267 290 282L360 340C352 172 243 49 62 5L62-3L96-20C207 16 255 39 309 85C406 168 457 283 457 417M370 471C370 379 317 317 240 317C160 317 106 388 106 492C106 593 158 656 240 656C285 656 318 637 340 597C358 565 370 516 370 471Z"/>
+              <path id="pf-recognition-accuracy-curve-MJX-16-GP-N-34" d="M472-3L472 27L424 30C375 33 364 46 364 106L364 181C423 181 444 180 472 177L472 248C472 248 423 245 391 245L364 245L364 384C364 562 366 648 371 689L359 694L285 667L2 204L13 181L280 181L280 106C280 46 269 32 220 30L158 27L158-3L319 0M280 245L65 245L280 597Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-annotation="depth:1" data-semantic-id="3" data-semantic-children="2,1" data-semantic-content="0" data-semantic-attributes="latex:\approx 0.994" data-semantic-speech="almost equals 0.994">
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="empty" data-semantic-role="unknown" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech=""/>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="3" data-semantic-attributes="latex:\approx" data-semantic-operator="relseq,≈" data-semantic-speech="almost equals">
+                  <use data-c="2248" xlink:href="#pf-recognition-accuracy-curve-MJX-16-GP-N-2248"/>
+                </g>
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="float" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:0.994" data-semantic-speech="0.994" transform="translate(1035.8,0)">
+                  <use data-c="30" xlink:href="#pf-recognition-accuracy-curve-MJX-16-GP-N-30"/>
+                  <use data-c="2E" xlink:href="#pf-recognition-accuracy-curve-MJX-16-GP-N-2E" transform="translate(500,0)"/>
+                  <use data-c="39" xlink:href="#pf-recognition-accuracy-curve-MJX-16-GP-N-39" transform="translate(750,0)"/>
+                  <use data-c="39" xlink:href="#pf-recognition-accuracy-curve-MJX-16-GP-N-39" transform="translate(1250,0)"/>
+                  <use data-c="34" xlink:href="#pf-recognition-accuracy-curve-MJX-16-GP-N-34" transform="translate(1750,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-recognition-accuracy-curve-ac-clipping">
+      <line id="pf-recognition-accuracy-curve-__line-20" x1="476.9" y1="155.4" x2="449.3" y2="174.2" stroke="#606060" stroke-width="1" fill="none"/>
+      <g id="pf-recognition-accuracy-curve-__label-18" transform="translate(370.3,181.7) scale(0.85,0.85) translate(0.0,-7.1)">
+        <g id="pf-recognition-accuracy-curve-__g-18">
+          <text font-family="TeX Gyre Pagella" font-size="14" fill="#404040" x="0.0" y="10.2">clipping at 0 and 255</text>
+        </g>
+      </g>
+      <g id="pf-recognition-accuracy-curve-__label-19" transform="translate(370.3,193.5) scale(0.85,0.85) translate(0.0,-7.1)">
+        <g id="pf-recognition-accuracy-curve-__g-19">
+          <text font-family="TeX Gyre Pagella" font-size="14" fill="#404040" x="0.0" y="10.2">drags real shots below</text>
+        </g>
+      </g>
+      <g id="pf-recognition-accuracy-curve-__label-20" transform="translate(370.3,205.3) scale(0.85,0.85) translate(0.0,-7.1)">
+        <g id="pf-recognition-accuracy-curve-__g-20">
+          <text font-family="TeX Gyre Pagella" font-size="14" fill="#404040" x="0.0" y="10.2">the unclipped formula</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

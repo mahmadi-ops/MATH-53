@@ -3,7 +3,7 @@ Static graphs use the book's olive (`#4A5D23`), wine (`#5E011C`), dark mustard
 matrices keep their original data values and colors. Figure captions and image
 descriptions name the corresponding accents.
 
-To regenerate the 41 PreFigure diagrams, three TikZ figures, and recognition
+To regenerate the 44 PreFigure diagrams, two TikZ figures, and recognition
 mind map with the book's fonts, use Python 3.12, Node 22+, XeLaTeX, and Cairo:
 
 ```sh
@@ -85,4 +85,18 @@ pretext generate asymptote -x fig-plane-subspace -t print
 By default PreTeXt sends the code to the Asymptote server. Where that server
 cannot be reached but `asy` is installed, add `asy-method="local"` to the
 `<project>` element of `project.ptx` for the two commands and remove it again.
+
+## Annotations
+
+Every PreFigure diagram in the book, 44 in the source and 4 standalone ones in
+`scripts/prefigure/`, has an `<annotations>` block: related elements are grouped
+with `<group at="...">` and each handle gets a spoken description. Every 2D
+graph that is not interactive is a PreFigure diagram; that includes the
+decision-boundary schematic and the two charts of the recognition section
+(`pf-decision-boundary`, `pf-recognition-score-distributions`,
+`pf-recognition-accuracy-curve`), which used to be a TikZ picture and two SVG
+files. Where the geometry matters, `dimensions` is chosen so that one unit has
+the same length on both axes:
+(width - 2 margins)/(x range) = (height - 2 margins)/(y range).
+A `<line>` with arrows needs an integer `thickness`.
 

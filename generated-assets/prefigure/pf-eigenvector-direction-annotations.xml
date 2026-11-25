@@ -1,0 +1,57 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-eigenvector-direction-eigenvector-direction" speech2="Four vectors from the origin in the x y plane, drawn with the same scale on both axes: two vectors v and w, and their images under the matrix A">
+      <grouped>pf-eigenvector-direction-eigenvector-direction</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-eigenvector-direction-ed-v</active>
+        <active>pf-eigenvector-direction-ed-line</active>
+        <active>pf-eigenvector-direction-ed-av</active>
+        <active>pf-eigenvector-direction-ed-w</active>
+        <active>pf-eigenvector-direction-ed-aw</active>
+      </children>
+      <components>
+        <active>pf-eigenvector-direction-ed-v</active>
+        <active>pf-eigenvector-direction-ed-line</active>
+        <active>pf-eigenvector-direction-ed-av</active>
+        <active>pf-eigenvector-direction-ed-w</active>
+        <active>pf-eigenvector-direction-ed-aw</active>
+      </components>
+    </annotation>
+    <annotation id="pf-eigenvector-direction-ed-v" speech2="The olive vector v from the origin to the point 2 comma 1">
+      <active>pf-eigenvector-direction-ed-v</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-eigenvector-direction-eigenvector-direction</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-eigenvector-direction-ed-line" speech2="A dashed grey line through the origin and the tip of v">
+      <active>pf-eigenvector-direction-ed-line</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-eigenvector-direction-eigenvector-direction</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-eigenvector-direction-ed-av" speech2="The mustard vector A v, from the origin to the point 4 comma 2; it lies on the same dashed line as v and is twice as long, so v is an eigenvector">
+      <active>pf-eigenvector-direction-ed-av</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-eigenvector-direction-eigenvector-direction</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-eigenvector-direction-ed-w" speech2="The wine vector w from the origin to the point 1 comma 1">
+      <active>pf-eigenvector-direction-ed-w</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-eigenvector-direction-eigenvector-direction</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-eigenvector-direction-ed-aw" speech2="The grey vector A w, from the origin to the point 3 comma minus 1, below the x axis; it points in a different direction from w, so w is not an eigenvector">
+      <active>pf-eigenvector-direction-ed-aw</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-eigenvector-direction-eigenvector-direction</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

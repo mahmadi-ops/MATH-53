@@ -81,38 +81,82 @@
       </caption>
       <image width="100%">
         <prefigure label="pf-jacobian-2d-map" xmlns="https://prefigure.org">
-          <diagram dimensions="(620,240)" margins="8">
+          <diagram dimensions="(620,237)" margins="8">
             <coordinates bbox="(0.2,0.1,10.6,3.9)">
-              <line endpoints="((0.5,0.7),(4.0,0.7))" stroke="black" thickness="2" arrows="1"/>
-              <line endpoints="((0.8,0.4),(0.8,3.6))" stroke="black" thickness="2" arrows="1"/>
-              <label p="(4.0,0.7)" alignment="e" offset="(6,0)"><m>x</m></label>
-              <label p="(0.8,3.6)" alignment="n" offset="(0,6)"><m>y</m></label>
-              <polygon points="((1.5,1.3),(3.1,1.3),(3.1,2.5),(1.5,2.5),(1.5,1.3))" fill="#EDF0E6" stroke="#4A5D23" thickness="2"/>
-              <point p="(1.5,1.3)" fill="#4A5D23" size="5"/>
-              <label p="(1.5,1.25)" alignment="sw" offset="(-4,-6)"><m>(x_0,y_0)</m></label>
-              <label p="(2.3,1.3)" alignment="s" offset="(0,-7)"><m>\Delta x</m></label>
-              <label p="(1.5,1.9)" alignment="w" offset="(-7,0)"><m>\Delta y</m></label>
-              <label p="(2.3,1.95)" alignment="c"><m>R</m></label>
-              <line endpoints="((4.4,2.0),(5.6,2.0))" stroke="black" thickness="2" arrows="1"/>
-              <label p="(5.0,2.05)" alignment="n" offset="(0,6)"><m>T</m></label>
-              <line endpoints="((5.9,0.7),(10.4,0.7))" stroke="black" thickness="2" arrows="1"/>
-              <line endpoints="((6.2,0.4),(6.2,3.6))" stroke="black" thickness="2" arrows="1"/>
-              <label p="(10.4,0.7)" alignment="e" offset="(6,0)"><m>u</m></label>
-              <label p="(6.2,3.6)" alignment="n" offset="(0,6)"><m>v</m></label>
-              <polygon points="((7.0,1.2),(9.2,1.75),(9.95,3.45),(7.75,2.9))" fill="#f9f3f4" stroke="none"/>
-              <line endpoints="((9.2,1.75),(9.95,3.45))" stroke="#4A5D23" thickness="1"/>
-              <line endpoints="((7.75,2.9),(9.95,3.45))" stroke="#4A5D23" thickness="1"/>
-              <spline points="((7.0,1.2),(8.1,1.41),(9.2,1.75))" stroke="#5E011C" thickness="2"/>
-              <spline points="((7.75,2.9),(8.85,3.24),(9.95,3.45))" stroke="#5E011C" thickness="2"/>
-              <spline points="((7.0,1.2),(7.31,2.05),(7.75,2.9))" stroke="#5E011C" thickness="2"/>
-              <spline points="((9.2,1.75),(9.64,2.6),(9.95,3.45))" stroke="#5E011C" thickness="2"/>
-              <line endpoints="((7.0,1.2),(9.2,1.75))" stroke="#4A5D23" thickness="3" arrows="1"/>
-              <line endpoints="((7.0,1.2),(7.75,2.9))" stroke="#4A5D23" thickness="3" arrows="1"/>
-              <point p="(7.0,1.2)" fill="#4A5D23" size="5"/>
-              <label p="(7.0,1.15)" alignment="s" offset="(6,-8)"><m>T(x_0,y_0)</m></label>
-              <label p="(8.3,1.62)" alignment="s" offset="(0,-8)" color="#4A5D23"><m>\vec{a}</m></label>
-              <label p="(7.32,2.15)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{b}</m></label>
+              <group at="jacobian-map">
+                <group at="jm-source">
+                  <group at="jm-xy-axes">
+                    <line endpoints="((0.5,0.7),(4.0,0.7))" stroke="black" thickness="2" arrows="1"/>
+                    <line endpoints="((0.8,0.4),(0.8,3.6))" stroke="black" thickness="2" arrows="1"/>
+                    <label p="(4.0,0.7)" alignment="e" offset="(6,0)"><m>x</m></label>
+                    <label p="(0.8,3.6)" alignment="n" offset="(0,6)"><m>y</m></label>
+                  </group>
+                  <group at="jm-rectangle">
+                    <polygon points="((1.5,1.3),(3.1,1.3),(3.1,2.5),(1.5,2.5),(1.5,1.3))" fill="#EDF0E6" stroke="#4A5D23" thickness="2"/>
+                    <label p="(2.3,1.3)" alignment="s" offset="(0,-7)"><m>\Delta x</m></label>
+                    <label p="(1.5,1.9)" alignment="w" offset="(-7,0)"><m>\Delta y</m></label>
+                    <label p="(2.3,1.95)" alignment="c"><m>R</m></label>
+                  </group>
+                  <group at="jm-corner">
+                    <point p="(1.5,1.3)" fill="#4A5D23" size="5"/>
+                    <label p="(1.5,1.25)" alignment="sw" offset="(-4,-6)"><m>(x_0,y_0)</m></label>
+                  </group>
+                </group>
+                <group at="jm-arrow">
+                  <line endpoints="((4.4,2.0),(5.6,2.0))" stroke="black" thickness="2" arrows="1"/>
+                  <label p="(5.0,2.05)" alignment="n" offset="(0,6)"><m>T</m></label>
+                </group>
+                <group at="jm-target">
+                  <group at="jm-uv-axes">
+                    <line endpoints="((5.9,0.7),(10.4,0.7))" stroke="black" thickness="2" arrows="1"/>
+                    <line endpoints="((6.2,0.4),(6.2,3.6))" stroke="black" thickness="2" arrows="1"/>
+                    <label p="(10.4,0.7)" alignment="e" offset="(6,0)"><m>u</m></label>
+                    <label p="(6.2,3.6)" alignment="n" offset="(0,6)"><m>v</m></label>
+                  </group>
+                  <group at="jm-parallelogram">
+                    <polygon points="((7.0,1.2),(9.2,1.75),(9.95,3.45),(7.75,2.9))" fill="#f9f3f4" stroke="none"/>
+                    <line endpoints="((9.2,1.75),(9.95,3.45))" stroke="#4A5D23" thickness="1"/>
+                    <line endpoints="((7.75,2.9),(9.95,3.45))" stroke="#4A5D23" thickness="1"/>
+                  </group>
+                  <group at="jm-true-image">
+                    <spline points="((7.0,1.2),(8.1,1.41),(9.2,1.75))" stroke="#5E011C" thickness="2"/>
+                    <spline points="((7.75,2.9),(8.85,3.24),(9.95,3.45))" stroke="#5E011C" thickness="2"/>
+                    <spline points="((7.0,1.2),(7.31,2.05),(7.75,2.9))" stroke="#5E011C" thickness="2"/>
+                    <spline points="((9.2,1.75),(9.64,2.6),(9.95,3.45))" stroke="#5E011C" thickness="2"/>
+                  </group>
+                  <group at="jm-a">
+                    <line endpoints="((7.0,1.2),(9.2,1.75))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                    <label p="(8.3,1.62)" alignment="s" offset="(0,-8)" color="#4A5D23"><m>\vec{a}</m></label>
+                  </group>
+                  <group at="jm-b">
+                    <line endpoints="((7.0,1.2),(7.75,2.9))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                    <label p="(7.32,2.15)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{b}</m></label>
+                  </group>
+                  <group at="jm-image-corner">
+                    <point p="(7.0,1.2)" fill="#4A5D23" size="5"/>
+                    <label p="(7.0,1.15)" alignment="s" offset="(6,-8)"><m>T(x_0,y_0)</m></label>
+                  </group>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="jacobian-map" text="Two pictures side by side joined by an arrow labelled T: a small rectangle in the x y plane on the left, and its image in the u v plane on the right">
+                <annotation ref="jm-source" text="Left picture, the x y plane">
+                  <annotation ref="jm-xy-axes" text="The x axis and the y axis"/>
+                  <annotation ref="jm-rectangle" text="A small pale olive rectangle R with horizontal side delta x and vertical side delta y"/>
+                  <annotation ref="jm-corner" text="Its lower left corner is the point x 0 comma y 0"/>
+                </annotation>
+                <annotation ref="jm-arrow" text="An arrow labelled T points from the left picture to the right picture"/>
+                <annotation ref="jm-target" text="Right picture, the u v plane">
+                  <annotation ref="jm-uv-axes" text="The u axis and the v axis"/>
+                  <annotation ref="jm-image-corner" text="The point T of x 0 comma y 0, the image of the corner"/>
+                  <annotation ref="jm-true-image" text="Four gently curved wine arcs bound the true image of the rectangle, a slightly bent four-sided region"/>
+                  <annotation ref="jm-a" text="The olive vector a starts at the image of the corner and follows the image of the bottom side"/>
+                  <annotation ref="jm-b" text="The olive vector b starts at the same point and follows the image of the left side"/>
+                  <annotation ref="jm-parallelogram" text="The shaded parallelogram spanned by a and b nearly coincides with the true image; its area approximates the area of the image"/>
+                </annotation>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
@@ -155,26 +199,52 @@
       </caption>
       <image width="52%">
         <prefigure label="pf-parallelogram-area-proof" xmlns="https://prefigure.org">
-          <diagram dimensions="(420,320)" margins="10">
+          <diagram dimensions="(420,327)" margins="10">
             <coordinates bbox="(-0.7,-0.7,5.3,3.9)">
-              <polygon points="((0,0),(4,0),(4,3),(0,3),(0,0))" fill="#f2f2f2" stroke="black" thickness="1"/>
-              <polygon points="((0,0),(3,1),(4,3),(1,2))" fill="#f9f3f4" stroke="none"/>
-              <axes arrows="2" decorations="no"/>
-              <line endpoints="((3,0),(3,1))" stroke="black" thickness="1"/>
-              <line endpoints="((3,1),(4,1))" stroke="black" thickness="1"/>
-              <line endpoints="((1,2),(1,3))" stroke="black" thickness="1"/>
-              <line endpoints="((0,2),(1,2))" stroke="black" thickness="1"/>
-              <line endpoints="((0,0),(3,1))" stroke="#4A5D23" thickness="3" arrows="1"/>
-              <line endpoints="((0,0),(1,2))" stroke="#4A5D23" thickness="3" arrows="1"/>
-              <line endpoints="((3,1),(4,3))" stroke="#4A5D23" thickness="1"/>
-              <line endpoints="((1,2),(4,3))" stroke="#4A5D23" thickness="1"/>
-              <label p="(2.55,0.75)" alignment="s" offset="(0,-8)" color="#4A5D23"><m>\vec{a}</m></label>
-              <label p="(0.72,1.7)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{b}</m></label>
-              <label p="(1.5,0)" alignment="s" offset="(0,-8)"><m>a_1</m></label>
-              <label p="(3.5,0)" alignment="s" offset="(0,-8)"><m>b_1</m></label>
-              <label p="(4,0.5)" alignment="e" offset="(8,0)"><m>a_2</m></label>
-              <label p="(4,2.0)" alignment="e" offset="(8,0)"><m>b_2</m></label>
+              <group at="area-proof">
+                <polygon at="ap-rectangle" points="((0,0),(4,0),(4,3),(0,3),(0,0))" fill="#f2f2f2" stroke="black" thickness="1"/>
+                <polygon at="ap-parallelogram" points="((0,0),(3,1),(4,3),(1,2))" fill="#f9f3f4" stroke="none"/>
+                <axes arrows="2" decorations="no"/>
+                <group at="ap-small-rectangles">
+                  <line endpoints="((3,0),(3,1))" stroke="black" thickness="1"/>
+                  <line endpoints="((3,1),(4,1))" stroke="black" thickness="1"/>
+                  <line endpoints="((1,2),(1,3))" stroke="black" thickness="1"/>
+                  <line endpoints="((0,2),(1,2))" stroke="black" thickness="1"/>
+                </group>
+                <group at="ap-a">
+                  <line endpoints="((0,0),(3,1))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                  <label p="(2.55,0.75)" alignment="s" offset="(0,-8)" color="#4A5D23"><m>\vec{a}</m></label>
+                </group>
+                <group at="ap-b">
+                  <line endpoints="((0,0),(1,2))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                  <label p="(0.72,1.7)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{b}</m></label>
+                </group>
+                <group at="ap-sides">
+                  <line endpoints="((3,1),(4,3))" stroke="#4A5D23" thickness="1"/>
+                  <line endpoints="((1,2),(4,3))" stroke="#4A5D23" thickness="1"/>
+                </group>
+                <group at="ap-bottom-labels">
+                  <label p="(1.5,0)" alignment="s" offset="(0,-8)"><m>a_1</m></label>
+                  <label p="(3.5,0)" alignment="s" offset="(0,-8)"><m>b_1</m></label>
+                </group>
+                <group at="ap-right-labels">
+                  <label p="(4,0.5)" alignment="e" offset="(8,0)"><m>a_2</m></label>
+                  <label p="(4,2.0)" alignment="e" offset="(8,0)"><m>b_2</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="area-proof" text="A parallelogram spanned by two vectors a and b, drawn inside the smallest rectangle with horizontal and vertical sides that contains it; the same scale is used in both directions">
+                <annotation ref="ap-a" text="The olive vector a from the lower left corner, long to the right and a little up; its entries are a 1 and a 2"/>
+                <annotation ref="ap-b" text="The olive vector b from the same corner, a little to the right and steeply up; its entries are b 1 and b 2"/>
+                <annotation ref="ap-sides" text="Two thin sides complete the parallelogram, whose far corner is the upper right corner of the rectangle"/>
+                <annotation ref="ap-parallelogram" text="The parallelogram, shaded pale wine"/>
+                <annotation ref="ap-rectangle" text="The surrounding rectangle, shaded grey, has width a 1 plus b 1 and height a 2 plus b 2"/>
+                <annotation ref="ap-bottom-labels" text="Along the bottom side, a segment of length a 1 followed by a segment of length b 1"/>
+                <annotation ref="ap-right-labels" text="Along the right side, a segment of length a 2 followed by a segment of length b 2"/>
+                <annotation ref="ap-small-rectangles" text="Thin lines cut off two small rectangles of size b 1 by a 2, in the lower right and upper left corners; the rest of the grey region is two right triangles with legs a 1 and a 2 and two with legs b 1 and b 2"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>
@@ -307,43 +377,88 @@
           </caption>
           <image width="100%">
             <prefigure label="pf-polar-jacobian" xmlns="https://prefigure.org">
-              <diagram dimensions="(620,240)" margins="8">
-                <coordinates bbox="(0.2,0.1,10.6,3.9)">
-                  <line endpoints="((0.5,0.7),(4.0,0.7))" stroke="black" thickness="2" arrows="1"/>
-                  <line endpoints="((0.8,0.4),(0.8,3.6))" stroke="black" thickness="2" arrows="1"/>
-                  <label p="(4.0,0.7)" alignment="e" offset="(6,0)"><m>r</m></label>
-                  <label p="(0.8,3.6)" alignment="n" offset="(0,6)"><m>\theta</m></label>
-                  <polygon points="((1.6,1.4),(2.9,1.4),(2.9,2.4),(1.6,2.4),(1.6,1.4))" fill="#EDF0E6" stroke="#4A5D23" thickness="2"/>
-                  <point p="(1.6,1.4)" fill="#4A5D23" size="5"/>
-                  <label p="(1.6,1.35)" alignment="sw" offset="(-4,-6)"><m>(r_0,\theta_0)</m></label>
-                  <label p="(2.25,1.4)" alignment="s" offset="(0,-7)"><m>\Delta r</m></label>
-                  <label p="(1.6,1.9)" alignment="w" offset="(-7,0)"><m>\Delta\theta</m></label>
+          <diagram dimensions="(620,237)" margins="8">
+            <coordinates bbox="(0.2,0.1,10.6,3.9)">
+              <group at="polar-jacobian">
+                <group at="pj-source">
+                  <group at="pj-rt-axes">
+                    <line endpoints="((0.5,0.7),(4.0,0.7))" stroke="black" thickness="2" arrows="1"/>
+                    <line endpoints="((0.8,0.4),(0.8,3.6))" stroke="black" thickness="2" arrows="1"/>
+                    <label p="(4.0,0.7)" alignment="e" offset="(6,0)"><m>r</m></label>
+                    <label p="(0.8,3.6)" alignment="n" offset="(0,6)"><m>\theta</m></label>
+                  </group>
+                  <group at="pj-rectangle">
+                    <polygon points="((1.6,1.4),(2.9,1.4),(2.9,2.4),(1.6,2.4),(1.6,1.4))" fill="#EDF0E6" stroke="#4A5D23" thickness="2"/>
+                    <label p="(2.25,1.4)" alignment="s" offset="(0,-7)"><m>\Delta r</m></label>
+                    <label p="(1.6,1.9)" alignment="w" offset="(-7,0)"><m>\Delta\theta</m></label>
+                  </group>
+                  <group at="pj-corner">
+                    <point p="(1.6,1.4)" fill="#4A5D23" size="5"/>
+                    <label p="(1.6,1.35)" alignment="sw" offset="(-4,-6)"><m>(r_0,\theta_0)</m></label>
+                  </group>
+                </group>
+                <group at="pj-arrow">
                   <line endpoints="((4.4,2.0),(5.6,2.0))" stroke="black" thickness="2" arrows="1"/>
                   <label p="(5.0,2.05)" alignment="n" offset="(0,6)"><m>T</m></label>
-                  <line endpoints="((5.9,0.7),(10.4,0.7))" stroke="black" thickness="2" arrows="1"/>
-                  <line endpoints="((6.2,0.4),(6.2,3.6))" stroke="black" thickness="2" arrows="1"/>
-                  <label p="(10.4,0.7)" alignment="e" offset="(6,0)"><m>x</m></label>
-                  <label p="(6.2,3.6)" alignment="n" offset="(0,6)"><m>y</m></label>
-                  <polygon points="((7.93,1.70),(8.54,2.05),(7.98,3.02),(7.37,2.67))" fill="#f9f3f4" stroke="none"/>
-                  <line endpoints="((8.54,2.05),(7.98,3.02))" stroke="#4A5D23" thickness="1"/>
-                  <line endpoints="((7.37,2.67),(7.98,3.02))" stroke="#4A5D23" thickness="1"/>
-                  <line endpoints="((6.2,0.7),(7.93,1.70))" stroke="black" thickness="1"/>
-                  <line endpoints="((6.2,0.7),(7.14,2.47))" stroke="black" thickness="1"/>
-                  <arc center="(6.2,0.7)" radius="0.7" range="(30,62)" stroke="black" thickness="1"/>
-                  <label p="(7.0,1.32)" alignment="se" offset="(2,-4)"><m>r_0</m></label>
-                  <label p="(6.98,1.55)" alignment="nw" offset="(-2,2)"><m>\Delta\theta</m></label>
-                  <arc center="(6.2,0.7)" radius="2.0" range="(30,62)" stroke="#5E011C" thickness="2"/>
-                  <arc center="(6.2,0.7)" radius="2.7" range="(30,62)" stroke="#5E011C" thickness="2"/>
-                  <line endpoints="((7.93,1.70),(8.54,2.05))" stroke="#5E011C" thickness="2"/>
-                  <line endpoints="((7.14,2.47),(7.47,3.08))" stroke="#5E011C" thickness="2"/>
-                  <line endpoints="((7.93,1.70),(8.54,2.05))" stroke="#4A5D23" thickness="3" arrows="1"/>
-                  <line endpoints="((7.93,1.70),(7.37,2.67))" stroke="#4A5D23" thickness="3" arrows="1"/>
-                  <point p="(7.93,1.70)" fill="#4A5D23" size="5"/>
-                  <label p="(8.30,1.83)" alignment="se" offset="(4,-4)" color="#4A5D23"><m>\vec{a}</m></label>
-                  <label p="(7.55,2.10)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{b}</m></label>
-                </coordinates>
-              </diagram>
-            </prefigure>
+                </group>
+                <group at="pj-target">
+                  <group at="pj-xy-axes">
+                    <line endpoints="((5.9,0.7),(10.4,0.7))" stroke="black" thickness="2" arrows="1"/>
+                    <line endpoints="((6.2,0.4),(6.2,3.6))" stroke="black" thickness="2" arrows="1"/>
+                    <label p="(10.4,0.7)" alignment="e" offset="(6,0)"><m>x</m></label>
+                    <label p="(6.2,3.6)" alignment="n" offset="(0,6)"><m>y</m></label>
+                  </group>
+                  <group at="pj-parallelogram">
+                    <polygon points="((7.93,1.70),(8.54,2.05),(7.98,3.02),(7.37,2.67))" fill="#f9f3f4" stroke="none"/>
+                    <line endpoints="((8.54,2.05),(7.98,3.02))" stroke="#4A5D23" thickness="1"/>
+                    <line endpoints="((7.37,2.67),(7.98,3.02))" stroke="#4A5D23" thickness="1"/>
+                  </group>
+                  <group at="pj-rays">
+                    <line endpoints="((6.2,0.7),(7.93,1.70))" stroke="black" thickness="1"/>
+                    <line endpoints="((6.2,0.7),(7.14,2.47))" stroke="black" thickness="1"/>
+                    <arc center="(6.2,0.7)" radius="0.7" range="(30,62)" stroke="black" thickness="1"/>
+                    <label p="(7.0,1.32)" alignment="se" offset="(2,-4)"><m>r_0</m></label>
+                    <label p="(6.98,1.55)" alignment="nw" offset="(-2,2)"><m>\Delta\theta</m></label>
+                  </group>
+                  <group at="pj-polar-rectangle">
+                    <arc center="(6.2,0.7)" radius="2.0" range="(30,62)" stroke="#5E011C" thickness="2"/>
+                    <arc center="(6.2,0.7)" radius="2.7" range="(30,62)" stroke="#5E011C" thickness="2"/>
+                    <line endpoints="((7.93,1.70),(8.54,2.05))" stroke="#5E011C" thickness="2"/>
+                    <line endpoints="((7.14,2.47),(7.47,3.08))" stroke="#5E011C" thickness="2"/>
+                  </group>
+                  <group at="pj-a">
+                    <line endpoints="((7.93,1.70),(8.54,2.05))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                    <label p="(8.30,1.83)" alignment="se" offset="(4,-4)" color="#4A5D23"><m>\vec{a}</m></label>
+                  </group>
+                  <group at="pj-b">
+                    <line endpoints="((7.93,1.70),(7.37,2.67))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                    <label p="(7.55,2.10)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{b}</m></label>
+                  </group>
+                  <point at="pj-image-corner" p="(7.93,1.70)" fill="#4A5D23" size="5"/>
+                </group>
+              </group>
+            </coordinates>
+            <annotations>
+              <annotation ref="polar-jacobian" text="Two pictures side by side joined by an arrow labelled T: a small rectangle in the r theta plane on the left, and its image under the polar coordinate map in the x y plane on the right; the same scale is used in both directions">
+                <annotation ref="pj-source" text="Left picture, the r theta plane">
+                  <annotation ref="pj-rt-axes" text="A horizontal r axis and a vertical theta axis"/>
+                  <annotation ref="pj-rectangle" text="A small pale olive rectangle with horizontal side delta r and vertical side delta theta"/>
+                  <annotation ref="pj-corner" text="Its lower left corner is the point r 0 comma theta 0"/>
+                </annotation>
+                <annotation ref="pj-arrow" text="An arrow labelled T points from the left picture to the right picture"/>
+                <annotation ref="pj-target" text="Right picture, the x y plane">
+                  <annotation ref="pj-xy-axes" text="The x axis and the y axis"/>
+                  <annotation ref="pj-rays" text="Two thin rays from the origin, at angles theta 0 and theta 0 plus delta theta; the distance r 0 is marked along the first ray and the small angle delta theta between the rays is marked near the origin"/>
+                  <annotation ref="pj-polar-rectangle" text="The wine polar rectangle: the region between the two rays and between two circular arcs of radius r 0 and r 0 plus delta r"/>
+                  <annotation ref="pj-image-corner" text="The image of the corner, on the first ray at distance r 0 from the origin"/>
+                  <annotation ref="pj-a" text="The olive vector a starts at the image of the corner and points outward along the first ray; its length is delta r"/>
+                  <annotation ref="pj-b" text="The olive vector b starts at the same point and is perpendicular to a, along the inner arc; its length is r 0 times delta theta"/>
+                  <annotation ref="pj-parallelogram" text="The shaded rectangle spanned by a and b approximates the polar rectangle; its area is r 0 times delta r times delta theta"/>
+                </annotation>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
           </image>
         </figure>
       </solution>

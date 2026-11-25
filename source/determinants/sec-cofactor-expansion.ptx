@@ -24,18 +24,35 @@
       </caption>
       <image width="58%">
         <prefigure label="pf-det-area" xmlns="https://prefigure.org">
-          <diagram dimensions="(400,300)" margins="10">
+          <diagram dimensions="(400,310)" margins="10">
             <coordinates bbox="(-0.7,-0.6,4.8,3.6)">
-              <polygon points="((0,0),(3,1),(4,3),(1,2))" fill="#f9f3f4" stroke="none"/>
-              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <line endpoints="((0,0),(3,1))" stroke="#4A5D23" thickness="3" arrows="1"/>
-              <line endpoints="((0,0),(1,2))" stroke="#4A5D23" thickness="3" arrows="1"/>
-              <line endpoints="((3,1),(4,3))" stroke="#4A5D23" thickness="1"/>
-              <line endpoints="((1,2),(4,3))" stroke="#4A5D23" thickness="1"/>
-              <label p="(2.6,0.85)" alignment="s" offset="(0,-8)" color="#4A5D23"><m>\vec{u}</m></label>
-              <label p="(0.75,1.75)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{v}</m></label>
-              <label p="(2.0,1.5)" alignment="c"><m>|\det A| = 5</m></label>
+              <group at="det-area">
+                <polygon at="da-region" points="((0,0),(3,1),(4,3),(1,2))" fill="#f9f3f4" stroke="none"/>
+                <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                <group at="da-u">
+                  <line endpoints="((0,0),(3,1))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                  <label p="(2.6,0.85)" alignment="s" offset="(0,-8)" color="#4A5D23"><m>\vec{u}</m></label>
+                </group>
+                <group at="da-v">
+                  <line endpoints="((0,0),(1,2))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                  <label p="(0.75,1.75)" alignment="w" offset="(-8,0)" color="#4A5D23"><m>\vec{v}</m></label>
+                </group>
+                <group at="da-sides">
+                  <line endpoints="((3,1),(4,3))" stroke="#4A5D23" thickness="1"/>
+                  <line endpoints="((1,2),(4,3))" stroke="#4A5D23" thickness="1"/>
+                </group>
+                <label at="da-area" p="(2.0,1.5)" alignment="c"><m>|\det A| = 5</m></label>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="det-area" text="The parallelogram spanned by the two columns of a 2 by 2 matrix, drawn in the x y plane with the same scale on both axes">
+                <annotation ref="da-u" text="The olive vector u from the origin to the point 3 comma 1"/>
+                <annotation ref="da-v" text="The olive vector v from the origin to the point 1 comma 2"/>
+                <annotation ref="da-sides" text="Two thin sides, from the tip of u and from the tip of v to the point 4 comma 3, complete the parallelogram"/>
+                <annotation ref="da-region" text="The parallelogram with corners 0 comma 0, 3 comma 1, 4 comma 3 and 1 comma 2, shaded pale wine"/>
+                <annotation ref="da-area" text="The label inside the parallelogram reads absolute value of the determinant of A equals 5, the area of the parallelogram"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>

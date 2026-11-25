@@ -34,39 +34,89 @@
     </caption>
     <image width="78%">
       <prefigure label="pf-pagerank-graph" xmlns="https://prefigure.org">
-        <diagram dimensions="(520,260)" margins="14">
-          <coordinates bbox="(-0.6,-1.4,8.4,4.6)">
-            <line endpoints="((1.75,3),(3.75,3))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((2.2,1.25),(3.8,2.75))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((4,1.3),(4,2.7))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((5.4,1.3),(4.25,2.75))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((6.85,1.3),(4.3,2.85))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((4.15,3.2),(5.3,3.85))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((5.3,3.65),(4.25,3.05))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((1.8,1),(0.8,1))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((4.25,1),(5.25,1))" stroke="black" thickness="1" arrows="1"/>
-            <line endpoints="((5.75,1),(6.75,1))" stroke="black" thickness="1" arrows="1"/>
-            <spline points="((2,0.75),(4.5,-0.9),(7,0.75))" stroke="black" thickness="1" arrows="1"/>
-            <spline points="((4,0.75),(5.5,-0.3),(7,0.8))" stroke="black" thickness="1" arrows="1"/>
-            <point p="(4,3)" fill="white" size="12"/>
-            <point p="(1.5,3)" fill="white" size="12"/>
-            <point p="(5.5,4)" fill="white" size="12"/>
-            <point p="(0.5,1)" fill="white" size="12"/>
-            <point p="(2,1)" fill="white" size="12"/>
-            <point p="(4,1)" fill="white" size="12"/>
-            <point p="(5.5,1)" fill="white" size="12"/>
-            <point p="(7,1)" fill="white" size="12"/>
-            <label p="(4,3)" alignment="center"><m>0</m></label>
-            <label p="(1.5,3)" alignment="center"><m>1</m></label>
-            <label p="(5.5,4)" alignment="center"><m>7</m></label>
-            <label p="(0.5,1)" alignment="center"><m>2</m></label>
-            <label p="(2,1)" alignment="center"><m>3</m></label>
-            <label p="(4,1)" alignment="center"><m>4</m></label>
-            <label p="(5.5,1)" alignment="center"><m>5</m></label>
-            <label p="(7,1)" alignment="center"><m>6</m></label>
-          </coordinates>
-        </diagram>
-      </prefigure>
+          <diagram dimensions="(520,260)" margins="14">
+            <coordinates bbox="(-0.6,-1.4,8.4,4.6)">
+              <group at="pagerank-graph">
+                <group at="pg-links">
+                  <line at="pg-link-1-0" endpoints="((1.75,3),(3.75,3))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-3-0" endpoints="((2.2,1.25),(3.8,2.75))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-4-0" endpoints="((4,1.3),(4,2.7))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-5-0" endpoints="((5.4,1.3),(4.25,2.75))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-6-0" endpoints="((6.85,1.3),(4.3,2.85))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-0-7" endpoints="((4.15,3.2),(5.3,3.85))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-7-0" endpoints="((5.3,3.65),(4.25,3.05))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-3-2" endpoints="((1.8,1),(0.8,1))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-4-5" endpoints="((4.25,1),(5.25,1))" stroke="black" thickness="1" arrows="1"/>
+                  <line at="pg-link-5-6" endpoints="((5.75,1),(6.75,1))" stroke="black" thickness="1" arrows="1"/>
+                  <spline at="pg-link-3-6" points="((2,0.75),(4.5,-0.9),(7,0.75))" stroke="black" thickness="1" arrows="1"/>
+                  <spline at="pg-link-4-6" points="((4,0.75),(5.5,-0.3),(7,0.8))" stroke="black" thickness="1" arrows="1"/>
+                </group>
+                <group at="pg-pages">
+                  <group at="pg-page-0">
+                    <point p="(4,3)" fill="white" size="12"/>
+                    <label p="(4,3)" alignment="center"><m>0</m></label>
+                  </group>
+                  <group at="pg-page-1">
+                    <point p="(1.5,3)" fill="white" size="12"/>
+                    <label p="(1.5,3)" alignment="center"><m>1</m></label>
+                  </group>
+                  <group at="pg-page-2">
+                    <point p="(0.5,1)" fill="white" size="12"/>
+                    <label p="(0.5,1)" alignment="center"><m>2</m></label>
+                  </group>
+                  <group at="pg-page-3">
+                    <point p="(2,1)" fill="white" size="12"/>
+                    <label p="(2,1)" alignment="center"><m>3</m></label>
+                  </group>
+                  <group at="pg-page-4">
+                    <point p="(4,1)" fill="white" size="12"/>
+                    <label p="(4,1)" alignment="center"><m>4</m></label>
+                  </group>
+                  <group at="pg-page-5">
+                    <point p="(5.5,1)" fill="white" size="12"/>
+                    <label p="(5.5,1)" alignment="center"><m>5</m></label>
+                  </group>
+                  <group at="pg-page-6">
+                    <point p="(7,1)" fill="white" size="12"/>
+                    <label p="(7,1)" alignment="center"><m>6</m></label>
+                  </group>
+                  <group at="pg-page-7">
+                    <point p="(5.5,4)" fill="white" size="12"/>
+                    <label p="(5.5,4)" alignment="center"><m>7</m></label>
+                  </group>
+                </group>
+              </group>
+            </coordinates>
+            <annotations>
+              <annotation ref="pagerank-graph" text="A directed graph with 8 numbered pages, 0 to 7, drawn as circles, and 12 links drawn as arrows">
+                <annotation ref="pg-pages" text="The eight pages">
+                  <annotation ref="pg-page-0" text="Page 0, in the upper middle. It links to page 7. It is linked from page 1, page 3, page 4, page 5, page 6 and page 7."/>
+                  <annotation ref="pg-page-1" text="Page 1, at the upper left. It links to page 0. No page links to it."/>
+                  <annotation ref="pg-page-2" text="Page 2, at the lower left. It has no outgoing links. It is linked from page 3."/>
+                  <annotation ref="pg-page-3" text="Page 3, in the lower row, second from the left. It links to page 0, page 2 and page 6. No page links to it."/>
+                  <annotation ref="pg-page-4" text="Page 4, in the lower row, below page 0. It links to page 0, page 5 and page 6. No page links to it."/>
+                  <annotation ref="pg-page-5" text="Page 5, in the lower row, to the right of page 4. It links to page 0 and page 6. It is linked from page 4."/>
+                  <annotation ref="pg-page-6" text="Page 6, at the lower right. It links to page 0. It is linked from page 3, page 4 and page 5."/>
+                  <annotation ref="pg-page-7" text="Page 7, at the top right. It links to page 0. It is linked from page 0."/>
+                </annotation>
+                <annotation ref="pg-links" text="The twelve links">
+                  <annotation ref="pg-link-1-0" text="A link from page 1 to page 0"/>
+                  <annotation ref="pg-link-3-0" text="A link from page 3 to page 0"/>
+                  <annotation ref="pg-link-4-0" text="A link from page 4 to page 0"/>
+                  <annotation ref="pg-link-5-0" text="A link from page 5 to page 0"/>
+                  <annotation ref="pg-link-6-0" text="A link from page 6 to page 0"/>
+                  <annotation ref="pg-link-0-7" text="A link from page 0 to page 7"/>
+                  <annotation ref="pg-link-7-0" text="A link from page 7 to page 0"/>
+                  <annotation ref="pg-link-3-2" text="A link from page 3 to page 2"/>
+                  <annotation ref="pg-link-4-5" text="A link from page 4 to page 5"/>
+                  <annotation ref="pg-link-5-6" text="A link from page 5 to page 6"/>
+                  <annotation ref="pg-link-3-6" text="A link from page 3 to page 6, a curved arrow passing below the lower row"/>
+                  <annotation ref="pg-link-4-6" text="A link from page 4 to page 6, a curved arrow passing below the lower row"/>
+                </annotation>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
     </image>
   </figure>
 

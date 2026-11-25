@@ -1,0 +1,39 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-cats-segment-cats-segment" speech2="The plane of coordinate vectors x comma y relative to the basis B, with the blends marked">
+      <grouped>pf-cats-segment-cats-segment</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-cats-segment-cs-a</active>
+        <active>pf-cats-segment-cs-d</active>
+        <active>pf-cats-segment-cs-blends</active>
+      </children>
+      <components>
+        <active>pf-cats-segment-cs-a</active>
+        <active>pf-cats-segment-cs-d</active>
+        <active>pf-cats-segment-cs-blends</active>
+      </components>
+    </annotation>
+    <annotation id="pf-cats-segment-cs-a" speech2="The point 1 comma 0 on the x axis, the coordinate vector of the picture A">
+      <active>pf-cats-segment-cs-a</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-cats-segment-cats-segment</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-segment-cs-d" speech2="The point 0 comma 1 on the y axis, the coordinate vector of the picture D">
+      <active>pf-cats-segment-cs-d</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-cats-segment-cats-segment</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-segment-cs-blends" speech2="The olive segment joining these two points holds the blends: x plus y equals 1 with both coordinates between 0 and 1">
+      <active>pf-cats-segment-cs-blends</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-cats-segment-cats-segment</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

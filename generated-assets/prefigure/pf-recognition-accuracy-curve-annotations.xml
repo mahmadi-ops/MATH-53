@@ -1,0 +1,66 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-recognition-accuracy-curve-accuracy-curve" speech2="A graph of the probability of a correct verdict, on a vertical axis from 0.5 to 1, against the grain size sigma in gray levels, on a horizontal axis from 5 to 100">
+      <grouped>pf-recognition-accuracy-curve-accuracy-curve</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-recognition-accuracy-curve-ac-frame</active>
+        <active>pf-recognition-accuracy-curve-ac-formula</active>
+        <active>pf-recognition-accuracy-curve-ac-simulation</active>
+        <active>pf-recognition-accuracy-curve-ac-cell</active>
+        <active>pf-recognition-accuracy-curve-ac-clipping</active>
+        <active>pf-recognition-accuracy-curve-ac-guessing</active>
+      </children>
+      <components>
+        <active>pf-recognition-accuracy-curve-ac-frame</active>
+        <active>pf-recognition-accuracy-curve-ac-formula</active>
+        <active>pf-recognition-accuracy-curve-ac-simulation</active>
+        <active>pf-recognition-accuracy-curve-ac-cell</active>
+        <active>pf-recognition-accuracy-curve-ac-clipping</active>
+        <active>pf-recognition-accuracy-curve-ac-guessing</active>
+      </components>
+    </annotation>
+    <annotation id="pf-recognition-accuracy-curve-ac-frame" speech2="The axes: grain size marked at 20, 40, 60, 80 and 100, probability marked from 0.5 to 1.0 in steps of 0.1, with faint horizontal grid lines">
+      <active>pf-recognition-accuracy-curve-ac-frame</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-recognition-accuracy-curve-accuracy-curve</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-accuracy-curve-ac-formula" speech2="The smooth olive curve, the exact formula Phi of the norm of W over 2 sigma: it stays at 1 up to about sigma equals 20, passes 0.994 at 25, 0.89 at 50, and descends to about 0.73 at sigma equals 100">
+      <active>pf-recognition-accuracy-curve-ac-formula</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-recognition-accuracy-curve-accuracy-curve</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-accuracy-curve-ac-simulation" speech2="Ten wine dots, simulations of 4000 shots each, at sigma equals 10, 20 and so on up to 100: they lie on the curve up to about 50 and then fall below it, reaching about 0.69 at 100 where the curve is at 0.73">
+      <active>pf-recognition-accuracy-curve-ac-simulation</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-recognition-accuracy-curve-accuracy-curve</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-accuracy-curve-ac-cell" speech2="A note pointing at the curve at sigma equals 25: the section's cell, accuracy about 0.994">
+      <active>pf-recognition-accuracy-curve-ac-cell</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-recognition-accuracy-curve-accuracy-curve</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-accuracy-curve-ac-clipping" speech2="A note pointing at the gap between dots and curve on the right: clipping at 0 and 255 drags real shots below the unclipped formula">
+      <active>pf-recognition-accuracy-curve-ac-clipping</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-recognition-accuracy-curve-accuracy-curve</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-accuracy-curve-ac-guessing" speech2="A dashed horizontal line at probability 0.5, labelled guessing; the curve and all the dots stay above it">
+      <active>pf-recognition-accuracy-curve-ac-guessing</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-recognition-accuracy-curve-accuracy-curve</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

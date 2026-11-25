@@ -1,0 +1,164 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-recognition-score-distributions-score-distributions" speech2="Two panels side by side, each showing the distribution of scores of grainy wall shots and grainy cat shots as two bell curves over a score axis">
+      <grouped>pf-recognition-score-distributions-score-distributions</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-recognition-score-distributions-sd-25</active>
+        <active>pf-recognition-score-distributions-sd-50</active>
+      </children>
+      <components>
+        <active>pf-recognition-score-distributions-sd-25</active>
+        <active>pf-recognition-score-distributions-sd-50</active>
+      </components>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25" speech2="Left panel, grain size sigma equals 25">
+      <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-recognition-score-distributions-sd-25-axis</active>
+        <active>pf-recognition-score-distributions-sd-25-boundary</active>
+        <active>pf-recognition-score-distributions-sd-25-wall</active>
+        <active>pf-recognition-score-distributions-sd-25-cat</active>
+        <active>pf-recognition-score-distributions-sd-25-wall-tail</active>
+        <active>pf-recognition-score-distributions-sd-25-cat-tail</active>
+        <active>pf-recognition-score-distributions-sd-25-title</active>
+      </children>
+      <components>
+        <active>pf-recognition-score-distributions-sd-25-axis</active>
+        <active>pf-recognition-score-distributions-sd-25-boundary</active>
+        <active>pf-recognition-score-distributions-sd-25-wall</active>
+        <active>pf-recognition-score-distributions-sd-25-cat</active>
+        <active>pf-recognition-score-distributions-sd-25-wall-tail</active>
+        <active>pf-recognition-score-distributions-sd-25-cat-tail</active>
+        <active>pf-recognition-score-distributions-sd-25-title</active>
+      </components>
+      <parents>
+        <grouped>pf-recognition-score-distributions-score-distributions</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25-axis" speech2="A horizontal score axis with marks at minus 7839, 0 and plus 7839">
+      <active>pf-recognition-score-distributions-sd-25-axis</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25-boundary" speech2="A dashed vertical line at score 0, the decision boundary">
+      <active>pf-recognition-score-distributions-sd-25-boundary</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25-wall" speech2="The wine bell curve of the wall shots, centred at minus 7839; it is narrow and has almost died out before reaching the boundary">
+      <active>pf-recognition-score-distributions-sd-25-wall</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25-cat" speech2="The olive bell curve of the cat shots, centred at plus 7839, with the same shape">
+      <active>pf-recognition-score-distributions-sd-25-cat</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25-wall-tail" speech2="The shaded part of the wall curve to the right of the boundary: wall shots misjudged as cat. It is a barely visible sliver.">
+      <active>pf-recognition-score-distributions-sd-25-wall-tail</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25-cat-tail" speech2="The shaded part of the cat curve to the left of the boundary: cat shots misjudged as wall, the same size">
+      <active>pf-recognition-score-distributions-sd-25-cat-tail</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-25-title" speech2="The heading sigma equals 25: each shaded tail is 0.6 percent of its curve">
+      <active>pf-recognition-score-distributions-sd-25-title</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-25</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50" speech2="Right panel, grain size sigma equals 50">
+      <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-recognition-score-distributions-sd-50-axis</active>
+        <active>pf-recognition-score-distributions-sd-50-boundary</active>
+        <active>pf-recognition-score-distributions-sd-50-wall</active>
+        <active>pf-recognition-score-distributions-sd-50-cat</active>
+        <active>pf-recognition-score-distributions-sd-50-wall-tail</active>
+        <active>pf-recognition-score-distributions-sd-50-cat-tail</active>
+        <active>pf-recognition-score-distributions-sd-50-title</active>
+      </children>
+      <components>
+        <active>pf-recognition-score-distributions-sd-50-axis</active>
+        <active>pf-recognition-score-distributions-sd-50-boundary</active>
+        <active>pf-recognition-score-distributions-sd-50-wall</active>
+        <active>pf-recognition-score-distributions-sd-50-cat</active>
+        <active>pf-recognition-score-distributions-sd-50-wall-tail</active>
+        <active>pf-recognition-score-distributions-sd-50-cat-tail</active>
+        <active>pf-recognition-score-distributions-sd-50-title</active>
+      </components>
+      <parents>
+        <grouped>pf-recognition-score-distributions-score-distributions</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50-axis" speech2="A horizontal score axis with marks at minus 7839, 0 and plus 7839">
+      <active>pf-recognition-score-distributions-sd-50-axis</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50-boundary" speech2="A dashed vertical line at score 0, the decision boundary">
+      <active>pf-recognition-score-distributions-sd-50-boundary</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50-wall" speech2="The wine bell curve of the wall shots, centred at minus 7839; it is twice as wide and reaches well across the boundary">
+      <active>pf-recognition-score-distributions-sd-50-wall</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50-cat" speech2="The olive bell curve of the cat shots, centred at plus 7839, with the same shape">
+      <active>pf-recognition-score-distributions-sd-50-cat</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50-wall-tail" speech2="The shaded part of the wall curve to the right of the boundary: wall shots misjudged as cat. It is a clearly visible region, about a tenth of the curve.">
+      <active>pf-recognition-score-distributions-sd-50-wall-tail</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50-cat-tail" speech2="The shaded part of the cat curve to the left of the boundary: cat shots misjudged as wall, the same size">
+      <active>pf-recognition-score-distributions-sd-50-cat-tail</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-recognition-score-distributions-sd-50-title" speech2="The heading sigma equals 50: each shaded tail is 10.5 percent of its curve">
+      <active>pf-recognition-score-distributions-sd-50-title</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-recognition-score-distributions-sd-50</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -283,19 +283,38 @@
       </caption>
       <image width="72%">
         <prefigure label="pf-eigenvector-direction" xmlns="https://prefigure.org">
-          <diagram dimensions="(460,300)" margins="10">
+          <diagram dimensions="(460,357)" margins="10">
             <coordinates bbox="(-1.0,-1.7,5.0,2.9)">
-              <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-              <line endpoints="((-0.9,-0.45),(4.8,2.4))" stroke="gray" thickness="1"/>
-              <line endpoints="((0,0),(4,2))" stroke="#876801" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(2,1))" stroke="#4A5D23" thickness="3" arrows="1"/>
-              <line endpoints="((0,0),(3,-1))" stroke="#606060" thickness="2" arrows="1"/>
-              <line endpoints="((0,0),(1,1))" stroke="#5E011C" thickness="3" arrows="1"/>
-              <label p="(1.7,1.05)" alignment="nw" offset="(-4,4)" color="#4A5D23"><m>\vec{v}</m></label>
-              <label p="(3.9,1.75)" alignment="se" offset="(4,-6)" color="#876801"><m>A\vec{v} = 2\vec{v}</m></label>
-              <label p="(0.8,1.1)" alignment="n" offset="(0,6)" color="#5E011C"><m>\vec{w}</m></label>
-              <label p="(3.0,-1.05)" alignment="s" offset="(0,-6)" color="#606060"><m>A\vec{w}</m></label>
+              <group at="eigenvector-direction">
+                <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                <line at="ed-line" endpoints="((-0.9,-0.45),(4.8,2.4))" stroke="gray" thickness="1" dash="5 4"/>
+                <group at="ed-av">
+                  <line endpoints="((0,0),(4,2))" stroke="#876801" thickness="2" arrows="1"/>
+                  <label p="(3.9,1.75)" alignment="se" offset="(4,-6)" color="#876801"><m>A\vec{v} = 2\vec{v}</m></label>
+                </group>
+                <group at="ed-v">
+                  <line endpoints="((0,0),(2,1))" stroke="#4A5D23" thickness="3" arrows="1"/>
+                  <label p="(1.7,1.05)" alignment="nw" offset="(-4,4)" color="#4A5D23"><m>\vec{v}</m></label>
+                </group>
+                <group at="ed-aw">
+                  <line endpoints="((0,0),(3,-1))" stroke="#606060" thickness="2" arrows="1"/>
+                  <label p="(3.0,-1.05)" alignment="s" offset="(0,-6)" color="#606060"><m>A\vec{w}</m></label>
+                </group>
+                <group at="ed-w">
+                  <line endpoints="((0,0),(1,1))" stroke="#5E011C" thickness="3" arrows="1"/>
+                  <label p="(0.8,1.1)" alignment="n" offset="(0,6)" color="#5E011C"><m>\vec{w}</m></label>
+                </group>
+              </group>
             </coordinates>
+            <annotations>
+              <annotation ref="eigenvector-direction" text="Four vectors from the origin in the x y plane, drawn with the same scale on both axes: two vectors v and w, and their images under the matrix A">
+                <annotation ref="ed-v" text="The olive vector v from the origin to the point 2 comma 1"/>
+                <annotation ref="ed-line" text="A dashed grey line through the origin and the tip of v"/>
+                <annotation ref="ed-av" text="The mustard vector A v, from the origin to the point 4 comma 2; it lies on the same dashed line as v and is twice as long, so v is an eigenvector"/>
+                <annotation ref="ed-w" text="The wine vector w from the origin to the point 1 comma 1"/>
+                <annotation ref="ed-aw" text="The grey vector A w, from the origin to the point 3 comma minus 1, below the x axis; it points in a different direction from w, so w is not an eigenvector"/>
+              </annotation>
+            </annotations>
           </diagram>
         </prefigure>
       </image>

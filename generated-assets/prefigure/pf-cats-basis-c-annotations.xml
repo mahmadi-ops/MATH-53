@@ -1,0 +1,66 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-cats-basis-c-cats-basis-c" speech2="The basis C, made of M and Delta, drawn in the same plane of coordinates with the same scale on both axes">
+      <grouped>pf-cats-basis-c-cats-basis-c</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-cats-basis-c-cc-m</active>
+        <active>pf-cats-basis-c-cc-delta</active>
+        <active>pf-cats-basis-c-cc-a</active>
+        <active>pf-cats-basis-c-cc-d</active>
+        <active>pf-cats-basis-c-cc-line</active>
+        <active>pf-cats-basis-c-cc-blends</active>
+      </children>
+      <components>
+        <active>pf-cats-basis-c-cc-m</active>
+        <active>pf-cats-basis-c-cc-delta</active>
+        <active>pf-cats-basis-c-cc-a</active>
+        <active>pf-cats-basis-c-cc-d</active>
+        <active>pf-cats-basis-c-cc-line</active>
+        <active>pf-cats-basis-c-cc-blends</active>
+      </components>
+    </annotation>
+    <annotation id="pf-cats-basis-c-cc-m" speech2="The grey basis vector M, from the origin to the point one half comma one half; its tip is the midpoint of the segment of blends">
+      <active>pf-cats-basis-c-cc-m</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-cats-basis-c-cats-basis-c</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-basis-c-cc-delta" speech2="The mustard basis vector Delta, from the origin to the point one half comma minus one half; it is parallel to the line of blends">
+      <active>pf-cats-basis-c-cc-delta</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-cats-basis-c-cats-basis-c</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-basis-c-cc-a" speech2="The point A at 1 comma 0, which equals M plus Delta">
+      <active>pf-cats-basis-c-cc-a</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-cats-basis-c-cats-basis-c</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-basis-c-cc-d" speech2="The point D at 0 comma 1, which equals M minus Delta">
+      <active>pf-cats-basis-c-cc-d</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-cats-basis-c-cats-basis-c</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-basis-c-cc-line" speech2="The wine line through A and D: the point M plus every multiple of Delta">
+      <active>pf-cats-basis-c-cc-line</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-cats-basis-c-cats-basis-c</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-basis-c-cc-blends" speech2="The olive segment of blends from A to D">
+      <active>pf-cats-basis-c-cc-blends</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-cats-basis-c-cats-basis-c</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

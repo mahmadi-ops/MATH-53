@@ -1,0 +1,48 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-cats-line-cats-line" speech2="The same plane of coordinate vectors, now with the whole line x plus y equals 1">
+      <grouped>pf-cats-line-cats-line</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-cats-line-cl-line</active>
+        <active>pf-cats-line-cl-blends</active>
+        <active>pf-cats-line-cl-x-negative</active>
+        <active>pf-cats-line-cl-y-negative</active>
+      </children>
+      <components>
+        <active>pf-cats-line-cl-line</active>
+        <active>pf-cats-line-cl-blends</active>
+        <active>pf-cats-line-cl-x-negative</active>
+        <active>pf-cats-line-cl-y-negative</active>
+      </components>
+    </annotation>
+    <annotation id="pf-cats-line-cl-line" speech2="The wine line x plus y equals 1, falling from upper left to lower right through the points 0 comma 1 and 1 comma 0">
+      <active>pf-cats-line-cl-line</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-cats-line-cats-line</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-line-cl-blends" speech2="The olive segment of blends between 1 comma 0 and 0 comma 1 is the middle part of that line">
+      <active>pf-cats-line-cl-blends</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-cats-line-cats-line</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-line-cl-x-negative" speech2="Beyond the point 0 comma 1, to the upper left, the line continues with x negative">
+      <active>pf-cats-line-cl-x-negative</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-cats-line-cats-line</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-line-cl-y-negative" speech2="Beyond the point 1 comma 0, to the lower right, the line continues with y negative">
+      <active>pf-cats-line-cl-y-negative</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-cats-line-cats-line</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

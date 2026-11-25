@@ -754,30 +754,62 @@
       </caption>
       <image width="90%">
         <shortdescription>A two-dimensional schematic: a vertical decision boundary line with the empty-wall region on the left and the cat region on the right; the references Q and P sit symmetrically on either side with their midpoint M on the line; an arrow labelled W runs from Q to P perpendicular to the line; a long arrow from P runs nearly parallel to the boundary and stays on the cat side; a shorter arrow from P aimed back along W crosses the boundary into the empty-wall side</shortdescription>
-        <latex-image>
-          \begin{tikzpicture}[scale=1.1, every node/.style={font=\small}]
-            \fill[bookwine!7]  (-4.2,-1.8) rectangle (0,3.2);
-            \fill[bookolive!7] (0,-1.8) rectangle (5.4,3.2);
-            \draw[very thick, black!70] (0,-1.8) -- (0,3.2);
-            \node[black!70, anchor=west] at (0.12,1.5) {$s(X)=0$};
-            \node[anchor=north east, align=right] at (-0.2,3.15)
-              {$s(X)$ negative:\\ \emph{empty wall}};
-            \node[anchor=north west, align=left] at (0.2,3.15)
-              {$s(X)$ positive:\\ \emph{cat}};
-            \draw[dashed, black!55] (-1.2,0) -- (1.2,0);
-            \fill (1.2,0) circle (1.7pt) node[below right=-1pt] {$P$};
-            \fill (-1.2,0) circle (1.7pt) node[above left=-2pt] {$Q$};
-            \fill (0,0) circle (1.7pt) node[above left=-2pt] {$M$};
-            \draw[bookgray, very thick, -{Stealth[length=2.2mm]}] (-1.2,-1.15) -- (1.2,-1.15);
-            \node[anchor=east] at (-1.32,-1.15) {$W = P - Q$};
-            \draw[bookmustard, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (1.85,2.5);
-            \node[anchor=west, align=left] at (1.98,2.3)
-              {grain $G$: long,\\ but $G \cdot W$ small};
-            \draw[bookwine, very thick, -{Stealth[length=2.2mm]}] (1.2,0) -- (-0.62,-0.45);
-            \node[anchor=east, align=right] at (-0.74,-0.45)
-              {dimming: short,\\ but aimed along $W$};
-          \end{tikzpicture}
-        </latex-image>
+        <prefigure label="pf-decision-boundary" xmlns="https://prefigure.org">
+          <diagram dimensions="(559,306)" margins="10">
+            <coordinates bbox="(-4.3,-1.9,5.5,3.3)">
+              <group at="decision-boundary">
+                <group at="db-wall-side">
+                  <polygon points="((-4.2,-1.8),(0,-1.8),(0,3.2),(-4.2,3.2))" closed="yes" fill="#F6EEF0" stroke="none"/>
+                  <label p="(-0.2,2.95)" alignment="w" offset="(-2,0)"><m>s(X)</m> negative:</label>
+                  <label p="(-0.2,2.55)" alignment="w" offset="(-2,0)"><it>empty wall</it></label>
+                </group>
+                <group at="db-cat-side">
+                  <polygon points="((0,-1.8),(5.4,-1.8),(5.4,3.2),(0,3.2))" closed="yes" fill="#F0F2EA" stroke="none"/>
+                  <label p="(0.2,2.95)" alignment="e" offset="(2,0)"><m>s(X)</m> positive:</label>
+                  <label p="(0.2,2.55)" alignment="e" offset="(2,0)"><it>cat</it></label>
+                </group>
+                <group at="db-boundary">
+                  <line endpoints="((0,-1.8),(0,3.2))" stroke="#505050" thickness="3"/>
+                  <label p="(0.12,1.5)" alignment="e" offset="(2,0)" color="#505050"><m>s(X)=0</m></label>
+                </group>
+                <group at="db-references">
+                  <line endpoints="((-1.2,0),(1.2,0))" stroke="#808080" thickness="1" dash="5 4"/>
+                  <point p="(-1.2,0)" fill="black" size="3"/>
+                  <point p="(1.2,0)" fill="black" size="3"/>
+                  <point p="(0,0)" fill="black" size="3"/>
+                  <label p="(-1.2,0)" alignment="nw" offset="(-2,2)"><m>Q</m></label>
+                  <label p="(1.2,0)" alignment="se" offset="(3,-3)"><m>P</m></label>
+                  <label p="(0,0)" alignment="nw" offset="(-2,2)"><m>M</m></label>
+                </group>
+                <group at="db-w">
+                  <line endpoints="((-1.2,-1.15),(1.2,-1.15))" stroke="#606060" thickness="3" arrows="1"/>
+                  <label p="(-1.32,-1.15)" alignment="w" offset="(-2,0)"><m>W = P - Q</m></label>
+                </group>
+                <group at="db-grain">
+                  <line endpoints="((1.2,0),(1.85,2.5))" stroke="#876801" thickness="3" arrows="1"/>
+                  <label p="(1.98,2.25)" alignment="e" offset="(2,0)">grain <m>G</m>: long,</label>
+                  <label p="(1.98,1.85)" alignment="e" offset="(2,0)">but <m>G \cdot W</m> small</label>
+                </group>
+                <group at="db-dimming">
+                  <line endpoints="((1.2,0),(-0.62,-0.45))" stroke="#5E011C" thickness="3" arrows="1"/>
+                  <label p="(-0.74,-0.38)" alignment="w" offset="(-2,0)">dimming: short,</label>
+                  <label p="(-0.74,-0.78)" alignment="w" offset="(-2,0)">but aimed along <m>W</m></label>
+                </group>
+              </group>
+            </coordinates>
+            <annotations>
+              <annotation ref="decision-boundary" text="A two-dimensional picture of the classifier: a vertical boundary line separates the pictures judged empty wall, on the left, from those judged cat, on the right; the same scale is used in both directions">
+                <annotation ref="db-boundary" text="The vertical boundary line, where the score s of X equals 0"/>
+                <annotation ref="db-wall-side" text="The region to the left of the boundary, tinted wine: the score is negative and the verdict is empty wall"/>
+                <annotation ref="db-cat-side" text="The region to the right of the boundary, tinted olive: the score is positive and the verdict is cat"/>
+                <annotation ref="db-references" text="Three points on a horizontal dashed segment: the reference Q on the left, the reference P on the right at the same distance from the boundary, and their midpoint M on the boundary"/>
+                <annotation ref="db-w" text="A grey horizontal arrow below them, from under Q to under P, labelled W equals P minus Q; it is perpendicular to the boundary"/>
+                <annotation ref="db-grain" text="A long mustard arrow from P, pointing steeply upward and only slightly to the right, labelled grain G: long, but G dot W small; it stays on the cat side"/>
+                <annotation ref="db-dimming" text="A much shorter wine arrow from P, pointing to the left and slightly down, labelled dimming: short, but aimed along W; it ends across the boundary, on the empty-wall side"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
       </image>
     </figure>
 
@@ -1484,8 +1516,92 @@
           <m>\sigma = 25</m> to <m>\sigma = 50</m> turns a negligible tail into a
           tenth of all shots.
         </caption>
-        <image source="images/recognition-score-distributions.svg" width="100%">
+        <image width="100%">
           <shortdescription>Two panels, each showing two bell curves over the score axis: a deep wine curve for wall shots centered at minus 7839 and an olive green curve for cat shots centered at plus 7839, with a dashed vertical decision boundary at score zero. In the left panel, labeled sigma equals 25, the curves are narrow and barely overlap, and each shaded tail crossing the boundary is 0.6 percent of its curve. In the right panel, labeled sigma equals 50, the curves are twice as wide and overlap visibly, and each shaded tail is 10.5 percent of its curve</shortdescription>
+          <prefigure label="pf-recognition-score-distributions" xmlns="https://prefigure.org">
+            <diagram dimensions="(640,290)" margins="0">
+              <coordinates bbox="(0,0,640,290)">
+              <group at="score-distributions">
+                <group at="sd-25">
+                  <polygon at="sd-25-wall-tail" points="((160,62),(160,68.52),(163.11,66.61),(166.22,65.2),(169.33,64.18),(172.44,63.46),(175.56,62.96),(178.67,62.62),(181.78,62.39),(184.89,62.24),(188,62.15),(191.11,62.09),(194.22,62.05),(197.33,62.03),(200.44,62.02),(203.56,62.01),(206.67,62.01),(209.78,62),(212.89,62),(216,62),(219.11,62),(222.22,62),(225.33,62),(228.44,62),(231.56,62),(234.67,62),(237.78,62),(240.89,62),(244,62),(247.11,62),(250.22,62),(253.33,62),(256.44,62),(259.56,62),(262.67,62),(265.78,62),(268.89,62),(272,62),(275.11,62),(278.22,62),(281.33,62),(284.44,62),(287.56,62),(290.67,62),(293.78,62),(296.89,62),(300,62),(300,62))" closed="yes" fill="#D9BFC5" stroke="none"/>
+                  <polygon at="sd-25-cat-tail" points="((160,62),(160,68.52),(156.89,66.61),(153.78,65.2),(150.67,64.18),(147.56,63.46),(144.44,62.96),(141.33,62.62),(138.22,62.39),(135.11,62.24),(132,62.15),(128.89,62.09),(125.78,62.05),(122.67,62.03),(119.56,62.02),(116.44,62.01),(113.33,62.01),(110.22,62),(107.11,62),(104,62),(100.89,62),(97.78,62),(94.67,62),(91.56,62),(88.44,62),(85.33,62),(82.22,62),(79.11,62),(76,62),(72.89,62),(69.78,62),(66.67,62),(63.56,62),(60.44,62),(57.33,62),(54.22,62),(51.11,62),(48,62),(44.89,62),(41.78,62),(38.67,62),(35.56,62),(32.44,62),(29.33,62),(26.22,62),(23.11,62),(20,62),(20,62))" closed="yes" fill="#CBD2BC" stroke="none"/>
+                  <group at="sd-25-axis">
+                    <line endpoints="((20,62),(300,62))" stroke="#404040" thickness="1"/>
+                    <line endpoints="((102.24,62),(102.24,57))" stroke="#404040" thickness="1"/>
+                    <label p="(102.24,56)" alignment="s" offset="(0,-2)" scale="0.85"><m>-7839</m></label>
+                    <line endpoints="((160,62),(160,57))" stroke="#404040" thickness="1"/>
+                    <label p="(160,56)" alignment="s" offset="(0,-2)" scale="0.85"><m>0</m></label>
+                    <line endpoints="((217.76,62),(217.76,57))" stroke="#404040" thickness="1"/>
+                    <label p="(217.76,56)" alignment="s" offset="(0,-2)" scale="0.85"><m>+7839</m></label>
+                    <label p="(160,36)" alignment="s" scale="0.9">score <m>s(X)</m></label>
+                  </group>
+                  <group at="sd-25-boundary">
+                    <line endpoints="((160,62),(160,234))" stroke="#404040" thickness="1" dash="5 4"/>
+                    <label p="(160,235)" alignment="n" scale="0.8" color="#404040">boundary <m>s(X) = 0</m></label>
+                  </group>
+                  <group at="sd-25-wall">
+                    <polygon points="((20,62.26),(23.11,62.42),(26.22,62.66),(29.33,63.02),(32.44,63.54),(35.56,64.3),(38.67,65.36),(41.78,66.83),(44.89,68.82),(48,71.45),(51.11,74.86),(54.22,79.18),(57.33,84.54),(60.44,91.05),(63.56,98.75),(66.67,107.67),(69.78,117.72),(72.89,128.76),(76,140.54),(79.11,152.73),(82.22,164.93),(85.33,176.67),(88.44,187.44),(91.56,196.74),(94.67,204.13),(97.78,209.22),(100.89,211.74),(104,211.56),(107.11,208.69),(110.22,203.28),(113.33,195.61),(116.44,186.09),(119.56,175.16),(122.67,163.34),(125.78,151.11),(128.89,138.95),(132,127.25),(135.11,116.33),(138.22,106.42),(141.33,97.67),(144.44,90.12),(147.56,83.77),(150.67,78.55),(153.78,74.36),(156.89,71.06),(160,68.52),(163.11,66.61),(166.22,65.2),(169.33,64.18),(172.44,63.46),(175.56,62.96),(178.67,62.62),(181.78,62.39),(184.89,62.24),(188,62.15),(191.11,62.09),(194.22,62.05),(197.33,62.03),(200.44,62.02),(203.56,62.01),(206.67,62.01),(209.78,62),(212.89,62),(216,62),(219.11,62),(222.22,62),(225.33,62),(228.44,62),(231.56,62),(234.67,62),(237.78,62),(240.89,62),(244,62),(247.11,62),(250.22,62),(253.33,62),(256.44,62),(259.56,62),(262.67,62),(265.78,62),(268.89,62),(272,62),(275.11,62),(278.22,62),(281.33,62),(284.44,62),(287.56,62),(290.67,62),(293.78,62),(296.89,62),(300,62))" stroke="#5E011C" thickness="2"/>
+                    <label p="(102.24,212)" alignment="n" offset="(0,3)" scale="0.9" color="#5E011C">wall shots</label>
+                  </group>
+                  <group at="sd-25-cat">
+                    <polygon points="((20,62),(23.11,62),(26.22,62),(29.33,62),(32.44,62),(35.56,62),(38.67,62),(41.78,62),(44.89,62),(48,62),(51.11,62),(54.22,62),(57.33,62),(60.44,62),(63.56,62),(66.67,62),(69.78,62),(72.89,62),(76,62),(79.11,62),(82.22,62),(85.33,62),(88.44,62),(91.56,62),(94.67,62),(97.78,62),(100.89,62),(104,62),(107.11,62),(110.22,62),(113.33,62.01),(116.44,62.01),(119.56,62.02),(122.67,62.03),(125.78,62.05),(128.89,62.09),(132,62.15),(135.11,62.24),(138.22,62.39),(141.33,62.62),(144.44,62.96),(147.56,63.46),(150.67,64.18),(153.78,65.2),(156.89,66.61),(160,68.52),(163.11,71.06),(166.22,74.36),(169.33,78.55),(172.44,83.77),(175.56,90.12),(178.67,97.67),(181.78,106.42),(184.89,116.33),(188,127.25),(191.11,138.95),(194.22,151.11),(197.33,163.34),(200.44,175.16),(203.56,186.09),(206.67,195.61),(209.78,203.28),(212.89,208.69),(216,211.56),(219.11,211.74),(222.22,209.22),(225.33,204.13),(228.44,196.74),(231.56,187.44),(234.67,176.67),(237.78,164.93),(240.89,152.73),(244,140.54),(247.11,128.76),(250.22,117.72),(253.33,107.67),(256.44,98.75),(259.56,91.05),(262.67,84.54),(265.78,79.18),(268.89,74.86),(272,71.45),(275.11,68.82),(278.22,66.83),(281.33,65.36),(284.44,64.3),(287.56,63.54),(290.67,63.02),(293.78,62.66),(296.89,62.42),(300,62.26))" stroke="#4A5D23" thickness="2"/>
+                    <label p="(217.76,212)" alignment="n" offset="(0,3)" scale="0.9" color="#4A5D23">cat shots</label>
+                  </group>
+                  <label at="sd-25-title" p="(160,260)" alignment="n" scale="0.9"><m>\sigma = 25</m>: each shaded tail is 0.6% of its curve</label>
+                </group>
+                <group at="sd-50">
+                  <polygon at="sd-50-wall-tail" points="((480,62),(480,130.49),(483.11,121.32),(486.22,112.75),(489.33,104.9),(492.44,97.83),(495.56,91.56),(498.67,86.1),(501.78,81.41),(504.89,77.44),(508,74.14),(511.11,71.43),(514.22,69.23),(517.33,67.48),(520.44,66.11),(523.56,65.04),(526.67,64.22),(529.78,63.6),(532.89,63.14),(536,62.81),(539.11,62.56),(542.22,62.39),(545.33,62.26),(548.44,62.18),(551.56,62.12),(554.67,62.08),(557.78,62.05),(560.89,62.03),(564,62.02),(567.11,62.01),(570.22,62.01),(573.33,62),(576.44,62),(579.56,62),(582.67,62),(585.78,62),(588.89,62),(592,62),(595.11,62),(598.22,62),(601.33,62),(604.44,62),(607.56,62),(610.67,62),(613.78,62),(616.89,62),(620,62),(620,62))" closed="yes" fill="#D9BFC5" stroke="none"/>
+                  <polygon at="sd-50-cat-tail" points="((480,62),(480,130.49),(476.89,121.32),(473.78,112.75),(470.67,104.9),(467.56,97.83),(464.44,91.56),(461.33,86.1),(458.22,81.41),(455.11,77.44),(452,74.14),(448.89,71.43),(445.78,69.23),(442.67,67.48),(439.56,66.11),(436.44,65.04),(433.33,64.22),(430.22,63.6),(427.11,63.14),(424,62.81),(420.89,62.56),(417.78,62.39),(414.67,62.26),(411.56,62.18),(408.44,62.12),(405.33,62.08),(402.22,62.05),(399.11,62.03),(396,62.02),(392.89,62.01),(389.78,62.01),(386.67,62),(383.56,62),(380.44,62),(377.33,62),(374.22,62),(371.11,62),(368,62),(364.89,62),(361.78,62),(358.67,62),(355.56,62),(352.44,62),(349.33,62),(346.22,62),(343.11,62),(340,62),(340,62))" closed="yes" fill="#CBD2BC" stroke="none"/>
+                  <group at="sd-50-axis">
+                    <line endpoints="((340,62),(620,62))" stroke="#404040" thickness="1"/>
+                    <line endpoints="((444.6,62),(444.6,57))" stroke="#404040" thickness="1"/>
+                    <label p="(444.6,56)" alignment="s" offset="(0,-2)" scale="0.85"><m>-7839</m></label>
+                    <line endpoints="((480,62),(480,57))" stroke="#404040" thickness="1"/>
+                    <label p="(480,56)" alignment="s" offset="(0,-2)" scale="0.85"><m>0</m></label>
+                    <line endpoints="((515.4,62),(515.4,57))" stroke="#404040" thickness="1"/>
+                    <label p="(515.4,56)" alignment="s" offset="(0,-2)" scale="0.85"><m>+7839</m></label>
+                    <label p="(480,36)" alignment="s" scale="0.9">score <m>s(X)</m></label>
+                  </group>
+                  <group at="sd-50-boundary">
+                    <line endpoints="((480,62),(480,234))" stroke="#404040" thickness="1" dash="5 4"/>
+                    <label p="(480,235)" alignment="n" scale="0.8" color="#404040">boundary <m>s(X) = 0</m></label>
+                  </group>
+                  <group at="sd-50-wall">
+                    <polygon points="((340,62.16),(343.11,62.24),(346.22,62.35),(349.33,62.51),(352.44,62.74),(355.56,63.05),(358.67,63.48),(361.78,64.06),(364.89,64.82),(368,65.82),(371.11,67.12),(374.22,68.77),(377.33,70.85),(380.44,73.43),(383.56,76.59),(386.67,80.38),(389.78,84.9),(392.89,90.17),(396,96.24),(399.11,103.12),(402.22,110.79),(405.33,119.19),(408.44,128.23),(411.56,137.77),(414.67,147.65),(417.78,157.65),(420.89,167.54),(424,177.04),(427.11,185.89),(430.22,193.81),(433.33,200.55),(436.44,205.89),(439.56,209.63),(442.67,211.65),(445.78,211.87),(448.89,210.28),(452,206.95),(455.11,201.98),(458.22,195.56),(461.33,187.9),(464.44,179.25),(467.56,169.88),(470.67,160.06),(473.78,150.06),(476.89,140.14),(480,130.49),(483.11,121.32),(486.22,112.75),(489.33,104.9),(492.44,97.83),(495.56,91.56),(498.67,86.1),(501.78,81.41),(504.89,77.44),(508,74.14),(511.11,71.43),(514.22,69.23),(517.33,67.48),(520.44,66.11),(523.56,65.04),(526.67,64.22),(529.78,63.6),(532.89,63.14),(536,62.81),(539.11,62.56),(542.22,62.39),(545.33,62.26),(548.44,62.18),(551.56,62.12),(554.67,62.08),(557.78,62.05),(560.89,62.03),(564,62.02),(567.11,62.01),(570.22,62.01),(573.33,62),(576.44,62),(579.56,62),(582.67,62),(585.78,62),(588.89,62),(592,62),(595.11,62),(598.22,62),(601.33,62),(604.44,62),(607.56,62),(610.67,62),(613.78,62),(616.89,62),(620,62))" stroke="#5E011C" thickness="2"/>
+                    <label p="(438.6,220)" alignment="w" offset="(-6,0)" scale="0.9" color="#5E011C">wall shots</label>
+                  </group>
+                  <group at="sd-50-cat">
+                    <polygon points="((340,62),(343.11,62),(346.22,62),(349.33,62),(352.44,62),(355.56,62),(358.67,62),(361.78,62),(364.89,62),(368,62),(371.11,62),(374.22,62),(377.33,62),(380.44,62),(383.56,62),(386.67,62),(389.78,62.01),(392.89,62.01),(396,62.02),(399.11,62.03),(402.22,62.05),(405.33,62.08),(408.44,62.12),(411.56,62.18),(414.67,62.26),(417.78,62.39),(420.89,62.56),(424,62.81),(427.11,63.14),(430.22,63.6),(433.33,64.22),(436.44,65.04),(439.56,66.11),(442.67,67.48),(445.78,69.23),(448.89,71.43),(452,74.14),(455.11,77.44),(458.22,81.41),(461.33,86.1),(464.44,91.56),(467.56,97.83),(470.67,104.9),(473.78,112.75),(476.89,121.32),(480,130.49),(483.11,140.14),(486.22,150.06),(489.33,160.06),(492.44,169.88),(495.56,179.25),(498.67,187.9),(501.78,195.56),(504.89,201.98),(508,206.95),(511.11,210.28),(514.22,211.87),(517.33,211.65),(520.44,209.63),(523.56,205.89),(526.67,200.55),(529.78,193.81),(532.89,185.89),(536,177.04),(539.11,167.54),(542.22,157.65),(545.33,147.65),(548.44,137.77),(551.56,128.23),(554.67,119.19),(557.78,110.79),(560.89,103.12),(564,96.24),(567.11,90.17),(570.22,84.9),(573.33,80.38),(576.44,76.59),(579.56,73.43),(582.67,70.85),(585.78,68.77),(588.89,67.12),(592,65.82),(595.11,64.82),(598.22,64.06),(601.33,63.48),(604.44,63.05),(607.56,62.74),(610.67,62.51),(613.78,62.35),(616.89,62.24),(620,62.16))" stroke="#4A5D23" thickness="2"/>
+                    <label p="(521.4,220)" alignment="e" offset="(6,0)" scale="0.9" color="#4A5D23">cat shots</label>
+                  </group>
+                  <label at="sd-50-title" p="(480,260)" alignment="n" scale="0.9"><m>\sigma = 50</m>: each shaded tail is 10.5% of its curve</label>
+                </group>
+              </group>
+              </coordinates>
+              <annotations>
+                <annotation ref="score-distributions" text="Two panels side by side, each showing the distribution of scores of grainy wall shots and grainy cat shots as two bell curves over a score axis">
+                <annotation ref="sd-25" text="Left panel, grain size sigma equals 25">
+                  <annotation ref="sd-25-axis" text="A horizontal score axis with marks at minus 7839, 0 and plus 7839"/>
+                  <annotation ref="sd-25-boundary" text="A dashed vertical line at score 0, the decision boundary"/>
+                  <annotation ref="sd-25-wall" text="The wine bell curve of the wall shots, centred at minus 7839; it is narrow and has almost died out before reaching the boundary"/>
+                  <annotation ref="sd-25-cat" text="The olive bell curve of the cat shots, centred at plus 7839, with the same shape"/>
+                  <annotation ref="sd-25-wall-tail" text="The shaded part of the wall curve to the right of the boundary: wall shots misjudged as cat. It is a barely visible sliver."/>
+                  <annotation ref="sd-25-cat-tail" text="The shaded part of the cat curve to the left of the boundary: cat shots misjudged as wall, the same size"/>
+                  <annotation ref="sd-25-title" text="The heading sigma equals 25: each shaded tail is 0.6 percent of its curve"/>
+                </annotation>
+                <annotation ref="sd-50" text="Right panel, grain size sigma equals 50">
+                  <annotation ref="sd-50-axis" text="A horizontal score axis with marks at minus 7839, 0 and plus 7839"/>
+                  <annotation ref="sd-50-boundary" text="A dashed vertical line at score 0, the decision boundary"/>
+                  <annotation ref="sd-50-wall" text="The wine bell curve of the wall shots, centred at minus 7839; it is twice as wide and reaches well across the boundary"/>
+                  <annotation ref="sd-50-cat" text="The olive bell curve of the cat shots, centred at plus 7839, with the same shape"/>
+                  <annotation ref="sd-50-wall-tail" text="The shaded part of the wall curve to the right of the boundary: wall shots misjudged as cat. It is a clearly visible region, about a tenth of the curve."/>
+                  <annotation ref="sd-50-cat-tail" text="The shaded part of the cat curve to the left of the boundary: cat shots misjudged as wall, the same size"/>
+                  <annotation ref="sd-50-title" text="The heading sigma equals 50: each shaded tail is 10.5 percent of its curve"/>
+                </annotation>
+                </annotation>
+              </annotations>
+            </diagram>
+          </prefigure>
         </image>
       </figure>
       <p>
@@ -1517,8 +1633,91 @@
           distort the shots. Even at <m>\sigma = 100</m> the machine still beats
           guessing.
         </caption>
-        <image source="images/recognition-accuracy-curve.svg" width="82%">
+        <image width="82%">
           <shortdescription>A graph of the probability of a correct verdict, from 0.5 to 1, against grain size sigma from 5 to 100. A smooth olive green curve, labeled exact formula Phi of norm of W over two sigma, starts at 1 for small sigma and descends to about 0.73 at sigma equals 100. Deep wine dots, labeled simulation of 4000 shots each, follow the curve closely until about sigma equals 60 and then drift slightly below it, with an annotation explaining that clipping at 0 and 255 drags real shots below the unclipped formula. A dashed horizontal line at 0.5 is labeled guessing, and an annotation marks the section's cell at sigma equals 25 with accuracy approximately 0.994</shortdescription>
+          <prefigure label="pf-recognition-accuracy-curve" xmlns="https://prefigure.org">
+            <diagram dimensions="(520,310)" margins="0">
+              <coordinates bbox="(0,0,520,310)">
+              <group at="accuracy-curve">
+                <group at="ac-frame">
+                  <line endpoints="((62,111.69),(500,111.69))" stroke="#E2E6D9" thickness="1"/>
+                  <line endpoints="((62,155.48),(500,155.48))" stroke="#E2E6D9" thickness="1"/>
+                  <line endpoints="((62,199.28),(500,199.28))" stroke="#E2E6D9" thickness="1"/>
+                  <line endpoints="((62,243.07),(500,243.07))" stroke="#E2E6D9" thickness="1"/>
+                  <line endpoints="((62,286.86),(500,286.86))" stroke="#E2E6D9" thickness="1"/>
+                  <line endpoints="((62,46),(62,300))" stroke="#606060" thickness="1"/>
+                  <line endpoints="((62,46),(500,46))" stroke="#606060" thickness="1"/>
+                  <line endpoints="((131.16,46),(131.16,41))" stroke="#606060" thickness="1"/>
+                  <label p="(131.16,40)" alignment="s" offset="(0,-2)"><m>20</m></label>
+                  <line endpoints="((223.37,46),(223.37,41))" stroke="#606060" thickness="1"/>
+                  <label p="(223.37,40)" alignment="s" offset="(0,-2)"><m>40</m></label>
+                  <line endpoints="((315.58,46),(315.58,41))" stroke="#606060" thickness="1"/>
+                  <label p="(315.58,40)" alignment="s" offset="(0,-2)"><m>60</m></label>
+                  <line endpoints="((407.79,46),(407.79,41))" stroke="#606060" thickness="1"/>
+                  <label p="(407.79,40)" alignment="s" offset="(0,-2)"><m>80</m></label>
+                  <line endpoints="((500,46),(500,41))" stroke="#606060" thickness="1"/>
+                  <label p="(500,40)" alignment="s" offset="(0,-2)"><m>100</m></label>
+                  <line endpoints="((62,67.9),(57,67.9))" stroke="#606060" thickness="1"/>
+                  <label p="(56,67.9)" alignment="w" offset="(-2,0)"><m>0.5</m></label>
+                  <line endpoints="((62,111.69),(57,111.69))" stroke="#606060" thickness="1"/>
+                  <label p="(56,111.69)" alignment="w" offset="(-2,0)"><m>0.6</m></label>
+                  <line endpoints="((62,155.48),(57,155.48))" stroke="#606060" thickness="1"/>
+                  <label p="(56,155.48)" alignment="w" offset="(-2,0)"><m>0.7</m></label>
+                  <line endpoints="((62,199.28),(57,199.28))" stroke="#606060" thickness="1"/>
+                  <label p="(56,199.28)" alignment="w" offset="(-2,0)"><m>0.8</m></label>
+                  <line endpoints="((62,243.07),(57,243.07))" stroke="#606060" thickness="1"/>
+                  <label p="(56,243.07)" alignment="w" offset="(-2,0)"><m>0.9</m></label>
+                  <line endpoints="((62,286.86),(57,286.86))" stroke="#606060" thickness="1"/>
+                  <label p="(56,286.86)" alignment="w" offset="(-2,0)"><m>1.0</m></label>
+                  <label p="(281,18)" alignment="s">grain size <m>\sigma</m> (gray levels)</label>
+                  <label p="(14,173)" alignment="c" rotate="90">probability of a correct verdict</label>
+                </group>
+                <group at="ac-guessing">
+                  <line endpoints="((62,67.9),(500,67.9))" stroke="#404040" thickness="1" dash="5 4"/>
+                  <label p="(488,67.9)" alignment="nw" offset="(-2,3)" scale="0.9" color="#606060">guessing</label>
+                </group>
+                <group at="ac-formula">
+                  <polygon points="((62,286.86),(67.47,286.86),(72.95,286.86),(78.42,286.86),(83.9,286.86),(89.38,286.86),(94.85,286.86),(100.33,286.86),(105.8,286.86),(111.28,286.85),(116.75,286.82),(122.22,286.75),(127.7,286.61),(133.18,286.38),(138.65,286.03),(144.12,285.53),(149.6,284.87),(155.07,284.03),(160.55,283.01),(166.03,281.8),(171.5,280.42),(176.97,278.87),(182.45,277.17),(187.93,275.33),(193.4,273.36),(198.88,271.29),(204.35,269.13),(209.82,266.9),(215.3,264.6),(220.78,262.25),(226.25,259.86),(231.72,257.45),(237.2,255.02),(242.68,252.59),(248.15,250.15),(253.62,247.72),(259.1,245.3),(264.57,242.9),(270.05,240.51),(275.52,238.16),(281,235.83),(286.48,233.53),(291.95,231.26),(297.43,229.03),(302.9,226.83),(308.38,224.67),(313.85,222.55),(319.32,220.46),(324.8,218.41),(330.27,216.4),(335.75,214.43),(341.23,212.5),(346.7,210.6),(352.18,208.74),(357.65,206.92),(363.12,205.13),(368.6,203.38),(374.07,201.67),(379.55,199.99),(385.02,198.34),(390.5,196.73),(395.98,195.15),(401.45,193.61),(406.93,192.09),(412.4,190.61),(417.88,189.16),(423.35,187.73),(428.82,186.34),(434.3,184.97),(439.77,183.63),(445.25,182.32),(450.73,181.03),(456.2,179.77),(461.68,178.54),(467.15,177.32),(472.62,176.14),(478.1,174.97),(483.57,173.83),(489.05,172.71),(494.52,171.61),(500,170.53))" stroke="#4A5D23" thickness="3"/>
+                  <label p="(163.43,140.16)" alignment="e" color="#4A5D23">exact formula <m>\Phi(\| W \| / 2\sigma)</m></label>
+                </group>
+                <group at="ac-simulation">
+                  <point p="(85.05,286.86)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(131.16,286.34)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(177.26,279.5)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(223.37,262.12)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(269.47,239.78)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(315.58,219.07)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(361.68,198.18)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(407.79,179.88)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(453.89,163.02)" fill="#5E011C" stroke="white" size="4"/>
+                  <point p="(500,150.23)" fill="#5E011C" stroke="white" size="4"/>
+                  <label p="(163.43,120.45)" alignment="e" color="#5E011C">simulation, 4000 shots each</label>
+                </group>
+                <group at="ac-cell">
+                  <line endpoints="((154.21,281.18),(144.99,249.64))" stroke="#404040" thickness="1"/>
+                  <label p="(80.44,240.88)" alignment="e" scale="0.9">the section's cell:</label>
+                  <label p="(80.44,226.43)" alignment="e" scale="0.9"><m>\sigma = 25</m>, accuracy <m>\approx 0.994</m></label>
+                </group>
+                <group at="ac-clipping">
+                  <line endpoints="((476.95,154.61),(449.28,135.78))" stroke="#606060" thickness="1"/>
+                  <label p="(366.29,128.33)" alignment="e" scale="0.85" color="#404040">clipping at 0 and 255</label>
+                  <label p="(366.29,116.51)" alignment="e" scale="0.85" color="#404040">drags real shots below</label>
+                  <label p="(366.29,104.68)" alignment="e" scale="0.85" color="#404040">the unclipped formula</label>
+                </group>
+              </group>
+              </coordinates>
+              <annotations>
+                <annotation ref="accuracy-curve" text="A graph of the probability of a correct verdict, on a vertical axis from 0.5 to 1, against the grain size sigma in gray levels, on a horizontal axis from 5 to 100">
+                  <annotation ref="ac-frame" text="The axes: grain size marked at 20, 40, 60, 80 and 100, probability marked from 0.5 to 1.0 in steps of 0.1, with faint horizontal grid lines"/>
+                  <annotation ref="ac-formula" text="The smooth olive curve, the exact formula Phi of the norm of W over 2 sigma: it stays at 1 up to about sigma equals 20, passes 0.994 at 25, 0.89 at 50, and descends to about 0.73 at sigma equals 100"/>
+                  <annotation ref="ac-simulation" text="Ten wine dots, simulations of 4000 shots each, at sigma equals 10, 20 and so on up to 100: they lie on the curve up to about 50 and then fall below it, reaching about 0.69 at 100 where the curve is at 0.73"/>
+                  <annotation ref="ac-cell" text="A note pointing at the curve at sigma equals 25: the section's cell, accuracy about 0.994"/>
+                  <annotation ref="ac-clipping" text="A note pointing at the gap between dots and curve on the right: clipping at 0 and 255 drags real shots below the unclipped formula"/>
+                  <annotation ref="ac-guessing" text="A dashed horizontal line at probability 0.5, labelled guessing; the curve and all the dots stay above it"/>
+                </annotation>
+              </annotations>
+            </diagram>
+          </prefigure>
         </image>
       </figure>
     </paragraphs>

@@ -432,14 +432,29 @@
             <prefigure label="pf-cats-segment" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
-                  <point p="(1,0)" fill="#4A5D23" size="4"/>
-                  <point p="(0,1)" fill="#4A5D23" size="4"/>
-                  <label p="(1,0)" alignment="s" offset="(6,-8)"><m>[A]_\mathcal{B}</m></label>
-                  <label p="(0,1)" alignment="w" offset="(-10,6)"><m>[D]_\mathcal{B}</m></label>
-                  <label p="(0.5,0.5)" alignment="ne" offset="(14,14)">blends</label>
+                  <group at="cats-segment">
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <group at="cs-blends">
+                      <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                      <label p="(0.5,0.5)" alignment="ne" offset="(14,14)">blends</label>
+                    </group>
+                    <group at="cs-a">
+                      <point p="(1,0)" fill="#4A5D23" size="4"/>
+                      <label p="(1,0)" alignment="s" offset="(6,-8)"><m>[A]_\mathcal{B}</m></label>
+                    </group>
+                    <group at="cs-d">
+                      <point p="(0,1)" fill="#4A5D23" size="4"/>
+                      <label p="(0,1)" alignment="w" offset="(-10,6)"><m>[D]_\mathcal{B}</m></label>
+                    </group>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="cats-segment" text="The plane of coordinate vectors x comma y relative to the basis B, with the blends marked">
+                    <annotation ref="cs-a" text="The point 1 comma 0 on the x axis, the coordinate vector of the picture A"/>
+                    <annotation ref="cs-d" text="The point 0 comma 1 on the y axis, the coordinate vector of the picture D"/>
+                    <annotation ref="cs-blends" text="The olive segment joining these two points holds the blends: x plus y equals 1 with both coordinates between 0 and 1"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>
@@ -452,15 +467,29 @@
             <prefigure label="pf-cats-line" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="#5E011C" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
-                  <point p="(1,0)" fill="#4A5D23" size="4"/>
-                  <point p="(0,1)" fill="#4A5D23" size="4"/>
-                  <label p="(1.4,1.6)" alignment="c"><m>x+y=1</m></label>
-                  <label p="(-1.5,1.3)" alignment="c">x negative</label>
-                  <label p="(1.5,-1.3)" alignment="c">y negative</label>
+                  <group at="cats-line">
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <group at="cl-line">
+                      <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="#5E011C" thickness="2"/>
+                      <label p="(1.4,1.6)" alignment="c"><m>x+y=1</m></label>
+                    </group>
+                    <group at="cl-blends">
+                      <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                      <point p="(1,0)" fill="#4A5D23" size="4"/>
+                      <point p="(0,1)" fill="#4A5D23" size="4"/>
+                    </group>
+                    <label at="cl-x-negative" p="(-1.5,1.3)" alignment="c">x negative</label>
+                    <label at="cl-y-negative" p="(1.5,-1.3)" alignment="c">y negative</label>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="cats-line" text="The same plane of coordinate vectors, now with the whole line x plus y equals 1">
+                    <annotation ref="cl-line" text="The wine line x plus y equals 1, falling from upper left to lower right through the points 0 comma 1 and 1 comma 0"/>
+                    <annotation ref="cl-blends" text="The olive segment of blends between 1 comma 0 and 0 comma 1 is the middle part of that line"/>
+                    <annotation ref="cl-x-negative" text="Beyond the point 0 comma 1, to the upper left, the line continues with x negative"/>
+                    <annotation ref="cl-y-negative" text="Beyond the point 1 comma 0, to the lower right, the line continues with y negative"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>
@@ -473,16 +502,32 @@
             <prefigure label="pf-cats-plane" xmlns="https://prefigure.org">
               <diagram dimensions="(230,230)" margins="6">
                 <coordinates bbox="(-2.4,-2.4,2.6,2.6)">
-                  <polygon points="((-2.4,-2.4),(2.6,-2.4),(2.6,2.6),(-2.4,2.6))" fill="#EDF0E6" stroke="none"/>
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="#5E011C" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
-                  <point p="(1,0)" fill="#4A5D23" size="4"/>
-                  <point p="(0,1)" fill="#4A5D23" size="4"/>
-                  <point p="(1.5,1.3)" fill="#606060" size="4"/>
-                  <label p="(1.5,1.3)" alignment="e" offset="(8,4)"><m>[X]_\mathcal{B}</m></label>
-                  <label p="(-1.5,-1.5)" alignment="c"><m>W \cong \mathbb{R}^2</m></label>
+                  <group at="cats-plane">
+                    <group at="cp-plane">
+                      <polygon points="((-2.4,-2.4),(2.6,-2.4),(2.6,2.6),(-2.4,2.6))" fill="#EDF0E6" stroke="none"/>
+                      <label p="(-1.5,-1.5)" alignment="c"><m>W \cong \mathbb{R}^2</m></label>
+                    </group>
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <line at="cp-line" endpoints="((-1.6,2.6),(2.6,-1.6))" stroke="#5E011C" thickness="2"/>
+                    <group at="cp-blends">
+                      <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                      <point p="(1,0)" fill="#4A5D23" size="4"/>
+                      <point p="(0,1)" fill="#4A5D23" size="4"/>
+                    </group>
+                    <group at="cp-point">
+                      <point p="(1.5,1.3)" fill="#606060" size="4"/>
+                      <label p="(1.5,1.3)" alignment="e" offset="(8,4)"><m>[X]_\mathcal{B}</m></label>
+                    </group>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="cats-plane" text="The same plane of coordinate vectors, now shaded completely">
+                    <annotation ref="cp-plane" text="The whole plane is shaded pale olive and labelled W is isomorphic to R 2: every pair of coefficients gives an element of W"/>
+                    <annotation ref="cp-line" text="The wine line x plus y equals 1 is one line inside this plane"/>
+                    <annotation ref="cp-blends" text="The olive segment of blends is a small part of that line"/>
+                    <annotation ref="cp-point" text="A grey point off the line, in the first quadrant, is the coordinate vector of a general element X of W"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>
@@ -610,16 +655,30 @@
           </caption>
           <image>
             <prefigure label="pf-cats-basis-b" xmlns="https://prefigure.org">
-              <diagram dimensions="(240,240)" margins="8">
+              <diagram dimensions="(240,228)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="#5E011C" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
-                  <line endpoints="((0,0),(1,0))" stroke="#876801" thickness="4" arrows="1"/>
-                  <line endpoints="((0,0),(0,1))" stroke="#876801" thickness="4" arrows="1"/>
-                  <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
-                  <label p="(0,1)" alignment="w" offset="(-6,0)"><m>D</m></label>
+                  <group at="cats-basis-b">
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <line at="cb-line" endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="#5E011C" thickness="2"/>
+                    <line at="cb-blends" endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                    <group at="cb-a">
+                      <line endpoints="((0,0),(1,0))" stroke="#876801" thickness="4" arrows="1"/>
+                      <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
+                    </group>
+                    <group at="cb-d">
+                      <line endpoints="((0,0),(0,1))" stroke="#876801" thickness="4" arrows="1"/>
+                      <label p="(0,1)" alignment="w" offset="(-6,0)"><m>D</m></label>
+                    </group>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="cats-basis-b" text="The basis B, made of A and D, drawn in the plane of coordinates with the same scale on both axes">
+                    <annotation ref="cb-a" text="The mustard basis vector A, one unit along the x axis"/>
+                    <annotation ref="cb-d" text="The mustard basis vector D, one unit along the y axis"/>
+                    <annotation ref="cb-line" text="The wine line through the tips of A and D, where the coefficients add up to 1"/>
+                    <annotation ref="cb-blends" text="The olive segment from the tip of A to the tip of D, the blends"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>
@@ -631,24 +690,44 @@
           </caption>
           <image>
             <prefigure label="pf-cats-basis-c" xmlns="https://prefigure.org">
-              <diagram dimensions="(240,240)" margins="8">
+              <diagram dimensions="(240,228)" margins="8">
                 <coordinates bbox="(-1.5,-1.5,2.3,2.1)">
-                  <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
-                  <line endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="#5E011C" thickness="2"/>
-                  <line endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
-                  <line at="vector-M" endpoints="((0,0),(0.5,0.5))" stroke="#606060" thickness="4" arrows="1"/>
-                  <line at="vector-Delta" endpoints="((0,0),(0.5,-0.5))" stroke="#876801" thickness="4" arrows="1"/>
-                  <point at="point-A" p="(1,0)" fill="#4A5D23" size="4"/>
-                  <point at="point-D" p="(0,1)" fill="#4A5D23" size="4"/>
-                  <label p="(0.5,0.5)" alignment="ne"><m>M</m></label>
-                  <label p="(0.5,-0.5)" alignment="se"><m>\Delta</m></label>
-                  <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
-                  <label p="(0,1)" alignment="w" offset="(-6,0)"><m>D</m></label>
-                  <legend anchor="(2.2,2.0)" alignment="sw" scale="0.9">
-                    <item ref="point-A"><m>A = M + \Delta</m></item>
-                    <item ref="point-D"><m>D = M - \Delta</m></item>
-                  </legend>
+                  <group at="cats-basis-c">
+                    <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+                    <line at="cc-line" endpoints="((-0.5,1.5),(1.5,-0.5))" stroke="#5E011C" thickness="2"/>
+                    <line at="cc-blends" endpoints="((1,0),(0,1))" stroke="#4A5D23" thickness="3"/>
+                    <group at="cc-m">
+                      <line at="vector-M" endpoints="((0,0),(0.5,0.5))" stroke="#606060" thickness="4" arrows="1"/>
+                      <label p="(0.5,0.5)" alignment="ne"><m>M</m></label>
+                    </group>
+                    <group at="cc-delta">
+                      <line at="vector-Delta" endpoints="((0,0),(0.5,-0.5))" stroke="#876801" thickness="4" arrows="1"/>
+                      <label p="(0.5,-0.5)" alignment="se"><m>\Delta</m></label>
+                    </group>
+                    <group at="cc-a">
+                      <point at="point-A" p="(1,0)" fill="#4A5D23" size="4"/>
+                      <label p="(1,0)" alignment="s" offset="(0,-6)"><m>A</m></label>
+                    </group>
+                    <group at="cc-d">
+                      <point at="point-D" p="(0,1)" fill="#4A5D23" size="4"/>
+                      <label p="(0,1)" alignment="w" offset="(-6,0)"><m>D</m></label>
+                    </group>
+                    <legend anchor="(2.2,2.0)" alignment="sw" scale="0.9">
+                      <item ref="point-A"><m>A = M + \Delta</m></item>
+                      <item ref="point-D"><m>D = M - \Delta</m></item>
+                    </legend>
+                  </group>
                 </coordinates>
+                <annotations>
+                  <annotation ref="cats-basis-c" text="The basis C, made of M and Delta, drawn in the same plane of coordinates with the same scale on both axes">
+                    <annotation ref="cc-m" text="The grey basis vector M, from the origin to the point one half comma one half; its tip is the midpoint of the segment of blends"/>
+                    <annotation ref="cc-delta" text="The mustard basis vector Delta, from the origin to the point one half comma minus one half; it is parallel to the line of blends"/>
+                    <annotation ref="cc-a" text="The point A at 1 comma 0, which equals M plus Delta"/>
+                    <annotation ref="cc-d" text="The point D at 0 comma 1, which equals M minus Delta"/>
+                    <annotation ref="cc-line" text="The wine line through A and D: the point M plus every multiple of Delta"/>
+                    <annotation ref="cc-blends" text="The olive segment of blends from A to D"/>
+                  </annotation>
+                </annotations>
               </diagram>
             </prefigure>
           </image>

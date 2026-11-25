@@ -1,0 +1,57 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-alice-state-diagram-alice-states" speech2="A state diagram with two states drawn as circles, A on the left and B on the right, and three arrows labelled with probabilities">
+      <grouped>pf-alice-state-diagram-alice-states</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-alice-state-diagram-as-a</active>
+        <active>pf-alice-state-diagram-as-b</active>
+        <active>pf-alice-state-diagram-as-a-to-b</active>
+        <active>pf-alice-state-diagram-as-b-to-a</active>
+        <active>pf-alice-state-diagram-as-b-loop</active>
+      </children>
+      <components>
+        <active>pf-alice-state-diagram-as-a</active>
+        <active>pf-alice-state-diagram-as-b</active>
+        <active>pf-alice-state-diagram-as-a-to-b</active>
+        <active>pf-alice-state-diagram-as-b-to-a</active>
+        <active>pf-alice-state-diagram-as-b-loop</active>
+      </components>
+    </annotation>
+    <annotation id="pf-alice-state-diagram-as-a" speech2="The state A, a circle on the left">
+      <active>pf-alice-state-diagram-as-a</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-alice-state-diagram-alice-states</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-alice-state-diagram-as-b" speech2="The state B, a circle on the right">
+      <active>pf-alice-state-diagram-as-b</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-alice-state-diagram-alice-states</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-alice-state-diagram-as-a-to-b" speech2="An arrow from A to B labelled 1: from A the next day is always B">
+      <active>pf-alice-state-diagram-as-a-to-b</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-alice-state-diagram-alice-states</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-alice-state-diagram-as-b-to-a" speech2="An arrow from B to A labelled one quarter">
+      <active>pf-alice-state-diagram-as-b-to-a</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-alice-state-diagram-alice-states</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-alice-state-diagram-as-b-loop" speech2="A loop from B back to B labelled three quarters, the probability of staying at B; there is no loop at A">
+      <active>pf-alice-state-diagram-as-b-loop</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-alice-state-diagram-alice-states</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
