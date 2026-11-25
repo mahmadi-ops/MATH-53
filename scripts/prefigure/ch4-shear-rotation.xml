@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Print version of the interactive figure assets/demos-manim/shear-rotation.html
+     (Section 4.5, "An Application: Rotating a Picture Using Only Shears"): the
+     square picture after the first shear H_a at the interactive's starting angle
+     theta = 60 degrees, a = -tan(30 degrees) = -0.577, with arrows showing how far
+     each horizontal line has slid.
+     Build with the standalone option of scripts/build-book-figures.py;
+     see scripts/FIGURES.md. -->
+<diagram xmlns="https://prefigure.org" dimensions="(404,260)" margins="10">
+  <coordinates bbox="(-2.4,-1.5,2.4,1.5)">
+    <group at="first-shear">
+      <axes xlabel="x" ylabel="y" arrows="2" decorations="no"/>
+      <polygon at="sr-start" points="((-1.000,-1.000),(1.000,-1.000),(1.000,1.000),(-1.000,1.000))" closed="yes" stroke="#909090" thickness="1" dash="4 3"/>
+      <polygon at="sr-picture" points="((-0.423,-1.000),(1.577,-1.000),(0.423,1.000),(-1.577,1.000))" closed="yes" fill="#EDF0E6" stroke="#4A5D23" thickness="1.5"/>
+      <group at="sr-grid">
+      <line endpoints="((-0.711,-0.50),(1.289,-0.50))" stroke="#4A5D23" thickness="1" opacity="0.5"/>
+      <line endpoints="((-1.000,0.00),(1.000,0.00))" stroke="#4A5D23" thickness="1" opacity="0.5"/>
+      <line endpoints="((-1.289,0.50),(0.711,0.50))" stroke="#4A5D23" thickness="1" opacity="0.5"/>
+      <line endpoints="((0.077,-1),(-1.077,1))" stroke="#4A5D23" thickness="1" opacity="0.5"/>
+      <line endpoints="((0.577,-1),(-0.577,1))" stroke="#4A5D23" thickness="1" opacity="0.5"/>
+      <line endpoints="((1.077,-1),(-0.077,1))" stroke="#4A5D23" thickness="1" opacity="0.5"/>
+      </group>
+      <polygon at="sr-letter" points="((-0.046,-0.700),(-0.854,0.700),(0.146,0.700),(0.331,0.380),(-0.319,0.380),(-0.169,0.120),(0.281,0.120),(0.465,-0.200),(0.015,-0.200),(0.304,-0.700))" closed="yes" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+      <group at="sr-slides">
+        <line endpoints="((-1.000,1.00),(-1.577,1.00))" stroke="#876801" thickness="2" arrows="1"/>
+        <line endpoints="((1.000,1.00),(0.423,1.00))" stroke="#876801" thickness="2" arrows="1"/>
+        <line endpoints="((-1.000,0.50),(-1.289,0.50))" stroke="#876801" thickness="2" arrows="1"/>
+        <line endpoints="((1.000,0.50),(0.711,0.50))" stroke="#876801" thickness="2" arrows="1"/>
+        <line endpoints="((-1.000,-0.50),(-0.711,-0.50))" stroke="#876801" thickness="2" arrows="1"/>
+        <line endpoints="((1.000,-0.50),(1.289,-0.50))" stroke="#876801" thickness="2" arrows="1"/>
+        <line endpoints="((-1.000,-1.00),(-0.423,-1.00))" stroke="#876801" thickness="2" arrows="1"/>
+        <line endpoints="((1.000,-1.00),(1.577,-1.00))" stroke="#876801" thickness="2" arrows="1"/>
+      </group>
+    </group>
+  </coordinates>
+  <annotations>
+    <annotation ref="first-shear" text="A square picture with a letter F after the horizontal shear H a, with a equal to minus 0.577, the first of the three shears that rotate it through 60 degrees; the same scale is used on both axes">
+      <annotation ref="sr-start" text="A dashed grey square with corners at plus or minus 1 comma plus or minus 1 marks where the picture started"/>
+      <annotation ref="sr-picture" text="The picture is now a pale olive parallelogram: its top and bottom sides are still horizontal and at the same heights, the top side has slid to the left and the bottom side to the right"/>
+      <annotation ref="sr-grid" text="The picture's own grid lines: the horizontal ones are still horizontal, and the ones that were vertical now lean to the left"/>
+      <annotation ref="sr-letter" text="The wine letter F leans to the left with the picture"/>
+      <annotation ref="sr-slides" text="Mustard arrows show how far the points on the left and right sides have slid: at height 1 they moved 0.577 to the left, at height one half they moved half as far, at height 0 they did not move, and below the x axis they moved to the right by the same amounts"/>
+    </annotation>
+  </annotations>
+</diagram>

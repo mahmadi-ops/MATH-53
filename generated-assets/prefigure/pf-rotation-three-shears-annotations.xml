@@ -1,0 +1,199 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-rotation-three-shears-three-shears" speech2="Four panels in reading order show a square picture with a letter F being rotated through 30 degrees by three shears; every panel has the same scale, and the centre of the picture never moves">
+      <grouped>pf-rotation-three-shears-three-shears</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-rotation-three-shears-original</active>
+        <active>pf-rotation-three-shears-first-shear</active>
+        <active>pf-rotation-three-shears-second-shear</active>
+        <active>pf-rotation-three-shears-third-shear</active>
+      </children>
+      <components>
+        <active>pf-rotation-three-shears-original</active>
+        <active>pf-rotation-three-shears-first-shear</active>
+        <active>pf-rotation-three-shears-second-shear</active>
+        <active>pf-rotation-three-shears-third-shear</active>
+      </components>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-original" speech2="Panel 1, the picture">
+      <grouped>pf-rotation-three-shears-original</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-rotation-three-shears-original-square</active>
+        <active>pf-rotation-three-shears-original-letter</active>
+        <active>pf-rotation-three-shears-original-label</active>
+      </children>
+      <components>
+        <active>pf-rotation-three-shears-original-square</active>
+        <active>pf-rotation-three-shears-original-letter</active>
+        <active>pf-rotation-three-shears-original-label</active>
+      </components>
+      <parents>
+        <grouped>pf-rotation-three-shears-three-shears</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-original-square" speech2="A pale olive square with horizontal and vertical sides">
+      <active>pf-rotation-three-shears-original-square</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-original</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-original-letter" speech2="A wine letter F, upright, in the middle of the square">
+      <active>pf-rotation-three-shears-original-letter</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-original</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-original-label" speech2="The label 1, the picture">
+      <active>pf-rotation-three-shears-original-label</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-original</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-first-shear" speech2="Panel 2, sheared horizontally">
+      <grouped>pf-rotation-three-shears-first-shear</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-rotation-three-shears-first-shear-reference</active>
+        <active>pf-rotation-three-shears-first-shear-square</active>
+        <active>pf-rotation-three-shears-first-shear-letter</active>
+        <active>pf-rotation-three-shears-first-shear-label</active>
+      </children>
+      <components>
+        <active>pf-rotation-three-shears-first-shear-reference</active>
+        <active>pf-rotation-three-shears-first-shear-square</active>
+        <active>pf-rotation-three-shears-first-shear-letter</active>
+        <active>pf-rotation-three-shears-first-shear-label</active>
+      </components>
+      <parents>
+        <grouped>pf-rotation-three-shears-three-shears</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-first-shear-reference" speech2="A dashed grey square marks where the picture started">
+      <active>pf-rotation-three-shears-first-shear-reference</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-first-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-first-shear-square" speech2="The square has become a parallelogram: its top and bottom sides are still horizontal, the top side has slid to the left and the bottom side to the right">
+      <active>pf-rotation-three-shears-first-shear-square</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-first-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-first-shear-letter" speech2="The letter F leans to the left">
+      <active>pf-rotation-three-shears-first-shear-letter</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-first-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-first-shear-label" speech2="The label 2, sheared horizontally">
+      <active>pf-rotation-three-shears-first-shear-label</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-first-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-second-shear" speech2="Panel 3, then sheared vertically">
+      <grouped>pf-rotation-three-shears-second-shear</grouped>
+      <position>3</position>
+      <children>
+        <active>pf-rotation-three-shears-second-shear-reference</active>
+        <active>pf-rotation-three-shears-second-shear-square</active>
+        <active>pf-rotation-three-shears-second-shear-letter</active>
+        <active>pf-rotation-three-shears-second-shear-label</active>
+      </children>
+      <components>
+        <active>pf-rotation-three-shears-second-shear-reference</active>
+        <active>pf-rotation-three-shears-second-shear-square</active>
+        <active>pf-rotation-three-shears-second-shear-letter</active>
+        <active>pf-rotation-three-shears-second-shear-label</active>
+      </components>
+      <parents>
+        <grouped>pf-rotation-three-shears-three-shears</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-second-shear-reference" speech2="The dashed grey square marks where the picture started">
+      <active>pf-rotation-three-shears-second-shear-reference</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-second-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-second-shear-square" speech2="The parallelogram's right side has slid up and its left side down; two of its sides are now vertical, and it is not a square">
+      <active>pf-rotation-three-shears-second-shear-square</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-second-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-second-shear-letter" speech2="The letter F is still distorted">
+      <active>pf-rotation-three-shears-second-shear-letter</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-second-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-second-shear-label" speech2="The label 3, then vertically">
+      <active>pf-rotation-three-shears-second-shear-label</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-second-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-third-shear" speech2="Panel 4, then sheared horizontally again">
+      <grouped>pf-rotation-three-shears-third-shear</grouped>
+      <position>4</position>
+      <children>
+        <active>pf-rotation-three-shears-third-shear-reference</active>
+        <active>pf-rotation-three-shears-third-shear-square</active>
+        <active>pf-rotation-three-shears-third-shear-letter</active>
+        <active>pf-rotation-three-shears-third-shear-label</active>
+      </children>
+      <components>
+        <active>pf-rotation-three-shears-third-shear-reference</active>
+        <active>pf-rotation-three-shears-third-shear-square</active>
+        <active>pf-rotation-three-shears-third-shear-letter</active>
+        <active>pf-rotation-three-shears-third-shear-label</active>
+      </components>
+      <parents>
+        <grouped>pf-rotation-three-shears-three-shears</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-third-shear-reference" speech2="The dashed grey square marks where the picture started">
+      <active>pf-rotation-three-shears-third-shear-reference</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-third-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-third-shear-square" speech2="The shape is a square again, the same size as the original, turned counterclockwise through 30 degrees about its centre">
+      <active>pf-rotation-three-shears-third-shear-square</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-third-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-third-shear-letter" speech2="The letter F has its original shape, turned through 30 degrees">
+      <active>pf-rotation-three-shears-third-shear-letter</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-third-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-three-shears-third-shear-label" speech2="The label 4, then horizontally again">
+      <active>pf-rotation-three-shears-third-shear-label</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-rotation-three-shears-third-shear</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

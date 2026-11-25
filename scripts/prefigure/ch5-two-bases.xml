@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Print version of the interactive figure assets/demos-manim/two-bases.html
+     (Section 5.2, "Two Different Bases for the Same Subspace"): the vector
+     (2, 1, 0) of the xy-plane H, the interactive's starting position, written in
+     the basis e1, e2 (left) and in the basis e1, e1 + e2 (right).
+     Build with the standalone option of scripts/build-book-figures.py;
+     see scripts/FIGURES.md. -->
+<diagram xmlns="https://prefigure.org" dimensions="(557,225)" margins="10">
+  <coordinates bbox="(-2.7,-2.2,9.5,2.4)">
+    <group at="one-vector-two-bases">
+      <group at="in-first">
+        <group at="in-first-grid">
+          <line endpoints="((-2.000,-1.500),(-2.000,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((-2.500,-1.000),(3.000,-1.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((-1.000,-1.500),(-1.000,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((-2.500,0.000),(3.000,0.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((0.000,-1.500),(0.000,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((-2.500,1.000),(3.000,1.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((1.000,-1.500),(1.000,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((-2.500,2.000),(3.000,2.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((2.000,-1.500),(2.000,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.000,-1.500),(3.000,2.200))" stroke="#D2D8C2" thickness="1"/>
+        </group>
+        <polygon points="((-2.500,-1.500),(3.000,-1.500),(3.000,2.200),(-2.500,2.200))" closed="yes" stroke="#9AA586" thickness="1"/>
+        <group at="in-first-axes">
+          <line endpoints="((-2.500,0.000),(3.000,0.000))" stroke="#606060" thickness="1" arrows="1"/>
+          <line endpoints="((0.000,-1.500),(0.000,2.200))" stroke="#606060" thickness="1" arrows="1"/>
+          <label p="(3.000,0.000)" alignment="nw" offset="(-3,3)"><m>x</m></label>
+          <label p="(0.000,2.200)" alignment="se" offset="(4,-4)"><m>y</m></label>
+        </group>
+        <label at="in-first-plane" p="(3.000,2.200)" alignment="sw" offset="(-5,-5)"><m>H</m></label>
+        <group at="p1-sides">
+          <line endpoints="((2.000,0.000),(2.000,1.000))" stroke="#876801" thickness="1.5" dash="5 4"/>
+          <line endpoints="((0.000,1.000),(2.000,1.000))" stroke="#4A5D23" thickness="1.5" dash="5 4"/>
+        </group>
+        <group at="p1-first">
+          <line endpoints="((0.000,0.000),(2.000,0.000))" stroke="#4A5D23" thickness="3" arrows="1"/>
+          <label p="(1.000,0.000)" alignment="s" offset="(0,-6)" color="#4A5D23"><m>2\vec{e}_1</m></label>
+        </group>
+        <group at="p1-second">
+          <line endpoints="((0.000,0.000),(0.000,1.000))" stroke="#876801" thickness="3" arrows="1"/>
+          <label p="(0.000,0.500)" alignment="w" offset="(-6,0)" color="#876801"><m>1\vec{e}_2</m></label>
+        </group>
+        <group at="p1-vector">
+          <line endpoints="((0.000,0.000),(2.000,1.000))" stroke="#5E011C" thickness="3" arrows="1"/>
+          <label p="(2.000,1.000)" alignment="ne" offset="(2,2)" color="#5E011C"><m>(2,1,0)</m></label>
+        </group>
+        <label at="in-first-name" p="(0.250,-1.500)" alignment="s" offset="(0,-6)"><m>\mathcal{B}_1 = \{\vec{e}_1,\ \vec{e}_2\}</m></label>
+      </group>
+      <group at="in-second">
+        <group at="in-second-grid">
+          <line endpoints="((3.800,1.500),(4.500,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.800,0.500),(5.500,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.800,-0.500),(6.500,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.800,-1.000),(9.300,-1.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.800,-1.500),(7.500,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.800,0.000),(9.300,0.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((4.800,-1.500),(8.500,2.200))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.800,1.000),(9.300,1.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((5.800,-1.500),(9.300,2.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((3.800,2.000),(9.300,2.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((6.800,-1.500),(9.300,1.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((7.800,-1.500),(9.300,0.000))" stroke="#D2D8C2" thickness="1"/>
+          <line endpoints="((8.800,-1.500),(9.300,-1.000))" stroke="#D2D8C2" thickness="1"/>
+        </group>
+        <polygon points="((3.800,-1.500),(9.300,-1.500),(9.300,2.200),(3.800,2.200))" closed="yes" stroke="#9AA586" thickness="1"/>
+        <group at="in-second-axes">
+          <line endpoints="((3.800,0.000),(9.300,0.000))" stroke="#606060" thickness="1" arrows="1"/>
+          <line endpoints="((6.300,-1.500),(6.300,2.200))" stroke="#606060" thickness="1" arrows="1"/>
+          <label p="(9.300,0.000)" alignment="nw" offset="(-3,3)"><m>x</m></label>
+          <label p="(6.300,2.200)" alignment="se" offset="(4,-4)"><m>y</m></label>
+        </group>
+        <label at="in-second-plane" p="(9.300,2.200)" alignment="sw" offset="(-5,-5)"><m>H</m></label>
+        <group at="p2-sides">
+          <line endpoints="((7.300,0.000),(8.300,1.000))" stroke="#876801" thickness="1.5" dash="5 4"/>
+          <line endpoints="((7.300,1.000),(8.300,1.000))" stroke="#4A5D23" thickness="1.5" dash="5 4"/>
+        </group>
+        <group at="p2-first">
+          <line endpoints="((6.300,0.000),(7.300,0.000))" stroke="#4A5D23" thickness="3" arrows="1"/>
+          <label p="(6.800,0.000)" alignment="s" offset="(0,-6)" color="#4A5D23"><m>1\vec{e}_1</m></label>
+        </group>
+        <group at="p2-second">
+          <line endpoints="((6.300,0.000),(7.300,1.000))" stroke="#876801" thickness="3" arrows="1"/>
+          <label p="(6.800,0.500)" alignment="nw" offset="(-4,3)" color="#876801"><m>1(\vec{e}_1+\vec{e}_2)</m></label>
+        </group>
+        <group at="p2-vector">
+          <line endpoints="((6.300,0.000),(8.300,1.000))" stroke="#5E011C" thickness="3" arrows="1"/>
+          <label p="(8.300,1.000)" alignment="ne" offset="(2,2)" color="#5E011C"><m>(2,1,0)</m></label>
+        </group>
+        <label at="in-second-name" p="(6.550,-1.500)" alignment="s" offset="(0,-6)"><m>\mathcal{B}_2 = \{\vec{e}_1,\ \vec{e}_1 + \vec{e}_2\}</m></label>
+      </group>
+    </group>
+  </coordinates>
+  <annotations>
+    <annotation ref="one-vector-two-bases" text="Two pictures of the xy-plane H seen from above show the same vector, 2 comma 1 comma 0, written in two bases; the same scale is used on both axes">
+      <annotation ref="in-first" text="Left picture, the basis B 1 with vectors e 1 and e 2, on a grid of squares">
+        <annotation ref="p1-vector" text="The wine vector from the origin to the point 2 comma 1"/>
+        <annotation ref="p1-first" text="The olive arrow 2 e 1, two units along the x axis"/>
+        <annotation ref="p1-second" text="The mustard arrow 1 e 2, one unit up the y axis"/>
+        <annotation ref="p1-sides" text="Dashed lines complete the rectangle on these two arrows; its far corner is the tip of the wine vector, so the vector is 2 e 1 plus 1 e 2"/>
+      </annotation>
+      <annotation ref="in-second" text="Right picture, the basis B 2 with vectors e 1 and e 1 plus e 2, on a grid of slanted parallelograms">
+        <annotation ref="p2-vector" text="The same wine vector from the origin to the point 2 comma 1"/>
+        <annotation ref="p2-first" text="The olive arrow 1 e 1, one unit along the x axis"/>
+        <annotation ref="p2-second" text="The mustard arrow 1 times e 1 plus e 2, from the origin to the point 1 comma 1"/>
+        <annotation ref="p2-sides" text="Dashed lines complete the parallelogram on these two arrows; its far corner is again the tip of the wine vector, so the vector is 1 e 1 plus 1 times e 1 plus e 2"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>

@@ -100,6 +100,48 @@ assert.equal(T.substituted([1,1,-1],[-1.5,1.5,-1]),"−1.5 + 1.5 − (−1)");
 assert.equal(T.substituted([1,1,1],[-1.5,1.5,-1]),"−1.5 + 1.5 + (−1)");
 assert.equal(T.substituted([1,1,0],[2,-2,0]),"2 + (−2)");
 
+// The three-shear explorer of Section 4.5: H_a V_b H_a is the rotation through θ
+// for every slider angle, each partial product has determinant 1, and the picture
+// stays inside the plotting window.
+const S=require("../assets/demos-manim/shear-rotation.js");
+const same=(P,Q)=>P.forEach((row,i)=>equal(row,Q[i]));
+for(let theta=-90;theta<=90;theta+=5) {
+  const {a,b}=S.coefficients(theta),R=S.rotation(theta);
+  near(a,-Math.tan(theta*Math.PI/360));near(b,Math.sin(theta*Math.PI/180));
+  same(S.matrixAt(theta,0),[[1,0],[0,1]]);
+  same(S.matrixAt(theta,1),S.H(a));
+  same(S.matrixAt(theta,2),S.multiply(S.V(b),S.H(a)));
+  same(S.matrixAt(theta,3),S.multiply(S.H(a),S.multiply(S.V(b),S.H(a))));
+  S.matrixAt(theta,3).forEach((row,i)=>row.forEach((x,j)=>near(x,R[i][j])));
+  // Row reduction of the rotation matrix by the same three shears, as in the example.
+  const t=-a,reduced=S.multiply(S.H(t),S.multiply(S.V(-b),S.multiply(S.H(t),R)));
+  reduced.forEach((row,i)=>row.forEach((x,j)=>near(x,i===j?1:0)));
+  for(let k=0;k<=60;k++) {
+    const M2=S.matrixAt(theta,k/20);
+    near(S.det(M2),1);
+    S.SQUARE.forEach(p=>{const q=S.apply(M2,p);assert.ok(Math.abs(q[0])<=2.3-0.25&&Math.abs(q[1])<=3.2-0.15);});
+  }
+}
+assert.deepEqual([0,0.4,1,1.2,2,2.7,3].map(S.stageOf),[0,1,1,2,2,3,3]);
+same(S.multiply(S.H(-1),S.multiply(S.V(1),S.H(-1))),[[0,-1],[1,0]]);
+
+// The two-bases explorer of Section 5.2: on the whole slider grid the weights in each
+// basis rebuild the vector (x, y, 0), and the second basis uses (x − y, y).
+const B=require("../assets/demos-manim/two-bases.js");
+for(let i=-4;i<=4;i++)for(let j=-4;j<=4;j++) {
+  const x=i/2,y=j/2,w=B.weights(x,y);
+  equal(w.standard,[x,y]);equal(w.second,[x-y,y]);
+  equal(B.combine(B.BASES.standard,w.standard),[x,y,0]);
+  equal(B.combine(B.BASES.second,w.second),[x,y,0]);
+  // every arrow of the picture stays inside the window |x| ≤ 4.4, |y| ≤ 2.6
+  assert.ok(Math.abs(x-y)<=4.4-0.3&&Math.abs(y)<=2.6-0.3);
+  // the two bases give the same weights exactly when y = 0
+  assert.equal(w.standard[0]===w.second[0],y===0);
+}
+assert.equal(B.combination(B.BASES.standard,[2,1]),"2e₁ + 1e₂");
+assert.equal(B.combination(B.BASES.second,[-3.5,2]),"(−3.5)e₁ + 2(e₁ + e₂)");
+assert.equal(B.snap(1.74,-2,2),1.5);assert.equal(B.snap(9,-2,2),2);
+
 // Math formatting shared by the explorers: italic letters, real subscripts, upright operator names.
 const M=require("../assets/demos-manim/book-math.js");
 const shape=text=>M.runs(text).map(r=>(r.italic?"i":"r")+(r.level<0?"_":r.level>0?"^":"")+":"+r.text).join("|");
@@ -107,9 +149,10 @@ assert.equal(shape("x₁ - 2x₂ = −1"),"i:x|r_:1|r: − 2|i:x|r_:2|r: = −1"
 assert.equal(shape("det[b₁(t)] > 0"),"r:det[|i:b|r_:1|r:(|i:t|r:)] > 0");
 assert.equal(shape("T: ℝ³ → ℝ²"),"i:T|r:: ℝ|r^:3|r: → ℝ|r^:2");
 assert.equal(shape("aᵢ"),"i:a|i_:i");
+assert.equal(shape("A = HₐV_bHₐ"),"i:A|r: = |i:H|i_:a|i:V|i_:b|i:H|i_:a");
 assert.deepEqual(M.unbreakable("(a − 1)x = b − 1"),["(a − 1)x","= b − 1"]);
 assert.deepEqual(M.unbreakable("x₁ = 2/3 − (7/3)s; x₂ = s"),["x₁","= 2/3 − (7/3)s;","x₂","= s"]);
 assert.deepEqual(M.unbreakable("T(1, −1, 2) = (−1, 1)"),["T(1, −1, 2)","= (−1, 1)"]);
 assert.deepEqual(M.pieces("Since $a ≠ 1$, done").map(p=>p.math),[false,true,false]);
 assert.equal(M.plain("At $s = 0$, $p = (1, 2)$."),"At s = 0, p = (1, 2).");
-console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions; homogeneous and translated solutions on all 17 slider positions for both particular solutions; math formatting.");
+console.log("PASS: equivalent plane systems and ranks; rectangular plane geometry and camera fitting; basis images and lost z; 101 independent bases and fixed-vector sums; the two-line family on all 195 slider positions; homogeneous and translated solutions on all 17 slider positions for both particular solutions; three shears equal to the rotation on all 37 slider angles; one vector in two bases on all 81 slider positions; math formatting.");

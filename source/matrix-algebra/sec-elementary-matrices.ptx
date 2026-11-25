@@ -169,14 +169,18 @@
           <m>-3R_1 + R_3</m>. The row operation that undoes it is <m>+3R_1 + R_3</m>, so
           applying that inverse row operation to <m>I_4</m> gives <m>G^{-1}</m>:
           <md>
-            I_4 \xrightarrow[\text{row operation}]{\;-3R_1 + R_3\;} G
-            \xrightarrow[\text{inverse row operation}]{\;+3R_1 + R_3\;}
-            G^{-1} = \begin{bmatrix}
-              1 \amp 0 \amp 0 \amp 0 \\
-              0 \amp 1 \amp 0 \amp 0 \\
-              3 \amp 0 \amp 1 \amp 0 \\
-              0 \amp 0 \amp 0 \amp 1
-            \end{bmatrix}.
+            <mrow>
+              I_4 \amp \xrightarrow[\text{row operation}]{\;-3R_1 + R_3\;} G
+            </mrow>
+            <mrow>
+              I_4 \amp \xrightarrow[\text{inverse row operation}]{\;+3R_1 + R_3\;}
+              G^{-1} = \begin{bmatrix}
+                1 \amp 0 \amp 0 \amp 0 \\
+                0 \amp 1 \amp 0 \amp 0 \\
+                3 \amp 0 \amp 1 \amp 0 \\
+                0 \amp 0 \amp 0 \amp 1
+              \end{bmatrix}.
+            </mrow>
           </md>
         </p>
       </solution>
@@ -317,5 +321,329 @@
         </p>
       </solution>
     </example>
+  </subsection>
+
+  <subsection xml:id="subsec-rotation-by-shears">
+    <title>An Application: Rotating a Picture Using Only Shears</title>
+
+    <p>
+      The <m>2 \times 2</m> elementary matrices obtained by adding a multiple of one row
+      to the other row are
+      <md>
+        H_a = \begin{bmatrix} 1 \amp a \\ 0 \amp 1 \end{bmatrix}
+        \qquad \text{and} \qquad
+        V_b = \begin{bmatrix} 1 \amp 0 \\ b \amp 1 \end{bmatrix},
+      </md>
+      which come from <m>I_2</m> by the row operations <m>aR_2 + R_1</m> and
+      <m>bR_1 + R_2</m>. As transformations of the plane, both are <term>shears</term>.
+      The matrix <m>H_a</m> sends
+      <m>\begin{bmatrix} x \\ y \end{bmatrix}</m> to
+      <m>\begin{bmatrix} x + ay \\ y \end{bmatrix}</m>: every point keeps its height, and
+      each horizontal line slides sideways by an amount proportional to its height. This
+      is a <em>horizontal shear</em>. The matrix <m>V_b</m> is the vertical shear of
+      <xref ref="eg-vertical-shear" text="type-global" />: each vertical line slides up
+      or down by an amount proportional to its <m>x</m>-coordinate.
+    </p>
+    <p>
+      A rotation does not look like sliding at all. Even so, the matrix of a rotation is
+      a product of three shears, and so it is a product of three elementary matrices.
+    </p>
+
+    <example xml:id="eg-rotation-three-shears">
+      <title>A Rotation as a Product of Three Shears</title>
+      <statement>
+        <p>
+          Let <m>-\pi \lt \theta \lt \pi</m>, and let
+          <md>
+            A_{R_\theta} = \begin{bmatrix}
+              \cos\theta \amp -\sin\theta \\
+              \sin\theta \amp \cos\theta
+            \end{bmatrix}
+          </md>
+          be the matrix of the rotation <m>R_\theta</m>
+          (<xref ref="subsec-rotations" text="type-global" />).
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Row reduce <m>A_{R_\theta}</m> to <m>I_2</m> using only one kind of row
+                operation: adding a multiple of one row to the other row. Use the result
+                to write <m>A_{R_\theta}</m> as a product of shears.
+              </p>
+            </li>
+            <li>
+              <p>
+                Write out the factorization for a quarter turn,
+                <m>\theta = \pi/2</m>, and check it by multiplying.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <term>(a)</term> We follow the method of
+          <xref ref="eg-product-of-elementary" text="type-global" />. If
+          <m>\theta = 0</m>, then <m>A_{R_\theta} = I_2</m> and there is nothing to do.
+          Otherwise <m>\sin\theta \neq 0</m>. The usual first step would scale the first
+          row to make its leading entry <m>1</m>. Scaling is not allowed here, so we add
+          <m>t</m> times the second row to the first row instead, and choose <m>t</m> so
+          that the leading entry <m>\cos\theta + t\sin\theta</m> becomes <m>1</m>:
+          <md>
+            t = \frac{1 - \cos\theta}{\sin\theta} = \tan\frac{\theta}{2},
+          </md>
+          by a half-angle identity. With this <m>t</m>, three row operations finish the
+          reduction:
+          <md>
+            <mrow>
+              \begin{bmatrix}
+                \cos\theta \amp -\sin\theta \\
+                \sin\theta \amp \cos\theta
+              \end{bmatrix}
+              \amp \xrightarrow{\;tR_2 + R_1\;}
+              \begin{bmatrix} 1 \amp -t \\ \sin\theta \amp \cos\theta \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{\;-(\sin\theta) R_1 + R_2\;}
+              \begin{bmatrix} 1 \amp -t \\ 0 \amp 1 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp \xrightarrow{\;tR_2 + R_1\;}
+              \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+            </mrow>
+          </md>
+          The two new entries need a short computation. In the first step, the second
+          entry of the first row is
+          <md>
+            <mrow>
+              -\sin\theta + t\cos\theta
+              \amp = \frac{-\sin^2\theta + \cos\theta - \cos^2\theta}{\sin\theta}
+            </mrow>
+            <mrow>
+              \amp = \frac{\cos\theta - 1}{\sin\theta} = -t,
+            </mrow>
+          </md>
+          and in the second step, the last entry is
+          <m>\cos\theta + t\sin\theta = 1</m>, by the choice of <m>t</m>.
+        </p>
+        <p>
+          The elementary matrices of the three steps are
+          <m>E_1 = H_t</m>, <m>E_2 = V_{-\sin\theta}</m> and <m>E_3 = H_t</m>, and the
+          reduction says that <m>E_3 E_2 E_1 A_{R_\theta} = I_2</m>. Therefore
+          <md>
+            A_{R_\theta} = E_1^{-1} E_2^{-1} E_3^{-1} = H_{-t}\, V_{\sin\theta}\, H_{-t},
+          </md>
+          where each inverse is found by inspection, as in
+          <xref ref="obs-inverse-elementary" text="type-global" />. Written out,
+          <md>
+            <mrow>
+              \amp \begin{bmatrix}
+                \cos\theta \amp -\sin\theta \\
+                \sin\theta \amp \cos\theta
+              \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp \quad =
+              \begin{bmatrix} 1 \amp -\tan\frac{\theta}{2} \\ 0 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \amp 0 \\ \sin\theta \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \amp -\tan\frac{\theta}{2} \\ 0 \amp 1 \end{bmatrix}.
+            </mrow>
+          </md>
+          That is, <m>A_{R_\theta} = H_a V_b H_a</m> with
+          <m>a = -\tan\frac{\theta}{2}</m> and <m>b = \sin\theta</m>. This also holds
+          for <m>\theta = 0</m>, where <m>a = b = 0</m>.
+        </p>
+        <p>
+          <term>(b)</term> For <m>\theta = \pi/2</m> we get
+          <m>a = -\tan(\pi/4) = -1</m> and <m>b = \sin(\pi/2) = 1</m>, so all the entries
+          are integers:
+          <md>
+            <mrow>
+              \begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}
+              \amp =
+              \begin{bmatrix} 0 \amp -1 \\ 1 \amp 1 \end{bmatrix}
+              \begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}
+            </mrow>
+            <mrow>
+              \amp =
+              \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix},
+            </mrow>
+          </md>
+          which is the matrix of the quarter turn in
+          <xref ref="eg-rotation-quarter-turn" text="type-global" />.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Each of the three factors is an elementary matrix: the outer two come from
+      <m>I_2</m> by the row operation <m>-\tan\frac{\theta}{2}\, R_2 + R_1</m>, and the
+      middle one by <m>(\sin\theta) R_1 + R_2</m>. No row interchange and no scaling of
+      a row is needed. Since the factor on the right acts first, the factorization
+      says: to rotate the plane through <m>\theta</m>, shear horizontally, then
+      vertically, then horizontally again.
+      <xref ref="fig-rotation-three-shears" text="type-global" /> shows the three steps
+      for <m>\theta = \pi/6</m>, applied to a square picture centred at the origin. No
+      single step looks like a rotation, but the third one completes it.
+    </p>
+
+    <figure xml:id="fig-rotation-three-shears">
+      <caption>
+        Rotating a picture through <m>\theta = \pi/6</m> with three shears:
+        <m>H_a</m> with <m>a = -\tan(\pi/12) \approx -0.27</m>, then <m>V_b</m> with
+        <m>b = \sin(\pi/6) = \tfrac{1}{2}</m>, then <m>H_a</m> again. The dashed square
+        marks where the picture started.
+      </caption>
+      <image width="70%">
+        <shortdescription>Four panels: a square picture carrying a letter F, the same picture after a horizontal shear, after a further vertical shear, and after a second horizontal shear, where it has become the original picture rotated through 30 degrees.</shortdescription>
+        <prefigure label="pf-rotation-three-shears" xmlns="https://prefigure.org">
+          <diagram dimensions="(370,410)" margins="10">
+            <coordinates bbox="(-1.7,-6.2,5.3,1.6)">
+              <group at="three-shears">
+                <group at="original">
+                  <polygon at="original-square" points="((-1.000,-1.000),(1.000,-1.000),(1.000,1.000),(-1.000,1.000))" closed="yes" fill="#EDF0E6" stroke="#4A5D23" thickness="1.5"/>
+                  <polygon at="original-letter" points="((-0.450,-0.700),(-0.450,0.700),(0.550,0.700),(0.550,0.380),(-0.100,0.380),(-0.100,0.120),(0.350,0.120),(0.350,-0.200),(-0.100,-0.200),(-0.100,-0.700))" closed="yes" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+                  <label at="original-label" p="(0.0,-1.55)" alignment="s"><m>(1)\ \text{the picture}</m></label>
+                </group>
+                <group at="first-shear">
+                  <polygon at="first-shear-reference" points="((2.600,-1.000),(4.600,-1.000),(4.600,1.000),(2.600,1.000))" closed="yes" stroke="#909090" thickness="1" dash="4 3"/>
+                  <polygon at="first-shear-square" points="((2.868,-1.000),(4.868,-1.000),(4.332,1.000),(2.332,1.000))" closed="yes" fill="#EDF0E6" stroke="#4A5D23" thickness="1.5"/>
+                  <polygon at="first-shear-letter" points="((3.338,-0.700),(2.962,0.700),(3.962,0.700),(4.048,0.380),(3.398,0.380),(3.468,0.120),(3.918,0.120),(4.004,-0.200),(3.554,-0.200),(3.688,-0.700))" closed="yes" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+                  <label at="first-shear-label" p="(3.6,-1.55)" alignment="s"><m>(2)\ \text{sheared horizontally}</m></label>
+                </group>
+                <group at="second-shear">
+                  <polygon at="second-shear-reference" points="((-1.000,-5.000),(1.000,-5.000),(1.000,-3.000),(-1.000,-3.000))" closed="yes" stroke="#909090" thickness="1" dash="4 3"/>
+                  <polygon at="second-shear-square" points="((-0.732,-5.366),(1.268,-4.366),(0.732,-2.634),(-1.268,-3.634))" closed="yes" fill="#EDF0E6" stroke="#4A5D23" thickness="1.5"/>
+                  <polygon at="second-shear-letter" points="((-0.262,-4.831),(-0.638,-3.619),(0.362,-3.119),(0.448,-3.396),(-0.202,-3.721),(-0.132,-3.946),(0.318,-3.721),(0.404,-3.998),(-0.046,-4.223),(0.088,-4.656))" closed="yes" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+                  <label at="second-shear-label" p="(0.0,-5.55)" alignment="s"><m>(3)\ \text{then vertically}</m></label>
+                </group>
+                <group at="third-shear">
+                  <polygon at="third-shear-reference" points="((2.600,-5.000),(4.600,-5.000),(4.600,-3.000),(2.600,-3.000))" closed="yes" stroke="#909090" thickness="1" dash="4 3"/>
+                  <polygon at="third-shear-square" points="((3.234,-5.366),(4.966,-4.366),(3.966,-2.634),(2.234,-3.634))" closed="yes" fill="#EDF0E6" stroke="#4A5D23" thickness="1.5"/>
+                  <polygon at="third-shear-letter" points="((3.560,-4.831),(2.860,-3.619),(3.726,-3.119),(3.886,-3.396),(3.323,-3.721),(3.453,-3.946),(3.843,-3.721),(4.003,-3.998),(3.613,-4.223),(3.863,-4.656))" closed="yes" fill="#5E011C" stroke="#5E011C" thickness="1"/>
+                  <label at="third-shear-label" p="(3.6,-5.55)" alignment="s"><m>(4)\ \text{then horizontally again}</m></label>
+                </group>
+              </group>
+            </coordinates>
+            <annotations>
+              <annotation ref="three-shears" text="Four panels in reading order show a square picture with a letter F being rotated through 30 degrees by three shears; every panel has the same scale, and the centre of the picture never moves">
+                <annotation ref="original" text="Panel 1, the picture">
+                  <annotation ref="original-square" text="A pale olive square with horizontal and vertical sides"/>
+                  <annotation ref="original-letter" text="A wine letter F, upright, in the middle of the square"/>
+                  <annotation ref="original-label" text="The label 1, the picture"/>
+                </annotation>
+                <annotation ref="first-shear" text="Panel 2, sheared horizontally">
+                  <annotation ref="first-shear-reference" text="A dashed grey square marks where the picture started"/>
+                  <annotation ref="first-shear-square" text="The square has become a parallelogram: its top and bottom sides are still horizontal, the top side has slid to the left and the bottom side to the right"/>
+                  <annotation ref="first-shear-letter" text="The letter F leans to the left"/>
+                  <annotation ref="first-shear-label" text="The label 2, sheared horizontally"/>
+                </annotation>
+                <annotation ref="second-shear" text="Panel 3, then sheared vertically">
+                  <annotation ref="second-shear-reference" text="The dashed grey square marks where the picture started"/>
+                  <annotation ref="second-shear-square" text="The parallelogram's right side has slid up and its left side down; two of its sides are now vertical, and it is not a square"/>
+                  <annotation ref="second-shear-letter" text="The letter F is still distorted"/>
+                  <annotation ref="second-shear-label" text="The label 3, then vertically"/>
+                </annotation>
+                <annotation ref="third-shear" text="Panel 4, then sheared horizontally again">
+                  <annotation ref="third-shear-reference" text="The dashed grey square marks where the picture started"/>
+                  <annotation ref="third-shear-square" text="The shape is a square again, the same size as the original, turned counterclockwise through 30 degrees about its centre"/>
+                  <annotation ref="third-shear-letter" text="The letter F has its original shape, turned through 30 degrees"/>
+                  <annotation ref="third-shear-label" text="The label 4, then horizontally again"/>
+                </annotation>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <p>
+      The video in <xref ref="fig-rotation-by-shears-video" text="type-global" /> shows
+      the same three shears in motion for <m>\theta = 60^\circ</m>. While each shear
+      acts, arrows show how far the corners and the midpoints of the sides slide, and
+      its factor appears in the product; the factors appear from right to left,
+      because the factor on the right acts first.
+    </p>
+
+    <figure xml:id="fig-rotation-by-shears-video">
+      <caption>
+        A rotation through <m>\theta = 60^\circ</m> carried out as a horizontal shear,
+        a vertical shear, and the same horizontal shear again.
+      </caption>
+      <video xml:id="video-rotation-by-shears" source="videos/rotation_by_shears_manim.mp4" preview="videos/previews/rotation_by_shears_manim.jpg" width="90%" aspect="16:9"/>
+    </figure>
+
+    <p>
+      <em>Explore the three shears.</em> In
+      <xref ref="fig-shear-rotation-interactive" text="type-global" /> you choose the
+      angle <m>\theta</m> and apply the shears one after another, as slowly as you
+      like. Before starting, predict after which shear the picture will look like a
+      square again. Then try <m>\theta = 90^\circ</m>, the quarter turn of
+      <xref ref="eg-rotation-three-shears" text="type-global" />, and compare the three
+      factors shown under the picture with part (b).
+    </p>
+
+    <figure xml:id="fig-shear-rotation-interactive">
+      <caption>
+        A rotation carried out as three shears. In the interactive figure one slider
+        sets the angle <m>\theta</m>, from <m>-90^\circ</m> to <m>90^\circ</m>, and
+        the other applies <m>H_a</m>, then <m>V_b</m>, then <m>H_a</m> again; arrows
+        show how the current shear moves the corners and the midpoints of the sides,
+        and the readout gives the three factors and the matrix applied so far. The
+        printed picture shows the first shear for <m>\theta = 60^\circ</m>, where
+        <m>a = -\tan 30^\circ \approx -0.58</m>: each horizontal line slides sideways
+        by <m>a</m> times its height.
+      </caption>
+      <interactive xml:id="int-shear-rotation" iframe="demos-manim/shear-rotation.html" width="100%" aspect="3:5">
+        <shortdescription>A square picture with a letter F is sheared horizontally, then vertically, then horizontally again, with sliders for the angle of rotation and for how many of the three shears have been applied; a readout shows the three shear matrices and their product so far.</shortdescription>
+        <static>
+          <image source="images/ch4-shear-rotation" width="62%">
+            <shortdescription>The square picture after one horizontal shear: a parallelogram whose top has slid to the left and whose bottom has slid to the right, with arrows showing that each horizontal line slides by an amount proportional to its height.</shortdescription>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+    <p>
+      This factorization has been used to rotate digital pictures since the
+      1980s.<fn>
+        The method is due to Alan Paeth, <articletitle>A Fast Algorithm for General
+        Raster Rotation</articletitle>, <pubtitle>Proceedings of Graphics Interface
+        '86</pubtitle>, pages 77<ndash />81. Why not rotate the pixels directly? A
+        rotation sends the centre of a pixel to a point that usually lies between
+        pixels. After rounding, some pixels of the new picture receive two pixels of the
+        old one and others receive none, so the result has doubled pixels and holes. A
+        shear avoids this. When each row is shifted by a whole number of pixels, every
+        pixel lands on exactly one pixel, and nothing is lost or doubled; the price is
+        that each step is then only approximately the shear in the formula. For the same
+        reason the three steps can be undone exactly, by shifting back in the reverse
+        order. Shifting a row is also a very cheap operation for a computer, which
+        mattered on the machines of the time. Today graphics hardware usually rotates a
+        picture directly and blends neighbouring pixels.
+      </fn>
+      A digital picture is a rectangular grid of pixels
+      (<xref ref="sec-images-as-matrices" text="type-global" />), and a shear is the
+      simplest thing one can do to such a grid: a horizontal shear slides each row of
+      pixels sideways, and a vertical shear slides each column up or down.
+    </p>
+    <p>
+      Two features of the factorization can be read off from this section. First, a
+      shear carries a square to a parallelogram of the same area
+      (<xref ref="eg-vertical-shear" text="type-global" />), so the picture keeps its
+      area at every step, not only at the end. Second, the rotation is undone by
+      undoing the three shears in the reverse order. By
+      <xref ref="thm-inverses-transposes-products" text="type-global" /> (3) and
+      <xref ref="obs-inverse-elementary" text="type-global" />,
+      <md>
+        \left( H_a V_b H_a \right)^{-1} = H_a^{-1} V_b^{-1} H_a^{-1} = H_{-a} V_{-b} H_{-a}.
+      </md>
+      Replacing <m>a = -\tan\frac{\theta}{2}</m> and <m>b = \sin\theta</m> by their
+      negatives is the same as replacing <m>\theta</m> by <m>-\theta</m>, so the right
+      side is the factorization of <m>A_{R_{-\theta}}</m>: the rotation through
+      <m>\theta</m> is undone by the rotation through <m>-\theta</m>, as it should be.
+    </p>
   </subsection>
 </section>

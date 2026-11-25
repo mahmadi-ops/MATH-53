@@ -24,8 +24,13 @@ DEMOS={
     'change-of-basis': ('int-change-of-basis','sec-coordinates'),
 }
 # Explorers with a guide and a no-JavaScript picture whose static files are
-# written elsewhere (see scripts/make-translated-solutions-static.py).
-GUIDED={**DEMOS,'translated-solutions': ('int-translated-solutions','sec-homogeneous-systems')}
+# written elsewhere (see scripts/make-translated-solutions-static.py, and
+# scripts/prefigure/ch4-shear-rotation.xml for the three-shear explorer).
+GUIDED={**DEMOS,'translated-solutions': ('int-translated-solutions','sec-homogeneous-systems'),
+        'shear-rotation': ('int-shear-rotation','sec-elementary-matrices')}
+
+# Explorers with sliders only (no guide): checked for layout, fallback and embedding.
+SLIDERS={'two-bases': ('int-two-bases','sec-basis-dimension')}
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -236,16 +241,45 @@ def main():
                         assert view.locator('.fallback img').evaluate('(e)=>e.complete&&e.naturalWidth>0')
                 context.close()
             print('PASS: mobile layouts, local Pagella font, reduced motion, no-JavaScript static diagrams',flush=True)
+            for name,(xmlid,section) in SLIDERS.items():
+                page.set_viewport_size({'width':375,'height':900})
+                page.goto(f'{base}/assets/demos-manim/{name}.html',wait_until='networkidle')
+                page.wait_for_selector('html.js-ready')
+                assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),name
+                assert page.evaluate('document.fonts.check(\'16px "TeX Gyre Pagella"\')'),name
+            page.goto(f'{base}/assets/demos-manim/two-bases.html?x=2&y=1',wait_until='networkidle')
+            assert '1e1 + 1(e1 + e2)' in page.locator('#equation-second').inner_text().replace('\n','')
+            slider(page,'#x',-1.5);slider(page,'#y',2)
+            assert '(−3.5)e1 + 2(e1 + e2)' in page.locator('#equation-second').inner_text().replace('\n','')
+            assert '(−1.5)e1 + 2e2' in page.locator('#equation-standard').inner_text().replace('\n','')
+            # (inner_text gives subscripts as plain digits.) Drag the handle of the second picture to (−1, 1).
+            handle=page.locator('#scene-second .handle').bounding_box();frame=page.locator('#scene-second').bounding_box()
+            unit=frame['width']/440
+            page.mouse.move(handle['x']+handle['width']/2,handle['y']+handle['height']/2);page.mouse.down()
+            page.mouse.move(frame['x']+(220-50)*unit,frame['y']+(130-50)*unit,steps=6);page.mouse.up()
+            assert (page.locator('#x').input_value(),page.locator('#y').input_value())==('-1','1')
+            page.locator('#reset').click()
+            assert (page.locator('#x').input_value(),page.locator('#y').input_value())==('2','1')
+            plain=browser.new_context(java_script_enabled=False).new_page()
+            for name in SLIDERS:
+                plain.goto(f'{base}/assets/demos-manim/{name}.html',wait_until='networkidle')
+                assert plain.locator('.fallback').is_visible()
+                assert plain.locator('.fallback img').evaluate('(e)=>e.complete&&e.naturalWidth>0')
+            plain.context.close()
+            print('PASS: two-bases explorer: weights in both bases, dragging, reset, mobile layout, no-JavaScript diagram',flush=True)
             for name in DEMOS:
                 tree=ET.parse(str(ROOT/'assets/images'/f'{name}-static.svg'))
                 assert tree.getroot().tag=='{http://www.w3.org/2000/svg}svg'
                 assert tree.xpath('//*[@id="book-figure-font"]'),name
             tree=ET.parse(str(ROOT/'assets/images/ch2-translated-solutions.svg'))
             assert tree.xpath('//*[@id="book-figure-font"]') and (ROOT/'assets/images/ch2-translated-solutions.pdf').exists()
+            # A PreFigure diagram: its lettering is drawn as paths, so there is no font to embed.
+            tree=ET.parse(str(ROOT/'assets/images/ch4-shear-rotation.svg'))
+            assert tree.getroot().tag=='{http://www.w3.org/2000/svg}svg' and (ROOT/'assets/images/ch4-shear-rotation.pdf').exists()
             if not args.write_previews and (ROOT/'output/web/sec-coordinates.html').exists():
                 # External book services are unrelated to the self-contained embeds.
                 page.route('https://**/*',lambda route:route.abort())
-                for name,(xmlid,section) in GUIDED.items():
+                for name,(xmlid,section) in {**GUIDED,**SLIDERS}.items():
                     page.goto(f'{base}/output/web/{section}.html',wait_until='networkidle')
                     page.locator(f'iframe#{xmlid}').evaluate('(f)=>{for(let e=f.parentElement;e;e=e.parentElement)if(e.tagName==="DETAILS")e.open=true;}')
                     frame=page.frame_locator(f'iframe#{xmlid}')

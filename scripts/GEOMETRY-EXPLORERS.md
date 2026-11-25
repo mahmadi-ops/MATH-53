@@ -10,6 +10,8 @@ They require no external JavaScript libraries, narration, or video downloads.
 | `source/linear-systems/sec-row-reduction.ptx` | `planes.html` (six embeds, parameterized by `?sys=`) | Inside the unique-solution, inconsistent, and infinitely-many-solutions examples, and after each part of the "Three Ways to Have No Common Point" example |
 | `source/vectors/sec-homogeneous-systems.ptx` | `translated-solutions.html` | Inside the example "Comparing a Homogeneous System with Its Non-Homogeneous Partner", after the figure "The picture to remember" |
 | `source/linear-transformations/sec-transformations.ptx` | `transformation-geometry.html` | Before the opening ℝ³ → ℝ⁴ example; refers to the existing matrix-multiplication example |
+| `source/matrix-algebra/sec-elementary-matrices.ptx` | `shear-rotation.html` | In the application "Rotating a Picture Using Only Shears", after the four-panel figure |
+| `source/subspaces/sec-basis-dimension.ptx` | `two-bases.html` | After the example "Two Different Bases for the Same Subspace" and the figure of the two bases |
 | `source/vector-spaces/sec-coordinates.ptx` | `change-of-basis.html` | Extends the existing same-vector/two-coordinate-systems example |
 
 The explorers are unnumbered additions so existing example numbers and IDs stay
@@ -106,6 +108,37 @@ both equations, and that it equals `((b−1)/(a−1), (a−b)/(a−1))`. The pri
 version is a PreFigure diagram kept in `scripts/prefigure/ch1-line-family.xml`;
 `python scripts/build-book-figures.py --standalone` rebuilds
 `assets/images/ch1-line-family.svg` and `.pdf` from it.
+
+## The three-shear explorer
+
+`shear-rotation.html` (with `shear-rotation.js`) belongs to the Section 4.5
+application "Rotating a Picture Using Only Shears". Its math helpers
+(`coefficients`, `matrixAt`, `rotation`, `stageOf`) are exported for Node, and
+`node scripts/check-geometry-math.cjs` checks, for all 37 slider angles, that
+`H_a V_b H_a` equals the rotation matrix, that the same three shears row reduce
+the rotation matrix to the identity (the method of the example), that every
+partial product has determinant 1, and that the picture stays inside the
+plotting window. The browser checks treat it like the other guided explorers.
+The print version is a PreFigure diagram kept in
+`scripts/prefigure/ch4-shear-rotation.xml` (the first shear at 60°, with arrows);
+`python scripts/build-book-figures.py --standalone` rebuilds
+`assets/images/ch4-shear-rotation.svg` and `.pdf` from it. That image is also the
+explorer's no-JavaScript fallback.
+
+## The two-bases explorer
+
+`two-bases.html` (with `two-bases.js`) belongs to the Section 5.2 example "Two
+Different Bases for the Same Subspace". Its math helpers (`weights`, `combine`,
+`combination`, `snap`) are exported for Node, and
+`node scripts/check-geometry-math.cjs` checks on all 81 slider positions that the
+weights `(x, y)` and `(x − y, y)` rebuild `(x, y, 0)` in the two bases and that
+every arrow stays inside the window. It has sliders and a draggable handle but no
+guide, so `scripts/check-geometry-explorers.py` lists it under `SLIDERS`: readouts,
+dragging, reset, the 375-pixel layout, the no-JavaScript picture and the book embed
+are checked. The print version is a PreFigure diagram kept in
+`scripts/prefigure/ch5-two-bases.xml` (the vector `(2, 1, 0)` in both bases);
+`python scripts/build-book-figures.py --standalone` rebuilds
+`assets/images/ch5-two-bases.svg` and `.pdf` from it.
 
 ## The translated-solutions explorer
 

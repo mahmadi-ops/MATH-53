@@ -19,7 +19,8 @@ upright, real subscripts. The figures do not load MathJax. `book-math.js` does
 this from plain strings: in static HTML write `<span class="math">x₁ + y = 1</span>`;
 in a string set by a script, put the math between dollar signs
 (`"Since $a ≠ 1$, the lines cross."`) and write it with `BookMath.set(element, string)`,
-or pass it to `scene.text(...)` for a label inside a picture. Text in `<option>`
+or pass it to `scene.text(...)` for a label inside a picture. An underscore makes the
+next character a subscript (`V_b`), for letters that have no Unicode subscript. Text in `<option>`
 elements cannot be formatted and stays plain. The styles are in `book-theme.css`.
 
 ## Course geometry explorers
@@ -30,6 +31,8 @@ elements cannot be formatted and stays plain. The styles are in `book-theme.css`
 | `solution-set.html` | Section 1.1, after the parametric solution example | Two planes, a moving solution, and a third equation leaving a point, a line, or the empty set |
 | `translated-solutions.html` | Section 2.3, in the example "Comparing a Homogeneous System with Its Non-Homogeneous Partner" | Scaling `v_1` moves along the line of homogeneous solutions; adding a particular solution `p` carries it to the parallel line `p + s v_1` |
 | `transformation-geometry.html` | Section 3.1, before the first example | `T(x,y,z) = (x+2y, 2x+y)` sends the basis vectors to matrix columns and loses the z-coordinate |
+| `shear-rotation.html` | Section 4.5, in the application "Rotating a Picture Using Only Shears" | A rotation through `θ` carried out as three shears `H_a V_b H_a`, with `a = −tan(θ/2)` and `b = sin θ` |
+| `two-bases.html` | Section 5.2, after the example "Two Different Bases for the Same Subspace" | One vector `(x, y, 0)` of the xy-plane written as `x e_1 + y e_2` and as `(x − y) e_1 + y (e_1 + e_2)`, side by side |
 | `change-of-basis.html` | Section 7.4, in the same-vector/two-bases example | The grid and coordinates change while `(1,2)` stays fixed |
 
 These figures also share `geometry-explorers.css` and `geometry-core.js`.
@@ -41,6 +44,40 @@ also supplied through the PreTeXt `<static>` element for print output.
 
 See [authoring and checking these explorers](../../scripts/GEOMETRY-EXPLORERS.md)
 for the mathematical invariants, preview commands, and asset refresh procedure.
+
+## shear-rotation.html
+
+`shear-rotation.html` (with `shear-rotation.js`) shows the factorization of the
+rotation matrix into three shears from the Section 4.5 application,
+`A = H_a V_b H_a` with `H_a = [1 a; 0 1]`, `V_b = [1 0; b 1]`, `a = −tan(θ/2)` and
+`b = sin θ`. One slider sets `θ` from −90° to 90° in steps of 5°; the other applies
+the shears one after another to a square picture with a letter F (0 = none,
+3 = all three), and four buttons jump to the whole steps. Mustard arrows show how
+the current shear moves the corners and the midpoints of the sides. The readout
+gives `a` and `b`, the three factors (the one being applied is outlined), the
+matrix applied so far and the rotation matrix. The guide plays the three shears in
+order. Both axes use the same unit.
+
+| Param | Meaning |
+|-------|---------|
+| `theta` | starting angle in degrees (default `60`), rounded to a multiple of 5 |
+| `step` | starting number of shears applied, from `0` to `3` (default `0`) |
+
+## two-bases.html
+
+`two-bases.html` (with `two-bases.js`) belongs to the Section 5.2 example "Two
+Different Bases for the Same Subspace". Two pictures show the xy-plane `H` of
+`R^3` from above, one with the grid of the basis `e_1, e_2` and one with the
+grid of `e_1, e_1 + e_2`. Sliders for `x` and `y` (from −2 to 2 in steps of 1/2),
+or the round handle at the tip of the vector, move the same vector `(x, y, 0)` in
+both pictures; olive and mustard arrows are the multiples of the two basis
+vectors, completed to a parallelogram, and the readouts give
+`(x, y, 0) = x e_1 + y e_2 = (x − y) e_1 + y (e_1 + e_2)` with numbers and a check.
+Only the handle takes over touches, so the page still scrolls on a phone.
+
+| Param | Meaning |
+|-------|---------|
+| `x`, `y` | starting entries of the vector (defaults `2`, `1`), rounded to the nearest half |
 
 ## line-family.html
 

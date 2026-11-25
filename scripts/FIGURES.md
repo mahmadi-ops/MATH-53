@@ -3,7 +3,7 @@ Static graphs use the book's olive (`#4A5D23`), wine (`#5E011C`), dark mustard
 matrices keep their original data values and colors. Figure captions and image
 descriptions name the corresponding accents.
 
-To regenerate the 33 PreFigure diagrams, five TikZ figures, and recognition
+To regenerate the 41 PreFigure diagrams, four TikZ figures, and recognition
 mind map with the book's fonts, use Python 3.12, Node 22+, XeLaTeX, and Cairo:
 
 ```sh
@@ -56,5 +56,7 @@ PreTeXt cannot take a `<prefigure>` inside the `<static>` element of an
 standalone PreFigure diagram in `scripts/prefigure/NAME.xml` and referenced from
 `<static>` as `images/NAME`. `python scripts/build-book-figures.py --standalone`
 builds every such diagram into `assets/images/NAME.svg` and `NAME.pdf` with the
-book fonts (a full run of the script does this too). At present there is one,
-`ch1-line-family`, for the two-line explorer of Section 1.1.
+book fonts (a full run of the script does this too). At present there are three:
+`ch1-line-family`, for the two-line explorer of Section 1.1,
+`ch4-shear-rotation`, for the three-shear explorer of Section 4.5, and
+`ch5-two-bases`, for the two-bases explorer of Section 5.2.

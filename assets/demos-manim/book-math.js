@@ -13,7 +13,8 @@
 
    Between the dollars, letters become italic (operator names such as det stay
    upright), Unicode subscripts and superscripts (x₁, ℝ³) become real ones,
-   and a hyphen becomes a minus sign. Everything outside the dollars is left
+   an underscore makes the next character a subscript (V_b, for letters that
+   have no Unicode subscript), and a hyphen becomes a minus sign. Everything outside the dollars is left
    alone, and a string without dollars is ordinary text. In HTML a line breaks
    inside math only before a relation sign or after a comma, never inside
    brackets, so a narrow screen does not split "(a − 1)x" in the middle.
@@ -62,6 +63,11 @@
         const word = source.slice(i, j);
         push(word, !UPRIGHT.has(word), 0);
         i = j;
+      } else if (ch === "_" && i + 1 < source.length) {
+        // An underscore makes the next character a subscript, for letters such
+        // as b that have no Unicode subscript form: V_b.
+        push(source[i + 1], LETTER.test(source[i + 1]), -1);
+        i += 2;
       } else {
         const below = SUBSCRIPT[ch], above = SUPERSCRIPT[ch];
         if (below !== undefined) push(below, LETTER.test(below), -1);
