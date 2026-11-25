@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-edge-on-triangle-figure" viewBox="0 0 242 242" style="aspect-ratio: 242 / 242;">
+  <defs>
+    <clipPath id="pf-edge-on-triangle-__clipPath-0">
+      <rect x="6.0" y="6.0" width="230.0" height="230.0"/>
+    </clipPath>
+    <clipPath id="pf-edge-on-triangle-__clipPath-1">
+      <rect x="6.0" y="6.0" width="230.0" height="230.0"/>
+    </clipPath>
+  </defs>
+  <g id="pf-edge-on-triangle-edge-on-triangle">
+    <line id="pf-edge-on-triangle-tr-P1" x1="6.0" y1="174.2" x2="236.0" y2="145.4" stroke="#4A5D23" stroke-width="2.5" fill="none"/>
+    <line id="pf-edge-on-triangle-tr-P2" x1="20.7" y1="236.0" x2="163.4" y2="6.0" stroke="#876801" stroke-width="2.5" fill="none"/>
+    <line id="pf-edge-on-triangle-tr-P3" x1="233.4" y1="236.0" x2="104.6" y2="6.0" stroke="#606060" stroke-width="2.5" fill="none"/>
+    <circle id="pf-edge-on-triangle-tr-P1P2" cx="63.5" cy="167.0" r="4.5" stroke="black" stroke-width="2" fill="#5E011C"/>
+    <circle id="pf-edge-on-triangle-tr-P1P3" cx="186.2" cy="151.7" r="4.5" stroke="black" stroke-width="2" fill="#5E011C"/>
+    <circle id="pf-edge-on-triangle-tr-P2P3" cx="132.5" cy="55.8" r="4.5" stroke="black" stroke-width="2" fill="#5E011C"/>
+    <g id="pf-edge-on-triangle-__label-0" transform="translate(124.8,163.3) translate(-8.7,-0.0)">
+      <g id="pf-edge-on-triangle-__g-0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#4A5D23" width="17.384px" height="14.008px" role="img" focusable="false" viewBox="0 -692 1047.6 844.1" x="0.0" y="0.0">
+          <defs>
+            <path id="pf-edge-on-triangle-MJX-2-GP-I-1D443" d="M594 541C594 642 499 692 412 692C366 692 320 689 274 689L108 692L105 664L160 662C184 661 195 653 195 635C195 621 191 590 186 559L112 125C96 34 94 31 54 28L13 25L9-3L141 0L280-3L283 25L218 28C192 29 182 37 182 58C182 67 183 74 186 93L268 580C268 580 272 601 277 620C278 625 281 635 284 648C320 654 336 656 355 656C457 656 506 612 506 519C506 411 434 323 346 323C324 323 304 328 267 342L269 311C306 293 326 288 355 288C484 288 594 405 594 541Z"/>
+            <path id="pf-edge-on-triangle-MJX-2-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:P_1" data-semantic-speech="upper P 1">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:P" data-semantic-speech="upper P" data-semantic-prefix="Base">
+                  <use data-c="1D443" xlink:href="#pf-edge-on-triangle-MJX-2-GP-I-1D443"/>
+                </g>
+                <g data-mml-node="mn" transform="translate(644,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                  <use data-c="31" xlink:href="#pf-edge-on-triangle-MJX-2-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <g id="pf-edge-on-triangle-__label-1" transform="translate(88.2,117.0) translate(-17.4,-14.0)">
+      <g id="pf-edge-on-triangle-__g-1">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#876801" width="17.384px" height="14.008px" role="img" focusable="false" viewBox="0 -692 1047.6 844.1" x="0.0" y="0.0">
+          <defs>
+            <path id="pf-edge-on-triangle-MJX-3-GP-I-1D443" d="M594 541C594 642 499 692 412 692C366 692 320 689 274 689L108 692L105 664L160 662C184 661 195 653 195 635C195 621 191 590 186 559L112 125C96 34 94 31 54 28L13 25L9-3L141 0L280-3L283 25L218 28C192 29 182 37 182 58C182 67 183 74 186 93L268 580C268 580 272 601 277 620C278 625 281 635 284 648C320 654 336 656 355 656C457 656 506 612 506 519C506 411 434 323 346 323C324 323 304 328 267 342L269 311C306 293 326 288 355 288C484 288 594 405 594 541Z"/>
+            <path id="pf-edge-on-triangle-MJX-3-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:P_2" data-semantic-speech="upper P 2">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:P" data-semantic-speech="upper P" data-semantic-prefix="Base">
+                  <use data-c="1D443" xlink:href="#pf-edge-on-triangle-MJX-3-GP-I-1D443"/>
+                </g>
+                <g data-mml-node="mn" transform="translate(644,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                  <use data-c="32" xlink:href="#pf-edge-on-triangle-MJX-3-GP-N-32"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <g id="pf-edge-on-triangle-__label-2" transform="translate(169.1,109.3) translate(0.0,-14.2)">
+      <g id="pf-edge-on-triangle-__g-2">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.728px; color:#606060" width="17.384px" height="14.208px" role="img" focusable="false" viewBox="0 -692 1047.6 856.1" x="0.0" y="0.0">
+          <defs>
+            <path id="pf-edge-on-triangle-MJX-4-GP-I-1D443" d="M594 541C594 642 499 692 412 692C366 692 320 689 274 689L108 692L105 664L160 662C184 661 195 653 195 635C195 621 191 590 186 559L112 125C96 34 94 31 54 28L13 25L9-3L141 0L280-3L283 25L218 28C192 29 182 37 182 58C182 67 183 74 186 93L268 580C268 580 272 601 277 620C278 625 281 635 284 648C320 654 336 656 355 656C457 656 506 612 506 519C506 411 434 323 346 323C324 323 304 328 267 342L269 311C306 293 326 288 355 288C484 288 594 405 594 541Z"/>
+            <path id="pf-edge-on-triangle-MJX-4-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:P_3" data-semantic-speech="upper P 3">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:P" data-semantic-speech="upper P" data-semantic-prefix="Base">
+                  <use data-c="1D443" xlink:href="#pf-edge-on-triangle-MJX-4-GP-I-1D443"/>
+                </g>
+                <g data-mml-node="mn" transform="translate(644,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:3" data-semantic-speech="3" data-semantic-prefix="Subscript">
+                  <use data-c="33" xlink:href="#pf-edge-on-triangle-MJX-4-GP-N-33"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </g>
+</svg>

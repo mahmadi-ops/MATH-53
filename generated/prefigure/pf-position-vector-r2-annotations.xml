@@ -1,0 +1,48 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-position-vector-r2-position-vector" speech2="A vector in the x y plane drawn as an arrow from the origin to a point, with the same scale on both axes">
+      <grouped>pf-position-vector-r2-position-vector</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-position-vector-r2-pv-point</active>
+        <active>pf-position-vector-r2-pv-vector</active>
+        <active>pf-position-vector-r2-pv-a</active>
+        <active>pf-position-vector-r2-pv-b</active>
+      </children>
+      <components>
+        <active>pf-position-vector-r2-pv-point</active>
+        <active>pf-position-vector-r2-pv-vector</active>
+        <active>pf-position-vector-r2-pv-a</active>
+        <active>pf-position-vector-r2-pv-b</active>
+      </components>
+    </annotation>
+    <annotation id="pf-position-vector-r2-pv-point" speech2="The point a comma b, in the first quadrant">
+      <active>pf-position-vector-r2-pv-point</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-position-vector-r2-position-vector</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-position-vector-r2-pv-vector" speech2="The olive arrow v from the origin to the point a comma b">
+      <active>pf-position-vector-r2-pv-vector</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-position-vector-r2-position-vector</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-position-vector-r2-pv-a" speech2="A thin vertical line from the point down to the x axis meets it at a, the first entry of v">
+      <active>pf-position-vector-r2-pv-a</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-position-vector-r2-position-vector</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-position-vector-r2-pv-b" speech2="A thin horizontal line from the point across to the y axis meets it at b, the second entry of v">
+      <active>pf-position-vector-r2-pv-b</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-position-vector-r2-position-vector</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

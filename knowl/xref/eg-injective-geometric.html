@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.22</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A One-to-One Transformation, Seen Geometrically.</span>
+</h2>
+<div class="para">Let <span class="process-math">\(T : \R^2 \to \R^3\)</span> be the matrix transformation <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{,}\)</span> where <span class="process-math">\(A = \begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}\text{.}\)</span> Is <span class="process-math">\(T\)</span> one-to-one?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-injective-geometric-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Row reducing <span class="process-math">\(A\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-injective-iff-trivial.html">
+\begin{equation*}
+\begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}
+\xrightarrow{r_2 - r_1}
+\begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 1 \end{bmatrix}
+\xrightarrow{r_3 - r_2}
+\begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">so there is a pivot in every column. Hence <span class="process-math">\(A\vec{x} = \vec{0}\)</span> has only the trivial solution, and <span class="process-math">\(T\)</span> is one-to-one by <a href="sec-injections-surjections.html#thm-injective-iff-trivial" class="xref" data-knowl="./knowl/xref/thm-injective-iff-trivial.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.19: One-to-One and the Trivial Solution">Theorem 3.19</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-injective-geometric-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like"><div class="interactive-iframe-container"><iframe src="external/demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=-1,2&amp;show=true" id="int-injective-geometric" style="width:600px; height:480px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-injective-geometric.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> for <span class="process-math">\(A = \left[\begin{smallmatrix} 1 \amp 0 \\ 1 \amp 1 \\ 0 \amp 1 \end{smallmatrix}\right]\text{.}\)</span> Click and drag the head of the input vector <span class="process-math">\(\vec{x}\)</span> on the left: different inputs always produce different outputs <span class="process-math">\(\vec{b} = T(\vec{x})\)</span> on the right, so <span class="process-math">\(T\)</span> is one-to-one. The deep wine dot on the left is the solution set of <span class="process-math">\(T(\vec{x}) = \vec{b}\text{:}\)</span> it is a single point. The olive green plane on the right is the range of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 3.23"><a tabindex="-1" href="#fig-injective-geometric" title="Copy heading and permalink for Figure 3.23" aria-label="Copy heading and permalink for Figure 3.23">🔗</a></div></figcaption>
+</figure>
+<figure class="figure figure-like"><div class="interactive-iframe-container"><iframe src="external/demos-manim/axb.html?mat=1,0:1,1:0,1&amp;x=-1,2&amp;show=true" id="int-injective-geometric-light" style="width:600px; height:480px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-injective-geometric-light.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.24<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Explore the same transformation with the keyboard: focus the head of <span class="process-math">\(\vec{x}\)</span> and use the arrow keys, or drag either vector.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.24"><a tabindex="-1" href="#fig-injective-geometric-light" title="Copy heading and permalink for Figure 3.24" aria-label="Copy heading and permalink for Figure 3.24">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 3.22.1"><a tabindex="-1" href="#eg-injective-geometric-3" title="Copy heading and permalink for Solution 3.22.1" aria-label="Copy heading and permalink for Solution 3.22.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.22: A One-to-One Transformation, Seen Geometrically"><a tabindex="-1" href="#eg-injective-geometric" title="Copy heading and permalink for Example 3.22: A One-to-One Transformation, Seen Geometrically" aria-label="Copy heading and permalink for Example 3.22: A One-to-One Transformation, Seen Geometrically">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-injections-surjections.html#eg-injective-geometric">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A rotation made of three shears</title>
+  <link rel="stylesheet" href="book-theme.css">
+  <link rel="stylesheet" href="geometry-explorers.css">
+  <style>
+    /* A compact picture: with the two sliders above it and the caption below, it fits a phone screen. */
+    #shear-scene { max-width: 270px; margin-inline: auto; }
+    .stages button { flex: 1 1 62px; min-width: 0; padding: 7px 4px; }
+    .guide { min-height: 4.4em; }
+    .m2 { display: inline-grid; grid-template-columns: repeat(2, auto); gap: 0 .8em; text-align: right;
+      border-inline: 1px solid #505050; border-radius: 3px; padding: 2px 6px; margin: 0 4px; vertical-align: middle;
+      font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .factors, .products { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+    .products { gap: 8px 22px; }
+    .factor { display: inline-flex; flex-direction: column; align-items: center; gap: 3px; padding: 5px 4px;
+      border: 2px solid transparent; border-radius: 5px; }
+    .factor[data-state="active"] { border-color: var(--wine); background: #fdfafb; }
+    .factor[data-state="done"] { border-color: var(--olive); background: white; }
+    .factor[data-state="pending"] { opacity: .55; }
+    .factor-name { font-size: .9rem; }
+    .factors .lead { flex-basis: 100%; }
+    .labelled { white-space: nowrap; }
+  </style>
+  <script src="book-theme.js" defer></script>
+  <script src="book-math.js" defer></script>
+  <script src="geometry-core.js" defer></script>
+  <script src="shear-rotation.js" defer></script>
+</head>
+<body><main>
+  <h1 id="title">A rotation made of three shears</h1>
+  <p class="prediction"><strong>Predict:</strong> A shear only slides points along horizontal lines, or only along vertical lines. The picture will be sheared horizontally, then vertically, then horizontally again. After which of the three shears do you expect it to look like a square again?</p>
+  <div class="live-explorer" hidden>
+    <div class="controls">
+      <button id="play" type="button" aria-pressed="false">Play guide</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <label class="slider" for="theta"><span>Angle <span class="math">θ</span></span>
+      <input id="theta" type="range" min="-90" max="90" step="5" value="60" aria-describedby="status window-note">
+      <output aria-live="off" id="theta-value" for="theta">60°</output>
+    </label>
+    <label class="slider" for="step"><span>Shears</span>
+      <input id="step" type="range" min="0" max="3" step="0.01" value="0" aria-describedby="guide-caption">
+      <output aria-live="off" id="step-value" for="step">0</output>
+    </label>
+    <svg id="shear-scene" class="scene" viewBox="0 0 300 438" role="img" aria-labelledby="scene-title scene-description">
+      <title id="scene-title">A square picture with a letter F being sheared three times in the xy-plane</title>
+      <desc id="scene-description">A square picture with a letter F. The dashed square marks where the picture started.</desc>
+    </svg>
+    <p id="guide-caption" class="guide" role="status">Move the sliders, or press Play to watch the three shears one after another.</p>
+    <div class="stages" role="group" aria-label="Jump to a stage">
+      <button id="stage-0" type="button" aria-pressed="false">Picture</button>
+      <button id="stage-1" type="button" aria-pressed="false">1 shear</button>
+      <button id="stage-2" type="button" aria-pressed="false">2 shears</button>
+      <button id="stage-3" type="button" aria-pressed="false">3 shears</button>
+    </div>
+    <div class="legend" aria-label="What the colors mean">
+      <span class="gray"><span class="swatch"></span>Where the picture started</span>
+      <span class="olive"><span class="swatch"></span>The picture now</span>
+      <span class="mustard"><span class="swatch"></span>How the current shear moves points</span>
+    </div>
+    <div class="readout">
+      <p id="status"></p>
+      <p id="factors" class="factors"></p>
+      <p id="product" class="products"></p>
+    </div>
+    <p id="window-note" class="hint">Both axes use the same unit, and the marks on them are one unit apart. The picture is the square with corners <span class="math">(±1, ±1)</span>; its centre stays at the origin. The window is chosen for each angle so that the picture fits at every step, so a larger angle shows the picture a little smaller.</p>
+  </div>
+  <figure class="fallback">
+    <img src="../images/ch4-shear-rotation.svg" alt="A square picture with a letter F after one horizontal shear: it has become a parallelogram, and arrows show each horizontal line sliding sideways by an amount proportional to its height.">
+    <figcaption>The matrix of the rotation through <span class="math">θ</span> is the product <span class="math">HₐV_bHₐ</span> of three shears, with <span class="math">a = −tan(θ/2)</span> and <span class="math">b = sin θ</span>. The picture shows the first shear for <span class="math">θ = 60°</span>: every point keeps its height <span class="math">y</span> and slides sideways by <span class="math">ay</span>. JavaScript enables the sliders and the guide.</figcaption>
+  </figure>
+  <details>
+    <summary>How to read this figure</summary>
+    <ol>
+      <li>The picture is a square with a letter F and a few of its own grid lines. The dashed square shows where it started. Its centre is the origin, which no shear moves.</li>
+      <li>The matrix <span class="math">Hₐ</span> sends <span class="math">(x, y)</span> to <span class="math">(x + ay, y)</span>, and <span class="math">V_b</span> sends <span class="math">(x, y)</span> to <span class="math">(x, y + bx)</span>. The mustard arrows show how the current shear moves the corners and the midpoints of the sides: they are all horizontal for <span class="math">Hₐ</span> and all vertical for <span class="math">V_b</span>, and points farther from the axis move farther.</li>
+      <li>In the product <span class="math">A = HₐV_bHₐ</span> the factor on the right acts first. The boxes under the picture show the three factors; the one being applied is outlined in wine, and the finished ones in olive.</li>
+      <li>“Applied so far” is the product of the shears carried out up to this moment. After three shears it equals the rotation matrix beside it.</li>
+    </ol>
+  </details>
+  <p class="question">The picture looks distorted after one shear and after two. Its area, however, is the same at every moment. Why?</p>
+</main></body>
+</html>

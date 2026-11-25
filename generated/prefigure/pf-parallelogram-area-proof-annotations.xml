@@ -1,0 +1,84 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-parallelogram-area-proof-area-proof" speech2="A parallelogram spanned by two vectors a and b, drawn inside the smallest rectangle with horizontal and vertical sides that contains it; the same scale is used in both directions">
+      <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-parallelogram-area-proof-ap-a</active>
+        <active>pf-parallelogram-area-proof-ap-b</active>
+        <active>pf-parallelogram-area-proof-ap-sides</active>
+        <active>pf-parallelogram-area-proof-ap-parallelogram</active>
+        <active>pf-parallelogram-area-proof-ap-rectangle</active>
+        <active>pf-parallelogram-area-proof-ap-bottom-labels</active>
+        <active>pf-parallelogram-area-proof-ap-right-labels</active>
+        <active>pf-parallelogram-area-proof-ap-small-rectangles</active>
+      </children>
+      <components>
+        <active>pf-parallelogram-area-proof-ap-a</active>
+        <active>pf-parallelogram-area-proof-ap-b</active>
+        <active>pf-parallelogram-area-proof-ap-sides</active>
+        <active>pf-parallelogram-area-proof-ap-parallelogram</active>
+        <active>pf-parallelogram-area-proof-ap-rectangle</active>
+        <active>pf-parallelogram-area-proof-ap-bottom-labels</active>
+        <active>pf-parallelogram-area-proof-ap-right-labels</active>
+        <active>pf-parallelogram-area-proof-ap-small-rectangles</active>
+      </components>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-a" speech2="The olive vector a from the lower left corner, long to the right and a little up; its entries are a 1 and a 2">
+      <active>pf-parallelogram-area-proof-ap-a</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-b" speech2="The olive vector b from the same corner, a little to the right and steeply up; its entries are b 1 and b 2">
+      <active>pf-parallelogram-area-proof-ap-b</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-sides" speech2="Two thin sides complete the parallelogram, whose far corner is the upper right corner of the rectangle">
+      <active>pf-parallelogram-area-proof-ap-sides</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-parallelogram" speech2="The parallelogram, shaded pale wine">
+      <active>pf-parallelogram-area-proof-ap-parallelogram</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-rectangle" speech2="The surrounding rectangle, shaded grey, has width a 1 plus b 1 and height a 2 plus b 2">
+      <active>pf-parallelogram-area-proof-ap-rectangle</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-bottom-labels" speech2="Along the bottom side, a segment of length a 1 followed by a segment of length b 1">
+      <active>pf-parallelogram-area-proof-ap-bottom-labels</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-right-labels" speech2="Along the right side, a segment of length a 2 followed by a segment of length b 2">
+      <active>pf-parallelogram-area-proof-ap-right-labels</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-parallelogram-area-proof-ap-small-rectangles" speech2="Thin lines cut off two small rectangles of size b 1 by a 2, in the lower right and upper left corners; the rest of the grey region is two right triangles with legs a 1 and a 2 and two with legs b 1 and b 2">
+      <active>pf-parallelogram-area-proof-ap-small-rectangles</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-parallelogram-area-proof-area-proof</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

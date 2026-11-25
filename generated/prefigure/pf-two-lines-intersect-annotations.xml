@@ -1,0 +1,39 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-two-lines-intersect-two-lines" speech2="Graph of two lines in the x y plane, with both axes marked from minus 3 to 3 in steps of 1 and the same scale on both">
+      <grouped>pf-two-lines-intersect-two-lines</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-two-lines-intersect-tl-first</active>
+        <active>pf-two-lines-intersect-tl-second</active>
+        <active>pf-two-lines-intersect-tl-solution</active>
+      </children>
+      <components>
+        <active>pf-two-lines-intersect-tl-first</active>
+        <active>pf-two-lines-intersect-tl-second</active>
+        <active>pf-two-lines-intersect-tl-solution</active>
+      </components>
+    </annotation>
+    <annotation id="pf-two-lines-intersect-tl-first" speech2="The olive line x plus y equals 1, falling from left to right through the points 0 comma 1 and 1 comma 0">
+      <active>pf-two-lines-intersect-tl-first</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-two-lines-intersect-two-lines</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-lines-intersect-tl-second" speech2="The black line y minus x equals 1, rising from left to right through the points minus 1 comma 0 and 0 comma 1">
+      <active>pf-two-lines-intersect-tl-second</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-two-lines-intersect-two-lines</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-lines-intersect-tl-solution" speech2="The mustard point 0 comma 1 on the y axis, where the two lines cross; it is the only solution of the system">
+      <active>pf-two-lines-intersect-tl-solution</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-two-lines-intersect-two-lines</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

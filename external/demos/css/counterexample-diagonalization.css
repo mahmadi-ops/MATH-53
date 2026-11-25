@@ -1,0 +1,99 @@
+.counterexample-builder {
+  --builder-olive: #4A5D23;
+  --builder-wine: #5E011C;
+  --builder-pale: #EDF0E6;
+  --builder-border: #c4cdb1;
+  margin: 0;
+  color: #24291f;
+  background: #fff;
+  font-family: var(--font-body, "TeX Gyre Pagella", Palatino, Georgia, serif);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.counterexample-builder *,
+.counterexample-builder *::before,
+.counterexample-builder *::after { box-sizing: border-box; }
+.counterexample-builder [hidden] { display: none !important; }
+.counterexample-builder .builder { max-width: 800px; margin: 0 auto; padding: 24px; }
+.counterexample-builder h1,
+.counterexample-builder h2 { font-family: inherit; line-height: 1.2; }
+.counterexample-builder h1 { margin: 0 0 18px; color: var(--builder-wine); font-size: clamp(1.65rem, 4vw, 2.15rem); }
+.counterexample-builder h2 { margin: 0 0 12px; color: var(--builder-olive); font-size: 1.2rem; }
+.counterexample-builder p { margin: 0 0 12px; }
+.counterexample-builder var { font-family: inherit; }
+.counterexample-builder sup,
+.counterexample-builder sub { font-size: .75em; line-height: 0; }
+.counterexample-builder .eyebrow { margin-bottom: 4px; color: var(--builder-olive); font-size: .85rem; font-weight: 700; letter-spacing: .065em; text-transform: uppercase; }
+.counterexample-builder .claim { margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--builder-wine); font-size: 1.08rem; }
+.counterexample-builder .claim-label { display: block; margin-bottom: 3px; color: var(--builder-wine); font-size: .85rem; font-weight: 700; }
+.counterexample-builder .challenge { padding: 18px 20px; border: 1px solid var(--builder-border); border-radius: 8px; background: var(--builder-pale); }
+.counterexample-builder .target-list { display: grid; gap: 9px; margin: 8px 0 14px; padding-left: 24px; }
+.counterexample-builder .target-polynomial { overflow-wrap: anywhere; }
+.counterexample-builder .expanded-polynomial { display: inline-block; margin-top: 5px; padding-left: 1.5em; }
+.counterexample-builder .goal-note { margin: 0; font-size: .94rem; }
+.counterexample-builder form { margin-top: 22px; }
+.counterexample-builder fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.counterexample-builder legend { margin: 0 0 8px; padding: 0; font-size: 1.2rem; font-weight: 700; color: var(--builder-olive); }
+.counterexample-builder .entry-help { max-width: 580px; font-size: .94rem; }
+.counterexample-builder .matrix-editor { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 430px; margin: 20px auto; }
+.counterexample-builder .matrix-name { flex: 0 0 auto; font-size: 1.3rem; }
+.counterexample-builder .input-matrix { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); flex: 1 1 auto; gap: 9px; min-width: 0; padding: 10px 14px; border-inline: 2px solid var(--builder-olive); }
+.counterexample-builder .input-matrix::before,
+.counterexample-builder .input-matrix::after,
+.counterexample-builder .math-matrix::before,
+.counterexample-builder .math-matrix::after { content: ""; position: absolute; top: 0; bottom: 0; width: 8px; border-block: 2px solid currentColor; pointer-events: none; }
+.counterexample-builder .input-matrix::before,
+.counterexample-builder .math-matrix::before { left: 0; }
+.counterexample-builder .input-matrix::after,
+.counterexample-builder .math-matrix::after { right: 0; }
+.counterexample-builder .input-matrix { color: var(--builder-olive); }
+.counterexample-builder .input-matrix label { min-width: 0; }
+.counterexample-builder input { display: block; width: 100%; min-width: 0; min-height: 48px; padding: 7px 4px; border: 1px solid #8c9874; border-radius: 4px; font: inherit; font-variant-numeric: tabular-nums; color: #24291f; background: white; text-align: center; }
+.counterexample-builder input[aria-invalid="true"] { border: 2px solid var(--builder-wine); background: #fcf4f6; }
+.counterexample-builder button { min-height: 44px; max-width: 100%; padding: 9px 20px; border: 1px solid var(--builder-olive); border-radius: 5px; font: inherit; font-weight: 700; color: var(--builder-olive); background: white; cursor: pointer; }
+.counterexample-builder button:hover { background: var(--builder-pale); }
+.counterexample-builder button.primary { color: white; background: var(--builder-olive); }
+.counterexample-builder button.primary:hover { background: #38471a; }
+.counterexample-builder input:focus-visible,
+.counterexample-builder button:focus-visible { outline: 3px solid var(--builder-wine); outline-offset: 3px; }
+.counterexample-builder .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.counterexample-builder .hint,
+.counterexample-builder .verification { margin-top: 20px; padding: 18px 20px; border: 1px solid var(--builder-border); border-radius: 8px; background: var(--builder-pale); }
+.counterexample-builder .hint { border-left: 4px solid var(--builder-olive); }
+.counterexample-builder .hint p:last-child,
+.counterexample-builder .verification p:last-child { margin-bottom: 0; }
+.counterexample-builder .feedback-status { margin: 20px 0 0; font-weight: 700; overflow-wrap: anywhere; }
+.counterexample-builder .feedback-status:empty { margin: 0; }
+.counterexample-builder .feedback-status[data-state="success"] { color: var(--builder-olive); }
+.counterexample-builder .feedback-status[data-state="error"],
+.counterexample-builder .input-errors { color: var(--builder-wine); }
+.counterexample-builder .input-errors { margin: 10px 0 0; padding-left: 24px; }
+.counterexample-builder .results { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--builder-border); }
+.counterexample-builder .matrix-facts { padding: 12px 16px; border-radius: 5px; background: #f6f7f3; overflow-wrap: anywhere; }
+.counterexample-builder .matrix-facts p:last-child { margin-bottom: 0; }
+.counterexample-builder .condition-results { display: grid; gap: 10px; margin: 16px 0; padding: 0; list-style: none; }
+.counterexample-builder .condition-results li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 10px; padding: 10px 12px; border-left: 3px solid var(--builder-olive); background: #f6f7f3; overflow-wrap: anywhere; }
+.counterexample-builder .condition-results li[data-passed="false"] { border-color: var(--builder-wine); background: #fbf4f6; }
+.counterexample-builder .condition-mark { grid-row: 1 / 3; min-width: 43px; color: var(--builder-olive); font-size: .85rem; font-weight: 700; }
+.counterexample-builder [data-passed="false"] .condition-mark { color: var(--builder-wine); }
+.counterexample-builder .condition-detail { grid-column: 2; font-size: .94rem; }
+.counterexample-builder .basis-card { min-width: 0; margin: 16px 0; padding: 12px 14px; border: 1px solid var(--builder-border); border-radius: 5px; background: white; overflow-wrap: anywhere; }
+.counterexample-builder .basis-card h3 { margin: 0 0 8px; color: var(--builder-olive); font-size: 1.05rem; }
+.counterexample-builder .basis-equation { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-bottom: 10px; }
+.counterexample-builder .basis-vectors { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px; min-width: 0; max-width: 100%; }
+.counterexample-builder .math-matrix { position: relative; display: inline-grid; gap: 3px 14px; max-width: 100%; padding: 6px 12px; border-inline: 2px solid currentColor; color: #24291f; text-align: center; font-variant-numeric: tabular-nums; vertical-align: middle; }
+.counterexample-builder .math-matrix span { min-width: 0; overflow-wrap: anywhere; }
+.counterexample-builder .verification .conclusion { padding-top: 12px; border-top: 1px solid var(--builder-border); }
+.counterexample-builder .no-script { margin-top: 20px; color: var(--builder-wine); }
+.counterexample-builder .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 440px) {
+  .counterexample-builder .builder { padding: 16px; }
+  .counterexample-builder .challenge,
+  .counterexample-builder .hint,
+  .counterexample-builder .verification { padding: 15px; }
+  .counterexample-builder .matrix-editor { gap: 8px; }
+  .counterexample-builder .input-matrix { gap: 7px; padding-inline: 10px; }
+  .counterexample-builder .actions button { flex: 1 1 auto; padding-inline: 14px; }
+  .counterexample-builder .basis-card { padding: 12px 10px; }
+}

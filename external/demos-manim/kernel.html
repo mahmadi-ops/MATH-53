@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The kernel: inputs sent to zero</title>
+  <link rel="stylesheet" href="book-theme.css">
+  <link rel="stylesheet" href="geometry-explorers.css">
+  <style>
+    #kernel-scene, #output-scene { max-width: 520px; margin-inline: auto; }
+    #output-scene { margin-top: 6px; }
+    .scene-title { margin: 10px 0 4px; font-size: 1rem; }
+    .controls button { padding: 7px 10px; }
+    /* The handle at the tip of the input: it alone takes over touches, so the page still scrolls. */
+    .handle { fill: #4A5D23; fill-opacity: .18; stroke: #4A5D23; stroke-width: 2; cursor: grab; touch-action: none; }
+    .handle:active { cursor: grabbing; fill-opacity: .3; }
+  </style>
+  <script src="book-theme.js" defer></script>
+  <script src="book-math.js" defer></script>
+  <script src="geometry-core.js" defer></script>
+  <script src="kernel.js" defer></script>
+</head>
+<body><main>
+  <h1 id="title">The kernel: inputs sent to zero</h1>
+  <p class="prediction"><strong>Predict:</strong> The transformation <span class="math">T(x, y) = (x + 2y, 2x + 4y, −x − 2y)</span> sends <span class="math">(−2, 1)</span> to the zero vector. Which other inputs does it send to zero? If an input is moved by <span class="math">(−2, 1)</span>, what happens to its output?</p>
+  <div class="live-explorer" hidden>
+    <label class="slider" for="x"><span>Entry <span class="math">x</span></span>
+      <input id="x" type="range" min="-3" max="3" step="0.5" value="1" aria-describedby="output status">
+      <output aria-live="off" id="x-value" for="x">1</output>
+    </label>
+    <label class="slider" for="y"><span>Entry <span class="math">y</span></span>
+      <input id="y" type="range" min="-2" max="2" step="0.5" value="1" aria-describedby="output status">
+      <output aria-live="off" id="y-value" for="y">1</output>
+    </label>
+    <h2 id="heading-inputs" class="scene-title">Inputs: the plane <span class="math">ℝ²</span></h2>
+    <svg id="kernel-scene" class="scene" viewBox="0 0 420 280" role="img" aria-labelledby="heading-inputs scene-description">
+      <desc id="scene-description">The plane of inputs with the kernel drawn as a wine line through the origin.</desc>
+    </svg>
+    <h2 id="heading-outputs" class="scene-title">Outputs: <span class="math">T(x, y) = c(1, 2, −1)</span>, a point of a line in <span class="math">ℝ³</span></h2>
+    <svg id="output-scene" class="scene" viewBox="0 0 420 96" role="img" aria-labelledby="heading-outputs output-description">
+      <desc id="output-description">A number line for the coefficient c of the output.</desc>
+    </svg>
+    <div class="controls" role="group" aria-label="Move the input">
+      <button id="slide-back" type="button">Slide by <span class="math">(1, −½)</span></button>
+      <button id="slide-on" type="button">Slide by <span class="math">(−1, ½)</span></button>
+      <button id="to-kernel" type="button">Go to <span class="math">(−2, 1)</span></button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <div class="readout">
+      <p id="output" class="equation"></p>
+      <p id="status" class="wine" role="status"></p>
+      <p id="same"></p>
+    </div>
+    <div class="legend" aria-label="What the colors mean">
+      <span class="wine"><span class="swatch"></span>The kernel, <span class="math">Ker T = Nul A</span></span>
+      <span class="olive"><span class="swatch"></span>The input, and all inputs with its output (dashed)</span>
+      <span class="mustard"><span class="swatch"></span>The output</span>
+    </div>
+    <p id="window-note" class="hint">The upper picture is the domain, with the same unit on both axes; the kernel continues beyond it. Move the input with the sliders or drag the round handle at its tip. The two Slide buttons move it parallel to the kernel.</p>
+  </div>
+  <figure class="fallback">
+    <img src="../images/ch5-kernel.svg" alt="The xy-plane with the kernel, a line through the origin and the point (−2, 1), and a dashed parallel line through the points (1, 1) and (−1, 2).">
+    <figcaption>For <span class="math">T(x, y) = (x + 2y, 2x + 4y, −x − 2y)</span> the kernel is the line of all multiples of <span class="math">(−2, 1)</span>: these are the inputs sent to the zero vector. The inputs <span class="math">(1, 1)</span> and <span class="math">(−1, 2)</span> differ by <span class="math">(−2, 1)</span>, so both are sent to <span class="math">(3, 6, −3)</span>. JavaScript enables the sliders.</figcaption>
+  </figure>
+  <details>
+    <summary>How to read this figure</summary>
+    <ol>
+      <li>The matrix of <span class="math">T</span> is <span class="math">A</span>, with rows <span class="math">(1, 2)</span>, <span class="math">(2, 4)</span> and <span class="math">(−1, −2)</span>. Every output is <span class="math">c(1, 2, −1)</span> with <span class="math">c = x + 2y</span>, so the outputs fill a line in <span class="math">ℝ³</span>. The lower picture shows that line, marked by the value of <span class="math">c</span>.</li>
+      <li>The output is the zero vector exactly when <span class="math">x + 2y = 0</span>. Those inputs form the wine line: the kernel of <span class="math">T</span>, which is the null space of <span class="math">A</span>.</li>
+      <li>The kernel is drawn in the upper picture because it is a set of inputs. It is a line in <span class="math">ℝ²</span>, although the outputs are in <span class="math">ℝ³</span>.</li>
+      <li>Sliding the input along the dashed line adds a multiple of <span class="math">(−2, 1)</span> to it. That changes <span class="math">x + 2y</span> by <span class="math">−2 + 2 = 0</span> each time, so the output does not move.</li>
+    </ol>
+  </details>
+  <p class="question">Two different inputs can have the same output. Which statement about the kernel makes that possible?</p>
+</main></body>
+</html>

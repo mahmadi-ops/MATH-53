@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two lines: x + y = 1 and ax + y = b</title>
+  <link rel="stylesheet" href="book-theme.css">
+  <link rel="stylesheet" href="geometry-explorers.css">
+  <style>
+    /* A square picture: keep it from growing taller than a screen in wide frames. */
+    #line-scene { max-width: 540px; margin-inline: auto; }
+  </style>
+  <script src="book-theme.js" defer></script>
+  <script src="book-math.js" defer></script>
+  <script src="geometry-core.js" defer></script>
+  <script src="line-family.js" defer></script>
+</head>
+<body><main>
+  <h1 id="title">Two lines: <span class="math">x + y = 1</span> and <span class="math">ax + y = b</span></h1>
+  <p class="prediction"><strong>Predict:</strong> The olive line <span class="math">x + y = 1</span> never moves. Before touching the sliders, decide: which value of <span class="math">a</span> makes the second line parallel to it? For that <span class="math">a</span>, which value of <span class="math">b</span> puts the second line exactly on top of the first?</p>
+  <div class="live-explorer" hidden>
+    <div class="legend" aria-label="The two equations and their common solutions">
+      <span class="olive"><span class="swatch"></span><span class="math">x + y = 1</span></span>
+      <span class="mustard"><span class="swatch"></span><span id="second-equation"><span class="math">2x + y = 3</span></span></span>
+      <span class="wine"><span class="swatch"></span>Common solutions</span>
+    </div>
+    <div class="controls" role="group" aria-label="Jump to an example of each case">
+      <button id="case-point" type="button" aria-pressed="false">One solution</button>
+      <button id="case-empty" type="button" aria-pressed="false">No solution</button>
+      <button id="case-line" type="button" aria-pressed="false">Infinitely many</button>
+    </div>
+    <label class="slider" for="a"><span>Coefficient <span class="math">a</span></span>
+      <input id="a" type="range" min="-3" max="3" step="0.5" value="2" aria-describedby="status window-note">
+      <output aria-live="off" id="a-value" for="a">2</output>
+    </label>
+    <label class="slider" for="b"><span>Constant <span class="math">b</span></span>
+      <input id="b" type="range" min="-3" max="4" step="0.5" value="3" aria-describedby="status window-note">
+      <output aria-live="off" id="b-value" for="b">3</output>
+    </label>
+    <svg id="line-scene" class="scene" viewBox="0 0 560 560" role="img" aria-labelledby="scene-title scene-description">
+      <title id="scene-title">The lines x + y = 1 and ax + y = b in the xy-plane</title>
+      <desc id="scene-description">An olive line, x + y = 1, and a mustard line, ax + y = b, whose position is set by the two sliders. The wine highlight marks the points common to both lines.</desc>
+    </svg>
+    <p id="window-note" class="hint">The window shows <span class="math">−5 ≤ x ≤ 5</span> and <span class="math">−5 ≤ y ≤ 5</span>, with the same unit on both axes. The lines continue beyond it.</p>
+    <div class="readout">
+      <p id="status" class="wine" role="status"></p>
+      <p id="derived"></p>
+      <p id="check"></p>
+    </div>
+  </div>
+  <figure class="fallback">
+    <figcaption>This interactive figure needs JavaScript. The line <span class="math">x + y = 1</span> is fixed, and the second line <span class="math">ax + y = b</span> has slope <span class="math">−a</span>. If <span class="math">a ≠ 1</span> the two lines cross at exactly one point, <span class="math">((b − 1)/(a − 1), (a − b)/(a − 1))</span>. If <span class="math">a = 1</span> and <span class="math">b ≠ 1</span> they are parallel and the system has no solution. If <span class="math">a = 1</span> and <span class="math">b = 1</span> they are the same line, and every point <span class="math">(t, 1 − t)</span> is a solution.</figcaption>
+  </figure>
+  <details>
+    <summary>How to read this figure</summary>
+    <ol>
+      <li>Each equation is a line, and a solution of the system is a point lying on both lines.</li>
+      <li>The slider for <span class="math">a</span> turns the mustard line about the point <span class="math">(0, b)</span>, where it crosses the <span class="math">y</span>-axis: its slope is <span class="math">−a</span>. The slider for <span class="math">b</span> moves the line up and down without turning it.</li>
+      <li>Subtracting the first equation from the second gives <span class="math">(a − 1)x = b − 1</span>. The readout shows this equation for the current <span class="math">a</span> and <span class="math">b</span>; everything depends on whether <span class="math">a − 1</span> is zero.</li>
+      <li>Move <span class="math">a</span> toward <span class="math">1</span> from either side and watch the crossing point run off the window. At <span class="math">a = 1</span> exactly, there is no crossing point at all, unless <span class="math">b = 1</span>.</li>
+    </ol>
+  </details>
+  <p class="question">Why do the “no solution” and “infinitely many solutions” cases both occur only when <span class="math">a = 1</span>?</p>
+</main></body>
+</html>

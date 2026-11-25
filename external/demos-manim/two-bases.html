@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One vector, two bases</title>
+  <link rel="stylesheet" href="book-theme.css">
+  <link rel="stylesheet" href="geometry-explorers.css">
+  <style>
+    .panel h2 { font-weight: 400; }
+    .panel .equation { margin: 8px 0 2px; }
+    .panel .hint { margin-top: 2px; }
+    /* The handle at the tip of the vector: it alone takes over touches, so the page still scrolls. */
+    .handle { fill: #5E011C; fill-opacity: .18; stroke: #5E011C; stroke-width: 2; cursor: grab; touch-action: none; }
+    .handle:active { cursor: grabbing; fill-opacity: .3; }
+  </style>
+  <script src="book-theme.js" defer></script>
+  <script src="book-math.js" defer></script>
+  <script src="geometry-core.js" defer></script>
+  <script src="two-bases.js" defer></script>
+</head>
+<body><main>
+  <h1 id="title">One vector, two bases</h1>
+  <p class="prediction"><strong>Predict:</strong> The vector <span class="math">(2, 1, 0)</span> of the <span class="math">xy</span>-plane is <span class="math">2e₁ + 1e₂</span>. Which multiples of <span class="math">e₁</span> and of <span class="math">e₁ + e₂</span> add up to the same vector?</p>
+  <div class="live-explorer" hidden>
+    <div class="legend" aria-label="What the colors mean">
+      <span class="wine"><span class="swatch"></span>The vector <span class="math">(x, y, 0)</span></span>
+      <span class="olive"><span class="swatch"></span>Multiple of the first basis vector</span>
+      <span class="mustard"><span class="swatch"></span>Multiple of the second basis vector</span>
+    </div>
+    <label class="slider" for="x"><span>Entry <span class="math">x</span></span>
+      <input id="x" type="range" min="-2" max="2" step="0.5" value="2" aria-describedby="status">
+      <output aria-live="off" id="x-value" for="x">2</output>
+    </label>
+    <label class="slider" for="y"><span>Entry <span class="math">y</span></span>
+      <input id="y" type="range" min="-2" max="2" step="0.5" value="1" aria-describedby="status">
+      <output aria-live="off" id="y-value" for="y">1</output>
+    </label>
+    <div class="controls">
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <div class="panels">
+      <section class="panel" aria-labelledby="heading-standard">
+        <h2 id="heading-standard">First basis: <span class="math">e₁</span>, <span class="math">e₂</span></h2>
+        <svg id="scene-standard" class="scene" viewBox="0 0 440 260" role="img" aria-labelledby="heading-standard description-standard">
+          <desc id="description-standard">The vector as a multiple of e1 plus a multiple of e2.</desc>
+        </svg>
+        <p id="equation-standard" class="equation"></p>
+        <p id="check-standard" class="hint"></p>
+      </section>
+      <section class="panel output" aria-labelledby="heading-second">
+        <h2 id="heading-second">Second basis: <span class="math">e₁</span>, <span class="math">e₁ + e₂</span></h2>
+        <svg id="scene-second" class="scene" viewBox="0 0 440 260" role="img" aria-labelledby="heading-second description-second">
+          <desc id="description-second">The vector as a multiple of e1 plus a multiple of e1 + e2.</desc>
+        </svg>
+        <p id="equation-second" class="equation"></p>
+        <p id="check-second" class="hint"></p>
+      </section>
+    </div>
+    <p id="window-note" class="hint">Both pictures show the <span class="math">xy</span>-plane <span class="math">H</span> from above, with the same unit on both axes, and the same wine vector. The pale lines are the grid of each basis. Move the vector with the sliders, or drag the round handle at its tip.</p>
+    <div class="readout">
+      <p id="status" role="status"></p>
+    </div>
+  </div>
+  <figure class="fallback">
+    <img src="../images/ch5-two-bases.svg" alt="The vector (2, 1, 0) drawn twice in the xy-plane: on the left as 2 e 1 plus 1 e 2, on the right as 1 e 1 plus 1 times e 1 plus e 2.">
+    <figcaption>Every vector <span class="math">(x, y, 0)</span> of the <span class="math">xy</span>-plane can be written in the basis <span class="math">e₁</span>, <span class="math">e₂</span> as <span class="math">xe₁ + ye₂</span>, and in the basis <span class="math">e₁</span>, <span class="math">e₁ + e₂</span> as <span class="math">(x − y)e₁ + y(e₁ + e₂)</span>. The picture shows <span class="math">(2, 1, 0) = 2e₁ + 1e₂ = 1e₁ + 1(e₁ + e₂)</span>. JavaScript enables the sliders.</figcaption>
+  </figure>
+  <details>
+    <summary>How to read this figure</summary>
+    <ol>
+      <li>The thin dark arrows are the two vectors of each basis. The olive arrow is a multiple of the first basis vector and the mustard arrow a multiple of the second; the dashed lines complete the parallelogram, whose far corner is the tip of the wine vector.</li>
+      <li>In the first basis the weights are the entries themselves: <span class="math">(x, y, 0) = xe₁ + ye₂</span>.</li>
+      <li>In the second basis only <span class="math">e₁ + e₂</span> has a <span class="math">y</span>-entry, so its weight must be <span class="math">y</span>. That uses up <span class="math">y</span> units in the <span class="math">x</span>-direction as well, and <span class="math">e₁</span> supplies the remaining <span class="math">x − y</span>: <span class="math">(x, y, 0) = (x − y)e₁ + y(e₁ + e₂)</span>.</li>
+      <li>Each basis has its own grid. Counting grid steps along the two directions from the origin to the tip of the vector gives the two weights.</li>
+    </ol>
+  </details>
+  <p class="question">For which vectors of <span class="math">H</span> are the two weights the same in both bases?</p>
+</main></body>
+</html>

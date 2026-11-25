@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One fixed vector, a changing basis</title>
+  <link rel="stylesheet" href="book-theme.css">
+  <link rel="stylesheet" href="geometry-explorers.css">
+  <script src="book-theme.js" defer></script>
+  <script src="book-math.js" defer></script>
+  <script src="geometry-core.js" defer></script>
+  <script src="change-of-basis.js" defer></script>
+</head>
+<body><main>
+  <h1>Keep the vector fixed. Change its coordinates.</h1>
+  <p class="prediction"><strong>Predict:</strong> The wine arrow ends at <span class="math">(1, 2)</span>. If the basis grid changes, must this arrow move?</p>
+  <div class="live-explorer" hidden>
+    <div class="controls">
+      <button id="play" type="button" aria-pressed="false">Play guide</button>
+      <button id="standard" type="button">Standard basis</button>
+      <button id="new-basis" type="button">New basis</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <label class="slider" for="basis-progress">Grid change
+      <input id="basis-progress" type="range" min="0" max="100" step="1" value="0" aria-describedby="independence">
+      <output aria-live="off" id="basis-progress-value" for="basis-progress">0%</output>
+    </label>
+    <svg id="basis-scene" class="scene" viewBox="0 0 600 410" role="img" aria-labelledby="basis-title basis-description">
+      <title id="basis-title">A fixed vector and a smoothly changing two-dimensional basis grid</title>
+      <desc id="basis-description">The vector x stays at (1, 2). The olive and mustard scaled basis arrows are arranged head to tail, always ending at the tip of x.</desc>
+    </svg>
+    <div class="legend"><span class="wine"><span class="swatch"></span>Fixed vector <span class="math">x = (1, 2)</span></span><span class="olive"><span class="swatch"></span>First basis contribution</span><span class="mustard"><span class="swatch"></span>Second basis contribution</span></div>
+    <div class="readout">
+      <p id="basis-vectors"></p>
+      <p class="equation">Coordinates in the displayed basis: <output aria-live="off" id="coordinate-pair" for="basis-progress">(1, 2)</output></p>
+      <p id="basis-combination" class="equation"></p>
+      <p id="independence"></p>
+    </div>
+    <p id="guide-caption" class="guide" role="status">Start: <span class="math">x = e₁ + 2e₂</span>. Watch the arrow stay fixed as its grid changes.</p>
+  </div>
+  <figure class="fallback">
+    <img src="../images/change-of-basis-static.svg" alt="The vector (1, 2) is the sum of (3, 0) and (−2, 2), that is, three halves of b₁ plus twice b₂.">
+    <figcaption>In the standard basis the coordinates are <span class="math">(1, 2)</span>. With <span class="math">b₁ = (2, 0)</span> and <span class="math">b₂ = (−1, 1)</span>, they are <span class="math">(3/2, 2)</span>. The vector itself stays fixed. JavaScript enables the grid animation.</figcaption>
+  </figure>
+  <details>
+    <summary>Read the guided explanation</summary>
+    <ol>
+      <li>Start with the standard basis <span class="math">(1, 0)</span>, <span class="math">(0, 1)</span>. The coordinates of <span class="math">x</span> are <span class="math">(1, 2)</span>.</li>
+      <li>At progress <span class="math">t</span>, use <span class="math">b₁(t) = (1 + t, 0)</span> and <span class="math">b₂(t) = (−t, 1)</span>. Their determinant is <span class="math">1 + t</span>, which stays positive for <span class="math">0 ≤ t ≤ 1</span>, so they always form a basis.</li>
+      <li>The coordinates are <span class="math">((1 + 2t)/(1 + t), 2)</span>. The first scaled arrow ends at <span class="math">(1 + 2t, 0)</span>; adding the second, <span class="math">(−2t, 2)</span>, always reaches the same point <span class="math">(1, 2)</span>.</li>
+      <li>At <span class="math">t = 1</span>, <span class="math">b₁ = (2, 0)</span>, <span class="math">b₂ = (−1, 1)</span>, and <span class="math">x = (3/2)b₁ + 2b₂</span>. The coordinates are now <span class="math">(3/2, 2)</span>.</li>
+    </ol>
+  </details>
+  <p class="question">What changed—the vector, its coordinates, or both?</p>
+</main></body>
+</html>

@@ -1,0 +1,57 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-edge-on-two-parallel-edge-on-two-parallel" speech2="Edge-on view of two parallel planes crossed by a third plane">
+      <grouped>pf-edge-on-two-parallel-edge-on-two-parallel</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-edge-on-two-parallel-tp-P1</active>
+        <active>pf-edge-on-two-parallel-tp-P2</active>
+        <active>pf-edge-on-two-parallel-tp-P3</active>
+        <active>pf-edge-on-two-parallel-tp-P1P3</active>
+        <active>pf-edge-on-two-parallel-tp-P2P3</active>
+      </children>
+      <components>
+        <active>pf-edge-on-two-parallel-tp-P1</active>
+        <active>pf-edge-on-two-parallel-tp-P2</active>
+        <active>pf-edge-on-two-parallel-tp-P3</active>
+        <active>pf-edge-on-two-parallel-tp-P1P3</active>
+        <active>pf-edge-on-two-parallel-tp-P2P3</active>
+      </components>
+    </annotation>
+    <annotation id="pf-edge-on-two-parallel-tp-P1" speech2="Plane P 1, an olive line across the lower half">
+      <active>pf-edge-on-two-parallel-tp-P1</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-edge-on-two-parallel-edge-on-two-parallel</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-two-parallel-tp-P2" speech2="Plane P 2, a mustard line parallel to P 1 across the upper half">
+      <active>pf-edge-on-two-parallel-tp-P2</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-edge-on-two-parallel-edge-on-two-parallel</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-two-parallel-tp-P3" speech2="Plane P 3, a steep gray line crossing both P 1 and P 2">
+      <active>pf-edge-on-two-parallel-tp-P3</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-edge-on-two-parallel-edge-on-two-parallel</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-two-parallel-tp-P1P3" speech2="The line where P 1 and P 3 meet, seen end-on as a point. It is not on P 2.">
+      <active>pf-edge-on-two-parallel-tp-P1P3</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-edge-on-two-parallel-edge-on-two-parallel</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-edge-on-two-parallel-tp-P2P3" speech2="The line where P 2 and P 3 meet, seen end-on as a point. It is not on P 1.">
+      <active>pf-edge-on-two-parallel-tp-P2P3</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-edge-on-two-parallel-edge-on-two-parallel</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

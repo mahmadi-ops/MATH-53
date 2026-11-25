@@ -1,0 +1,110 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-two-bases-two-bases" speech2="Two pictures of the same plane H, the xy-plane, seen from above with the x axis pointing right and the y axis pointing up; each shows a different basis and the grid of that basis, with the same scale on both axes">
+      <grouped>pf-two-bases-two-bases</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-two-bases-first-basis</active>
+        <active>pf-two-bases-second-basis</active>
+      </children>
+      <components>
+        <active>pf-two-bases-first-basis</active>
+        <active>pf-two-bases-second-basis</active>
+      </components>
+    </annotation>
+    <annotation id="pf-two-bases-first-basis" speech2="Left picture, the basis B 1">
+      <grouped>pf-two-bases-first-basis</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-two-bases-b1-e1</active>
+        <active>pf-two-bases-b1-e2</active>
+        <active>pf-two-bases-first-basis-grid</active>
+        <active>pf-two-bases-first-basis-name</active>
+      </children>
+      <components>
+        <active>pf-two-bases-b1-e1</active>
+        <active>pf-two-bases-b1-e2</active>
+        <active>pf-two-bases-first-basis-grid</active>
+        <active>pf-two-bases-first-basis-name</active>
+      </components>
+      <parents>
+        <grouped>pf-two-bases-two-bases</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-b1-e1" speech2="The olive vector e 1, one unit along the x axis">
+      <active>pf-two-bases-b1-e1</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-two-bases-first-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-b1-e2" speech2="The mustard vector e 2, one unit along the y axis">
+      <active>pf-two-bases-b1-e2</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-two-bases-first-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-first-basis-grid" speech2="The grid of this basis: horizontal and vertical lines one unit apart, forming squares">
+      <active>pf-two-bases-first-basis-grid</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-two-bases-first-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-first-basis-name" speech2="The label B 1 equals the set e 1, e 2">
+      <active>pf-two-bases-first-basis-name</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-two-bases-first-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-second-basis" speech2="Right picture, the basis B 2">
+      <grouped>pf-two-bases-second-basis</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-two-bases-b2-e1</active>
+        <active>pf-two-bases-b2-e12</active>
+        <active>pf-two-bases-second-basis-grid</active>
+        <active>pf-two-bases-second-basis-name</active>
+      </children>
+      <components>
+        <active>pf-two-bases-b2-e1</active>
+        <active>pf-two-bases-b2-e12</active>
+        <active>pf-two-bases-second-basis-grid</active>
+        <active>pf-two-bases-second-basis-name</active>
+      </components>
+      <parents>
+        <grouped>pf-two-bases-two-bases</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-b2-e1" speech2="The olive vector e 1, one unit along the x axis, the same as on the left">
+      <active>pf-two-bases-b2-e1</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-two-bases-second-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-b2-e12" speech2="The mustard vector e 1 plus e 2, from the origin to the point 1 comma 1, along the diagonal">
+      <active>pf-two-bases-b2-e12</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-two-bases-second-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-second-basis-grid" speech2="The grid of this basis: horizontal lines one unit apart and diagonal lines of slope 1, forming slanted parallelograms that still cover the whole plane">
+      <active>pf-two-bases-second-basis-grid</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-two-bases-second-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-two-bases-second-basis-name" speech2="The label B 2 equals the set e 1, e 1 plus e 2">
+      <active>pf-two-bases-second-basis-name</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-two-bases-second-basis</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

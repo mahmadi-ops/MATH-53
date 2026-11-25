@@ -1,0 +1,30 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-no-solution-no-solution" speech2="Two lines in the x y plane that never meet, so the system has no solution">
+      <grouped>pf-no-solution-no-solution</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-no-solution-ns-first</active>
+        <active>pf-no-solution-ns-second</active>
+      </children>
+      <components>
+        <active>pf-no-solution-ns-first</active>
+        <active>pf-no-solution-ns-second</active>
+      </components>
+    </annotation>
+    <annotation id="pf-no-solution-ns-first" speech2="A black line of slope 1 that crosses the y axis at 1">
+      <active>pf-no-solution-ns-first</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-no-solution-no-solution</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-no-solution-ns-second" speech2="An olive line of the same slope 1 that crosses the y axis at minus 1; it is parallel to the black line, two units below it">
+      <active>pf-no-solution-ns-second</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-no-solution-no-solution</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,681 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-trace-basis-figure" viewBox="0 0 412 197" style="aspect-ratio: 412 / 197;">
+  <defs>
+    <clipPath id="pf-trace-basis-__clipPath-0">
+      <rect x="6.0" y="6.0" width="400.0" height="185.0"/>
+    </clipPath>
+    <clipPath id="pf-trace-basis-__clipPath-1">
+      <rect x="6.0" y="6.0" width="400.0" height="185.0"/>
+    </clipPath>
+    <marker id="pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B" markerWidth="4.5" markerHeight="4.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.3" refY="2.0">
+      <path d="M 4.5 2.0L 0.0 4.0L 0.9 2.5L 0.9 1.5L 0.0 0.0Z" fill="#6B6B6B" stroke="none"/>
+    </marker>
+    <marker id="pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B-outline" markerWidth="8.5" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.3" refY="4.0">
+      <path d="M 7.3 5.8 L 2.8 7.8 A 2 2 0 0 1 0.0 6.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 7.3 2.2 A 2 2 0 0 1 7.3 5.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-trace-basis-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="pf-trace-basis-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B" markerWidth="4.5" markerHeight="4.0" markerUnits="userSpaceOnUse" orient="auto" refX="1.2000000000000002" refY="2.0">
+      <path d="M 0 2 L 4.5 0 L 3.6 1.5 L 3.6 2.5 L 4.5 4 Z" fill="#6B6B6B" stroke="none"/>
+      </marker>
+    <marker id="pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B-outline" markerWidth="8.5" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.2" refY="4.0">
+      <path d="M 1.2 2.2 L 5.7 0.2 A 2 2 0 0 1 8.5 2 L 8.5 6 A 2 2 0 0 1 5.7 7.8 L 1.2 5.8 A 2 2 0 0 1 1.2 2.2 Z" fill="white" stroke="none"/>
+      </marker>
+    <marker id="pf-trace-basis-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
+      <path d="M 0 4 L 9 0 L 7.3 3 L 7.3 5 L 9 8 Z" fill="black" stroke="none"/>
+      </marker>
+    <marker id="pf-trace-basis-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
+      <path d="M 1.2 4.2 L 10.2 0.2 A 2 2 0 0 1 13 2 L 13 10 A 2 2 0 0 1 10.2 11.8 L 1.2 7.8 A 2 2 0 0 1 1.2 4.2 Z" fill="white" stroke="none"/>
+      </marker>
+  </defs>
+  <g id="pf-trace-basis-square">
+    <g id="pf-trace-basis-top-left">
+      <g id="pf-trace-basis-__label-0" transform="translate(32.0,42.0) scale(0.8,0.8) translate(-14.4,-7.0)">
+        <g id="pf-trace-basis-__g-0">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#5E011C" width="28.784px" height="14.008px" role="img" focusable="false" viewBox="0 -692 1734.1 844.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-2-GP-I-1D440" d="M940 692C912 690 884 689 856 689C828 689 800 690 773 692C754 655 773 682 688 536L442 114L292 692C264 690 236 689 208 689C180 689 152 690 125 692L122 664L148 662C200 658 218 648 218 622C218 616 217 609 215 602L70 93C55 41 39 28-16 23L-19-3L93 0C130 0 167-1 203-3L206 25L168 28C136 31 119 40 119 55C119 65 121 78 126 96L250 560L399-18L422-18L479 86L718 500L770 587L733 67C731 39 717 33 666 28L635 25L632-3L766 0L899-3L902 25L865 28C829 31 810 42 811 63L812 100L853 631C854 650 870 660 899 662L937 664Z"/>
+              <path id="pf-trace-basis-MJX-2-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:M_{11}" data-semantic-speech="upper M 11">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#pf-trace-basis-MJX-2-GP-I-1D440"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" transform="translate(977,-150) scale(0.707)" data-mjx-texclass="ORD">
+                    <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:{11};texclass:ORD" data-semantic-speech="11" data-semantic-prefix="Subscript">
+                      <use data-c="31" xlink:href="#pf-trace-basis-MJX-2-GP-N-31"/>
+                      <use data-c="31" xlink:href="#pf-trace-basis-MJX-2-GP-N-31" transform="translate(500,0)"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-1" transform="translate(72.0,42.0) scale(0.8,0.8) translate(-14.4,-7.0)">
+        <g id="pf-trace-basis-__g-1">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#4A5D23" width="28.784px" height="14.008px" role="img" focusable="false" viewBox="0 -692 1734.1 844.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-3-GP-I-1D440" d="M940 692C912 690 884 689 856 689C828 689 800 690 773 692C754 655 773 682 688 536L442 114L292 692C264 690 236 689 208 689C180 689 152 690 125 692L122 664L148 662C200 658 218 648 218 622C218 616 217 609 215 602L70 93C55 41 39 28-16 23L-19-3L93 0C130 0 167-1 203-3L206 25L168 28C136 31 119 40 119 55C119 65 121 78 126 96L250 560L399-18L422-18L479 86L718 500L770 587L733 67C731 39 717 33 666 28L635 25L632-3L766 0L899-3L902 25L865 28C829 31 810 42 811 63L812 100L853 631C854 650 870 660 899 662L937 664Z"/>
+              <path id="pf-trace-basis-MJX-3-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              <path id="pf-trace-basis-MJX-3-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:M_{12}" data-semantic-speech="upper M 12">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#pf-trace-basis-MJX-3-GP-I-1D440"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" transform="translate(977,-150) scale(0.707)" data-mjx-texclass="ORD">
+                    <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:{12};texclass:ORD" data-semantic-speech="12" data-semantic-prefix="Subscript">
+                      <use data-c="31" xlink:href="#pf-trace-basis-MJX-3-GP-N-31"/>
+                      <use data-c="32" xlink:href="#pf-trace-basis-MJX-3-GP-N-32" transform="translate(500,0)"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-2" transform="translate(112.0,42.0) scale(0.8,0.8) translate(-14.4,-7.0)">
+        <g id="pf-trace-basis-__g-2">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#876801" width="28.784px" height="14.008px" role="img" focusable="false" viewBox="0 -692 1734.1 844.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-4-GP-I-1D440" d="M940 692C912 690 884 689 856 689C828 689 800 690 773 692C754 655 773 682 688 536L442 114L292 692C264 690 236 689 208 689C180 689 152 690 125 692L122 664L148 662C200 658 218 648 218 622C218 616 217 609 215 602L70 93C55 41 39 28-16 23L-19-3L93 0C130 0 167-1 203-3L206 25L168 28C136 31 119 40 119 55C119 65 121 78 126 96L250 560L399-18L422-18L479 86L718 500L770 587L733 67C731 39 717 33 666 28L635 25L632-3L766 0L899-3L902 25L865 28C829 31 810 42 811 63L812 100L853 631C854 650 870 660 899 662L937 664Z"/>
+              <path id="pf-trace-basis-MJX-4-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-trace-basis-MJX-4-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:M_{21}" data-semantic-speech="upper M 21">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#pf-trace-basis-MJX-4-GP-I-1D440"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" transform="translate(977,-150) scale(0.707)" data-mjx-texclass="ORD">
+                    <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:{21};texclass:ORD" data-semantic-speech="21" data-semantic-prefix="Subscript">
+                      <use data-c="32" xlink:href="#pf-trace-basis-MJX-4-GP-N-32"/>
+                      <use data-c="31" xlink:href="#pf-trace-basis-MJX-4-GP-N-31" transform="translate(500,0)"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-3" transform="translate(152.0,42.0) scale(0.8,0.8) translate(-14.4,-7.0)">
+        <g id="pf-trace-basis-__g-3">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#4D4D4D" width="28.784px" height="14.008px" role="img" focusable="false" viewBox="0 -692 1734.1 844.1" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-5-GP-I-1D440" d="M940 692C912 690 884 689 856 689C828 689 800 690 773 692C754 655 773 682 688 536L442 114L292 692C264 690 236 689 208 689C180 689 152 690 125 692L122 664L148 662C200 658 218 648 218 622C218 616 217 609 215 602L70 93C55 41 39 28-16 23L-19-3L93 0C130 0 167-1 203-3L206 25L168 28C136 31 119 40 119 55C119 65 121 78 126 96L250 560L399-18L422-18L479 86L718 500L770 587L733 67C731 39 717 33 666 28L635 25L632-3L766 0L899-3L902 25L865 28C829 31 810 42 811 63L812 100L853 631C854 650 870 660 899 662L937 664Z"/>
+              <path id="pf-trace-basis-MJX-5-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:M_{22}" data-semantic-speech="upper M 22">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:M" data-semantic-speech="upper M" data-semantic-prefix="Base">
+                    <use data-c="1D440" xlink:href="#pf-trace-basis-MJX-5-GP-I-1D440"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" transform="translate(977,-150) scale(0.707)" data-mjx-texclass="ORD">
+                    <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:{22};texclass:ORD" data-semantic-speech="22" data-semantic-prefix="Subscript">
+                      <use data-c="32" xlink:href="#pf-trace-basis-MJX-5-GP-N-32"/>
+                      <use data-c="32" xlink:href="#pf-trace-basis-MJX-5-GP-N-32" transform="translate(500,0)"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-trace-basis-top-right">
+      <g id="pf-trace-basis-__label-4" transform="translate(302.0,42.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-4">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#5E011C" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-6-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-6-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-5" transform="translate(330.0,42.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-5">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4A5D23" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-7-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-7-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-6" transform="translate(358.0,42.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-6">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#876801" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-8-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-8-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-7" transform="translate(386.0,42.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-7">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#4D4D4D" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-9-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-9-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-trace-basis-bottom-left">
+      <path id="pf-trace-basis-__path-0" d="M 28.0 103.0 L 24.0 103.0 L 24.0 179.0 L 28.0 179.0" stroke="#5E011C" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-1" d="M 36.0 103.0 L 40.0 103.0 L 40.0 179.0 L 36.0 179.0" stroke="#5E011C" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-8" transform="translate(32.0,114.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-8">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#5E011C" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-10-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-10-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-9" transform="translate(32.0,132.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-9">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#5E011C" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-11-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-11-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-10" transform="translate(32.0,150.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-10">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#5E011C" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-12-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-12-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-11" transform="translate(32.0,168.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-11">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#5E011C" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-13-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-13-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <path id="pf-trace-basis-__path-2" d="M 68.0 103.0 L 64.0 103.0 L 64.0 179.0 L 68.0 179.0" stroke="#4A5D23" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-3" d="M 76.0 103.0 L 80.0 103.0 L 80.0 179.0 L 76.0 179.0" stroke="#4A5D23" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-12" transform="translate(72.0,114.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-12">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4A5D23" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-14-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-14-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-13" transform="translate(72.0,132.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-13">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#4A5D23" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-15-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-15-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-14" transform="translate(72.0,150.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-14">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4A5D23" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-16-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-16-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-15" transform="translate(72.0,168.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-15">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4A5D23" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-17-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-17-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <path id="pf-trace-basis-__path-4" d="M 108.0 103.0 L 104.0 103.0 L 104.0 179.0 L 108.0 179.0" stroke="#876801" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-5" d="M 116.0 103.0 L 120.0 103.0 L 120.0 179.0 L 116.0 179.0" stroke="#876801" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-16" transform="translate(112.0,114.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-16">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#876801" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-18-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-18-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-17" transform="translate(112.0,132.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-17">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#876801" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-19-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-19-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-18" transform="translate(112.0,150.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-18">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#876801" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-20-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-20-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-19" transform="translate(112.0,168.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-19">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#876801" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-21-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-21-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <path id="pf-trace-basis-__path-6" d="M 148.0 103.0 L 144.0 103.0 L 144.0 179.0 L 148.0 179.0" stroke="#4D4D4D" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-7" d="M 156.0 103.0 L 160.0 103.0 L 160.0 179.0 L 156.0 179.0" stroke="#4D4D4D" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-20" transform="translate(152.0,114.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-20">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4D4D4D" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-22-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-22-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-21" transform="translate(152.0,132.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-21">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4D4D4D" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-23-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-23-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-22" transform="translate(152.0,150.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-22">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4D4D4D" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-24-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-24-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <g id="pf-trace-basis-__label-23" transform="translate(152.0,168.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-23">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#4D4D4D" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-25-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-25-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-trace-basis-bottom-right">
+      <path id="pf-trace-basis-__path-8" d="M 298.0 130.0 L 294.0 130.0 L 294.0 152.0 L 298.0 152.0" stroke="#5E011C" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-9" d="M 306.0 130.0 L 310.0 130.0 L 310.0 152.0 L 306.0 152.0" stroke="#5E011C" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-24" transform="translate(302.0,141.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-24">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#5E011C" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-26-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-26-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <path id="pf-trace-basis-__path-10" d="M 326.0 130.0 L 322.0 130.0 L 322.0 152.0 L 326.0 152.0" stroke="#4A5D23" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-11" d="M 334.0 130.0 L 338.0 130.0 L 338.0 152.0 L 334.0 152.0" stroke="#4A5D23" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-25" transform="translate(330.0,141.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-25">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#4A5D23" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-27-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-27-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <path id="pf-trace-basis-__path-12" d="M 354.0 130.0 L 350.0 130.0 L 350.0 152.0 L 354.0 152.0" stroke="#876801" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-13" d="M 362.0 130.0 L 366.0 130.0 L 366.0 152.0 L 362.0 152.0" stroke="#876801" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-26" transform="translate(358.0,141.0) scale(0.8,0.8) translate(-4.1,-5.9)">
+        <g id="pf-trace-basis-__g-26">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px; color:#876801" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-28-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                  <use data-c="30" xlink:href="#pf-trace-basis-MJX-28-GP-N-30"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+      <path id="pf-trace-basis-__path-14" d="M 382.0 130.0 L 378.0 130.0 L 378.0 152.0 L 382.0 152.0" stroke="#4D4D4D" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <path id="pf-trace-basis-__path-15" d="M 390.0 130.0 L 394.0 130.0 L 394.0 152.0 L 390.0 152.0" stroke="#4D4D4D" stroke-width="2" fill="none" clip-path="url(#pf-trace-basis-__clipPath-1)"/>
+      <g id="pf-trace-basis-__label-27" transform="translate(386.0,141.0) scale(0.8,0.8) translate(-4.1,-5.8)">
+        <g id="pf-trace-basis-__g-27">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:#4D4D4D" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-29-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                  <use data-c="31" xlink:href="#pf-trace-basis-MJX-29-GP-N-31"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-trace-basis-map-left">
+      <line id="pf-trace-basis-__line-0" x1="32.0" y1="57.2" x2="32.0" y2="95.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <line id="pf-trace-basis-__line-1" x1="72.0" y1="57.2" x2="72.0" y2="95.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <line id="pf-trace-basis-__line-2" x1="112.0" y1="57.2" x2="112.0" y2="95.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <line id="pf-trace-basis-__line-3" x1="152.0" y1="57.2" x2="152.0" y2="95.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <g id="pf-trace-basis-__label-28" transform="translate(177.0,76.5) scale(0.8,0.8) translate(0.0,-7.0)">
+        <g id="pf-trace-basis-__g-28">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.824px" width="32.984px" height="13.944px" role="img" focusable="false" viewBox="0 -670 1987.2 840" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-30-GP-N-5B" d="M330-130L180-130L180 630L330 630C328 636 327 643 327 650C327 657 328 664 330 670L120 670L120-170L330-170C328-164 327-157 327-150C327-143 328-136 330-130Z"/>
+              <path id="pf-trace-basis-MJX-30-GP-N-22C5" d="M200 250C200 286 176 310 140 310C104 310 80 286 80 250C80 214 104 190 140 190C176 190 200 214 200 250Z"/>
+              <path id="pf-trace-basis-MJX-30-GP-N-5D" d="M290-170L290 670L80 670C82 664 83 657 83 650C83 643 82 636 80 630L230 630L230-130L80-130C82-136 83-143 83-150C83-157 82-164 80-170Z"/>
+              <path id="pf-trace-basis-MJX-30-GP-C-42" d="M280 679C282 690 282 692 282 695C282 702 280 705 271 705C260 705 230 690 210 680C164 657 126 638 126 620C126 614 133 614 137 614C149 614 175 628 194 637C182 539 158 411 140 325C103 155 84 94 35-3C30-12 30-14 30-15C30-22 38-22 40-22C56-22 98-4 114 24C127 47 165 120 195 236C217 322 255 453 326 556C372 621 414 651 477 651C531 651 580 616 580 563C580 475 485 443 381 408C369 404 300 380 300 355C300 349 307 348 310 348C314 348 337 352 358 352C459 352 541 292 541 197C541 73 435 33 344 33C267 33 230 75 217 89C213 94 212 96 204 96C182 96 131 65 131 47C131 44 170-22 278-22C419-22 626 78 626 239C626 323 570 386 468 405C548 439 665 511 665 605C665 663 617 706 543 706C509 706 381 697 260 547Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mspace"/>
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="leftright" data-semantic-annotation="depth:1" data-semantic-fencepointer="4" data-semantic-id="6" data-semantic-children="7,5" data-semantic-attributes="latex:[\,\cdot\,]_{\mathcal{B}}" data-semantic-speech="left bracket dot right bracket Subscript script upper B" transform="translate(167,0)">
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:bracket;depth:2" data-semantic-id="7" data-semantic-children="2" data-semantic-content="0,4" data-semantic-parent="6" data-semantic-speech="left bracket dot right bracket" data-semantic-prefix="Base">
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="0" data-semantic-parent="7" data-semantic-attributes="latex:[" data-semantic-speech="left bracket">
+                      <use data-c="5B" xlink:href="#pf-trace-basis-MJX-30-GP-N-5B"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="7" data-semantic-attributes="latex:\cdot" data-semantic-speech="dot" transform="translate(410,0)">
+                      <use data-c="22C5" xlink:href="#pf-trace-basis-MJX-30-GP-N-22C5"/>
+                    </g>
+                    <g data-mml-node="mspace" transform="translate(690,0)"/>
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="4" data-semantic-parent="7" data-semantic-attributes="latex:]" data-semantic-speech="right bracket" transform="translate(857,0)">
+                      <use data-c="5D" xlink:href="#pf-trace-basis-MJX-30-GP-N-5D"/>
+                    </g>
+                  </g>
+                  <g data-mml-node="TeXAtom" transform="translate(1300,-150) scale(0.707)" data-mjx-texclass="ORD">
+                    <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="script" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="5" data-semantic-parent="6" data-semantic-attributes="latex:{\mathcal{B}};texclass:ORD" data-semantic-speech="script upper B" data-semantic-prefix="Subscript">
+                        <use data-c="42" xlink:href="#pf-trace-basis-MJX-30-GP-C-42"/>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-trace-basis-map-right">
+      <line id="pf-trace-basis-__line-4" x1="302.0" y1="57.2" x2="302.0" y2="122.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <line id="pf-trace-basis-__line-5" x1="330.0" y1="57.2" x2="330.0" y2="122.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <line id="pf-trace-basis-__line-6" x1="358.0" y1="57.2" x2="358.0" y2="122.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <line id="pf-trace-basis-__line-7" x1="386.0" y1="57.2" x2="386.0" y2="122.8" stroke="#6B6B6B" stroke-width="1" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-1_None_24_60-h6B6B6B)" marker-start="url(#pf-trace-basis-arrow-head-start-1_None_24_60-h6B6B6B)"/>
+      <g id="pf-trace-basis-__label-29" transform="translate(283.0,76.5) scale(0.8,0.8) translate(-40.8,-7.8)">
+        <g id="pf-trace-basis-__g-29">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.472px" width="40.784px" height="15.592px" role="img" focusable="false" viewBox="0 -670 2457.5 939.5" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-31-GP-N-5B" d="M330-130L180-130L180 630L330 630C328 636 327 643 327 650C327 657 328 664 330 670L120 670L120-170L330-170C328-164 327-157 327-150C327-143 328-136 330-130Z"/>
+              <path id="pf-trace-basis-MJX-31-GP-N-22C5" d="M200 250C200 286 176 310 140 310C104 310 80 286 80 250C80 214 104 190 140 190C176 190 200 214 200 250Z"/>
+              <path id="pf-trace-basis-MJX-31-GP-N-5D" d="M290-170L290 670L80 670C82 664 83 657 83 650C83 643 82 636 80 630L230 630L230-130L80-130C82-136 83-143 83-150C83-157 82-164 80-170Z"/>
+              <path id="pf-trace-basis-MJX-31-GP-N-7B" d="M335-131C268-113 235-71 235-17L235 117C235 183 212 227 170 250C212 273 235 317 235 383L235 517C235 571 268 613 335 631C332 636 329 643 327 649C325 656 325 663 325 669C230 644 175 593 175 517L175 383C175 313 146 270 80 270C82 264 83 257 83 250C83 243 82 236 80 230C146 230 175 187 175 117L175-17C175-93 230-144 325-169C325-163 325-156 327-149C329-143 332-136 335-131Z"/>
+              <path id="pf-trace-basis-MJX-31-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              <path id="pf-trace-basis-MJX-31-GP-N-7D" d="M335 230C333 236 332 243 332 250C332 257 333 264 335 270C269 270 240 313 240 383L240 517C240 593 185 644 90 669C91 663 90 656 88 649C86 643 84 636 80 631C147 613 180 571 180 517L180 383C180 317 204 273 246 250C204 227 180 183 180 117L180-17C180-71 147-113 80-131C84-136 86-143 88-149C90-156 91-163 90-169C185-144 240-93 240-17L240 117C240 187 269 230 335 230Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mspace"/>
+                <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="leftright" data-semantic-annotation="depth:1" data-semantic-fencepointer="4" data-semantic-id="9" data-semantic-children="10,8" data-semantic-attributes="latex:[\,\cdot\,]_{\{1\}}" data-semantic-speech="left bracket dot right bracket Subscript StartSet 1 EndSet" transform="translate(167,0)">
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:bracket;depth:2" data-semantic-id="10" data-semantic-children="2" data-semantic-content="0,4" data-semantic-parent="9" data-semantic-speech="left bracket dot right bracket" data-semantic-prefix="Base">
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="0" data-semantic-parent="10" data-semantic-attributes="latex:[" data-semantic-speech="left bracket">
+                      <use data-c="5B" xlink:href="#pf-trace-basis-MJX-31-GP-N-5B"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="10" data-semantic-attributes="latex:\cdot" data-semantic-speech="dot" transform="translate(410,0)">
+                      <use data-c="22C5" xlink:href="#pf-trace-basis-MJX-31-GP-N-22C5"/>
+                    </g>
+                    <g data-mml-node="mspace" transform="translate(690,0)"/>
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="4" data-semantic-parent="10" data-semantic-attributes="latex:]" data-semantic-speech="right bracket" transform="translate(857,0)">
+                      <use data-c="5D" xlink:href="#pf-trace-basis-MJX-31-GP-N-5D"/>
+                    </g>
+                  </g>
+                  <g data-mml-node="TeXAtom" transform="translate(1300,-150) scale(0.707)" data-mjx-texclass="ORD" data-semantic-type="fenced" data-semantic-role="set singleton" data-semantic-annotation="fences:curly;depth:2" data-semantic-id="8" data-semantic-children="6" data-semantic-content="5,7" data-semantic-parent="9" data-semantic-attributes="latex:{\{1\}};texclass:ORD" data-semantic-speech="StartSet 1 EndSet" data-semantic-prefix="Subscript">
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="5" data-semantic-parent="8" data-semantic-attributes="latex:\{" data-semantic-operator="fenced" data-semantic-speech="left brace">
+                      <use data-c="7B" xlink:href="#pf-trace-basis-MJX-31-GP-N-7B"/>
+                    </g>
+                    <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="6" data-semantic-parent="8" data-semantic-attributes="latex:1" data-semantic-speech="1" transform="translate(415,0)">
+                      <use data-c="31" xlink:href="#pf-trace-basis-MJX-31-GP-N-31"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="7" data-semantic-parent="8" data-semantic-attributes="latex:\}" data-semantic-operator="fenced" data-semantic-speech="right brace" transform="translate(915,0)">
+                      <use data-c="7D" xlink:href="#pf-trace-basis-MJX-31-GP-N-7D"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-trace-basis-arrow-top">
+      <line id="pf-trace-basis-__line-8" x1="180.0" y1="42.0" x2="277.6" y2="42.0" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-2_None_24_60-black)"/>
+      <g id="pf-trace-basis-__label-30" transform="translate(227.0,32.0) translate(-6.0,-10.5)">
+        <g id="pf-trace-basis-__g-30">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="11.968px" height="10.504px" role="img" focusable="false" viewBox="0 -621 721 633" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-32-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+              <path id="pf-trace-basis-MJX-32-GP-N-72" d="M374 458C363 465 345 469 327 469C297 469 265 453 244 428L188 362L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L144 0L287-3L287 27L235 30C190 33 188 36 188 102L188 274C188 334 228 384 277 384C307 384 328 370 344 338L365 338Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mi" data-semantic-type="function" data-semantic-role="prefix function" data-semantic-font="normal" data-semantic-annotation="nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\operatorname{tr}" data-semantic-speech="trace">
+                  <use data-c="74" xlink:href="#pf-trace-basis-MJX-32-GP-N-74"/>
+                  <use data-c="72" xlink:href="#pf-trace-basis-MJX-32-GP-N-72" transform="translate(326,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-trace-basis-arrow-bottom">
+      <line id="pf-trace-basis-__line-9" x1="180.0" y1="141.0" x2="277.6" y2="141.0" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-trace-basis-arrow-head-end-2_None_24_60-black)"/>
+      <g id="pf-trace-basis-__label-31" transform="translate(227.0,131.0) translate(-6.0,-11.8)">
+        <g id="pf-trace-basis-__g-31">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px" width="11.984px" height="11.752px" role="img" focusable="false" viewBox="0 -705 722 708" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-trace-basis-MJX-33-GP-I-1D434" d="M677-3L677 25L651 28C604 33 601 35 595 80L508 705L462 705L89 112C54 56 35 40 1 32L-19 27L-19-3L93 0C129 0 165-1 200-3L200 25L148 28C131 29 117 38 117 47C117 55 123 68 143 102L245 277L491 277L518 77C519 68 520 60 520 55C520 39 505 30 477 28L433 25L433-3L555 0M486 313L270 313L449 601Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:A" data-semantic-speech="upper A">
+                  <use data-c="1D434" xlink:href="#pf-trace-basis-MJX-33-GP-I-1D434"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

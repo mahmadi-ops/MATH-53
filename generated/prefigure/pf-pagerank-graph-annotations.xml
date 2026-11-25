@@ -1,0 +1,218 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-pagerank-graph-pagerank-graph" speech2="A directed graph with 8 numbered pages, 0 to 7, drawn as circles, and 12 links drawn as arrows">
+      <grouped>pf-pagerank-graph-pagerank-graph</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-pagerank-graph-pg-pages</active>
+        <active>pf-pagerank-graph-pg-links</active>
+      </children>
+      <components>
+        <active>pf-pagerank-graph-pg-pages</active>
+        <active>pf-pagerank-graph-pg-links</active>
+      </components>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-pages" speech2="The eight pages">
+      <grouped>pf-pagerank-graph-pg-pages</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-pagerank-graph-pg-page-0</active>
+        <active>pf-pagerank-graph-pg-page-1</active>
+        <active>pf-pagerank-graph-pg-page-2</active>
+        <active>pf-pagerank-graph-pg-page-3</active>
+        <active>pf-pagerank-graph-pg-page-4</active>
+        <active>pf-pagerank-graph-pg-page-5</active>
+        <active>pf-pagerank-graph-pg-page-6</active>
+        <active>pf-pagerank-graph-pg-page-7</active>
+      </children>
+      <components>
+        <active>pf-pagerank-graph-pg-page-0</active>
+        <active>pf-pagerank-graph-pg-page-1</active>
+        <active>pf-pagerank-graph-pg-page-2</active>
+        <active>pf-pagerank-graph-pg-page-3</active>
+        <active>pf-pagerank-graph-pg-page-4</active>
+        <active>pf-pagerank-graph-pg-page-5</active>
+        <active>pf-pagerank-graph-pg-page-6</active>
+        <active>pf-pagerank-graph-pg-page-7</active>
+      </components>
+      <parents>
+        <grouped>pf-pagerank-graph-pagerank-graph</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-0" speech2="Page 0, in the upper middle. It links to page 7. It is linked from page 1, page 3, page 4, page 5, page 6 and page 7.">
+      <active>pf-pagerank-graph-pg-page-0</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-1" speech2="Page 1, at the upper left. It links to page 0. No page links to it.">
+      <active>pf-pagerank-graph-pg-page-1</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-2" speech2="Page 2, at the lower left. It has no outgoing links. It is linked from page 3.">
+      <active>pf-pagerank-graph-pg-page-2</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-3" speech2="Page 3, in the lower row, second from the left. It links to page 0, page 2 and page 6. No page links to it.">
+      <active>pf-pagerank-graph-pg-page-3</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-4" speech2="Page 4, in the lower row, below page 0. It links to page 0, page 5 and page 6. No page links to it.">
+      <active>pf-pagerank-graph-pg-page-4</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-5" speech2="Page 5, in the lower row, to the right of page 4. It links to page 0 and page 6. It is linked from page 4.">
+      <active>pf-pagerank-graph-pg-page-5</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-6" speech2="Page 6, at the lower right. It links to page 0. It is linked from page 3, page 4 and page 5.">
+      <active>pf-pagerank-graph-pg-page-6</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-page-7" speech2="Page 7, at the top right. It links to page 0. It is linked from page 0.">
+      <active>pf-pagerank-graph-pg-page-7</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-pages</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-links" speech2="The twelve links">
+      <grouped>pf-pagerank-graph-pg-links</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-pagerank-graph-pg-link-1-0</active>
+        <active>pf-pagerank-graph-pg-link-3-0</active>
+        <active>pf-pagerank-graph-pg-link-4-0</active>
+        <active>pf-pagerank-graph-pg-link-5-0</active>
+        <active>pf-pagerank-graph-pg-link-6-0</active>
+        <active>pf-pagerank-graph-pg-link-0-7</active>
+        <active>pf-pagerank-graph-pg-link-7-0</active>
+        <active>pf-pagerank-graph-pg-link-3-2</active>
+        <active>pf-pagerank-graph-pg-link-4-5</active>
+        <active>pf-pagerank-graph-pg-link-5-6</active>
+        <active>pf-pagerank-graph-pg-link-3-6</active>
+        <active>pf-pagerank-graph-pg-link-4-6</active>
+      </children>
+      <components>
+        <active>pf-pagerank-graph-pg-link-1-0</active>
+        <active>pf-pagerank-graph-pg-link-3-0</active>
+        <active>pf-pagerank-graph-pg-link-4-0</active>
+        <active>pf-pagerank-graph-pg-link-5-0</active>
+        <active>pf-pagerank-graph-pg-link-6-0</active>
+        <active>pf-pagerank-graph-pg-link-0-7</active>
+        <active>pf-pagerank-graph-pg-link-7-0</active>
+        <active>pf-pagerank-graph-pg-link-3-2</active>
+        <active>pf-pagerank-graph-pg-link-4-5</active>
+        <active>pf-pagerank-graph-pg-link-5-6</active>
+        <active>pf-pagerank-graph-pg-link-3-6</active>
+        <active>pf-pagerank-graph-pg-link-4-6</active>
+      </components>
+      <parents>
+        <grouped>pf-pagerank-graph-pagerank-graph</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-1-0" speech2="A link from page 1 to page 0">
+      <active>pf-pagerank-graph-pg-link-1-0</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-3-0" speech2="A link from page 3 to page 0">
+      <active>pf-pagerank-graph-pg-link-3-0</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-4-0" speech2="A link from page 4 to page 0">
+      <active>pf-pagerank-graph-pg-link-4-0</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-5-0" speech2="A link from page 5 to page 0">
+      <active>pf-pagerank-graph-pg-link-5-0</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-6-0" speech2="A link from page 6 to page 0">
+      <active>pf-pagerank-graph-pg-link-6-0</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-0-7" speech2="A link from page 0 to page 7">
+      <active>pf-pagerank-graph-pg-link-0-7</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-7-0" speech2="A link from page 7 to page 0">
+      <active>pf-pagerank-graph-pg-link-7-0</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-3-2" speech2="A link from page 3 to page 2">
+      <active>pf-pagerank-graph-pg-link-3-2</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-4-5" speech2="A link from page 4 to page 5">
+      <active>pf-pagerank-graph-pg-link-4-5</active>
+      <position>9</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-5-6" speech2="A link from page 5 to page 6">
+      <active>pf-pagerank-graph-pg-link-5-6</active>
+      <position>10</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-3-6" speech2="A link from page 3 to page 6, a curved arrow passing below the lower row">
+      <active>pf-pagerank-graph-pg-link-3-6</active>
+      <position>11</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-pagerank-graph-pg-link-4-6" speech2="A link from page 4 to page 6, a curved arrow passing below the lower row">
+      <active>pf-pagerank-graph-pg-link-4-6</active>
+      <position>12</position>
+      <parents>
+        <grouped>pf-pagerank-graph-pg-links</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

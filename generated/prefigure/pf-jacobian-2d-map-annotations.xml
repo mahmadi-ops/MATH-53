@@ -1,0 +1,128 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-jacobian-2d-map-jacobian-map" speech2="Two pictures side by side joined by an arrow labelled T: a small rectangle in the x y plane on the left, and its image in the u v plane on the right">
+      <grouped>pf-jacobian-2d-map-jacobian-map</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-jacobian-2d-map-jm-source</active>
+        <active>pf-jacobian-2d-map-jm-arrow</active>
+        <active>pf-jacobian-2d-map-jm-target</active>
+      </children>
+      <components>
+        <active>pf-jacobian-2d-map-jm-source</active>
+        <active>pf-jacobian-2d-map-jm-arrow</active>
+        <active>pf-jacobian-2d-map-jm-target</active>
+      </components>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-source" speech2="Left picture, the x y plane">
+      <grouped>pf-jacobian-2d-map-jm-source</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-jacobian-2d-map-jm-xy-axes</active>
+        <active>pf-jacobian-2d-map-jm-rectangle</active>
+        <active>pf-jacobian-2d-map-jm-corner</active>
+      </children>
+      <components>
+        <active>pf-jacobian-2d-map-jm-xy-axes</active>
+        <active>pf-jacobian-2d-map-jm-rectangle</active>
+        <active>pf-jacobian-2d-map-jm-corner</active>
+      </components>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jacobian-map</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-xy-axes" speech2="The x axis and the y axis">
+      <active>pf-jacobian-2d-map-jm-xy-axes</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-source</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-rectangle" speech2="A small pale olive rectangle R with horizontal side delta x and vertical side delta y">
+      <active>pf-jacobian-2d-map-jm-rectangle</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-source</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-corner" speech2="Its lower left corner is the point x 0 comma y 0">
+      <active>pf-jacobian-2d-map-jm-corner</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-source</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-arrow" speech2="An arrow labelled T points from the left picture to the right picture">
+      <active>pf-jacobian-2d-map-jm-arrow</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jacobian-map</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-target" speech2="Right picture, the u v plane">
+      <grouped>pf-jacobian-2d-map-jm-target</grouped>
+      <position>3</position>
+      <children>
+        <active>pf-jacobian-2d-map-jm-uv-axes</active>
+        <active>pf-jacobian-2d-map-jm-image-corner</active>
+        <active>pf-jacobian-2d-map-jm-true-image</active>
+        <active>pf-jacobian-2d-map-jm-a</active>
+        <active>pf-jacobian-2d-map-jm-b</active>
+        <active>pf-jacobian-2d-map-jm-parallelogram</active>
+      </children>
+      <components>
+        <active>pf-jacobian-2d-map-jm-uv-axes</active>
+        <active>pf-jacobian-2d-map-jm-image-corner</active>
+        <active>pf-jacobian-2d-map-jm-true-image</active>
+        <active>pf-jacobian-2d-map-jm-a</active>
+        <active>pf-jacobian-2d-map-jm-b</active>
+        <active>pf-jacobian-2d-map-jm-parallelogram</active>
+      </components>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jacobian-map</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-uv-axes" speech2="The u axis and the v axis">
+      <active>pf-jacobian-2d-map-jm-uv-axes</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-image-corner" speech2="The point T of x 0 comma y 0, the image of the corner">
+      <active>pf-jacobian-2d-map-jm-image-corner</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-true-image" speech2="Four gently curved wine arcs bound the true image of the rectangle, a slightly bent four-sided region">
+      <active>pf-jacobian-2d-map-jm-true-image</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-a" speech2="The olive vector a starts at the image of the corner and follows the image of the bottom side">
+      <active>pf-jacobian-2d-map-jm-a</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-b" speech2="The olive vector b starts at the same point and follows the image of the left side">
+      <active>pf-jacobian-2d-map-jm-b</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-jacobian-2d-map-jm-parallelogram" speech2="The shaded parallelogram spanned by a and b nearly coincides with the true image; its area approximates the area of the image">
+      <active>pf-jacobian-2d-map-jm-parallelogram</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-jacobian-2d-map-jm-target</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

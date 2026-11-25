@@ -1,0 +1,84 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-change-of-basis-basis-square" speech2="A square showing that the identity leaves each element of the basis B 1 alone while its coordinates change from B 1 to B 2">
+      <grouped>pf-change-of-basis-basis-square</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-change-of-basis-basis-top-left</active>
+        <active>pf-change-of-basis-basis-arrow-top</active>
+        <active>pf-change-of-basis-basis-top-right</active>
+        <active>pf-change-of-basis-basis-map-left</active>
+        <active>pf-change-of-basis-basis-bottom-left</active>
+        <active>pf-change-of-basis-basis-arrow-bottom</active>
+        <active>pf-change-of-basis-basis-bottom-right</active>
+        <active>pf-change-of-basis-basis-map-right</active>
+      </children>
+      <components>
+        <active>pf-change-of-basis-basis-top-left</active>
+        <active>pf-change-of-basis-basis-arrow-top</active>
+        <active>pf-change-of-basis-basis-top-right</active>
+        <active>pf-change-of-basis-basis-map-left</active>
+        <active>pf-change-of-basis-basis-bottom-left</active>
+        <active>pf-change-of-basis-basis-arrow-bottom</active>
+        <active>pf-change-of-basis-basis-bottom-right</active>
+        <active>pf-change-of-basis-basis-map-right</active>
+      </components>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-top-left" speech2="Top left: the three elements 1, x, x squared of the basis B 1">
+      <active>pf-change-of-basis-basis-top-left</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-arrow-top" speech2="An arrow labelled i d, the identity transformation">
+      <active>pf-change-of-basis-basis-arrow-top</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-top-right" speech2="Top right: the same three polynomials 1, x, x squared">
+      <active>pf-change-of-basis-basis-top-right</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-map-left" speech2="Double-headed arrows join each polynomial to its B 1 coordinate vector below it">
+      <active>pf-change-of-basis-basis-map-left</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-bottom-left" speech2="Bottom left: the B 1 coordinate vectors of 1, x, x squared, which are the standard basis columns 1 0 0, then 0 1 0, then 0 0 1">
+      <active>pf-change-of-basis-basis-bottom-left</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-arrow-bottom" speech2="An arrow labelled with the change of basis matrix from B 1 to B 2">
+      <active>pf-change-of-basis-basis-arrow-bottom</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-bottom-right" speech2="Bottom right: the B 2 coordinate vectors of 1, x, x squared: 1 0 0, then negative 1, 1, 0, then 0, negative 1, 1; these are the three columns of the change of basis matrix">
+      <active>pf-change-of-basis-basis-bottom-right</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-change-of-basis-basis-map-right" speech2="Double-headed arrows join each polynomial to its B 2 coordinate vector below it">
+      <active>pf-change-of-basis-basis-map-right</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-change-of-basis-basis-square</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

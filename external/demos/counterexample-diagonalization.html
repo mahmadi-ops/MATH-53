@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build a counterexample to diagonalization</title>
+  <link rel="stylesheet" href="../custom.css">
+  <link rel="stylesheet" href="css/counterexample-diagonalization.css">
+  <script src="js/counterexample-diagonalization.js" defer></script>
+</head>
+<body class="counterexample-builder">
+  <main class="builder">
+    <header class="intro">
+      <p class="eyebrow">Diagonalization</p>
+      <h1>Build a counterexample</h1>
+      <p class="claim"><span class="claim-label">The claim</span> “Every real matrix with only positive eigenvalues is diagonalizable.”</p>
+    </header>
+
+    <section class="challenge" aria-labelledby="goal-heading">
+      <h2 id="goal-heading">Your goal</h2>
+      <p>Construct a 3 × 3 matrix <var>A</var> that meets all three conditions:</p>
+      <ul class="target-list">
+        <li>All nine entries are <strong>nonzero integers</strong>.</li>
+        <li class="target-polynomial">det(<var>tI</var> − <var>A</var>) = (<var>t</var> − 1)<sup>2</sup>(<var>t</var> − 2)<br><span class="expanded-polynomial">= <var>t</var><sup>3</sup> − 4<var>t</var><sup>2</sup> + 5<var>t</var> − 2.</span></li>
+        <li>dim ker(<var>A</var> − <var>I</var>) = 1.</li>
+      </ul>
+      <p class="goal-note">The eigenvalue 1 repeats, but its eigenspace must have only one independent direction.</p>
+    </section>
+
+    <form id="matrix-form" novalidate>
+      <fieldset>
+        <legend>Enter your matrix <var>A</var></legend>
+        <p id="entry-help" class="entry-help">Use whole numbers, including negative numbers. Tab moves through the entries; Enter checks your matrix.</p>
+        <div class="matrix-editor">
+          <span class="matrix-name" aria-hidden="true"><var>A</var> =</span>
+          <div class="input-matrix">
+            <label><span class="visually-hidden">Row 1, column 1</span><input id="a11" name="a11" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 1, column 2</span><input id="a12" name="a12" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 1, column 3</span><input id="a13" name="a13" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 2, column 1</span><input id="a21" name="a21" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 2, column 2</span><input id="a22" name="a22" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 2, column 3</span><input id="a23" name="a23" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 3, column 1</span><input id="a31" name="a31" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 3, column 2</span><input id="a32" name="a32" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+            <label><span class="visually-hidden">Row 3, column 3</span><input id="a33" name="a33" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-describedby="entry-help" data-matrix-entry></label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="actions">
+        <button id="check-matrix" class="primary" type="submit">Check</button>
+        <button id="reset-matrix" type="reset">Reset</button>
+        <button id="toggle-hint" type="button" aria-expanded="false" aria-controls="hint">Hint</button>
+      </div>
+    </form>
+
+    <aside id="hint" class="hint" aria-labelledby="hint-heading" hidden>
+      <h2 id="hint-heading">A place to start</h2>
+      <p>Start with an upper triangular matrix <var>J</var> whose diagonal entries are 1, 1, and 2. Make its (1, 2) entry nonzero and all other off-diagonal entries zero. A change of basis, <var>A</var> = <var>PJP</var><sup>−1</sup>, preserves its eigenvalues and eigenspace dimensions.</p>
+      <p>Try an integer matrix <var>P</var> with determinant 1 or −1, so its inverse also has integer entries. Choose the basis to make every entry of <var>A</var> nonzero.</p>
+    </aside>
+
+    <p id="feedback-status" class="feedback-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <ul id="input-errors" class="input-errors" hidden></ul>
+
+    <section id="results" class="results" aria-labelledby="results-heading" hidden>
+      <h2 id="results-heading">Your matrix, checked</h2>
+      <div id="matrix-facts" class="matrix-facts"></div>
+      <ul id="condition-results" class="condition-results"></ul>
+      <button id="show-verification" type="button" aria-expanded="false" aria-controls="verification" hidden>Show verification</button>
+    </section>
+
+    <section id="verification" class="verification" aria-labelledby="verification-heading" hidden>
+      <h2 id="verification-heading">Why this is a counterexample</h2>
+      <div id="verification-content"></div>
+    </section>
+    <noscript><p class="no-script">Use the written problem to construct and verify your counterexample. Enable JavaScript to check a matrix here.</p></noscript>
+  </main>
+</body>
+</html>

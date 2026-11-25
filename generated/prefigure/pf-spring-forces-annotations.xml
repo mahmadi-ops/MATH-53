@@ -1,0 +1,227 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-spring-forces-spring-forces" speech2="Two snapshots, one above the other, of two carts on a track joined to two walls and to each other by three springs">
+      <grouped>pf-spring-forces-spring-forces</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-spring-forces-sf-a</active>
+        <active>pf-spring-forces-sf-b</active>
+      </children>
+      <components>
+        <active>pf-spring-forces-sf-a</active>
+        <active>pf-spring-forces-sf-b</active>
+      </components>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a" speech2="Snapshot a, at rest">
+      <grouped>pf-spring-forces-sf-a</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-spring-forces-sf-a-track</active>
+        <active>pf-spring-forces-sf-a-rest</active>
+        <active>pf-spring-forces-sf-a-cart1</active>
+        <active>pf-spring-forces-sf-a-cart2</active>
+        <active>pf-spring-forces-sf-a-left-spring</active>
+        <active>pf-spring-forces-sf-a-middle-spring</active>
+        <active>pf-spring-forces-sf-a-right-spring</active>
+        <active>pf-spring-forces-sf-a-length</active>
+        <active>pf-spring-forces-sf-a-title</active>
+      </children>
+      <components>
+        <active>pf-spring-forces-sf-a-track</active>
+        <active>pf-spring-forces-sf-a-rest</active>
+        <active>pf-spring-forces-sf-a-cart1</active>
+        <active>pf-spring-forces-sf-a-cart2</active>
+        <active>pf-spring-forces-sf-a-left-spring</active>
+        <active>pf-spring-forces-sf-a-middle-spring</active>
+        <active>pf-spring-forces-sf-a-right-spring</active>
+        <active>pf-spring-forces-sf-a-length</active>
+        <active>pf-spring-forces-sf-a-title</active>
+      </components>
+      <parents>
+        <grouped>pf-spring-forces-spring-forces</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-track" speech2="A horizontal track between a wall on the left and a wall on the right">
+      <active>pf-spring-forces-sf-a-track</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-rest" speech2="Two dashed vertical lines mark the rest positions of the centres of the two carts">
+      <active>pf-spring-forces-sf-a-rest</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-cart1" speech2="Cart 1, olive, centred on its rest position">
+      <active>pf-spring-forces-sf-a-cart1</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-cart2" speech2="Cart 2, wine, centred on its rest position">
+      <active>pf-spring-forces-sf-a-cart2</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-left-spring" speech2="The olive spring from the left wall to cart 1, relaxed">
+      <active>pf-spring-forces-sf-a-left-spring</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-middle-spring" speech2="The wine spring between the carts, relaxed">
+      <active>pf-spring-forces-sf-a-middle-spring</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-right-spring" speech2="The olive spring from cart 2 to the right wall, relaxed">
+      <active>pf-spring-forces-sf-a-right-spring</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-length" speech2="A double arrow above the middle spring marks its rest length, l">
+      <active>pf-spring-forces-sf-a-length</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-a-title" speech2="The caption a, at rest: every spring is relaxed">
+      <active>pf-spring-forces-sf-a-title</active>
+      <position>9</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b" speech2="Snapshot b, both carts displaced to the right, cart 2 farther than cart 1">
+      <grouped>pf-spring-forces-sf-b</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-spring-forces-sf-b-track</active>
+        <active>pf-spring-forces-sf-b-rest</active>
+        <active>pf-spring-forces-sf-b-cart1</active>
+        <active>pf-spring-forces-sf-b-shift1</active>
+        <active>pf-spring-forces-sf-b-cart2</active>
+        <active>pf-spring-forces-sf-b-shift2</active>
+        <active>pf-spring-forces-sf-b-left-spring</active>
+        <active>pf-spring-forces-sf-b-middle-spring</active>
+        <active>pf-spring-forces-sf-b-right-spring</active>
+        <active>pf-spring-forces-sf-b-forces1</active>
+        <active>pf-spring-forces-sf-b-forces2</active>
+        <active>pf-spring-forces-sf-b-title</active>
+      </children>
+      <components>
+        <active>pf-spring-forces-sf-b-track</active>
+        <active>pf-spring-forces-sf-b-rest</active>
+        <active>pf-spring-forces-sf-b-cart1</active>
+        <active>pf-spring-forces-sf-b-shift1</active>
+        <active>pf-spring-forces-sf-b-cart2</active>
+        <active>pf-spring-forces-sf-b-shift2</active>
+        <active>pf-spring-forces-sf-b-left-spring</active>
+        <active>pf-spring-forces-sf-b-middle-spring</active>
+        <active>pf-spring-forces-sf-b-right-spring</active>
+        <active>pf-spring-forces-sf-b-forces1</active>
+        <active>pf-spring-forces-sf-b-forces2</active>
+        <active>pf-spring-forces-sf-b-title</active>
+      </components>
+      <parents>
+        <grouped>pf-spring-forces-spring-forces</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-track" speech2="A horizontal track between a wall on the left and a wall on the right">
+      <active>pf-spring-forces-sf-b-track</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-rest" speech2="Two dashed vertical lines mark the rest positions of the centres of the two carts">
+      <active>pf-spring-forces-sf-b-rest</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-cart1" speech2="Cart 1 a short distance to the right of its rest position">
+      <active>pf-spring-forces-sf-b-cart1</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-shift1" speech2="A short arrow under the track from the rest position to the centre of cart 1, labelled u 1">
+      <active>pf-spring-forces-sf-b-shift1</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-cart2" speech2="Cart 2 three times as far to the right of its rest position">
+      <active>pf-spring-forces-sf-b-cart2</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-shift2" speech2="A longer arrow under the track from the rest position to the centre of cart 2, labelled u 2">
+      <active>pf-spring-forces-sf-b-shift2</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-left-spring" speech2="The left spring is stretched by u 1">
+      <active>pf-spring-forces-sf-b-left-spring</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-middle-spring" speech2="The middle spring is stretched by u 2 minus u 1">
+      <active>pf-spring-forces-sf-b-middle-spring</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-right-spring" speech2="The right spring is compressed by u 2">
+      <active>pf-spring-forces-sf-b-right-spring</active>
+      <position>9</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-forces1" speech2="Two force arrows above cart 1: a short olive arrow to the left labelled k u 1, from the left spring, and a longer wine arrow to the right labelled k times u 2 minus u 1, from the middle spring">
+      <active>pf-spring-forces-sf-b-forces1</active>
+      <position>10</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-forces2" speech2="Two force arrows above cart 2, both to the left: a long olive arrow labelled k u 2, from the right spring, and a wine arrow labelled k times u 2 minus u 1, from the middle spring">
+      <active>pf-spring-forces-sf-b-forces2</active>
+      <position>11</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-spring-forces-sf-b-title" speech2="The caption b, displaced by u 1 and u 2, with 0 less than u 1 less than u 2">
+      <active>pf-spring-forces-sf-b-title</active>
+      <position>12</position>
+      <parents>
+        <grouped>pf-spring-forces-sf-b</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

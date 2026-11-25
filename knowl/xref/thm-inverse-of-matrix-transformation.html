@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.54</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Composition and Inverses of Matrix Transformations.</span>
+</h2>
+<div class="para logical">
+<ol class="decimal" id="thm-inverse-of-matrix-transformation-2-1-1">
+<li>
+<div class="para">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m \times n\)</span> matrix and <span class="process-math">\(B\)</span> is a <span class="process-math">\(p \times m\)</span> matrix, then <span class="process-math">\(T_B \circ T_A = T_{BA}\text{:}\)</span> composing matrix transformations corresponds to multiplying their matrices.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">If <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n \times n\)</span> matrix, then <span class="process-math">\(T_A\)</span> is invertible and <span class="process-math">\(\left( T_A \right)^{-1} = T_{A^{-1}}\text{:}\)</span> the inverse matrix is the matrix of the inverse transformation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 4.54: Composition and Inverses of Matrix Transformations"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation" title="Copy heading and permalink for Theorem 4.54: Composition and Inverses of Matrix Transformations" aria-label="Copy heading and permalink for Theorem 4.54: Composition and Inverses of Matrix Transformations">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(1)</dfn> For every <span class="process-math">\(\vec{x} \in \R^n\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-matrix-product-properties.html">
+\begin{align*}
+(T_B \circ T_A)(\vec{x}) \amp = T_B\left( A\vec{x} \right)
+= B\left( A\vec{x} \right)\\
+\amp = (BA)\vec{x} = T_{BA}(\vec{x}),
+\end{align*}
+</div>
+<div class="para">where the third equality is the associativity of matrix multiplication (<a href="sec-matrix-multiplication.html#thm-matrix-product-properties" class="xref" data-knowl="./knowl/xref/thm-matrix-product-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.20: Properties of Matrix Multiplication">Theorem 4.20</a>), with <span class="process-math">\(\vec{x}\)</span> regarded as an <span class="process-math">\(n \times 1\)</span> matrix.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(2)</dfn> By part (1), for every <span class="process-math">\(\vec{x} \in \R^n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left( T_{A^{-1}} \circ T_A \right)(\vec{x})
+\amp = \left( A^{-1}A \right)\vec{x} = I_n\vec{x} = \vec{x},\\
+\left( T_A \circ T_{A^{-1}} \right)(\vec{x})
+\amp = \left( AA^{-1} \right)\vec{x} = I_n\vec{x} = \vec{x}.
+\end{align*}
+</div>
+<div class="para">So <span class="process-math">\(T_{A^{-1}}\)</span> is an inverse of <span class="process-math">\(T_A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 4.54.1"><a tabindex="-1" href="#thm-inverse-of-matrix-transformation-3" title="Copy heading and permalink for Proof 4.54.1" aria-label="Copy heading and permalink for Proof 4.54.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="sec-inverse.html#thm-inverse-of-matrix-transformation">In Context</a></span>
+</body>
+</html>

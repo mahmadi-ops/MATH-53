@@ -1,0 +1,39 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-vertical-shear-vertical-shear" speech2="A unit square on the left and, drawn further to the right for comparison, the parallelogram that a vertical shear with negative k makes of it">
+      <grouped>pf-vertical-shear-vertical-shear</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-vertical-shear-unit-square</active>
+        <active>pf-vertical-shear-parallelogram</active>
+        <active>pf-vertical-shear-image-e1</active>
+      </children>
+      <components>
+        <active>pf-vertical-shear-unit-square</active>
+        <active>pf-vertical-shear-parallelogram</active>
+        <active>pf-vertical-shear-image-e1</active>
+      </components>
+    </annotation>
+    <annotation id="pf-vertical-shear-unit-square" speech2="The unit square, with its lower left corner at the origin and sides along the two axes">
+      <active>pf-vertical-shear-unit-square</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-vertical-shear-vertical-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-vertical-shear-parallelogram" speech2="The image of the square: its left and right sides are still vertical and of length 1, but the right side has slid down, so the bottom and top edges slope down to the right">
+      <active>pf-vertical-shear-parallelogram</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-vertical-shear-vertical-shear</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-vertical-shear-image-e1" speech2="The olive vector T of e 1 runs along the bottom edge of the parallelogram: one unit to the right and k units up, which is down because k is negative">
+      <active>pf-vertical-shear-image-e1</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-vertical-shear-vertical-shear</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

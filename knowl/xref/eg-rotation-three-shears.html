@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.64</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Rotation as a Product of Three Shears.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(-\pi \lt \theta \lt \pi\text{,}\)</span> and let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/subsec-rotations.html">
+\begin{equation*}
+A_{R_\theta} = \begin{bmatrix}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">be the matrix of the rotation <span class="process-math">\(R_\theta\)</span> (<a href="sec-special-transformations.html#subsec-rotations" class="internal" title="Subsection 3.3.1: Rotations in \R^2">Subsection 3.3.1</a>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-three-shears-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical">
+<ol class="lower-alpha" style="list-style: ptx-marker-1;" id="eg-rotation-three-shears-2-2-1">
+<li>
+<div class="para">Row reduce <span class="process-math">\(A_{R_\theta}\)</span> to <span class="process-math">\(I_2\)</span> using only one kind of row operation: adding a multiple of one row to the other row. Use the result to write <span class="process-math">\(A_{R_\theta}\)</span> as a product of shears.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-three-shears-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#eg-rotation-three-shears-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li>
+<div class="para">Write out the factorization for a quarter turn, <span class="process-math">\(\theta = \pi/2\text{,}\)</span> and check it by multiplying.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-three-shears-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#eg-rotation-three-shears-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-three-shears-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(a)</dfn> We follow the method of <a href="sec-elementary-matrices.html#eg-product-of-elementary" class="xref" data-knowl="./knowl/xref/eg-product-of-elementary.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.63: Factoring a Matrix into Elementary Matrices">Example 4.63</a>. If <span class="process-math">\(\theta = 0\text{,}\)</span> then <span class="process-math">\(A_{R_\theta} = I_2\)</span> and there is nothing to do. Otherwise <span class="process-math">\(\sin\theta \neq 0\text{.}\)</span> The usual first step would scale the first row to make its leading entry <span class="process-math">\(1\text{.}\)</span> Scaling is not allowed here, so we add <span class="process-math">\(t\)</span> times the second row to the first row instead, and choose <span class="process-math">\(t\)</span> so that the leading entry <span class="process-math">\(\cos\theta + t\sin\theta\)</span> becomes <span class="process-math">\(1\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-product-of-elementary.html">
+\begin{equation*}
+t = \frac{1 - \cos\theta}{\sin\theta} = \tan\frac{\theta}{2},
+\end{equation*}
+</div>
+<div class="para">by a half-angle identity. With this <span class="process-math">\(t\text{,}\)</span> three row operations finish the reduction:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-product-of-elementary.html">
+\begin{align*}
+\begin{bmatrix}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta
+\end{bmatrix}
+\amp \xrightarrow{\;tR_2 + R_1\;}
+\begin{bmatrix} 1 \amp -t \\ \sin\theta \amp \cos\theta \end{bmatrix}\\
+\amp \xrightarrow{\;-(\sin\theta) R_1 + R_2\;}
+\begin{bmatrix} 1 \amp -t \\ 0 \amp 1 \end{bmatrix}\\
+\amp \xrightarrow{\;tR_2 + R_1\;}
+\begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+\end{align*}
+</div>
+<div class="para">The two new entries need a short computation. In the first step, the second entry of the first row is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-product-of-elementary.html">
+\begin{align*}
+-\sin\theta + t\cos\theta
+\amp = \frac{-\sin^2\theta + \cos\theta - \cos^2\theta}{\sin\theta}\\
+\amp = \frac{\cos\theta - 1}{\sin\theta} = -t,
+\end{align*}
+</div>
+<div class="para">and in the second step, the last entry is <span class="process-math">\(\cos\theta + t\sin\theta = 1\text{,}\)</span> by the choice of <span class="process-math">\(t\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-three-shears-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The elementary matrices of the three steps are <span class="process-math">\(E_1 = H_t\text{,}\)</span> <span class="process-math">\(E_2 = V_{-\sin\theta}\)</span> and <span class="process-math">\(E_3 = H_t\text{,}\)</span> and the reduction says that <span class="process-math">\(E_3 E_2 E_1 A_{R_\theta} = I_2\text{.}\)</span> Therefore</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/obs-inverse-elementary.html">
+\begin{equation*}
+A_{R_\theta} = E_1^{-1} E_2^{-1} E_3^{-1} = H_{-t}\, V_{\sin\theta}\, H_{-t},
+\end{equation*}
+</div>
+<div class="para">where each inverse is found by inspection, as in <a href="sec-elementary-matrices.html#obs-inverse-elementary" class="xref" data-knowl="./knowl/xref/obs-inverse-elementary.html" data-reveal-label="Reveal" data-close-label="Close" title="Observation 4.62">Observation 4.62</a>. Written out,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/obs-inverse-elementary.html">
+\begin{align*}
+\amp \begin{bmatrix}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta
+\end{bmatrix}\\
+\amp \quad =
+\begin{bmatrix} 1 \amp -\tan\frac{\theta}{2} \\ 0 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 0 \\ \sin\theta \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp -\tan\frac{\theta}{2} \\ 0 \amp 1 \end{bmatrix}.
+\end{align*}
+</div>
+<div class="para">That is, <span class="process-math">\(A_{R_\theta} = H_a V_b H_a\)</span> with <span class="process-math">\(a = -\tan\frac{\theta}{2}\)</span> and <span class="process-math">\(b = \sin\theta\text{.}\)</span> This also holds for <span class="process-math">\(\theta = 0\text{,}\)</span> where <span class="process-math">\(a = b = 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-three-shears-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">(b)</dfn> For <span class="process-math">\(\theta = \pi/2\)</span> we get <span class="process-math">\(a = -\tan(\pi/4) = -1\)</span> and <span class="process-math">\(b = \sin(\pi/2) = 1\text{,}\)</span> so all the entries are integers:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-rotation-quarter-turn.html">
+\begin{align*}
+\begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}
+\amp =
+\begin{bmatrix} 0 \amp -1 \\ 1 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}\\
+\amp =
+\begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix},
+\end{align*}
+</div>
+<div class="para">which is the matrix of the quarter turn in <a href="sec-special-transformations.html#eg-rotation-quarter-turn" class="xref" data-knowl="./knowl/xref/eg-rotation-quarter-turn.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.47: A Quarter Turn">Example 3.47</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-three-shears-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.64.1"><a tabindex="-1" href="#eg-rotation-three-shears-3" title="Copy heading and permalink for Solution 4.64.1" aria-label="Copy heading and permalink for Solution 4.64.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.64: A Rotation as a Product of Three Shears"><a tabindex="-1" href="#eg-rotation-three-shears" title="Copy heading and permalink for Example 4.64: A Rotation as a Product of Three Shears" aria-label="Copy heading and permalink for Example 4.64: A Rotation as a Product of Three Shears">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-elementary-matrices.html#eg-rotation-three-shears">In Context</a></span>
+</body>
+</html>

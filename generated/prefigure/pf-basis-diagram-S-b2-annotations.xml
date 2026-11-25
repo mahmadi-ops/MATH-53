@@ -1,0 +1,84 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-basis-diagram-S-b2-square" speech2="The same square as before, with the images now read in the basis B 2 of M 2 2">
+      <grouped>pf-basis-diagram-S-b2-square</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-basis-diagram-S-b2-top-left</active>
+        <active>pf-basis-diagram-S-b2-arrow-top</active>
+        <active>pf-basis-diagram-S-b2-top-right</active>
+        <active>pf-basis-diagram-S-b2-map-left</active>
+        <active>pf-basis-diagram-S-b2-bottom-left</active>
+        <active>pf-basis-diagram-S-b2-arrow-bottom</active>
+        <active>pf-basis-diagram-S-b2-bottom-right</active>
+        <active>pf-basis-diagram-S-b2-map-right</active>
+      </children>
+      <components>
+        <active>pf-basis-diagram-S-b2-top-left</active>
+        <active>pf-basis-diagram-S-b2-arrow-top</active>
+        <active>pf-basis-diagram-S-b2-top-right</active>
+        <active>pf-basis-diagram-S-b2-map-left</active>
+        <active>pf-basis-diagram-S-b2-bottom-left</active>
+        <active>pf-basis-diagram-S-b2-arrow-bottom</active>
+        <active>pf-basis-diagram-S-b2-bottom-right</active>
+        <active>pf-basis-diagram-S-b2-map-right</active>
+      </components>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-top-left" speech2="Top left: the three elements 1, x, x squared of the ordered basis B of P 2">
+      <active>pf-basis-diagram-S-b2-top-left</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-arrow-top" speech2="An arrow labelled S from the basis elements to their images">
+      <active>pf-basis-diagram-S-b2-arrow-top</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-top-right" speech2="Top right: their images under S, in the same order: the matrices M 0, M 1, M 2">
+      <active>pf-basis-diagram-S-b2-top-right</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-map-left" speech2="Double-headed arrows join each basis element to its B coordinate vector below it">
+      <active>pf-basis-diagram-S-b2-map-left</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-bottom-left" speech2="Bottom left: the standard basis columns of R 3: 1 0 0, then 0 1 0, then 0 0 1">
+      <active>pf-basis-diagram-S-b2-bottom-left</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-arrow-bottom" speech2="An arrow labelled A 2 from the standard basis columns of R 3 to the columns on the right">
+      <active>pf-basis-diagram-S-b2-arrow-bottom</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-bottom-right" speech2="Bottom right: the B 2 coordinate vectors of M 0, M 1, M 2: 1, negative 1, 1, 0, then 0 1 1 1, then 1 0 0 1; these are the three columns of A 2">
+      <active>pf-basis-diagram-S-b2-bottom-right</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-basis-diagram-S-b2-map-right" speech2="Double-headed arrows join each of M 0, M 1, M 2 to its B 2 coordinate vector below it">
+      <active>pf-basis-diagram-S-b2-map-right</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-basis-diagram-S-b2-square</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

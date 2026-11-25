@@ -1,0 +1,75 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-decision-boundary-decision-boundary" speech2="A two-dimensional picture of the classifier: a vertical boundary line separates the pictures judged empty wall, on the left, from those judged cat, on the right; the same scale is used in both directions">
+      <grouped>pf-decision-boundary-decision-boundary</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-decision-boundary-db-boundary</active>
+        <active>pf-decision-boundary-db-wall-side</active>
+        <active>pf-decision-boundary-db-cat-side</active>
+        <active>pf-decision-boundary-db-references</active>
+        <active>pf-decision-boundary-db-w</active>
+        <active>pf-decision-boundary-db-grain</active>
+        <active>pf-decision-boundary-db-dimming</active>
+      </children>
+      <components>
+        <active>pf-decision-boundary-db-boundary</active>
+        <active>pf-decision-boundary-db-wall-side</active>
+        <active>pf-decision-boundary-db-cat-side</active>
+        <active>pf-decision-boundary-db-references</active>
+        <active>pf-decision-boundary-db-w</active>
+        <active>pf-decision-boundary-db-grain</active>
+        <active>pf-decision-boundary-db-dimming</active>
+      </components>
+    </annotation>
+    <annotation id="pf-decision-boundary-db-boundary" speech2="The vertical boundary line, where the score s of X equals 0">
+      <active>pf-decision-boundary-db-boundary</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-decision-boundary-decision-boundary</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-decision-boundary-db-wall-side" speech2="The region to the left of the boundary, tinted wine: the score is negative and the verdict is empty wall">
+      <active>pf-decision-boundary-db-wall-side</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-decision-boundary-decision-boundary</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-decision-boundary-db-cat-side" speech2="The region to the right of the boundary, tinted olive: the score is positive and the verdict is cat">
+      <active>pf-decision-boundary-db-cat-side</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-decision-boundary-decision-boundary</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-decision-boundary-db-references" speech2="Three points on a horizontal dashed segment: the reference Q on the left, the reference P on the right at the same distance from the boundary, and their midpoint M on the boundary">
+      <active>pf-decision-boundary-db-references</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-decision-boundary-decision-boundary</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-decision-boundary-db-w" speech2="A grey horizontal arrow below them, from under Q to under P, labelled W equals P minus Q; it is perpendicular to the boundary">
+      <active>pf-decision-boundary-db-w</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-decision-boundary-decision-boundary</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-decision-boundary-db-grain" speech2="A long mustard arrow from P, pointing steeply upward and only slightly to the right, labelled grain G: long, but G dot W small; it stays on the cat side">
+      <active>pf-decision-boundary-db-grain</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-decision-boundary-decision-boundary</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-decision-boundary-db-dimming" speech2="A much shorter wine arrow from P, pointing to the left and slightly down, labelled dimming: short, but aimed along W; it ends across the boundary, on the empty-wall side">
+      <active>pf-decision-boundary-db-dimming</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-decision-boundary-decision-boundary</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.63</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Factoring a Matrix into Elementary Matrices.</span>
+</h2>
+<div class="para">Express <span class="process-math">\(A = \begin{bmatrix} 1 \amp 2 \amp -4 \\ -3 \amp -6 \amp 13 \\ 0 \amp -1 \amp 2 \end{bmatrix}\)</span> as a product of elementary matrices and, if possible, find <span class="process-math">\(A^{-1}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-product-of-elementary-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para">We need to keep track of the elementary row operations performed in the matrix inversion algorithm. Each step below records the elementary matrix <span class="process-math">\(E_i\)</span> obtained by applying that step’s row operation to <span class="process-math">\(I_3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-product-of-elementary-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+\left[ \begin{array}{ccc|ccc}
+1 \amp 2 \amp -4 \amp 1 \amp 0 \amp 0 \\
+-3 \amp -6 \amp 13 \amp 0 \amp 1 \amp 0 \\
+0 \amp -1 \amp 2 \amp 0 \amp 0 \amp 1
+\end{array} \right]
+\amp \xrightarrow{R_2 + 3R_1}
+\left[ \begin{array}{ccc|ccc}
+1 \amp 2 \amp -4 \amp 1 \amp 0 \amp 0 \\
+0 \amp 0 \amp 1 \amp 3 \amp 1 \amp 0 \\
+0 \amp -1 \amp 2 \amp 0 \amp 0 \amp 1
+\end{array} \right]\\
+\amp \xrightarrow{R_3 \leftrightarrow R_2}
+\left[ \begin{array}{ccc|ccc}
+1 \amp 2 \amp -4 \amp 1 \amp 0 \amp 0 \\
+0 \amp -1 \amp 2 \amp 0 \amp 0 \amp 1 \\
+0 \amp 0 \amp 1 \amp 3 \amp 1 \amp 0
+\end{array} \right]\\
+\amp \xrightarrow{-R_2}
+\left[ \begin{array}{ccc|ccc}
+1 \amp 2 \amp -4 \amp 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp -2 \amp 0 \amp 0 \amp -1 \\
+0 \amp 0 \amp 1 \amp 3 \amp 1 \amp 0
+\end{array} \right]\\
+\amp \xrightarrow{R_1 - 2R_2}
+\left[ \begin{array}{ccc|ccc}
+1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 2 \\
+0 \amp 1 \amp -2 \amp 0 \amp 0 \amp -1 \\
+0 \amp 0 \amp 1 \amp 3 \amp 1 \amp 0
+\end{array} \right]\\
+\amp \xrightarrow{R_2 + 2R_3}
+\left[ \begin{array}{ccc|ccc}
+1 \amp 0 \amp 0 \amp 1 \amp 0 \amp 2 \\
+0 \amp 1 \amp 0 \amp 6 \amp 2 \amp -1 \\
+0 \amp 0 \amp 1 \amp 3 \amp 1 \amp 0
+\end{array} \right]
+= \left[ \, I_3 \mid A^{-1} \, \right].
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-product-of-elementary-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The corresponding elementary matrices are</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_1 = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 3 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix},
+\quad
+E_2 = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \end{bmatrix},
+\quad
+E_3 = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_4 = \begin{bmatrix} 1 \amp -2 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix},
+\quad
+E_5 = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-product-of-elementary-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">By <a href="sec-elementary-matrices.html#obs-left-multiplication" class="xref" data-knowl="./knowl/xref/obs-left-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Observation 4.60">Observation 4.60</a>, applying these five row operations in order is the same as multiplying on the left by <span class="process-math">\(E_1\text{,}\)</span> then <span class="process-math">\(E_2\text{,}\)</span> and so on. Since the reduction carried <span class="process-math">\(A\)</span> to <span class="process-math">\(I\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/obs-left-multiplication.html">
+\begin{equation*}
+\left( E_5 E_4 E_3 E_2 E_1 \right) A = I.
+\end{equation*}
+</div>
+<div class="para">Multiplying both sides on the right by <span class="process-math">\(A^{-1}\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/obs-left-multiplication.html">
+\begin{equation*}
+\left( E_5 E_4 E_3 E_2 E_1 \right) \underbrace{A A^{-1}}_{I} = I A^{-1},
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/obs-left-multiplication.html">
+\begin{equation*}
+A^{-1} = E_5 E_4 E_3 E_2 E_1
+= \begin{bmatrix} 1 \amp 0 \amp 2 \\ 6 \amp 2 \amp -1 \\ 3 \amp 1 \amp 0 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">agreeing with the right half of the reduced augmented matrix above.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-product-of-elementary-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Finally, taking inverses of both sides and using <a href="sec-inverse.html#thm-inverses-transposes-products" class="xref" data-knowl="./knowl/xref/thm-inverses-transposes-products.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.47: Inverses of Transposes and Products">Theorem 4.47</a> (3),</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-inverses-transposes-products.html ./knowl/xref/obs-inverse-elementary.html">
+\begin{equation*}
+A = \left( E_5 E_4 E_3 E_2 E_1 \right)^{-1}
+= E_1^{-1} E_2^{-1} E_3^{-1} E_4^{-1} E_5^{-1},
+\end{equation*}
+</div>
+<div class="para">that is,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-inverses-transposes-products.html ./knowl/xref/obs-inverse-elementary.html">
+\begin{equation*}
+A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -3 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \end{bmatrix}
+\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp -2 \\ 0 \amp 0 \amp 1 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">where each factor was obtained from the corresponding <span class="process-math">\(E_i\)</span> by <a href="sec-elementary-matrices.html#obs-inverse-elementary" class="xref" data-knowl="./knowl/xref/obs-inverse-elementary.html" data-reveal-label="Reveal" data-close-label="Close" title="Observation 4.62">Observation 4.62</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-product-of-elementary-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.63.1"><a tabindex="-1" href="#eg-product-of-elementary-3" title="Copy heading and permalink for Solution 4.63.1" aria-label="Copy heading and permalink for Solution 4.63.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.63: Factoring a Matrix into Elementary Matrices"><a tabindex="-1" href="#eg-product-of-elementary" title="Copy heading and permalink for Example 4.63: Factoring a Matrix into Elementary Matrices" aria-label="Copy heading and permalink for Example 4.63: Factoring a Matrix into Elementary Matrices">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-elementary-matrices.html#eg-product-of-elementary">In Context</a></span>
+</body>
+</html>

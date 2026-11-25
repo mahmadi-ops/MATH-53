@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.47</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Quarter Turn.</span>
+</h2>
+<div class="para">The transformation <span class="process-math">\(R_{\pi/2} : \R^2 \to \R^2\)</span> denotes a counterclockwise rotation about the origin through an angle of <span class="process-math">\(\frac{\pi}{2}\)</span> radians. Find the matrix of <span class="process-math">\(R_{\pi/2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-quarter-turn-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+A_{R_{\pi/2}} = \begin{bmatrix}
+\cos\frac{\pi}{2} \amp -\sin\frac{\pi}{2} \\
+\sin\frac{\pi}{2} \amp \cos\frac{\pi}{2}
+\end{bmatrix}
+= \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_{R_{\pi/2}} \vec{x}
+= \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix}
+= \begin{bmatrix} -y \\ x \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-quarter-turn-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For instance, with <span class="process-math">\(\vec{x} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}\)</span> we get <span class="process-math">\(R_{\pi/2}(\vec{x}) = \begin{bmatrix} -1 \\ 2 \end{bmatrix}\text{.}\)</span> As expected for a quarter turn, the dot product is zero:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{x} \cdot R_{\pi/2}(\vec{x}) = (2)(-1) + (1)(2) = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-rotation-quarter-turn-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.47.1"><a tabindex="-1" href="#eg-rotation-quarter-turn-3" title="Copy heading and permalink for Solution 3.47.1" aria-label="Copy heading and permalink for Solution 3.47.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.47: A Quarter Turn"><a tabindex="-1" href="#eg-rotation-quarter-turn" title="Copy heading and permalink for Example 3.47: A Quarter Turn" aria-label="Copy heading and permalink for Example 3.47: A Quarter Turn">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-special-transformations.html#eg-rotation-quarter-turn">In Context</a></span>
+</body>
+</html>

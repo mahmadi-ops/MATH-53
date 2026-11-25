@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.43</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Three Ways to Have No Common Point.</span>
+</h2>
+<div class="para logical">
+<div class="para">Each of the following systems is inconsistent. For each one, row reduce far enough to exhibit the contradictory row, and then describe how the three planes are placed relative to one another.</div>
+<ol class="lower-alpha cols3 multicolumn" style="list-style: ptx-marker-1;" id="eg-inconsistent-configurations-2-1-1">
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \begin{array}{rcr} x_1 + x_2 + x_3 \amp = \amp 1 \\ 2x_1 + 2x_2 + 2x_3 \amp = \amp 4 \\ -x_1 - x_2 - x_3 \amp = \amp 3 \end{array}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#eg-inconsistent-configurations-2-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \begin{array}{rcr} x_1 + x_2 + x_3 \amp = \amp 1 \\ x_1 + x_2 + x_3 \amp = \amp 3 \\ x_1 - x_2 \phantom{{}+ x_3} \amp = \amp 0 \end{array}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#eg-inconsistent-configurations-2-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \begin{array}{rcr} x_1 + x_2 \phantom{{}+ x_3} \amp = \amp 1 \\ x_2 + x_3 \amp = \amp 1 \\ x_1 + 2x_2 + x_3 \amp = \amp 3 \end{array}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#eg-inconsistent-configurations-2-1-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">(a) Two replacements clear the first column, and one more tidies up:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 1 \amp 1 \\
+2 \amp 2 \amp 2 \amp 4 \\
+-1 \amp -1 \amp -1 \amp 3
+\end{array} \right]
+\xrightarrow[r_1 + r_3]{-2r_1 + r_2}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 2 \\
+0 \amp 0 \amp 0 \amp 4
+\end{array} \right]
+\xrightarrow{-2r_2 + r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 2 \\
+0 \amp 0 \amp 0 \amp 0
+\end{array} \right].
+\end{equation*}
+</div>
+<div class="para">The second row says <span class="process-math">\(0 = 2\text{.}\)</span> Dividing the second equation by <span class="process-math">\(2\)</span> and the third by <span class="process-math">\(-1\)</span> shows what happened: the three equations ask the same expression <span class="process-math">\(x_1 + x_2 + x_3\)</span> to equal <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(2\text{,}\)</span> and <span class="process-math">\(-3\text{.}\)</span> These are <dfn class="terminology">three parallel planes</dfn>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like"><div class="interactive-iframe-container"><iframe src="external/demos-manim/planes.html?sys=1,1,1,1:2,2,2,4:-1,-1,-1,3&amp;radius=3&amp;yaw=125&amp;pitch=12" id="int-parallel-planes" style="width:600px; height:750px; display: block; " title="Three translucent parallel planes in space, with controls to rotate the view and hide planes."></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-parallel-planes.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.44<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The three planes of part (a) are parallel. There are no dashed lines, because no two of the planes meet: switch any one plane off, and the other two still have no common point. Rotate the picture until the planes are seen edge-on, as three parallel lines.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.44"><a tabindex="-1" href="#fig-parallel-planes" title="Copy heading and permalink for Figure 1.44" aria-label="Copy heading and permalink for Figure 1.44">🔗</a></div></figcaption>
+</figure>
+<div class="para logical">
+<div class="para">(b) Here</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 1 \amp 1 \\
+1 \amp 1 \amp 1 \amp 3 \\
+1 \amp -1 \amp 0 \amp 0
+\end{array} \right]
+\xrightarrow[-r_1 + r_3]{-r_1 + r_2}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 2 \\
+0 \amp -2 \amp -1 \amp -1
+\end{array} \right]
+\xrightarrow{r_2 \leftrightarrow r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 1 \amp 1 \\
+0 \amp -2 \amp -1 \amp -1 \\
+0 \amp 0 \amp 0 \amp 2
+\end{array} \right],
+\end{equation*}
+</div>
+<div class="para">and the last row says <span class="process-math">\(0 = 2\text{.}\)</span> The first two planes are parallel, as in (a). The coefficients <span class="process-math">\(1, -1, 0\)</span> of the third equation are not a multiple of <span class="process-math">\(1, 1, 1\text{,}\)</span> so the third plane is parallel to neither of them: it cuts each of them in a line. This is <dfn class="terminology">two parallel planes crossed by a third</dfn>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like"><div class="interactive-iframe-container"><iframe src="external/demos-manim/planes.html?sys=1,1,1,1:1,1,1,3:1,-1,0,0&amp;radius=3&amp;yaw=-150&amp;pitch=40" id="int-two-parallel-planes" style="width:600px; height:750px; display: block; " title="Two translucent parallel planes crossed by a third plane along two parallel dashed lines, with controls to rotate the view and hide planes."></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-two-parallel-planes.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.45<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The parallel planes <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\)</span> of part (b) never meet, and <span class="process-math">\(P_3\)</span> crosses each of them in a dashed line. Switch <span class="process-math">\(P_1\)</span> or <span class="process-math">\(P_2\)</span> off and the two remaining equations have a whole line of common solutions; switch <span class="process-math">\(P_3\)</span> off and the system is still inconsistent.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.45"><a tabindex="-1" href="#fig-two-parallel-planes" title="Copy heading and permalink for Figure 1.45" aria-label="Copy heading and permalink for Figure 1.45">🔗</a></div></figcaption>
+</figure>
+<div class="para logical">
+<div class="para">(c) Finally,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-no-solution-planes.html">
+\begin{equation*}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 0 \amp 1 \\
+0 \amp 1 \amp 1 \amp 1 \\
+1 \amp 2 \amp 1 \amp 3
+\end{array} \right]
+\xrightarrow{-r_1 + r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 0 \amp 1 \\
+0 \amp 1 \amp 1 \amp 1 \\
+0 \amp 1 \amp 1 \amp 2
+\end{array} \right]
+\xrightarrow{-r_2 + r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 1 \amp 0 \amp 1 \\
+0 \amp 1 \amp 1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 1
+\end{array} \right],
+\end{equation*}
+</div>
+<div class="para">and the last row says <span class="process-math">\(0 = 1\text{.}\)</span> This time no two of the coefficient lists <span class="process-math">\(1, 1, 0\)</span> and <span class="process-math">\(0, 1, 1\)</span> and <span class="process-math">\(1, 2, 1\)</span> are multiples of one another, so no two of the planes are parallel: <dfn class="terminology">every pair of planes meets in a line, but the three lines never meet</dfn>. This is also the configuration drawn in <a href="sec-row-reduction.html#fig-no-solution-planes" class="xref" data-knowl="./knowl/xref/fig-no-solution-planes.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.41">Figure 1.41</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like"><div class="interactive-iframe-container"><iframe src="external/demos-manim/planes.html?sys=1,1,0,1:0,1,1,1:1,2,1,3&amp;radius=3&amp;yaw=155&amp;pitch=30" id="int-prism-planes" style="width:600px; height:750px; display: block; " title="Three translucent planes in space that meet pairwise in three parallel dashed lines but have no common point, with controls to rotate the view and hide planes."></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="int-prism-planes.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.46<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>No two of the planes of part (c) are parallel. Each pair meets in a dashed line, but the three lines are parallel and different. Switch any one plane off and the other two share a line. Rotate to look along the dashed lines: the planes then appear as the three sides of a triangle.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.46"><a tabindex="-1" href="#fig-prism-planes" title="Copy heading and permalink for Figure 1.46" aria-label="Copy heading and permalink for Figure 1.46">🔗</a></div></figcaption>
+</figure>
+<div class="para">The three echelon forms look alike. To tell the configurations apart, compare the coefficient lists of the original equations: all three proportional in (a), exactly two proportional in (b), and no two proportional in (c).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-inconsistent-configurations-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.43.1"><a tabindex="-1" href="#eg-inconsistent-configurations-3" title="Copy heading and permalink for Solution 1.43.1" aria-label="Copy heading and permalink for Solution 1.43.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.43: Three Ways to Have No Common Point"><a tabindex="-1" href="#eg-inconsistent-configurations" title="Copy heading and permalink for Example 1.43: Three Ways to Have No Common Point" aria-label="Copy heading and permalink for Example 1.43: Three Ways to Have No Common Point">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-row-reduction.html#eg-inconsistent-configurations">In Context</a></span>
+</body>
+</html>

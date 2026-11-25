@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.12</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">One Family, All Three Cases.</span>
+</h2>
+<div class="para logical">
+<div class="para">For all real numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> classify the solution set of</div>
+<div class="displaymath process-math">
+\begin{align*}
+x + y \amp = 1\\
+ax + y \amp = b.
+\end{align*}
+</div>
+<div class="para">Give exact conditions on <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> for one solution, no solutions, and infinitely many solutions; find all solutions in every consistent case; and interpret each case as intersecting, parallel, or coincident lines. Why would dividing by <span class="process-math">\(a - 1\)</span> before separating cases lose answers?</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-family-of-lines-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Subtracting the first equation from the second gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a - 1)x = b - 1.
+\end{equation*}
+</div>
+<div class="para">Every solution of the system satisfies this equation. Conversely, if <span class="process-math">\(x + y = 1\)</span> and <span class="process-math">\((a-1)x = b-1\)</span> both hold, adding them gives back <span class="process-math">\(ax + y = b\text{.}\)</span> So the system has exactly the same solutions as the pair <span class="process-math">\(x + y = 1\text{,}\)</span> <span class="process-math">\((a-1)x = b-1\text{,}\)</span> and everything depends on whether <span class="process-math">\(a - 1\)</span> is zero.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-family-of-lines-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<dfn class="terminology">Case <span class="process-math">\(a \neq 1\text{.}\)</span></dfn> Then <span class="process-math">\(x = \dfrac{b-1}{a-1}\)</span> and <span class="process-math">\(y = 1 - x = \dfrac{a-b}{a-1}\text{:}\)</span> exactly one solution, for every <span class="process-math">\(b\text{.}\)</span> The lines have slopes <span class="process-math">\(-1\)</span> and <span class="process-math">\(-a\text{,}\)</span> which differ, so they intersect in one point.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-family-of-lines-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<dfn class="terminology">Case <span class="process-math">\(a = 1\)</span> and <span class="process-math">\(b = 1\text{.}\)</span></dfn> Both equations are <span class="process-math">\(x + y = 1\text{,}\)</span> and the derived equation reads <span class="process-math">\(0 = 0\text{.}\)</span> The lines coincide, and every point <span class="process-math">\((x, y) = (t, 1 - t)\)</span> with <span class="process-math">\(t \in \R\)</span> is a solution. The same thing happens whenever one equation is a nonzero multiple of the other: in <span class="process-math">\(x - y = 0\text{,}\)</span> <span class="process-math">\(2x - 2y = 0\text{,}\)</span> both equations describe the line <span class="process-math">\(y = x\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-family-of-lines-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<dfn class="terminology">Case <span class="process-math">\(a = 1\)</span> and <span class="process-math">\(b \neq 1\text{.}\)</span></dfn> The derived equation reads <span class="process-math">\(0 = b - 1\)</span> with <span class="process-math">\(b - 1 \neq 0\text{,}\)</span> which is impossible: no solutions. The lines <span class="process-math">\(x + y = 1\)</span> and <span class="process-math">\(x + y = b\)</span> are parallel and distinct.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-family-of-lines-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The formula <span class="process-math">\(x = (b-1)/(a-1)\)</span> has no meaning when <span class="process-math">\(a = 1\text{,}\)</span> and dividing by <span class="process-math">\(a - 1\)</span> at the start would silently assume <span class="process-math">\(a \neq 1\text{.}\)</span> Both the coincident case and the parallel case live exactly at <span class="process-math">\(a = 1\text{,}\)</span> so the division would discard every system except those with a unique solution. The three cases are the three pictures of <a href="sec-systems-of-linear-equations.html#fig-three-possibilities" class="xref" data-knowl="./knowl/xref/fig-three-possibilities.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.11">Figure 1.11</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-family-of-lines-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.12.1"><a tabindex="-1" href="#eg-family-of-lines-3" title="Copy heading and permalink for Solution 1.12.1" aria-label="Copy heading and permalink for Solution 1.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.12: One Family, All Three Cases"><a tabindex="-1" href="#eg-family-of-lines" title="Copy heading and permalink for Example 1.12: One Family, All Three Cases" aria-label="Copy heading and permalink for Example 1.12: One Family, All Three Cases">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-systems-of-linear-equations.html#eg-family-of-lines">In Context</a></span>
+</body>
+</html>

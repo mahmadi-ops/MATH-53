@@ -1,0 +1,236 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-fast-mode-fast-mode" speech2="Two snapshots, one above the other, of the two carts moving in opposite directions in the fast mode, drawn to the same scale as the slow mode">
+      <grouped>pf-fast-mode-fast-mode</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-fast-mode-fm-a</active>
+        <active>pf-fast-mode-fm-b</active>
+      </children>
+      <components>
+        <active>pf-fast-mode-fm-a</active>
+        <active>pf-fast-mode-fm-b</active>
+      </components>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a" speech2="Snapshot a, the carts displaced toward each other by the same amount u">
+      <grouped>pf-fast-mode-fm-a</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-fast-mode-fm-a-track</active>
+        <active>pf-fast-mode-fm-a-rest</active>
+        <active>pf-fast-mode-fm-a-cart1</active>
+        <active>pf-fast-mode-fm-a-shift1</active>
+        <active>pf-fast-mode-fm-a-cart2</active>
+        <active>pf-fast-mode-fm-a-shift2</active>
+        <active>pf-fast-mode-fm-a-left-spring</active>
+        <active>pf-fast-mode-fm-a-middle-spring</active>
+        <active>pf-fast-mode-fm-a-right-spring</active>
+        <active>pf-fast-mode-fm-a-length</active>
+        <active>pf-fast-mode-fm-a-title</active>
+      </children>
+      <components>
+        <active>pf-fast-mode-fm-a-track</active>
+        <active>pf-fast-mode-fm-a-rest</active>
+        <active>pf-fast-mode-fm-a-cart1</active>
+        <active>pf-fast-mode-fm-a-shift1</active>
+        <active>pf-fast-mode-fm-a-cart2</active>
+        <active>pf-fast-mode-fm-a-shift2</active>
+        <active>pf-fast-mode-fm-a-left-spring</active>
+        <active>pf-fast-mode-fm-a-middle-spring</active>
+        <active>pf-fast-mode-fm-a-right-spring</active>
+        <active>pf-fast-mode-fm-a-length</active>
+        <active>pf-fast-mode-fm-a-title</active>
+      </components>
+      <parents>
+        <grouped>pf-fast-mode-fast-mode</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-track" speech2="A horizontal track between a wall on the left and a wall on the right">
+      <active>pf-fast-mode-fm-a-track</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-rest" speech2="Two dashed vertical lines mark the rest positions of the centres of the two carts">
+      <active>pf-fast-mode-fm-a-rest</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-cart1" speech2="Cart 1, olive, to the right of its rest position">
+      <active>pf-fast-mode-fm-a-cart1</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-shift1" speech2="An arrow under the track from the rest position of cart 1 to the right, labelled u">
+      <active>pf-fast-mode-fm-a-shift1</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-cart2" speech2="Cart 2, wine, to the left of its rest position">
+      <active>pf-fast-mode-fm-a-cart2</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-shift2" speech2="An arrow under the track from the rest position of cart 2 to the left, labelled u">
+      <active>pf-fast-mode-fm-a-shift2</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-left-spring" speech2="The left spring is stretched">
+      <active>pf-fast-mode-fm-a-left-spring</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-middle-spring" speech2="The middle spring is compressed">
+      <active>pf-fast-mode-fm-a-middle-spring</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-right-spring" speech2="The right spring is stretched">
+      <active>pf-fast-mode-fm-a-right-spring</active>
+      <position>9</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-length" speech2="A double arrow above the middle spring marks its length, l minus 2 u">
+      <active>pf-fast-mode-fm-a-length</active>
+      <position>10</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-a-title" speech2="The caption a, the carts move toward each other: u 1 equals u, u 2 equals minus u">
+      <active>pf-fast-mode-fm-a-title</active>
+      <position>11</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-a</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b" speech2="Snapshot b, half a period later, the carts displaced away from each other by the same amount u">
+      <grouped>pf-fast-mode-fm-b</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-fast-mode-fm-b-track</active>
+        <active>pf-fast-mode-fm-b-rest</active>
+        <active>pf-fast-mode-fm-b-cart1</active>
+        <active>pf-fast-mode-fm-b-shift1</active>
+        <active>pf-fast-mode-fm-b-cart2</active>
+        <active>pf-fast-mode-fm-b-shift2</active>
+        <active>pf-fast-mode-fm-b-left-spring</active>
+        <active>pf-fast-mode-fm-b-middle-spring</active>
+        <active>pf-fast-mode-fm-b-right-spring</active>
+        <active>pf-fast-mode-fm-b-length</active>
+        <active>pf-fast-mode-fm-b-title</active>
+      </children>
+      <components>
+        <active>pf-fast-mode-fm-b-track</active>
+        <active>pf-fast-mode-fm-b-rest</active>
+        <active>pf-fast-mode-fm-b-cart1</active>
+        <active>pf-fast-mode-fm-b-shift1</active>
+        <active>pf-fast-mode-fm-b-cart2</active>
+        <active>pf-fast-mode-fm-b-shift2</active>
+        <active>pf-fast-mode-fm-b-left-spring</active>
+        <active>pf-fast-mode-fm-b-middle-spring</active>
+        <active>pf-fast-mode-fm-b-right-spring</active>
+        <active>pf-fast-mode-fm-b-length</active>
+        <active>pf-fast-mode-fm-b-title</active>
+      </components>
+      <parents>
+        <grouped>pf-fast-mode-fast-mode</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-track" speech2="A horizontal track between a wall on the left and a wall on the right">
+      <active>pf-fast-mode-fm-b-track</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-rest" speech2="Two dashed vertical lines mark the rest positions of the centres of the two carts">
+      <active>pf-fast-mode-fm-b-rest</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-cart1" speech2="Cart 1 to the left of its rest position">
+      <active>pf-fast-mode-fm-b-cart1</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-shift1" speech2="An arrow under the track from the rest position of cart 1 to the left, labelled u">
+      <active>pf-fast-mode-fm-b-shift1</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-cart2" speech2="Cart 2 to the right of its rest position">
+      <active>pf-fast-mode-fm-b-cart2</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-shift2" speech2="An arrow under the track from the rest position of cart 2 to the right, labelled u">
+      <active>pf-fast-mode-fm-b-shift2</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-left-spring" speech2="The left spring is compressed">
+      <active>pf-fast-mode-fm-b-left-spring</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-middle-spring" speech2="The middle spring is stretched">
+      <active>pf-fast-mode-fm-b-middle-spring</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-right-spring" speech2="The right spring is compressed">
+      <active>pf-fast-mode-fm-b-right-spring</active>
+      <position>9</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-length" speech2="A double arrow above the middle spring marks its length, l plus 2 u">
+      <active>pf-fast-mode-fm-b-length</active>
+      <position>10</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-fast-mode-fm-b-title" speech2="The caption b, half a period later: they move apart">
+      <active>pf-fast-mode-fm-b-title</active>
+      <position>11</position>
+      <parents>
+        <grouped>pf-fast-mode-fm-b</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

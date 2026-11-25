@@ -1,0 +1,137 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-polar-jacobian-polar-jacobian" speech2="Two pictures side by side joined by an arrow labelled T: a small rectangle in the r theta plane on the left, and its image under the polar coordinate map in the x y plane on the right; the same scale is used in both directions">
+      <grouped>pf-polar-jacobian-polar-jacobian</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-polar-jacobian-pj-source</active>
+        <active>pf-polar-jacobian-pj-arrow</active>
+        <active>pf-polar-jacobian-pj-target</active>
+      </children>
+      <components>
+        <active>pf-polar-jacobian-pj-source</active>
+        <active>pf-polar-jacobian-pj-arrow</active>
+        <active>pf-polar-jacobian-pj-target</active>
+      </components>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-source" speech2="Left picture, the r theta plane">
+      <grouped>pf-polar-jacobian-pj-source</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-polar-jacobian-pj-rt-axes</active>
+        <active>pf-polar-jacobian-pj-rectangle</active>
+        <active>pf-polar-jacobian-pj-corner</active>
+      </children>
+      <components>
+        <active>pf-polar-jacobian-pj-rt-axes</active>
+        <active>pf-polar-jacobian-pj-rectangle</active>
+        <active>pf-polar-jacobian-pj-corner</active>
+      </components>
+      <parents>
+        <grouped>pf-polar-jacobian-polar-jacobian</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-rt-axes" speech2="A horizontal r axis and a vertical theta axis">
+      <active>pf-polar-jacobian-pj-rt-axes</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-source</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-rectangle" speech2="A small pale olive rectangle with horizontal side delta r and vertical side delta theta">
+      <active>pf-polar-jacobian-pj-rectangle</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-source</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-corner" speech2="Its lower left corner is the point r 0 comma theta 0">
+      <active>pf-polar-jacobian-pj-corner</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-source</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-arrow" speech2="An arrow labelled T points from the left picture to the right picture">
+      <active>pf-polar-jacobian-pj-arrow</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-polar-jacobian-polar-jacobian</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-target" speech2="Right picture, the x y plane">
+      <grouped>pf-polar-jacobian-pj-target</grouped>
+      <position>3</position>
+      <children>
+        <active>pf-polar-jacobian-pj-xy-axes</active>
+        <active>pf-polar-jacobian-pj-rays</active>
+        <active>pf-polar-jacobian-pj-polar-rectangle</active>
+        <active>pf-polar-jacobian-pj-image-corner</active>
+        <active>pf-polar-jacobian-pj-a</active>
+        <active>pf-polar-jacobian-pj-b</active>
+        <active>pf-polar-jacobian-pj-parallelogram</active>
+      </children>
+      <components>
+        <active>pf-polar-jacobian-pj-xy-axes</active>
+        <active>pf-polar-jacobian-pj-rays</active>
+        <active>pf-polar-jacobian-pj-polar-rectangle</active>
+        <active>pf-polar-jacobian-pj-image-corner</active>
+        <active>pf-polar-jacobian-pj-a</active>
+        <active>pf-polar-jacobian-pj-b</active>
+        <active>pf-polar-jacobian-pj-parallelogram</active>
+      </components>
+      <parents>
+        <grouped>pf-polar-jacobian-polar-jacobian</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-xy-axes" speech2="The x axis and the y axis">
+      <active>pf-polar-jacobian-pj-xy-axes</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-rays" speech2="Two thin rays from the origin, at angles theta 0 and theta 0 plus delta theta; the distance r 0 is marked along the first ray and the small angle delta theta between the rays is marked near the origin">
+      <active>pf-polar-jacobian-pj-rays</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-polar-rectangle" speech2="The wine polar rectangle: the region between the two rays and between two circular arcs of radius r 0 and r 0 plus delta r">
+      <active>pf-polar-jacobian-pj-polar-rectangle</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-image-corner" speech2="The image of the corner, on the first ray at distance r 0 from the origin">
+      <active>pf-polar-jacobian-pj-image-corner</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-a" speech2="The olive vector a starts at the image of the corner and points outward along the first ray; its length is delta r">
+      <active>pf-polar-jacobian-pj-a</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-b" speech2="The olive vector b starts at the same point and is perpendicular to a, along the inner arc; its length is r 0 times delta theta">
+      <active>pf-polar-jacobian-pj-b</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-target</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-polar-jacobian-pj-parallelogram" speech2="The shaded rectangle spanned by a and b approximates the polar rectangle; its area is r 0 times delta r times delta theta">
+      <active>pf-polar-jacobian-pj-parallelogram</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-polar-jacobian-pj-target</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

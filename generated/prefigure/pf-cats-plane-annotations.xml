@@ -1,0 +1,48 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-cats-plane-cats-plane" speech2="The same plane of coordinate vectors, now shaded completely">
+      <grouped>pf-cats-plane-cats-plane</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-cats-plane-cp-plane</active>
+        <active>pf-cats-plane-cp-line</active>
+        <active>pf-cats-plane-cp-blends</active>
+        <active>pf-cats-plane-cp-point</active>
+      </children>
+      <components>
+        <active>pf-cats-plane-cp-plane</active>
+        <active>pf-cats-plane-cp-line</active>
+        <active>pf-cats-plane-cp-blends</active>
+        <active>pf-cats-plane-cp-point</active>
+      </components>
+    </annotation>
+    <annotation id="pf-cats-plane-cp-plane" speech2="The whole plane is shaded pale olive and labelled W is isomorphic to R 2: every pair of coefficients gives an element of W">
+      <active>pf-cats-plane-cp-plane</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-cats-plane-cats-plane</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-plane-cp-line" speech2="The wine line x plus y equals 1 is one line inside this plane">
+      <active>pf-cats-plane-cp-line</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-cats-plane-cats-plane</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-plane-cp-blends" speech2="The olive segment of blends is a small part of that line">
+      <active>pf-cats-plane-cp-blends</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-cats-plane-cats-plane</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-cats-plane-cp-point" speech2="A grey point off the line, in the first quadrant, is the coordinate vector of a general element X of W">
+      <active>pf-cats-plane-cp-point</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-cats-plane-cats-plane</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

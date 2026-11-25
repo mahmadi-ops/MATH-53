@@ -1,0 +1,75 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-rotation-basis-rotation-basis" speech2="The standard basis vectors and their images under the rotation R theta, drawn with the same scale on both axes">
+      <grouped>pf-rotation-basis-rotation-basis</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-rotation-basis-unit-circle</active>
+        <active>pf-rotation-basis-vector-e1</active>
+        <active>pf-rotation-basis-vector-e2</active>
+        <active>pf-rotation-basis-image-e1</active>
+        <active>pf-rotation-basis-angle-e1</active>
+        <active>pf-rotation-basis-image-e2</active>
+        <active>pf-rotation-basis-angle-e2</active>
+      </children>
+      <components>
+        <active>pf-rotation-basis-unit-circle</active>
+        <active>pf-rotation-basis-vector-e1</active>
+        <active>pf-rotation-basis-vector-e2</active>
+        <active>pf-rotation-basis-image-e1</active>
+        <active>pf-rotation-basis-angle-e1</active>
+        <active>pf-rotation-basis-image-e2</active>
+        <active>pf-rotation-basis-angle-e2</active>
+      </components>
+    </annotation>
+    <annotation id="pf-rotation-basis-unit-circle" speech2="The upper half of the unit circle; all four vectors end on it, since a rotation does not change length">
+      <active>pf-rotation-basis-unit-circle</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-rotation-basis-rotation-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-basis-vector-e1" speech2="The olive vector e 1, from the origin to the point 1 comma 0 on the x axis">
+      <active>pf-rotation-basis-vector-e1</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-rotation-basis-rotation-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-basis-vector-e2" speech2="The olive vector e 2, from the origin to the point 0 comma 1 on the y axis">
+      <active>pf-rotation-basis-vector-e2</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-rotation-basis-rotation-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-basis-image-e1" speech2="The wine vector R theta of e 1, in the first quadrant, ending at the point cosine theta comma sine theta on the unit circle">
+      <active>pf-rotation-basis-image-e1</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-rotation-basis-rotation-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-basis-angle-e1" speech2="The angle theta, measured counterclockwise from e 1 to R theta of e 1">
+      <active>pf-rotation-basis-angle-e1</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-rotation-basis-rotation-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-basis-image-e2" speech2="The mustard vector R theta of e 2, in the second quadrant, ending at the point minus sine theta comma cosine theta on the unit circle; it is perpendicular to R theta of e 1">
+      <active>pf-rotation-basis-image-e2</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-rotation-basis-rotation-basis</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-rotation-basis-angle-e2" speech2="The same angle theta, measured counterclockwise from e 2 to R theta of e 2">
+      <active>pf-rotation-basis-angle-e2</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-rotation-basis-rotation-basis</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

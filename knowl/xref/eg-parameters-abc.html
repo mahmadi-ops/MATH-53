@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.51</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Conditions on the Coefficients.</span>
+</h2>
+<div class="para logical">
+<div class="para">Find all values of <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> and <span class="process-math">\(c\)</span> (or conditions on <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> and <span class="process-math">\(c\)</span>) so that the system</div>
+<div class="displaymath process-math">
+\begin{align*}
+2x_1 + 3x_2 + ax_3 \amp = b\\
+\phantom{2x_1 + {}} -x_2 + 2x_3 \amp = c\\
+x_1 + 3x_2 - 2x_3 \amp = 1
+\end{align*}
+</div>
+<div class="para">has (i) a unique solution, (ii) no solutions, and (iii) infinitely many solutions. In (i) and (iii), find the solution(s).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-parameters-abc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Row reduce the augmented matrix, treating <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\)</span> as constants:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left[ \begin{array}{ccc|c}
+2 \amp 3 \amp a \amp b \\
+0 \amp -1 \amp 2 \amp c \\
+1 \amp 3 \amp -2 \amp 1
+\end{array} \right]
+\amp \xrightarrow{r_1 \leftrightarrow r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp -2 \amp 1 \\
+0 \amp -1 \amp 2 \amp c \\
+2 \amp 3 \amp a \amp b
+\end{array} \right]\\
+\amp \xrightarrow{-2r_1 + r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp -2 \amp 1 \\
+0 \amp -1 \amp 2 \amp c \\
+0 \amp -3 \amp a+4 \amp b-2
+\end{array} \right]\\
+\amp \xrightarrow{-3r_2 + r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp -2 \amp 1 \\
+0 \amp -1 \amp 2 \amp c \\
+0 \amp 0 \amp a-2 \amp b-2-3c
+\end{array} \right].
+\end{align*}
+</div>
+<div class="para">Everything now hinges on the entry <span class="process-math">\(a - 2\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-parameters-abc-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">Case (I): <span class="process-math">\(a - 2 \neq 0\text{,}\)</span> i.e., <span class="process-math">\(a \neq 2\text{.}\)</span></dfn> We may divide the third row by <span class="process-math">\(a-2\)</span> and continue. Writing <span class="process-math">\(K = \dfrac{b-2-3c}{a-2}\)</span> for brevity,</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \xrightarrow{\left( \frac{1}{a-2} \right) r_3}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp -2 \amp 1 \\
+0 \amp -1 \amp 2 \amp c \\
+0 \amp 0 \amp 1 \amp K
+\end{array} \right]\\
+\amp \xrightarrow{-r_2}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp -2 \amp 1 \\
+0 \amp 1 \amp -2 \amp -c \\
+0 \amp 0 \amp 1 \amp K
+\end{array} \right]\\
+\amp \xrightarrow{2r_3+r_2}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp -2 \amp 1 \\
+0 \amp 1 \amp 0 \amp -c + 2K \\
+0 \amp 0 \amp 1 \amp K
+\end{array} \right]\\
+\amp \xrightarrow{2r_3 + r_1}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp 0 \amp 1 + 2K \\
+0 \amp 1 \amp 0 \amp -c + 2K \\
+0 \amp 0 \amp 1 \amp K
+\end{array} \right]\\
+\amp \xrightarrow{-3r_2 + r_1}
+\left[ \begin{array}{ccc|c}
+1 \amp 0 \amp 0 \amp 1 + 3c - 4K \\
+0 \amp 1 \amp 0 \amp -c + 2K \\
+0 \amp 0 \amp 1 \amp K
+\end{array} \right].
+\end{align*}
+</div>
+<div class="para">Hence when <span class="process-math">\(a \neq 2\text{,}\)</span> there is a unique solution:</div>
+<div class="displaymath process-math">
+\begin{align*}
+x_1 \amp = 1 + 3c - 4\left( \frac{b-2-3c}{a-2} \right)\\
+x_2 \amp = -c + 2 \left( \frac{b-2-3c}{a-2} \right)\\
+x_3 \amp = \frac{b-2-3c}{a-2}.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-parameters-abc-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">Case (II): <span class="process-math">\(a - 2 = 0\)</span> and <span class="process-math">\(b - 2 - 3c \neq 0\text{.}\)</span></dfn> The row-echelon matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[ \begin{array}{ccc|c}
+1 \amp 3 \amp -2 \amp 1 \\
+0 \amp -1 \amp 2 \amp c \\
+0 \amp 0 \amp 0 \amp b-2-3c
+\end{array} \right],
+\end{equation*}
+</div>
+<div class="para">whose last row asserts <span class="process-math">\(0 = b-2-3c \neq 0\text{.}\)</span> Then the system has no solution.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-parameters-abc-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">Case (III): <span class="process-math">\(a - 2 = 0\)</span> and <span class="process-math">\(b - 2 - 3c = 0\text{.}\)</span></dfn> Now the last row is entirely zero, and <span class="process-math">\(x_3\)</span> is a free variable, so the system has infinitely many solutions. Setting <span class="process-math">\(x_3 = s\text{,}\)</span> the second row gives <span class="process-math">\(-x_2 + 2s = c\text{,}\)</span> so <span class="process-math">\(x_2 = -c + 2s\text{,}\)</span> and the first row gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1 = 1 - 3x_2 + 2x_3 = 1 - 3(-c + 2s) + 2s = 1 + 3c - 4s.
+\end{equation*}
+</div>
+<div class="para">The solution set in parametric form is</div>
+<div class="displaymath process-math">
+\begin{align*}
+x_1 \amp = 1 + 3c - 4s\\
+x_2 \amp = -c + 2s\\
+x_3 \amp = s, \qquad \text{where } s \in \R.
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-parameters-abc-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">In summary: the system has a unique solution when <span class="process-math">\(a \neq 2\text{,}\)</span> no solution when <span class="process-math">\(a = 2\)</span> and <span class="process-math">\(b \neq 2 + 3c\text{,}\)</span> and infinitely many solutions when <span class="process-math">\(a = 2\)</span> and <span class="process-math">\(b = 2 + 3c\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-parameters-abc-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.51.1"><a tabindex="-1" href="#eg-parameters-abc-3" title="Copy heading and permalink for Solution 1.51.1" aria-label="Copy heading and permalink for Solution 1.51.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.51: Conditions on the Coefficients"><a tabindex="-1" href="#eg-parameters-abc" title="Copy heading and permalink for Example 1.51: Conditions on the Coefficients" aria-label="Copy heading and permalink for Example 1.51: Conditions on the Coefficients">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-row-reduction.html#eg-parameters-abc">In Context</a></span>
+</body>
+</html>

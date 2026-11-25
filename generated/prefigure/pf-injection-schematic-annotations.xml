@@ -1,0 +1,146 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-injection-schematic-schematic" speech2="Two arrow diagrams, each with a domain oval on its left and a codomain oval on its right; the first transformation is not one-to-one and the second is one-to-one">
+      <grouped>pf-injection-schematic-schematic</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-injection-schematic-left-pair</active>
+        <active>pf-injection-schematic-right-pair</active>
+      </children>
+      <components>
+        <active>pf-injection-schematic-left-pair</active>
+        <active>pf-injection-schematic-right-pair</active>
+      </components>
+    </annotation>
+    <annotation id="pf-injection-schematic-left-pair" speech2="First diagram, labelled not one-to-one">
+      <grouped>pf-injection-schematic-left-pair</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-injection-schematic-left-domain</active>
+        <active>pf-injection-schematic-left-inputs</active>
+        <active>pf-injection-schematic-left-codomain</active>
+        <active>pf-injection-schematic-left-outputs</active>
+        <active>pf-injection-schematic-left-arrows</active>
+        <active>pf-injection-schematic-left-label</active>
+      </children>
+      <components>
+        <active>pf-injection-schematic-left-domain</active>
+        <active>pf-injection-schematic-left-inputs</active>
+        <active>pf-injection-schematic-left-codomain</active>
+        <active>pf-injection-schematic-left-outputs</active>
+        <active>pf-injection-schematic-left-arrows</active>
+        <active>pf-injection-schematic-left-label</active>
+      </components>
+      <parents>
+        <grouped>pf-injection-schematic-schematic</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-left-domain" speech2="The domain oval">
+      <active>pf-injection-schematic-left-domain</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-injection-schematic-left-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-left-inputs" speech2="Three inputs in the domain: top, middle and bottom">
+      <active>pf-injection-schematic-left-inputs</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-injection-schematic-left-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-left-codomain" speech2="The codomain oval">
+      <active>pf-injection-schematic-left-codomain</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-injection-schematic-left-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-left-outputs" speech2="Two outputs in the codomain: upper and lower">
+      <active>pf-injection-schematic-left-outputs</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-injection-schematic-left-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-left-arrows" speech2="Three arrows: the top input and the bottom input both go to the upper output, and the middle input goes to the lower output; two different inputs share an output">
+      <active>pf-injection-schematic-left-arrows</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-injection-schematic-left-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-left-label" speech2="The label not one-to-one">
+      <active>pf-injection-schematic-left-label</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-injection-schematic-left-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-right-pair" speech2="Second diagram, labelled one-to-one">
+      <grouped>pf-injection-schematic-right-pair</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-injection-schematic-right-domain</active>
+        <active>pf-injection-schematic-right-inputs</active>
+        <active>pf-injection-schematic-right-codomain</active>
+        <active>pf-injection-schematic-right-outputs</active>
+        <active>pf-injection-schematic-right-arrows</active>
+        <active>pf-injection-schematic-right-label</active>
+      </children>
+      <components>
+        <active>pf-injection-schematic-right-domain</active>
+        <active>pf-injection-schematic-right-inputs</active>
+        <active>pf-injection-schematic-right-codomain</active>
+        <active>pf-injection-schematic-right-outputs</active>
+        <active>pf-injection-schematic-right-arrows</active>
+        <active>pf-injection-schematic-right-label</active>
+      </components>
+      <parents>
+        <grouped>pf-injection-schematic-schematic</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-right-domain" speech2="The domain oval">
+      <active>pf-injection-schematic-right-domain</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-injection-schematic-right-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-right-inputs" speech2="Two inputs in the domain: upper and lower">
+      <active>pf-injection-schematic-right-inputs</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-injection-schematic-right-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-right-codomain" speech2="The codomain oval">
+      <active>pf-injection-schematic-right-codomain</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-injection-schematic-right-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-right-outputs" speech2="Three outputs in the codomain: top, middle and bottom">
+      <active>pf-injection-schematic-right-outputs</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-injection-schematic-right-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-right-arrows" speech2="Two arrows: the upper input goes to the top output and the lower input goes to the bottom output; distinct inputs have distinct outputs, and the middle output is not used">
+      <active>pf-injection-schematic-right-arrows</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-injection-schematic-right-pair</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-injection-schematic-right-label" speech2="The label one-to-one">
+      <active>pf-injection-schematic-right-label</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-injection-schematic-right-pair</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

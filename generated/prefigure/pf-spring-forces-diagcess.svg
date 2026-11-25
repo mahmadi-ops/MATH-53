@@ -1,0 +1,636 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-spring-forces-figure" viewBox="0 0 640 412" style="aspect-ratio: 640 / 412;">
+  <defs>
+    <clipPath id="pf-spring-forces-__clipPath-0">
+      <rect x="10.0" y="10.0" width="620.0" height="392.0"/>
+    </clipPath>
+    <clipPath id="pf-spring-forces-__clipPath-1">
+      <rect x="10.0" y="10.0" width="620.0" height="392.0"/>
+    </clipPath>
+    <marker id="pf-spring-forces-arrow-head-end-1_None_24_60-black" markerWidth="4.5" markerHeight="4.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.3" refY="2.0">
+      <path d="M 4.5 2.0L 0.0 4.0L 0.9 2.5L 0.9 1.5L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-1_None_24_60-black-outline" markerWidth="8.5" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.3" refY="4.0">
+      <path d="M 7.3 5.8 L 2.8 7.8 A 2 2 0 0 1 0.0 6.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 7.3 2.2 A 2 2 0 0 1 7.3 5.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-3_None_24_60-h4A5D23" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#4A5D23" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-3_None_24_60-h4A5D23-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-3_None_24_60-h5E011C" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#5E011C" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-end-3_None_24_60-h5E011C-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="pf-spring-forces-arrow-head-start-1_None_24_60-black" markerWidth="4.5" markerHeight="4.0" markerUnits="userSpaceOnUse" orient="auto" refX="1.2000000000000002" refY="2.0">
+      <path d="M 0 2 L 4.5 0 L 3.6 1.5 L 3.6 2.5 L 4.5 4 Z" fill="black" stroke="none"/>
+      </marker>
+    <marker id="pf-spring-forces-arrow-head-start-1_None_24_60-black-outline" markerWidth="8.5" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.2" refY="4.0">
+      <path d="M 1.2 2.2 L 5.7 0.2 A 2 2 0 0 1 8.5 2 L 8.5 6 A 2 2 0 0 1 5.7 7.8 L 1.2 5.8 A 2 2 0 0 1 1.2 2.2 Z" fill="white" stroke="none"/>
+      </marker>
+    <marker id="pf-spring-forces-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
+      <path d="M 0 4 L 9 0 L 7.3 3 L 7.3 5 L 9 8 Z" fill="black" stroke="none"/>
+      </marker>
+    <marker id="pf-spring-forces-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
+      <path d="M 1.2 4.2 L 10.2 0.2 A 2 2 0 0 1 13 2 L 13 10 A 2 2 0 0 1 10.2 11.8 L 1.2 7.8 A 2 2 0 0 1 1.2 4.2 Z" fill="white" stroke="none"/>
+      </marker>
+    <marker id="pf-spring-forces-arrow-head-start-3_None_24_60-h4A5D23" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <path d="M 0 6 L 13.5 0 L 10.9 4.5 L 10.9 7.5 L 13.5 12 Z" fill="#4A5D23" stroke="none"/>
+      </marker>
+    <marker id="pf-spring-forces-arrow-head-start-3_None_24_60-h4A5D23-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <path d="M 1.2 6.2 L 14.7 0.2 A 2 2 0 0 1 17.5 2 L 17.5 14 A 2 2 0 0 1 14.7 15.8 L 1.2 9.8 A 2 2 0 0 1 1.2 6.2 Z" fill="white" stroke="none"/>
+      </marker>
+    <marker id="pf-spring-forces-arrow-head-start-3_None_24_60-h5E011C" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <path d="M 0 6 L 13.5 0 L 10.9 4.5 L 10.9 7.5 L 13.5 12 Z" fill="#5E011C" stroke="none"/>
+      </marker>
+    <marker id="pf-spring-forces-arrow-head-start-3_None_24_60-h5E011C-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <path d="M 1.2 6.2 L 14.7 0.2 A 2 2 0 0 1 17.5 2 L 17.5 14 A 2 2 0 0 1 14.7 15.8 L 1.2 9.8 A 2 2 0 0 1 1.2 6.2 Z" fill="white" stroke="none"/>
+      </marker>
+  </defs>
+  <g id="pf-spring-forces-spring-forces">
+    <g id="pf-spring-forces-sf-a">
+      <g id="pf-spring-forces-sf-a-track">
+        <line id="pf-spring-forces-__line-0" x1="47.2" y1="152.3" x2="592.8" y2="152.3" stroke="black" stroke-width="2" fill="none"/>
+        <line id="pf-spring-forces-__line-1" x1="47.2" y1="152.3" x2="47.2" y2="76.4" stroke="black" stroke-width="4" fill="none"/>
+        <line id="pf-spring-forces-__line-2" x1="47.2" y1="144.7" x2="33.6" y2="135.8" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-3" x1="47.2" y1="129.5" x2="33.6" y2="120.6" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-4" x1="47.2" y1="114.3" x2="33.6" y2="105.5" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-5" x1="47.2" y1="99.1" x2="33.6" y2="90.3" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-6" x1="47.2" y1="84.0" x2="33.6" y2="75.1" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-7" x1="592.8" y1="152.3" x2="592.8" y2="76.4" stroke="black" stroke-width="4" fill="none"/>
+        <line id="pf-spring-forces-__line-8" x1="592.8" y1="144.7" x2="606.4" y2="135.8" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-9" x1="592.8" y1="129.5" x2="606.4" y2="120.6" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-10" x1="592.8" y1="114.3" x2="606.4" y2="105.5" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-11" x1="592.8" y1="99.1" x2="606.4" y2="90.3" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-12" x1="592.8" y1="84.0" x2="606.4" y2="75.1" stroke="black" stroke-width="1" fill="none"/>
+      </g>
+      <g id="pf-spring-forces-sf-a-rest">
+        <line id="pf-spring-forces-__line-13" x1="220.8" y1="170.0" x2="220.8" y2="94.1" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+        <line id="pf-spring-forces-__line-14" x1="419.2" y1="170.0" x2="419.2" y2="94.1" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+      </g>
+      <g id="pf-spring-forces-sf-a-left-spring">
+        <path id="pf-spring-forces-__path-0" d="M 47.2 125.7 L 58.4 125.7 L 66.4 116.9 L 74.4 134.6 L 82.4 116.9 L 90.4 134.6 L 98.5 116.9 L 106.5 134.6 L 114.5 116.9 L 122.5 134.6 L 130.5 116.9 L 138.5 134.6 L 146.6 116.9 L 154.6 134.6 L 162.6 116.9 L 170.6 134.6 L 178.6 125.7 L 189.8 125.7" stroke="#4A5D23" stroke-width="1" fill="none" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+      </g>
+      <g id="pf-spring-forces-sf-a-middle-spring">
+        <path id="pf-spring-forces-__path-1" d="M 251.8 125.7 L 263.0 125.7 L 270.6 116.9 L 278.2 134.6 L 285.8 116.9 L 293.4 134.6 L 301.0 116.9 L 308.6 134.6 L 316.2 116.9 L 323.8 134.6 L 331.4 116.9 L 339.0 134.6 L 346.6 116.9 L 354.2 134.6 L 361.8 116.9 L 369.4 134.6 L 377.0 125.7 L 388.2 125.7" stroke="#5E011C" stroke-width="1" fill="none" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+      </g>
+      <g id="pf-spring-forces-sf-a-right-spring">
+        <path id="pf-spring-forces-__path-2" d="M 450.2 125.7 L 461.4 125.7 L 469.4 116.9 L 477.4 134.6 L 485.4 116.9 L 493.4 134.6 L 501.5 116.9 L 509.5 134.6 L 517.5 116.9 L 525.5 134.6 L 533.5 116.9 L 541.5 134.6 L 549.6 116.9 L 557.6 134.6 L 565.6 116.9 L 573.6 134.6 L 581.6 125.7 L 592.8 125.7" stroke="#4A5D23" stroke-width="1" fill="none" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+      </g>
+      <g id="pf-spring-forces-sf-a-cart1">
+        <path id="pf-spring-forces-__path-3" d="M 189.8 149.1 L 251.8 149.1 L 251.8 101.7 L 189.8 101.7 Z" stroke="black" stroke-width="2" fill="#4A5D23" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+        <g id="pf-spring-forces-__label-0" transform="translate(220.8,125.7) translate(-4.1,-5.8)">
+          <g id="pf-spring-forces-__g-0">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:white" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-2-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                    <use data-c="31" xlink:href="#pf-spring-forces-MJX-2-GP-N-31"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-a-cart2">
+        <path id="pf-spring-forces-__path-4" d="M 388.2 149.1 L 450.2 149.1 L 450.2 101.7 L 388.2 101.7 Z" stroke="black" stroke-width="2" fill="#5E011C" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+        <g id="pf-spring-forces-__label-1" transform="translate(419.2,125.7) translate(-4.1,-5.7)">
+          <g id="pf-spring-forces-__g-1">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:white" width="8.296px" height="11.488px" role="img" focusable="false" viewBox="0 -689 500 692" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-3-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:2" data-semantic-speech="2">
+                    <use data-c="32" xlink:href="#pf-spring-forces-MJX-3-GP-N-32"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-a-length">
+        <line id="pf-spring-forces-__line-15" x1="253.0" y1="82.7" x2="387.0" y2="82.7" stroke="black" stroke-width="1" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-1_None_24_60-black)" marker-start="url(#pf-spring-forces-arrow-head-start-1_None_24_60-black)"/>
+        <g id="pf-spring-forces-__label-2" transform="translate(320.0,74.7) translate(-3.5,-12.2)">
+          <g id="pf-spring-forces-__g-2">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="7.056px" height="12.152px" role="img" focusable="false" viewBox="0 -712 425 732" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-4-GP-I-2113" d="M70 169L86 139C101 147 115 155 129 164C124 60 145-20 241-20C291-20 334 28 344 81L310 87C303 49 276 14 241 14C195 14 202 120 220 232C320 324 391 445 413 574C425 640 422 712 364 712C220 712 184 522 155 355C146 306 137 255 132 207C113 193 92 180 70 169M229 289L238 340C263 487 297 678 364 678C397 678 388 624 380 580C361 472 307 371 229 289Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="script" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\ell" data-semantic-speech="script l">
+                    <use data-c="2113" xlink:href="#pf-spring-forces-MJX-4-GP-I-2113"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-a-title" transform="translate(35.7,43.5) translate(0.0,-8.4)">
+        <g id="pf-spring-forces-__g-3">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.696px" width="251.200px" height="16.744px" role="img" focusable="false" viewBox="0 -726 15135 1009" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-spring-forces-MJX-5-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-61" d="M471-3L471 27L432 29C408 30 404 38 404 87L404 270C404 416 362 469 246 469C203 469 163 458 125 435L72 403L72 338L98 331L111 362C131 409 142 416 188 416C282 416 321 379 324 288L225 270C89 245 32 198 32 111C32 33 79-12 158-12C176-12 193-9 200-4L324 82L319-3C345-1 371 0 397 0C422 0 446-1 471-3M324 124C295 83 232 45 193 45C153 45 118 82 118 125C118 162 138 197 168 216C193 231 248 245 324 256Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-20" d=""/>
+              <path id="pf-spring-forces-MJX-5-GP-N-41" d="M756-3L756 27L722 30C696 32 685 51 650 132L408 700L376 700C376 700 365 666 327 581L106 79C93 50 74 32 52 30L15 27L15-3C51-1 88 0 124 0L245-3L245 27L208 30C173 33 160 40 160 56C160 69 174 112 195 162L223 229L511 229L557 114C574 72 578 59 578 50C578 39 562 32 537 30L490 27L490-3L629 0M493 269L240 269L367 567Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-72" d="M374 458C363 465 345 469 327 469C297 469 265 453 244 428L188 362L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L144 0L287-3L287 27L235 30C190 33 188 36 188 102L188 274C188 334 228 384 277 384C307 384 328 370 344 338L365 338Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-65" d="M448 279C448 394 374 469 262 469C225 469 182 456 141 432C59 385 26 323 26 219C26 156 40 102 68 64C107 11 175-20 250-20C287-20 324-12 365 6C392 17 413 30 417 36L437 70L424 80C360 42 337 33 294 33C229 33 175 62 147 111C128 144 121 172 119 230L265 230C334 230 377 233 446 244C447 258 448 267 448 279M359 267L247 264C201 264 175 265 121 270C121 317 125 339 138 365C159 409 202 436 250 436C283 436 309 423 327 396C349 363 359 334 359 267Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-73" d="M391 148C391 179 383 202 363 222C337 248 304 259 216 276C134 292 107 312 107 358C107 408 142 436 203 436C270 436 321 401 321 354L321 331L349 331C350 389 351 413 354 444C301 462 265 469 224 469C108 469 37 414 37 324C37 276 59 242 105 221C132 209 185 193 253 178C298 168 317 147 317 109C317 55 267 17 196 17C123 17 71 52 71 102L71 143L41 143C41 74 38 44 30 4C82-13 121-20 167-20C298-20 391 50 391 148Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-3A" d="M182 53C182 83 154 111 123 111C93 111 66 83 66 53C66 23 93-5 122-5C154-5 182 22 182 53M182 397C182 428 154 456 123 456C93 456 66 428 66 398C66 368 93 340 122 340C154 340 182 367 182 397Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-76" d="M539 431L539 459C508 457 476 456 445 456C414 456 382 457 351 459L351 431L392 429C424 427 424 398 397 330L355 224L293 84L174 372C163 400 158 428 190 429L239 431L239 459L122 456L6 459L6 431L40 429C58 428 61 419 71 396L243-7L293-7C299 26 314 57 334 102L452 362C475 413 488 428 508 429Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-79" d="M544 431L544 459C512 457 481 456 449 456C417 456 386 457 354 459L354 431L380 429C422 426 431 414 416 378L297 86C275 124 265 147 246 196L182 364C165 408 167 427 206 429L244 431L244 459L128 456L12 459L12 431L30 429C55 426 68 415 82 380L247-24L224-85C192-169 153-216 115-216C99-216 81-208 64-193L51-193L27-268C46-278 62-283 81-283C148-283 191-247 229-160L432 308C472 399 491 427 516 429Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-70" d="M554 271C554 382 462 469 346 469C309 469 273 459 257 444L175 369L175 465L166 469C115 448 63 434 10 428L10 400L47 400C87 400 91 393 91 327L91-176C91-239 88-246 54-248L8-251L8-281L133-278L258-281L258-251L212-248C178-246 175-239 175-176L175 13C205-5 237-12 282-12C311-12 337-6 353 4L467 78C507 104 554 207 554 271M467 234C467 122 400 39 310 39C255 39 214 57 175 98L175 306C175 320 180 331 193 348C222 385 263 404 313 404C407 404 467 338 467 234Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-69" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L146 0M196 592C196 621 176 642 147 642C116 642 96 622 96 592C96 562 116 542 146 542C176 542 196 562 196 592Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-6E" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 465L163 469C112 448 60 434 7 428L7 400L44 400C84 400 88 393 88 327L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-67" d="M544 419L540 431L398 427C361 457 325 469 276 469C232 469 181 455 140 431C84 399 55 350 55 289C55 215 101 164 175 156L96 95C86 80 81 67 81 52C81 24 99 8 147-6L60-53C46-61 32-98 32-129C32-220 121-283 248-283C399-283 518-188 518-66C518 6 470 56 400 56L240 56C188 56 164 68 164 95C164 108 172 119 198 141C204 146 206 148 210 152C220 151 226 150 234 150C277 150 330 169 371 198C416 231 438 271 438 324C438 344 435 357 427 378L519 378M354 294C354 229 312 184 251 184C184 184 139 236 139 313C139 390 176 435 240 435C308 435 354 379 354 294M439-102C439-188 360-252 255-252C168-252 108-201 108-127C108-82 134-42 174-24C190-17 218-14 287-14C400-14 439-37 439-102Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-6C" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 718L179 726C135 709 102 701 23 689L23 661L79 661C97 661 104 650 104 620L104 102C104 39 101 32 67 30L21 27L21-3L146 0Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-78" d="M496-3L496 27L471 30C459 31 447 39 436 54L288 254L430 420C436 427 447 431 464 431L478 431L478 459L396 459L272 284L196 400C181 422 170 435 136 469L20 449L25 423L46 421C64 419 86 406 96 392L216 218L67 42C60 33 47 27 37 27L20 27L20 0L106 0C106 0 113 23 166 94L240 192L373-3C393-1 414 0 434 0C455 0 475-1 496-3Z"/>
+              <path id="pf-spring-forces-MJX-5-GP-N-64" d="M579-3L579 27L533 30C499 32 496 39 496 102L496 718L487 726C443 709 410 701 331 689L331 661L387 661C405 661 412 650 412 620L412 437C356 461 328 469 293 469C266 469 242 463 217 450L129 404C72 374 35 301 35 216C35 136 62 70 111 30C145 1 192-12 257-12C277-12 300-8 305-4L416 89L411-3C437-1 462 0 488 0C518 0 549-1 579-3M412 221C412 156 410 146 397 123C369 76 320 45 273 45C185 45 122 130 122 249C122 358 176 422 266 422C304 422 344 409 379 385C400 371 412 358 412 350Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:\text{(a) At rest: every spring is relaxed}" data-semantic-speech="left parenthesis a right parenthesis At rest colon every spring is relaxed">
+                  <use data-c="28" xlink:href="#pf-spring-forces-MJX-5-GP-N-28"/>
+                  <use data-c="61" xlink:href="#pf-spring-forces-MJX-5-GP-N-61" transform="translate(424,0)"/>
+                  <use data-c="29" xlink:href="#pf-spring-forces-MJX-5-GP-N-29" transform="translate(924,0)"/>
+                  <use data-c="20" xlink:href="#pf-spring-forces-MJX-5-GP-N-20" transform="translate(1348,0)"/>
+                  <use data-c="41" xlink:href="#pf-spring-forces-MJX-5-GP-N-41" transform="translate(1598,0)"/>
+                  <use data-c="74" xlink:href="#pf-spring-forces-MJX-5-GP-N-74" transform="translate(2376,0)"/>
+                  <use data-c="20" xlink:href="#pf-spring-forces-MJX-5-GP-N-20" transform="translate(2702,0)"/>
+                  <use data-c="72" xlink:href="#pf-spring-forces-MJX-5-GP-N-72" transform="translate(2952,0)"/>
+                  <use data-c="65" xlink:href="#pf-spring-forces-MJX-5-GP-N-65" transform="translate(3347,0)"/>
+                  <use data-c="73" xlink:href="#pf-spring-forces-MJX-5-GP-N-73" transform="translate(3826,0)"/>
+                  <use data-c="74" xlink:href="#pf-spring-forces-MJX-5-GP-N-74" transform="translate(4250,0)"/>
+                  <use data-c="3A" xlink:href="#pf-spring-forces-MJX-5-GP-N-3A" transform="translate(4576,0)"/>
+                  <use data-c="20" xlink:href="#pf-spring-forces-MJX-5-GP-N-20" transform="translate(4826,0)"/>
+                  <use data-c="65" xlink:href="#pf-spring-forces-MJX-5-GP-N-65" transform="translate(5076,0)"/>
+                  <use data-c="76" xlink:href="#pf-spring-forces-MJX-5-GP-N-76" transform="translate(5555,0)"/>
+                  <use data-c="65" xlink:href="#pf-spring-forces-MJX-5-GP-N-65" transform="translate(6120,0)"/>
+                  <use data-c="72" xlink:href="#pf-spring-forces-MJX-5-GP-N-72" transform="translate(6599,0)"/>
+                  <use data-c="79" xlink:href="#pf-spring-forces-MJX-5-GP-N-79" transform="translate(6994,0)"/>
+                  <use data-c="20" xlink:href="#pf-spring-forces-MJX-5-GP-N-20" transform="translate(7550,0)"/>
+                  <use data-c="73" xlink:href="#pf-spring-forces-MJX-5-GP-N-73" transform="translate(7800,0)"/>
+                  <use data-c="70" xlink:href="#pf-spring-forces-MJX-5-GP-N-70" transform="translate(8224,0)"/>
+                  <use data-c="72" xlink:href="#pf-spring-forces-MJX-5-GP-N-72" transform="translate(8825,0)"/>
+                  <use data-c="69" xlink:href="#pf-spring-forces-MJX-5-GP-N-69" transform="translate(9220,0)"/>
+                  <use data-c="6E" xlink:href="#pf-spring-forces-MJX-5-GP-N-6E" transform="translate(9511,0)"/>
+                  <use data-c="67" xlink:href="#pf-spring-forces-MJX-5-GP-N-67" transform="translate(10093,0)"/>
+                  <use data-c="20" xlink:href="#pf-spring-forces-MJX-5-GP-N-20" transform="translate(10649,0)"/>
+                  <use data-c="69" xlink:href="#pf-spring-forces-MJX-5-GP-N-69" transform="translate(10899,0)"/>
+                  <use data-c="73" xlink:href="#pf-spring-forces-MJX-5-GP-N-73" transform="translate(11190,0)"/>
+                  <use data-c="20" xlink:href="#pf-spring-forces-MJX-5-GP-N-20" transform="translate(11614,0)"/>
+                  <use data-c="72" xlink:href="#pf-spring-forces-MJX-5-GP-N-72" transform="translate(11864,0)"/>
+                  <use data-c="65" xlink:href="#pf-spring-forces-MJX-5-GP-N-65" transform="translate(12259,0)"/>
+                  <use data-c="6C" xlink:href="#pf-spring-forces-MJX-5-GP-N-6C" transform="translate(12738,0)"/>
+                  <use data-c="61" xlink:href="#pf-spring-forces-MJX-5-GP-N-61" transform="translate(13029,0)"/>
+                  <use data-c="78" xlink:href="#pf-spring-forces-MJX-5-GP-N-78" transform="translate(13529,0)"/>
+                  <use data-c="65" xlink:href="#pf-spring-forces-MJX-5-GP-N-65" transform="translate(14045,0)"/>
+                  <use data-c="64" xlink:href="#pf-spring-forces-MJX-5-GP-N-64" transform="translate(14524,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-spring-forces-sf-b">
+      <g id="pf-spring-forces-sf-b-track">
+        <line id="pf-spring-forces-__line-16" x1="47.2" y1="348.3" x2="592.8" y2="348.3" stroke="black" stroke-width="2" fill="none"/>
+        <line id="pf-spring-forces-__line-17" x1="47.2" y1="348.3" x2="47.2" y2="272.4" stroke="black" stroke-width="4" fill="none"/>
+        <line id="pf-spring-forces-__line-18" x1="47.2" y1="340.7" x2="33.6" y2="331.8" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-19" x1="47.2" y1="325.5" x2="33.6" y2="316.6" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-20" x1="47.2" y1="310.3" x2="33.6" y2="301.5" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-21" x1="47.2" y1="295.1" x2="33.6" y2="286.3" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-22" x1="47.2" y1="280.0" x2="33.6" y2="271.1" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-23" x1="592.8" y1="348.3" x2="592.8" y2="272.4" stroke="black" stroke-width="4" fill="none"/>
+        <line id="pf-spring-forces-__line-24" x1="592.8" y1="340.7" x2="606.4" y2="331.8" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-25" x1="592.8" y1="325.5" x2="606.4" y2="316.6" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-26" x1="592.8" y1="310.3" x2="606.4" y2="301.5" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-27" x1="592.8" y1="295.1" x2="606.4" y2="286.3" stroke="black" stroke-width="1" fill="none"/>
+        <line id="pf-spring-forces-__line-28" x1="592.8" y1="280.0" x2="606.4" y2="271.1" stroke="black" stroke-width="1" fill="none"/>
+      </g>
+      <g id="pf-spring-forces-sf-b-rest">
+        <line id="pf-spring-forces-__line-29" x1="220.8" y1="366.0" x2="220.8" y2="290.1" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+        <line id="pf-spring-forces-__line-30" x1="419.2" y1="366.0" x2="419.2" y2="290.1" stroke="#777" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+      </g>
+      <g id="pf-spring-forces-sf-b-left-spring">
+        <path id="pf-spring-forces-__path-5" d="M 47.2 321.7 L 58.4 321.7 L 67.6 312.9 L 76.9 330.6 L 86.1 312.9 L 95.4 330.6 L 104.7 312.9 L 113.9 330.6 L 123.1 312.9 L 132.4 330.6 L 141.7 312.9 L 150.9 330.6 L 160.2 312.9 L 169.5 330.6 L 178.7 312.9 L 188.0 330.6 L 197.2 321.7 L 208.4 321.7" stroke="#4A5D23" stroke-width="1" fill="none" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+      </g>
+      <g id="pf-spring-forces-sf-b-middle-spring">
+        <path id="pf-spring-forces-__path-6" d="M 270.4 321.7 L 281.6 321.7 L 291.7 312.9 L 301.7 330.6 L 311.8 312.9 L 321.9 330.6 L 332.0 312.9 L 342.1 330.6 L 352.2 312.9 L 362.2 330.6 L 372.3 312.9 L 382.4 330.6 L 392.5 312.9 L 402.6 330.6 L 412.7 312.9 L 422.7 330.6 L 432.8 321.7 L 444.0 321.7" stroke="#5E011C" stroke-width="1" fill="none" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+      </g>
+      <g id="pf-spring-forces-sf-b-right-spring">
+        <path id="pf-spring-forces-__path-7" d="M 506.0 321.7 L 517.2 321.7 L 521.4 312.9 L 525.8 330.6 L 530.1 312.9 L 534.3 330.6 L 538.7 312.9 L 543.0 330.6 L 547.2 312.9 L 551.6 330.6 L 555.8 312.9 L 560.1 330.6 L 564.5 312.9 L 568.7 330.6 L 573.0 312.9 L 577.4 330.6 L 581.6 321.7 L 592.8 321.7" stroke="#4A5D23" stroke-width="1" fill="none" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+      </g>
+      <g id="pf-spring-forces-sf-b-cart1">
+        <path id="pf-spring-forces-__path-8" d="M 208.4 345.1 L 270.4 345.1 L 270.4 297.7 L 208.4 297.7 Z" stroke="black" stroke-width="2" fill="#4A5D23" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+        <g id="pf-spring-forces-__label-3" transform="translate(239.4,321.7) translate(-4.1,-5.8)">
+          <g id="pf-spring-forces-__g-4">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:white" width="8.296px" height="11.568px" role="img" focusable="false" viewBox="0 -694 500 697" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-6-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:1" data-semantic-speech="1">
+                    <use data-c="31" xlink:href="#pf-spring-forces-MJX-6-GP-N-31"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-b-cart2">
+        <path id="pf-spring-forces-__path-9" d="M 444.0 345.1 L 506.0 345.1 L 506.0 297.7 L 444.0 297.7 Z" stroke="black" stroke-width="2" fill="#5E011C" clip-path="url(#pf-spring-forces-__clipPath-1)"/>
+        <g id="pf-spring-forces-__label-4" transform="translate(475.0,321.7) translate(-4.1,-5.7)">
+          <g id="pf-spring-forces-__g-5">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.048px; color:white" width="8.296px" height="11.488px" role="img" focusable="false" viewBox="0 -689 500 692" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-7-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:2" data-semantic-speech="2">
+                    <use data-c="32" xlink:href="#pf-spring-forces-MJX-7-GP-N-32"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-b-shift1">
+        <line id="pf-spring-forces-__line-31" x1="220.8" y1="362.2" x2="237.0" y2="362.2" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-black)"/>
+        <g id="pf-spring-forces-__label-5" transform="translate(230.1,372.7) translate(-8.2,-0.0)">
+          <g id="pf-spring-forces-__g-6">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="16.472px" height="10.528px" role="img" focusable="false" viewBox="0 -482 992.6 634.1" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-8-GP-I-1D462" d="M512 85L502 103L476 86C451 70 427 59 415 59C407 59 402 66 402 76C402 89 405 104 408 116L492 473L485 482L417 465L407 414C392 338 368 271 339 225C280 133 200 59 159 59C150 59 146 68 146 85C146 100 148 111 153 137L210 408C213 424 215 438 215 451C215 470 207 482 193 482C172 482 135 462 60 408L32 388L39 368L71 389C100 408 110 412 119 412C129 412 136 403 136 392C136 387 135 379 134 374L71 77C69 67 67 45 67 29C67 7 82-11 102-11C165-11 286 101 370 239L333 97C326 72 322 47 322 31C322 6 333-11 352-11C378-11 415 13 512 85Z"/>
+                <path id="pf-spring-forces-MJX-8-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:u_1" data-semantic-speech="u 1">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                      <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-8-GP-I-1D462"/>
+                    </g>
+                    <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                      <use data-c="31" xlink:href="#pf-spring-forces-MJX-8-GP-N-31"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-b-shift2">
+        <line id="pf-spring-forces-__line-32" x1="419.2" y1="362.2" x2="472.6" y2="362.2" stroke="black" stroke-width="2" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-2_None_24_60-black)"/>
+        <g id="pf-spring-forces-__label-6" transform="translate(447.1,372.7) translate(-8.2,-0.0)">
+          <g id="pf-spring-forces-__g-7">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px" width="16.472px" height="10.528px" role="img" focusable="false" viewBox="0 -482 992.6 634.1" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-9-GP-I-1D462" d="M512 85L502 103L476 86C451 70 427 59 415 59C407 59 402 66 402 76C402 89 405 104 408 116L492 473L485 482L417 465L407 414C392 338 368 271 339 225C280 133 200 59 159 59C150 59 146 68 146 85C146 100 148 111 153 137L210 408C213 424 215 438 215 451C215 470 207 482 193 482C172 482 135 462 60 408L32 388L39 368L71 389C100 408 110 412 119 412C129 412 136 403 136 392C136 387 135 379 134 374L71 77C69 67 67 45 67 29C67 7 82-11 102-11C165-11 286 101 370 239L333 97C326 72 322 47 322 31C322 6 333-11 352-11C378-11 415 13 512 85Z"/>
+                <path id="pf-spring-forces-MJX-9-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="latex:u_2" data-semantic-speech="u 2">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                      <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-9-GP-I-1D462"/>
+                    </g>
+                    <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                      <use data-c="32" xlink:href="#pf-spring-forces-MJX-9-GP-N-32"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-b-forces1">
+        <line id="pf-spring-forces-__line-33" x1="239.4" y1="281.9" x2="218.9" y2="281.9" stroke="#4A5D23" stroke-width="3" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-3_None_24_60-h4A5D23)"/>
+        <g id="pf-spring-forces-__label-7" transform="translate(205.2,281.9) translate(-23.9,-7.3)">
+          <g id="pf-spring-forces-__g-8">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#4A5D23" width="23.928px" height="14.688px" role="img" focusable="false" viewBox="0 -733 1441.6 885.1" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-10-GP-I-1D458" d="M449 473C431 479 413 482 401 482C335 482 252 405 127 230L234 722L222 733C170 707 134 698 62 691L58 670L106 670C130 670 140 663 140 646C140 638 139 629 138 622L90 354C77 279 60 210 8 1L17-9L84 8L107 132C116 180 140 225 174 259C243 59 275-9 300-9C313-9 337 4 381 35L427 67L419 86L376 62C362 54 355 52 347 52C337 52 330 58 321 75C286 139 264 193 225 316L239 330C300 391 346 416 396 416C404 416 415 414 432 410Z"/>
+                <path id="pf-spring-forces-MJX-10-GP-N-2062" d=""/>
+                <path id="pf-spring-forces-MJX-10-GP-I-1D462" d="M512 85L502 103L476 86C451 70 427 59 415 59C407 59 402 66 402 76C402 89 405 104 408 116L492 473L485 482L417 465L407 414C392 338 368 271 339 225C280 133 200 59 159 59C150 59 146 68 146 85C146 100 148 111 153 137L210 408C213 424 215 438 215 451C215 470 207 482 193 482C172 482 135 462 60 408L32 388L39 368L71 389C100 408 110 412 119 412C129 412 136 403 136 392C136 387 135 379 134 374L71 77C69 67 67 45 67 29C67 7 82-11 102-11C165-11 286 101 370 239L333 97C326 72 322 47 322 31C322 6 333-11 352-11C378-11 415 13 512 85Z"/>
+                <path id="pf-spring-forces-MJX-10-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit;depth:1" data-semantic-id="5" data-semantic-children="0,3" data-semantic-content="4" data-semantic-attributes="latex:ku_1" data-semantic-speech="k u 1">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:k" data-semantic-speech="k">
+                    <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-10-GP-I-1D458"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="4" data-semantic-parent="5" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(449,0)">
+                    <use data-c="2062" xlink:href="#pf-spring-forces-MJX-10-GP-N-2062"/>
+                  </g>
+                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:2" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="5" data-semantic-attributes="latex:u_1" data-semantic-speech="u 1" transform="translate(449,0)">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                      <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-10-GP-I-1D462"/>
+                    </g>
+                    <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                      <use data-c="31" xlink:href="#pf-spring-forces-MJX-10-GP-N-31"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <line id="pf-spring-forces-__line-34" x1="239.4" y1="260.4" x2="284.1" y2="260.4" stroke="#5E011C" stroke-width="3" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-3_None_24_60-h5E011C)"/>
+        <g id="pf-spring-forces-__label-8" transform="translate(297.8,260.4) translate(0.0,-7.4)">
+          <g id="pf-spring-forces-__g-9">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.720px; color:#5E011C" width="74.464px" height="14.888px" role="img" focusable="false" viewBox="0 -733 4486.6 897" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-11-GP-I-1D458" d="M449 473C431 479 413 482 401 482C335 482 252 405 127 230L234 722L222 733C170 707 134 698 62 691L58 670L106 670C130 670 140 663 140 646C140 638 139 629 138 622L90 354C77 279 60 210 8 1L17-9L84 8L107 132C116 180 140 225 174 259C243 59 275-9 300-9C313-9 337 4 381 35L427 67L419 86L376 62C362 54 355 52 347 52C337 52 330 58 321 75C286 139 264 193 225 316L239 330C300 391 346 416 396 416C404 416 415 414 432 410Z"/>
+                <path id="pf-spring-forces-MJX-11-GP-N-2062" d=""/>
+                <path id="pf-spring-forces-MJX-11-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+                <path id="pf-spring-forces-MJX-11-GP-I-1D462" d="M512 85L502 103L476 86C451 70 427 59 415 59C407 59 402 66 402 76C402 89 405 104 408 116L492 473L485 482L417 465L407 414C392 338 368 271 339 225C280 133 200 59 159 59C150 59 146 68 146 85C146 100 148 111 153 137L210 408C213 424 215 438 215 451C215 470 207 482 193 482C172 482 135 462 60 408L32 388L39 368L71 389C100 408 110 412 119 412C129 412 136 403 136 392C136 387 135 379 134 374L71 77C69 67 67 45 67 29C67 7 82-11 102-11C165-11 286 101 370 239L333 97C326 72 322 47 322 31C322 6 333-11 352-11C378-11 415 13 512 85Z"/>
+                <path id="pf-spring-forces-MJX-11-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+                <path id="pf-spring-forces-MJX-11-GP-N-2212" d="M680 220C678 230 677 240 677 250C677 260 678 270 680 280L80 280C82 270 83 260 83 250C83 240 82 230 80 220Z"/>
+                <path id="pf-spring-forces-MJX-11-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+                <path id="pf-spring-forces-MJX-11-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit;depth:1" data-semantic-id="13" data-semantic-children="0,11" data-semantic-content="12" data-semantic-attributes="latex:k(u_2-u_1)" data-semantic-speech="k left parenthesis u 2 minus u 1 right parenthesis">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="13" data-semantic-attributes="latex:k" data-semantic-speech="k">
+                    <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-11-GP-I-1D458"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="12" data-semantic-parent="13" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(449,0)">
+                    <use data-c="2062" xlink:href="#pf-spring-forces-MJX-11-GP-N-2062"/>
+                  </g>
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="11" data-semantic-children="10" data-semantic-content="1,9" data-semantic-parent="13" data-semantic-speech="left parenthesis u 2 minus u 1 right parenthesis" transform="translate(449,0)">
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="1" data-semantic-parent="11" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                      <use data-c="28" xlink:href="#pf-spring-forces-MJX-11-GP-N-28"/>
+                    </g>
+                    <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="infixop" data-semantic-role="subtraction" data-semantic-annotation="depth:3" data-semantic-id="10" data-semantic-children="4,8" data-semantic-content="5" data-semantic-parent="11" data-semantic-speech="u 2 minus u 1" transform="translate(424,0)">
+                      <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:4" data-semantic-id="4" data-semantic-children="2,3" data-semantic-parent="10" data-semantic-attributes="latex:u_2" data-semantic-speech="u 2">
+                        <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                          <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-11-GP-I-1D462"/>
+                        </g>
+                        <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                          <use data-c="32" xlink:href="#pf-spring-forces-MJX-11-GP-N-32"/>
+                        </g>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="subtraction" data-semantic-annotation="depth:4" data-semantic-id="5" data-semantic-parent="10" data-semantic-attributes="latex:-" data-semantic-operator="infixop,−" data-semantic-speech="minus" transform="translate(1214.8,0)">
+                        <use data-c="2212" xlink:href="#pf-spring-forces-MJX-11-GP-N-2212"/>
+                      </g>
+                      <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:4" data-semantic-id="8" data-semantic-children="6,7" data-semantic-parent="10" data-semantic-attributes="latex:u_1" data-semantic-speech="u 1" transform="translate(2197,0)">
+                        <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="6" data-semantic-parent="8" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                          <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-11-GP-I-1D462"/>
+                        </g>
+                        <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="7" data-semantic-parent="8" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                          <use data-c="31" xlink:href="#pf-spring-forces-MJX-11-GP-N-31"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="9" data-semantic-parent="11" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(3613.6,0)">
+                      <use data-c="29" xlink:href="#pf-spring-forces-MJX-11-GP-N-29"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-b-forces2">
+        <line id="pf-spring-forces-__line-35" x1="475.0" y1="281.9" x2="406.2" y2="281.9" stroke="#4A5D23" stroke-width="3" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-3_None_24_60-h4A5D23)"/>
+        <g id="pf-spring-forces-__label-9" transform="translate(392.5,281.9) translate(-23.9,-7.3)">
+          <g id="pf-spring-forces-__g-10">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.528px; color:#4A5D23" width="23.928px" height="14.688px" role="img" focusable="false" viewBox="0 -733 1441.6 885.1" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-12-GP-I-1D458" d="M449 473C431 479 413 482 401 482C335 482 252 405 127 230L234 722L222 733C170 707 134 698 62 691L58 670L106 670C130 670 140 663 140 646C140 638 139 629 138 622L90 354C77 279 60 210 8 1L17-9L84 8L107 132C116 180 140 225 174 259C243 59 275-9 300-9C313-9 337 4 381 35L427 67L419 86L376 62C362 54 355 52 347 52C337 52 330 58 321 75C286 139 264 193 225 316L239 330C300 391 346 416 396 416C404 416 415 414 432 410Z"/>
+                <path id="pf-spring-forces-MJX-12-GP-N-2062" d=""/>
+                <path id="pf-spring-forces-MJX-12-GP-I-1D462" d="M512 85L502 103L476 86C451 70 427 59 415 59C407 59 402 66 402 76C402 89 405 104 408 116L492 473L485 482L417 465L407 414C392 338 368 271 339 225C280 133 200 59 159 59C150 59 146 68 146 85C146 100 148 111 153 137L210 408C213 424 215 438 215 451C215 470 207 482 193 482C172 482 135 462 60 408L32 388L39 368L71 389C100 408 110 412 119 412C129 412 136 403 136 392C136 387 135 379 134 374L71 77C69 67 67 45 67 29C67 7 82-11 102-11C165-11 286 101 370 239L333 97C326 72 322 47 322 31C322 6 333-11 352-11C378-11 415 13 512 85Z"/>
+                <path id="pf-spring-forces-MJX-12-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit;depth:1" data-semantic-id="5" data-semantic-children="0,3" data-semantic-content="4" data-semantic-attributes="latex:ku_2" data-semantic-speech="k u 2">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:k" data-semantic-speech="k">
+                    <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-12-GP-I-1D458"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="4" data-semantic-parent="5" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(449,0)">
+                    <use data-c="2062" xlink:href="#pf-spring-forces-MJX-12-GP-N-2062"/>
+                  </g>
+                  <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:2" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="5" data-semantic-attributes="latex:u_2" data-semantic-speech="u 2" transform="translate(449,0)">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                      <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-12-GP-I-1D462"/>
+                    </g>
+                    <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                      <use data-c="32" xlink:href="#pf-spring-forces-MJX-12-GP-N-32"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <line id="pf-spring-forces-__line-36" x1="475.0" y1="260.4" x2="430.3" y2="260.4" stroke="#5E011C" stroke-width="3" fill="none" marker-end="url(#pf-spring-forces-arrow-head-end-3_None_24_60-h5E011C)"/>
+        <g id="pf-spring-forces-__label-10" transform="translate(485.0,260.4) translate(0.0,-7.4)">
+          <g id="pf-spring-forces-__g-11">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.720px; color:#5E011C" width="74.464px" height="14.888px" role="img" focusable="false" viewBox="0 -733 4486.6 897" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-spring-forces-MJX-13-GP-I-1D458" d="M449 473C431 479 413 482 401 482C335 482 252 405 127 230L234 722L222 733C170 707 134 698 62 691L58 670L106 670C130 670 140 663 140 646C140 638 139 629 138 622L90 354C77 279 60 210 8 1L17-9L84 8L107 132C116 180 140 225 174 259C243 59 275-9 300-9C313-9 337 4 381 35L427 67L419 86L376 62C362 54 355 52 347 52C337 52 330 58 321 75C286 139 264 193 225 316L239 330C300 391 346 416 396 416C404 416 415 414 432 410Z"/>
+                <path id="pf-spring-forces-MJX-13-GP-N-2062" d=""/>
+                <path id="pf-spring-forces-MJX-13-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+                <path id="pf-spring-forces-MJX-13-GP-I-1D462" d="M512 85L502 103L476 86C451 70 427 59 415 59C407 59 402 66 402 76C402 89 405 104 408 116L492 473L485 482L417 465L407 414C392 338 368 271 339 225C280 133 200 59 159 59C150 59 146 68 146 85C146 100 148 111 153 137L210 408C213 424 215 438 215 451C215 470 207 482 193 482C172 482 135 462 60 408L32 388L39 368L71 389C100 408 110 412 119 412C129 412 136 403 136 392C136 387 135 379 134 374L71 77C69 67 67 45 67 29C67 7 82-11 102-11C165-11 286 101 370 239L333 97C326 72 322 47 322 31C322 6 333-11 352-11C378-11 415 13 512 85Z"/>
+                <path id="pf-spring-forces-MJX-13-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+                <path id="pf-spring-forces-MJX-13-GP-N-2212" d="M680 220C678 230 677 240 677 250C677 260 678 270 680 280L80 280C82 270 83 260 83 250C83 240 82 230 80 220Z"/>
+                <path id="pf-spring-forces-MJX-13-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+                <path id="pf-spring-forces-MJX-13-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:unit;depth:1" data-semantic-id="13" data-semantic-children="0,11" data-semantic-content="12" data-semantic-attributes="latex:k(u_2-u_1)" data-semantic-speech="k left parenthesis u 2 minus u 1 right parenthesis">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="13" data-semantic-attributes="latex:k" data-semantic-speech="k">
+                    <use data-c="1D458" xlink:href="#pf-spring-forces-MJX-13-GP-I-1D458"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-annotation="depth:2" data-semantic-id="12" data-semantic-parent="13" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(449,0)">
+                    <use data-c="2062" xlink:href="#pf-spring-forces-MJX-13-GP-N-2062"/>
+                  </g>
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="11" data-semantic-children="10" data-semantic-content="1,9" data-semantic-parent="13" data-semantic-speech="left parenthesis u 2 minus u 1 right parenthesis" transform="translate(449,0)">
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="1" data-semantic-parent="11" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                      <use data-c="28" xlink:href="#pf-spring-forces-MJX-13-GP-N-28"/>
+                    </g>
+                    <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="infixop" data-semantic-role="subtraction" data-semantic-annotation="depth:3" data-semantic-id="10" data-semantic-children="4,8" data-semantic-content="5" data-semantic-parent="11" data-semantic-speech="u 2 minus u 1" transform="translate(424,0)">
+                      <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:4" data-semantic-id="4" data-semantic-children="2,3" data-semantic-parent="10" data-semantic-attributes="latex:u_2" data-semantic-speech="u 2">
+                        <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                          <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-13-GP-I-1D462"/>
+                        </g>
+                        <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                          <use data-c="32" xlink:href="#pf-spring-forces-MJX-13-GP-N-32"/>
+                        </g>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="subtraction" data-semantic-annotation="depth:4" data-semantic-id="5" data-semantic-parent="10" data-semantic-attributes="latex:-" data-semantic-operator="infixop,−" data-semantic-speech="minus" transform="translate(1214.8,0)">
+                        <use data-c="2212" xlink:href="#pf-spring-forces-MJX-13-GP-N-2212"/>
+                      </g>
+                      <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:4" data-semantic-id="8" data-semantic-children="6,7" data-semantic-parent="10" data-semantic-attributes="latex:u_1" data-semantic-speech="u 1" transform="translate(2197,0)">
+                        <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="6" data-semantic-parent="8" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                          <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-13-GP-I-1D462"/>
+                        </g>
+                        <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:5" data-semantic-id="7" data-semantic-parent="8" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                          <use data-c="31" xlink:href="#pf-spring-forces-MJX-13-GP-N-31"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="9" data-semantic-parent="11" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(3613.6,0)">
+                      <use data-c="29" xlink:href="#pf-spring-forces-MJX-13-GP-N-29"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-spring-forces-sf-b-title" transform="translate(35.7,221.8) translate(0.0,-8.4)">
+        <g id="pf-spring-forces-__g-12">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.696px" width="328.072px" height="16.744px" role="img" focusable="false" viewBox="0 -726 19766.3 1009" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-spring-forces-MJX-14-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-62" d="M508 270C508 386 433 469 327 469C280 469 231 451 205 425L150 369L150 718L141 726C97 709 64 701-15 689L-15 661L41 661C59 661 66 650 66 620L66 153C66 91 65 64 58-6L74-12L114 24C154-2 190-12 243-12C282-12 308-5 329 10L429 82C473 114 508 197 508 270M421 229C421 117 361 39 276 39C224 39 150 71 150 93L150 308C150 322 160 340 176 358C204 387 243 404 284 404C368 404 421 336 421 229Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-20" d=""/>
+              <path id="pf-spring-forces-MJX-14-GP-N-44" d="M751 385C751 571 613 692 402 692C344 692 286 689 228 689L22 692L22 662L62 659C108 656 113 647 113 569L113 95C113 66 104 44 88 36L57 20L57-3L196 0C244 0 293-3 341-3C469-3 565 30 635 99C707 170 751 278 751 385M644 359C644 247 610 161 544 107C484 58 424 41 311 41C265 41 234 43 208 49L208 644C234 649 269 652 319 652C430 652 520 632 573 579C621 531 644 459 644 359Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-69" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L146 0M196 592C196 621 176 642 147 642C116 642 96 622 96 592C96 562 116 542 146 542C176 542 196 562 196 592Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-73" d="M391 148C391 179 383 202 363 222C337 248 304 259 216 276C134 292 107 312 107 358C107 408 142 436 203 436C270 436 321 401 321 354L321 331L349 331C350 389 351 413 354 444C301 462 265 469 224 469C108 469 37 414 37 324C37 276 59 242 105 221C132 209 185 193 253 178C298 168 317 147 317 109C317 55 267 17 196 17C123 17 71 52 71 102L71 143L41 143C41 74 38 44 30 4C82-13 121-20 167-20C298-20 391 50 391 148Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-70" d="M554 271C554 382 462 469 346 469C309 469 273 459 257 444L175 369L175 465L166 469C115 448 63 434 10 428L10 400L47 400C87 400 91 393 91 327L91-176C91-239 88-246 54-248L8-251L8-281L133-278L258-281L258-251L212-248C178-246 175-239 175-176L175 13C205-5 237-12 282-12C311-12 337-6 353 4L467 78C507 104 554 207 554 271M467 234C467 122 400 39 310 39C255 39 214 57 175 98L175 306C175 320 180 331 193 348C222 385 263 404 313 404C407 404 467 338 467 234Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-6C" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 718L179 726C135 709 102 701 23 689L23 661L79 661C97 661 104 650 104 620L104 102C104 39 101 32 67 30L21 27L21-3L146 0Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-61" d="M471-3L471 27L432 29C408 30 404 38 404 87L404 270C404 416 362 469 246 469C203 469 163 458 125 435L72 403L72 338L98 331L111 362C131 409 142 416 188 416C282 416 321 379 324 288L225 270C89 245 32 198 32 111C32 33 79-12 158-12C176-12 193-9 200-4L324 82L319-3C345-1 371 0 397 0C422 0 446-1 471-3M324 124C295 83 232 45 193 45C153 45 118 82 118 125C118 162 138 197 168 216C193 231 248 245 324 256Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-63" d="M413 46L403 61C366 41 334 32 298 32C187 32 114 118 114 250C114 357 164 417 254 417C298 417 346 397 364 372L371 311L399 311C399 357 404 398 413 434C373 458 338 469 297 469C249 469 193 450 133 412C63 368 26 298 26 210C26 75 121-20 255-20C307-20 382-1 392 14Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-65" d="M448 279C448 394 374 469 262 469C225 469 182 456 141 432C59 385 26 323 26 219C26 156 40 102 68 64C107 11 175-20 250-20C287-20 324-12 365 6C392 17 413 30 417 36L437 70L424 80C360 42 337 33 294 33C229 33 175 62 147 111C128 144 121 172 119 230L265 230C334 230 377 233 446 244C447 258 448 267 448 279M359 267L247 264C201 264 175 265 121 270C121 317 125 339 138 365C159 409 202 436 250 436C283 436 309 423 327 396C349 363 359 334 359 267Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-64" d="M579-3L579 27L533 30C499 32 496 39 496 102L496 718L487 726C443 709 410 701 331 689L331 661L387 661C405 661 412 650 412 620L412 437C356 461 328 469 293 469C266 469 242 463 217 450L129 404C72 374 35 301 35 216C35 136 62 70 111 30C145 1 192-12 257-12C277-12 300-8 305-4L416 89L411-3C437-1 462 0 488 0C518 0 549-1 579-3M412 221C412 156 410 146 397 123C369 76 320 45 273 45C185 45 122 130 122 249C122 358 176 422 266 422C304 422 344 409 379 385C400 371 412 358 412 350Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-79" d="M544 431L544 459C512 457 481 456 449 456C417 456 386 457 354 459L354 431L380 429C422 426 431 414 416 378L297 86C275 124 265 147 246 196L182 364C165 408 167 427 206 429L244 431L244 459L128 456L12 459L12 431L30 429C55 426 68 415 82 380L247-24L224-85C192-169 153-216 115-216C99-216 81-208 64-193L51-193L27-268C46-278 62-283 81-283C148-283 191-247 229-160L432 308C472 399 491 427 516 429Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-A0" d=""/>
+              <path id="pf-spring-forces-MJX-14-GP-I-1D462" d="M512 85L502 103L476 86C451 70 427 59 415 59C407 59 402 66 402 76C402 89 405 104 408 116L492 473L485 482L417 465L407 414C392 338 368 271 339 225C280 133 200 59 159 59C150 59 146 68 146 85C146 100 148 111 153 137L210 408C213 424 215 438 215 451C215 470 207 482 193 482C172 482 135 462 60 408L32 388L39 368L71 389C100 408 110 412 119 412C129 412 136 403 136 392C136 387 135 379 134 374L71 77C69 67 67 45 67 29C67 7 82-11 102-11C165-11 286 101 370 239L333 97C326 72 322 47 322 31C322 6 333-11 352-11C378-11 415 13 512 85Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-6E" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 465L163 469C112 448 60 434 7 428L7 400L44 400C84 400 88 393 88 327L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-2C" d="M218 109L204 123C177 114 159 108 106 93C99 17 74-48 16-144L30-155L71-136C152-31 190 32 218 109Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-77" d="M808 431L808 459C775 457 743 456 710 456C677 456 645 457 612 459L612 431L646 429C686 427 692 402 678 362L628 222L580 98L465 388C451 422 444 442 436 469L413 469L254 104L170 380C161 410 166 427 204 429L244 431L244 459L125 456L6 459L6 431L34 429C62 427 75 410 100 329L202-7L249-7L347 223C365 265 399 335 399 335L535-7L581-7L718 342C746 413 760 427 782 429Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-68" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 718L163 726C119 709 86 701 7 689L7 661L63 661C81 661 88 650 88 620L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              <path id="pf-spring-forces-MJX-14-GP-N-3C" d="M687-63C685-52 684-41 684-30C684-19 685-8 687 3L158 250L687 497C685 508 684 519 684 530C684 541 685 552 687 563L80 280C82 270 83 260 83 250C83 240 82 230 80 220Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math">
+                <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-annotation="depth:1" data-semantic-id="24" data-semantic-children="0,3,4,7,8,18" data-semantic-attributes="latex:\text{(b) Displaced by $u_1$ and $u_2$, with $0 \lt u_1 \lt u_2$}" data-semantic-collapsed="(24 (c 19 20 21 22 23) 0 3 4 7 8 18)" data-semantic-speech="left parenthesis b right parenthesis Displaced by u 1 and u 2 comma with 0 less than u 1 less than u 2">
+                  <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="24" data-semantic-speech="left parenthesis b right parenthesis Displaced by">
+                    <use data-c="28" xlink:href="#pf-spring-forces-MJX-14-GP-N-28"/>
+                    <use data-c="62" xlink:href="#pf-spring-forces-MJX-14-GP-N-62" transform="translate(424,0)"/>
+                    <use data-c="29" xlink:href="#pf-spring-forces-MJX-14-GP-N-29" transform="translate(977,0)"/>
+                    <use data-c="20" xlink:href="#pf-spring-forces-MJX-14-GP-N-20" transform="translate(1401,0)"/>
+                    <use data-c="44" xlink:href="#pf-spring-forces-MJX-14-GP-N-44" transform="translate(1651,0)"/>
+                    <use data-c="69" xlink:href="#pf-spring-forces-MJX-14-GP-N-69" transform="translate(2425,0)"/>
+                    <use data-c="73" xlink:href="#pf-spring-forces-MJX-14-GP-N-73" transform="translate(2716,0)"/>
+                    <use data-c="70" xlink:href="#pf-spring-forces-MJX-14-GP-N-70" transform="translate(3140,0)"/>
+                    <use data-c="6C" xlink:href="#pf-spring-forces-MJX-14-GP-N-6C" transform="translate(3741,0)"/>
+                    <use data-c="61" xlink:href="#pf-spring-forces-MJX-14-GP-N-61" transform="translate(4032,0)"/>
+                    <use data-c="63" xlink:href="#pf-spring-forces-MJX-14-GP-N-63" transform="translate(4532,0)"/>
+                    <use data-c="65" xlink:href="#pf-spring-forces-MJX-14-GP-N-65" transform="translate(4976,0)"/>
+                    <use data-c="64" xlink:href="#pf-spring-forces-MJX-14-GP-N-64" transform="translate(5455,0)"/>
+                    <use data-c="20" xlink:href="#pf-spring-forces-MJX-14-GP-N-20" transform="translate(6066,0)"/>
+                    <use data-c="62" xlink:href="#pf-spring-forces-MJX-14-GP-N-62" transform="translate(6316,0)"/>
+                    <use data-c="79" xlink:href="#pf-spring-forces-MJX-14-GP-N-79" transform="translate(6869,0)"/>
+                    <use data-c="A0" xlink:href="#pf-spring-forces-MJX-14-GP-N-A0" transform="translate(7425,0)"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(7675,0)">
+                    <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:2" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="24" data-semantic-attributes="latex:u_1;texclass:ORD" data-semantic-speech="u 1">
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:3" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                        <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-14-GP-I-1D462"/>
+                      </g>
+                      <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                        <use data-c="31" xlink:href="#pf-spring-forces-MJX-14-GP-N-31"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="4" data-semantic-parent="24" data-semantic-speech="and" transform="translate(8667.6,0)">
+                    <use data-c="A0" xlink:href="#pf-spring-forces-MJX-14-GP-N-A0"/>
+                    <use data-c="61" xlink:href="#pf-spring-forces-MJX-14-GP-N-61" transform="translate(250,0)"/>
+                    <use data-c="6E" xlink:href="#pf-spring-forces-MJX-14-GP-N-6E" transform="translate(750,0)"/>
+                    <use data-c="64" xlink:href="#pf-spring-forces-MJX-14-GP-N-64" transform="translate(1332,0)"/>
+                    <use data-c="A0" xlink:href="#pf-spring-forces-MJX-14-GP-N-A0" transform="translate(1943,0)"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(10860.6,0)">
+                    <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:2" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="24" data-semantic-attributes="latex:u_2;texclass:ORD" data-semantic-speech="u 2">
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:3" data-semantic-id="5" data-semantic-parent="7" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                        <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-14-GP-I-1D462"/>
+                      </g>
+                      <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="6" data-semantic-parent="7" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                        <use data-c="32" xlink:href="#pf-spring-forces-MJX-14-GP-N-32"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="8" data-semantic-parent="24" data-semantic-speech="comma with" transform="translate(11853.1,0)">
+                    <use data-c="2C" xlink:href="#pf-spring-forces-MJX-14-GP-N-2C"/>
+                    <use data-c="20" xlink:href="#pf-spring-forces-MJX-14-GP-N-20" transform="translate(250,0)"/>
+                    <use data-c="77" xlink:href="#pf-spring-forces-MJX-14-GP-N-77" transform="translate(500,0)"/>
+                    <use data-c="69" xlink:href="#pf-spring-forces-MJX-14-GP-N-69" transform="translate(1334,0)"/>
+                    <use data-c="74" xlink:href="#pf-spring-forces-MJX-14-GP-N-74" transform="translate(1625,0)"/>
+                    <use data-c="68" xlink:href="#pf-spring-forces-MJX-14-GP-N-68" transform="translate(1951,0)"/>
+                    <use data-c="A0" xlink:href="#pf-spring-forces-MJX-14-GP-N-A0" transform="translate(2533,0)"/>
+                  </g>
+                  <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(14636.1,0)">
+                    <g data-mml-node="mrow" data-semantic-type="relseq" data-semantic-role="inequality" data-semantic-annotation="depth:2" data-semantic-id="18" data-semantic-children="9,13,17" data-semantic-content="10,14" data-semantic-parent="24" data-semantic-attributes="texclass:ORD" data-semantic-speech="0 less than u 1 less than u 2">
+                      <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:3" data-semantic-id="9" data-semantic-parent="18" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                        <use data-c="30" xlink:href="#pf-spring-forces-MJX-14-GP-N-30"/>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="inequality" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="10" data-semantic-parent="18" data-semantic-attributes="latex:&lt;" data-semantic-operator="relseq,&lt;" data-semantic-speech="less than" transform="translate(777.8,0)">
+                        <use data-c="3C" xlink:href="#pf-spring-forces-MJX-14-GP-N-3C"/>
+                      </g>
+                      <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="13" data-semantic-children="11,12" data-semantic-parent="18" data-semantic-attributes="latex:u_1" data-semantic-speech="u 1" transform="translate(1822.6,0)">
+                        <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:4" data-semantic-id="11" data-semantic-parent="13" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                          <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-14-GP-I-1D462"/>
+                        </g>
+                        <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="12" data-semantic-parent="13" data-semantic-attributes="latex:1" data-semantic-speech="1" data-semantic-prefix="Subscript">
+                          <use data-c="31" xlink:href="#pf-spring-forces-MJX-14-GP-N-31"/>
+                        </g>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="inequality" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="14" data-semantic-parent="18" data-semantic-attributes="latex:&lt;" data-semantic-operator="relseq,&lt;" data-semantic-speech="less than" transform="translate(3092.9,0)">
+                        <use data-c="3C" xlink:href="#pf-spring-forces-MJX-14-GP-N-3C"/>
+                      </g>
+                      <g data-mml-node="msub" data-semantic-type="subscript" data-semantic-role="latinletter" data-semantic-annotation="depth:3" data-semantic-id="17" data-semantic-children="15,16" data-semantic-parent="18" data-semantic-attributes="latex:u_2" data-semantic-speech="u 2" transform="translate(4137.7,0)">
+                        <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:4" data-semantic-id="15" data-semantic-parent="17" data-semantic-attributes="latex:u" data-semantic-speech="u" data-semantic-prefix="Base">
+                          <use data-c="1D462" xlink:href="#pf-spring-forces-MJX-14-GP-I-1D462"/>
+                        </g>
+                        <g data-mml-node="mn" transform="translate(589,-150) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="16" data-semantic-parent="17" data-semantic-attributes="latex:2" data-semantic-speech="2" data-semantic-prefix="Subscript">
+                          <use data-c="32" xlink:href="#pf-spring-forces-MJX-14-GP-N-32"/>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-reflection-y-mx-reflection" speech2="The vector e 1 and its mirror image in the line y equals m x, drawn with the same scale on both axes">
+      <grouped>pf-reflection-y-mx-reflection</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-reflection-y-mx-mirror-line</active>
+        <active>pf-reflection-y-mx-vector-e1</active>
+        <active>pf-reflection-y-mx-angle-theta</active>
+        <active>pf-reflection-y-mx-image-e1</active>
+        <active>pf-reflection-y-mx-angle-two-theta</active>
+      </children>
+      <components>
+        <active>pf-reflection-y-mx-mirror-line</active>
+        <active>pf-reflection-y-mx-vector-e1</active>
+        <active>pf-reflection-y-mx-angle-theta</active>
+        <active>pf-reflection-y-mx-image-e1</active>
+        <active>pf-reflection-y-mx-angle-two-theta</active>
+      </components>
+    </annotation>
+    <annotation id="pf-reflection-y-mx-mirror-line" speech2="The grey line y equals m x through the origin, rising to the right; here it is steeper than the diagonal">
+      <active>pf-reflection-y-mx-mirror-line</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-reflection-y-mx-reflection</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-reflection-y-mx-vector-e1" speech2="The olive vector e 1, from the origin to the point 1 comma 0 on the x axis">
+      <active>pf-reflection-y-mx-vector-e1</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-reflection-y-mx-reflection</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-reflection-y-mx-angle-theta" speech2="The angle theta from the positive x axis up to the line y equals m x">
+      <active>pf-reflection-y-mx-angle-theta</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-reflection-y-mx-reflection</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-reflection-y-mx-image-e1" speech2="The wine vector Q m of e 1, the mirror image of e 1 in the line; it has length 1 and lies as far beyond the line as e 1 lies before it">
+      <active>pf-reflection-y-mx-image-e1</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-reflection-y-mx-reflection</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-reflection-y-mx-angle-two-theta" speech2="The angle from the positive x axis to Q m of e 1 is 2 theta, so Q m of e 1 ends at the point cosine 2 theta comma sine 2 theta">
+      <active>pf-reflection-y-mx-angle-two-theta</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-reflection-y-mx-reflection</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

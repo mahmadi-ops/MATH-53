@@ -1,0 +1,57 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-det-area-det-area" speech2="The parallelogram spanned by the two columns of a 2 by 2 matrix, drawn in the x y plane with the same scale on both axes">
+      <grouped>pf-det-area-det-area</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-det-area-da-u</active>
+        <active>pf-det-area-da-v</active>
+        <active>pf-det-area-da-sides</active>
+        <active>pf-det-area-da-region</active>
+        <active>pf-det-area-da-area</active>
+      </children>
+      <components>
+        <active>pf-det-area-da-u</active>
+        <active>pf-det-area-da-v</active>
+        <active>pf-det-area-da-sides</active>
+        <active>pf-det-area-da-region</active>
+        <active>pf-det-area-da-area</active>
+      </components>
+    </annotation>
+    <annotation id="pf-det-area-da-u" speech2="The olive vector u from the origin to the point 3 comma 1">
+      <active>pf-det-area-da-u</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-det-area-det-area</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-det-area-da-v" speech2="The olive vector v from the origin to the point 1 comma 2">
+      <active>pf-det-area-da-v</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-det-area-det-area</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-det-area-da-sides" speech2="Two thin sides, from the tip of u and from the tip of v to the point 4 comma 3, complete the parallelogram">
+      <active>pf-det-area-da-sides</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-det-area-det-area</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-det-area-da-region" speech2="The parallelogram with corners 0 comma 0, 3 comma 1, 4 comma 3 and 1 comma 2, shaded pale wine">
+      <active>pf-det-area-da-region</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-det-area-det-area</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-det-area-da-area" speech2="The label inside the parallelogram reads absolute value of the determinant of A equals 5, the area of the parallelogram">
+      <active>pf-det-area-da-area</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-det-area-det-area</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

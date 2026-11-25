@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-rotation-three-shears-figure" width="390" height="430" viewBox="0 0 390 430">
+  <defs>
+    <clipPath id="pf-rotation-three-shears-__clipPath-0">
+      <rect x="10.0" y="10.0" width="370.0" height="410.0"/>
+    </clipPath>
+    <clipPath id="pf-rotation-three-shears-__clipPath-1">
+      <rect x="10.0" y="10.0" width="370.0" height="410.0"/>
+    </clipPath>
+  </defs>
+  <g id="pf-rotation-three-shears-three-shears">
+    <g id="pf-rotation-three-shears-original">
+      <path id="pf-rotation-three-shears-original-square" d="M 47.0 146.7 L 152.7 146.7 L 152.7 41.5 L 47.0 41.5 Z" stroke="#4A5D23" stroke-width="1.5" fill="#EDF0E6" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <path id="pf-rotation-three-shears-original-letter" d="M 76.1 130.9 L 76.1 57.3 L 128.9 57.3 L 128.9 74.1 L 94.6 74.1 L 94.6 87.8 L 118.4 87.8 L 118.4 104.6 L 94.6 104.6 L 94.6 130.9 Z" stroke="#5E011C" stroke-width="1" fill="#5E011C" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <g id="pf-rotation-three-shears-original-label" transform="translate(99.9,179.6) translate(-52.9,-0.0)">
+        <g id="pf-rotation-three-shears-__g-0">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.664px" width="105.792px" height="16.712px" role="img" focusable="false" viewBox="0 -726 6374 1007" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-31" d="M418-3L418 27L366 30C311 33 301 44 301 96L301 689L287 694C222 660 151 630 60 598L67 555L77 555L206 613L209 614C215 614 217 605 217 581L217 96C217 44 206 33 152 30L96 27L96-3L261 0Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-A0" d=""/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-68" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 718L163 726C119 709 86 701 7 689L7 661L63 661C81 661 88 650 88 620L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-65" d="M448 279C448 394 374 469 262 469C225 469 182 456 141 432C59 385 26 323 26 219C26 156 40 102 68 64C107 11 175-20 250-20C287-20 324-12 365 6C392 17 413 30 417 36L437 70L424 80C360 42 337 33 294 33C229 33 175 62 147 111C128 144 121 172 119 230L265 230C334 230 377 233 446 244C447 258 448 267 448 279M359 267L247 264C201 264 175 265 121 270C121 317 125 339 138 365C159 409 202 436 250 436C283 436 309 423 327 396C349 363 359 334 359 267Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-20" d=""/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-70" d="M554 271C554 382 462 469 346 469C309 469 273 459 257 444L175 369L175 465L166 469C115 448 63 434 10 428L10 400L47 400C87 400 91 393 91 327L91-176C91-239 88-246 54-248L8-251L8-281L133-278L258-281L258-251L212-248C178-246 175-239 175-176L175 13C205-5 237-12 282-12C311-12 337-6 353 4L467 78C507 104 554 207 554 271M467 234C467 122 400 39 310 39C255 39 214 57 175 98L175 306C175 320 180 331 193 348C222 385 263 404 313 404C407 404 467 338 467 234Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-69" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L146 0M196 592C196 621 176 642 147 642C116 642 96 622 96 592C96 562 116 542 146 542C176 542 196 562 196 592Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-63" d="M413 46L403 61C366 41 334 32 298 32C187 32 114 118 114 250C114 357 164 417 254 417C298 417 346 397 364 372L371 311L399 311C399 357 404 398 413 434C373 458 338 469 297 469C249 469 193 450 133 412C63 368 26 298 26 210C26 75 121-20 255-20C307-20 382-1 392 14Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-75" d="M581-3L581 27L540 30C506 32 503 38 503 102L503 465L494 469C443 448 391 434 338 428L338 400L375 400C415 400 419 393 419 327L419 164C419 142 405 114 382 91C354 63 322 49 283 49C248 49 220 60 204 79C190 95 183 126 183 170L183 465L174 469C123 448 71 434 18 428L18 400L55 400C95 400 99 393 99 327L99 159C99 89 105 58 123 33C145 3 183-12 240-12C285-12 325 2 352 27L419 89C419 60 418 44 415-3C443-1 470 0 498 0C526 0 553-1 581-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-2-GP-N-72" d="M374 458C363 465 345 469 327 469C297 469 265 453 244 428L188 362L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L144 0L287-3L287 27L235 30C190 33 188 36 188 102L188 274C188 334 228 384 277 384C307 384 328 370 344 338L365 338Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-annotation="depth:1" data-semantic-id="8" data-semantic-children="5,3,4" data-semantic-attributes="latex:(1)\ \text{the picture}" data-semantic-collapsed="(8 (c 6 7) 5 3 4)" data-semantic-speech="left parenthesis 1 right parenthesis the picture">
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="5" data-semantic-children="1" data-semantic-content="0,2" data-semantic-parent="8" data-semantic-speech="left parenthesis 1 right parenthesis">
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                    <use data-c="28" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-28"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="5" data-semantic-attributes="latex:1" data-semantic-speech="1" transform="translate(424,0)">
+                    <use data-c="31" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-31"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="5" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(924,0)">
+                    <use data-c="29" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-29"/>
+                  </g>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="space" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="3" data-semantic-parent="8" data-semantic-attributes="latex:\ " data-semantic-speech="" transform="translate(1348,0)">
+                  <use data-c="A0" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-A0"/>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="4" data-semantic-parent="8" data-semantic-attributes="latex:\text{the picture}" data-semantic-speech="the picture" transform="translate(1598,0)">
+                  <use data-c="74" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-74"/>
+                  <use data-c="68" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-68" transform="translate(326,0)"/>
+                  <use data-c="65" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-65" transform="translate(908,0)"/>
+                  <use data-c="20" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-20" transform="translate(1387,0)"/>
+                  <use data-c="70" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-70" transform="translate(1637,0)"/>
+                  <use data-c="69" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-69" transform="translate(2238,0)"/>
+                  <use data-c="63" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-63" transform="translate(2529,0)"/>
+                  <use data-c="74" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-74" transform="translate(2973,0)"/>
+                  <use data-c="75" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-75" transform="translate(3299,0)"/>
+                  <use data-c="72" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-72" transform="translate(3902,0)"/>
+                  <use data-c="65" xlink:href="#pf-rotation-three-shears-MJX-2-GP-N-65" transform="translate(4297,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-rotation-three-shears-first-shear">
+      <path id="pf-rotation-three-shears-first-shear-reference" d="M 237.3 146.7 L 343.0 146.7 L 343.0 41.5 L 237.3 41.5 Z" stroke="#909090" stroke-width="1" stroke-dasharray="4 3" fill="none" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <path id="pf-rotation-three-shears-first-shear-square" d="M 251.5 146.7 L 357.2 146.7 L 328.8 41.5 L 223.1 41.5 Z" stroke="#4A5D23" stroke-width="1.5" fill="#EDF0E6" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <path id="pf-rotation-three-shears-first-shear-letter" d="M 276.3 130.9 L 256.4 57.3 L 309.3 57.3 L 313.8 74.1 L 279.5 74.1 L 283.2 87.8 L 307.0 87.8 L 311.5 104.6 L 287.7 104.6 L 294.8 130.9 Z" stroke="#5E011C" stroke-width="1" fill="#5E011C" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <g id="pf-rotation-three-shears-first-shear-label" transform="translate(290.1,179.6) translate(-89.0,-0.0)">
+        <g id="pf-rotation-three-shears-__g-1">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.696px" width="177.992px" height="16.744px" role="img" focusable="false" viewBox="0 -726 10724 1009" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-A0" d=""/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-73" d="M391 148C391 179 383 202 363 222C337 248 304 259 216 276C134 292 107 312 107 358C107 408 142 436 203 436C270 436 321 401 321 354L321 331L349 331C350 389 351 413 354 444C301 462 265 469 224 469C108 469 37 414 37 324C37 276 59 242 105 221C132 209 185 193 253 178C298 168 317 147 317 109C317 55 267 17 196 17C123 17 71 52 71 102L71 143L41 143C41 74 38 44 30 4C82-13 121-20 167-20C298-20 391 50 391 148Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-68" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 718L163 726C119 709 86 701 7 689L7 661L63 661C81 661 88 650 88 620L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-65" d="M448 279C448 394 374 469 262 469C225 469 182 456 141 432C59 385 26 323 26 219C26 156 40 102 68 64C107 11 175-20 250-20C287-20 324-12 365 6C392 17 413 30 417 36L437 70L424 80C360 42 337 33 294 33C229 33 175 62 147 111C128 144 121 172 119 230L265 230C334 230 377 233 446 244C447 258 448 267 448 279M359 267L247 264C201 264 175 265 121 270C121 317 125 339 138 365C159 409 202 436 250 436C283 436 309 423 327 396C349 363 359 334 359 267Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-61" d="M471-3L471 27L432 29C408 30 404 38 404 87L404 270C404 416 362 469 246 469C203 469 163 458 125 435L72 403L72 338L98 331L111 362C131 409 142 416 188 416C282 416 321 379 324 288L225 270C89 245 32 198 32 111C32 33 79-12 158-12C176-12 193-9 200-4L324 82L319-3C345-1 371 0 397 0C422 0 446-1 471-3M324 124C295 83 232 45 193 45C153 45 118 82 118 125C118 162 138 197 168 216C193 231 248 245 324 256Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-72" d="M374 458C363 465 345 469 327 469C297 469 265 453 244 428L188 362L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L144 0L287-3L287 27L235 30C190 33 188 36 188 102L188 274C188 334 228 384 277 384C307 384 328 370 344 338L365 338Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-64" d="M579-3L579 27L533 30C499 32 496 39 496 102L496 718L487 726C443 709 410 701 331 689L331 661L387 661C405 661 412 650 412 620L412 437C356 461 328 469 293 469C266 469 242 463 217 450L129 404C72 374 35 301 35 216C35 136 62 70 111 30C145 1 192-12 257-12C277-12 300-8 305-4L416 89L411-3C437-1 462 0 488 0C518 0 549-1 579-3M412 221C412 156 410 146 397 123C369 76 320 45 273 45C185 45 122 130 122 249C122 358 176 422 266 422C304 422 344 409 379 385C400 371 412 358 412 350Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-20" d=""/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-6F" d="M514 237C514 372 416 469 279 469C133 469 32 366 32 217C32 76 121-20 250-20C404-20 514 87 514 237M421 200C421 85 370 13 289 13C191 13 125 109 125 251C125 371 173 436 261 436C353 436 421 336 421 200Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-69" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L146 0M196 592C196 621 176 642 147 642C116 642 96 622 96 592C96 562 116 542 146 542C176 542 196 562 196 592Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-7A" d="M466 139L436 139L418 60C414 42 372 35 276 35L141 35L455 432L455 462L317 459L69 462C67 411 66 399 60 330L90 330L102 398C106 419 124 424 198 424L341 424C320 391 304 368 276 334L16 17L22-3L175 0L451-3C451 20 454 44 460 92Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-6E" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 465L163 469C112 448 60 434 7 428L7 400L44 400C84 400 88 393 88 327L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-6C" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 718L179 726C135 709 102 701 23 689L23 661L79 661C97 661 104 650 104 620L104 102C104 39 101 32 67 30L21 27L21-3L146 0Z"/>
+              <path id="pf-rotation-three-shears-MJX-3-GP-N-79" d="M544 431L544 459C512 457 481 456 449 456C417 456 386 457 354 459L354 431L380 429C422 426 431 414 416 378L297 86C275 124 265 147 246 196L182 364C165 408 167 427 206 429L244 431L244 459L128 456L12 459L12 431L30 429C55 426 68 415 82 380L247-24L224-85C192-169 153-216 115-216C99-216 81-208 64-193L51-193L27-268C46-278 62-283 81-283C148-283 191-247 229-160L432 308C472 399 491 427 516 429Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-annotation="depth:1" data-semantic-id="8" data-semantic-children="5,3,4" data-semantic-attributes="latex:(2)\ \text{sheared horizontally}" data-semantic-collapsed="(8 (c 6 7) 5 3 4)" data-semantic-speech="left parenthesis 2 right parenthesis sheared horizontally">
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="5" data-semantic-children="1" data-semantic-content="0,2" data-semantic-parent="8" data-semantic-speech="left parenthesis 2 right parenthesis">
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                    <use data-c="28" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-28"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="5" data-semantic-attributes="latex:2" data-semantic-speech="2" transform="translate(424,0)">
+                    <use data-c="32" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-32"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="5" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(924,0)">
+                    <use data-c="29" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-29"/>
+                  </g>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="space" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="3" data-semantic-parent="8" data-semantic-attributes="latex:\ " data-semantic-speech="" transform="translate(1348,0)">
+                  <use data-c="A0" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-A0"/>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="4" data-semantic-parent="8" data-semantic-attributes="latex:\text{sheared horizontally}" data-semantic-speech="sheared horizontally" transform="translate(1598,0)">
+                  <use data-c="73" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-73"/>
+                  <use data-c="68" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-68" transform="translate(424,0)"/>
+                  <use data-c="65" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-65" transform="translate(1006,0)"/>
+                  <use data-c="61" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-61" transform="translate(1485,0)"/>
+                  <use data-c="72" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-72" transform="translate(1985,0)"/>
+                  <use data-c="65" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-65" transform="translate(2380,0)"/>
+                  <use data-c="64" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-64" transform="translate(2859,0)"/>
+                  <use data-c="20" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-20" transform="translate(3470,0)"/>
+                  <use data-c="68" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-68" transform="translate(3720,0)"/>
+                  <use data-c="6F" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-6F" transform="translate(4302,0)"/>
+                  <use data-c="72" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-72" transform="translate(4848,0)"/>
+                  <use data-c="69" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-69" transform="translate(5243,0)"/>
+                  <use data-c="7A" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-7A" transform="translate(5534,0)"/>
+                  <use data-c="6F" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-6F" transform="translate(6034,0)"/>
+                  <use data-c="6E" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-6E" transform="translate(6580,0)"/>
+                  <use data-c="74" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-74" transform="translate(7162,0)"/>
+                  <use data-c="61" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-61" transform="translate(7488,0)"/>
+                  <use data-c="6C" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-6C" transform="translate(7988,0)"/>
+                  <use data-c="6C" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-6C" transform="translate(8279,0)"/>
+                  <use data-c="79" xlink:href="#pf-rotation-three-shears-MJX-3-GP-N-79" transform="translate(8570,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-rotation-three-shears-second-shear">
+      <path id="pf-rotation-three-shears-second-shear-reference" d="M 47.0 356.9 L 152.7 356.9 L 152.7 251.8 L 47.0 251.8 Z" stroke="#909090" stroke-width="1" stroke-dasharray="4 3" fill="none" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <path id="pf-rotation-three-shears-second-shear-square" d="M 61.2 376.2 L 166.9 323.6 L 138.5 232.6 L 32.8 285.1 Z" stroke="#4A5D23" stroke-width="1.5" fill="#EDF0E6" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <path id="pf-rotation-three-shears-second-shear-letter" d="M 86.0 348.0 L 66.1 284.3 L 119.0 258.0 L 123.5 272.6 L 89.2 289.7 L 92.9 301.5 L 116.7 289.7 L 121.2 304.3 L 97.4 316.1 L 104.5 338.8 Z" stroke="#5E011C" stroke-width="1" fill="#5E011C" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <g id="pf-rotation-three-shears-second-shear-label" transform="translate(99.9,389.8) translate(-66.0,-0.0)">
+        <g id="pf-rotation-three-shears-__g-2">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.696px" width="132.032px" height="16.744px" role="img" focusable="false" viewBox="0 -726 7955 1009" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-A0" d=""/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-68" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 718L163 726C119 709 86 701 7 689L7 661L63 661C81 661 88 650 88 620L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-65" d="M448 279C448 394 374 469 262 469C225 469 182 456 141 432C59 385 26 323 26 219C26 156 40 102 68 64C107 11 175-20 250-20C287-20 324-12 365 6C392 17 413 30 417 36L437 70L424 80C360 42 337 33 294 33C229 33 175 62 147 111C128 144 121 172 119 230L265 230C334 230 377 233 446 244C447 258 448 267 448 279M359 267L247 264C201 264 175 265 121 270C121 317 125 339 138 365C159 409 202 436 250 436C283 436 309 423 327 396C349 363 359 334 359 267Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-6E" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 465L163 469C112 448 60 434 7 428L7 400L44 400C84 400 88 393 88 327L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-20" d=""/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-76" d="M539 431L539 459C508 457 476 456 445 456C414 456 382 457 351 459L351 431L392 429C424 427 424 398 397 330L355 224L293 84L174 372C163 400 158 428 190 429L239 431L239 459L122 456L6 459L6 431L40 429C58 428 61 419 71 396L243-7L293-7C299 26 314 57 334 102L452 362C475 413 488 428 508 429Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-72" d="M374 458C363 465 345 469 327 469C297 469 265 453 244 428L188 362L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L144 0L287-3L287 27L235 30C190 33 188 36 188 102L188 274C188 334 228 384 277 384C307 384 328 370 344 338L365 338Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-69" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L146 0M196 592C196 621 176 642 147 642C116 642 96 622 96 592C96 562 116 542 146 542C176 542 196 562 196 592Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-63" d="M413 46L403 61C366 41 334 32 298 32C187 32 114 118 114 250C114 357 164 417 254 417C298 417 346 397 364 372L371 311L399 311C399 357 404 398 413 434C373 458 338 469 297 469C249 469 193 450 133 412C63 368 26 298 26 210C26 75 121-20 255-20C307-20 382-1 392 14Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-61" d="M471-3L471 27L432 29C408 30 404 38 404 87L404 270C404 416 362 469 246 469C203 469 163 458 125 435L72 403L72 338L98 331L111 362C131 409 142 416 188 416C282 416 321 379 324 288L225 270C89 245 32 198 32 111C32 33 79-12 158-12C176-12 193-9 200-4L324 82L319-3C345-1 371 0 397 0C422 0 446-1 471-3M324 124C295 83 232 45 193 45C153 45 118 82 118 125C118 162 138 197 168 216C193 231 248 245 324 256Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-6C" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 718L179 726C135 709 102 701 23 689L23 661L79 661C97 661 104 650 104 620L104 102C104 39 101 32 67 30L21 27L21-3L146 0Z"/>
+              <path id="pf-rotation-three-shears-MJX-4-GP-N-79" d="M544 431L544 459C512 457 481 456 449 456C417 456 386 457 354 459L354 431L380 429C422 426 431 414 416 378L297 86C275 124 265 147 246 196L182 364C165 408 167 427 206 429L244 431L244 459L128 456L12 459L12 431L30 429C55 426 68 415 82 380L247-24L224-85C192-169 153-216 115-216C99-216 81-208 64-193L51-193L27-268C46-278 62-283 81-283C148-283 191-247 229-160L432 308C472 399 491 427 516 429Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-annotation="depth:1" data-semantic-id="8" data-semantic-children="5,3,4" data-semantic-attributes="latex:(3)\ \text{then vertically}" data-semantic-collapsed="(8 (c 6 7) 5 3 4)" data-semantic-speech="left parenthesis 3 right parenthesis then vertically">
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="5" data-semantic-children="1" data-semantic-content="0,2" data-semantic-parent="8" data-semantic-speech="left parenthesis 3 right parenthesis">
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                    <use data-c="28" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-28"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="5" data-semantic-attributes="latex:3" data-semantic-speech="3" transform="translate(424,0)">
+                    <use data-c="33" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-33"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="5" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(924,0)">
+                    <use data-c="29" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-29"/>
+                  </g>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="space" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="3" data-semantic-parent="8" data-semantic-attributes="latex:\ " data-semantic-speech="" transform="translate(1348,0)">
+                  <use data-c="A0" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-A0"/>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="4" data-semantic-parent="8" data-semantic-attributes="latex:\text{then vertically}" data-semantic-speech="then vertically" transform="translate(1598,0)">
+                  <use data-c="74" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-74"/>
+                  <use data-c="68" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-68" transform="translate(326,0)"/>
+                  <use data-c="65" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-65" transform="translate(908,0)"/>
+                  <use data-c="6E" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-6E" transform="translate(1387,0)"/>
+                  <use data-c="20" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-20" transform="translate(1969,0)"/>
+                  <use data-c="76" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-76" transform="translate(2219,0)"/>
+                  <use data-c="65" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-65" transform="translate(2784,0)"/>
+                  <use data-c="72" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-72" transform="translate(3263,0)"/>
+                  <use data-c="74" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-74" transform="translate(3658,0)"/>
+                  <use data-c="69" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-69" transform="translate(3984,0)"/>
+                  <use data-c="63" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-63" transform="translate(4275,0)"/>
+                  <use data-c="61" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-61" transform="translate(4719,0)"/>
+                  <use data-c="6C" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-6C" transform="translate(5219,0)"/>
+                  <use data-c="6C" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-6C" transform="translate(5510,0)"/>
+                  <use data-c="79" xlink:href="#pf-rotation-three-shears-MJX-4-GP-N-79" transform="translate(5801,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+    <g id="pf-rotation-three-shears-third-shear">
+      <path id="pf-rotation-three-shears-third-shear-reference" d="M 237.3 356.9 L 343.0 356.9 L 343.0 251.8 L 237.3 251.8 Z" stroke="#909090" stroke-width="1" stroke-dasharray="4 3" fill="none" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <path id="pf-rotation-three-shears-third-shear-square" d="M 270.8 376.2 L 362.3 323.6 L 309.5 232.6 L 217.9 285.1 Z" stroke="#4A5D23" stroke-width="1.5" fill="#EDF0E6" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <path id="pf-rotation-three-shears-third-shear-letter" d="M 288.0 348.0 L 251.0 284.3 L 296.8 258.0 L 305.3 272.6 L 275.5 289.7 L 282.4 301.5 L 303.0 289.7 L 311.4 304.3 L 290.8 316.1 L 304.0 338.8 Z" stroke="#5E011C" stroke-width="1" fill="#5E011C" clip-path="url(#pf-rotation-three-shears-__clipPath-1)"/>
+      <g id="pf-rotation-three-shears-third-shear-label" transform="translate(290.1,389.8) translate(-98.8,-0.0)">
+        <g id="pf-rotation-three-shears-__g-3">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.696px" width="197.544px" height="16.744px" role="img" focusable="false" viewBox="0 -726 11902 1009" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-34" d="M472-3L472 27L424 30C375 33 364 46 364 106L364 181C423 181 444 180 472 177L472 248C472 248 423 245 391 245L364 245L364 384C364 562 366 648 371 689L359 694L285 667L2 204L13 181L280 181L280 106C280 46 269 32 220 30L158 27L158-3L319 0M280 245L65 245L280 597Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-A0" d=""/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-74" d="M319 436L182 430L182 468C182 510 185 546 193 610L181 621C157 606 127 593 96 583C99 553 100 534 100 504L100 434L22 399L22 378L98 382L98 94C98 20 131-12 208-12C231-12 255-7 261 0L309 53L296 70C271 56 256 51 237 51C198 51 182 71 182 120L182 382L310 382Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-68" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 718L163 726C119 709 86 701 7 689L7 661L63 661C81 661 88 650 88 620L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-65" d="M448 279C448 394 374 469 262 469C225 469 182 456 141 432C59 385 26 323 26 219C26 156 40 102 68 64C107 11 175-20 250-20C287-20 324-12 365 6C392 17 413 30 417 36L437 70L424 80C360 42 337 33 294 33C229 33 175 62 147 111C128 144 121 172 119 230L265 230C334 230 377 233 446 244C447 258 448 267 448 279M359 267L247 264C201 264 175 265 121 270C121 317 125 339 138 365C159 409 202 436 250 436C283 436 309 423 327 396C349 363 359 334 359 267Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-6E" d="M572-3L572 27L531 30C497 32 494 38 494 102L494 295C494 412 439 469 327 469C290 469 269 462 248 444L172 378L172 465L163 469C112 448 60 434 7 428L7 400L44 400C84 400 88 393 88 327L88 102C88 39 85 32 51 30L6 27L6-3L130 0L254-3L254 27L209 30C175 32 172 39 172 102L172 314C172 359 238 408 299 408C366 408 410 358 410 281L410-3C436-1 463 0 489 0C517 0 544-1 572-3Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-20" d=""/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-6F" d="M514 237C514 372 416 469 279 469C133 469 32 366 32 217C32 76 121-20 250-20C404-20 514 87 514 237M421 200C421 85 370 13 289 13C191 13 125 109 125 251C125 371 173 436 261 436C353 436 421 336 421 200Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-72" d="M374 458C363 465 345 469 327 469C297 469 265 453 244 428L188 362L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L144 0L287-3L287 27L235 30C190 33 188 36 188 102L188 274C188 334 228 384 277 384C307 384 328 370 344 338L365 338Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-69" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 465L179 469C128 448 76 434 23 428L23 400L60 400C100 400 104 393 104 327L104 102C104 39 101 32 67 30L21 27L21-3L146 0M196 592C196 621 176 642 147 642C116 642 96 622 96 592C96 562 116 542 146 542C176 542 196 562 196 592Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-7A" d="M466 139L436 139L418 60C414 42 372 35 276 35L141 35L455 432L455 462L317 459L69 462C67 411 66 399 60 330L90 330L102 398C106 419 124 424 198 424L341 424C320 391 304 368 276 334L16 17L22-3L175 0L451-3C451 20 454 44 460 92Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-61" d="M471-3L471 27L432 29C408 30 404 38 404 87L404 270C404 416 362 469 246 469C203 469 163 458 125 435L72 403L72 338L98 331L111 362C131 409 142 416 188 416C282 416 321 379 324 288L225 270C89 245 32 198 32 111C32 33 79-12 158-12C176-12 193-9 200-4L324 82L319-3C345-1 371 0 397 0C422 0 446-1 471-3M324 124C295 83 232 45 193 45C153 45 118 82 118 125C118 162 138 197 168 216C193 231 248 245 324 256Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-6C" d="M271-3L271 27L225 30C191 32 188 39 188 102L188 718L179 726C135 709 102 701 23 689L23 661L79 661C97 661 104 650 104 620L104 102C104 39 101 32 67 30L21 27L21-3L146 0Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-79" d="M544 431L544 459C512 457 481 456 449 456C417 456 386 457 354 459L354 431L380 429C422 426 431 414 416 378L297 86C275 124 265 147 246 196L182 364C165 408 167 427 206 429L244 431L244 459L128 456L12 459L12 431L30 429C55 426 68 415 82 380L247-24L224-85C192-169 153-216 115-216C99-216 81-208 64-193L51-193L27-268C46-278 62-283 81-283C148-283 191-247 229-160L432 308C472 399 491 427 516 429Z"/>
+              <path id="pf-rotation-three-shears-MJX-5-GP-N-67" d="M544 419L540 431L398 427C361 457 325 469 276 469C232 469 181 455 140 431C84 399 55 350 55 289C55 215 101 164 175 156L96 95C86 80 81 67 81 52C81 24 99 8 147-6L60-53C46-61 32-98 32-129C32-220 121-283 248-283C399-283 518-188 518-66C518 6 470 56 400 56L240 56C188 56 164 68 164 95C164 108 172 119 198 141C204 146 206 148 210 152C220 151 226 150 234 150C277 150 330 169 371 198C416 231 438 271 438 324C438 344 435 357 427 378L519 378M354 294C354 229 312 184 251 184C184 184 139 236 139 313C139 390 176 435 240 435C308 435 354 379 354 294M439-102C439-188 360-252 255-252C168-252 108-201 108-127C108-82 134-42 174-24C190-17 218-14 287-14C400-14 439-37 439-102Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="punctuated" data-semantic-role="text" data-semantic-annotation="depth:1" data-semantic-id="8" data-semantic-children="5,3,4" data-semantic-attributes="latex:(4)\ \text{then horizontally again}" data-semantic-collapsed="(8 (c 6 7) 5 3 4)" data-semantic-speech="left parenthesis 4 right parenthesis then horizontally again">
+                <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="5" data-semantic-children="1" data-semantic-content="0,2" data-semantic-parent="8" data-semantic-speech="left parenthesis 4 right parenthesis">
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="0" data-semantic-parent="5" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                    <use data-c="28" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-28"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="1" data-semantic-parent="5" data-semantic-attributes="latex:4" data-semantic-speech="4" transform="translate(424,0)">
+                    <use data-c="34" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-34"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="2" data-semantic-parent="5" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(924,0)">
+                    <use data-c="29" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-29"/>
+                  </g>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="space" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="3" data-semantic-parent="8" data-semantic-attributes="latex:\ " data-semantic-speech="" transform="translate(1348,0)">
+                  <use data-c="A0" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-A0"/>
+                </g>
+                <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="text" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit;nemeth:number;depth:2" data-semantic-id="4" data-semantic-parent="8" data-semantic-attributes="latex:\text{then horizontally again}" data-semantic-speech="then horizontally again" transform="translate(1598,0)">
+                  <use data-c="74" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-74"/>
+                  <use data-c="68" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-68" transform="translate(326,0)"/>
+                  <use data-c="65" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-65" transform="translate(908,0)"/>
+                  <use data-c="6E" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-6E" transform="translate(1387,0)"/>
+                  <use data-c="20" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-20" transform="translate(1969,0)"/>
+                  <use data-c="68" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-68" transform="translate(2219,0)"/>
+                  <use data-c="6F" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-6F" transform="translate(2801,0)"/>
+                  <use data-c="72" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-72" transform="translate(3347,0)"/>
+                  <use data-c="69" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-69" transform="translate(3742,0)"/>
+                  <use data-c="7A" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-7A" transform="translate(4033,0)"/>
+                  <use data-c="6F" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-6F" transform="translate(4533,0)"/>
+                  <use data-c="6E" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-6E" transform="translate(5079,0)"/>
+                  <use data-c="74" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-74" transform="translate(5661,0)"/>
+                  <use data-c="61" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-61" transform="translate(5987,0)"/>
+                  <use data-c="6C" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-6C" transform="translate(6487,0)"/>
+                  <use data-c="6C" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-6C" transform="translate(6778,0)"/>
+                  <use data-c="79" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-79" transform="translate(7069,0)"/>
+                  <use data-c="20" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-20" transform="translate(7625,0)"/>
+                  <use data-c="61" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-61" transform="translate(7875,0)"/>
+                  <use data-c="67" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-67" transform="translate(8375,0)"/>
+                  <use data-c="61" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-61" transform="translate(8931,0)"/>
+                  <use data-c="69" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-69" transform="translate(9431,0)"/>
+                  <use data-c="6E" xlink:href="#pf-rotation-three-shears-MJX-5-GP-N-6E" transform="translate(9722,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

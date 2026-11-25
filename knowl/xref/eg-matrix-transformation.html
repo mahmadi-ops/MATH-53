@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Matrix Transformation from <span class="process-math">\(\R^3\)</span> to <span class="process-math">\(\R^4\)</span>.</span>
+</h2>
+<div class="para logical">
+<div class="para">Consider <span class="process-math">\(T : \R^3 \to \R^4\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+= \begin{bmatrix} x + y \\ y \\ y - z \\ -y + z \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">For instance, <span class="process-math">\(T\)</span> transforms <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix} \in \R^3\)</span> to <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \\ -2 \\ 2 \end{bmatrix} \in \R^4\text{.}\)</span> Separating the three variables shows that <span class="process-math">\(T\)</span> is a matrix transformation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(\vec{x})
+= x \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
++ y \begin{bmatrix} 1 \\ 1 \\ 1 \\ -1 \end{bmatrix}
++ z \begin{bmatrix} 0 \\ 0 \\ -1 \\ 1 \end{bmatrix}
+= \underbrace{\begin{bmatrix}
+1 \amp 1 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 1 \amp -1 \\
+0 \amp -1 \amp 1
+\end{bmatrix}}_{A}
+\underbrace{\begin{bmatrix} x \\ y \\ z \end{bmatrix}}_{\vec{x}}
+= T_A(\vec{x}).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-matrix-transformation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.4: A Matrix Transformation from \R^3 to \R^4"><a tabindex="-1" href="#eg-matrix-transformation" title="Copy heading and permalink for Example 3.4: A Matrix Transformation from \R^3 to \R^4" aria-label="Copy heading and permalink for Example 3.4: A Matrix Transformation from \R^3 to \R^4">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-transformations.html#eg-matrix-transformation">In Context</a></span>
+</body>
+</html>

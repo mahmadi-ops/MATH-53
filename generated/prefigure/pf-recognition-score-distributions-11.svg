@@ -1,0 +1,420 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="pf-recognition-score-distributions-figure" width="640" height="290" viewBox="0 0 640 290">
+  <defs>
+    <clipPath id="pf-recognition-score-distributions-__clipPath-0">
+      <rect x="0.0" y="0.0" width="640.0" height="290.0"/>
+    </clipPath>
+    <clipPath id="pf-recognition-score-distributions-__clipPath-1">
+      <rect x="0.0" y="0.0" width="640.0" height="290.0"/>
+    </clipPath>
+  </defs>
+  <g id="pf-recognition-score-distributions-score-distributions">
+    <g id="pf-recognition-score-distributions-sd-25">
+      <path id="pf-recognition-score-distributions-sd-25-wall-tail" d="M 160.0 228.0 L 160.0 221.5 L 163.1 223.4 L 166.2 224.8 L 169.3 225.8 L 172.4 226.5 L 175.6 227.0 L 178.7 227.4 L 181.8 227.6 L 184.9 227.8 L 188.0 227.8 L 191.1 227.9 L 194.2 227.9 L 197.3 228.0 L 200.4 228.0 L 203.6 228.0 L 206.7 228.0 L 209.8 228.0 L 212.9 228.0 L 216.0 228.0 L 219.1 228.0 L 222.2 228.0 L 225.3 228.0 L 228.4 228.0 L 231.6 228.0 L 234.7 228.0 L 237.8 228.0 L 240.9 228.0 L 244.0 228.0 L 247.1 228.0 L 250.2 228.0 L 253.3 228.0 L 256.4 228.0 L 259.6 228.0 L 262.7 228.0 L 265.8 228.0 L 268.9 228.0 L 272.0 228.0 L 275.1 228.0 L 278.2 228.0 L 281.3 228.0 L 284.4 228.0 L 287.6 228.0 L 290.7 228.0 L 293.8 228.0 L 296.9 228.0 L 300.0 228.0 L 300.0 228.0 Z" stroke="none" stroke-width="2" fill="#D9BFC5" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+      <path id="pf-recognition-score-distributions-sd-25-cat-tail" d="M 160.0 228.0 L 160.0 221.5 L 156.9 223.4 L 153.8 224.8 L 150.7 225.8 L 147.6 226.5 L 144.4 227.0 L 141.3 227.4 L 138.2 227.6 L 135.1 227.8 L 132.0 227.8 L 128.9 227.9 L 125.8 227.9 L 122.7 228.0 L 119.6 228.0 L 116.4 228.0 L 113.3 228.0 L 110.2 228.0 L 107.1 228.0 L 104.0 228.0 L 100.9 228.0 L 97.8 228.0 L 94.7 228.0 L 91.6 228.0 L 88.4 228.0 L 85.3 228.0 L 82.2 228.0 L 79.1 228.0 L 76.0 228.0 L 72.9 228.0 L 69.8 228.0 L 66.7 228.0 L 63.6 228.0 L 60.4 228.0 L 57.3 228.0 L 54.2 228.0 L 51.1 228.0 L 48.0 228.0 L 44.9 228.0 L 41.8 228.0 L 38.7 228.0 L 35.6 228.0 L 32.4 228.0 L 29.3 228.0 L 26.2 228.0 L 23.1 228.0 L 20.0 228.0 L 20.0 228.0 Z" stroke="none" stroke-width="2" fill="#CBD2BC" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+      <g id="pf-recognition-score-distributions-sd-25-axis">
+        <line id="pf-recognition-score-distributions-__line-0" x1="20.0" y1="228.0" x2="300.0" y2="228.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <line id="pf-recognition-score-distributions-__line-1" x1="102.2" y1="228.0" x2="102.2" y2="233.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-0" transform="translate(102.2,240.0) scale(0.85,0.85) translate(-22.9,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-0">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.832px" width="45.808px" height="12.264px" role="img" focusable="false" viewBox="0 -689 2760 739" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-2-GP-N-2212" d="M680 220C678 230 677 240 677 250C677 260 678 270 680 280L80 280C82 270 83 260 83 250C83 240 82 230 80 220Z"/>
+                <path id="pf-recognition-score-distributions-MJX-2-GP-N-37" d="M497 659L497 689C389 685 380 684 273 684C168 684 151 685 54 689L44 684C44 684 47 620 47 579C47 539 44 477 44 477L74 477L81 533C89 595 96 603 142 603L409 603C369 521 338 463 300 402L56 10L65-3C65-3 93 0 111 0C129 0 157-3 157-3C199 106 225 171 314 330Z"/>
+                <path id="pf-recognition-score-distributions-MJX-2-GP-N-38" d="M464 206C464 286 427 329 313 381C404 443 436 485 436 545C436 631 365 689 259 689C140 689 53 613 53 508C53 440 80 402 168 345C127 326 110 315 88 294C50 256 30 211 30 159C30 56 113-20 226-20C356-20 464 82 464 206M385 164C385 80 322 14 241 14C156 14 101 74 101 167C101 240 130 286 204 331L284 295C347 267 385 218 385 164M368 534C368 477 343 438 278 396L223 423C160 454 128 494 128 544C128 610 176 655 247 655C320 655 368 607 368 534Z"/>
+                <path id="pf-recognition-score-distributions-MJX-2-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+                <path id="pf-recognition-score-distributions-MJX-2-GP-N-39" d="M457 417C457 586 376 689 244 689C116 689 20 589 20 455C20 340 95 256 199 256C233 256 272 267 290 282L360 340C352 172 243 49 62 5L62-3L96-20C207 16 255 39 309 85C406 168 457 283 457 417M370 471C370 379 317 317 240 317C160 317 106 388 106 492C106 593 158 656 240 656C285 656 318 637 340 597C358 565 370 516 370 471Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="prefixop" data-semantic-role="negative" data-semantic-annotation="clearspeak:simple;depth:1" data-semantic-id="2" data-semantic-children="1" data-semantic-content="0" data-semantic-attributes="latex:-7839" data-semantic-speech="negative 7839">
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="subtraction" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:-" data-semantic-operator="prefixop,−" data-semantic-speech="minus">
+                    <use data-c="2212" xlink:href="#pf-recognition-score-distributions-MJX-2-GP-N-2212"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:7839" data-semantic-speech="7839" transform="translate(760,0)">
+                    <use data-c="37" xlink:href="#pf-recognition-score-distributions-MJX-2-GP-N-37"/>
+                    <use data-c="38" xlink:href="#pf-recognition-score-distributions-MJX-2-GP-N-38" transform="translate(500,0)"/>
+                    <use data-c="33" xlink:href="#pf-recognition-score-distributions-MJX-2-GP-N-33" transform="translate(1000,0)"/>
+                    <use data-c="39" xlink:href="#pf-recognition-score-distributions-MJX-2-GP-N-39" transform="translate(1500,0)"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <line id="pf-recognition-score-distributions-__line-2" x1="160.0" y1="228.0" x2="160.0" y2="233.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-1" transform="translate(160.0,240.0) scale(0.85,0.85) translate(-4.1,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-1">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-3-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                    <use data-c="30" xlink:href="#pf-recognition-score-distributions-MJX-3-GP-N-30"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <line id="pf-recognition-score-distributions-__line-3" x1="217.8" y1="228.0" x2="217.8" y2="233.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-2" transform="translate(217.8,240.0) scale(0.85,0.85) translate(-22.9,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-2">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.832px" width="45.808px" height="12.264px" role="img" focusable="false" viewBox="0 -689 2760 739" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-4-GP-N-2B" d="M680 220C678 230 677 240 677 250C677 260 678 270 680 280L410 280L410 550C400 548 390 547 380 547C370 547 360 548 350 550L350 280L80 280C82 270 83 260 83 250C83 240 82 230 80 220L350 220L350-50C360-48 370-47 380-47C390-47 400-48 410-50L410 220Z"/>
+                <path id="pf-recognition-score-distributions-MJX-4-GP-N-37" d="M497 659L497 689C389 685 380 684 273 684C168 684 151 685 54 689L44 684C44 684 47 620 47 579C47 539 44 477 44 477L74 477L81 533C89 595 96 603 142 603L409 603C369 521 338 463 300 402L56 10L65-3C65-3 93 0 111 0C129 0 157-3 157-3C199 106 225 171 314 330Z"/>
+                <path id="pf-recognition-score-distributions-MJX-4-GP-N-38" d="M464 206C464 286 427 329 313 381C404 443 436 485 436 545C436 631 365 689 259 689C140 689 53 613 53 508C53 440 80 402 168 345C127 326 110 315 88 294C50 256 30 211 30 159C30 56 113-20 226-20C356-20 464 82 464 206M385 164C385 80 322 14 241 14C156 14 101 74 101 167C101 240 130 286 204 331L284 295C347 267 385 218 385 164M368 534C368 477 343 438 278 396L223 423C160 454 128 494 128 544C128 610 176 655 247 655C320 655 368 607 368 534Z"/>
+                <path id="pf-recognition-score-distributions-MJX-4-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+                <path id="pf-recognition-score-distributions-MJX-4-GP-N-39" d="M457 417C457 586 376 689 244 689C116 689 20 589 20 455C20 340 95 256 199 256C233 256 272 267 290 282L360 340C352 172 243 49 62 5L62-3L96-20C207 16 255 39 309 85C406 168 457 283 457 417M370 471C370 379 317 317 240 317C160 317 106 388 106 492C106 593 158 656 240 656C285 656 318 637 340 597C358 565 370 516 370 471Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="prefixop" data-semantic-role="positive" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="1" data-semantic-content="0" data-semantic-attributes="latex:+7839" data-semantic-speech="plus 7839">
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-annotation="depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:+" data-semantic-operator="prefixop,+" data-semantic-speech="plus">
+                    <use data-c="2B" xlink:href="#pf-recognition-score-distributions-MJX-4-GP-N-2B"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:7839" data-semantic-speech="7839" transform="translate(760,0)">
+                    <use data-c="37" xlink:href="#pf-recognition-score-distributions-MJX-4-GP-N-37"/>
+                    <use data-c="38" xlink:href="#pf-recognition-score-distributions-MJX-4-GP-N-38" transform="translate(500,0)"/>
+                    <use data-c="33" xlink:href="#pf-recognition-score-distributions-MJX-4-GP-N-33" transform="translate(1000,0)"/>
+                    <use data-c="39" xlink:href="#pf-recognition-score-distributions-MJX-4-GP-N-39" transform="translate(1500,0)"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <g id="pf-recognition-score-distributions-__label-3" transform="translate(160.0,258.0) scale(0.9,0.9) translate(-34.6,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-3">
+            <text font-family="serif" font-size="14" x="0.0" y="11.5">score</text>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.720px" width="32.712px" height="14.208px" role="img" focusable="false" viewBox="0 -692 1971 856" x="36.5" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-5-GP-I-1D460" d="M345 455C306 474 278 482 245 482C193 482 132 453 84 404C58 377 47 352 47 316C47 260 78 228 144 215L207 203C251 195 267 178 267 138C267 72 221 29 150 29C114 29 84 40 56 64L56 148L31 148C26 97 20 62 9 16C47-3 81-11 116-11C165-11 211 7 262 47C313 87 334 124 334 174C334 228 303 257 228 271L185 279C125 290 106 307 106 348C106 401 150 442 208 442C249 442 287 424 303 397L303 342L326 342C330 377 334 404 345 455Z"/>
+                <path id="pf-recognition-score-distributions-MJX-5-GP-N-2061" d=""/>
+                <path id="pf-recognition-score-distributions-MJX-5-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+                <path id="pf-recognition-score-distributions-MJX-5-GP-I-1D44B" d="M734 664L734 692L620 689L505 692L505 664L538 662C570 660 583 655 583 643C583 632 578 623 560 601L399 405L295 604C286 622 281 634 281 642C281 654 294 660 324 662L361 664L361 692L228 689L95 692L95 664L121 662C170 658 182 650 202 613L348 343L110 61C95 43 72 31 48 28L20 25L20-3L145 0L264-3L264 25L232 28C194 32 177 38 177 50C177 58 181 67 187 75L369 306L488 80C497 62 502 49 502 40C502 32 495 31 470 29C451 28 461 29 416 25L416-3L551 0L684-3L684 25L659 27C618 30 605 37 591 61L420 368L641 620C670 654 680 660 706 662Z"/>
+                <path id="pf-recognition-score-distributions-MJX-5-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="appl" data-semantic-role="simple function" data-semantic-annotation="clearspeak:simple;depth:1" data-semantic-id="6" data-semantic-children="0,4" data-semantic-content="5,0" data-semantic-attributes="latex:s(X)" data-semantic-speech="s left parenthesis upper X right parenthesis">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="simple function" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="6" data-semantic-attributes="latex:s" data-semantic-operator="appl" data-semantic-speech="s">
+                    <use data-c="1D460" xlink:href="#pf-recognition-score-distributions-MJX-5-GP-I-1D460"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="application" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="5" data-semantic-parent="6" data-semantic-added="true" data-semantic-operator="appl" data-semantic-speech="of" transform="translate(389,0)">
+                    <use data-c="2061" xlink:href="#pf-recognition-score-distributions-MJX-5-GP-N-2061"/>
+                  </g>
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="4" data-semantic-children="2" data-semantic-content="1,3" data-semantic-parent="6" data-semantic-speech="left parenthesis upper X right parenthesis" transform="translate(389,0)">
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="1" data-semantic-parent="4" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                      <use data-c="28" xlink:href="#pf-recognition-score-distributions-MJX-5-GP-N-28"/>
+                    </g>
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:X" data-semantic-speech="upper X" transform="translate(424,0)">
+                      <use data-c="1D44B" xlink:href="#pf-recognition-score-distributions-MJX-5-GP-I-1D44B"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(1158,0)">
+                      <use data-c="29" xlink:href="#pf-recognition-score-distributions-MJX-5-GP-N-29"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-25-boundary">
+        <line id="pf-recognition-score-distributions-__line-4" x1="160.0" y1="228.0" x2="160.0" y2="56.0" stroke="#404040" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-4" transform="translate(160.0,51.0) scale(0.8,0.8) translate(-64.1,-15.4)">
+          <g id="pf-recognition-score-distributions-__g-4">
+            <text font-family="serif" font-size="14" fill="#404040" x="0.0" y="11.5">boundary</text>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.720px; color:#404040" width="62.848px" height="14.208px" role="img" focusable="false" viewBox="0 -692 3786.6 856" x="65.3" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-6-GP-I-1D460" d="M345 455C306 474 278 482 245 482C193 482 132 453 84 404C58 377 47 352 47 316C47 260 78 228 144 215L207 203C251 195 267 178 267 138C267 72 221 29 150 29C114 29 84 40 56 64L56 148L31 148C26 97 20 62 9 16C47-3 81-11 116-11C165-11 211 7 262 47C313 87 334 124 334 174C334 228 303 257 228 271L185 279C125 290 106 307 106 348C106 401 150 442 208 442C249 442 287 424 303 397L303 342L326 342C330 377 334 404 345 455Z"/>
+                <path id="pf-recognition-score-distributions-MJX-6-GP-N-2061" d=""/>
+                <path id="pf-recognition-score-distributions-MJX-6-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+                <path id="pf-recognition-score-distributions-MJX-6-GP-I-1D44B" d="M734 664L734 692L620 689L505 692L505 664L538 662C570 660 583 655 583 643C583 632 578 623 560 601L399 405L295 604C286 622 281 634 281 642C281 654 294 660 324 662L361 664L361 692L228 689L95 692L95 664L121 662C170 658 182 650 202 613L348 343L110 61C95 43 72 31 48 28L20 25L20-3L145 0L264-3L264 25L232 28C194 32 177 38 177 50C177 58 181 67 187 75L369 306L488 80C497 62 502 49 502 40C502 32 495 31 470 29C451 28 461 29 416 25L416-3L551 0L684-3L684 25L659 27C618 30 605 37 591 61L420 368L641 620C670 654 680 660 706 662Z"/>
+                <path id="pf-recognition-score-distributions-MJX-6-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+                <path id="pf-recognition-score-distributions-MJX-6-GP-N-3D" d="M680 330C678 340 677 350 677 360C677 370 678 380 680 390L80 390C82 380 83 370 83 360C83 350 82 340 80 330M680 110C678 120 677 130 677 140C677 150 678 160 680 170L80 170C82 160 83 150 83 140C83 130 82 120 80 110Z"/>
+                <path id="pf-recognition-score-distributions-MJX-6-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-annotation="depth:1" data-semantic-id="9" data-semantic-children="8,5" data-semantic-content="4" data-semantic-attributes="latex:s(X) = 0" data-semantic-speech="s left parenthesis upper X right parenthesis equals 0">
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="appl" data-semantic-role="simple function" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="8" data-semantic-children="0,6" data-semantic-content="7,0" data-semantic-parent="9" data-semantic-speech="s left parenthesis upper X right parenthesis">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="simple function" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:3" data-semantic-id="0" data-semantic-parent="8" data-semantic-attributes="latex:s" data-semantic-operator="appl" data-semantic-speech="s">
+                      <use data-c="1D460" xlink:href="#pf-recognition-score-distributions-MJX-6-GP-I-1D460"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="application" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="7" data-semantic-parent="8" data-semantic-added="true" data-semantic-operator="appl" data-semantic-speech="of" transform="translate(389,0)">
+                      <use data-c="2061" xlink:href="#pf-recognition-score-distributions-MJX-6-GP-N-2061"/>
+                    </g>
+                    <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:3" data-semantic-id="6" data-semantic-children="2" data-semantic-content="1,3" data-semantic-parent="8" data-semantic-speech="left parenthesis upper X right parenthesis" transform="translate(389,0)">
+                      <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="1" data-semantic-parent="6" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                        <use data-c="28" xlink:href="#pf-recognition-score-distributions-MJX-6-GP-N-28"/>
+                      </g>
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="2" data-semantic-parent="6" data-semantic-attributes="latex:X" data-semantic-speech="upper X" transform="translate(424,0)">
+                        <use data-c="1D44B" xlink:href="#pf-recognition-score-distributions-MJX-6-GP-I-1D44B"/>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="3" data-semantic-parent="6" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(1158,0)">
+                        <use data-c="29" xlink:href="#pf-recognition-score-distributions-MJX-6-GP-N-29"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="4" data-semantic-parent="9" data-semantic-attributes="latex:=" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(2248.8,0)">
+                    <use data-c="3D" xlink:href="#pf-recognition-score-distributions-MJX-6-GP-N-3D"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="5" data-semantic-parent="9" data-semantic-attributes="latex:0" data-semantic-speech="0" transform="translate(3286.6,0)">
+                    <use data-c="30" xlink:href="#pf-recognition-score-distributions-MJX-6-GP-N-30"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-25-wall">
+        <path id="pf-recognition-score-distributions-__path-0" d="M 20.0 227.7 L 23.1 227.6 L 26.2 227.3 L 29.3 227.0 L 32.4 226.5 L 35.6 225.7 L 38.7 224.6 L 41.8 223.2 L 44.9 221.2 L 48.0 218.6 L 51.1 215.1 L 54.2 210.8 L 57.3 205.5 L 60.4 198.9 L 63.6 191.2 L 66.7 182.3 L 69.8 172.3 L 72.9 161.2 L 76.0 149.5 L 79.1 137.3 L 82.2 125.1 L 85.3 113.3 L 88.4 102.6 L 91.6 93.3 L 94.7 85.9 L 97.8 80.8 L 100.9 78.3 L 104.0 78.4 L 107.1 81.3 L 110.2 86.7 L 113.3 94.4 L 116.4 103.9 L 119.6 114.8 L 122.7 126.7 L 125.8 138.9 L 128.9 151.1 L 132.0 162.8 L 135.1 173.7 L 138.2 183.6 L 141.3 192.3 L 144.4 199.9 L 147.6 206.2 L 150.7 211.4 L 153.8 215.6 L 156.9 218.9 L 160.0 221.5 L 163.1 223.4 L 166.2 224.8 L 169.3 225.8 L 172.4 226.5 L 175.6 227.0 L 178.7 227.4 L 181.8 227.6 L 184.9 227.8 L 188.0 227.8 L 191.1 227.9 L 194.2 227.9 L 197.3 228.0 L 200.4 228.0 L 203.6 228.0 L 206.7 228.0 L 209.8 228.0 L 212.9 228.0 L 216.0 228.0 L 219.1 228.0 L 222.2 228.0 L 225.3 228.0 L 228.4 228.0 L 231.6 228.0 L 234.7 228.0 L 237.8 228.0 L 240.9 228.0 L 244.0 228.0 L 247.1 228.0 L 250.2 228.0 L 253.3 228.0 L 256.4 228.0 L 259.6 228.0 L 262.7 228.0 L 265.8 228.0 L 268.9 228.0 L 272.0 228.0 L 275.1 228.0 L 278.2 228.0 L 281.3 228.0 L 284.4 228.0 L 287.6 228.0 L 290.7 228.0 L 293.8 228.0 L 296.9 228.0 L 300.0 228.0" stroke="#5E011C" stroke-width="2" fill="none" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+        <g id="pf-recognition-score-distributions-__label-5" transform="translate(102.2,71.0) scale(0.9,0.9) translate(-31.3,-10.4)">
+          <g id="pf-recognition-score-distributions-__g-5">
+            <text font-family="serif" font-size="14" fill="#5E011C" x="0.0" y="10.2">wall shots</text>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-25-cat">
+        <path id="pf-recognition-score-distributions-__path-1" d="M 20.0 228.0 L 23.1 228.0 L 26.2 228.0 L 29.3 228.0 L 32.4 228.0 L 35.6 228.0 L 38.7 228.0 L 41.8 228.0 L 44.9 228.0 L 48.0 228.0 L 51.1 228.0 L 54.2 228.0 L 57.3 228.0 L 60.4 228.0 L 63.6 228.0 L 66.7 228.0 L 69.8 228.0 L 72.9 228.0 L 76.0 228.0 L 79.1 228.0 L 82.2 228.0 L 85.3 228.0 L 88.4 228.0 L 91.6 228.0 L 94.7 228.0 L 97.8 228.0 L 100.9 228.0 L 104.0 228.0 L 107.1 228.0 L 110.2 228.0 L 113.3 228.0 L 116.4 228.0 L 119.6 228.0 L 122.7 228.0 L 125.8 227.9 L 128.9 227.9 L 132.0 227.8 L 135.1 227.8 L 138.2 227.6 L 141.3 227.4 L 144.4 227.0 L 147.6 226.5 L 150.7 225.8 L 153.8 224.8 L 156.9 223.4 L 160.0 221.5 L 163.1 218.9 L 166.2 215.6 L 169.3 211.4 L 172.4 206.2 L 175.6 199.9 L 178.7 192.3 L 181.8 183.6 L 184.9 173.7 L 188.0 162.8 L 191.1 151.1 L 194.2 138.9 L 197.3 126.7 L 200.4 114.8 L 203.6 103.9 L 206.7 94.4 L 209.8 86.7 L 212.9 81.3 L 216.0 78.4 L 219.1 78.3 L 222.2 80.8 L 225.3 85.9 L 228.4 93.3 L 231.6 102.6 L 234.7 113.3 L 237.8 125.1 L 240.9 137.3 L 244.0 149.5 L 247.1 161.2 L 250.2 172.3 L 253.3 182.3 L 256.4 191.2 L 259.6 198.9 L 262.7 205.5 L 265.8 210.8 L 268.9 215.1 L 272.0 218.6 L 275.1 221.2 L 278.2 223.2 L 281.3 224.6 L 284.4 225.7 L 287.6 226.5 L 290.7 227.0 L 293.8 227.3 L 296.9 227.6 L 300.0 227.7" stroke="#4A5D23" stroke-width="2" fill="none" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+        <g id="pf-recognition-score-distributions-__label-6" transform="translate(217.8,71.0) scale(0.9,0.9) translate(-26.8,-10.4)">
+          <g id="pf-recognition-score-distributions-__g-6">
+            <text font-family="serif" font-size="14" fill="#4A5D23" x="0.0" y="10.2">cat shots</text>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-25-title" transform="translate(160.0,26.0) scale(0.9,0.9) translate(-139.2,-11.8)">
+        <g id="pf-recognition-score-distributions-__g-7">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="49.040px" height="11.768px" role="img" focusable="false" viewBox="0 -689 2954.6 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-score-distributions-MJX-7-GP-I-1D70E" d="M639 482L632 494C605 485 559 478 526 478L420 479C389 480 354 482 330 482C286 482 243 467 198 437C110 379 59 277 53 152C47 27 92-11 157-11C201-11 242 9 292 54C337 95 384 158 416 221C443 274 464 342 466 384C467 397 465 409 463 420C496 418 524 418 546 418C564 418 586 426 603 432C614 453 619 458 639 482M400 356C393 207 289 39 201 39C152 39 126 85 129 151C134 270 180 388 229 427C243 438 265 444 289 444C350 444 404 434 400 356Z"/>
+              <path id="pf-recognition-score-distributions-MJX-7-GP-N-3D" d="M680 330C678 340 677 350 677 360C677 370 678 380 680 390L80 390C82 380 83 370 83 360C83 350 82 340 80 330M680 110C678 120 677 130 677 140C677 150 678 160 680 170L80 170C82 160 83 150 83 140C83 130 82 120 80 110Z"/>
+              <path id="pf-recognition-score-distributions-MJX-7-GP-N-32" d="M468-3C466 18 466 28 466 42C466 55 466 65 468 87L122 77L304 270C401 373 431 428 431 503C431 618 353 689 226 689C154 689 105 669 56 619L39 483L68 483L81 529C97 587 133 612 200 612C286 612 341 558 341 473C341 398 299 324 186 204L16 23L16-3L239 0Z"/>
+              <path id="pf-recognition-score-distributions-MJX-7-GP-N-35" d="M459 253C459 366 378 446 264 446C216 446 180 433 118 396L127 605L432 600L437 605C435 623 435 629 435 644C435 660 435 666 437 684L432 689C432 689 326 684 258 684C190 684 84 689 84 689L79 684L81 547C81 459 78 366 75 322L95 316C142 363 169 377 218 377C314 377 374 309 374 201C374 90 310 25 201 25C147 25 97 43 83 69L37 151L13 137C36 80 48 48 62 4C90-11 130-20 173-20C240-20 311 9 366 57C427 111 459 179 459 253Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-annotation="depth:1" data-semantic-id="3" data-semantic-children="0,2" data-semantic-content="1" data-semantic-attributes="latex:\sigma = 25" data-semantic-speech="sigma equals 25">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="3" data-semantic-attributes="latex:\sigma" data-semantic-speech="sigma">
+                  <use data-c="1D70E" xlink:href="#pf-recognition-score-distributions-MJX-7-GP-I-1D70E"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:=" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(916.8,0)">
+                  <use data-c="3D" xlink:href="#pf-recognition-score-distributions-MJX-7-GP-N-3D"/>
+                </g>
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:25" data-semantic-speech="25" transform="translate(1954.6,0)">
+                  <use data-c="32" xlink:href="#pf-recognition-score-distributions-MJX-7-GP-N-32"/>
+                  <use data-c="35" xlink:href="#pf-recognition-score-distributions-MJX-7-GP-N-35" transform="translate(500,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <text font-family="serif" font-size="14" x="53.5" y="11.4">: each shaded tail is 0.6% of its curve</text>
+        </g>
+      </g>
+    </g>
+    <g id="pf-recognition-score-distributions-sd-50">
+      <path id="pf-recognition-score-distributions-sd-50-wall-tail" d="M 480.0 228.0 L 480.0 159.5 L 483.1 168.7 L 486.2 177.2 L 489.3 185.1 L 492.4 192.2 L 495.6 198.4 L 498.7 203.9 L 501.8 208.6 L 504.9 212.6 L 508.0 215.9 L 511.1 218.6 L 514.2 220.8 L 517.3 222.5 L 520.4 223.9 L 523.6 225.0 L 526.7 225.8 L 529.8 226.4 L 532.9 226.9 L 536.0 227.2 L 539.1 227.4 L 542.2 227.6 L 545.3 227.7 L 548.4 227.8 L 551.6 227.9 L 554.7 227.9 L 557.8 227.9 L 560.9 228.0 L 564.0 228.0 L 567.1 228.0 L 570.2 228.0 L 573.3 228.0 L 576.4 228.0 L 579.6 228.0 L 582.7 228.0 L 585.8 228.0 L 588.9 228.0 L 592.0 228.0 L 595.1 228.0 L 598.2 228.0 L 601.3 228.0 L 604.4 228.0 L 607.6 228.0 L 610.7 228.0 L 613.8 228.0 L 616.9 228.0 L 620.0 228.0 L 620.0 228.0 Z" stroke="none" stroke-width="2" fill="#D9BFC5" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+      <path id="pf-recognition-score-distributions-sd-50-cat-tail" d="M 480.0 228.0 L 480.0 159.5 L 476.9 168.7 L 473.8 177.2 L 470.7 185.1 L 467.6 192.2 L 464.4 198.4 L 461.3 203.9 L 458.2 208.6 L 455.1 212.6 L 452.0 215.9 L 448.9 218.6 L 445.8 220.8 L 442.7 222.5 L 439.6 223.9 L 436.4 225.0 L 433.3 225.8 L 430.2 226.4 L 427.1 226.9 L 424.0 227.2 L 420.9 227.4 L 417.8 227.6 L 414.7 227.7 L 411.6 227.8 L 408.4 227.9 L 405.3 227.9 L 402.2 227.9 L 399.1 228.0 L 396.0 228.0 L 392.9 228.0 L 389.8 228.0 L 386.7 228.0 L 383.6 228.0 L 380.4 228.0 L 377.3 228.0 L 374.2 228.0 L 371.1 228.0 L 368.0 228.0 L 364.9 228.0 L 361.8 228.0 L 358.7 228.0 L 355.6 228.0 L 352.4 228.0 L 349.3 228.0 L 346.2 228.0 L 343.1 228.0 L 340.0 228.0 L 340.0 228.0 Z" stroke="none" stroke-width="2" fill="#CBD2BC" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+      <g id="pf-recognition-score-distributions-sd-50-axis">
+        <line id="pf-recognition-score-distributions-__line-5" x1="340.0" y1="228.0" x2="620.0" y2="228.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <line id="pf-recognition-score-distributions-__line-6" x1="444.6" y1="228.0" x2="444.6" y2="233.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-7" transform="translate(444.6,240.0) scale(0.85,0.85) translate(-22.9,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-8">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.832px" width="45.808px" height="12.264px" role="img" focusable="false" viewBox="0 -689 2760 739" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-8-GP-N-2212" d="M680 220C678 230 677 240 677 250C677 260 678 270 680 280L80 280C82 270 83 260 83 250C83 240 82 230 80 220Z"/>
+                <path id="pf-recognition-score-distributions-MJX-8-GP-N-37" d="M497 659L497 689C389 685 380 684 273 684C168 684 151 685 54 689L44 684C44 684 47 620 47 579C47 539 44 477 44 477L74 477L81 533C89 595 96 603 142 603L409 603C369 521 338 463 300 402L56 10L65-3C65-3 93 0 111 0C129 0 157-3 157-3C199 106 225 171 314 330Z"/>
+                <path id="pf-recognition-score-distributions-MJX-8-GP-N-38" d="M464 206C464 286 427 329 313 381C404 443 436 485 436 545C436 631 365 689 259 689C140 689 53 613 53 508C53 440 80 402 168 345C127 326 110 315 88 294C50 256 30 211 30 159C30 56 113-20 226-20C356-20 464 82 464 206M385 164C385 80 322 14 241 14C156 14 101 74 101 167C101 240 130 286 204 331L284 295C347 267 385 218 385 164M368 534C368 477 343 438 278 396L223 423C160 454 128 494 128 544C128 610 176 655 247 655C320 655 368 607 368 534Z"/>
+                <path id="pf-recognition-score-distributions-MJX-8-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+                <path id="pf-recognition-score-distributions-MJX-8-GP-N-39" d="M457 417C457 586 376 689 244 689C116 689 20 589 20 455C20 340 95 256 199 256C233 256 272 267 290 282L360 340C352 172 243 49 62 5L62-3L96-20C207 16 255 39 309 85C406 168 457 283 457 417M370 471C370 379 317 317 240 317C160 317 106 388 106 492C106 593 158 656 240 656C285 656 318 637 340 597C358 565 370 516 370 471Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="prefixop" data-semantic-role="negative" data-semantic-annotation="clearspeak:simple;depth:1" data-semantic-id="2" data-semantic-children="1" data-semantic-content="0" data-semantic-attributes="latex:-7839" data-semantic-speech="negative 7839">
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="subtraction" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:-" data-semantic-operator="prefixop,−" data-semantic-speech="minus">
+                    <use data-c="2212" xlink:href="#pf-recognition-score-distributions-MJX-8-GP-N-2212"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:7839" data-semantic-speech="7839" transform="translate(760,0)">
+                    <use data-c="37" xlink:href="#pf-recognition-score-distributions-MJX-8-GP-N-37"/>
+                    <use data-c="38" xlink:href="#pf-recognition-score-distributions-MJX-8-GP-N-38" transform="translate(500,0)"/>
+                    <use data-c="33" xlink:href="#pf-recognition-score-distributions-MJX-8-GP-N-33" transform="translate(1000,0)"/>
+                    <use data-c="39" xlink:href="#pf-recognition-score-distributions-MJX-8-GP-N-39" transform="translate(1500,0)"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <line id="pf-recognition-score-distributions-__line-7" x1="480.0" y1="228.0" x2="480.0" y2="233.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-8" transform="translate(480.0,240.0) scale(0.85,0.85) translate(-4.1,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-9">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="8.296px" height="11.768px" role="img" focusable="false" viewBox="0 -689 500 709" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-9-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:1" data-semantic-id="0" data-semantic-attributes="latex:0" data-semantic-speech="0">
+                    <use data-c="30" xlink:href="#pf-recognition-score-distributions-MJX-9-GP-N-30"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <line id="pf-recognition-score-distributions-__line-8" x1="515.4" y1="228.0" x2="515.4" y2="233.0" stroke="#404040" stroke-width="1" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-9" transform="translate(515.4,240.0) scale(0.85,0.85) translate(-22.9,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-10">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.832px" width="45.808px" height="12.264px" role="img" focusable="false" viewBox="0 -689 2760 739" x="0.0" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-10-GP-N-2B" d="M680 220C678 230 677 240 677 250C677 260 678 270 680 280L410 280L410 550C400 548 390 547 380 547C370 547 360 548 350 550L350 280L80 280C82 270 83 260 83 250C83 240 82 230 80 220L350 220L350-50C360-48 370-47 380-47C390-47 400-48 410-50L410 220Z"/>
+                <path id="pf-recognition-score-distributions-MJX-10-GP-N-37" d="M497 659L497 689C389 685 380 684 273 684C168 684 151 685 54 689L44 684C44 684 47 620 47 579C47 539 44 477 44 477L74 477L81 533C89 595 96 603 142 603L409 603C369 521 338 463 300 402L56 10L65-3C65-3 93 0 111 0C129 0 157-3 157-3C199 106 225 171 314 330Z"/>
+                <path id="pf-recognition-score-distributions-MJX-10-GP-N-38" d="M464 206C464 286 427 329 313 381C404 443 436 485 436 545C436 631 365 689 259 689C140 689 53 613 53 508C53 440 80 402 168 345C127 326 110 315 88 294C50 256 30 211 30 159C30 56 113-20 226-20C356-20 464 82 464 206M385 164C385 80 322 14 241 14C156 14 101 74 101 167C101 240 130 286 204 331L284 295C347 267 385 218 385 164M368 534C368 477 343 438 278 396L223 423C160 454 128 494 128 544C128 610 176 655 247 655C320 655 368 607 368 534Z"/>
+                <path id="pf-recognition-score-distributions-MJX-10-GP-N-33" d="M462 224C462 272 442 314 406 339C381 357 358 365 308 374C388 436 418 482 418 541C418 630 344 689 233 689C165 689 120 670 72 622L43 498L74 498L92 554C103 588 166 622 218 622C283 622 336 569 336 506C336 431 277 368 206 368C198 368 159 371 159 371L147 318L154 312C192 329 211 334 238 334C321 334 369 281 369 190C369 88 308 21 215 21C169 21 128 36 98 64C74 86 61 109 42 163L15 153C36 92 44 56 50 6C103-12 147-20 184-20C264-20 356 25 411 92C445 133 462 177 462 224Z"/>
+                <path id="pf-recognition-score-distributions-MJX-10-GP-N-39" d="M457 417C457 586 376 689 244 689C116 689 20 589 20 455C20 340 95 256 199 256C233 256 272 267 290 282L360 340C352 172 243 49 62 5L62-3L96-20C207 16 255 39 309 85C406 168 457 283 457 417M370 471C370 379 317 317 240 317C160 317 106 388 106 492C106 593 158 656 240 656C285 656 318 637 340 597C358 565 370 516 370 471Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="prefixop" data-semantic-role="positive" data-semantic-annotation="depth:1" data-semantic-id="2" data-semantic-children="1" data-semantic-content="0" data-semantic-attributes="latex:+7839" data-semantic-speech="plus 7839">
+                  <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-annotation="depth:2" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="latex:+" data-semantic-operator="prefixop,+" data-semantic-speech="plus">
+                    <use data-c="2B" xlink:href="#pf-recognition-score-distributions-MJX-10-GP-N-2B"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="latex:7839" data-semantic-speech="7839" transform="translate(760,0)">
+                    <use data-c="37" xlink:href="#pf-recognition-score-distributions-MJX-10-GP-N-37"/>
+                    <use data-c="38" xlink:href="#pf-recognition-score-distributions-MJX-10-GP-N-38" transform="translate(500,0)"/>
+                    <use data-c="33" xlink:href="#pf-recognition-score-distributions-MJX-10-GP-N-33" transform="translate(1000,0)"/>
+                    <use data-c="39" xlink:href="#pf-recognition-score-distributions-MJX-10-GP-N-39" transform="translate(1500,0)"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+        <g id="pf-recognition-score-distributions-__label-10" transform="translate(480.0,258.0) scale(0.9,0.9) translate(-34.6,-0.0)">
+          <g id="pf-recognition-score-distributions-__g-11">
+            <text font-family="serif" font-size="14" x="0.0" y="11.5">score</text>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.720px" width="32.712px" height="14.208px" role="img" focusable="false" viewBox="0 -692 1971 856" x="36.5" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-11-GP-I-1D460" d="M345 455C306 474 278 482 245 482C193 482 132 453 84 404C58 377 47 352 47 316C47 260 78 228 144 215L207 203C251 195 267 178 267 138C267 72 221 29 150 29C114 29 84 40 56 64L56 148L31 148C26 97 20 62 9 16C47-3 81-11 116-11C165-11 211 7 262 47C313 87 334 124 334 174C334 228 303 257 228 271L185 279C125 290 106 307 106 348C106 401 150 442 208 442C249 442 287 424 303 397L303 342L326 342C330 377 334 404 345 455Z"/>
+                <path id="pf-recognition-score-distributions-MJX-11-GP-N-2061" d=""/>
+                <path id="pf-recognition-score-distributions-MJX-11-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+                <path id="pf-recognition-score-distributions-MJX-11-GP-I-1D44B" d="M734 664L734 692L620 689L505 692L505 664L538 662C570 660 583 655 583 643C583 632 578 623 560 601L399 405L295 604C286 622 281 634 281 642C281 654 294 660 324 662L361 664L361 692L228 689L95 692L95 664L121 662C170 658 182 650 202 613L348 343L110 61C95 43 72 31 48 28L20 25L20-3L145 0L264-3L264 25L232 28C194 32 177 38 177 50C177 58 181 67 187 75L369 306L488 80C497 62 502 49 502 40C502 32 495 31 470 29C451 28 461 29 416 25L416-3L551 0L684-3L684 25L659 27C618 30 605 37 591 61L420 368L641 620C670 654 680 660 706 662Z"/>
+                <path id="pf-recognition-score-distributions-MJX-11-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="appl" data-semantic-role="simple function" data-semantic-annotation="clearspeak:simple;depth:1" data-semantic-id="6" data-semantic-children="0,4" data-semantic-content="5,0" data-semantic-attributes="latex:s(X)" data-semantic-speech="s left parenthesis upper X right parenthesis">
+                  <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="simple function" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="6" data-semantic-attributes="latex:s" data-semantic-operator="appl" data-semantic-speech="s">
+                    <use data-c="1D460" xlink:href="#pf-recognition-score-distributions-MJX-11-GP-I-1D460"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="application" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="5" data-semantic-parent="6" data-semantic-added="true" data-semantic-operator="appl" data-semantic-speech="of" transform="translate(389,0)">
+                    <use data-c="2061" xlink:href="#pf-recognition-score-distributions-MJX-11-GP-N-2061"/>
+                  </g>
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:2" data-semantic-id="4" data-semantic-children="2" data-semantic-content="1,3" data-semantic-parent="6" data-semantic-speech="left parenthesis upper X right parenthesis" transform="translate(389,0)">
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:3" data-semantic-id="1" data-semantic-parent="4" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                      <use data-c="28" xlink:href="#pf-recognition-score-distributions-MJX-11-GP-N-28"/>
+                    </g>
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:3" data-semantic-id="2" data-semantic-parent="4" data-semantic-attributes="latex:X" data-semantic-speech="upper X" transform="translate(424,0)">
+                      <use data-c="1D44B" xlink:href="#pf-recognition-score-distributions-MJX-11-GP-I-1D44B"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:3" data-semantic-id="3" data-semantic-parent="4" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(1158,0)">
+                      <use data-c="29" xlink:href="#pf-recognition-score-distributions-MJX-11-GP-N-29"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-50-boundary">
+        <line id="pf-recognition-score-distributions-__line-9" x1="480.0" y1="228.0" x2="480.0" y2="56.0" stroke="#404040" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+        <g id="pf-recognition-score-distributions-__label-11" transform="translate(480.0,51.0) scale(0.8,0.8) translate(-64.1,-15.4)">
+          <g id="pf-recognition-score-distributions-__g-12">
+            <text font-family="serif" font-size="14" fill="#404040" x="0.0" y="11.5">boundary</text>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.720px; color:#404040" width="62.848px" height="14.208px" role="img" focusable="false" viewBox="0 -692 3786.6 856" x="65.3" y="0.0">
+              <defs>
+                <path id="pf-recognition-score-distributions-MJX-12-GP-I-1D460" d="M345 455C306 474 278 482 245 482C193 482 132 453 84 404C58 377 47 352 47 316C47 260 78 228 144 215L207 203C251 195 267 178 267 138C267 72 221 29 150 29C114 29 84 40 56 64L56 148L31 148C26 97 20 62 9 16C47-3 81-11 116-11C165-11 211 7 262 47C313 87 334 124 334 174C334 228 303 257 228 271L185 279C125 290 106 307 106 348C106 401 150 442 208 442C249 442 287 424 303 397L303 342L326 342C330 377 334 404 345 455Z"/>
+                <path id="pf-recognition-score-distributions-MJX-12-GP-N-2061" d=""/>
+                <path id="pf-recognition-score-distributions-MJX-12-GP-N-28" d="M344 636C338 639 333 643 328 648C323 653 319 658 316 664C193 541 120 410 120 283L120 217C120 90 193-41 316-164C319-158 323-153 328-148C333-143 338-139 344-136C233-24 180 101 180 217L180 283C180 399 233 524 344 636Z"/>
+                <path id="pf-recognition-score-distributions-MJX-12-GP-I-1D44B" d="M734 664L734 692L620 689L505 692L505 664L538 662C570 660 583 655 583 643C583 632 578 623 560 601L399 405L295 604C286 622 281 634 281 642C281 654 294 660 324 662L361 664L361 692L228 689L95 692L95 664L121 662C170 658 182 650 202 613L348 343L110 61C95 43 72 31 48 28L20 25L20-3L145 0L264-3L264 25L232 28C194 32 177 38 177 50C177 58 181 67 187 75L369 306L488 80C497 62 502 49 502 40C502 32 495 31 470 29C451 28 461 29 416 25L416-3L551 0L684-3L684 25L659 27C618 30 605 37 591 61L420 368L641 620C670 654 680 660 706 662Z"/>
+                <path id="pf-recognition-score-distributions-MJX-12-GP-N-29" d="M304 217L304 283C304 410 231 541 108 664C105 658 101 653 96 648C91 643 86 639 80 636C191 524 244 399 244 283L244 217C244 101 191-24 80-136C86-139 91-143 96-148C101-153 105-158 108-164C231-41 304 90 304 217Z"/>
+                <path id="pf-recognition-score-distributions-MJX-12-GP-N-3D" d="M680 330C678 340 677 350 677 360C677 370 678 380 680 390L80 390C82 380 83 370 83 360C83 350 82 340 80 330M680 110C678 120 677 130 677 140C677 150 678 160 680 170L80 170C82 160 83 150 83 140C83 130 82 120 80 110Z"/>
+                <path id="pf-recognition-score-distributions-MJX-12-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+              </defs>
+              <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+                <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-annotation="depth:1" data-semantic-id="9" data-semantic-children="8,5" data-semantic-content="4" data-semantic-attributes="latex:s(X) = 0" data-semantic-speech="s left parenthesis upper X right parenthesis equals 0">
+                  <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="appl" data-semantic-role="simple function" data-semantic-annotation="clearspeak:simple;depth:2" data-semantic-id="8" data-semantic-children="0,6" data-semantic-content="7,0" data-semantic-parent="9" data-semantic-speech="s left parenthesis upper X right parenthesis">
+                    <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="simple function" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:3" data-semantic-id="0" data-semantic-parent="8" data-semantic-attributes="latex:s" data-semantic-operator="appl" data-semantic-speech="s">
+                      <use data-c="1D460" xlink:href="#pf-recognition-score-distributions-MJX-12-GP-I-1D460"/>
+                    </g>
+                    <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="application" data-semantic-annotation="nemeth:number;depth:3" data-semantic-id="7" data-semantic-parent="8" data-semantic-added="true" data-semantic-operator="appl" data-semantic-speech="of" transform="translate(389,0)">
+                      <use data-c="2061" xlink:href="#pf-recognition-score-distributions-MJX-12-GP-N-2061"/>
+                    </g>
+                    <g data-mml-node="mrow" data-semantic-added="true" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-annotation="fences:paren;depth:3" data-semantic-id="6" data-semantic-children="2" data-semantic-content="1,3" data-semantic-parent="8" data-semantic-speech="left parenthesis upper X right parenthesis" transform="translate(389,0)">
+                      <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-annotation="depth:4" data-semantic-id="1" data-semantic-parent="6" data-semantic-attributes="latex:(" data-semantic-operator="fenced" data-semantic-speech="left parenthesis">
+                        <use data-c="28" xlink:href="#pf-recognition-score-distributions-MJX-12-GP-N-28"/>
+                      </g>
+                      <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;depth:4" data-semantic-id="2" data-semantic-parent="6" data-semantic-attributes="latex:X" data-semantic-speech="upper X" transform="translate(424,0)">
+                        <use data-c="1D44B" xlink:href="#pf-recognition-score-distributions-MJX-12-GP-I-1D44B"/>
+                      </g>
+                      <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-annotation="depth:4" data-semantic-id="3" data-semantic-parent="6" data-semantic-attributes="latex:)" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(1158,0)">
+                        <use data-c="29" xlink:href="#pf-recognition-score-distributions-MJX-12-GP-N-29"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="4" data-semantic-parent="9" data-semantic-attributes="latex:=" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(2248.8,0)">
+                    <use data-c="3D" xlink:href="#pf-recognition-score-distributions-MJX-12-GP-N-3D"/>
+                  </g>
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="5" data-semantic-parent="9" data-semantic-attributes="latex:0" data-semantic-speech="0" transform="translate(3286.6,0)">
+                    <use data-c="30" xlink:href="#pf-recognition-score-distributions-MJX-12-GP-N-30"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-50-wall">
+        <path id="pf-recognition-score-distributions-__path-2" d="M 340.0 227.8 L 343.1 227.8 L 346.2 227.7 L 349.3 227.5 L 352.4 227.3 L 355.6 226.9 L 358.7 226.5 L 361.8 225.9 L 364.9 225.2 L 368.0 224.2 L 371.1 222.9 L 374.2 221.2 L 377.3 219.2 L 380.4 216.6 L 383.6 213.4 L 386.7 209.6 L 389.8 205.1 L 392.9 199.8 L 396.0 193.8 L 399.1 186.9 L 402.2 179.2 L 405.3 170.8 L 408.4 161.8 L 411.6 152.2 L 414.7 142.3 L 417.8 132.3 L 420.9 122.5 L 424.0 113.0 L 427.1 104.1 L 430.2 96.2 L 433.3 89.4 L 436.4 84.1 L 439.6 80.4 L 442.7 78.3 L 445.8 78.1 L 448.9 79.7 L 452.0 83.1 L 455.1 88.0 L 458.2 94.4 L 461.3 102.1 L 464.4 110.8 L 467.6 120.1 L 470.7 129.9 L 473.8 139.9 L 476.9 149.9 L 480.0 159.5 L 483.1 168.7 L 486.2 177.2 L 489.3 185.1 L 492.4 192.2 L 495.6 198.4 L 498.7 203.9 L 501.8 208.6 L 504.9 212.6 L 508.0 215.9 L 511.1 218.6 L 514.2 220.8 L 517.3 222.5 L 520.4 223.9 L 523.6 225.0 L 526.7 225.8 L 529.8 226.4 L 532.9 226.9 L 536.0 227.2 L 539.1 227.4 L 542.2 227.6 L 545.3 227.7 L 548.4 227.8 L 551.6 227.9 L 554.7 227.9 L 557.8 227.9 L 560.9 228.0 L 564.0 228.0 L 567.1 228.0 L 570.2 228.0 L 573.3 228.0 L 576.4 228.0 L 579.6 228.0 L 582.7 228.0 L 585.8 228.0 L 588.9 228.0 L 592.0 228.0 L 595.1 228.0 L 598.2 228.0 L 601.3 228.0 L 604.4 228.0 L 607.6 228.0 L 610.7 228.0 L 613.8 228.0 L 616.9 228.0 L 620.0 228.0" stroke="#5E011C" stroke-width="2" fill="none" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+        <g id="pf-recognition-score-distributions-__label-12" transform="translate(428.6,70.0) scale(0.9,0.9) translate(-62.6,-5.2)">
+          <g id="pf-recognition-score-distributions-__g-13">
+            <text font-family="serif" font-size="14" fill="#5E011C" x="0.0" y="10.2">wall shots</text>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-50-cat">
+        <path id="pf-recognition-score-distributions-__path-3" d="M 340.0 228.0 L 343.1 228.0 L 346.2 228.0 L 349.3 228.0 L 352.4 228.0 L 355.6 228.0 L 358.7 228.0 L 361.8 228.0 L 364.9 228.0 L 368.0 228.0 L 371.1 228.0 L 374.2 228.0 L 377.3 228.0 L 380.4 228.0 L 383.6 228.0 L 386.7 228.0 L 389.8 228.0 L 392.9 228.0 L 396.0 228.0 L 399.1 228.0 L 402.2 227.9 L 405.3 227.9 L 408.4 227.9 L 411.6 227.8 L 414.7 227.7 L 417.8 227.6 L 420.9 227.4 L 424.0 227.2 L 427.1 226.9 L 430.2 226.4 L 433.3 225.8 L 436.4 225.0 L 439.6 223.9 L 442.7 222.5 L 445.8 220.8 L 448.9 218.6 L 452.0 215.9 L 455.1 212.6 L 458.2 208.6 L 461.3 203.9 L 464.4 198.4 L 467.6 192.2 L 470.7 185.1 L 473.8 177.2 L 476.9 168.7 L 480.0 159.5 L 483.1 149.9 L 486.2 139.9 L 489.3 129.9 L 492.4 120.1 L 495.6 110.8 L 498.7 102.1 L 501.8 94.4 L 504.9 88.0 L 508.0 83.1 L 511.1 79.7 L 514.2 78.1 L 517.3 78.3 L 520.4 80.4 L 523.6 84.1 L 526.7 89.4 L 529.8 96.2 L 532.9 104.1 L 536.0 113.0 L 539.1 122.5 L 542.2 132.3 L 545.3 142.3 L 548.4 152.2 L 551.6 161.8 L 554.7 170.8 L 557.8 179.2 L 560.9 186.9 L 564.0 193.8 L 567.1 199.8 L 570.2 205.1 L 573.3 209.6 L 576.4 213.4 L 579.6 216.6 L 582.7 219.2 L 585.8 221.2 L 588.9 222.9 L 592.0 224.2 L 595.1 225.2 L 598.2 225.9 L 601.3 226.5 L 604.4 226.9 L 607.6 227.3 L 610.7 227.5 L 613.8 227.7 L 616.9 227.8 L 620.0 227.8" stroke="#4A5D23" stroke-width="2" fill="none" clip-path="url(#pf-recognition-score-distributions-__clipPath-1)"/>
+        <g id="pf-recognition-score-distributions-__label-13" transform="translate(531.4,70.0) scale(0.9,0.9) translate(0.0,-5.2)">
+          <g id="pf-recognition-score-distributions-__g-14">
+            <text font-family="serif" font-size="14" fill="#4A5D23" x="0.0" y="10.2">cat shots</text>
+          </g>
+        </g>
+      </g>
+      <g id="pf-recognition-score-distributions-sd-50-title" transform="translate(480.0,26.0) scale(0.9,0.9) translate(-142.7,-11.8)">
+        <g id="pf-recognition-score-distributions-__g-15">
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.328px" width="49.040px" height="11.768px" role="img" focusable="false" viewBox="0 -689 2954.6 709" x="0.0" y="0.0">
+            <defs>
+              <path id="pf-recognition-score-distributions-MJX-13-GP-I-1D70E" d="M639 482L632 494C605 485 559 478 526 478L420 479C389 480 354 482 330 482C286 482 243 467 198 437C110 379 59 277 53 152C47 27 92-11 157-11C201-11 242 9 292 54C337 95 384 158 416 221C443 274 464 342 466 384C467 397 465 409 463 420C496 418 524 418 546 418C564 418 586 426 603 432C614 453 619 458 639 482M400 356C393 207 289 39 201 39C152 39 126 85 129 151C134 270 180 388 229 427C243 438 265 444 289 444C350 444 404 434 400 356Z"/>
+              <path id="pf-recognition-score-distributions-MJX-13-GP-N-3D" d="M680 330C678 340 677 350 677 360C677 370 678 380 680 390L80 390C82 380 83 370 83 360C83 350 82 340 80 330M680 110C678 120 677 130 677 140C677 150 678 160 680 170L80 170C82 160 83 150 83 140C83 130 82 120 80 110Z"/>
+              <path id="pf-recognition-score-distributions-MJX-13-GP-N-35" d="M459 253C459 366 378 446 264 446C216 446 180 433 118 396L127 605L432 600L437 605C435 623 435 629 435 644C435 660 435 666 437 684L432 689C432 689 326 684 258 684C190 684 84 689 84 689L79 684L81 547C81 459 78 366 75 322L95 316C142 363 169 377 218 377C314 377 374 309 374 201C374 90 310 25 201 25C147 25 97 43 83 69L37 151L13 137C36 80 48 48 62 4C90-11 130-20 173-20C240-20 311 9 366 57C427 111 459 179 459 253Z"/>
+              <path id="pf-recognition-score-distributions-MJX-13-GP-N-30" d="M465 366C465 585 400 689 263 689C108 689 29 566 29 324C29 207 50 106 85 57C120 8 176-20 238-20C389-20 465 110 465 366M381 316C381 103 343 15 251 15C154 15 113 116 113 360C113 571 150 654 245 654C342 654 381 556 381 316Z"/>
+            </defs>
+            <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+              <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-annotation="depth:1" data-semantic-id="3" data-semantic-children="0,2" data-semantic-content="1" data-semantic-attributes="latex:\sigma = 50" data-semantic-speech="sigma equals 50">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="0" data-semantic-parent="3" data-semantic-attributes="latex:\sigma" data-semantic-speech="sigma">
+                  <use data-c="1D70E" xlink:href="#pf-recognition-score-distributions-MJX-13-GP-I-1D70E"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-annotation="nemeth:number;depth:2" data-semantic-id="1" data-semantic-parent="3" data-semantic-attributes="latex:=" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(916.8,0)">
+                  <use data-c="3D" xlink:href="#pf-recognition-score-distributions-MJX-13-GP-N-3D"/>
+                </g>
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple;nemeth:number;depth:2" data-semantic-id="2" data-semantic-parent="3" data-semantic-attributes="latex:50" data-semantic-speech="50" transform="translate(1954.6,0)">
+                  <use data-c="35" xlink:href="#pf-recognition-score-distributions-MJX-13-GP-N-35"/>
+                  <use data-c="30" xlink:href="#pf-recognition-score-distributions-MJX-13-GP-N-30" transform="translate(500,0)"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <text font-family="serif" font-size="14" x="53.5" y="11.4">: each shaded tail is 10.5% of its curve</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

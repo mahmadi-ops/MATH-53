@@ -1,0 +1,102 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-heat-plate-heat-plate" speech2="A square plate with a grid: four interior points with unknown temperatures and eight edge points with known temperatures">
+      <grouped>pf-heat-plate-heat-plate</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-heat-plate-plate-outline</active>
+        <active>pf-heat-plate-grid-lines</active>
+        <active>pf-heat-plate-edge-top</active>
+        <active>pf-heat-plate-edge-right</active>
+        <active>pf-heat-plate-edge-bottom</active>
+        <active>pf-heat-plate-edge-left</active>
+        <active>pf-heat-plate-heat-x1</active>
+        <active>pf-heat-plate-heat-x2</active>
+        <active>pf-heat-plate-heat-x3</active>
+        <active>pf-heat-plate-heat-x4</active>
+      </children>
+      <components>
+        <active>pf-heat-plate-plate-outline</active>
+        <active>pf-heat-plate-grid-lines</active>
+        <active>pf-heat-plate-edge-top</active>
+        <active>pf-heat-plate-edge-right</active>
+        <active>pf-heat-plate-edge-bottom</active>
+        <active>pf-heat-plate-edge-left</active>
+        <active>pf-heat-plate-heat-x1</active>
+        <active>pf-heat-plate-heat-x2</active>
+        <active>pf-heat-plate-heat-x3</active>
+        <active>pf-heat-plate-heat-x4</active>
+      </components>
+    </annotation>
+    <annotation id="pf-heat-plate-plate-outline" speech2="The outline of the square plate">
+      <active>pf-heat-plate-plate-outline</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-grid-lines" speech2="Two vertical and two horizontal dashed grid lines, which cross at the four interior points and meet the edges at the eight edge points">
+      <active>pf-heat-plate-grid-lines</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-edge-top" speech2="The top edge, held at 80 degrees, with two grid points">
+      <active>pf-heat-plate-edge-top</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-edge-right" speech2="The right edge, held at 60 degrees, with two grid points">
+      <active>pf-heat-plate-edge-right</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-edge-bottom" speech2="The bottom edge, held at 40 degrees, with two grid points">
+      <active>pf-heat-plate-edge-bottom</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-edge-left" speech2="The left edge, held at 20 degrees, with two grid points">
+      <active>pf-heat-plate-edge-left</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-heat-x1" speech2="Upper left interior point, temperature x 1. Its neighbors are the top edge at 80 degrees, the left edge at 20 degrees, x 2 to its right, and x 3 below it.">
+      <active>pf-heat-plate-heat-x1</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-heat-x2" speech2="Upper right interior point, temperature x 2. Its neighbors are the top edge at 80 degrees, the right edge at 60 degrees, x 1 to its left, and x 4 below it.">
+      <active>pf-heat-plate-heat-x2</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-heat-x3" speech2="Lower left interior point, temperature x 3. Its neighbors are the left edge at 20 degrees, the bottom edge at 40 degrees, x 1 above it, and x 4 to its right.">
+      <active>pf-heat-plate-heat-x3</active>
+      <position>9</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-heat-plate-heat-x4" speech2="Lower right interior point, temperature x 4. Its neighbors are the right edge at 60 degrees, the bottom edge at 40 degrees, x 2 above it, and x 3 to its left.">
+      <active>pf-heat-plate-heat-x4</active>
+      <position>10</position>
+      <parents>
+        <grouped>pf-heat-plate-heat-plate</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
