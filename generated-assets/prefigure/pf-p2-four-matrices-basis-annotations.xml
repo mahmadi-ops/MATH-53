@@ -1,0 +1,84 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-p2-four-matrices-basis-square" speech2="A square showing where T sends each element of the basis B 2 and, underneath, the same thing in B 2 coordinates">
+      <grouped>pf-p2-four-matrices-basis-square</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-p2-four-matrices-basis-top-left</active>
+        <active>pf-p2-four-matrices-basis-arrow-top</active>
+        <active>pf-p2-four-matrices-basis-top-right</active>
+        <active>pf-p2-four-matrices-basis-map-left</active>
+        <active>pf-p2-four-matrices-basis-bottom-left</active>
+        <active>pf-p2-four-matrices-basis-arrow-bottom</active>
+        <active>pf-p2-four-matrices-basis-bottom-right</active>
+        <active>pf-p2-four-matrices-basis-map-right</active>
+      </children>
+      <components>
+        <active>pf-p2-four-matrices-basis-top-left</active>
+        <active>pf-p2-four-matrices-basis-arrow-top</active>
+        <active>pf-p2-four-matrices-basis-top-right</active>
+        <active>pf-p2-four-matrices-basis-map-left</active>
+        <active>pf-p2-four-matrices-basis-bottom-left</active>
+        <active>pf-p2-four-matrices-basis-arrow-bottom</active>
+        <active>pf-p2-four-matrices-basis-bottom-right</active>
+        <active>pf-p2-four-matrices-basis-map-right</active>
+      </components>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-top-left" speech2="Top left: the three elements of the basis B 2, which are 1, 1 plus x, and 1 plus x plus x squared">
+      <active>pf-p2-four-matrices-basis-top-left</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-arrow-top" speech2="An arrow labelled T from the basis elements to their images">
+      <active>pf-p2-four-matrices-basis-arrow-top</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-top-right" speech2="Top right: their images under T, in the same order: 1, 2 plus x, and 2 plus 3 x plus x squared">
+      <active>pf-p2-four-matrices-basis-top-right</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-map-left" speech2="Double-headed arrows join each basis element to its B 2 coordinate vector below it">
+      <active>pf-p2-four-matrices-basis-map-left</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-bottom-left" speech2="Bottom left: the coordinate vectors of the basis elements, which are the standard basis columns 1 0 0, then 0 1 0, then 0 0 1">
+      <active>pf-p2-four-matrices-basis-bottom-left</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-arrow-bottom" speech2="An arrow labelled A 2 from the standard basis columns to the columns on the right">
+      <active>pf-p2-four-matrices-basis-arrow-bottom</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-bottom-right" speech2="Bottom right: the B 2 coordinate vectors of the images, 1 0 0, then 1 1 0, then negative 1, 2, 1; these are the three columns of A 2">
+      <active>pf-p2-four-matrices-basis-bottom-right</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-p2-four-matrices-basis-map-right" speech2="Double-headed arrows join each image to its B 2 coordinate vector below it">
+      <active>pf-p2-four-matrices-basis-map-right</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-p2-four-matrices-basis-square</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,48 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-trace-square-square" speech2="A commutative square relating the trace to a matrix transformation">
+      <grouped>pf-trace-square-square</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-trace-square-arrow-top</active>
+        <active>pf-trace-square-arrow-left</active>
+        <active>pf-trace-square-arrow-right</active>
+        <active>pf-trace-square-arrow-bottom</active>
+      </children>
+      <components>
+        <active>pf-trace-square-arrow-top</active>
+        <active>pf-trace-square-arrow-left</active>
+        <active>pf-trace-square-arrow-right</active>
+        <active>pf-trace-square-arrow-bottom</active>
+      </components>
+    </annotation>
+    <annotation id="pf-trace-square-arrow-top" speech2="Across the top, the trace maps the space M 2 2 of 2 by 2 matrices to the real numbers R">
+      <active>pf-trace-square-arrow-top</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-trace-square-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-square-arrow-left" speech2="On the left, the coordinate map of the basis B identifies M 2 2 with R 4, in both directions">
+      <active>pf-trace-square-arrow-left</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-trace-square-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-square-arrow-right" speech2="On the right, the coordinate map of the basis consisting of the number 1 identifies R with R 1, in both directions">
+      <active>pf-trace-square-arrow-right</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-trace-square-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-square-arrow-bottom" speech2="Across the bottom, multiplication by the 1 by 4 matrix A maps R 4 to R 1">
+      <active>pf-trace-square-arrow-bottom</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-trace-square-square</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

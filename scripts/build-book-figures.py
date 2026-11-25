@@ -119,6 +119,57 @@ def embed_font(path):
     tree.write(str(path), encoding='utf-8', xml_declaration=True)
 
 
+def fix_start_markers(path):
+    """Draw the arrowheads at the start of a line without a rotated group.
+
+    PreFigure draws a start marker as the end marker inside
+    <g transform="rotate(180, cx, cy)">. diagcess.js, which displays annotated
+    diagrams in the web version, gives that path the style "transform: inherit;
+    fill: inherit", so the half turn is applied twice and the arrowhead points
+    backwards (and loses its colour). Here the half turn is applied to the path
+    data itself and the group is removed. The marker's own path is left alone by
+    diagcess.js. Running this twice changes nothing.
+    """
+    tree = ET.parse(str(path))
+    root = tree.getroot()
+    changed = False
+    for marker in root.iter(f'{{{SVG}}}marker'):
+        for group in marker.findall(f'{{{SVG}}}g'):
+            match = re.fullmatch(r'\s*rotate\(\s*180\s*,\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)\s*',
+                                 group.get('transform', ''))
+            if not match:
+                continue
+            cx, cy = float(match.group(1)), float(match.group(2))
+            for shape in group.findall(f'{{{SVG}}}path'):
+                shape.set('d', half_turn(shape.get('d'), cx, cy))
+            index = list(marker).index(group)
+            for offset, child in enumerate(list(group)):
+                marker.insert(index + offset, child)
+            marker.remove(group)
+            changed = True
+    if changed:
+        tree.write(str(path), encoding='utf-8', xml_declaration=True)
+
+
+def half_turn(d, cx, cy):
+    """Path data made of M, L, A and Z commands, rotated by 180 degrees about (cx, cy)."""
+    number = lambda value: ('%.3f' % value).rstrip('0').rstrip('.')
+    turn = lambda x, y: [number(2 * cx - float(x)), number(2 * cy - float(y))]
+    out = []
+    for command, arguments in re.findall(r'([A-Za-z])([^A-Za-z]*)', d):
+        values = re.findall(r'-?\d*\.?\d+(?:e-?\d+)?', arguments)
+        if command in 'ML':
+            assert len(values) % 2 == 0, d
+            values = [v for i in range(0, len(values), 2) for v in turn(values[i], values[i + 1])]
+        elif command == 'A':
+            assert len(values) % 7 == 0, d
+            values = [v for i in range(0, len(values), 7) for v in values[i:i + 5] + turn(values[i + 5], values[i + 6])]
+        else:
+            assert command in 'Zz' and not values, d
+        out.append(' '.join([command] + values))
+    return ' '.join(out)
+
+
 def theme_chart(path):
     tree = ET.parse(str(path))
     for el in tree.iter():
@@ -194,6 +245,7 @@ def main():
                 embed_font(path)
                 for variant in path.parent.glob(label + '-diagcess.svg'):
                     embed_font(variant)
+                    fix_start_markers(variant)
                 if not args.embed_only:
                     import cairosvg
                     cairosvg.svg2pdf(url=str(path), write_to=str(path.with_suffix('.pdf')))

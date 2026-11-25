@@ -3,7 +3,7 @@ Static graphs use the book's olive (`#4A5D23`), wine (`#5E011C`), dark mustard
 matrices keep their original data values and colors. Figure captions and image
 descriptions name the corresponding accents.
 
-To regenerate the 44 PreFigure diagrams, two TikZ figures, and recognition
+To regenerate the 51 PreFigure diagrams, two TikZ figures, and recognition
 mind map with the book's fonts, use Python 3.12, Node 22+, XeLaTeX, and Cairo:
 
 ```sh
@@ -88,7 +88,7 @@ cannot be reached but `asy` is installed, add `asy-method="local"` to the
 
 ## Annotations
 
-Every PreFigure diagram in the book, 44 in the source and 4 standalone ones in
+Every PreFigure diagram in the book, 51 in the source and 4 standalone ones in
 `scripts/prefigure/`, has an `<annotations>` block: related elements are grouped
 with `<group at="...">` and each handle gets a spoken description. Every 2D
 graph that is not interactive is a PreFigure diagram; that includes the
@@ -100,3 +100,23 @@ the same length on both axes:
 (width - 2 margins)/(x range) = (height - 2 margins)/(y range).
 A `<line>` with arrows needs an integer `thickness`.
 
+### Two things `diagcess.js` gets wrong
+
+An annotated diagram is shown in the web version by `diagcess.js`, which rewrites
+the SVG in the browser. Two of its rewrites misfire, and neither shows in the SVG
+or PDF files themselves, only on the page:
+
+- **A label with stretchy delimiters loses its place.** `\begin{bmatrix}`,
+  `\left\{`, `\left(` and the like make MathJax nest an `<svg>` inside the
+  label's `<svg>`, and the script then drops the label's position, so the label
+  lands in the top left corner. Do not put such delimiters in a label of an
+  annotated diagram. The squares in "The Matrix of a Linear Transformation" draw
+  their column vectors from primitives instead: one label per entry and two open
+  `<polygon>`s for the brackets.
+- **Arrowheads at the start of a line point backwards.** PreFigure draws them as
+  the end marker inside a rotated group, and the script applies the rotation
+  twice. `fix_start_markers` in `build-book-figures.py` rotates the path data
+  itself in every `*-diagcess.svg`; it runs with every figure build, including
+  `--embed-only`.
+
+Check a new diagram on the built page, not only as a file.

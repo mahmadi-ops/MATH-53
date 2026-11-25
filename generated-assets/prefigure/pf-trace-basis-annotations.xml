@@ -1,0 +1,84 @@
+<diagram>
+  <annotations language="en">
+    <annotation id="pf-trace-basis-square" speech2="A square showing the trace of each element of the basis B and, underneath, the same thing in coordinates">
+      <grouped>pf-trace-basis-square</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-trace-basis-top-left</active>
+        <active>pf-trace-basis-arrow-top</active>
+        <active>pf-trace-basis-top-right</active>
+        <active>pf-trace-basis-map-left</active>
+        <active>pf-trace-basis-bottom-left</active>
+        <active>pf-trace-basis-arrow-bottom</active>
+        <active>pf-trace-basis-bottom-right</active>
+        <active>pf-trace-basis-map-right</active>
+      </children>
+      <components>
+        <active>pf-trace-basis-top-left</active>
+        <active>pf-trace-basis-arrow-top</active>
+        <active>pf-trace-basis-top-right</active>
+        <active>pf-trace-basis-map-left</active>
+        <active>pf-trace-basis-bottom-left</active>
+        <active>pf-trace-basis-arrow-bottom</active>
+        <active>pf-trace-basis-bottom-right</active>
+        <active>pf-trace-basis-map-right</active>
+      </components>
+    </annotation>
+    <annotation id="pf-trace-basis-top-left" speech2="Top left: the four elements M 1 1, M 1 2, M 2 1, M 2 2 of the ordered basis B of M 2 2">
+      <active>pf-trace-basis-top-left</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-basis-arrow-top" speech2="An arrow labelled t r from the basis elements to their traces">
+      <active>pf-trace-basis-arrow-top</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-basis-top-right" speech2="Top right: their traces, in the same order: 1, 0, 0, 1">
+      <active>pf-trace-basis-top-right</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-basis-map-left" speech2="Double-headed arrows join each basis element to its B coordinate vector below it">
+      <active>pf-trace-basis-map-left</active>
+      <position>4</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-basis-bottom-left" speech2="Bottom left: the coordinate vectors of the basis elements, which are the four standard basis columns of R 4">
+      <active>pf-trace-basis-bottom-left</active>
+      <position>5</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-basis-arrow-bottom" speech2="An arrow labelled A from the standard basis columns of R 4 to the entries on the right">
+      <active>pf-trace-basis-arrow-bottom</active>
+      <position>6</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-basis-bottom-right" speech2="Bottom right: the coordinates of the four traces, each a single number: 1, 0, 0, 1; side by side they are the four columns of the 1 by 4 matrix A">
+      <active>pf-trace-basis-bottom-right</active>
+      <position>7</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-trace-basis-map-right" speech2="Double-headed arrows join each trace to its coordinate below it">
+      <active>pf-trace-basis-map-right</active>
+      <position>8</position>
+      <parents>
+        <grouped>pf-trace-basis-square</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

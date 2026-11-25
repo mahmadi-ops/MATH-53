@@ -223,6 +223,79 @@
           <m>\R^3</m> as before.
         </p>
         <p>
+          The strategy is captured by the following diagram. A basis chosen for the domain
+          identifies <m>\mathbb{P}_2</m> with <m>\R^3</m>, and so does a basis chosen for the
+          codomain. Through these two coordinate maps the transformation <m>T</m> corresponds
+          to a matrix transformation <m>\R^3 \to \R^3</m>.
+        </p>
+
+        <figure xml:id="fig-p2-four-matrices-square">
+          <caption>
+            The transformation <m>T : \mathbb{P}_2 \to \mathbb{P}_2</m> and the matrix
+            transformation <m>\R^3 \to \R^3</m> induced by the coordinate maps of the two
+            chosen bases.
+          </caption>
+          <image xml:id="img-p2-four-matrices-square" width="85%">
+            <shortdescription>A commutative square: T maps P2 to P2 across the top, a matrix A maps R3 to R3 across the bottom, and the coordinate maps of the domain basis and of the codomain basis join top to bottom.</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="pf-p2-four-matrices-square">
+              <diagram dimensions="(400,196)" margins="6">
+                <coordinates bbox="[0,0,400,196]">
+                  <group at="square">
+                    <label at="node-tl" anchor="(62,164)" alignment="center" scale="1.2"><m>\mathbb{P}_2</m></label>
+                    <label at="node-tr" anchor="(338,164)" alignment="center" scale="1.2"><m>\mathbb{P}_2</m></label>
+                    <label at="node-bl" anchor="(62,36)" alignment="center" scale="1.2"><m>\mathbb{R}^3</m></label>
+                    <label at="node-br" anchor="(338,36)" alignment="center" scale="1.2"><m>\mathbb{R}^3</m></label>
+                    <group at="arrow-top">
+                      <line endpoints="[(92,164),(302,164)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(197,170)" alignment="north" scale="1.1"><m>T</m></label>
+                    </group>
+                    <group at="arrow-left">
+                      <line endpoints="[(62,144),(62,56)]" arrows="2" stroke="black" thickness="2"/>
+                      <label anchor="(69,100)" alignment="east" scale="0.9"><m>\text{domain basis}</m></label>
+                    </group>
+                    <group at="arrow-right">
+                      <line endpoints="[(338,144),(338,56)]" arrows="2" stroke="black" thickness="2"/>
+                      <label anchor="(331,100)" alignment="west" scale="0.9"><m>\text{codomain basis}</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(92,36),(308,36)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(200,42)" alignment="north" scale="1.1"><m>A</m></label>
+                      <label anchor="(200,29)" alignment="south" scale="0.8"><m>\text{matrix transformation}</m></label>
+                    </group>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="square" text="A commutative square relating the transformation T on P 2 to a matrix transformation on R 3">
+                    <annotation ref="arrow-top" text="Across the top, T maps the polynomial space P 2 to itself"/>
+                    <annotation ref="arrow-left" text="On the left, the coordinate map of the basis chosen for the domain identifies P 2 with R 3, in both directions"/>
+                    <annotation ref="arrow-right" text="On the right, the coordinate map of the basis chosen for the codomain identifies P 2 with R 3, in both directions"/>
+                    <annotation ref="arrow-bottom" text="Across the bottom, multiplication by the matrix A maps R 3 to R 3; A is one of A 1, A 2, A 3, A 4, depending on the two bases"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          The four matrices of this example are the four ways of choosing the two bases:
+        </p>
+
+        <tabular halign="center">
+          <row header="yes" bottom="minor"><cell>Matrix</cell><cell>Basis for the domain</cell><cell>Basis for the codomain</cell></row>
+          <row><cell><m>A_1</m></cell><cell><m>\mathcal{B}_1</m></cell><cell><m>\mathcal{B}_1</m></cell></row>
+          <row><cell><m>A_2</m></cell><cell><m>\mathcal{B}_2</m></cell><cell><m>\mathcal{B}_2</m></cell></row>
+          <row><cell><m>A_3</m></cell><cell><m>\mathcal{B}_1</m></cell><cell><m>\mathcal{B}_2</m></cell></row>
+          <row><cell><m>A_4</m></cell><cell><m>\mathcal{B}_2</m></cell><cell><m>\mathcal{B}_1</m></cell></row>
+        </tabular>
+
+        <p>
+          In every case the square says the same thing: taking coordinates and then
+          multiplying by the matrix gives the same result as applying <m>T</m> and then
+          taking coordinates. For <m>A_3</m>, for instance,
+          <m>A_3 [\, p \,]_{\mathcal{B}_1} = [\, T(p) \,]_{\mathcal{B}_2}</m>.
+        </p>
+        <p>
           First the change-of-basis matrices, exactly as in
           <xref ref="eg-p2-change-of-basis" text="type-global" />: reading the elements
           of <m>\mathcal{B}_2</m> in the basis <m>\mathcal{B}_1</m> columnwise, and
@@ -267,6 +340,115 @@
           <md>
             A_2 = \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp 1 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}.
           </md>
+        </p>
+        <p>
+          At the level of the ordered basis, this computation is the following diagram.
+          Along the top, <m>T</m> sends each element of <m>\mathcal{B}_2</m> to its image.
+          The coordinate maps turn the elements of <m>\mathcal{B}_2</m> into the standard
+          basis columns of <m>\R^3</m> and the images into their
+          <m>\mathcal{B}_2</m>-coordinate vectors, and <m>A_2</m> must carry the former to
+          the latter. That is why the coordinate vectors of the images are the columns of
+          <m>A_2</m>.
+        </p>
+
+        <figure xml:id="fig-p2-four-matrices-basis">
+          <caption>
+            The action of <m>T</m> on the ordered basis <m>\mathcal{B}_2</m> and the
+            corresponding matrix <m>A_2</m>. One colour marks a basis element, its image
+            and their coordinate vectors.
+          </caption>
+          <image xml:id="img-p2-four-matrices-basis" width="100%">
+            <shortdescription>A square in which T carries 1, 1 + x, 1 + x + x squared to 1, 2 + x, 2 + 3x + x squared, while A2 carries the standard basis columns of R3 to the columns (1,0,0), (1,1,0), (-1,2,1).</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="pf-p2-four-matrices-basis">
+              <diagram dimensions="(436,167)" margins="6">
+                <coordinates bbox="[0,0,436,167]">
+                  <group at="square">
+                    <group at="top-left">
+                      <label anchor="(20,131)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(62,131)" alignment="center" scale="0.8" color="#4A5D23"><m>1+x</m></label>
+                      <label anchor="(128,131)" alignment="center" scale="0.8" color="#876801"><m>1+x+x^2</m></label>
+                    </group>
+                    <group at="top-right">
+                      <label anchor="(276,131)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(318,131)" alignment="center" scale="0.8" color="#4A5D23"><m>2+x</m></label>
+                      <label anchor="(388,131)" alignment="center" scale="0.8" color="#876801"><m>2+3x+x^2</m></label>
+                    </group>
+                    <group at="bottom-left">
+                      <polygon points="((16,70),(12,70),(12,12),(16,12))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((24,70),(28,70),(28,12),(24,12))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(20,59)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(20,41)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(20,23)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((58,70),(54,70),(54,12),(58,12))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((66,70),(70,70),(70,12),(66,12))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(62,59)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(62,41)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(62,23)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((124,70),(120,70),(120,12),(124,12))" stroke="#876801" thickness="2"/>
+                      <polygon points="((132,70),(136,70),(136,12),(132,12))" stroke="#876801" thickness="2"/>
+                      <label anchor="(128,59)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(128,41)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(128,23)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                    </group>
+                    <group at="bottom-right">
+                      <polygon points="((272,70),(268,70),(268,12),(272,12))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((280,70),(284,70),(284,12),(280,12))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(276,59)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(276,41)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(276,23)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((314,70),(310,70),(310,12),(314,12))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((322,70),(326,70),(326,12),(322,12))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(318,59)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(318,41)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(318,23)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((377,70),(373,70),(373,12),(377,12))" stroke="#876801" thickness="2"/>
+                      <polygon points="((399,70),(403,70),(403,12),(399,12))" stroke="#876801" thickness="2"/>
+                      <label anchor="(388,59)" alignment="center" scale="0.8" color="#876801"><m>-1</m></label>
+                      <label anchor="(388,41)" alignment="center" scale="0.8" color="#876801"><m>2</m></label>
+                      <label anchor="(388,23)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                    </group>
+                    <group at="map-left">
+                      <line endpoints="[(20,117),(20,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(62,117),(62,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(128,117),(128,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(167,96.5)" alignment="east" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}_2}</m></label>
+                    </group>
+                    <group at="map-right">
+                      <line endpoints="[(276,117),(276,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(318,117),(318,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(388,117),(388,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(261,96.5)" alignment="west" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}_2}</m></label>
+                    </group>
+                    <group at="arrow-top">
+                      <line endpoints="[(174,131),(254,131)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(211,137)" alignment="north" scale="1"><m>T</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(174,41),(254,41)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(211,47)" alignment="north" scale="1"><m>A_2</m></label>
+                    </group>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="square" text="A square showing where T sends each element of the basis B 2 and, underneath, the same thing in B 2 coordinates">
+                    <annotation ref="top-left" text="Top left: the three elements of the basis B 2, which are 1, 1 plus x, and 1 plus x plus x squared"/>
+                    <annotation ref="arrow-top" text="An arrow labelled T from the basis elements to their images"/>
+                    <annotation ref="top-right" text="Top right: their images under T, in the same order: 1, 2 plus x, and 2 plus 3 x plus x squared"/>
+                    <annotation ref="map-left" text="Double-headed arrows join each basis element to its B 2 coordinate vector below it"/>
+                    <annotation ref="bottom-left" text="Bottom left: the coordinate vectors of the basis elements, which are the standard basis columns 1 0 0, then 0 1 0, then 0 0 1"/>
+                    <annotation ref="arrow-bottom" text="An arrow labelled A 2 from the standard basis columns to the columns on the right"/>
+                    <annotation ref="bottom-right" text="Bottom right: the B 2 coordinate vectors of the images, 1 0 0, then 1 1 0, then negative 1, 2, 1; these are the three columns of A 2"/>
+                    <annotation ref="map-right" text="Double-headed arrows join each image to its B 2 coordinate vector below it"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          For the other three matrices only the labels change: the top left holds the
+          basis of the domain, and the images are read in the basis of the codomain.
         </p>
         <p>
           <term>(II) Second method.</term> Exactly as in the previous example,
@@ -499,68 +681,105 @@
         </figure>
 
         <p>
-          At the level of the ordered bases, <m>S</m> sends the basis
-          <m>\{1, x, x^2\}</m> of <m>\mathbb{P}_2</m> to the four matrices
-          <m>\{M_0, M_1, M_2, M_3\}</m> spanning <m>\mathbb{M}_{22}</m>, and the induced
-          matrix transformation is given by a matrix <m>A</m>:
+          At the level of the ordered bases, <m>S</m> sends the three elements
+          <m>1, x, x^2</m> of <m>\mathcal{B}</m> to <m>M_0, M_1, M_2</m>, the first three
+          elements of <m>\mathcal{B}_1</m>. The coordinate maps turn <m>1, x, x^2</m> into
+          the standard basis columns of <m>\R^3</m> and <m>M_0, M_1, M_2</m> into the first
+          three standard basis columns of <m>\R^4</m>, and the induced matrix
+          transformation, given by a matrix <m>A_1</m>, must carry the former to the latter:
         </p>
 
         <figure xml:id="fig-basis-diagram-S">
           <caption>
-            The action of <m>S</m> on the ordered basis and the corresponding
-            matrix <m>A</m>.
+            The action of <m>S</m> on the ordered basis <m>\mathcal{B}</m> and the
+            corresponding matrix <m>A_1</m>. One colour marks a basis element, its image
+            and their coordinate vectors.
           </caption>
-          <image xml:id="img-basis-diagram-S" width="92%">
-            <shortdescription>A commutative square in which S carries the ordered basis of P2 to four matrices, while the matrix A carries the standard basis columns of R3 to those of R4.</shortdescription>
-            <description>
-              <p>
-                A square diagram. Across the top, <m>S</m> sends the ordered basis
-                <m>\{1, x, x^2\}</m> of <m>\mathbb{P}_2</m> to the four matrices
-                <m>\{M_0, M_1, M_2, M_3\}</m> spanning <m>\mathbb{M}_{22}</m>.
-              </p>
-              <p>
-                Down each side a double-headed arrow marks a coordinate isomorphism: on
-                the left it identifies <m>\{1, x, x^2\}</m> with the three standard basis
-                columns of <m>\R^3</m>, and on the right it identifies
-                <m>\{M_0, M_1, M_2, M_3\}</m> with the four standard basis columns of
-                <m>\R^4</m>.
-              </p>
-              <p>
-                Across the bottom, the matrix <m>A</m> carries the standard basis columns
-                of <m>\R^3</m> to those of <m>\R^4</m>.
-              </p>
-            </description>
+          <image xml:id="img-basis-diagram-S" width="100%">
+            <shortdescription>A square in which S carries 1, x, x squared to the matrices M0, M1, M2, while A1 carries the standard basis columns of R3 to the first three standard basis columns of R4.</shortdescription>
             <prefigure xmlns="https://prefigure.org" label="basis-diagram-S">
-              <diagram dimensions="(700,360)" margins="6">
-                <coordinates bbox="[0,0,12.6,7.6]">
-                  <group at="basis-square">
-                    <label at="node-B" anchor="(2.3,6.5)" alignment="center" scale="1.4"><m>\{1, x, x^2\}</m></label>
-                    <label at="node-B1" anchor="(9.7,6.5)" alignment="center" scale="1.4"><m>\{M_0, M_1, M_2, M_3\}</m></label>
-                    <label at="node-R3" anchor="(2.3,1.5)" alignment="center" scale="1.4"><m>\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}</m></label>
-                    <label at="node-R4" anchor="(9.7,1.5)" alignment="center" scale="1.4"><m>\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}</m></label>
-
-                    <line at="arrow-S" endpoints="[(3.6,6.5),(7.4,6.5)]" arrows="1"/>
-                    <label at="label-S" anchor="(5.5,6.85)" alignment="north" scale="1.4"><m>S</m></label>
-
-                    <line at="arrow-left" endpoints="[(2.3,5.8),(2.3,3.05)]" arrows="2"/>
-                    <line at="arrow-right" endpoints="[(9.7,5.8),(9.7,3.2)]" arrows="2"/>
-
-                    <line at="arrow-A" endpoints="[(4.5,1.5),(7.0,1.5)]" arrows="1"/>
-                    <label at="label-A" anchor="(5.75,1.85)" alignment="north" scale="1.4"><m>A</m></label>
+              <diagram dimensions="(402,185)" margins="6">
+                <coordinates bbox="[0,0,402,185]">
+                  <group at="square">
+                    <group at="top-left">
+                      <label anchor="(20,149)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(63,149)" alignment="center" scale="0.8" color="#4A5D23"><m>x</m></label>
+                      <label anchor="(106,149)" alignment="center" scale="0.8" color="#876801"><m>x^2</m></label>
+                    </group>
+                    <group at="top-right">
+                      <label anchor="(276,149)" alignment="center" scale="0.8" color="#5E011C"><m>M_0</m></label>
+                      <label anchor="(327,149)" alignment="center" scale="0.8" color="#4A5D23"><m>M_1</m></label>
+                      <label anchor="(378,149)" alignment="center" scale="0.8" color="#876801"><m>M_2</m></label>
+                    </group>
+                    <group at="bottom-left">
+                      <polygon points="((16,79),(12,79),(12,21),(16,21))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((24,79),(28,79),(28,21),(24,21))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(20,68)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(20,50)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(20,32)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((59,79),(55,79),(55,21),(59,21))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((67,79),(71,79),(71,21),(67,21))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(63,68)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(63,50)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(63,32)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((102,79),(98,79),(98,21),(102,21))" stroke="#876801" thickness="2"/>
+                      <polygon points="((110,79),(114,79),(114,21),(110,21))" stroke="#876801" thickness="2"/>
+                      <label anchor="(106,68)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(106,50)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(106,32)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                    </group>
+                    <group at="bottom-right">
+                      <polygon points="((272,88),(268,88),(268,12),(272,12))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((280,88),(284,88),(284,12),(280,12))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(276,77)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(276,59)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(276,41)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(276,23)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((323,88),(319,88),(319,12),(323,12))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((331,88),(335,88),(335,12),(331,12))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(327,77)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(327,59)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(327,41)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(327,23)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((374,88),(370,88),(370,12),(374,12))" stroke="#876801" thickness="2"/>
+                      <polygon points="((382,88),(386,88),(386,12),(382,12))" stroke="#876801" thickness="2"/>
+                      <label anchor="(378,77)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(378,59)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(378,41)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                      <label anchor="(378,23)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                    </group>
+                    <group at="map-left">
+                      <line endpoints="[(20,135),(20,85)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(63,135),(63,85)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(106,135),(106,85)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(121,114.5)" alignment="east" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}}</m></label>
+                    </group>
+                    <group at="map-right">
+                      <line endpoints="[(276,135),(276,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(327,135),(327,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(378,135),(378,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(257,114.5)" alignment="west" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}_1}</m></label>
+                    </group>
+                    <group at="arrow-top">
+                      <line endpoints="[(128,149),(250,149)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(186,155)" alignment="north" scale="1"><m>S</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(128,50),(250,50)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(186,56)" alignment="north" scale="1"><m>A_1</m></label>
+                    </group>
                   </group>
                 </coordinates>
                 <annotations>
-                  <annotation ref="basis-square" text="A square diagram of four sets joined by arrows: S acts along the top, the matrix A along the bottom, and coordinate isomorphisms join top to bottom on each side">
-                    <annotation ref="node-B" text="Top left: the ordered basis 1, x, x squared of P 2"/>
-                    <annotation ref="arrow-S" text="An arrow from the top left set to the top right set"/>
-                    <annotation ref="label-S" text="That arrow is labelled S"/>
-                    <annotation ref="node-B1" text="Top right: the four matrices M 0, M 1, M 2, M 3 spanning M 2 2"/>
-                    <annotation ref="arrow-left" text="A double-headed arrow down the left side: the coordinate isomorphism between the basis of P 2 and the standard basis of R 3"/>
-                    <annotation ref="node-R3" text="Bottom left: the three standard basis columns of R 3"/>
-                    <annotation ref="arrow-A" text="An arrow from the bottom left set to the bottom right set"/>
-                    <annotation ref="label-A" text="That arrow is labelled A, the matrix of S"/>
-                    <annotation ref="node-R4" text="Bottom right: the four standard basis columns of R 4"/>
-                    <annotation ref="arrow-right" text="A double-headed arrow down the right side: the coordinate isomorphism between the four matrices and the standard basis of R 4"/>
+                  <annotation ref="square" text="A square showing where S sends each element of the basis 1, x, x squared and, underneath, the same thing in coordinates">
+                    <annotation ref="top-left" text="Top left: the three elements 1, x, x squared of the ordered basis B of P 2"/>
+                    <annotation ref="arrow-top" text="An arrow labelled S from the basis elements to their images"/>
+                    <annotation ref="top-right" text="Top right: their images under S, in the same order: the matrices M 0, M 1, M 2"/>
+                    <annotation ref="map-left" text="Double-headed arrows join each basis element to its B coordinate vector below it"/>
+                    <annotation ref="bottom-left" text="Bottom left: the coordinate vectors of 1, x, x squared, which are the standard basis columns of R 3: 1 0 0, then 0 1 0, then 0 0 1"/>
+                    <annotation ref="arrow-bottom" text="An arrow labelled A 1 from the standard basis columns of R 3 to the columns on the right"/>
+                    <annotation ref="bottom-right" text="Bottom right: the B 1 coordinate vectors of M 0, M 1, M 2, which are the first three standard basis columns of R 4: 1 0 0 0, then 0 1 0 0, then 0 0 1 0; these are the three columns of A 1"/>
+                    <annotation ref="map-right" text="Double-headed arrows join each of M 0, M 1, M 2 to its B 1 coordinate vector below it"/>
                   </annotation>
                 </annotations>
               </diagram>
@@ -585,7 +804,9 @@
           To find <m>A_1</m> we had to express <m>S(1)</m>, <m>S(x)</m>, <m>S(x^2)</m> in
           terms of the basis elements <m>M_0, M_1, M_2</m>, and <m>M_3</m>. In other
           words, we needed to figure out how the basis elements of the domain transform
-          with respect to the basis <m>\mathcal{B}_1</m> of the codomain.
+          with respect to the basis <m>\mathcal{B}_1</m> of the codomain. The fourth
+          element <m>M_3</m> of <m>\mathcal{B}_1</m> is not the image of a basis
+          element, which is why the last row of <m>A_1</m> is zero.
         </p>
         <p>
           After finding the output of the matrix transformation, we can use the
@@ -620,6 +841,110 @@
             \end{bmatrix}.
           </md>
         </p>
+        <p>
+          The picture is the one of <xref ref="fig-basis-diagram-S" text="type-global" />
+          with a single change: <m>S</m> still sends <m>1, x, x^2</m> to
+          <m>M_0, M_1, M_2</m>, but the images are now read in the basis
+          <m>\mathcal{B}_2</m>.
+        </p>
+
+        <figure xml:id="fig-basis-diagram-S-b2">
+          <caption>
+            The action of <m>S</m> on the ordered basis <m>\mathcal{B}</m>, with the
+            images read in the basis <m>\mathcal{B}_2</m>, and the corresponding matrix
+            <m>A_2</m>.
+          </caption>
+          <image xml:id="img-basis-diagram-S-b2" width="100%">
+            <shortdescription>A square in which S carries 1, x, x squared to the matrices M0, M1, M2, while A2 carries the standard basis columns of R3 to the columns (1,-1,1,0), (0,1,1,1), (1,0,0,1).</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="pf-basis-diagram-S-b2">
+              <diagram dimensions="(400,185)" margins="6">
+                <coordinates bbox="[0,0,400,185]">
+                  <group at="square">
+                    <group at="top-left">
+                      <label anchor="(20,149)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(61,149)" alignment="center" scale="0.8" color="#4A5D23"><m>x</m></label>
+                      <label anchor="(102,149)" alignment="center" scale="0.8" color="#876801"><m>x^2</m></label>
+                    </group>
+                    <group at="top-right">
+                      <label anchor="(275,149)" alignment="center" scale="0.8" color="#5E011C"><m>M_0</m></label>
+                      <label anchor="(327,149)" alignment="center" scale="0.8" color="#4A5D23"><m>M_1</m></label>
+                      <label anchor="(376,149)" alignment="center" scale="0.8" color="#876801"><m>M_2</m></label>
+                    </group>
+                    <group at="bottom-left">
+                      <polygon points="((16,79),(12,79),(12,21),(16,21))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((24,79),(28,79),(28,21),(24,21))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(20,68)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(20,50)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(20,32)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((57,79),(53,79),(53,21),(57,21))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((65,79),(69,79),(69,21),(65,21))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(61,68)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(61,50)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(61,32)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((98,79),(94,79),(94,21),(98,21))" stroke="#876801" thickness="2"/>
+                      <polygon points="((106,79),(110,79),(110,21),(106,21))" stroke="#876801" thickness="2"/>
+                      <label anchor="(102,68)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(102,50)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(102,32)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                    </group>
+                    <group at="bottom-right">
+                      <polygon points="((264,88),(260,88),(260,12),(264,12))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((286,88),(290,88),(290,12),(286,12))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(275,77)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(275,59)" alignment="center" scale="0.8" color="#5E011C"><m>-1</m></label>
+                      <label anchor="(275,41)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(275,23)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((323,88),(319,88),(319,12),(323,12))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((331,88),(335,88),(335,12),(331,12))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(327,77)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(327,59)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(327,41)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(327,23)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <polygon points="((372,88),(368,88),(368,12),(372,12))" stroke="#876801" thickness="2"/>
+                      <polygon points="((380,88),(384,88),(384,12),(380,12))" stroke="#876801" thickness="2"/>
+                      <label anchor="(376,77)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                      <label anchor="(376,59)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(376,41)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(376,23)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                    </group>
+                    <group at="map-left">
+                      <line endpoints="[(20,135),(20,85)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(61,135),(61,85)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(102,135),(102,85)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(117,114.5)" alignment="east" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}}</m></label>
+                    </group>
+                    <group at="map-right">
+                      <line endpoints="[(275,135),(275,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(327,135),(327,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(376,135),(376,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(253,114.5)" alignment="west" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}_2}</m></label>
+                    </group>
+                    <group at="arrow-top">
+                      <line endpoints="[(124,149),(246,149)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(182,155)" alignment="north" scale="1"><m>S</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(124,50),(246,50)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(182,56)" alignment="north" scale="1"><m>A_2</m></label>
+                    </group>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="square" text="The same square as before, with the images now read in the basis B 2 of M 2 2">
+                    <annotation ref="top-left" text="Top left: the three elements 1, x, x squared of the ordered basis B of P 2"/>
+                    <annotation ref="arrow-top" text="An arrow labelled S from the basis elements to their images"/>
+                    <annotation ref="top-right" text="Top right: their images under S, in the same order: the matrices M 0, M 1, M 2"/>
+                    <annotation ref="map-left" text="Double-headed arrows join each basis element to its B coordinate vector below it"/>
+                    <annotation ref="bottom-left" text="Bottom left: the standard basis columns of R 3: 1 0 0, then 0 1 0, then 0 0 1"/>
+                    <annotation ref="arrow-bottom" text="An arrow labelled A 2 from the standard basis columns of R 3 to the columns on the right"/>
+                    <annotation ref="bottom-right" text="Bottom right: the B 2 coordinate vectors of M 0, M 1, M 2: 1, negative 1, 1, 0, then 0 1 1 1, then 1 0 0 1; these are the three columns of A 2"/>
+                    <annotation ref="map-right" text="Double-headed arrows join each of M 0, M 1, M 2 to its B 2 coordinate vector below it"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
         <p>
           Alternatively, we can find a matrix that changes the basis <m>\mathcal{B}_1</m>
           to <m>\mathcal{B}_2</m>. From
@@ -762,7 +1087,62 @@
           as the rank<ndash />nullity relation predicts.
         </p>
         <p>
-          <term>(6)</term> We transform the basis elements of the domain and read each
+          <term>(6)</term> The strategy is the one of the previous example. The coordinate
+          map of <m>\mathcal{B}</m> identifies <m>\mathbb{M}_{22}</m> with <m>\R^4</m>, and
+          the coordinate map of <m>\{1\}</m> identifies <m>\R</m> with <m>\R^1</m> (the
+          number <m>r = r(1)</m> has the single coordinate <m>r</m>). So the trace
+          corresponds to a matrix transformation <m>\R^4 \to \R^1</m>.
+        </p>
+
+        <figure xml:id="fig-trace-square">
+          <caption>
+            The transformation <m>\operatorname{tr} : \mathbb{M}_{22} \to \R</m> and the
+            matrix transformation <m>\R^4 \to \R^1</m> induced by the coordinate maps.
+          </caption>
+          <image xml:id="img-trace-square" width="70%">
+            <shortdescription>A commutative square: the trace maps M22 to R across the top, a matrix A maps R4 to R1 across the bottom, and the coordinate maps of the two bases join top to bottom.</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="pf-trace-square">
+              <diagram dimensions="(340,196)" margins="6">
+                <coordinates bbox="[0,0,340,196]">
+                  <group at="square">
+                    <label at="node-tl" anchor="(62,164)" alignment="center" scale="1.2"><m>\mathbb{M}_{22}</m></label>
+                    <label at="node-tr" anchor="(278,164)" alignment="center" scale="1.2"><m>\mathbb{R}</m></label>
+                    <label at="node-bl" anchor="(62,36)" alignment="center" scale="1.2"><m>\mathbb{R}^4</m></label>
+                    <label at="node-br" anchor="(278,36)" alignment="center" scale="1.2"><m>\mathbb{R}^1</m></label>
+                    <group at="arrow-top">
+                      <line endpoints="[(92,164),(242,164)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(167,170)" alignment="north" scale="1.1"><m>\operatorname{tr}</m></label>
+                    </group>
+                    <group at="arrow-left">
+                      <line endpoints="[(62,144),(62,56)]" arrows="2" stroke="black" thickness="2"/>
+                      <label anchor="(69,100)" alignment="east" scale="0.9"><m>[\,\cdot\,]_{\mathcal{B}}</m></label>
+                    </group>
+                    <group at="arrow-right">
+                      <line endpoints="[(278,144),(278,56)]" arrows="2" stroke="black" thickness="2"/>
+                      <label anchor="(271,100)" alignment="west" scale="0.9"><m>[\,\cdot\,]_{\{1\}}</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(92,36),(248,36)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(170,42)" alignment="north" scale="1.1"><m>A</m></label>
+                      <label anchor="(170,29)" alignment="south" scale="0.8"><m>\text{matrix transformation}</m></label>
+                    </group>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="square" text="A commutative square relating the trace to a matrix transformation">
+                    <annotation ref="arrow-top" text="Across the top, the trace maps the space M 2 2 of 2 by 2 matrices to the real numbers R"/>
+                    <annotation ref="arrow-left" text="On the left, the coordinate map of the basis B identifies M 2 2 with R 4, in both directions"/>
+                    <annotation ref="arrow-right" text="On the right, the coordinate map of the basis consisting of the number 1 identifies R with R 1, in both directions"/>
+                    <annotation ref="arrow-bottom" text="Across the bottom, multiplication by the 1 by 4 matrix A maps R 4 to R 1"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          We transform the basis elements of the domain and read each
           output in the basis <m>\{1\}</m> of <m>\R</m>:
           <md>
             \operatorname{tr}(M_{11}) = 1, \quad
@@ -776,6 +1156,120 @@
           <md>
             A = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 1 \end{bmatrix}.
           </md>
+        </p>
+        <p>
+          At the level of the ordered basis, the trace sends
+          <m>M_{11}, M_{12}, M_{21}, M_{22}</m> to <m>1, 0, 0, 1</m>. In coordinates, the
+          four standard basis columns of <m>\R^4</m> go to the four
+          <m>1 \times 1</m> columns <m>[1], [0], [0], [1]</m>, which side by side are the
+          matrix <m>A</m>:
+        </p>
+
+        <figure xml:id="fig-trace-basis">
+          <caption>
+            The action of <m>\operatorname{tr}</m> on the ordered basis
+            <m>\mathcal{B}</m> and the corresponding matrix <m>A</m>.
+          </caption>
+          <image xml:id="img-trace-basis" width="100%">
+            <shortdescription>A square in which the trace carries M11, M12, M21, M22 to 1, 0, 0, 1, while A carries the four standard basis columns of R4 to the one-entry columns 1, 0, 0, 1.</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="pf-trace-basis">
+              <diagram dimensions="(400,185)" margins="6">
+                <coordinates bbox="[0,0,400,185]">
+                  <group at="square">
+                    <group at="top-left">
+                      <label anchor="(26,149)" alignment="center" scale="0.8" color="#5E011C"><m>M_{11}</m></label>
+                      <label anchor="(66,149)" alignment="center" scale="0.8" color="#4A5D23"><m>M_{12}</m></label>
+                      <label anchor="(106,149)" alignment="center" scale="0.8" color="#876801"><m>M_{21}</m></label>
+                      <label anchor="(146,149)" alignment="center" scale="0.8" color="#4D4D4D"><m>M_{22}</m></label>
+                    </group>
+                    <group at="top-right">
+                      <label anchor="(296,149)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(324,149)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(352,149)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(380,149)" alignment="center" scale="0.8" color="#4D4D4D"><m>1</m></label>
+                    </group>
+                    <group at="bottom-left">
+                      <polygon points="((22,88),(18,88),(18,12),(22,12))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((30,88),(34,88),(34,12),(30,12))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(26,77)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(26,59)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(26,41)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(26,23)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((62,88),(58,88),(58,12),(62,12))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((70,88),(74,88),(74,12),(70,12))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(66,77)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(66,59)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(66,41)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(66,23)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((102,88),(98,88),(98,12),(102,12))" stroke="#876801" thickness="2"/>
+                      <polygon points="((110,88),(114,88),(114,12),(110,12))" stroke="#876801" thickness="2"/>
+                      <label anchor="(106,77)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(106,59)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(106,41)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                      <label anchor="(106,23)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <polygon points="((142,88),(138,88),(138,12),(142,12))" stroke="#4D4D4D" thickness="2"/>
+                      <polygon points="((150,88),(154,88),(154,12),(150,12))" stroke="#4D4D4D" thickness="2"/>
+                      <label anchor="(146,77)" alignment="center" scale="0.8" color="#4D4D4D"><m>0</m></label>
+                      <label anchor="(146,59)" alignment="center" scale="0.8" color="#4D4D4D"><m>0</m></label>
+                      <label anchor="(146,41)" alignment="center" scale="0.8" color="#4D4D4D"><m>0</m></label>
+                      <label anchor="(146,23)" alignment="center" scale="0.8" color="#4D4D4D"><m>1</m></label>
+                    </group>
+                    <group at="bottom-right">
+                      <polygon points="((292,61),(288,61),(288,39),(292,39))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((300,61),(304,61),(304,39),(300,39))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(296,50)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <polygon points="((320,61),(316,61),(316,39),(320,39))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((328,61),(332,61),(332,39),(328,39))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(324,50)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((348,61),(344,61),(344,39),(348,39))" stroke="#876801" thickness="2"/>
+                      <polygon points="((356,61),(360,61),(360,39),(356,39))" stroke="#876801" thickness="2"/>
+                      <label anchor="(352,50)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <polygon points="((376,61),(372,61),(372,39),(376,39))" stroke="#4D4D4D" thickness="2"/>
+                      <polygon points="((384,61),(388,61),(388,39),(384,39))" stroke="#4D4D4D" thickness="2"/>
+                      <label anchor="(380,50)" alignment="center" scale="0.8" color="#4D4D4D"><m>1</m></label>
+                    </group>
+                    <group at="map-left">
+                      <line endpoints="[(26,135),(26,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(66,135),(66,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(106,135),(106,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(146,135),(146,94)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(167,114.5)" alignment="east" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}}</m></label>
+                    </group>
+                    <group at="map-right">
+                      <line endpoints="[(296,135),(296,67)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(324,135),(324,67)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(352,135),(352,67)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(380,135),(380,67)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(281,114.5)" alignment="west" scale="0.8"><m>[\,\cdot\,]_{\{1\}}</m></label>
+                    </group>
+                    <group at="arrow-top">
+                      <line endpoints="[(174,149),(274,149)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(221,155)" alignment="north" scale="1"><m>\operatorname{tr}</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(174,50),(274,50)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(221,56)" alignment="north" scale="1"><m>A</m></label>
+                    </group>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="square" text="A square showing the trace of each element of the basis B and, underneath, the same thing in coordinates">
+                    <annotation ref="top-left" text="Top left: the four elements M 1 1, M 1 2, M 2 1, M 2 2 of the ordered basis B of M 2 2"/>
+                    <annotation ref="arrow-top" text="An arrow labelled t r from the basis elements to their traces"/>
+                    <annotation ref="top-right" text="Top right: their traces, in the same order: 1, 0, 0, 1"/>
+                    <annotation ref="map-left" text="Double-headed arrows join each basis element to its B coordinate vector below it"/>
+                    <annotation ref="bottom-left" text="Bottom left: the coordinate vectors of the basis elements, which are the four standard basis columns of R 4"/>
+                    <annotation ref="arrow-bottom" text="An arrow labelled A from the standard basis columns of R 4 to the entries on the right"/>
+                    <annotation ref="bottom-right" text="Bottom right: the coordinates of the four traces, each a single number: 1, 0, 0, 1; side by side they are the four columns of the 1 by 4 matrix A"/>
+                    <annotation ref="map-right" text="Double-headed arrows join each trace to its coordinate below it"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
           The corresponding matrix transformation <m>\R^4 \to \R</m> tells the same
           story as (2) and (3) in the language of pivots: <m>A</m> has a pivot in its
           only row, so it is onto, but it cannot have a pivot in every one of its four
@@ -791,6 +1285,9 @@
             = 4 - 9 = -5,
           </md>
           which agrees with computing the trace directly: <m>4 + (-9) = -5</m>.
+          This is the path down, across and up in
+          <xref ref="fig-trace-square" text="type-global" />: take coordinates,
+          multiply by <m>A</m>, and read the result as a real number.
         </p>
         <p>
           <term>(8)</term> With respect to the basis <m>\{2\}</m> of <m>\R</m>, a real
@@ -890,6 +1387,155 @@
           of the codomain: the transformation does nothing, and the matrix only
           translates between the two coordinate systems.
         </p>
+        <figure xml:id="fig-change-of-basis-square">
+          <caption>
+            The identity transformation of <m>\mathbb{P}_2</m> and the matrix
+            transformation <m>\R^3 \to \R^3</m> induced by the coordinate maps of
+            <m>\mathcal{B}_1</m> and <m>\mathcal{B}_2</m>.
+          </caption>
+          <image xml:id="img-change-of-basis-square" width="70%">
+            <shortdescription>A commutative square: the identity maps P2 to P2 across the top, the change of basis matrix maps R3 to R3 across the bottom, and the coordinate maps of B1 and B2 join top to bottom.</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="pf-change-of-basis-square">
+              <diagram dimensions="(340,196)" margins="6">
+                <coordinates bbox="[0,0,340,196]">
+                  <group at="square">
+                    <label at="node-tl" anchor="(62,164)" alignment="center" scale="1.2"><m>\mathbb{P}_2</m></label>
+                    <label at="node-tr" anchor="(278,164)" alignment="center" scale="1.2"><m>\mathbb{P}_2</m></label>
+                    <label at="node-bl" anchor="(62,36)" alignment="center" scale="1.2"><m>\mathbb{R}^3</m></label>
+                    <label at="node-br" anchor="(278,36)" alignment="center" scale="1.2"><m>\mathbb{R}^3</m></label>
+                    <group at="arrow-top">
+                      <line endpoints="[(92,164),(242,164)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(167,170)" alignment="north" scale="1.1"><m>\operatorname{id}</m></label>
+                    </group>
+                    <group at="arrow-left">
+                      <line endpoints="[(62,144),(62,56)]" arrows="2" stroke="black" thickness="2"/>
+                      <label anchor="(69,100)" alignment="east" scale="0.9"><m>[\,\cdot\,]_{\mathcal{B}_1}</m></label>
+                    </group>
+                    <group at="arrow-right">
+                      <line endpoints="[(278,144),(278,56)]" arrows="2" stroke="black" thickness="2"/>
+                      <label anchor="(271,100)" alignment="west" scale="0.9"><m>[\,\cdot\,]_{\mathcal{B}_2}</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(92,36),(248,36)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(170,42)" alignment="north" scale="1.1"><m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m></label>
+                      <label anchor="(170,29)" alignment="south" scale="0.8"><m>\text{matrix transformation}</m></label>
+                    </group>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="square" text="A commutative square relating the identity transformation of P 2 to a change of basis matrix">
+                    <annotation ref="arrow-top" text="Across the top, the identity transformation maps P 2 to itself and changes nothing"/>
+                    <annotation ref="arrow-left" text="On the left, the coordinate map of the basis B 1 identifies P 2 with R 3, in both directions"/>
+                    <annotation ref="arrow-right" text="On the right, the coordinate map of the basis B 2 identifies P 2 with R 3, in both directions"/>
+                    <annotation ref="arrow-bottom" text="Across the bottom, multiplication by the change of basis matrix from B 1 to B 2 maps R 3 to R 3"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          At the level of the ordered basis <m>\mathcal{B}_1</m>, the identity leaves
+          <m>1, x, x^2</m> where they are, but their coordinates are taken in
+          <m>\mathcal{B}_1</m> on the left and in <m>\mathcal{B}_2</m> on the right. The
+          <m>\mathcal{B}_2</m>-coordinate vectors of <m>1, x, x^2</m> are the columns of
+          <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m>:
+        </p>
+
+        <figure xml:id="fig-change-of-basis-basis">
+          <caption>
+            The identity acting on the ordered basis <m>\mathcal{B}_1</m> and the
+            corresponding matrix <m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m>.
+          </caption>
+          <image xml:id="img-change-of-basis-basis" width="100%">
+            <shortdescription>A square in which the identity carries 1, x, x squared to themselves, while the change of basis matrix carries the standard basis columns of R3 to the columns (1,0,0), (-1,1,0), (0,-1,1).</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="pf-change-of-basis-basis">
+              <diagram dimensions="(402,167)" margins="6">
+                <coordinates bbox="[0,0,402,167]">
+                  <group at="square">
+                    <group at="top-left">
+                      <label anchor="(20,131)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(62,131)" alignment="center" scale="0.8" color="#4A5D23"><m>x</m></label>
+                      <label anchor="(104,131)" alignment="center" scale="0.8" color="#876801"><m>x^2</m></label>
+                    </group>
+                    <group at="top-right">
+                      <label anchor="(270,131)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(319,131)" alignment="center" scale="0.8" color="#4A5D23"><m>x</m></label>
+                      <label anchor="(375,131)" alignment="center" scale="0.8" color="#876801"><m>x^2</m></label>
+                    </group>
+                    <group at="bottom-left">
+                      <polygon points="((16,70),(12,70),(12,12),(16,12))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((24,70),(28,70),(28,12),(24,12))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(20,59)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(20,41)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(20,23)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((58,70),(54,70),(54,12),(58,12))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((66,70),(70,70),(70,12),(66,12))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(62,59)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <label anchor="(62,41)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(62,23)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((100,70),(96,70),(96,12),(100,12))" stroke="#876801" thickness="2"/>
+                      <polygon points="((108,70),(112,70),(112,12),(108,12))" stroke="#876801" thickness="2"/>
+                      <label anchor="(104,59)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(104,41)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(104,23)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                    </group>
+                    <group at="bottom-right">
+                      <polygon points="((266,70),(262,70),(262,12),(266,12))" stroke="#5E011C" thickness="2"/>
+                      <polygon points="((274,70),(278,70),(278,12),(274,12))" stroke="#5E011C" thickness="2"/>
+                      <label anchor="(270,59)" alignment="center" scale="0.8" color="#5E011C"><m>1</m></label>
+                      <label anchor="(270,41)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <label anchor="(270,23)" alignment="center" scale="0.8" color="#5E011C"><m>0</m></label>
+                      <polygon points="((308,70),(304,70),(304,12),(308,12))" stroke="#4A5D23" thickness="2"/>
+                      <polygon points="((330,70),(334,70),(334,12),(330,12))" stroke="#4A5D23" thickness="2"/>
+                      <label anchor="(319,59)" alignment="center" scale="0.8" color="#4A5D23"><m>-1</m></label>
+                      <label anchor="(319,41)" alignment="center" scale="0.8" color="#4A5D23"><m>1</m></label>
+                      <label anchor="(319,23)" alignment="center" scale="0.8" color="#4A5D23"><m>0</m></label>
+                      <polygon points="((364,70),(360,70),(360,12),(364,12))" stroke="#876801" thickness="2"/>
+                      <polygon points="((386,70),(390,70),(390,12),(386,12))" stroke="#876801" thickness="2"/>
+                      <label anchor="(375,59)" alignment="center" scale="0.8" color="#876801"><m>0</m></label>
+                      <label anchor="(375,41)" alignment="center" scale="0.8" color="#876801"><m>-1</m></label>
+                      <label anchor="(375,23)" alignment="center" scale="0.8" color="#876801"><m>1</m></label>
+                    </group>
+                    <group at="map-left">
+                      <line endpoints="[(20,117),(20,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(62,117),(62,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(104,117),(104,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(119,96.5)" alignment="east" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}_1}</m></label>
+                    </group>
+                    <group at="map-right">
+                      <line endpoints="[(270,117),(270,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(319,117),(319,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <line endpoints="[(375,117),(375,76)]" arrows="2" stroke="#6B6B6B" thickness="1"/>
+                      <label anchor="(255,96.5)" alignment="west" scale="0.8"><m>[\,\cdot\,]_{\mathcal{B}_2}</m></label>
+                    </group>
+                    <group at="arrow-top">
+                      <line endpoints="[(126,131),(248,131)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(184,137)" alignment="north" scale="1"><m>\operatorname{id}</m></label>
+                    </group>
+                    <group at="arrow-bottom">
+                      <line endpoints="[(126,41),(248,41)]" arrows="1" stroke="black" thickness="2"/>
+                      <label anchor="(184,47)" alignment="north" scale="1"><m>P_{\mathcal{B}_2 \leftarrow \mathcal{B}_1}</m></label>
+                    </group>
+                  </group>
+                </coordinates>
+                <annotations>
+                  <annotation ref="square" text="A square showing that the identity leaves each element of the basis B 1 alone while its coordinates change from B 1 to B 2">
+                    <annotation ref="top-left" text="Top left: the three elements 1, x, x squared of the basis B 1"/>
+                    <annotation ref="arrow-top" text="An arrow labelled i d, the identity transformation"/>
+                    <annotation ref="top-right" text="Top right: the same three polynomials 1, x, x squared"/>
+                    <annotation ref="map-left" text="Double-headed arrows join each polynomial to its B 1 coordinate vector below it"/>
+                    <annotation ref="bottom-left" text="Bottom left: the B 1 coordinate vectors of 1, x, x squared, which are the standard basis columns 1 0 0, then 0 1 0, then 0 0 1"/>
+                    <annotation ref="arrow-bottom" text="An arrow labelled with the change of basis matrix from B 1 to B 2"/>
+                    <annotation ref="bottom-right" text="Bottom right: the B 2 coordinate vectors of 1, x, x squared: 1 0 0, then negative 1, 1, 0, then 0, negative 1, 1; these are the three columns of the change of basis matrix"/>
+                    <annotation ref="map-right" text="Double-headed arrows join each polynomial to its B 2 coordinate vector below it"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
         <p>
           <term>(3)</term> Relative to <m>\mathcal{B}_1</m> the coordinates of
           <m>q</m> are read off directly, and the matrix converts them:

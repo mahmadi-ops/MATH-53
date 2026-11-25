@@ -1,101 +1,83 @@
 <diagram>
   <annotations language="en">
-    <annotation id="basis-diagram-S-basis-square" speech2="A square diagram of four sets joined by arrows: S acts along the top, the matrix A along the bottom, and coordinate isomorphisms join top to bottom on each side">
-      <grouped>basis-diagram-S-basis-square</grouped>
+    <annotation id="basis-diagram-S-square" speech2="A square showing where S sends each element of the basis 1, x, x squared and, underneath, the same thing in coordinates">
+      <grouped>basis-diagram-S-square</grouped>
       <position>1</position>
       <children>
-        <active>basis-diagram-S-node-B</active>
-        <active>basis-diagram-S-arrow-S</active>
-        <active>basis-diagram-S-label-S</active>
-        <active>basis-diagram-S-node-B1</active>
-        <active>basis-diagram-S-arrow-left</active>
-        <active>basis-diagram-S-node-R3</active>
-        <active>basis-diagram-S-arrow-A</active>
-        <active>basis-diagram-S-label-A</active>
-        <active>basis-diagram-S-node-R4</active>
-        <active>basis-diagram-S-arrow-right</active>
+        <active>basis-diagram-S-top-left</active>
+        <active>basis-diagram-S-arrow-top</active>
+        <active>basis-diagram-S-top-right</active>
+        <active>basis-diagram-S-map-left</active>
+        <active>basis-diagram-S-bottom-left</active>
+        <active>basis-diagram-S-arrow-bottom</active>
+        <active>basis-diagram-S-bottom-right</active>
+        <active>basis-diagram-S-map-right</active>
       </children>
       <components>
-        <active>basis-diagram-S-node-B</active>
-        <active>basis-diagram-S-arrow-S</active>
-        <active>basis-diagram-S-label-S</active>
-        <active>basis-diagram-S-node-B1</active>
-        <active>basis-diagram-S-arrow-left</active>
-        <active>basis-diagram-S-node-R3</active>
-        <active>basis-diagram-S-arrow-A</active>
-        <active>basis-diagram-S-label-A</active>
-        <active>basis-diagram-S-node-R4</active>
-        <active>basis-diagram-S-arrow-right</active>
+        <active>basis-diagram-S-top-left</active>
+        <active>basis-diagram-S-arrow-top</active>
+        <active>basis-diagram-S-top-right</active>
+        <active>basis-diagram-S-map-left</active>
+        <active>basis-diagram-S-bottom-left</active>
+        <active>basis-diagram-S-arrow-bottom</active>
+        <active>basis-diagram-S-bottom-right</active>
+        <active>basis-diagram-S-map-right</active>
       </components>
     </annotation>
-    <annotation id="basis-diagram-S-node-B" speech2="Top left: the ordered basis 1, x, x squared of P 2">
-      <active>basis-diagram-S-node-B</active>
+    <annotation id="basis-diagram-S-top-left" speech2="Top left: the three elements 1, x, x squared of the ordered basis B of P 2">
+      <active>basis-diagram-S-top-left</active>
       <position>1</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
-    <annotation id="basis-diagram-S-arrow-S" speech2="An arrow from the top left set to the top right set">
-      <active>basis-diagram-S-arrow-S</active>
+    <annotation id="basis-diagram-S-arrow-top" speech2="An arrow labelled S from the basis elements to their images">
+      <active>basis-diagram-S-arrow-top</active>
       <position>2</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
-    <annotation id="basis-diagram-S-label-S" speech2="That arrow is labelled S">
-      <active>basis-diagram-S-label-S</active>
+    <annotation id="basis-diagram-S-top-right" speech2="Top right: their images under S, in the same order: the matrices M 0, M 1, M 2">
+      <active>basis-diagram-S-top-right</active>
       <position>3</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
-    <annotation id="basis-diagram-S-node-B1" speech2="Top right: the four matrices M 0, M 1, M 2, M 3 spanning M 2 2">
-      <active>basis-diagram-S-node-B1</active>
+    <annotation id="basis-diagram-S-map-left" speech2="Double-headed arrows join each basis element to its B coordinate vector below it">
+      <active>basis-diagram-S-map-left</active>
       <position>4</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
-    <annotation id="basis-diagram-S-arrow-left" speech2="A double-headed arrow down the left side: the coordinate isomorphism between the basis of P 2 and the standard basis of R 3">
-      <active>basis-diagram-S-arrow-left</active>
+    <annotation id="basis-diagram-S-bottom-left" speech2="Bottom left: the coordinate vectors of 1, x, x squared, which are the standard basis columns of R 3: 1 0 0, then 0 1 0, then 0 0 1">
+      <active>basis-diagram-S-bottom-left</active>
       <position>5</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
-    <annotation id="basis-diagram-S-node-R3" speech2="Bottom left: the three standard basis columns of R 3">
-      <active>basis-diagram-S-node-R3</active>
+    <annotation id="basis-diagram-S-arrow-bottom" speech2="An arrow labelled A 1 from the standard basis columns of R 3 to the columns on the right">
+      <active>basis-diagram-S-arrow-bottom</active>
       <position>6</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
-    <annotation id="basis-diagram-S-arrow-A" speech2="An arrow from the bottom left set to the bottom right set">
-      <active>basis-diagram-S-arrow-A</active>
+    <annotation id="basis-diagram-S-bottom-right" speech2="Bottom right: the B 1 coordinate vectors of M 0, M 1, M 2, which are the first three standard basis columns of R 4: 1 0 0 0, then 0 1 0 0, then 0 0 1 0; these are the three columns of A 1">
+      <active>basis-diagram-S-bottom-right</active>
       <position>7</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
-    <annotation id="basis-diagram-S-label-A" speech2="That arrow is labelled A, the matrix of S">
-      <active>basis-diagram-S-label-A</active>
+    <annotation id="basis-diagram-S-map-right" speech2="Double-headed arrows join each of M 0, M 1, M 2 to its B 1 coordinate vector below it">
+      <active>basis-diagram-S-map-right</active>
       <position>8</position>
       <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
-      </parents>
-    </annotation>
-    <annotation id="basis-diagram-S-node-R4" speech2="Bottom right: the four standard basis columns of R 4">
-      <active>basis-diagram-S-node-R4</active>
-      <position>9</position>
-      <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
-      </parents>
-    </annotation>
-    <annotation id="basis-diagram-S-arrow-right" speech2="A double-headed arrow down the right side: the coordinate isomorphism between the four matrices and the standard basis of R 4">
-      <active>basis-diagram-S-arrow-right</active>
-      <position>10</position>
-      <parents>
-        <grouped>basis-diagram-S-basis-square</grouped>
+        <grouped>basis-diagram-S-square</grouped>
       </parents>
     </annotation>
   </annotations>
